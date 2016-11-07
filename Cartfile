@@ -1,0 +1,2 @@
+git "https://inket@github.com/inket/MBPopup.git"
+github "SnapKit/SnapKit" ~> 3.0.2
