@@ -18,6 +18,8 @@ enum BottomBarStatus {
 
 class BottomBar: NSView {
     let settingsButton = NSButton()
+    let doneButton = NSButton()
+    let quitButton = NSButton()
     let statusField = NSTextField()
     let separator = ServiceTableRowView()
 
@@ -35,6 +37,10 @@ class BottomBar: NSView {
             }
         }
     }
+
+    var openSettingsCallback: () -> () = {}
+    var closeSettingsCallback: () -> () = {}
+
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
 
@@ -51,6 +57,9 @@ class BottomBar: NSView {
         settingsButton.isBordered = false
         settingsButton.bezelStyle = .regularSquare
         settingsButton.title = ""
+        settingsButton.target = self
+        settingsButton.action = #selector(BottomBar.openSettings)
+
         settingsButton.snp.makeConstraints { make in
             make.height.width.equalTo(30)
             make.bottom.left.equalTo(0)
@@ -84,9 +93,51 @@ class BottomBar: NSView {
             make.right.equalTo(-4)
             make.centerY.equalToSuperview()
         }
+
+        addSubview(doneButton)
+        doneButton.title = "Done"
+        doneButton.bezelStyle = .regularSquare
+        doneButton.controlSize = .regular
+        doneButton.isHidden = true
+        doneButton.target = self
+        doneButton.action = #selector(BottomBar.closeSettings)
+        doneButton.snp.makeConstraints { make in
+            make.width.equalTo(50)
+            make.centerY.equalToSuperview()
+            make.right.equalTo(-3)
+        }
+
+        addSubview(quitButton)
+        quitButton.title = "Quit"
+        quitButton.bezelStyle = .regularSquare
+        quitButton.controlSize = .regular
+        quitButton.isHidden = true
+        quitButton.target = NSApp
+        quitButton.action = #selector(NSApplication.terminate(_:))
+        quitButton.snp.makeConstraints { make in
+            make.width.equalTo(50)
+            make.centerY.equalToSuperview()
+            make.left.equalTo(3)
+        }
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func openSettings() {
+        statusField.isHidden = true
+        doneButton.isHidden = false
+        quitButton.isHidden = false
+
+        openSettingsCallback()
+    }
+
+    func closeSettings() {
+        statusField.isHidden = false
+        doneButton.isHidden = true
+        quitButton.isHidden = true
+
+        closeSettingsCallback()
     }
 }

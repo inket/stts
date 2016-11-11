@@ -26,6 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         popupController.statusItem.button?.font = NSFont(name: "SF Mono Regular", size: 10)
         popupController.statusItem.length = 30
 
+        popupController.backgroundView.backgroundColor = NSColor.white
         popupController.contentView.wantsLayer = true
         popupController.contentView.layer?.masksToBounds = true
 

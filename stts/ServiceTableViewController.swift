@@ -15,6 +15,7 @@ class ServiceTableViewController: NSObject {
     let tableView = NSTableView()
     let bottomBar = BottomBar()
 
+    let editorTableViewController: EditorTableViewController
 
     var services: [Service] = Preferences.shared.selectedServices
     var servicesBeingUpdated = [Service]()
@@ -30,10 +31,35 @@ class ServiceTableViewController: NSObject {
     var updateCallback: (() -> ())?
 
     override init() {
+        self.editorTableViewController = EditorTableViewController(scrollView: scrollView)
         super.init()
     }
 
     func setup() {
+        bottomBar.openSettingsCallback = { [weak self] in
+            self?.editorTableViewController.showTableView()
+            self?.resizeViews()
+        }
+
+        bottomBar.closeSettingsCallback = { [weak self] in
+            guard let selfie = self else { return }
+
+            self?.scrollView.documentView = self?.tableView
+
+            if selfie.editorTableViewController.selectionChanged {
+                self?.reloadServices()
+                self?.reloadData()
+            }
+
+            self?.resizeViews()
+        }
+
+        contentView.snp.makeConstraints { make in
+            make.left.right.bottom.equalTo(0)
+            make.width.greaterThanOrEqualTo(180)
+            make.height.greaterThanOrEqualTo(100)
+        }
+
         contentView.addSubview(scrollView)
         contentView.addSubview(bottomBar)
 
@@ -76,13 +102,27 @@ class ServiceTableViewController: NSObject {
     }
 
     public func resizeViews() {
+        guard let currentTableView = scrollView.documentView as? NSTableView else { return }
+
+        let maxHeight: CGFloat = currentTableView == tableView ? 490 : 300
+
         var frame = scrollView.frame
-        frame.size.height = tableView.intrinsicContentSize.height
+        frame.size.height = min(currentTableView.intrinsicContentSize.height, maxHeight)
         scrollView.frame = frame
 
-        frame = contentView.frame
-        frame.size.height = scrollView.frame.size.height + bottomBar.frame.size.height
-        contentView.frame = frame
+        // Ugly, but oh well.
+        (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(
+            to: CGSize(width: contentView.frame.width,
+                       height: scrollView.frame.size.height + bottomBar.frame.size.height)
+        )
+    }
+
+    func reloadServices() {
+        self.services = Preferences.shared.selectedServices
+        self.servicesBeingUpdated = [Service]()
+
+        // Ugly again...
+        (NSApp.delegate as? AppDelegate)?.updateServices()
     }
 
     public func reloadData(at index: Int? = nil) {
