@@ -8,12 +8,33 @@
 
 import Cocoa
 import SnapKit
+import SwiftDate
+
+enum BottomBarStatus {
+    case undetermined
+    case updating
+    case updated(Date)
+}
 
 class BottomBar: NSView {
     let settingsButton = NSButton()
     let statusField = NSTextField()
-    let separator = CustomRowView()
+    let separator = ServiceTableRowView()
 
+    var status: BottomBarStatus = .undetermined {
+        didSet {
+            switch status {
+            case .undetermined: statusField.stringValue = ""
+            case .updating: statusField.stringValue = "Updating…"
+            case .updated(let date):
+                if let (colloquial, _) = try? date.colloquialSinceNow() {
+                    statusField.stringValue = "Updated \(colloquial)"
+                } else {
+                    statusField.stringValue = "Updated"
+                }
+            }
+        }
+    }
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
 
@@ -54,7 +75,6 @@ class BottomBar: NSView {
         statusField.font = italicFont
         statusField.textColor = NSColor(calibratedWhite: 0, alpha: 0.6)
         statusField.maximumNumberOfLines = 1
-        statusField.stringValue = "Last checked now"
         statusField.backgroundColor = NSColor.clear
         statusField.alignment = .center
         statusField.cell?.truncatesLastVisibleLine = true

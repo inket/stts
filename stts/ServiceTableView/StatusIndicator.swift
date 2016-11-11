@@ -11,6 +11,7 @@ import Cocoa
 class StatusIndicator: NSView {
     var checkmarkIcon = CheckmarkIcon()
     var crossIcon = CrossIcon()
+
     var status: ServiceStatus = .good {
         didSet {
             checkmarkIcon.isHidden = status != .good || status == .undetermined
@@ -21,7 +22,6 @@ class StatusIndicator: NSView {
             case .major: crossIcon.color = NSColor.red
             default: break
             }
-
         }
     }
 

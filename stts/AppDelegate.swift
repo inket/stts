@@ -12,16 +12,12 @@ import SnapKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
-    var services: [Service]
-    var servicesBeingUpdated = [Service]()
     var timer: Timer?
 
     let popupController: MBPopupController
-    let serviceTableViewController: ServiceTableViewController
+    let serviceTableViewController = ServiceTableViewController()
 
     override init() {
-        self.services = Service.all().sorted()
-        self.serviceTableViewController = ServiceTableViewController(services: services)
         self.popupController = MBPopupController(contentView: serviceTableViewController.contentView)
     }
 
@@ -32,6 +28,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         popupController.contentView.wantsLayer = true
         popupController.contentView.layer?.masksToBounds = true
+
+        serviceTableViewController.setup()
 
         popupController.willOpenPopup = { [weak self] _ in
             self?.serviceTableViewController.resizeViews()
@@ -47,29 +45,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     func updateServices() {
-        let callback: ((Service) -> ()) = { [weak self] service in self?.updatedStatus(for: service) }
-
-        services.forEach {
-            servicesBeingUpdated.append($0)
-            $0.updateStatus(callback: callback)
+        serviceTableViewController.updateServices { [weak self] in
+            let title = self?.serviceTableViewController.generalStatus == .major ? "s__s" : "stts"
+            self?.popupController.statusItem.title = title
         }
-    }
-
-    func updatedStatus(for service: Service) {
-        if let index = servicesBeingUpdated.index(of: service) {
-            servicesBeingUpdated.remove(at: index)
-        }
-
-        DispatchQueue.main.async { [weak self] in
-            self?.serviceTableViewController.reloadData()
-        }
-
-        updateStatusBarItemStatus()
-    }
-
-    func updateStatusBarItemStatus() {
-        popupController.statusItem.title = services.filter { service in
-            service.status != .good && service.status != .undetermined
-        }.count > 0 ? "s__s" : "stts"
     }
 }

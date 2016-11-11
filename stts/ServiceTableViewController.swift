@@ -15,16 +15,25 @@ class ServiceTableViewController: NSObject {
     let tableView = NSTableView()
     let bottomBar = BottomBar()
 
-    var services: [Service]
 
-    init(services: [Service]) {
-        self.services = services
-
-        super.init()
-        setup()
+    var services: [Service] = Preferences.shared.selectedServices
+    var servicesBeingUpdated = [Service]()
+    var generalStatus: ServiceStatus {
+        let badServices = services.filter { $0.status != .good && $0.status != .undetermined }
+        if badServices.count > 0 {
+            return .major
+        } else {
+            return .good
+        }
     }
 
-    private func setup() {
+    var updateCallback: (() -> ())?
+
+    override init() {
+        super.init()
+    }
+
+    func setup() {
         contentView.addSubview(scrollView)
         contentView.addSubview(bottomBar)
 
@@ -51,7 +60,7 @@ class ServiceTableViewController: NSObject {
         scrollView.layer?.cornerRadius = 6
 
         tableView.frame = scrollView.bounds
-        let column = NSTableColumn(identifier: "ident")
+        let column = NSTableColumn(identifier: "serviceColumnIdentifier")
         column.width = tableView.frame.size.width
         tableView.addTableColumn(column)
         tableView.autoresizesSubviews = true
@@ -86,6 +95,36 @@ class ServiceTableViewController: NSObject {
 
         tableView.reloadData(forRowIndexes: IndexSet(integer: index!), columnIndexes: IndexSet(integer: 0))
     }
+
+    func updateServices(updateCallback: @escaping () -> ()) {
+        self.updateCallback = updateCallback
+
+        let serviceCallback: ((Service) -> ()) = { [weak self] service in self?.updatedStatus(for: service) }
+
+        bottomBar.status = .updating
+
+        services.forEach {
+            servicesBeingUpdated.append($0)
+            $0.updateStatus(callback: serviceCallback)
+        }
+    }
+
+    func updatedStatus(for service: Service) {
+        if let index = servicesBeingUpdated.index(of: service) {
+            servicesBeingUpdated.remove(at: index)
+        }
+
+        DispatchQueue.main.async { [weak self] in
+            self?.reloadData()
+
+            if self?.servicesBeingUpdated.count == 0 {
+                self?.bottomBar.status = .updated(Date())
+
+                self?.updateCallback?()
+                self?.updateCallback = nil
+            }
+        }
+    }
 }
 
 extension ServiceTableViewController: NSTableViewDataSource {
@@ -114,9 +153,9 @@ extension ServiceTableViewController: NSTableViewDelegate {
     }
 
     func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
-        let cell = tableView.make(withIdentifier: "rowView", owner: self) ?? CustomRowView()
+        let cell = tableView.make(withIdentifier: "rowView", owner: self) ?? ServiceTableRowView()
 
-        guard let view = cell as? CustomRowView else { return nil }
+        guard let view = cell as? ServiceTableRowView else { return nil }
 
         view.showSeparator = row + 1 < services.count
 

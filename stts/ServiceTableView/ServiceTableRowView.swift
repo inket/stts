@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CustomRowView: NSTableRowView {
+class ServiceTableRowView: NSTableRowView {
     var showSeparator = true
     var gradient: CAGradientLayer?
 
