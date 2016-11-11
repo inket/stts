@@ -8,6 +8,7 @@
 
 import Cocoa
 import SnapKit
+import MBPopup
 
 class ServiceTableViewController: NSObject {
     let contentView = NSStackView(frame: CGRect(x: 0, y: 0, width: 180, height: 400))
@@ -47,8 +48,9 @@ class ServiceTableViewController: NSObject {
             self?.scrollView.documentView = self?.tableView
 
             if selfie.editorTableViewController.selectionChanged {
-                self?.reloadServices()
+                self?.services = Preferences.shared.selectedServices
                 self?.reloadData()
+                (NSApp.delegate as? AppDelegate)?.updateServices()
             }
 
             self?.resizeViews()
@@ -101,6 +103,17 @@ class ServiceTableViewController: NSObject {
         tableView.selectionHighlightStyle = .none
     }
 
+    public func willOpenPopup() {
+        resizeViews()
+        reloadData()
+
+        if case let .updated(date) = bottomBar.status {
+            if Date().timeIntervalSince1970 - date.timeIntervalSince1970 > 60 {
+                (NSApp.delegate as? AppDelegate)?.updateServices()
+            }
+        }
+    }
+
     public func resizeViews() {
         guard let currentTableView = scrollView.documentView as? NSTableView else { return }
 
@@ -117,16 +130,10 @@ class ServiceTableViewController: NSObject {
         )
     }
 
-    func reloadServices() {
-        self.services = Preferences.shared.selectedServices
-        self.servicesBeingUpdated = [Service]()
-
-        // Ugly again...
-        (NSApp.delegate as? AppDelegate)?.updateServices()
-    }
-
     public func reloadData(at index: Int? = nil) {
         services.sort()
+
+        bottomBar.updateStatusText()
 
         guard index != nil else {
             tableView.reloadData()
@@ -137,6 +144,8 @@ class ServiceTableViewController: NSObject {
     }
 
     func updateServices(updateCallback: @escaping () -> ()) {
+        self.servicesBeingUpdated = [Service]()
+
         self.updateCallback = updateCallback
 
         let serviceCallback: ((Service) -> ()) = { [weak self] service in self?.updatedStatus(for: service) }

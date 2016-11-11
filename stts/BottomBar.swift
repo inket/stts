@@ -25,16 +25,7 @@ class BottomBar: NSView {
 
     var status: BottomBarStatus = .undetermined {
         didSet {
-            switch status {
-            case .undetermined: statusField.stringValue = ""
-            case .updating: statusField.stringValue = "Updating…"
-            case .updated(let date):
-                if let (colloquial, _) = try? date.colloquialSinceNow() {
-                    statusField.stringValue = "Updated \(colloquial)"
-                } else {
-                    statusField.stringValue = "Updated"
-                }
-            }
+            updateStatusText()
         }
     }
 
@@ -123,6 +114,19 @@ class BottomBar: NSView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func updateStatusText() {
+        switch status {
+        case .undetermined: statusField.stringValue = ""
+        case .updating: statusField.stringValue = "Updating…"
+        case .updated(let date):
+            if let (colloquial, _) = try? date.colloquialSinceNow() {
+                statusField.stringValue = "Updated \(colloquial)"
+            } else {
+                statusField.stringValue = "Updated"
+            }
+        }
     }
 
     func openSettings() {

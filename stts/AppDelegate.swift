@@ -32,12 +32,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         serviceTableViewController.setup()
 
-        popupController.willOpenPopup = { [weak self] _ in
-            self?.serviceTableViewController.resizeViews()
-            self?.serviceTableViewController.reloadData()
-        }
+        popupController.willOpenPopup = { [weak self] _ in self?.serviceTableViewController.willOpenPopup() }
 
-        self.timer = Timer.scheduledTimer(timeInterval: 60,
+        self.timer = Timer.scheduledTimer(timeInterval: 300,
                                           target: self,
                                           selector: #selector(AppDelegate.updateServices),
                                           userInfo: nil,
