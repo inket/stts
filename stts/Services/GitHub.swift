@@ -15,14 +15,15 @@ class GitHub: Service {
     override func updateStatus(callback: @escaping (Service) -> ()) {
         let lastMessageURL = URL(string: "https://status.github.com/api/last-message.json")!
 
-        URLSession.shared.dataTask(with: lastMessageURL) { [weak self] data, _, _ in
+        URLSession.shared.dataTask(with: lastMessageURL) { [weak self] data, response, error in
             guard let selfie = self else { return }
-            guard let data = data else { return }
+            defer { callback(selfie) }
+            guard let data = data else { return selfie._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard let dict = json as? [String : String] else { return }
+            guard let dict = json as? [String : String] else { return selfie._fail("Unexpected data") }
 
-            guard let status = dict["status"] else { return }
+            guard let status = dict["status"] else { return selfie._fail("Unexpected data") }
 
             switch status {
                 case "good": self?.status = .good
@@ -32,8 +33,6 @@ class GitHub: Service {
             }
 
             self?.message = dict["body"] ?? ""
-
-            callback(selfie)
         }.resume()
     }
 }

@@ -8,7 +8,6 @@
 
 import Cocoa
 
-
 enum ServiceStatus {
     case undetermined
     case good
@@ -44,7 +43,18 @@ class Service {
     }
 
     required init() {}
+
     func updateStatus(callback: @escaping (Service) -> ()) {}
+
+    func _fail(_ error: Error?) {
+        self.status = .undetermined
+        self.message = error?.localizedDescription ?? "Unexpected error"
+    }
+
+    func _fail(_ message: String) {
+        self.status = .undetermined
+        self.message = message
+    }
 }
 
 extension Service: Equatable {

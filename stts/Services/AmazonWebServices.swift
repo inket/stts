@@ -15,12 +15,13 @@ class AmazonWebServices: Service {
     override func updateStatus(callback: @escaping (Service) -> ()) {
         let dataURL = URL(string: "https://status.aws.amazon.com/data.json")!
 
-        URLSession.shared.dataTask(with: dataURL) { [weak self] data, _, _ in
+        URLSession.shared.dataTask(with: dataURL) { [weak self] data, response, error in
             guard let selfie = self else { return }
-            guard let data = data else { return }
+            defer { callback(selfie) }
+            guard let data = data else { return selfie._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard let dict = json as? [String : Any] else { return }
+            guard let dict = json as? [String : Any] else { return selfie._fail("Unexpected data") }
 
             guard let currentIssues = dict["current"] as? [Any] else { return }
 
@@ -30,6 +31,8 @@ class AmazonWebServices: Service {
                 self?.status = .minor
             } else {
                 self?.status = .major
+            guard let currentIssues = dict["current"] as? [[String : String]] else {
+                return selfie._fail("Unexpected data")
             }
 
             if let firstIssue = currentIssues.first as? [String : String] {
@@ -37,8 +40,6 @@ class AmazonWebServices: Service {
             } else {
                 self?.message = "No recent events"
             }
-
-            callback(selfie)
         }.resume()
     }
 

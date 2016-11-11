@@ -15,14 +15,15 @@ class Heroku: Service {
     override func updateStatus(callback: @escaping (Service) -> ()) {
         let statusURL = URL(string: "https://status.heroku.com/api/v3/current-status")!
 
-        URLSession.shared.dataTask(with: statusURL) { [weak self] data, _, _ in
+        URLSession.shared.dataTask(with: statusURL) { [weak self] data, response, error in
             guard let selfie = self else { return }
-            guard let data = data else { return }
+            defer { callback(selfie) }
+            guard let data = data else { return selfie._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard let dict = json as? [String : Any] else { return }
+            guard let dict = json as? [String : Any] else { return selfie._fail("Unexpected data") }
 
-            guard let status = dict["status"] as? [String : String] else { return }
+            guard let status = dict["status"] as? [String : String] else { return selfie._fail("Unexpected data") }
 
             let devStatus = status["Development"]
             let prodStatus = status["Production"]
@@ -53,8 +54,6 @@ class Heroku: Service {
             }
 
             self?.message = title ?? statusText ?? ""
-
-            callback(selfie)
         }.resume()
     }
 }

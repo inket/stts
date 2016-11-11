@@ -14,14 +14,17 @@ class StatusPageService: Service {
     override func updateStatus(callback: @escaping (Service) -> ()) {
         let statusURL = URL(string: "https://\(statusPageID).statuspage.io/api/v2/status.json")!
 
-        URLSession.shared.dataTask(with: statusURL) { [weak self] data, _, _ in
+        URLSession.shared.dataTask(with: statusURL) { [weak self] data, response, error in
             guard let selfie = self else { return }
-            guard let data = data else { return }
+            defer { callback(selfie) }
+            guard let data = data else { return selfie._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard let dict = (json as? [String : Any])?["status"] as? [String : String] else { return }
+            guard let dict = (json as? [String : Any])?["status"] as? [String : String] else {
+                return selfie._fail("Unexpected data")
+            }
 
-            guard let status = dict["indicator"] else { return }
+            guard let status = dict["indicator"] else { return selfie._fail("Unexpected data") }
 
             switch status.lowercased() {
                 case "none": self?.status = .good
@@ -31,8 +34,6 @@ class StatusPageService: Service {
             }
 
             self?.message = dict["description"] ?? ""
-
-            callback(selfie)
         }.resume()
     }
 }
