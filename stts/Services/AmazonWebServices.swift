@@ -23,24 +23,38 @@ class AmazonWebServices: Service {
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
             guard let dict = json as? [String : Any] else { return selfie._fail("Unexpected data") }
 
-            guard let currentIssues = dict["current"] as? [Any] else { return }
-
-            if currentIssues.count == 0 {
-                self?.status = .good
-            } else if currentIssues.count < 3 {
-                self?.status = .minor
-            } else {
-                self?.status = .major
             guard let currentIssues = dict["current"] as? [[String : String]] else {
                 return selfie._fail("Unexpected data")
             }
 
-            if let firstIssue = currentIssues.first as? [String : String] {
-                self?.message = firstIssue["summary"] ?? "Click for details"
-            } else {
-                self?.message = "No recent events"
-            }
+            self?.status = selfie.status(for: currentIssues)
+            self?.message = selfie.message(for: currentIssues)
         }.resume()
     }
+}
 
+extension AmazonWebServices {
+    fileprivate func status(for issues: [[String : String]]) -> ServiceStatus {
+        if let mostRecentIssue = issues.first,
+            let statusString = mostRecentIssue["status"], let status = Int(statusString) {
+            switch status {
+            case 0, 1: return .good
+            case 2: return .minor
+            case 3: return .major
+            default: return .undetermined
+            }
+        } else {
+            switch issues.count {
+            case 0: return .good
+            case 1: return .minor
+            default: return .major
+            }
+        }
+    }
+
+    fileprivate func message(for issues: [[String : String]]) -> String {
+        guard let firstIssue = issues.first else { return "No recent events" }
+
+        return firstIssue["summary"] ?? "Click for details"
+    }
 }
