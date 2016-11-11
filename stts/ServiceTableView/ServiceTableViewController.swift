@@ -15,10 +15,16 @@ class ServiceTableViewController: NSObject {
     let scrollView = CustomScrollView()
     let tableView = NSTableView()
     let bottomBar = BottomBar()
+    let addServicesNoticeField = NSTextField()
 
     let editorTableViewController: EditorTableViewController
 
-    var services: [Service] = Preferences.shared.selectedServices
+    var services: [Service] = Preferences.shared.selectedServices {
+        didSet {
+            addServicesNoticeField.isHidden = services.count > 0
+        }
+    }
+
     var servicesBeingUpdated = [Service]()
     var generalStatus: ServiceStatus {
         let badServices = services.filter { $0.status != .good && $0.status != .undetermined }
@@ -40,6 +46,7 @@ class ServiceTableViewController: NSObject {
         bottomBar.reloadServicesCallback = (NSApp.delegate as? AppDelegate)?.updateServices ?? {}
 
         bottomBar.openSettingsCallback = { [weak self] in
+            self?.addServicesNoticeField.isHidden = true
             self?.editorTableViewController.showTableView()
             self?.resizeViews()
         }
@@ -53,6 +60,8 @@ class ServiceTableViewController: NSObject {
                 self?.services = Preferences.shared.selectedServices
                 self?.reloadData()
                 (NSApp.delegate as? AppDelegate)?.updateServices()
+            } else {
+                self?.addServicesNoticeField.isHidden = selfie.services.count > 0
             }
 
             self?.resizeViews()
@@ -61,7 +70,7 @@ class ServiceTableViewController: NSObject {
         contentView.snp.makeConstraints { make in
             make.left.right.bottom.equalTo(0)
             make.width.greaterThanOrEqualTo(180)
-            make.height.greaterThanOrEqualTo(100)
+            make.height.greaterThanOrEqualTo(40 + 30 + 2) // tableView.rowHeight + bottomBar.frame.size.height + 2
         }
 
         contentView.addSubview(scrollView)
@@ -78,6 +87,13 @@ class ServiceTableViewController: NSObject {
             make.height.equalTo(30)
             make.left.right.equalTo(0)
             make.bottom.equalTo(0)
+        }
+
+        contentView.addSubview(addServicesNoticeField)
+        addServicesNoticeField.snp.makeConstraints { make in
+            make.height.equalTo(22)
+            make.left.right.equalTo(0)
+            make.centerY.equalToSuperview().offset(-10)
         }
 
         scrollView.borderType = .noBorder
@@ -103,6 +119,20 @@ class ServiceTableViewController: NSObject {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.selectionHighlightStyle = .none
+
+        addServicesNoticeField.isEditable = false
+        addServicesNoticeField.isBordered = false
+        addServicesNoticeField.isSelectable = false
+        let italicFont = NSFontManager.shared().font(withFamily: NSFont.systemFont(ofSize: 10).fontName,
+                                                     traits: NSFontTraitMask.italicFontMask,
+                                                     weight: 5,
+                                                     size: 10)
+        addServicesNoticeField.font = italicFont
+        addServicesNoticeField.textColor = NSColor(calibratedWhite: 0, alpha: 0.5)
+        addServicesNoticeField.maximumNumberOfLines = 1
+        addServicesNoticeField.cell!.truncatesLastVisibleLine = true
+        addServicesNoticeField.alignment = .center
+        addServicesNoticeField.stringValue = "Maybe add some services? :)"
     }
 
     public func willOpenPopup() {
@@ -148,8 +178,17 @@ class ServiceTableViewController: NSObject {
     func updateServices(updateCallback: @escaping () -> ()) {
         self.servicesBeingUpdated = [Service]()
 
-        self.updateCallback = updateCallback
+        guard services.count > 0 else {
+            reloadData()
+            bottomBar.status = .updated(Date())
 
+            self.updateCallback?()
+            self.updateCallback = nil
+
+            return
+        }
+
+        self.updateCallback = updateCallback
         let serviceCallback: ((Service) -> ()) = { [weak self] service in self?.updatedStatus(for: service) }
 
         bottomBar.status = .updating
