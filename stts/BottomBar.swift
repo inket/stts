@@ -18,6 +18,7 @@ enum BottomBarStatus {
 
 class BottomBar: NSView {
     let settingsButton = NSButton()
+    let reloadButton = NSButton()
     let doneButton = NSButton()
     let quitButton = NSButton()
     let statusField = NSTextField()
@@ -29,6 +30,7 @@ class BottomBar: NSView {
         }
     }
 
+    var reloadServicesCallback: () -> () = {}
     var openSettingsCallback: () -> () = {}
     var closeSettingsCallback: () -> () = {}
 
@@ -62,6 +64,26 @@ class BottomBar: NSView {
         }
         gearIcon.scaleUnitSquare(to: NSSize(width: 0.46, height: 0.46))
 
+        let refreshIcon = RefreshIcon()
+        addSubview(reloadButton)
+        reloadButton.addSubview(refreshIcon)
+        reloadButton.isBordered = false
+        reloadButton.bezelStyle = .regularSquare
+        reloadButton.title = ""
+        reloadButton.target = self
+        reloadButton.action = #selector(BottomBar.reloadServices)
+
+        reloadButton.snp.makeConstraints { make in
+            make.height.width.equalTo(30)
+            make.bottom.right.equalTo(0)
+        }
+
+        refreshIcon.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
+            make.width.height.equalTo(18)
+        }
+        refreshIcon.scaleUnitSquare(to: NSSize(width: 0.38, height: 0.38))
+
         addSubview(statusField)
 
         statusField.isEditable = false
@@ -81,7 +103,7 @@ class BottomBar: NSView {
 
         statusField.snp.makeConstraints { make in
             make.left.equalTo(settingsButton.snp.right)
-            make.right.equalTo(-4)
+            make.right.equalTo(reloadButton.snp.left)
             make.centerY.equalToSuperview()
         }
 
@@ -129,8 +151,15 @@ class BottomBar: NSView {
         }
     }
 
+    func reloadServices() {
+        reloadServicesCallback()
+    }
+
     func openSettings() {
+        settingsButton.isHidden = true
         statusField.isHidden = true
+        reloadButton.isHidden = true
+
         doneButton.isHidden = false
         quitButton.isHidden = false
 
@@ -138,7 +167,10 @@ class BottomBar: NSView {
     }
 
     func closeSettings() {
+        settingsButton.isHidden = false
         statusField.isHidden = false
+        reloadButton.isHidden = false
+
         doneButton.isHidden = true
         quitButton.isHidden = true
 
