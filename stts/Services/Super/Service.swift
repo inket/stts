@@ -36,7 +36,8 @@ class Service {
             BitBucket.self,
             CloudFlare.self,
             Sentry.self,
-            EngineYard.self
+            EngineYard.self,
+            DigitalOcean.self
         ] as [Service.Type]
 
         return allServices.map { $0.init() }
