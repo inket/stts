@@ -72,9 +72,8 @@ class Service {
         self.shouldNotify = false
 
         let notification = NSUserNotification()
-        let welp = name.hasSuffix("s") ? "'" : "'s"
-        notification.title = "stts"
-        notification.subtitle = "\(name)\(welp) status has changed"
+        let possessiveS = name.hasSuffix("s") ? "'" : "'s"
+        notification.title = "\(name)\(possessiveS) status has changed"
         notification.informativeText = message
 
         NSUserNotificationCenter.default.deliver(notification)

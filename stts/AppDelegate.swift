@@ -22,6 +22,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        NSUserNotificationCenter.default.delegate = self
+
         popupController.statusItem.button?.title = "stts"
         popupController.statusItem.button?.font = NSFont(name: "SF Mono Regular", size: 10)
         popupController.statusItem.length = 30
@@ -49,5 +51,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
             self?.serviceTableViewController.services.forEach { $0.notifyIfNecessary() }
         }
+    }
+}
+
+extension AppDelegate: NSUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: NSUserNotificationCenter, didActivate notification: NSUserNotification) {
+        popupController.openPopup()
     }
 }
