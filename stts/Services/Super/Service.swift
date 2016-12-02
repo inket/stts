@@ -17,9 +17,18 @@ enum ServiceStatus {
 
 class Service {
     var name: String { return "Undefined" }
-    var status: ServiceStatus = .undetermined
+    var status: ServiceStatus = .undetermined {
+        didSet {
+            if oldValue == .undetermined || status == .undetermined || oldValue == status {
+                self.shouldNotify = false
+            } else {
+                self.shouldNotify = true
+            }
+        }
+    }
     var message: String = "Loading…"
     var url: URL { return URL(string: "")! }
+    var shouldNotify = false
 
     static func all() -> [Service] {
         let allServices = [
@@ -55,6 +64,20 @@ class Service {
     func _fail(_ message: String) {
         self.status = .undetermined
         self.message = message
+    }
+
+    func notifyIfNecessary() {
+        guard shouldNotify else { return }
+
+        self.shouldNotify = false
+
+        let notification = NSUserNotification()
+        let welp = name.hasSuffix("s") ? "'" : "'s"
+        notification.title = "stts"
+        notification.subtitle = "\(name)\(welp) status has changed"
+        notification.informativeText = message
+
+        NSUserNotificationCenter.default.deliver(notification)
     }
 }
 
