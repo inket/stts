@@ -36,6 +36,8 @@ class Heroku: Service {
                 self?.status = .major
             } else if statuses.contains("yellow") {
                 self?.status = .minor
+            } else if statuses.contains("blue") {
+                self?.status = .maintenance
             } else if devGreen && prodGreen {
                 self?.status = .good
             } else {

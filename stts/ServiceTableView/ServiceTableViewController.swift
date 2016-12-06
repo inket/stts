@@ -27,7 +27,10 @@ class ServiceTableViewController: NSObject {
 
     var servicesBeingUpdated = [Service]()
     var generalStatus: ServiceStatus {
-        let badServices = services.filter { $0.status != .good && $0.status != .undetermined }
+        let badServices = services.filter {
+            $0.status != .good && $0.status != .maintenance && $0.status != .undetermined
+        }
+
         if badServices.count > 0 {
             return .major
         } else {

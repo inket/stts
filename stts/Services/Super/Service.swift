@@ -11,6 +11,7 @@ import Cocoa
 enum ServiceStatus {
     case undetermined
     case good
+    case maintenance
     case minor
     case major
 }
