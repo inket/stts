@@ -7,24 +7,32 @@
 //
 
 import Cocoa
+import SnapKit
 
 class EditorTableViewController: NSObject {
+    let contentView: NSStackView
+    let scrollView: CustomScrollView
     let tableView = NSTableView()
-    let scrollView: NSScrollView
 
     var allServices: [Service] = Service.all().sorted()
     var selectedServices: [Service] = Preferences.shared.selectedServices
 
     var selectionChanged = false
 
-    init(scrollView: NSScrollView) {
+    let settingsView = SettingsView()
+
+    init(contentView: NSStackView, scrollView: CustomScrollView) {
+        self.contentView = contentView
         self.scrollView = scrollView
 
         super.init()
+        setup()
+    }
 
+    func setup() {
         tableView.frame = scrollView.bounds
         let column = NSTableColumn(identifier: "editorColumnIdentifier")
-        column.width = tableView.frame.size.width
+        column.width = 200
         tableView.addTableColumn(column)
         tableView.autoresizesSubviews = true
         tableView.wantsLayer = true
@@ -36,14 +44,26 @@ class EditorTableViewController: NSObject {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.selectionHighlightStyle = .none
+
+        contentView.addSubview(settingsView)
+        settingsView.snp.makeConstraints { make in
+            make.top.left.right.equalTo(0)
+            make.height.equalTo(100)
+        }
     }
 
     func showTableView() {
         self.selectionChanged = false
 
+        scrollView.topConstraint?.update(offset: 100)
         scrollView.documentView = tableView
+
+        (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(width: 220)
+
         tableView.frame = scrollView.bounds
         tableView.tableColumns.first?.width = tableView.frame.size.width
+
+        settingsView.isHidden = false
     }
 }
 

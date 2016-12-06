@@ -1,4 +1,4 @@
 github "tid-kijyun/Kanna" "2.0.3"
-git "https://inket@github.com/inket/MBPopup.git" "22bc18af49f16474bd2c9db4e2a4f8b2ff5982bb"
+git "https://inket@github.com/inket/MBPopup.git" "b5508abb477cbc0d3f1c49f7405580a4c435aa37"
 github "SnapKit/SnapKit" "3.1.1"
 github "malcommac/SwiftDate" "4.0.8"

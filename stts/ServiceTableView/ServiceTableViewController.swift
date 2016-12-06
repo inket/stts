@@ -41,7 +41,7 @@ class ServiceTableViewController: NSObject {
     var updateCallback: (() -> ())?
 
     override init() {
-        self.editorTableViewController = EditorTableViewController(scrollView: scrollView)
+        self.editorTableViewController = EditorTableViewController(contentView: contentView, scrollView: scrollView)
         super.init()
     }
 
@@ -57,7 +57,11 @@ class ServiceTableViewController: NSObject {
         bottomBar.closeSettingsCallback = { [weak self] in
             guard let selfie = self else { return }
 
+            self?.scrollView.topConstraint?.update(offset: 0)
             self?.scrollView.documentView = self?.tableView
+
+            let popupController = ((NSApp.delegate as? AppDelegate)?.popupController)!
+            popupController.resizePopup(width: 180)
 
             if selfie.editorTableViewController.selectionChanged {
                 self?.services = Preferences.shared.selectedServices
@@ -80,7 +84,7 @@ class ServiceTableViewController: NSObject {
         contentView.addSubview(bottomBar)
 
         scrollView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            scrollView.topConstraint = make.top.equalToSuperview().constraint
             make.left.right.equalTo(0)
         }
 
@@ -152,7 +156,7 @@ class ServiceTableViewController: NSObject {
     public func resizeViews() {
         guard let currentTableView = scrollView.documentView as? NSTableView else { return }
 
-        let maxHeight: CGFloat = currentTableView == tableView ? 490 : 300
+        let maxHeight: CGFloat = currentTableView == tableView ? 490 : 360
 
         var frame = scrollView.frame
         frame.size.height = min(currentTableView.intrinsicContentSize.height, maxHeight)
@@ -160,8 +164,7 @@ class ServiceTableViewController: NSObject {
 
         // Ugly, but oh well.
         (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(
-            to: CGSize(width: contentView.frame.width,
-                       height: scrollView.frame.size.height + bottomBar.frame.size.height)
+            height: scrollView.frame.size.height + bottomBar.frame.size.height
         )
     }
 

@@ -43,15 +43,13 @@ class EditorTableCell: NSTableCellView {
         textField.isBordered = false
         textField.isSelectable = false
         self.textField = textField
-        let font = NSFont.systemFont(ofSize: 12)
+        let font = NSFont.systemFont(ofSize: 11)
         textField.font = font
         textField.textColor = NSColor(calibratedWhite: 0, alpha: 0.8)
         addSubview(textField)
 
         textField.snp.makeConstraints { make in
-            make.height.equalTo(18)
-            make.leading.equalTo(4)
-            make.trailing.equalTo(4)
+            make.left.equalTo(10)
             make.centerY.equalToSuperview()
         }
 
@@ -66,8 +64,9 @@ class EditorTableCell: NSTableCellView {
         toggleButton.layer?.borderWidth = 1
         toggleButton.layer?.cornerRadius = 3
         toggleButton.snp.makeConstraints { make in
+            make.left.equalTo(textField.snp.right).offset(-4)
             make.width.equalTo(36)
-            make.right.equalTo(-4)
+            make.right.equalTo(-10)
             make.height.equalTo(20)
             make.centerY.equalToSuperview()
         }
