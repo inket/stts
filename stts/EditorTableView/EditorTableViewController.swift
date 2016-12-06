@@ -45,6 +45,8 @@ class EditorTableViewController: NSObject {
         tableView.delegate = self
         tableView.selectionHighlightStyle = .none
 
+        settingsView.isHidden = true
+
         contentView.addSubview(settingsView)
         settingsView.snp.makeConstraints { make in
             make.top.left.right.equalTo(0)
@@ -52,18 +54,33 @@ class EditorTableViewController: NSObject {
         }
     }
 
-    func showTableView() {
+    func show() {
         self.selectionChanged = false
 
         scrollView.topConstraint?.update(offset: 100)
         scrollView.documentView = tableView
 
-        (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(width: 220)
+        settingsView.isHidden = false
 
+        resizeViews()
+    }
+
+    func resizeViews() {
         tableView.frame = scrollView.bounds
         tableView.tableColumns.first?.width = tableView.frame.size.width
 
-        settingsView.isHidden = false
+        var frame = scrollView.frame
+        frame.size.height = min(tableView.intrinsicContentSize.height, 360)
+        scrollView.frame = frame
+
+        (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(
+            width: 220,
+            height: scrollView.frame.size.height + 30 // bottomBar.frame.size.height
+        )
+    }
+
+    func hide() {
+        settingsView.isHidden = true
     }
 }
 

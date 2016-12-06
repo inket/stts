@@ -11,7 +11,7 @@ import SnapKit
 import MBPopup
 
 class ServiceTableViewController: NSObject {
-    let contentView = NSStackView(frame: CGRect(x: 0, y: 0, width: 180, height: 400))
+    let contentView = NSStackView(frame: CGRect(x: 0, y: 0, width: 190, height: 400))
     let scrollView = CustomScrollView()
     let tableView = NSTableView()
     let bottomBar = BottomBar()
@@ -50,33 +50,19 @@ class ServiceTableViewController: NSObject {
 
         bottomBar.openSettingsCallback = { [weak self] in
             self?.addServicesNoticeField.isHidden = true
-            self?.editorTableViewController.showTableView()
-            self?.resizeViews()
+            self?.editorTableViewController.show()
         }
 
         bottomBar.closeSettingsCallback = { [weak self] in
             guard let selfie = self else { return }
 
-            self?.scrollView.topConstraint?.update(offset: 0)
-            self?.scrollView.documentView = self?.tableView
-
-            let popupController = ((NSApp.delegate as? AppDelegate)?.popupController)!
-            popupController.resizePopup(width: 180)
-
-            if selfie.editorTableViewController.selectionChanged {
-                self?.services = Preferences.shared.selectedServices
-                self?.reloadData()
-                (NSApp.delegate as? AppDelegate)?.updateServices()
-            } else {
-                self?.addServicesNoticeField.isHidden = selfie.services.count > 0
-            }
-
-            self?.resizeViews()
+            self?.editorTableViewController.hide()
+            self?.show()
         }
 
         contentView.snp.makeConstraints { make in
             make.left.right.bottom.equalTo(0)
-            make.width.greaterThanOrEqualTo(180)
+            make.width.greaterThanOrEqualTo(190)
             make.height.greaterThanOrEqualTo(40 + 30 + 2) // tableView.rowHeight + bottomBar.frame.size.height + 2
         }
 
@@ -142,7 +128,7 @@ class ServiceTableViewController: NSObject {
         addServicesNoticeField.stringValue = "Maybe add some services? :)"
     }
 
-    public func willOpenPopup() {
+    func willOpenPopup() {
         resizeViews()
         reloadData()
 
@@ -153,22 +139,34 @@ class ServiceTableViewController: NSObject {
         }
     }
 
-    public func resizeViews() {
-        guard let currentTableView = scrollView.documentView as? NSTableView else { return }
+    func show() {
+        scrollView.topConstraint?.update(offset: 0)
+        scrollView.documentView = tableView
 
-        let maxHeight: CGFloat = currentTableView == tableView ? 490 : 360
+        if editorTableViewController.selectionChanged {
+            self.services = Preferences.shared.selectedServices
+            reloadData()
 
+            (NSApp.delegate as? AppDelegate)?.updateServices()
+        } else {
+            addServicesNoticeField.isHidden = services.count > 0
+        }
+
+        resizeViews()
+    }
+
+    func resizeViews() {
         var frame = scrollView.frame
-        frame.size.height = min(currentTableView.intrinsicContentSize.height, maxHeight)
+        frame.size.height = min(tableView.intrinsicContentSize.height, 490)
         scrollView.frame = frame
 
-        // Ugly, but oh well.
         (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(
+            width: 190,
             height: scrollView.frame.size.height + bottomBar.frame.size.height
         )
     }
 
-    public func reloadData(at index: Int? = nil) {
+    func reloadData(at index: Int? = nil) {
         services.sort()
 
         bottomBar.updateStatusText()
