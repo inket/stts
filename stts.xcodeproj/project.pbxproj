@@ -15,7 +15,6 @@
 		B24D19F61DD072840052E539 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D19F51DD072840052E539 /* Preferences.swift */; };
 		B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */; };
 		B26CD1E81DD59FDD0054A385 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26CD1E71DD59FDD0054A385 /* Kanna.framework */; };
-		B26CD1E91DD59FE60054A385 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26CD1E71DD59FDD0054A385 /* Kanna.framework */; };
 		B26CD1EA1DD59FE60054A385 /* Kanna.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B26CD1E71DD59FDD0054A385 /* Kanna.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B26CD1EC1DD59FFB0054A385 /* DigitalOcean.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */; };
 		B276C8F21DD474200098B451 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B276C8EF1DD474200098B451 /* SwiftDate.framework */; };
@@ -115,7 +114,6 @@
 				B26CD1E81DD59FDD0054A385 /* Kanna.framework in Frameworks */,
 				B276C8F41DD474200098B451 /* MBPopup.framework in Frameworks */,
 				B276C8F21DD474200098B451 /* SwiftDate.framework in Frameworks */,
-				B26CD1E91DD59FE60054A385 /* Kanna.framework in Frameworks */,
 				B276C8F31DD474200098B451 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
