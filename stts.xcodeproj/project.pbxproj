@@ -43,6 +43,8 @@
 		B2B2D1051D49D5080014D780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2D1041D49D5080014D780 /* Assets.xcassets */; };
 		B2B2D1081D49D5080014D780 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B2D1061D49D5080014D780 /* MainMenu.xib */; };
 		B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */; };
+		B2CEB9A11DFD8984005FB901 /* StartAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */; };
+		B2CEB9A21DFD8987005FB901 /* StartAtLogin.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2D032D01D6455E300D51CB8 /* TravisCI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D032CF1D6455E300D51CB8 /* TravisCI.swift */; };
 		B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC9191D67029900F0B728 /* Heroku.swift */; };
 		B2FDC91C1D67062200F0B728 /* StatusPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91B1D67062200F0B728 /* StatusPageService.swift */; };
@@ -58,6 +60,7 @@
 			files = (
 				B26CD1EA1DD59FE60054A385 /* Kanna.framework in CopyFiles */,
 				B276C8F51DD4742A0098B451 /* SwiftDate.framework in CopyFiles */,
+				B2CEB9A21DFD8987005FB901 /* StartAtLogin.framework in CopyFiles */,
 				B276C8F61DD4742B0098B451 /* SnapKit.framework in CopyFiles */,
 				B276C8F71DD4742D0098B451 /* MBPopup.framework in CopyFiles */,
 			);
@@ -100,6 +103,8 @@
 		B2B2D1071D49D5080014D780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B2B2D1091D49D5080014D780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StartAtLogin.framework; path = Carthage/Build/Mac/StartAtLogin.framework; sourceTree = SOURCE_ROOT; };
+		B2CF3FBF1DF7DD2100B66491 /* stts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stts.entitlements; sourceTree = "<group>"; };
 		B2D032CF1D6455E300D51CB8 /* TravisCI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravisCI.swift; sourceTree = "<group>"; };
 		B2FDC9191D67029900F0B728 /* Heroku.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heroku.swift; sourceTree = "<group>"; };
 		B2FDC91B1D67062200F0B728 /* StatusPageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPageService.swift; sourceTree = "<group>"; };
@@ -114,6 +119,7 @@
 				B26CD1E81DD59FDD0054A385 /* Kanna.framework in Frameworks */,
 				B276C8F41DD474200098B451 /* MBPopup.framework in Frameworks */,
 				B276C8F21DD474200098B451 /* SwiftDate.framework in Frameworks */,
+				B2CEB9A11DFD8984005FB901 /* StartAtLogin.framework in Frameworks */,
 				B276C8F31DD474200098B451 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +152,7 @@
 		B276C8E81DD473B50098B451 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */,
 				B26CD1E71DD59FDD0054A385 /* Kanna.framework */,
 				B276C8EF1DD474200098B451 /* SwiftDate.framework */,
 				B276C8F01DD474200098B451 /* SnapKit.framework */,
@@ -194,6 +201,7 @@
 		B2B2D1011D49D5080014D780 /* stts */ = {
 			isa = PBXGroup;
 			children = (
+				B2CF3FBF1DF7DD2100B66491 /* stts.entitlements */,
 				B274C6361DD56A9E00A6B350 /* EditorTableView */,
 				B213A17A1DC9EA3F008E8E58 /* ServiceTableView */,
 				B2FDC91F1D6706FB00F0B728 /* Services */,
@@ -250,6 +258,7 @@
 				B2B2D0FD1D49D5080014D780 /* Resources */,
 				B22EC6891D80111900ED7917 /* CopyFiles */,
 				B2B2DC631DCC1FA600BF397D /* ShellScript */,
+				B2A264A21DF906C900009BE1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -274,7 +283,12 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = PP5UYHJQCD;
 						DevelopmentTeamName = "Mahdi Bchatnia";
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -309,6 +323,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B2A264A21DF906C900009BE1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FRAMEWORKS_HELPER_PATH=\"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/StartAtLogin.framework/Versions/A/Resources/StartAtLoginHelper.app\"\nHELPER_DIR=\"$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/Library/LoginItems\"\nHELPER_PATH=\"$HELPER_DIR/StartAtLoginHelper.app\"\n\nmkdir -p \"$HELPER_DIR\"\nrm -rf \"$HELPER_PATH\"\ncp -rf \"$FRAMEWORKS_HELPER_PATH\" \"$HELPER_DIR/\"\ndefaults write \"$HELPER_PATH/Contents/Info\" CFBundleIdentifier -string \"$PRODUCT_BUNDLE_IDENTIFIER-StartAtLoginHelper\"\ncodesign --force --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$EXPANDED_CODE_SIGN_IDENTITY_NAME\" -v \"$HELPER_PATH\"";
+		};
 		B2B2DC631DCC1FA600BF397D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -398,7 +425,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -447,7 +474,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -470,8 +497,11 @@
 		B2B2D10D1D49D5080014D780 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = stts/stts.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = PP5UYHJQCD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
@@ -488,8 +518,11 @@
 		B2B2D10E1D49D5080014D780 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = stts/stts.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = PP5UYHJQCD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",

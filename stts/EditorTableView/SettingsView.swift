@@ -8,6 +8,7 @@
 
 import Cocoa
 import SnapKit
+import StartAtLogin
 
 class SettingsView: NSView {
     let settingsHeader = SectionHeaderView(name: "Preferences")
@@ -37,6 +38,10 @@ class SettingsView: NSView {
         startAtLoginCheckbox.setButtonType(.switch)
         startAtLoginCheckbox.title = "Start at Login"
         startAtLoginCheckbox.font = smallFont
+        startAtLoginCheckbox.state = StartAtLogin.enabled ? NSOnState : NSOffState
+        startAtLoginCheckbox.action = #selector(SettingsView.updateStartAtLogin)
+        startAtLoginCheckbox.target = self
+
         notifyCheckbox.setButtonType(.switch)
         notifyCheckbox.title = "Notify when a status changes"
         notifyCheckbox.font = smallFont
@@ -67,5 +72,9 @@ class SettingsView: NSView {
             make.right.equalTo(-6)
             make.height.equalTo(16)
         }
+    }
+
+    func updateStartAtLogin() {
+        StartAtLogin.enabled = startAtLoginCheckbox.state == NSOnState ? true : false
     }
 }
