@@ -33,6 +33,7 @@ class StatusTableCell: NSTableCellView {
         let font = NSFont.systemFont(ofSize: 12)
         textField.font = font
         textField.textColor = NSColor(calibratedWhite: 0, alpha: 0.8)
+        textField.backgroundColor = NSColor.clear
         addSubview(textField)
 
         textField.snp.makeConstraints { make in
@@ -53,6 +54,7 @@ class StatusTableCell: NSTableCellView {
         statusField.textColor = NSColor(calibratedWhite: 0, alpha: 0.5)
         statusField.maximumNumberOfLines = 1
         statusField.cell!.truncatesLastVisibleLine = true
+        statusField.backgroundColor = NSColor.clear
         addSubview(statusField)
 
         statusField.snp.makeConstraints { make in

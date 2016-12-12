@@ -43,11 +43,11 @@ class EditorTableViewController: NSObject {
         tableView.layer?.cornerRadius = 6
         tableView.headerView = nil
         tableView.rowHeight = 30
-        tableView.gridColor = NSColor.green
         tableView.gridStyleMask = NSTableViewGridLineStyle.init(rawValue: 0)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.selectionHighlightStyle = .none
+        tableView.backgroundColor = NSColor.clear
 
         settingsView.isHidden = true
 

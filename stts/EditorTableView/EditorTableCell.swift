@@ -46,6 +46,7 @@ class EditorTableCell: NSTableCellView {
         let font = NSFont.systemFont(ofSize: 11)
         textField.font = font
         textField.textColor = NSColor(calibratedWhite: 0, alpha: 0.8)
+        textField.backgroundColor = NSColor.clear
         addSubview(textField)
 
         textField.snp.makeConstraints { make in

@@ -33,5 +33,6 @@ class SectionHeaderView: NSTextField {
         self.textColor = NSColor(calibratedWhite: 0, alpha: 0.5)
         self.maximumNumberOfLines = 1
         self.cell!.truncatesLastVisibleLine = true
+        self.backgroundColor = NSColor.clear
     }
 }

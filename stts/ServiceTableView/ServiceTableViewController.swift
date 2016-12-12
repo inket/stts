@@ -105,11 +105,11 @@ class ServiceTableViewController: NSObject {
         tableView.layer?.cornerRadius = 6
         tableView.headerView = nil
         tableView.rowHeight = 40
-        tableView.gridColor = NSColor.green
         tableView.gridStyleMask = NSTableViewGridLineStyle.init(rawValue: 0)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.selectionHighlightStyle = .none
+        tableView.backgroundColor = NSColor.clear
 
         addServicesNoticeField.isEditable = false
         addServicesNoticeField.isBordered = false
