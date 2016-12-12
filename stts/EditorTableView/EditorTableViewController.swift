@@ -21,6 +21,10 @@ class EditorTableViewController: NSObject {
 
     let settingsView = SettingsView()
 
+    var hidden: Bool {
+        return settingsView.isHidden
+    }
+
     init(contentView: NSStackView, scrollView: CustomScrollView) {
         self.contentView = contentView
         self.scrollView = scrollView
@@ -77,6 +81,10 @@ class EditorTableViewController: NSObject {
             width: 220,
             height: scrollView.frame.size.height + 30 // bottomBar.frame.size.height
         )
+    }
+
+    func willOpenPopup() {
+        resizeViews()
     }
 
     func hide() {

@@ -54,8 +54,6 @@ class ServiceTableViewController: NSObject {
         }
 
         bottomBar.closeSettingsCallback = { [weak self] in
-            guard let selfie = self else { return }
-
             self?.editorTableViewController.hide()
             self?.show()
         }
@@ -129,6 +127,11 @@ class ServiceTableViewController: NSObject {
     }
 
     func willOpenPopup() {
+        if !editorTableViewController.hidden {
+            editorTableViewController.willOpenPopup()
+            return
+        }
+
         resizeViews()
         reloadData()
 
