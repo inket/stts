@@ -22,7 +22,7 @@ class Service {
         didSet {
             if oldValue == .undetermined || status == .undetermined || oldValue == status {
                 self.shouldNotify = false
-            } else {
+            } else if UserDefaults.notifyOnStatusChange {
                 self.shouldNotify = true
             }
         }
