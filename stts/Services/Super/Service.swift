@@ -2,9 +2,6 @@
 //  Service.swift
 //  stts
 //
-//  Created by inket on 28/7/16.
-//  Copyright © 2016 inket. All rights reserved.
-//
 
 import Cocoa
 

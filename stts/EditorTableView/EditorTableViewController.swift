@@ -2,9 +2,6 @@
 //  EditorTableViewController.swift
 //  stts
 //
-//  Created by inket on 8/11/16.
-//  Copyright © 2016 inket. All rights reserved.
-//
 
 import Cocoa
 import SnapKit

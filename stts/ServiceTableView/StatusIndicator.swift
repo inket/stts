@@ -2,9 +2,6 @@
 //  StatusIndicator.swift
 //  stts
 //
-//  Created by inket on 31/10/16.
-//  Copyright © 2016 inket. All rights reserved.
-//
 
 import Cocoa
 

@@ -2,9 +2,6 @@
 //  TravisCI.swift
 //  stts
 //
-//  Created by inket on 17/8/16.
-//  Copyright © 2016 inket. All rights reserved.
-//
 
 import Cocoa
 

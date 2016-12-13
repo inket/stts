@@ -2,9 +2,6 @@
 //  Heroku.swift
 //  stts
 //
-//  Created by inket on 19/8/16.
-//  Copyright © 2016 inket. All rights reserved.
-//
 
 import Cocoa
 

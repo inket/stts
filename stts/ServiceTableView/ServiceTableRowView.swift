@@ -2,9 +2,6 @@
 //  ServiceTableRowView.swift
 //  stts
 //
-//  Created by inket on 2/11/16.
-//  Copyright © 2016 inket. All rights reserved.
-//
 
 import Cocoa
 

@@ -2,9 +2,6 @@
 //  SectionHeaderView.swift
 //  stts
 //
-//  Created by inket on 05/12/2016.
-//  Copyright © 2016 inket. All rights reserved.
-//
 
 import Cocoa
 

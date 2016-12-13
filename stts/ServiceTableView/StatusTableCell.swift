@@ -2,9 +2,6 @@
 //  StatusTableCell.swift
 //  stts
 //
-//  Created by inket on 24/10/16.
-//  Copyright © 2016 inket. All rights reserved.
-//
 
 import Cocoa
 import SnapKit
