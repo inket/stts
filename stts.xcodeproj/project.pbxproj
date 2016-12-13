@@ -203,7 +203,6 @@
 		B2B2D1011D49D5080014D780 /* stts */ = {
 			isa = PBXGroup;
 			children = (
-				B2CF3FBF1DF7DD2100B66491 /* stts.entitlements */,
 				B274C6361DD56A9E00A6B350 /* EditorTableView */,
 				B213A17A1DC9EA3F008E8E58 /* ServiceTableView */,
 				B2FDC91F1D6706FB00F0B728 /* Services */,
@@ -213,6 +212,7 @@
 				B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */,
 				B24D19F51DD072840052E539 /* Preferences.swift */,
 				B223B0921DFEA54800F47F31 /* UserDefaults.swift */,
+				B2CF3FBF1DF7DD2100B66491 /* stts.entitlements */,
 			);
 			path = stts;
 			sourceTree = "<group>";
@@ -223,9 +223,9 @@
 				B299C8561DD051710024D2E9 /* StatusPage */,
 				B2FDC9201D67071500F0B728 /* Super */,
 				B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */,
+				B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */,
 				B205A9191D49D68500EA178D /* GitHub.swift */,
 				B2FDC9191D67029900F0B728 /* Heroku.swift */,
-				B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
