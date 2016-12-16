@@ -50,6 +50,10 @@ class Service {
         return allServices.map { $0.init() }
     }
 
+    static func named(_ name: String) -> Service? {
+        return (NSClassFromString("stts.\(name)") as? Service.Type)?.init()
+    }
+
     required init() {}
 
     func updateStatus(callback: @escaping (Service) -> ()) {}

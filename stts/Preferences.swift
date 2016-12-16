@@ -10,12 +10,11 @@ struct Preferences {
 
     var selectedServices: [Service] {
         get {
-            let serviceNames = UserDefaults.standard.array(forKey: "selectedServices") as? [String]
-            guard let classNames = serviceNames, classNames.count > 0 else { return [] }
+            guard let classNames = UserDefaults.standard.array(forKey: "selectedServices") as? [String] else {
+                return []
+            }
 
-            return classNames.map {
-                ((NSClassFromString($0) ?? NSClassFromString("stts.\($0)")) as? Service.Type)?.init()
-            }.flatMap { $0 }.sorted()
+            return classNames.map(Service.named).flatMap { $0 }.sorted()
         }
 
         set {

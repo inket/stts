@@ -43,7 +43,7 @@ class ServiceTableViewController: NSObject {
     }
 
     func setup() {
-        bottomBar.reloadServicesCallback = (NSApp.delegate as? AppDelegate)?.updateServices ?? {}
+        bottomBar.reloadServicesCallback = (NSApp.delegate as? AppDelegate)!.updateServices
 
         bottomBar.openSettingsCallback = { [weak self] in
             self?.addServicesNoticeField.isHidden = true

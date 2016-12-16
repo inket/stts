@@ -35,20 +35,22 @@ class BottomBar: NSView {
         super.init(frame: frameRect)
 
         addSubview(separator)
+        addSubview(settingsButton)
+        addSubview(reloadButton)
+        addSubview(statusField)
+        addSubview(doneButton)
+        addSubview(quitButton)
+
+        let gearIcon = GearIcon()
+        settingsButton.addSubview(gearIcon)
+
+        let refreshIcon = RefreshIcon()
+        reloadButton.addSubview(refreshIcon)
 
         separator.snp.makeConstraints { make in
             make.height.equalTo(1)
             make.left.top.right.equalTo(0)
         }
-
-        let gearIcon = GearIcon()
-        addSubview(settingsButton)
-        settingsButton.addSubview(gearIcon)
-        settingsButton.isBordered = false
-        settingsButton.bezelStyle = .regularSquare
-        settingsButton.title = ""
-        settingsButton.target = self
-        settingsButton.action = #selector(BottomBar.openSettings)
 
         settingsButton.snp.makeConstraints { make in
             make.height.width.equalTo(30)
@@ -59,16 +61,6 @@ class BottomBar: NSView {
             make.centerX.centerY.equalToSuperview()
             make.width.height.equalTo(22)
         }
-        gearIcon.scaleUnitSquare(to: NSSize(width: 0.46, height: 0.46))
-
-        let refreshIcon = RefreshIcon()
-        addSubview(reloadButton)
-        reloadButton.addSubview(refreshIcon)
-        reloadButton.isBordered = false
-        reloadButton.bezelStyle = .regularSquare
-        reloadButton.title = ""
-        reloadButton.target = self
-        reloadButton.action = #selector(BottomBar.reloadServices)
 
         reloadButton.snp.makeConstraints { make in
             make.height.width.equalTo(30)
@@ -79,9 +71,38 @@ class BottomBar: NSView {
             make.centerX.centerY.equalToSuperview()
             make.width.height.equalTo(18)
         }
-        refreshIcon.scaleUnitSquare(to: NSSize(width: 0.38, height: 0.38))
 
-        addSubview(statusField)
+        statusField.snp.makeConstraints { make in
+            make.left.equalTo(settingsButton.snp.right)
+            make.right.equalTo(reloadButton.snp.left)
+            make.centerY.equalToSuperview()
+        }
+
+        doneButton.snp.makeConstraints { make in
+            make.width.equalTo(50)
+            make.centerY.equalToSuperview()
+            make.right.equalTo(-3)
+        }
+
+        quitButton.snp.makeConstraints { make in
+            make.width.equalTo(50)
+            make.centerY.equalToSuperview()
+            make.left.equalTo(3)
+        }
+
+        settingsButton.isBordered = false
+        settingsButton.bezelStyle = .regularSquare
+        settingsButton.title = ""
+        settingsButton.target = self
+        settingsButton.action = #selector(BottomBar.openSettings)
+        gearIcon.scaleUnitSquare(to: NSSize(width: 0.46, height: 0.46))
+
+        reloadButton.isBordered = false
+        reloadButton.bezelStyle = .regularSquare
+        reloadButton.title = ""
+        reloadButton.target = self
+        reloadButton.action = #selector(BottomBar.reloadServices)
+        refreshIcon.scaleUnitSquare(to: NSSize(width: 0.38, height: 0.38))
 
         statusField.isEditable = false
         statusField.isBordered = false
@@ -98,37 +119,19 @@ class BottomBar: NSView {
         statusField.alignment = .center
         statusField.cell?.truncatesLastVisibleLine = true
 
-        statusField.snp.makeConstraints { make in
-            make.left.equalTo(settingsButton.snp.right)
-            make.right.equalTo(reloadButton.snp.left)
-            make.centerY.equalToSuperview()
-        }
-
-        addSubview(doneButton)
         doneButton.title = "Done"
         doneButton.bezelStyle = .regularSquare
         doneButton.controlSize = .regular
         doneButton.isHidden = true
         doneButton.target = self
         doneButton.action = #selector(BottomBar.closeSettings)
-        doneButton.snp.makeConstraints { make in
-            make.width.equalTo(50)
-            make.centerY.equalToSuperview()
-            make.right.equalTo(-3)
-        }
 
-        addSubview(quitButton)
         quitButton.title = "Quit"
         quitButton.bezelStyle = .regularSquare
         quitButton.controlSize = .regular
         quitButton.isHidden = true
         quitButton.target = NSApp
         quitButton.action = #selector(NSApplication.terminate(_:))
-        quitButton.snp.makeConstraints { make in
-            make.width.equalTo(50)
-            make.centerY.equalToSuperview()
-            make.left.equalTo(3)
-        }
     }
 
     required init?(coder: NSCoder) {
