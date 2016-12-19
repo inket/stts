@@ -22,7 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         NSUserNotificationCenter.default.delegate = self
 
         popupController.statusItem.button?.title = "stts"
-        popupController.statusItem.button?.font = NSFont(name: "SF Mono Regular", size: 10)
+        popupController.statusItem.button?.font = NSFont(name: "SF Mono Regular", size: 10) ?? NSFont.systemFont(ofSize: 12)
         popupController.statusItem.length = 30
 
         popupController.backgroundView.backgroundColor = NSColor.white
