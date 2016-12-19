@@ -341,7 +341,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "FRAMEWORKS_HELPER_PATH=\"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/StartAtLogin.framework/Versions/A/Resources/StartAtLoginHelper.app\"\nHELPER_DIR=\"$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/Library/LoginItems\"\nHELPER_PATH=\"$HELPER_DIR/StartAtLoginHelper.app\"\n\nmkdir -p \"$HELPER_DIR\"\nrm -rf \"$HELPER_PATH\"\ncp -rf \"$FRAMEWORKS_HELPER_PATH\" \"$HELPER_DIR/\"\ndefaults write \"$HELPER_PATH/Contents/Info\" CFBundleIdentifier -string \"$PRODUCT_BUNDLE_IDENTIFIER-StartAtLoginHelper\"\ncodesign --force --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$EXPANDED_CODE_SIGN_IDENTITY_NAME\" -v \"$HELPER_PATH\"";
+			shellScript = "FRAMEWORKS_HELPER_PATH=\"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/StartAtLogin.framework/Versions/A/Resources/StartAtLoginHelper.app\"\nHELPER_DIR=\"$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/Library/LoginItems\"\nHELPER_PATH=\"$HELPER_DIR/StartAtLoginHelper.app\"\n\nmkdir -p \"$HELPER_DIR\"\nrm -rf \"$HELPER_PATH\"\ncp -rf \"$FRAMEWORKS_HELPER_PATH\" \"$HELPER_DIR/\"\n\nif [ \"$CONFIGURATION\" == \"Release\" ]; then\n  rm -rf \"$FRAMEWORKS_HELPER_PATH\"\nfi\n\ndefaults write \"$HELPER_PATH/Contents/Info\" CFBundleIdentifier -string \"$PRODUCT_BUNDLE_IDENTIFIER-StartAtLoginHelper\"\ncodesign --force --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$EXPANDED_CODE_SIGN_IDENTITY_NAME\" -v \"$HELPER_PATH\"";
 		};
 		B2B2DC631DCC1FA600BF397D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
