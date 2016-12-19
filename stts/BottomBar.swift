@@ -17,6 +17,7 @@ class BottomBar: NSView {
     let settingsButton = NSButton()
     let reloadButton = NSButton()
     let doneButton = NSButton()
+    let aboutButton = NSButton()
     let quitButton = NSButton()
     let statusField = NSTextField()
     let separator = ServiceTableRowView()
@@ -39,6 +40,7 @@ class BottomBar: NSView {
         addSubview(reloadButton)
         addSubview(statusField)
         addSubview(doneButton)
+        addSubview(aboutButton)
         addSubview(quitButton)
 
         let gearIcon = GearIcon()
@@ -79,13 +81,19 @@ class BottomBar: NSView {
         }
 
         doneButton.snp.makeConstraints { make in
-            make.width.equalTo(50)
+            make.width.equalTo(60)
             make.centerY.equalToSuperview()
             make.right.equalTo(-3)
         }
 
+        aboutButton.snp.makeConstraints { make in
+            make.width.equalTo(56)
+            make.centerY.equalToSuperview()
+            make.left.equalTo(quitButton.snp.right).offset(6)
+        }
+
         quitButton.snp.makeConstraints { make in
-            make.width.equalTo(50)
+            make.width.equalTo(46)
             make.centerY.equalToSuperview()
             make.left.equalTo(3)
         }
@@ -126,6 +134,13 @@ class BottomBar: NSView {
         doneButton.target = self
         doneButton.action = #selector(BottomBar.closeSettings)
 
+        aboutButton.title = "About"
+        aboutButton.bezelStyle = .regularSquare
+        aboutButton.controlSize = .regular
+        aboutButton.isHidden = true
+        aboutButton.target = NSApp
+        aboutButton.action = #selector(NSApplication.orderFrontStandardAboutPanel(_:))
+
         quitButton.title = "Quit"
         quitButton.bezelStyle = .regularSquare
         quitButton.controlSize = .regular
@@ -161,6 +176,7 @@ class BottomBar: NSView {
         reloadButton.isHidden = true
 
         doneButton.isHidden = false
+        aboutButton.isHidden = false
         quitButton.isHidden = false
 
         openSettingsCallback()
@@ -172,6 +188,7 @@ class BottomBar: NSView {
         reloadButton.isHidden = false
 
         doneButton.isHidden = true
+        aboutButton.isHidden = true
         quitButton.isHidden = true
 
         closeSettingsCallback()
