@@ -34,7 +34,7 @@ class Service {
             BitBucket.self,
             Braintree.self,
             CircleCI.self,
-            CloudFlare.self,
+            Cloudflare.self,
             DigitalOcean.self,
             EngineYard.self,
             GitHub.self,

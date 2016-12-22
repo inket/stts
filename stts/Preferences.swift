@@ -31,7 +31,17 @@ struct Preferences {
     init() {
         UserDefaults.standard.register(defaults: [
             "notifyOnStatusChange": true,
-            "selectedServices" : ["CircleCI", "CloudFlare", "GitHub", "NPM", "TravisCI"]
+            "selectedServices" : ["CircleCI", "Cloudflare", "GitHub", "NPM", "TravisCI"]
         ])
+
+        // A "migration" of sorts
+        if var services = UserDefaults.standard.array(forKey: "selectedServices") as? [String] {
+            // v1.0.0 used the name "CloudFlare" instead of the official "Cloudflare", replace it if found
+            if let oldCloudflareIndex = services.index(of: "CloudFlare") {
+                services[oldCloudflareIndex] = "Cloudflare"
+            }
+
+            UserDefaults.standard.setValue(services, forKey: "selectedServices")
+        }
     }
 }

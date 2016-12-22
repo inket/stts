@@ -32,7 +32,7 @@
 		B299C84B1DD04E850024D2E9 /* Pusher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C84A1DD04E850024D2E9 /* Pusher.swift */; };
 		B299C84D1DD04ED90024D2E9 /* Reddit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C84C1DD04ED90024D2E9 /* Reddit.swift */; };
 		B299C84F1DD04F8F0024D2E9 /* BitBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C84E1DD04F8F0024D2E9 /* BitBucket.swift */; };
-		B299C8511DD04FD60024D2E9 /* CloudFlare.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8501DD04FD60024D2E9 /* CloudFlare.swift */; };
+		B299C8511DD04FD60024D2E9 /* Cloudflare.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8501DD04FD60024D2E9 /* Cloudflare.swift */; };
 		B299C8531DD0505F0024D2E9 /* Sentry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8521DD0505F0024D2E9 /* Sentry.swift */; };
 		B299C8551DD051210024D2E9 /* EngineYard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8541DD051210024D2E9 /* EngineYard.swift */; };
 		B2A23E321DD190EF0051E913 /* EditorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A23E311DD190EF0051E913 /* EditorTableViewController.swift */; };
@@ -94,7 +94,7 @@
 		B299C84A1DD04E850024D2E9 /* Pusher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pusher.swift; sourceTree = "<group>"; };
 		B299C84C1DD04ED90024D2E9 /* Reddit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reddit.swift; sourceTree = "<group>"; };
 		B299C84E1DD04F8F0024D2E9 /* BitBucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitBucket.swift; sourceTree = "<group>"; };
-		B299C8501DD04FD60024D2E9 /* CloudFlare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudFlare.swift; sourceTree = "<group>"; };
+		B299C8501DD04FD60024D2E9 /* Cloudflare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloudflare.swift; sourceTree = "<group>"; };
 		B299C8521DD0505F0024D2E9 /* Sentry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sentry.swift; sourceTree = "<group>"; };
 		B299C8541DD051210024D2E9 /* EngineYard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineYard.swift; sourceTree = "<group>"; };
 		B2A23E311DD190EF0051E913 /* EditorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorTableViewController.swift; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 				B299C84E1DD04F8F0024D2E9 /* BitBucket.swift */,
 				B2F127AA1E0B84F00035B20C /* Braintree.swift */,
 				B2FDC91D1D6706C400F0B728 /* CircleCI.swift */,
-				B299C8501DD04FD60024D2E9 /* CloudFlare.swift */,
+				B299C8501DD04FD60024D2E9 /* Cloudflare.swift */,
 				B299C8541DD051210024D2E9 /* EngineYard.swift */,
 				B299C8461DD04D7C0024D2E9 /* NPM.swift */,
 				B299C8421DD044160024D2E9 /* NewRelic.swift */,
@@ -381,7 +381,7 @@
 				B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */,
 				B299C84B1DD04E850024D2E9 /* Pusher.swift in Sources */,
 				B2D032D01D6455E300D51CB8 /* TravisCI.swift in Sources */,
-				B299C8511DD04FD60024D2E9 /* CloudFlare.swift in Sources */,
+				B299C8511DD04FD60024D2E9 /* Cloudflare.swift in Sources */,
 				B2898FD01DC7441D0005F58F /* StatusIndicator.swift in Sources */,
 				B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */,
 				B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */,
