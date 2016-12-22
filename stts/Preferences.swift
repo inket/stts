@@ -8,6 +8,11 @@ import Cocoa
 struct Preferences {
     static var shared = Preferences()
 
+    var notifyOnStatusChange: Bool {
+        get { return UserDefaults.standard.bool(forKey: "notifyOnStatusChange") }
+        set { UserDefaults.standard.set(newValue, forKey: "notifyOnStatusChange") }
+    }
+
     var selectedServices: [Service] {
         get {
             guard let classNames = UserDefaults.standard.array(forKey: "selectedServices") as? [String] else {
@@ -25,6 +30,7 @@ struct Preferences {
 
     init() {
         UserDefaults.standard.register(defaults: [
+            "notifyOnStatusChange": true,
             "selectedServices" : ["CircleCI", "CloudFlare", "GitHub", "NPM", "TravisCI"]
         ])
     }

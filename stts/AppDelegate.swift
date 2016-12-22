@@ -46,7 +46,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             let title = self?.serviceTableViewController.generalStatus == .major ? "s__s" : "stts"
             self?.popupController.statusItem.title = title
 
-            if UserDefaults.notifyOnStatusChange {
+            if Preferences.shared.notifyOnStatusChange {
                 self?.serviceTableViewController.services.forEach { $0.notifyIfNecessary() }
             }
         }

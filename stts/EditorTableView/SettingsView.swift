@@ -42,7 +42,7 @@ class SettingsView: NSView {
         notifyCheckbox.setButtonType(.switch)
         notifyCheckbox.title = "Notify when a status changes"
         notifyCheckbox.font = smallFont
-        notifyCheckbox.state = UserDefaults.notifyOnStatusChange ? NSOnState : NSOffState
+        notifyCheckbox.state = Preferences.shared.notifyOnStatusChange ? NSOnState : NSOffState
         notifyCheckbox.action = #selector(SettingsView.updateNotifyOnStatusChange)
         notifyCheckbox.target = self
 
@@ -79,6 +79,6 @@ class SettingsView: NSView {
     }
 
     func updateNotifyOnStatusChange() {
-        UserDefaults.notifyOnStatusChange = notifyCheckbox.state == NSOnState ? true : false
+        Preferences.shared.notifyOnStatusChange = notifyCheckbox.state == NSOnState ? true : false
     }
 }

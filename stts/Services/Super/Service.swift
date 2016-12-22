@@ -19,7 +19,7 @@ class Service {
         didSet {
             if oldValue == .undetermined || status == .undetermined || oldValue == status {
                 self.shouldNotify = false
-            } else if UserDefaults.notifyOnStatusChange {
+            } else if Preferences.shared.notifyOnStatusChange {
                 self.shouldNotify = true
             }
         }
