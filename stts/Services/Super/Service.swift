@@ -30,24 +30,24 @@ class Service {
 
     static func all() -> [Service] {
         let allServices = [
-            GitHub.self,
-            TravisCI.self,
-            Heroku.self,
-            CircleCI.self,
-            NewRelic.self,
             AmazonWebServices.self,
+            BitBucket.self,
+            Braintree.self,
+            CircleCI.self,
+            CloudFlare.self,
+            DigitalOcean.self,
+            EngineYard.self,
+            GitHub.self,
+            Heroku.self,
+            NewRelic.self,
             NPM.self,
-            RubyGems.self,
+            PubNub.self,
             Pusher.self,
             Reddit.self,
-            BitBucket.self,
-            CloudFlare.self,
+            RubyGems.self,
             Sentry.self,
-            EngineYard.self,
-            DigitalOcean.self,
-            PubNub.self,
-            Twilio.self,
-            Braintree.self
+            TravisCI.self,
+            Twilio.self
         ] as [Service.Type]
 
         return allServices.map { $0.init() }
