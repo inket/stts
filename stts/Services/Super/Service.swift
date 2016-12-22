@@ -14,7 +14,7 @@ enum ServiceStatus {
 }
 
 class Service {
-    var name: String { return "Undefined" }
+    var name: String { return "\(type(of: self))" }
     var status: ServiceStatus = .undetermined {
         didSet {
             if oldValue == .undetermined || status == .undetermined || oldValue == status {

@@ -6,7 +6,6 @@
 import Cocoa
 
 class GitHub: Service {
-    override var name: String { return "GitHub" }
     override var url: URL { return URL(string: "https://status.github.com")! }
 
     override func updateStatus(callback: @escaping (Service) -> ()) {

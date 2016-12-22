@@ -6,7 +6,6 @@
 import Cocoa
 
 class Heroku: Service {
-    override var name: String { return "Heroku" }
     override var url: URL { return URL(string: "https://status.heroku.com/")! }
 
     override func updateStatus(callback: @escaping (Service) -> ()) {

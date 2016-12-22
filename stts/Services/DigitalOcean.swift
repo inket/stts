@@ -7,7 +7,6 @@ import Cocoa
 import Kanna
 
 class DigitalOcean: Service {
-    override var name: String { return "DigitalOcean" }
     override var url: URL { return URL(string: "https://status.digitalocean.com")! }
 
     override func updateStatus(callback: @escaping (Service) -> ()) {
