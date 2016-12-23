@@ -1,5 +1,5 @@
-git "https://inket@github.com/inket/MBPopup.git" "master"
-git "https://inket@github.com/inket/StartAtLogin.git" "master"
+github "inket/MBPopup"
+github "inket/StartAtLogin"
 github "SnapKit/SnapKit" ~> 3.0.2
 github "malcommac/SwiftDate" ~> 4.0
 github "tid-kijyun/Kanna" ~> 2.0.0
