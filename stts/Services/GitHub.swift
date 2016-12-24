@@ -8,10 +8,10 @@ import Cocoa
 class GitHub: Service {
     override var url: URL { return URL(string: "https://status.github.com")! }
 
-    override func updateStatus(callback: @escaping (Service) -> ()) {
+    override func updateStatus(callback: @escaping (Service) -> Void) {
         let lastMessageURL = URL(string: "https://status.github.com/api/last-message.json")!
 
-        URLSession.shared.dataTask(with: lastMessageURL) { [weak self] data, response, error in
+        URLSession.shared.dataTask(with: lastMessageURL) { [weak self] data, _, error in
             guard let selfie = self else { return }
             defer { callback(selfie) }
             guard let data = data else { return selfie._fail(error) }

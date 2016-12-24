@@ -28,9 +28,9 @@ class BottomBar: NSView {
         }
     }
 
-    var reloadServicesCallback: () -> () = {}
-    var openSettingsCallback: () -> () = {}
-    var closeSettingsCallback: () -> () = {}
+    var reloadServicesCallback: () -> Void = {}
+    var openSettingsCallback: () -> Void = {}
+    var closeSettingsCallback: () -> Void = {}
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)

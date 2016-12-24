@@ -30,7 +30,7 @@ class EditorTableCell: NSTableCellView {
         }
     }
 
-    var toggleCallback: () -> () = {}
+    var toggleCallback: () -> Void = {}
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)

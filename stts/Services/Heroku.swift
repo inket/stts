@@ -8,10 +8,10 @@ import Cocoa
 class Heroku: Service {
     override var url: URL { return URL(string: "https://status.heroku.com/")! }
 
-    override func updateStatus(callback: @escaping (Service) -> ()) {
+    override func updateStatus(callback: @escaping (Service) -> Void) {
         let statusURL = URL(string: "https://status.heroku.com/api/v3/current-status")!
 
-        URLSession.shared.dataTask(with: statusURL) { [weak self] data, response, error in
+        URLSession.shared.dataTask(with: statusURL) { [weak self] data, _, error in
             guard let selfie = self else { return }
             defer { callback(selfie) }
             guard let data = data else { return selfie._fail(error) }
