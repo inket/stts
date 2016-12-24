@@ -36,6 +36,7 @@ class Service {
             CircleCI.self,
             Cloudflare.self,
             DigitalOcean.self,
+            Docker.self,
             EngineYard.self,
             GitHub.self,
             Heroku.self,
