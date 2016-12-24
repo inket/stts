@@ -11,6 +11,7 @@
 		B205A91A1D49D68500EA178D /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B205A9191D49D68500EA178D /* GitHub.swift */; };
 		B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */; };
 		B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */; };
+		B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23038F01E0DF3CC00B29095 /* Beanstalk.swift */; };
 		B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235B3BC1DF562C400821936 /* SettingsView.swift */; };
 		B24D19F61DD072840052E539 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D19F51DD072840052E539 /* Preferences.swift */; };
 		B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */; };
@@ -77,6 +78,7 @@
 		B205A9191D49D68500EA178D /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableViewController.swift; sourceTree = "<group>"; };
 		B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableRowView.swift; sourceTree = "<group>"; };
+		B23038F01E0DF3CC00B29095 /* Beanstalk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beanstalk.swift; sourceTree = "<group>"; };
 		B235B3BC1DF562C400821936 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B24D19F51DD072840052E539 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				B299C8561DD051710024D2E9 /* StatusPage */,
 				B2FDC9201D67071500F0B728 /* Super */,
 				B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */,
+				B23038F01E0DF3CC00B29095 /* Beanstalk.swift */,
 				B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */,
 				B205A9191D49D68500EA178D /* GitHub.swift */,
 				B2FDC9191D67029900F0B728 /* Heroku.swift */,
@@ -402,6 +405,7 @@
 				B2A9BFB41DC6E30F001BD4B7 /* Icons.swift in Sources */,
 				B2A23E321DD190EF0051E913 /* EditorTableViewController.swift in Sources */,
 				B2FDC91E1D6706C400F0B728 /* CircleCI.swift in Sources */,
+				B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

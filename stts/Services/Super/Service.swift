@@ -31,6 +31,7 @@ class Service {
     static func all() -> [Service] {
         let allServices = [
             AmazonWebServices.self,
+            Beanstalk.self,
             BitBucket.self,
             Braintree.self,
             CircleCI.self,
