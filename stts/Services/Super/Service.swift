@@ -60,7 +60,7 @@ class Service {
 
     required init() {}
 
-    func updateStatus(callback: @escaping (Service) -> ()) {}
+    func updateStatus(callback: @escaping (Service) -> Void) {}
 
     func _fail(_ error: Error?) {
         self.status = .undetermined

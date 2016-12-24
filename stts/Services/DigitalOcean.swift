@@ -9,8 +9,8 @@ import Kanna
 class DigitalOcean: Service {
     override var url: URL { return URL(string: "https://status.digitalocean.com")! }
 
-    override func updateStatus(callback: @escaping (Service) -> ()) {
-        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+    override func updateStatus(callback: @escaping (Service) -> Void) {
+        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard let selfie = self else { return }
             defer { callback(selfie) }
 

@@ -31,7 +31,7 @@ struct Preferences {
     init() {
         UserDefaults.standard.register(defaults: [
             "notifyOnStatusChange": true,
-            "selectedServices" : ["CircleCI", "Cloudflare", "GitHub", "NPM", "TravisCI"]
+            "selectedServices": ["CircleCI", "Cloudflare", "GitHub", "NPM", "TravisCI"]
         ])
 
         // A "migration" of sorts

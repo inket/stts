@@ -35,7 +35,7 @@ class ServiceTableViewController: NSObject {
         }
     }
 
-    var updateCallback: (() -> ())?
+    var updateCallback: (() -> Void)?
 
     override init() {
         self.editorTableViewController = EditorTableViewController(contentView: contentView, scrollView: scrollView)
@@ -179,7 +179,7 @@ class ServiceTableViewController: NSObject {
         tableView.reloadData(forRowIndexes: IndexSet(integer: index!), columnIndexes: IndexSet(integer: 0))
     }
 
-    func updateServices(updateCallback: @escaping () -> ()) {
+    func updateServices(updateCallback: @escaping () -> Void) {
         self.servicesBeingUpdated = [Service]()
 
         guard services.count > 0 else {
@@ -193,7 +193,7 @@ class ServiceTableViewController: NSObject {
         }
 
         self.updateCallback = updateCallback
-        let serviceCallback: ((Service) -> ()) = { [weak self] service in self?.updatedStatus(for: service) }
+        let serviceCallback: ((Service) -> Void) = { [weak self] service in self?.updatedStatus(for: service) }
 
         bottomBar.status = .updating
 

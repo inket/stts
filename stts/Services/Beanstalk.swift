@@ -8,8 +8,8 @@ import Kanna
 class Beanstalk: Service {
     override var url: URL { return URL(string: "http://status.beanstalkapp.com")! }
 
-    override func updateStatus(callback: @escaping (Service) -> ()) {
-        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+    override func updateStatus(callback: @escaping (Service) -> Void) {
+        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard let selfie = self else { return }
             defer { callback(selfie) }
 
