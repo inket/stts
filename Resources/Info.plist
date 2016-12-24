@@ -32,6 +32,11 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>status.beanstalkapp.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
 			<key>status.aws.amazon.com</key>
 			<dict>
 				<key>NSExceptionMinimumTLSVersion</key>
