@@ -13,6 +13,8 @@
 		B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */; };
 		B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23038F01E0DF3CC00B29095 /* Beanstalk.swift */; };
 		B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235B3BC1DF562C400821936 /* SettingsView.swift */; };
+		B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D4E6C1E13471200B04F18 /* Intercom.swift */; };
+		B23D4E6F1E13475900B04F18 /* KeenIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D4E6E1E13475900B04F18 /* KeenIO.swift */; };
 		B24D19F61DD072840052E539 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D19F51DD072840052E539 /* Preferences.swift */; };
 		B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */; };
 		B26CD1E81DD59FDD0054A385 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26CD1E71DD59FDD0054A385 /* Kanna.framework */; };
@@ -82,6 +84,8 @@
 		B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableRowView.swift; sourceTree = "<group>"; };
 		B23038F01E0DF3CC00B29095 /* Beanstalk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beanstalk.swift; sourceTree = "<group>"; };
 		B235B3BC1DF562C400821936 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B23D4E6C1E13471200B04F18 /* Intercom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intercom.swift; sourceTree = "<group>"; };
+		B23D4E6E1E13475900B04F18 /* KeenIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeenIO.swift; sourceTree = "<group>"; };
 		B24D19F51DD072840052E539 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		B26CD1E71DD59FDD0054A385 /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/Mac/Kanna.framework; sourceTree = SOURCE_ROOT; };
@@ -157,7 +161,6 @@
 			children = (
 				B2A0635B1E1340B400EEA762 /* Docker.swift */,
 			);
-			name = Status.ioV1;
 			path = Status.ioV1;
 			sourceTree = "<group>";
 		};
@@ -193,6 +196,8 @@
 				B2FDC91D1D6706C400F0B728 /* CircleCI.swift */,
 				B299C8501DD04FD60024D2E9 /* Cloudflare.swift */,
 				B299C8541DD051210024D2E9 /* EngineYard.swift */,
+				B23D4E6C1E13471200B04F18 /* Intercom.swift */,
+				B23D4E6E1E13475900B04F18 /* KeenIO.swift */,
 				B299C8461DD04D7C0024D2E9 /* NPM.swift */,
 				B299C8421DD044160024D2E9 /* NewRelic.swift */,
 				B2F127A61E0B84230035B20C /* PubNub.swift */,
@@ -417,12 +422,14 @@
 				B205A9181D49D67700EA178D /* Service.swift in Sources */,
 				B26CD1EC1DD59FFB0054A385 /* DigitalOcean.swift in Sources */,
 				B299C84D1DD04ED90024D2E9 /* Reddit.swift in Sources */,
+				B23D4E6F1E13475900B04F18 /* KeenIO.swift in Sources */,
 				B2A4A8161DC82CE300037E99 /* BottomBar.swift in Sources */,
 				B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */,
 				B2A9BFB41DC6E30F001BD4B7 /* Icons.swift in Sources */,
 				B2A23E321DD190EF0051E913 /* EditorTableViewController.swift in Sources */,
 				B2FDC91E1D6706C400F0B728 /* CircleCI.swift in Sources */,
 				B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */,
+				B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

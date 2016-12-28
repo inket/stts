@@ -41,6 +41,8 @@ class Service {
             EngineYard.self,
             GitHub.self,
             Heroku.self,
+            Intercom.self,
+            KeenIO.self,
             NewRelic.self,
             NPM.self,
             PubNub.self,
