@@ -3,7 +3,6 @@
 //  stts
 //
 
-import Cocoa
 import Kanna
 
 class DigitalOcean: Service {

@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class EngineYard: StatusPageService {
     override var name: String { return "Engine Yard" }

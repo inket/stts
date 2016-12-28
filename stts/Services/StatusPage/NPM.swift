@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class NPM: StatusPageService {
     override var url: URL { return URL(string: "http://status.npmjs.org")! }

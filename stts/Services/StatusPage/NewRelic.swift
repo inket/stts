@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class NewRelic: StatusPageService {
     override var name: String { return "New Relic" }

@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class Twilio: StatusPageService {
     override var url: URL { return URL(string: "https://status.twilio.com")! }

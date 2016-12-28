@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class Braintree: StatusPageService {
     override var url: URL { return URL(string: "https://status.braintreepayments.com")! }

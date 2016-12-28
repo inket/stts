@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class PubNub: StatusPageService {
     override var url: URL { return URL(string: "http://status.pubnub.com")! }

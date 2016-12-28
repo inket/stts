@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class Heroku: Service {
     override var url: URL { return URL(string: "https://status.heroku.com/")! }

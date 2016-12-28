@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class Pusher: StatusPageService {
     override var url: URL { return URL(string: "https://status.pusher.com/")! }

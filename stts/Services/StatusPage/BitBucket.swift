@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class BitBucket: StatusPageService {
     override var url: URL { return URL(string: "https://status.bitbucket.org")! }

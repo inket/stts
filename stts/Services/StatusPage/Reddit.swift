@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class Reddit: StatusPageService {
     override var url: URL { return URL(string: "https://www.redditstatus.com/")! }

@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 struct Preferences {
     static var shared = Preferences()

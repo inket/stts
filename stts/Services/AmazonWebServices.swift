@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class AmazonWebServices: Service {
     override var name: String { return "Amazon Web Services" }

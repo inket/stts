@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class TravisCI: StatusPageService {
     override var url: URL { return URL(string: "https://www.traviscistatus.com/")! }

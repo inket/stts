@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class StatusPageService: Service {
     var statusPageID: String { return "" }

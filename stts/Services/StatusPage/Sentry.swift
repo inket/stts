@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class Sentry: StatusPageService {
     override var url: URL { return URL(string: "https://status.sentry.io")! }

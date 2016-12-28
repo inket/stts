@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class Cloudflare: StatusPageService {
     override var url: URL { return URL(string: "https://www.cloudflarestatus.com")! }

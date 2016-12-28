@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class GitHub: Service {
     override var url: URL { return URL(string: "https://status.github.com")! }
