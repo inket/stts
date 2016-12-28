@@ -35,16 +35,16 @@ extension AmazonWebServices {
         if let mostRecentIssue = issues.first,
             let statusString = mostRecentIssue["status"], let status = Int(statusString) {
             switch status {
-            case 0, 1: return .good
-            case 2: return .minor
-            case 3: return .major
-            default: return .undetermined
+                case 0, 1: return .good
+                case 2: return .minor
+                case 3: return .major
+                default: return .undetermined
             }
         } else {
             switch issues.count {
-            case 0: return .good
-            case 1: return .minor
-            default: return .major
+                case 0: return .good
+                case 1: return .minor
+                default: return .major
             }
         }
     }

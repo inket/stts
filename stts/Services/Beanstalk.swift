@@ -30,19 +30,19 @@ extension Beanstalk {
         guard let status = firstStatus else { return .undetermined }
 
         switch status {
-        case "ok": return .good
-        case "maintenance": return .maintenance
-        case "problem": return .major
-        default: return .undetermined
+            case "ok": return .good
+            case "maintenance": return .maintenance
+            case "problem": return .major
+            default: return .undetermined
         }
     }
 
     fileprivate func message(for status: ServiceStatus) -> String {
         switch status {
-        case .good: return "Services operating normally."
-        case .major: return "Experiencing service interruptions."
-        case .maintenance: return "Scheduled maintenance in progress."
-        default: return "Undetermined"
+            case .good: return "Services operating normally."
+            case .major: return "Experiencing service interruptions."
+            case .maintenance: return "Scheduled maintenance in progress."
+            default: return "Undetermined"
         }
     }
 }
