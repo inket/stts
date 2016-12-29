@@ -43,6 +43,7 @@ class Service {
             Heroku.self,
             Intercom.self,
             KeenIO.self,
+            MediaTemple.self,
             Mixpanel.self,
             NewRelic.self,
             NPM.self,
