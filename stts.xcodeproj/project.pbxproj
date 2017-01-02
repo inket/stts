@@ -17,6 +17,22 @@
 		B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235B3BC1DF562C400821936 /* SettingsView.swift */; };
 		B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D4E6C1E13471200B04F18 /* Intercom.swift */; };
 		B23D4E6F1E13475900B04F18 /* KeenIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D4E6E1E13475900B04F18 /* KeenIO.swift */; };
+		B2493EF71E26023600556A83 /* GoogleAppEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EE91E26023600556A83 /* GoogleAppEngine.swift */; };
+		B2493EF81E26023600556A83 /* GoogleBigQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EEA1E26023600556A83 /* GoogleBigQuery.swift */; };
+		B2493EF91E26023600556A83 /* GoogleCloudBigtable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EEB1E26023600556A83 /* GoogleCloudBigtable.swift */; };
+		B2493EFA1E26023600556A83 /* GoogleCloudConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EEC1E26023600556A83 /* GoogleCloudConsole.swift */; };
+		B2493EFB1E26023600556A83 /* GoogleCloudDataflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EED1E26023600556A83 /* GoogleCloudDataflow.swift */; };
+		B2493EFC1E26023600556A83 /* GoogleCloudDataproc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EEE1E26023600556A83 /* GoogleCloudDataproc.swift */; };
+		B2493EFD1E26023600556A83 /* GoogleCloudDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EEF1E26023600556A83 /* GoogleCloudDatastore.swift */; };
+		B2493EFE1E26023600556A83 /* GoogleCloudDNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EF01E26023600556A83 /* GoogleCloudDNS.swift */; };
+		B2493EFF1E26023600556A83 /* GoogleCloudPubSub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EF11E26023600556A83 /* GoogleCloudPubSub.swift */; };
+		B2493F001E26023600556A83 /* GoogleCloudSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EF21E26023600556A83 /* GoogleCloudSQL.swift */; };
+		B2493F011E26023600556A83 /* GoogleCloudStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EF31E26023600556A83 /* GoogleCloudStorage.swift */; };
+		B2493F021E26023600556A83 /* GoogleComputeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EF41E26023600556A83 /* GoogleComputeEngine.swift */; };
+		B2493F031E26023600556A83 /* GoogleContainerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EF51E26023600556A83 /* GoogleContainerEngine.swift */; };
+		B2493F041E26023600556A83 /* GoogleStackdriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EF61E26023600556A83 /* GoogleStackdriver.swift */; };
+		B2493F061E2603F300556A83 /* GoogleCloudPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */; };
+		B2493F091E2607FC00556A83 /* GoogleCloudPlatformStatusStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493F081E2607FC00556A83 /* GoogleCloudPlatformStatusStore.swift */; };
 		B24D19F61DD072840052E539 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D19F51DD072840052E539 /* Preferences.swift */; };
 		B25695591E247C8C00FAE413 /* Atlassian.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695501E247C8C00FAE413 /* Atlassian.swift */; };
 		B256955A1E247C8C00FAE413 /* Cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695511E247C8C00FAE413 /* Cloudinary.swift */; };
@@ -99,6 +115,22 @@
 		B235B3BC1DF562C400821936 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B23D4E6C1E13471200B04F18 /* Intercom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intercom.swift; sourceTree = "<group>"; };
 		B23D4E6E1E13475900B04F18 /* KeenIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeenIO.swift; sourceTree = "<group>"; };
+		B2493EE91E26023600556A83 /* GoogleAppEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAppEngine.swift; sourceTree = "<group>"; };
+		B2493EEA1E26023600556A83 /* GoogleBigQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleBigQuery.swift; sourceTree = "<group>"; };
+		B2493EEB1E26023600556A83 /* GoogleCloudBigtable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudBigtable.swift; sourceTree = "<group>"; };
+		B2493EEC1E26023600556A83 /* GoogleCloudConsole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudConsole.swift; sourceTree = "<group>"; };
+		B2493EED1E26023600556A83 /* GoogleCloudDataflow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudDataflow.swift; sourceTree = "<group>"; };
+		B2493EEE1E26023600556A83 /* GoogleCloudDataproc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudDataproc.swift; sourceTree = "<group>"; };
+		B2493EEF1E26023600556A83 /* GoogleCloudDatastore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudDatastore.swift; sourceTree = "<group>"; };
+		B2493EF01E26023600556A83 /* GoogleCloudDNS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudDNS.swift; sourceTree = "<group>"; };
+		B2493EF11E26023600556A83 /* GoogleCloudPubSub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudPubSub.swift; sourceTree = "<group>"; };
+		B2493EF21E26023600556A83 /* GoogleCloudSQL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudSQL.swift; sourceTree = "<group>"; };
+		B2493EF31E26023600556A83 /* GoogleCloudStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudStorage.swift; sourceTree = "<group>"; };
+		B2493EF41E26023600556A83 /* GoogleComputeEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleComputeEngine.swift; sourceTree = "<group>"; };
+		B2493EF51E26023600556A83 /* GoogleContainerEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleContainerEngine.swift; sourceTree = "<group>"; };
+		B2493EF61E26023600556A83 /* GoogleStackdriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleStackdriver.swift; sourceTree = "<group>"; };
+		B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudPlatform.swift; sourceTree = "<group>"; };
+		B2493F081E2607FC00556A83 /* GoogleCloudPlatformStatusStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudPlatformStatusStore.swift; sourceTree = "<group>"; };
 		B24D19F51DD072840052E539 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		B25695501E247C8C00FAE413 /* Atlassian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atlassian.swift; sourceTree = "<group>"; };
 		B25695511E247C8C00FAE413 /* Cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloudinary.swift; sourceTree = "<group>"; };
@@ -176,6 +208,29 @@
 				B2B015C11DBDE69B00699211 /* StatusTableCell.swift */,
 			);
 			path = ServiceTableView;
+			sourceTree = "<group>";
+		};
+		B2493F071E26052400556A83 /* Google Cloud Platform */ = {
+			isa = PBXGroup;
+			children = (
+				B2493EE91E26023600556A83 /* GoogleAppEngine.swift */,
+				B2493EEA1E26023600556A83 /* GoogleBigQuery.swift */,
+				B2493EEB1E26023600556A83 /* GoogleCloudBigtable.swift */,
+				B2493EEC1E26023600556A83 /* GoogleCloudConsole.swift */,
+				B2493EF01E26023600556A83 /* GoogleCloudDNS.swift */,
+				B2493EED1E26023600556A83 /* GoogleCloudDataflow.swift */,
+				B2493EEE1E26023600556A83 /* GoogleCloudDataproc.swift */,
+				B2493EEF1E26023600556A83 /* GoogleCloudDatastore.swift */,
+				B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */,
+				B2493EF11E26023600556A83 /* GoogleCloudPubSub.swift */,
+				B2493EF21E26023600556A83 /* GoogleCloudSQL.swift */,
+				B2493EF31E26023600556A83 /* GoogleCloudStorage.swift */,
+				B2493EF41E26023600556A83 /* GoogleComputeEngine.swift */,
+				B2493EF51E26023600556A83 /* GoogleContainerEngine.swift */,
+				B2493EF61E26023600556A83 /* GoogleStackdriver.swift */,
+			);
+			name = "Google Cloud Platform";
+			path = "Google Cloud Platform";
 			sourceTree = "<group>";
 		};
 		B26CB5711E13448900116A33 /* Status.ioV1 */ = {
@@ -282,6 +337,7 @@
 		B2FDC91F1D6706FB00F0B728 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B2493F071E26052400556A83 /* Google Cloud Platform */,
 				B26CB5711E13448900116A33 /* Status.ioV1 */,
 				B299C8561DD051710024D2E9 /* StatusPage */,
 				B2FDC9201D67071500F0B728 /* Super */,
@@ -297,6 +353,7 @@
 		B2FDC9201D67071500F0B728 /* Super */ = {
 			isa = PBXGroup;
 			children = (
+				B2493F081E2607FC00556A83 /* GoogleCloudPlatformStatusStore.swift */,
 				B205A9171D49D67700EA178D /* Service.swift */,
 				B2FDC91B1D67062200F0B728 /* StatusPageService.swift */,
 				B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */,
@@ -438,18 +495,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2493F021E26023600556A83 /* GoogleComputeEngine.swift in Sources */,
 				B205A91A1D49D68500EA178D /* GitHub.swift in Sources */,
+				B2493F061E2603F300556A83 /* GoogleCloudPlatform.swift in Sources */,
 				B299C8491DD04DCB0024D2E9 /* RubyGems.swift in Sources */,
 				B299C8531DD0505F0024D2E9 /* Sentry.swift in Sources */,
 				B299C84F1DD04F8F0024D2E9 /* BitBucket.swift in Sources */,
 				B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */,
+				B2493EF91E26023600556A83 /* GoogleCloudBigtable.swift in Sources */,
 				B299C8431DD044160024D2E9 /* NewRelic.swift in Sources */,
 				B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */,
 				B2A0635C1E1340B400EEA762 /* Docker.swift in Sources */,
 				B24D19F61DD072840052E539 /* Preferences.swift in Sources */,
+				B2493EFE1E26023600556A83 /* GoogleCloudDNS.swift in Sources */,
+				B2493F001E26023600556A83 /* GoogleCloudSQL.swift in Sources */,
 				B2B2D1031D49D5080014D780 /* AppDelegate.swift in Sources */,
 				B25695601E247C8C00FAE413 /* SmartyStreets.swift in Sources */,
 				B25695611E247C8C00FAE413 /* Squarespace.swift in Sources */,
+				B2493EF81E26023600556A83 /* GoogleBigQuery.swift in Sources */,
+				B2493F041E26023600556A83 /* GoogleStackdriver.swift in Sources */,
+				B2493EFF1E26023600556A83 /* GoogleCloudPubSub.swift in Sources */,
+				B2493F031E26023600556A83 /* GoogleContainerEngine.swift in Sources */,
+				B2493EFC1E26023600556A83 /* GoogleCloudDataproc.swift in Sources */,
+				B2493EFD1E26023600556A83 /* GoogleCloudDatastore.swift in Sources */,
+				B2493F011E26023600556A83 /* GoogleCloudStorage.swift in Sources */,
 				B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */,
 				B299C84B1DD04E850024D2E9 /* Pusher.swift in Sources */,
 				B2D032D01D6455E300D51CB8 /* TravisCI.swift in Sources */,
@@ -462,12 +531,15 @@
 				B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */,
 				B2A0635E1E1341C900EEA762 /* StatusioV1Service.swift in Sources */,
 				B256955A1E247C8C00FAE413 /* Cloudinary.swift in Sources */,
+				B2493EF71E26023600556A83 /* GoogleAppEngine.swift in Sources */,
 				B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */,
 				B299C8471DD04D7C0024D2E9 /* NPM.swift in Sources */,
 				B2FDC91C1D67062200F0B728 /* StatusPageService.swift in Sources */,
+				B2493EFA1E26023600556A83 /* GoogleCloudConsole.swift in Sources */,
 				B256955F1E247C8C00FAE413 /* SendGrid.swift in Sources */,
 				B2F127A71E0B84230035B20C /* PubNub.swift in Sources */,
 				B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */,
+				B2493EFB1E26023600556A83 /* GoogleCloudDataflow.swift in Sources */,
 				03C5FB131E203325003C40B8 /* Packet.swift in Sources */,
 				B2F127AB1E0B84F00035B20C /* Braintree.swift in Sources */,
 				B256955D1E247C8C00FAE413 /* Pingdom.swift in Sources */,
@@ -486,6 +558,7 @@
 				B256955C1E247C8C00FAE413 /* PagerDuty.swift in Sources */,
 				B2A23E321DD190EF0051E913 /* EditorTableViewController.swift in Sources */,
 				B2FDC91E1D6706C400F0B728 /* CircleCI.swift in Sources */,
+				B2493F091E2607FC00556A83 /* GoogleCloudPlatformStatusStore.swift in Sources */,
 				B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */,
 				B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */,
 			);
