@@ -47,6 +47,7 @@ class Service {
             Mixpanel.self,
             NewRelic.self,
             NPM.self,
+            Packet.self,
             PubNub.self,
             Pusher.self,
             Reddit.self,
