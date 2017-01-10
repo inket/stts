@@ -26,7 +26,7 @@
 		B256955E1E247C8C00FAE413 /* SauceLabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695551E247C8C00FAE413 /* SauceLabs.swift */; };
 		B256955F1E247C8C00FAE413 /* SendGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695561E247C8C00FAE413 /* SendGrid.swift */; };
 		B25695601E247C8C00FAE413 /* SmartyStreets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695571E247C8C00FAE413 /* SmartyStreets.swift */; };
-		B25695611E247C8C00FAE413 /* SquareSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695581E247C8C00FAE413 /* SquareSpace.swift */; };
+		B25695611E247C8C00FAE413 /* Squarespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695581E247C8C00FAE413 /* Squarespace.swift */; };
 		B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */; };
 		B26CD1E81DD59FDD0054A385 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26CD1E71DD59FDD0054A385 /* Kanna.framework */; };
 		B26CD1EA1DD59FE60054A385 /* Kanna.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B26CD1E71DD59FDD0054A385 /* Kanna.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -109,7 +109,7 @@
 		B25695551E247C8C00FAE413 /* SauceLabs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SauceLabs.swift; sourceTree = "<group>"; };
 		B25695561E247C8C00FAE413 /* SendGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendGrid.swift; sourceTree = "<group>"; };
 		B25695571E247C8C00FAE413 /* SmartyStreets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartyStreets.swift; sourceTree = "<group>"; };
-		B25695581E247C8C00FAE413 /* SquareSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareSpace.swift; sourceTree = "<group>"; };
+		B25695581E247C8C00FAE413 /* Squarespace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Squarespace.swift; sourceTree = "<group>"; };
 		B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		B26CD1E71DD59FDD0054A385 /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/Mac/Kanna.framework; sourceTree = SOURCE_ROOT; };
 		B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalOcean.swift; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 				B25695561E247C8C00FAE413 /* SendGrid.swift */,
 				B299C8521DD0505F0024D2E9 /* Sentry.swift */,
 				B25695571E247C8C00FAE413 /* SmartyStreets.swift */,
-				B25695581E247C8C00FAE413 /* SquareSpace.swift */,
+				B25695581E247C8C00FAE413 /* Squarespace.swift */,
 				B2D032CF1D6455E300D51CB8 /* TravisCI.swift */,
 				B2F127A81E0B84B50035B20C /* Twilio.swift */,
 			);
@@ -439,7 +439,7 @@
 				B24D19F61DD072840052E539 /* Preferences.swift in Sources */,
 				B2B2D1031D49D5080014D780 /* AppDelegate.swift in Sources */,
 				B25695601E247C8C00FAE413 /* SmartyStreets.swift in Sources */,
-				B25695611E247C8C00FAE413 /* SquareSpace.swift in Sources */,
+				B25695611E247C8C00FAE413 /* Squarespace.swift in Sources */,
 				B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */,
 				B299C84B1DD04E850024D2E9 /* Pusher.swift in Sources */,
 				B2D032D01D6455E300D51CB8 /* TravisCI.swift in Sources */,
