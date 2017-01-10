@@ -138,8 +138,8 @@ class BottomBar: NSView {
         aboutButton.bezelStyle = .regularSquare
         aboutButton.controlSize = .regular
         aboutButton.isHidden = true
-        aboutButton.target = NSApp
-        aboutButton.action = #selector(NSApplication.orderFrontStandardAboutPanel(_:))
+        aboutButton.target = self
+        aboutButton.action = #selector(BottomBar.openAbout)
 
         quitButton.title = "Quit"
         quitButton.bezelStyle = .regularSquare
@@ -192,5 +192,30 @@ class BottomBar: NSView {
         quitButton.isHidden = true
 
         closeSettingsCallback()
+    }
+
+    func openAbout() {
+        let githubLink = "github.com/inket/stts"
+        let contributorsLink = "github.com/inket/stts/graphs/contributors"
+
+        let openSourceNotice = "stts is an open-source project\n\(githubLink)"
+        let iconGlyphCredit = "Activity glyph (app icon)\nCreated by Gregor Črešnar from the Noun Project"
+        let contributors = "Contributors\n\(contributorsLink)"
+        let credits = NSMutableAttributedString(string: "\n\(openSourceNotice)\n\n\(iconGlyphCredit)\n\n\(contributors)\n\n")
+
+        let normalFont = NSFont.systemFont(ofSize: 11)
+        let boldFont = NSFont.boldSystemFont(ofSize: 11)
+
+        credits.addAttribute(NSFontAttributeName, value: normalFont, range: NSRange(location: 0, length: credits.length))
+        for word in ["stts", "Activity", "Contributors"] {
+            credits.addAttribute(NSFontAttributeName, value: boldFont, range: (credits.string as NSString).range(of: word))
+        }
+
+        credits.addAttribute(NSLinkAttributeName, value: "https://\(githubLink)", range: (credits.string as NSString).range(of: githubLink))
+        credits.addAttribute(NSLinkAttributeName, value: "https://\(contributorsLink)",
+                                                  range: (credits.string as NSString).range(of: contributorsLink))
+
+        NSApp.orderFrontStandardAboutPanel(options: ["Credits": credits])
+        NSApp.activate(ignoringOtherApps: true)
     }
 }
