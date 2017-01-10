@@ -61,7 +61,7 @@ class Service {
             SendGrid.self,
             Sentry.self,
             SmartyStreets.self,
-            SquareSpace.self,
+            Squarespace.self,
             TravisCI.self,
             Twilio.self
         ] as [Service.Type]
