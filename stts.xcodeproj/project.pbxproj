@@ -229,7 +229,6 @@
 				B2493EF51E26023600556A83 /* GoogleContainerEngine.swift */,
 				B2493EF61E26023600556A83 /* GoogleStackdriver.swift */,
 			);
-			name = "Google Cloud Platform";
 			path = "Google Cloud Platform";
 			sourceTree = "<group>";
 		};
