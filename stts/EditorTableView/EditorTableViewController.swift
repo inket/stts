@@ -75,7 +75,6 @@ class EditorTableViewController: NSObject {
         scrollView.frame = frame
 
         (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(
-            width: 220,
             height: scrollView.frame.size.height + 30 // bottomBar.frame.size.height
         )
     }

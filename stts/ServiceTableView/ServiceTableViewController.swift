@@ -8,7 +8,7 @@ import SnapKit
 import MBPopup
 
 class ServiceTableViewController: NSObject {
-    let contentView = NSStackView(frame: CGRect(x: 0, y: 0, width: 190, height: 400))
+    let contentView = NSStackView(frame: CGRect(x: 0, y: 0, width: 220, height: 400))
     let scrollView = CustomScrollView()
     let tableView = NSTableView()
     let bottomBar = BottomBar()
@@ -57,7 +57,7 @@ class ServiceTableViewController: NSObject {
 
         contentView.snp.makeConstraints { make in
             make.left.right.bottom.equalTo(0)
-            make.width.greaterThanOrEqualTo(190)
+            make.width.greaterThanOrEqualTo(220)
             make.height.greaterThanOrEqualTo(40 + 30 + 2) // tableView.rowHeight + bottomBar.frame.size.height + 2
         }
 
@@ -160,10 +160,7 @@ class ServiceTableViewController: NSObject {
         frame.size.height = min(tableView.intrinsicContentSize.height, 490)
         scrollView.frame = frame
 
-        (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(
-            width: 190,
-            height: scrollView.frame.size.height + bottomBar.frame.size.height
-        )
+        (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(height: scrollView.frame.size.height + bottomBar.frame.size.height)
     }
 
     func reloadData(at index: Int? = nil) {
