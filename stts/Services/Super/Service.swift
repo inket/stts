@@ -29,44 +29,12 @@ class Service {
     var shouldNotify = false
 
     static func all() -> [Service] {
-        let allServices = [
-            AmazonWebServices.self,
-            Atlassian.self,
-            Beanstalk.self,
-            BitBucket.self,
-            Braintree.self,
-            CircleCI.self,
-            Cloudflare.self,
-            Cloudinary.self,
-            DigitalOcean.self,
-            Docker.self,
-            EngineYard.self,
-            GitHub.self,
-            Heroku.self,
-            HipChat.self,
-            Intercom.self,
-            KeenIO.self,
-            MediaTemple.self,
-            Mixpanel.self,
-            NewRelic.self,
-            NPM.self,
-            Packet.self,
-            PagerDuty.self,
-            Pingdom.self,
-            PubNub.self,
-            Pusher.self,
-            Reddit.self,
-            RubyGems.self,
-            SauceLabs.self,
-            SendGrid.self,
-            Sentry.self,
-            SmartyStreets.self,
-            Squarespace.self,
-            TravisCI.self,
-            Twilio.self
-        ] as [Service.Type]
+        guard let servicesPlist = Bundle.main.path(forResource: "services", ofType: "plist"),
+            let services = NSDictionary(contentsOfFile: servicesPlist)?["services"] as? [String] else {
+                fatalError("The services.plist file does not exist. The build phase script might have failed.")
+        }
 
-        return allServices.map { $0.init() }
+        return services.map(Service.named).flatMap { $0 }
     }
 
     static func named(_ name: String) -> Service? {

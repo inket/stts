@@ -325,6 +325,7 @@
 				B2B2D0FC1D49D5080014D780 /* Frameworks */,
 				B2B2D0FD1D49D5080014D780 /* Resources */,
 				B22EC6891D80111900ED7917 /* CopyFiles */,
+				B28F83321E24BDC100F2070F /* ShellScript */,
 				B2B2DC631DCC1FA600BF397D /* ShellScript */,
 				B2A264A21DF906C900009BE1 /* ShellScript */,
 			);
@@ -391,6 +392,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B28F83321E24BDC100F2070F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "RESOURCES_PATH=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\nSERVICES_PLIST=\"$RESOURCES_PATH/services.plist\"\n\n# Retrieve the list of services\nSERVICES=$(find \"$SRCROOT/stts/Services\" -name \"*.swift\" -not -path \"*Super*\" | awk -F/ '{ print $NF }' | sed s/.swift//g | sort | sed -e ':a' -e 'N' -e '$!ba' -e 's/\\n/ /g')\n\n# Create the services plist file\necho \"{}\" > \"$SERVICES_PLIST\"\n\n# Write the list of services into the plist file as an array\ndefaults write \"$SERVICES_PLIST\" \"services\" -array $SERVICES";
+		};
 		B2A264A21DF906C900009BE1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
