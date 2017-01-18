@@ -18,6 +18,7 @@
 		B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235B3BC1DF562C400821936 /* SettingsView.swift */; };
 		B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D4E6C1E13471200B04F18 /* Intercom.swift */; };
 		B23D4E6F1E13475900B04F18 /* KeenIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D4E6E1E13475900B04F18 /* KeenIO.swift */; };
+		B24220E41E2F6BBA0007E50E /* Typeform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24220E31E2F6BBA0007E50E /* Typeform.swift */; };
 		B2493EF71E26023600556A83 /* GoogleAppEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EE91E26023600556A83 /* GoogleAppEngine.swift */; };
 		B2493EF81E26023600556A83 /* GoogleBigQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EEA1E26023600556A83 /* GoogleBigQuery.swift */; };
 		B2493EF91E26023600556A83 /* GoogleCloudBigtable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EEB1E26023600556A83 /* GoogleCloudBigtable.swift */; };
@@ -124,6 +125,7 @@
 		B235B3BC1DF562C400821936 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B23D4E6C1E13471200B04F18 /* Intercom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intercom.swift; sourceTree = "<group>"; };
 		B23D4E6E1E13475900B04F18 /* KeenIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeenIO.swift; sourceTree = "<group>"; };
+		B24220E31E2F6BBA0007E50E /* Typeform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typeform.swift; sourceTree = "<group>"; };
 		B2493EE91E26023600556A83 /* GoogleAppEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAppEngine.swift; sourceTree = "<group>"; };
 		B2493EEA1E26023600556A83 /* GoogleBigQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleBigQuery.swift; sourceTree = "<group>"; };
 		B2493EEB1E26023600556A83 /* GoogleCloudBigtable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudBigtable.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				B25695581E247C8C00FAE413 /* Squarespace.swift */,
 				B2D032CF1D6455E300D51CB8 /* TravisCI.swift */,
 				B2F127A81E0B84B50035B20C /* Twilio.swift */,
+				B24220E31E2F6BBA0007E50E /* Typeform.swift */,
 				C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */,
 			);
 			path = StatusPage;
@@ -567,6 +570,7 @@
 				B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */,
 				B2493EFB1E26023600556A83 /* GoogleCloudDataflow.swift in Sources */,
 				03C5FB131E203325003C40B8 /* Packet.swift in Sources */,
+				B24220E41E2F6BBA0007E50E /* Typeform.swift in Sources */,
 				B2F127AB1E0B84F00035B20C /* Braintree.swift in Sources */,
 				B256955D1E247C8C00FAE413 /* Pingdom.swift in Sources */,
 				B219C0DA1E2F0E9F001F8E7F /* CocoaPods.swift in Sources */,
