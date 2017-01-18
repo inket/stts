@@ -84,6 +84,7 @@
 		B2CEB9A11DFD8984005FB901 /* StartAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */; };
 		B2CEB9A21DFD8987005FB901 /* StartAtLogin.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2D032D01D6455E300D51CB8 /* TravisCI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D032CF1D6455E300D51CB8 /* TravisCI.swift */; };
+		B2D468291E2F0F82000F8F6B /* Coveralls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D468281E2F0F82000F8F6B /* Coveralls.swift */; };
 		B2F127A71E0B84230035B20C /* PubNub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127A61E0B84230035B20C /* PubNub.swift */; };
 		B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127A81E0B84B50035B20C /* Twilio.swift */; };
 		B2F127AB1E0B84F00035B20C /* Braintree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127AA1E0B84F00035B20C /* Braintree.swift */; };
@@ -187,6 +188,7 @@
 		B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StartAtLogin.framework; path = Carthage/Build/Mac/StartAtLogin.framework; sourceTree = SOURCE_ROOT; };
 		B2CF3FBF1DF7DD2100B66491 /* stts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stts.entitlements; sourceTree = "<group>"; };
 		B2D032CF1D6455E300D51CB8 /* TravisCI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravisCI.swift; sourceTree = "<group>"; };
+		B2D468281E2F0F82000F8F6B /* Coveralls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coveralls.swift; sourceTree = "<group>"; };
 		B2F127A61E0B84230035B20C /* PubNub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubNub.swift; sourceTree = "<group>"; };
 		B2F127A81E0B84B50035B20C /* Twilio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twilio.swift; sourceTree = "<group>"; };
 		B2F127AA1E0B84F00035B20C /* Braintree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Braintree.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				B25695511E247C8C00FAE413 /* Cloudinary.swift */,
 				B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */,
 				B257469A1E2781A3003A07A4 /* CodeClimate.swift */,
+				B2D468281E2F0F82000F8F6B /* Coveralls.swift */,
 				B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */,
 				B299C8541DD051210024D2E9 /* EngineYard.swift */,
 				B269FCBA1E261BDF0016041D /* Figma.swift */,
@@ -542,6 +545,7 @@
 				B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */,
 				B299C84B1DD04E850024D2E9 /* Pusher.swift in Sources */,
 				B2D032D01D6455E300D51CB8 /* TravisCI.swift in Sources */,
+				B2D468291E2F0F82000F8F6B /* Coveralls.swift in Sources */,
 				B299C8511DD04FD60024D2E9 /* Cloudflare.swift in Sources */,
 				B256955E1E247C8C00FAE413 /* SauceLabs.swift in Sources */,
 				B2898FD01DC7441D0005F58F /* StatusIndicator.swift in Sources */,
