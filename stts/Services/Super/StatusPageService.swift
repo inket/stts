@@ -27,6 +27,7 @@ class StatusPageService: Service {
                 case "none": self?.status = .good
                 case "minor": self?.status = .minor
                 case "major", "critical": self?.status = .major
+                case "maintenance": self?.status = .maintenance
                 default: self?.status = .undetermined
             }
 
