@@ -6,7 +6,7 @@
 import Cocoa
 import SnapKit
 
-class EditorTableViewController: NSObject {
+class EditorTableViewController: NSObject, SwitchableTableViewController {
     let contentView: NSStackView
     let scrollView: CustomScrollView
     let tableView = NSTableView()
@@ -18,9 +18,7 @@ class EditorTableViewController: NSObject {
 
     let settingsView = SettingsView()
 
-    var hidden: Bool {
-        return settingsView.isHidden
-    }
+    var hidden: Bool = true
 
     init(contentView: NSStackView, scrollView: CustomScrollView) {
         self.contentView = contentView
@@ -55,7 +53,7 @@ class EditorTableViewController: NSObject {
         }
     }
 
-    func show() {
+    func willShow() {
         self.selectionChanged = false
 
         scrollView.topConstraint?.update(offset: 100)
@@ -83,7 +81,7 @@ class EditorTableViewController: NSObject {
         resizeViews()
     }
 
-    func hide() {
+    func willHide() {
         settingsView.isHidden = true
     }
 }

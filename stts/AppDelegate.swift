@@ -13,9 +13,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     let popupController: MBPopupController
     let serviceTableViewController = ServiceTableViewController()
+    let editorTableViewController: EditorTableViewController
 
     override init() {
         self.popupController = MBPopupController(contentView: serviceTableViewController.contentView)
+        self.editorTableViewController = serviceTableViewController.editorTableViewController
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -31,7 +33,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         serviceTableViewController.setup()
 
-        popupController.willOpenPopup = { [weak self] _ in self?.serviceTableViewController.willOpenPopup() }
+        popupController.willOpenPopup = { [weak self] _ in
+            if self?.editorTableViewController.hidden == true {
+                self?.serviceTableViewController.willOpenPopup()
+            } else {
+                self?.editorTableViewController.willOpenPopup()
+            }
+        }
 
         self.timer = Timer.scheduledTimer(timeInterval: 300,
                                           target: self,

@@ -7,14 +7,14 @@ import Cocoa
 import SnapKit
 import MBPopup
 
-class ServiceTableViewController: NSObject {
+class ServiceTableViewController: NSObject, SwitchableTableViewController {
     let contentView = NSStackView(frame: CGRect(x: 0, y: 0, width: 220, height: 400))
     let scrollView = CustomScrollView()
     let tableView = NSTableView()
     let bottomBar = BottomBar()
     let addServicesNoticeField = NSTextField()
 
-    let editorTableViewController: EditorTableViewController
+    var editorTableViewController: EditorTableViewController
 
     var services: [Service] = Preferences.shared.selectedServices {
         didSet {
@@ -35,6 +35,8 @@ class ServiceTableViewController: NSObject {
         }
     }
 
+    var hidden: Bool = false
+
     var updateCallback: (() -> Void)?
 
     override init() {
@@ -46,7 +48,7 @@ class ServiceTableViewController: NSObject {
         bottomBar.reloadServicesCallback = (NSApp.delegate as? AppDelegate)!.updateServices
 
         bottomBar.openSettingsCallback = { [weak self] in
-            self?.addServicesNoticeField.isHidden = true
+            self?.hide()
             self?.editorTableViewController.show()
         }
 
@@ -124,11 +126,6 @@ class ServiceTableViewController: NSObject {
     }
 
     func willOpenPopup() {
-        if !editorTableViewController.hidden {
-            editorTableViewController.willOpenPopup()
-            return
-        }
-
         resizeViews()
         reloadData()
 
@@ -139,7 +136,7 @@ class ServiceTableViewController: NSObject {
         }
     }
 
-    func show() {
+    func willShow() {
         scrollView.topConstraint?.update(offset: 0)
         scrollView.documentView = tableView
 
@@ -153,6 +150,10 @@ class ServiceTableViewController: NSObject {
         }
 
         resizeViews()
+    }
+
+    func willHide() {
+        addServicesNoticeField.isHidden = true
     }
 
     func resizeViews() {
