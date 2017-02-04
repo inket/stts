@@ -73,6 +73,7 @@
 		B2A0635E1E1341C900EEA762 /* StatusioV1Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */; };
 		B2A23E321DD190EF0051E913 /* EditorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A23E311DD190EF0051E913 /* EditorTableViewController.swift */; };
 		B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A23E331DD192CD0051E913 /* EditorTableCell.swift */; };
+		B2A2B6A61E459F61008EFD05 /* Waffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A2B6A51E459F61008EFD05 /* Waffle.swift */; };
 		B2A4A8161DC82CE300037E99 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A4A8151DC82CE300037E99 /* BottomBar.swift */; };
 		B2A9BFB41DC6E30F001BD4B7 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */; };
 		B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B015C11DBDE69B00699211 /* StatusTableCell.swift */; };
@@ -177,6 +178,7 @@
 		B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusioV1Service.swift; sourceTree = "<group>"; };
 		B2A23E311DD190EF0051E913 /* EditorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorTableViewController.swift; sourceTree = "<group>"; };
 		B2A23E331DD192CD0051E913 /* EditorTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorTableCell.swift; sourceTree = "<group>"; };
+		B2A2B6A51E459F61008EFD05 /* Waffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waffle.swift; sourceTree = "<group>"; };
 		B2A4A8151DC82CE300037E99 /* BottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		B2B015C11DBDE69B00699211 /* StatusTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableCell.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				B2D032CF1D6455E300D51CB8 /* TravisCI.swift */,
 				B2F127A81E0B84B50035B20C /* Twilio.swift */,
 				B24220E31E2F6BBA0007E50E /* Typeform.swift */,
+				B2A2B6A51E459F61008EFD05 /* Waffle.swift */,
 				C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */,
 			);
 			path = StatusPage;
@@ -562,6 +565,7 @@
 				B2A0635E1E1341C900EEA762 /* StatusioV1Service.swift in Sources */,
 				B256955A1E247C8C00FAE413 /* Cloudinary.swift in Sources */,
 				B2493EF71E26023600556A83 /* GoogleAppEngine.swift in Sources */,
+				B2A2B6A61E459F61008EFD05 /* Waffle.swift in Sources */,
 				B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */,
 				B269FCBB1E261BDF0016041D /* Figma.swift in Sources */,
 				B299C8471DD04D7C0024D2E9 /* NPM.swift in Sources */,
