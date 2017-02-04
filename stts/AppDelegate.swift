@@ -41,6 +41,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             }
         }
 
+        popupController.didOpenPopup = { [weak self] _ in
+            if self?.editorTableViewController.hidden == false {
+                self?.editorTableViewController.didOpenPopup()
+            }
+        }
+
         self.timer = Timer.scheduledTimer(timeInterval: 300,
                                           target: self,
                                           selector: #selector(AppDelegate.updateServices),

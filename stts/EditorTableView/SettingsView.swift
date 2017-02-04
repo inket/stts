@@ -13,6 +13,9 @@ class SettingsView: NSView {
     let notifyCheckbox = NSButton()
 
     let servicesHeader = SectionHeaderView(name: "Services")
+    let searchField = NSSearchField()
+
+    var searchCallback: ((String) -> Void)?
 
     init() {
         super.init(frame: .zero)
@@ -29,6 +32,7 @@ class SettingsView: NSView {
         addSubview(startAtLoginCheckbox)
         addSubview(notifyCheckbox)
         addSubview(servicesHeader)
+        addSubview(searchField)
 
         let smallFont = NSFont.systemFont(ofSize: NSFont.systemFontSize(for: .small))
 
@@ -45,6 +49,11 @@ class SettingsView: NSView {
         notifyCheckbox.state = Preferences.shared.notifyOnStatusChange ? NSOnState : NSOffState
         notifyCheckbox.action = #selector(SettingsView.updateNotifyOnStatusChange)
         notifyCheckbox.target = self
+
+        searchField.sendsSearchStringImmediately = true
+        searchField.sendsWholeSearchString = false
+        searchField.action = #selector(SettingsView.filterServices)
+        searchField.target = self
 
         settingsHeader.snp.makeConstraints { make in
             make.top.left.equalTo(6)
@@ -72,13 +81,24 @@ class SettingsView: NSView {
             make.right.equalTo(-6)
             make.height.equalTo(16)
         }
+
+        searchField.snp.makeConstraints { make in
+            make.top.equalTo(servicesHeader.snp.bottom).offset(6)
+            make.left.equalTo(12)
+            make.right.equalTo(-12)
+            make.height.equalTo(22)
+        }
     }
 
-    func updateStartAtLogin() {
+    @objc private func updateStartAtLogin() {
         StartAtLogin.enabled = startAtLoginCheckbox.state == NSOnState ? true : false
     }
 
-    func updateNotifyOnStatusChange() {
+    @objc private func updateNotifyOnStatusChange() {
         Preferences.shared.notifyOnStatusChange = notifyCheckbox.state == NSOnState ? true : false
+    }
+
+    @objc private func filterServices() {
+        searchCallback?(searchField.stringValue)
     }
 }
