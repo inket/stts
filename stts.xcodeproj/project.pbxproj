@@ -72,6 +72,7 @@
 		B299C8551DD051210024D2E9 /* EngineYard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8541DD051210024D2E9 /* EngineYard.swift */; };
 		B2A0635C1E1340B400EEA762 /* Docker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0635B1E1340B400EEA762 /* Docker.swift */; };
 		B2A0635E1E1341C900EEA762 /* StatusioV1Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */; };
+		B2A0A16F1E4C45E0000D9B29 /* MailChimp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0A16E1E4C45E0000D9B29 /* MailChimp.swift */; };
 		B2A23E321DD190EF0051E913 /* EditorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A23E311DD190EF0051E913 /* EditorTableViewController.swift */; };
 		B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A23E331DD192CD0051E913 /* EditorTableCell.swift */; };
 		B2A2B6A61E459F61008EFD05 /* Waffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A2B6A51E459F61008EFD05 /* Waffle.swift */; };
@@ -178,6 +179,7 @@
 		B299C8541DD051210024D2E9 /* EngineYard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineYard.swift; sourceTree = "<group>"; };
 		B2A0635B1E1340B400EEA762 /* Docker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Docker.swift; sourceTree = "<group>"; };
 		B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusioV1Service.swift; sourceTree = "<group>"; };
+		B2A0A16E1E4C45E0000D9B29 /* MailChimp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailChimp.swift; sourceTree = "<group>"; };
 		B2A23E311DD190EF0051E913 /* EditorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorTableViewController.swift; sourceTree = "<group>"; };
 		B2A23E331DD192CD0051E913 /* EditorTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorTableCell.swift; sourceTree = "<group>"; };
 		B2A2B6A51E459F61008EFD05 /* Waffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waffle.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 				B290315B1E4B0CA7005B58CC /* Evernote.swift */,
 				B205A9191D49D68500EA178D /* GitHub.swift */,
 				B2FDC9191D67029900F0B728 /* Heroku.swift */,
+				B2A0A16E1E4C45E0000D9B29 /* MailChimp.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */,
 				B2A0635C1E1340B400EEA762 /* Docker.swift in Sources */,
 				B24D19F61DD072840052E539 /* Preferences.swift in Sources */,
+				B2A0A16F1E4C45E0000D9B29 /* MailChimp.swift in Sources */,
 				B2493EFE1E26023600556A83 /* GoogleCloudDNS.swift in Sources */,
 				B2493F001E26023600556A83 /* GoogleCloudSQL.swift in Sources */,
 				B2B2D1031D49D5080014D780 /* AppDelegate.swift in Sources */,
