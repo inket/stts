@@ -297,7 +297,6 @@
 		B299C8561DD051710024D2E9 /* StatusPage */ = {
 			isa = PBXGroup;
 			children = (
-				B22527F41E5BD0C70098E73D /* Contentful.swift */,
 				B25695501E247C8C00FAE413 /* Atlassian.swift */,
 				B299C84E1DD04F8F0024D2E9 /* BitBucket.swift */,
 				B2F127AA1E0B84F00035B20C /* Braintree.swift */,
@@ -306,6 +305,7 @@
 				B25695511E247C8C00FAE413 /* Cloudinary.swift */,
 				B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */,
 				B257469A1E2781A3003A07A4 /* CodeClimate.swift */,
+				B22527F41E5BD0C70098E73D /* Contentful.swift */,
 				B2D468281E2F0F82000F8F6B /* Coveralls.swift */,
 				B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */,
 				B299C8541DD051210024D2E9 /* EngineYard.swift */,
