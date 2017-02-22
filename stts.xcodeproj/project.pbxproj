@@ -96,6 +96,7 @@
 		B2F127A71E0B84230035B20C /* PubNub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127A61E0B84230035B20C /* PubNub.swift */; };
 		B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127A81E0B84B50035B20C /* Twilio.swift */; };
 		B2F127AB1E0B84F00035B20C /* Braintree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127AA1E0B84F00035B20C /* Braintree.swift */; };
+		B2F35F261E5D181300E3A00E /* Quay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F35F251E5D181300E3A00E /* Quay.swift */; };
 		B2FAB94C1E5C029A00B8921F /* DNSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FAB94B1E5C029A00B8921F /* DNSimple.swift */; };
 		B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC9191D67029900F0B728 /* Heroku.swift */; };
 		B2FDC91C1D67062200F0B728 /* StatusPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91B1D67062200F0B728 /* StatusPageService.swift */; };
@@ -209,6 +210,7 @@
 		B2F127A61E0B84230035B20C /* PubNub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubNub.swift; sourceTree = "<group>"; };
 		B2F127A81E0B84B50035B20C /* Twilio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twilio.swift; sourceTree = "<group>"; };
 		B2F127AA1E0B84F00035B20C /* Braintree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Braintree.swift; sourceTree = "<group>"; };
+		B2F35F251E5D181300E3A00E /* Quay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quay.swift; sourceTree = "<group>"; };
 		B2FAB94B1E5C029A00B8921F /* DNSimple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSimple.swift; sourceTree = "<group>"; };
 		B2FDC9191D67029900F0B728 /* Heroku.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heroku.swift; sourceTree = "<group>"; };
 		B2FDC91B1D67062200F0B728 /* StatusPageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPageService.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				B2F127A61E0B84230035B20C /* PubNub.swift */,
 				B299C84A1DD04E850024D2E9 /* Pusher.swift */,
 				B21308551E55594E009FCF02 /* Quandl.swift */,
+				B2F35F251E5D181300E3A00E /* Quay.swift */,
 				B299C84C1DD04ED90024D2E9 /* Reddit.swift */,
 				B299C8481DD04DCB0024D2E9 /* RubyGems.swift */,
 				B25695551E247C8C00FAE413 /* SauceLabs.swift */,
@@ -602,6 +605,7 @@
 				B225E3E01E44830F008E1D3D /* SwitchableTableViewController.swift in Sources */,
 				B256955D1E247C8C00FAE413 /* Pingdom.swift in Sources */,
 				B219C0DA1E2F0E9F001F8E7F /* CocoaPods.swift in Sources */,
+				B2F35F261E5D181300E3A00E /* Quay.swift in Sources */,
 				B299C8451DD046F20024D2E9 /* AmazonWebServices.swift in Sources */,
 				B256955B1E247C8C00FAE413 /* HipChat.swift in Sources */,
 				B299C8551DD051210024D2E9 /* EngineYard.swift in Sources */,
