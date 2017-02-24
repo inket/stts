@@ -64,6 +64,7 @@
 		B276C8F71DD4742D0098B451 /* MBPopup.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B276C8F11DD474200098B451 /* MBPopup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2898FD01DC7441D0005F58F /* StatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2898FCF1DC7441D0005F58F /* StatusIndicator.swift */; };
 		B28C1D421E607D2200F9D0DC /* Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C1D411E607D2200F9D0DC /* Fabric.swift */; };
+		B28C1D441E607D8600F9D0DC /* Mapbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C1D431E607D8600F9D0DC /* Mapbox.swift */; };
 		B290315C1E4B0CA7005B58CC /* Evernote.swift in Sources */ = {isa = PBXBuildFile; fileRef = B290315B1E4B0CA7005B58CC /* Evernote.swift */; };
 		B299C8431DD044160024D2E9 /* NewRelic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8421DD044160024D2E9 /* NewRelic.swift */; };
 		B299C8451DD046F20024D2E9 /* AmazonWebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */; };
@@ -178,6 +179,7 @@
 		B276C8F11DD474200098B451 /* MBPopup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBPopup.framework; path = Carthage/Build/Mac/MBPopup.framework; sourceTree = SOURCE_ROOT; };
 		B2898FCF1DC7441D0005F58F /* StatusIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusIndicator.swift; sourceTree = "<group>"; };
 		B28C1D411E607D2200F9D0DC /* Fabric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fabric.swift; sourceTree = "<group>"; };
+		B28C1D431E607D8600F9D0DC /* Mapbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapbox.swift; sourceTree = "<group>"; };
 		B290315B1E4B0CA7005B58CC /* Evernote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evernote.swift; sourceTree = "<group>"; };
 		B299C8421DD044160024D2E9 /* NewRelic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRelic.swift; sourceTree = "<group>"; };
 		B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmazonWebServices.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				B25695521E247C8C00FAE413 /* HipChat.swift */,
 				B23D4E6C1E13471200B04F18 /* Intercom.swift */,
 				B23D4E6E1E13475900B04F18 /* KeenIO.swift */,
+				B28C1D431E607D8600F9D0DC /* Mapbox.swift */,
 				B22600301E1562E700EBDD40 /* MediaTemple.swift */,
 				B2C337A41E1417390007E110 /* Mixpanel.swift */,
 				B299C8461DD04D7C0024D2E9 /* NPM.swift */,
@@ -600,6 +603,7 @@
 				B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */,
 				B269FCBB1E261BDF0016041D /* Figma.swift in Sources */,
 				B299C8471DD04D7C0024D2E9 /* NPM.swift in Sources */,
+				B28C1D441E607D8600F9D0DC /* Mapbox.swift in Sources */,
 				C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */,
 				B2FDC91C1D67062200F0B728 /* StatusPageService.swift in Sources */,
 				B2493EFA1E26023600556A83 /* GoogleCloudConsole.swift in Sources */,
