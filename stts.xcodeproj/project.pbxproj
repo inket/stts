@@ -99,6 +99,7 @@
 		B2D468291E2F0F82000F8F6B /* Coveralls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D468281E2F0F82000F8F6B /* Coveralls.swift */; };
 		B2DEE0BE1E696D64006B198E /* Slack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DEE0BD1E696D64006B198E /* Slack.swift */; };
 		B2EB51CE1E7004A3001D6F78 /* ExanaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */; };
+		B2EB51D01E700517001D6F78 /* Codacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EB51CF1E700517001D6F78 /* Codacy.swift */; };
 		B2F127A71E0B84230035B20C /* PubNub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127A61E0B84230035B20C /* PubNub.swift */; };
 		B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127A81E0B84B50035B20C /* Twilio.swift */; };
 		B2F127AB1E0B84F00035B20C /* Braintree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127AA1E0B84F00035B20C /* Braintree.swift */; };
@@ -219,6 +220,7 @@
 		B2D468281E2F0F82000F8F6B /* Coveralls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coveralls.swift; sourceTree = "<group>"; };
 		B2DEE0BD1E696D64006B198E /* Slack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slack.swift; sourceTree = "<group>"; };
 		B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExanaService.swift; sourceTree = "<group>"; };
+		B2EB51CF1E700517001D6F78 /* Codacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Codacy.swift; sourceTree = "<group>"; };
 		B2F127A61E0B84230035B20C /* PubNub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubNub.swift; sourceTree = "<group>"; };
 		B2F127A81E0B84B50035B20C /* Twilio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twilio.swift; sourceTree = "<group>"; };
 		B2F127AA1E0B84F00035B20C /* Braintree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Braintree.swift; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 		B2EB51CC1E70047F001D6F78 /* Exana */ = {
 			isa = PBXGroup;
 			children = (
+				B2EB51CF1E700517001D6F78 /* Codacy.swift */,
 			);
 			name = Exana;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				B2493F061E2603F300556A83 /* GoogleCloudPlatform.swift in Sources */,
 				B299C8491DD04DCB0024D2E9 /* RubyGems.swift in Sources */,
 				B299C8531DD0505F0024D2E9 /* Sentry.swift in Sources */,
+				B2EB51D01E700517001D6F78 /* Codacy.swift in Sources */,
 				B299C84F1DD04F8F0024D2E9 /* BitBucket.swift in Sources */,
 				B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */,
 				B2493EF91E26023600556A83 /* GoogleCloudBigtable.swift in Sources */,
