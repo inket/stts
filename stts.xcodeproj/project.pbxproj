@@ -408,6 +408,7 @@
 				B2EB51CF1E700517001D6F78 /* Codacy.swift */,
 			);
 			name = Exana;
+			path = Exana;
 			sourceTree = "<group>";
 		};
 		B2FDC91F1D6706FB00F0B728 /* Services */ = {
@@ -434,11 +435,11 @@
 		B2FDC9201D67071500F0B728 /* Super */ = {
 			isa = PBXGroup;
 			children = (
+				B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */,
 				B2493F081E2607FC00556A83 /* GoogleCloudPlatformStatusStore.swift */,
 				B205A9171D49D67700EA178D /* Service.swift */,
 				B2FDC91B1D67062200F0B728 /* StatusPageService.swift */,
 				B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */,
-				B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */,
 			);
 			path = Super;
 			sourceTree = "<group>";
