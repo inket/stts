@@ -53,13 +53,13 @@ class CrossIcon: NSView {
 
         NSGraphicsContext.saveGraphicsState()
         context.translateBy(x: 23, y: 23)
-        context.rotate(by: -45 * CGFloat(M_PI) / 180)
+        context.rotate(by: -45 * CGFloat.pi / 180)
         NSBezierPath(rect: NSRect(x: -26.88, y: -1, width: 53.75, height: 2)).fill()
         NSGraphicsContext.restoreGraphicsState()
 
         NSGraphicsContext.saveGraphicsState()
         context.translateBy(x: 23, y: 23)
-        context.rotate(by: -45 * CGFloat(M_PI) / 180)
+        context.rotate(by: -45 * CGFloat.pi / 180)
         NSBezierPath(rect: NSRect(x: -1, y: -26.88, width: 2, height: 53.75)).fill()
         NSGraphicsContext.restoreGraphicsState()
     }
