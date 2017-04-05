@@ -67,6 +67,7 @@
 		B2898FD01DC7441D0005F58F /* StatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2898FCF1DC7441D0005F58F /* StatusIndicator.swift */; };
 		B28C1D421E607D2200F9D0DC /* Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C1D411E607D2200F9D0DC /* Fabric.swift */; };
 		B28C1D441E607D8600F9D0DC /* Mapbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C1D431E607D8600F9D0DC /* Mapbox.swift */; };
+		B28FF68B1E94761A005897A9 /* Codecov.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28FF68A1E94761A005897A9 /* Codecov.swift */; };
 		B290315C1E4B0CA7005B58CC /* Evernote.swift in Sources */ = {isa = PBXBuildFile; fileRef = B290315B1E4B0CA7005B58CC /* Evernote.swift */; };
 		B299C8431DD044160024D2E9 /* NewRelic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8421DD044160024D2E9 /* NewRelic.swift */; };
 		B299C8451DD046F20024D2E9 /* AmazonWebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */; };
@@ -188,6 +189,7 @@
 		B2898FCF1DC7441D0005F58F /* StatusIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusIndicator.swift; sourceTree = "<group>"; };
 		B28C1D411E607D2200F9D0DC /* Fabric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fabric.swift; sourceTree = "<group>"; };
 		B28C1D431E607D8600F9D0DC /* Mapbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapbox.swift; sourceTree = "<group>"; };
+		B28FF68A1E94761A005897A9 /* Codecov.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Codecov.swift; sourceTree = "<group>"; };
 		B290315B1E4B0CA7005B58CC /* Evernote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evernote.swift; sourceTree = "<group>"; };
 		B299C8421DD044160024D2E9 /* NewRelic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRelic.swift; sourceTree = "<group>"; };
 		B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmazonWebServices.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				B25695511E247C8C00FAE413 /* Cloudinary.swift */,
 				B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */,
 				B257469A1E2781A3003A07A4 /* CodeClimate.swift */,
+				B28FF68A1E94761A005897A9 /* Codecov.swift */,
 				B22527F41E5BD0C70098E73D /* Contentful.swift */,
 				B2D468281E2F0F82000F8F6B /* Coveralls.swift */,
 				B2FAB94B1E5C029A00B8921F /* DNSimple.swift */,
@@ -626,6 +629,7 @@
 				B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */,
 				B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */,
 				B2A0635E1E1341C900EEA762 /* StatusioV1Service.swift in Sources */,
+				B28FF68B1E94761A005897A9 /* Codecov.swift in Sources */,
 				B256955A1E247C8C00FAE413 /* Cloudinary.swift in Sources */,
 				B2493EF71E26023600556A83 /* GoogleAppEngine.swift in Sources */,
 				B2A2B6A61E459F61008EFD05 /* Waffle.swift in Sources */,
