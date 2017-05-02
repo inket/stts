@@ -86,6 +86,7 @@
 		B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A23E331DD192CD0051E913 /* EditorTableCell.swift */; };
 		B2A2B6A61E459F61008EFD05 /* Waffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A2B6A51E459F61008EFD05 /* Waffle.swift */; };
 		B2A4A8161DC82CE300037E99 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A4A8151DC82CE300037E99 /* BottomBar.swift */; };
+		B2A93ADD1EB814C000D36DD3 /* Snyk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A93ADC1EB814C000D36DD3 /* Snyk.swift */; };
 		B2A9BFB41DC6E30F001BD4B7 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */; };
 		B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B015C11DBDE69B00699211 /* StatusTableCell.swift */; };
 		B2B2D1031D49D5080014D780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2D1021D49D5080014D780 /* AppDelegate.swift */; };
@@ -208,6 +209,7 @@
 		B2A23E331DD192CD0051E913 /* EditorTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorTableCell.swift; sourceTree = "<group>"; };
 		B2A2B6A51E459F61008EFD05 /* Waffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waffle.swift; sourceTree = "<group>"; };
 		B2A4A8151DC82CE300037E99 /* BottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
+		B2A93ADC1EB814C000D36DD3 /* Snyk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snyk.swift; sourceTree = "<group>"; };
 		B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		B2B015C11DBDE69B00699211 /* StatusTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableCell.swift; sourceTree = "<group>"; };
 		B2B2D0FF1D49D5080014D780 /* stts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stts.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -365,6 +367,7 @@
 				B25695561E247C8C00FAE413 /* SendGrid.swift */,
 				B299C8521DD0505F0024D2E9 /* Sentry.swift */,
 				B25695571E247C8C00FAE413 /* SmartyStreets.swift */,
+				B2A93ADC1EB814C000D36DD3 /* Snyk.swift */,
 				B25695581E247C8C00FAE413 /* Squarespace.swift */,
 				B2D032CF1D6455E300D51CB8 /* TravisCI.swift */,
 				B2F127A81E0B84B50035B20C /* Twilio.swift */,
@@ -665,6 +668,7 @@
 				B23D4E6F1E13475900B04F18 /* KeenIO.swift in Sources */,
 				B2C337A51E1417390007E110 /* Mixpanel.swift in Sources */,
 				B2357D711E5C08AF0093B8A6 /* Netlify.swift in Sources */,
+				B2A93ADD1EB814C000D36DD3 /* Snyk.swift in Sources */,
 				B2FFC1F01E261B4A00529A00 /* Dropbox.swift in Sources */,
 				B2EB51CE1E7004A3001D6F78 /* ExanaService.swift in Sources */,
 				B2BA697E1E2DA3A20016AF1A /* PivotalTracker.swift in Sources */,
