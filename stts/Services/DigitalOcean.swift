@@ -25,21 +25,25 @@ class DigitalOcean: Service {
 
 extension DigitalOcean {
     fileprivate func status(from document: HTMLDocument) -> ServiceStatus {
-        let iconClasses = document.css(".alerts-list .icon").flatMap { $0.className }
+        guard document.css(".page-status.status-none").count == 0 else { return .good }
 
-        if (iconClasses.filter { $0.range(of: "alert") != nil }).count > 0 {
+        let unresolvedIncidentClasses = document.css(".unresolved-incident").flatMap { $0.className }
+
+        if (unresolvedIncidentClasses.filter { $0.range(of: "impact-critical") != nil || $0.range(of: "impact-major") != nil }).count > 0 {
             return .major
-        } else if (iconClasses.filter { $0.range(of: "maintenance") != nil ||
-                                        $0.range(of: "interim") != nil }).count > 0 {
+        } else if (unresolvedIncidentClasses.filter { $0.range(of: "impact-minor") != nil }).count > 0 {
             return .minor
-        } else if (iconClasses.filter { $0.range(of: "success") != nil }).count > 0 {
-            return .good
+        } else if (unresolvedIncidentClasses.filter { $0.range(of: "impact-maintenance") != nil }).count > 0 {
+            return .maintenance
         } else {
             return .undetermined
         }
     }
 
     fileprivate func message(from document: HTMLDocument) -> String {
-        return document.css(".alerts-list h2").first?.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let statusTitle = document.css(".page-status .status").first?.text
+        let incidentTitle = document.css(".unresolved-incident .incident-title .title").first?.text
+
+        return (statusTitle ?? incidentTitle ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }
