@@ -42,7 +42,7 @@ extension DigitalOcean {
 
     fileprivate func message(from document: HTMLDocument) -> String {
         let statusTitle = document.css(".page-status .status").first?.text
-        let incidentTitle = document.css(".unresolved-incident .incident-title .title").first?.text
+        let incidentTitle = document.css(".unresolved-incident .incident-title .actual-title").first?.text
 
         return (statusTitle ?? incidentTitle ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
     }
