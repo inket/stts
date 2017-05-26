@@ -55,6 +55,7 @@
 		B257469B1E2781A3003A07A4 /* CodeClimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257469A1E2781A3003A07A4 /* CodeClimate.swift */; };
 		B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */; };
 		B26350FD1ED7CFC40069EA73 /* Loggly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26350FC1ED7CFC40069EA73 /* Loggly.swift */; };
+		B26350FF1ED7D0210069EA73 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26350FE1ED7D0210069EA73 /* Segment.swift */; };
 		B269FCBB1E261BDF0016041D /* Figma.swift in Sources */ = {isa = PBXBuildFile; fileRef = B269FCBA1E261BDF0016041D /* Figma.swift */; };
 		B26CD1E81DD59FDD0054A385 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26CD1E71DD59FDD0054A385 /* Kanna.framework */; };
 		B26CD1EA1DD59FE60054A385 /* Kanna.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B26CD1E71DD59FDD0054A385 /* Kanna.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -186,6 +187,7 @@
 		B257469A1E2781A3003A07A4 /* CodeClimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeClimate.swift; sourceTree = "<group>"; };
 		B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		B26350FC1ED7CFC40069EA73 /* Loggly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loggly.swift; sourceTree = "<group>"; };
+		B26350FE1ED7D0210069EA73 /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
 		B269FCBA1E261BDF0016041D /* Figma.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Figma.swift; sourceTree = "<group>"; };
 		B26CD1E71DD59FDD0054A385 /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/Mac/Kanna.framework; sourceTree = SOURCE_ROOT; };
 		B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalOcean.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 				B211F0B71E607C09008DD360 /* Rollbar.swift */,
 				B299C8481DD04DCB0024D2E9 /* RubyGems.swift */,
 				B25695551E247C8C00FAE413 /* SauceLabs.swift */,
+				B26350FE1ED7D0210069EA73 /* Segment.swift */,
 				B25695561E247C8C00FAE413 /* SendGrid.swift */,
 				B299C8521DD0505F0024D2E9 /* Sentry.swift */,
 				B25695571E247C8C00FAE413 /* SmartyStreets.swift */,
@@ -652,6 +655,7 @@
 				B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */,
 				B28E9FC01ED26A40006B89F1 /* Lob.swift in Sources */,
 				B269FCBB1E261BDF0016041D /* Figma.swift in Sources */,
+				B26350FF1ED7D0210069EA73 /* Segment.swift in Sources */,
 				B299C8471DD04D7C0024D2E9 /* NPM.swift in Sources */,
 				B2C4670F1E70012700C5145D /* Zapier.swift in Sources */,
 				B28C1D441E607D8600F9D0DC /* Mapbox.swift in Sources */,
