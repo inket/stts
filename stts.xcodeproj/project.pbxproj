@@ -54,6 +54,7 @@
 		B25695611E247C8C00FAE413 /* Squarespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695581E247C8C00FAE413 /* Squarespace.swift */; };
 		B257469B1E2781A3003A07A4 /* CodeClimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257469A1E2781A3003A07A4 /* CodeClimate.swift */; };
 		B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */; };
+		B26350FD1ED7CFC40069EA73 /* Loggly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26350FC1ED7CFC40069EA73 /* Loggly.swift */; };
 		B269FCBB1E261BDF0016041D /* Figma.swift in Sources */ = {isa = PBXBuildFile; fileRef = B269FCBA1E261BDF0016041D /* Figma.swift */; };
 		B26CD1E81DD59FDD0054A385 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26CD1E71DD59FDD0054A385 /* Kanna.framework */; };
 		B26CD1EA1DD59FE60054A385 /* Kanna.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B26CD1E71DD59FDD0054A385 /* Kanna.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -184,6 +185,7 @@
 		B25695581E247C8C00FAE413 /* Squarespace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Squarespace.swift; sourceTree = "<group>"; };
 		B257469A1E2781A3003A07A4 /* CodeClimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeClimate.swift; sourceTree = "<group>"; };
 		B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
+		B26350FC1ED7CFC40069EA73 /* Loggly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loggly.swift; sourceTree = "<group>"; };
 		B269FCBA1E261BDF0016041D /* Figma.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Figma.swift; sourceTree = "<group>"; };
 		B26CD1E71DD59FDD0054A385 /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/Mac/Kanna.framework; sourceTree = SOURCE_ROOT; };
 		B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalOcean.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				B23D4E6C1E13471200B04F18 /* Intercom.swift */,
 				B23D4E6E1E13475900B04F18 /* KeenIO.swift */,
 				B28E9FBE1ED26A40006B89F1 /* Lob.swift */,
+				B26350FC1ED7CFC40069EA73 /* Loggly.swift */,
 				B28C1D431E607D8600F9D0DC /* Mapbox.swift */,
 				B22600301E1562E700EBDD40 /* MediaTemple.swift */,
 				B2C337A41E1417390007E110 /* Mixpanel.swift */,
@@ -660,6 +663,7 @@
 				B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */,
 				B2493EFB1E26023600556A83 /* GoogleCloudDataflow.swift in Sources */,
 				03C5FB131E203325003C40B8 /* Packet.swift in Sources */,
+				B26350FD1ED7CFC40069EA73 /* Loggly.swift in Sources */,
 				B24220E41E2F6BBA0007E50E /* Typeform.swift in Sources */,
 				B2F127AB1E0B84F00035B20C /* Braintree.swift in Sources */,
 				B225E3E01E44830F008E1D3D /* SwitchableTableViewController.swift in Sources */,
