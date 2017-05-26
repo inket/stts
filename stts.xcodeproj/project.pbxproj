@@ -94,6 +94,7 @@
 		B2B2D1031D49D5080014D780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2D1021D49D5080014D780 /* AppDelegate.swift */; };
 		B2B2D1051D49D5080014D780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2D1041D49D5080014D780 /* Assets.xcassets */; };
 		B2B2D1081D49D5080014D780 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B2D1061D49D5080014D780 /* MainMenu.xib */; };
+		B2BA36191ED7B0F200051083 /* AuthorizeNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA36181ED7B0F200051083 /* AuthorizeNet.swift */; };
 		B2BA697E1E2DA3A20016AF1A /* PivotalTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA697D1E2DA3A20016AF1A /* PivotalTracker.swift */; };
 		B2BA69801E2DA3F60016AF1A /* Papertrail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */; };
 		B2C337A51E1417390007E110 /* Mixpanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C337A41E1417390007E110 /* Mixpanel.swift */; };
@@ -221,6 +222,7 @@
 		B2B2D1041D49D5080014D780 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2B2D1071D49D5080014D780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B2B2D1091D49D5080014D780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2BA36181ED7B0F200051083 /* AuthorizeNet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizeNet.swift; sourceTree = "<group>"; };
 		B2BA697D1E2DA3A20016AF1A /* PivotalTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PivotalTracker.swift; sourceTree = "<group>"; };
 		B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Papertrail.swift; sourceTree = "<group>"; };
 		B2C337A41E1417390007E110 /* Mixpanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mixpanel.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			children = (
 				B25695501E247C8C00FAE413 /* Atlassian.swift */,
 				B24F91221E8B51A400A77460 /* Auth0.swift */,
+				B2BA36181ED7B0F200051083 /* AuthorizeNet.swift */,
 				B299C84E1DD04F8F0024D2E9 /* BitBucket.swift */,
 				B2F127AA1E0B84F00035B20C /* Braintree.swift */,
 				B2FDC91D1D6706C400F0B728 /* CircleCI.swift */,
@@ -634,6 +637,7 @@
 				B290315C1E4B0CA7005B58CC /* Evernote.swift in Sources */,
 				B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */,
 				B2DEE0BE1E696D64006B198E /* Slack.swift in Sources */,
+				B2BA36191ED7B0F200051083 /* AuthorizeNet.swift in Sources */,
 				B25695591E247C8C00FAE413 /* Atlassian.swift in Sources */,
 				B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */,
 				B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */,
