@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		03C5FB131E203325003C40B8 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5FB121E203325003C40B8 /* Packet.swift */; };
+		B20396361EE6A060008CCA21 /* Trello.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20396351EE6A060008CCA21 /* Trello.swift */; };
+		B20396381EE6A06C008CCA21 /* Filestack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20396371EE6A06C008CCA21 /* Filestack.swift */; };
 		B205A9181D49D67700EA178D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B205A9171D49D67700EA178D /* Service.swift */; };
 		B205A91A1D49D68500EA178D /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B205A9191D49D68500EA178D /* GitHub.swift */; };
 		B211F0B81E607C09008DD360 /* Rollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211F0B71E607C09008DD360 /* Rollbar.swift */; };
@@ -140,6 +142,8 @@
 
 /* Begin PBXFileReference section */
 		03C5FB121E203325003C40B8 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
+		B20396351EE6A060008CCA21 /* Trello.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trello.swift; sourceTree = "<group>"; };
+		B20396371EE6A06C008CCA21 /* Filestack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filestack.swift; sourceTree = "<group>"; };
 		B205A9171D49D67700EA178D /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		B205A9191D49D68500EA178D /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		B211F0B71E607C09008DD360 /* Rollbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rollbar.swift; sourceTree = "<group>"; };
@@ -355,6 +359,7 @@
 				B299C8541DD051210024D2E9 /* EngineYard.swift */,
 				B28C1D411E607D2200F9D0DC /* Fabric.swift */,
 				B269FCBA1E261BDF0016041D /* Figma.swift */,
+				B20396371EE6A06C008CCA21 /* Filestack.swift */,
 				B25695521E247C8C00FAE413 /* HipChat.swift */,
 				B23D4E6C1E13471200B04F18 /* Intercom.swift */,
 				B23D4E6E1E13475900B04F18 /* KeenIO.swift */,
@@ -385,6 +390,7 @@
 				B2A93ADC1EB814C000D36DD3 /* Snyk.swift */,
 				B25695581E247C8C00FAE413 /* Squarespace.swift */,
 				B2D032CF1D6455E300D51CB8 /* TravisCI.swift */,
+				B20396351EE6A060008CCA21 /* Trello.swift */,
 				B2F127A81E0B84B50035B20C /* Twilio.swift */,
 				B24220E31E2F6BBA0007E50E /* Typeform.swift */,
 				B2A2B6A51E459F61008EFD05 /* Waffle.swift */,
@@ -627,6 +633,7 @@
 				B25695611E247C8C00FAE413 /* Squarespace.swift in Sources */,
 				B2493EF81E26023600556A83 /* GoogleBigQuery.swift in Sources */,
 				B2493F041E26023600556A83 /* GoogleStackdriver.swift in Sources */,
+				B20396361EE6A060008CCA21 /* Trello.swift in Sources */,
 				B2493EFF1E26023600556A83 /* GoogleCloudPubSub.swift in Sources */,
 				B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */,
 				B2493F031E26023600556A83 /* GoogleContainerEngine.swift in Sources */,
@@ -683,6 +690,7 @@
 				B2FAB94C1E5C029A00B8921F /* DNSimple.swift in Sources */,
 				B2BA69801E2DA3F60016AF1A /* Papertrail.swift in Sources */,
 				B28E9FBF1ED26A40006B89F1 /* Dwolla.swift in Sources */,
+				B20396381EE6A06C008CCA21 /* Filestack.swift in Sources */,
 				B26CD1EC1DD59FFB0054A385 /* DigitalOcean.swift in Sources */,
 				B299C84D1DD04ED90024D2E9 /* Reddit.swift in Sources */,
 				B23D4E6F1E13475900B04F18 /* KeenIO.swift in Sources */,
