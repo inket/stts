@@ -94,6 +94,7 @@
 		B2A4A8161DC82CE300037E99 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A4A8151DC82CE300037E99 /* BottomBar.swift */; };
 		B2A93ADD1EB814C000D36DD3 /* Snyk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A93ADC1EB814C000D36DD3 /* Snyk.swift */; };
 		B2A9BFB41DC6E30F001BD4B7 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */; };
+		B2ABB6171F59770800DF8EC2 /* Imgix.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB6161F59770800DF8EC2 /* Imgix.swift */; };
 		B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B015C11DBDE69B00699211 /* StatusTableCell.swift */; };
 		B2B2D1031D49D5080014D780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2D1021D49D5080014D780 /* AppDelegate.swift */; };
 		B2B2D1051D49D5080014D780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2D1041D49D5080014D780 /* Assets.xcassets */; };
@@ -224,6 +225,7 @@
 		B2A4A8151DC82CE300037E99 /* BottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		B2A93ADC1EB814C000D36DD3 /* Snyk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snyk.swift; sourceTree = "<group>"; };
 		B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		B2ABB6161F59770800DF8EC2 /* Imgix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Imgix.swift; sourceTree = "<group>"; };
 		B2B015C11DBDE69B00699211 /* StatusTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableCell.swift; sourceTree = "<group>"; };
 		B2B2D0FF1D49D5080014D780 /* stts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B2D1021D49D5080014D780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 				B269FCBA1E261BDF0016041D /* Figma.swift */,
 				B20396371EE6A06C008CCA21 /* Filestack.swift */,
 				B25695521E247C8C00FAE413 /* HipChat.swift */,
+				B2ABB6161F59770800DF8EC2 /* Imgix.swift */,
 				B23D4E6C1E13471200B04F18 /* Intercom.swift */,
 				B23D4E6E1E13475900B04F18 /* KeenIO.swift */,
 				B28E9FBE1ED26A40006B89F1 /* Lob.swift */,
@@ -635,6 +638,7 @@
 				B2493F041E26023600556A83 /* GoogleStackdriver.swift in Sources */,
 				B20396361EE6A060008CCA21 /* Trello.swift in Sources */,
 				B2493EFF1E26023600556A83 /* GoogleCloudPubSub.swift in Sources */,
+				B2ABB6171F59770800DF8EC2 /* Imgix.swift in Sources */,
 				B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */,
 				B2493F031E26023600556A83 /* GoogleContainerEngine.swift in Sources */,
 				B2493EFC1E26023600556A83 /* GoogleCloudDataproc.swift in Sources */,
