@@ -1,5 +1,5 @@
 github "SnapKit/SnapKit" "3.2.0"
 github "inket/MBPopup" "1.0.1"
 github "inket/StartAtLogin" "v1.0.0"
-github "malcommac/SwiftDate" "4.1.7"
+github "malcommac/SwiftDate" "4.1.11"
 github "tid-kijyun/Kanna" "2.2.1"
