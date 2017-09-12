@@ -41,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             }
         }
 
-        popupController.didOpenPopup = { [weak self] _ in
+        popupController.didOpenPopup = { [weak self] in
             if self?.editorTableViewController.hidden == false {
                 self?.editorTableViewController.didOpenPopup()
             }
@@ -55,7 +55,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         timer?.fire()
     }
 
-    func updateServices() {
+    @objc func updateServices() {
         serviceTableViewController.updateServices { [weak self] in
             let title = self?.serviceTableViewController.generalStatus == .major ? "s__s" : "stts"
             self?.popupController.statusItem.title = title

@@ -49,7 +49,7 @@ class CrossIcon: NSView {
 
         color.setFill()
 
-        let context = NSGraphicsContext.current()!.cgContext
+        let context = NSGraphicsContext.current!.cgContext
 
         NSGraphicsContext.saveGraphicsState()
         context.translateBy(x: 23, y: 23)

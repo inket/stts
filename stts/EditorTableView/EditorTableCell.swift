@@ -20,9 +20,9 @@ class EditorTableCell: NSTableCellView {
             paragraphStyle.alignment = .center
 
             let attributes = [
-                NSFontAttributeName: NSFont.systemFont(ofSize: 11),
-                NSForegroundColorAttributeName: color,
-                NSParagraphStyleAttributeName: paragraphStyle
+                NSAttributedStringKey.font: NSFont.systemFont(ofSize: 11),
+                NSAttributedStringKey.foregroundColor: color,
+                NSAttributedStringKey.paragraphStyle: paragraphStyle
             ]
 
             toggleButton.attributedTitle = NSAttributedString(string: title, attributes: attributes)
@@ -74,7 +74,7 @@ class EditorTableCell: NSTableCellView {
         fatalError("coder coder coder")
     }
 
-    func toggle() {
+    @objc func toggle() {
         self.selected = !selected
         toggleCallback()
     }

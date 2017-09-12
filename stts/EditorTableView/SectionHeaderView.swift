@@ -22,7 +22,7 @@ class SectionHeaderView: NSTextField {
         self.isEditable = false
         self.isBordered = false
         self.isSelectable = false
-        let italicFont = NSFontManager.shared().font(withFamily: NSFont.systemFont(ofSize: 10).fontName,
+        let italicFont = NSFontManager.shared.font(withFamily: NSFont.systemFont(ofSize: 10).fontName,
                                                      traits: NSFontTraitMask.italicFontMask,
                                                      weight: 5,
                                                      size: 10)

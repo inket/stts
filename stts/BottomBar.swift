@@ -116,7 +116,7 @@ class BottomBar: NSView {
         statusField.isBordered = false
         statusField.isSelectable = false
         let font = NSFont.systemFont(ofSize: 12)
-        let italicFont = NSFontManager.shared().font(withFamily: font.fontName,
+        let italicFont = NSFontManager.shared.font(withFamily: font.fontName,
                                                      traits: NSFontTraitMask.italicFontMask,
                                                      weight: 5,
                                                      size: 10)
@@ -166,11 +166,11 @@ class BottomBar: NSView {
         }
     }
 
-    func reloadServices() {
+    @objc func reloadServices() {
         reloadServicesCallback()
     }
 
-    func openSettings() {
+    @objc func openSettings() {
         settingsButton.isHidden = true
         statusField.isHidden = true
         reloadButton.isHidden = true
@@ -182,7 +182,7 @@ class BottomBar: NSView {
         openSettingsCallback()
     }
 
-    func closeSettings() {
+    @objc func closeSettings() {
         settingsButton.isHidden = false
         statusField.isHidden = false
         reloadButton.isHidden = false
@@ -194,7 +194,7 @@ class BottomBar: NSView {
         closeSettingsCallback()
     }
 
-    func openAbout() {
+    @objc func openAbout() {
         let githubLink = "github.com/inket/stts"
         let contributorsLink = "github.com/inket/stts/graphs/contributors"
 
@@ -206,16 +206,23 @@ class BottomBar: NSView {
         let normalFont = NSFont.systemFont(ofSize: 11)
         let boldFont = NSFont.boldSystemFont(ofSize: 11)
 
-        credits.addAttribute(NSFontAttributeName, value: normalFont, range: NSRange(location: 0, length: credits.length))
+        credits.addAttribute(NSAttributedStringKey.font, value: normalFont, range: NSRange(location: 0, length: credits.length))
         for word in ["stts", "Activity", "Contributors"] {
-            credits.addAttribute(NSFontAttributeName, value: boldFont, range: (credits.string as NSString).range(of: word))
+            credits.addAttribute(NSAttributedStringKey.font, value: boldFont, range: (credits.string as NSString).range(of: word))
         }
 
-        credits.addAttribute(NSLinkAttributeName, value: "https://\(githubLink)", range: (credits.string as NSString).range(of: githubLink))
-        credits.addAttribute(NSLinkAttributeName, value: "https://\(contributorsLink)",
-                                                  range: (credits.string as NSString).range(of: contributorsLink))
+        credits.addAttribute(
+            NSAttributedStringKey.link,
+            value: "https://\(githubLink)",
+            range: (credits.string as NSString).range(of: githubLink)
+        )
+        credits.addAttribute(
+            NSAttributedStringKey.link,
+            value: "https://\(contributorsLink)",
+            range: (credits.string as NSString).range(of: contributorsLink)
+        )
 
-        NSApp.orderFrontStandardAboutPanel(options: ["Credits": credits])
+        NSApp.orderFrontStandardAboutPanel(options: [NSApplication.AboutPanelOptionKey(rawValue: "Credits"): credits])
         NSApp.activate(ignoringOtherApps: true)
     }
 }

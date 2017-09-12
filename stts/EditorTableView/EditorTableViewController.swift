@@ -32,7 +32,7 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
 
     func setup() {
         tableView.frame = scrollView.bounds
-        let column = NSTableColumn(identifier: "editorColumnIdentifier")
+        let column = NSTableColumn(identifier: NSUserInterfaceItemIdentifier(rawValue: "editorColumnIdentifier"))
         column.width = 200
         tableView.addTableColumn(column)
         tableView.autoresizesSubviews = true
@@ -40,7 +40,7 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
         tableView.layer?.cornerRadius = 6
         tableView.headerView = nil
         tableView.rowHeight = 30
-        tableView.gridStyleMask = NSTableViewGridLineStyle.init(rawValue: 0)
+        tableView.gridStyleMask = NSTableView.GridLineStyle.init(rawValue: 0)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.selectionHighlightStyle = .none
@@ -123,8 +123,8 @@ extension EditorTableViewController: NSTableViewDataSource {
 
 extension EditorTableViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let identifier = tableColumn?.identifier ?? "identifier"
-        let cell = tableView.make(withIdentifier: identifier, owner: self) ?? EditorTableCell()
+        let identifier = tableColumn?.identifier ?? NSUserInterfaceItemIdentifier(rawValue: "identifier")
+        let cell = tableView.makeView(withIdentifier: identifier, owner: self) ?? EditorTableCell()
 
         guard let view = cell as? EditorTableCell else { return nil }
 
@@ -151,7 +151,8 @@ extension EditorTableViewController: NSTableViewDelegate {
     }
 
     func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
-        let cell = tableView.make(withIdentifier: "rowView", owner: self) ?? ServiceTableRowView()
+        let cellIdentifier = NSUserInterfaceItemIdentifier(rawValue: "rowView")
+        let cell = tableView.makeView(withIdentifier: cellIdentifier, owner: self) ?? ServiceTableRowView()
 
         guard let view = cell as? ServiceTableRowView else { return nil }
 

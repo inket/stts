@@ -39,14 +39,14 @@ class SettingsView: NSView {
         startAtLoginCheckbox.setButtonType(.switch)
         startAtLoginCheckbox.title = "Start at Login"
         startAtLoginCheckbox.font = smallFont
-        startAtLoginCheckbox.state = StartAtLogin.enabled ? NSOnState : NSOffState
+        startAtLoginCheckbox.state = StartAtLogin.enabled ? .on : .off
         startAtLoginCheckbox.action = #selector(SettingsView.updateStartAtLogin)
         startAtLoginCheckbox.target = self
 
         notifyCheckbox.setButtonType(.switch)
         notifyCheckbox.title = "Notify when a status changes"
         notifyCheckbox.font = smallFont
-        notifyCheckbox.state = Preferences.shared.notifyOnStatusChange ? NSOnState : NSOffState
+        notifyCheckbox.state = Preferences.shared.notifyOnStatusChange ? .on : .off
         notifyCheckbox.action = #selector(SettingsView.updateNotifyOnStatusChange)
         notifyCheckbox.target = self
 
@@ -91,11 +91,11 @@ class SettingsView: NSView {
     }
 
     @objc private func updateStartAtLogin() {
-        StartAtLogin.enabled = startAtLoginCheckbox.state == NSOnState ? true : false
+        StartAtLogin.enabled = (startAtLoginCheckbox.state == .on)
     }
 
     @objc private func updateNotifyOnStatusChange() {
-        Preferences.shared.notifyOnStatusChange = notifyCheckbox.state == NSOnState ? true : false
+        Preferences.shared.notifyOnStatusChange = (notifyCheckbox.state == .on)
     }
 
     @objc private func filterServices() {

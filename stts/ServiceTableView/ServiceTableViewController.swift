@@ -96,7 +96,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         scrollView.layer?.cornerRadius = 6
 
         tableView.frame = scrollView.bounds
-        let column = NSTableColumn(identifier: "serviceColumnIdentifier")
+        let column = NSTableColumn(identifier: NSUserInterfaceItemIdentifier(rawValue: "serviceColumnIdentifier"))
         column.width = tableView.frame.size.width
         tableView.addTableColumn(column)
         tableView.autoresizesSubviews = true
@@ -104,7 +104,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         tableView.layer?.cornerRadius = 6
         tableView.headerView = nil
         tableView.rowHeight = 40
-        tableView.gridStyleMask = NSTableViewGridLineStyle.init(rawValue: 0)
+        tableView.gridStyleMask = NSTableView.GridLineStyle.init(rawValue: 0)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.selectionHighlightStyle = .none
@@ -113,7 +113,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         addServicesNoticeField.isEditable = false
         addServicesNoticeField.isBordered = false
         addServicesNoticeField.isSelectable = false
-        let italicFont = NSFontManager.shared().font(withFamily: NSFont.systemFont(ofSize: 10).fontName,
+        let italicFont = NSFontManager.shared.font(withFamily: NSFont.systemFont(ofSize: 10).fontName,
                                                      traits: NSFontTraitMask.italicFontMask,
                                                      weight: 5,
                                                      size: 10)
@@ -231,8 +231,8 @@ extension ServiceTableViewController: NSTableViewDataSource {
 
 extension ServiceTableViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let identifier = tableColumn?.identifier ?? "identifier"
-        let cell = tableView.make(withIdentifier: identifier, owner: self) ?? StatusTableCell()
+        let identifier = tableColumn?.identifier ?? NSUserInterfaceItemIdentifier(rawValue: "identifier")
+        let cell = tableView.makeView(withIdentifier: identifier, owner: self) ?? StatusTableCell()
 
         guard let view = cell as? StatusTableCell else { return nil }
 
@@ -245,7 +245,8 @@ extension ServiceTableViewController: NSTableViewDelegate {
     }
 
     func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
-        let cell = tableView.make(withIdentifier: "rowView", owner: self) ?? ServiceTableRowView()
+        let cellIdentifier = NSUserInterfaceItemIdentifier(rawValue: "rowView")
+        let cell = tableView.makeView(withIdentifier: cellIdentifier, owner: self) ?? ServiceTableRowView()
 
         guard let view = cell as? ServiceTableRowView else { return nil }
 
@@ -255,7 +256,7 @@ extension ServiceTableViewController: NSTableViewDelegate {
     }
 
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
-        NSWorkspace.shared().open(services[row].url)
+        NSWorkspace.shared.open(services[row].url)
         return false
     }
 }

@@ -43,7 +43,7 @@ class StatusTableCell: NSTableCellView {
         statusField.isEditable = false
         statusField.isBordered = false
         statusField.isSelectable = false
-        let italicFont = NSFontManager.shared().font(withFamily: font.fontName,
+        let italicFont = NSFontManager.shared.font(withFamily: font.fontName,
                                                      traits: NSFontTraitMask.italicFontMask,
                                                      weight: 5,
                                                      size: 10)
