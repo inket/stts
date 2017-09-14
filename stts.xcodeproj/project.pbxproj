@@ -17,6 +17,7 @@
 		B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */; };
 		B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */; };
 		B219C0DA1E2F0E9F001F8E7F /* CocoaPods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */; };
+		B21DC0761F6B436400E8214F /* Aptible.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21DC0751F6B436400E8214F /* Aptible.swift */; };
 		B22527F51E5BD0C70098E73D /* Contentful.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22527F41E5BD0C70098E73D /* Contentful.swift */; };
 		B225E3E01E44830F008E1D3D /* SwitchableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */; };
 		B22600311E1562E700EBDD40 /* MediaTemple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22600301E1562E700EBDD40 /* MediaTemple.swift */; };
@@ -152,6 +153,7 @@
 		B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableViewController.swift; sourceTree = "<group>"; };
 		B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableRowView.swift; sourceTree = "<group>"; };
 		B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaPods.swift; sourceTree = "<group>"; };
+		B21DC0751F6B436400E8214F /* Aptible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aptible.swift; sourceTree = "<group>"; };
 		B22527F41E5BD0C70098E73D /* Contentful.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contentful.swift; sourceTree = "<group>"; };
 		B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchableTableViewController.swift; sourceTree = "<group>"; };
 		B22600301E1562E700EBDD40 /* MediaTemple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTemple.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 		B299C8561DD051710024D2E9 /* StatusPage */ = {
 			isa = PBXGroup;
 			children = (
+				B21DC0751F6B436400E8214F /* Aptible.swift */,
 				B25695501E247C8C00FAE413 /* Atlassian.swift */,
 				B24F91221E8B51A400A77460 /* Auth0.swift */,
 				B2BA36181ED7B0F200051083 /* AuthorizeNet.swift */,
@@ -679,6 +682,7 @@
 				B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */,
 				B2493EFB1E26023600556A83 /* GoogleCloudDataflow.swift in Sources */,
 				03C5FB131E203325003C40B8 /* Packet.swift in Sources */,
+				B21DC0761F6B436400E8214F /* Aptible.swift in Sources */,
 				B26350FD1ED7CFC40069EA73 /* Loggly.swift in Sources */,
 				B24220E41E2F6BBA0007E50E /* Typeform.swift in Sources */,
 				B2F127AB1E0B84F00035B20C /* Braintree.swift in Sources */,
