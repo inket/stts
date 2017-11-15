@@ -17,26 +17,48 @@ class Slack: Service {
             guard let body = String(data: data, encoding: .utf8) else { return selfie._fail("Unreadable response") }
             guard let doc = HTML(html: body, encoding: .utf8) else { return selfie._fail("Couldn't parse response") }
 
-            guard let h1 = doc.css(".current_status > h1").first else { return selfie._fail("Unexpected response") }
+            let serviceImages = doc.css("#services .service.header img")
+            guard serviceImages.count > 0 else { return selfie._fail("Unexpected response") }
+            let imageURLs = serviceImages.flatMap { $0["src"] }
 
-            self?.status = selfie.status(from: h1)
-            self?.message = h1.text ?? ""
+            var resultStatus: ServiceStatus = .undetermined
+            var resultMessage = "Undetermined"
+
+            for url in imageURLs {
+                guard resultStatus != .major else { break } // No need to check the rest if major
+
+                guard let lastPart = url.split(separator: "/").last else { continue }
+                let imageName = String(lastPart).lowercased()
+
+                let (thisStatus, thisMessage) = selfie.status(from: imageName)
+
+                if thisStatus >= resultStatus {
+                    resultStatus = thisStatus
+                    resultMessage = thisMessage
+                }
+            }
+
+            self?.status = resultStatus
+            self?.message = resultMessage
         }.resume()
     }
 }
 
 extension Slack {
-    fileprivate func status(from h1: XMLElement) -> ServiceStatus {
-        guard let className = h1.className else { return .undetermined }
-
-        if className.contains("happy_green") {
-            return .good
-        } else if className.contains("moscow_red") {
-            return .major
-        } else if className.contains("concerned_yellow") {
-            return .minor
-        } else {
-            return .undetermined
+    fileprivate func status(from imageName: String) -> (ServiceStatus, String) {
+        switch imageName {
+        case "tableoutage.png":
+            return (.major, "Outage")
+        case "tableincident.png":
+            return (.minor, "Incident")
+        case "tablemaintenance.png":
+            return (.maintenance, "Maintenance")
+        case "tablenotice.png":
+            return (.notice, "[!] Notice Available")
+        case "tablecheck.png":
+            return (.good, "No Issues")
+        default:
+            return (.undetermined, "Undetermined")
         }
     }
 }
