@@ -24,15 +24,9 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
 
     var servicesBeingUpdated = [Service]()
     var generalStatus: ServiceStatus {
-        let badServices = services.filter {
-            $0.status != .good && $0.status != .maintenance && $0.status != .undetermined
-        }
+        let hasBadServices = services.first { $0.status > .maintenance } != nil
 
-        if badServices.count > 0 {
-            return .major
-        } else {
-            return .good
-        }
+        return hasBadServices ? .major : .good
     }
 
     var hidden: Bool = false
