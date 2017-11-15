@@ -5,12 +5,17 @@
 
 import Foundation
 
-enum ServiceStatus {
+enum ServiceStatus: Int, Comparable {
     case undetermined
     case good
+    case notice
     case maintenance
     case minor
     case major
+
+    static func < (lhs: ServiceStatus, rhs: ServiceStatus) -> Bool {
+        return lhs.rawValue < rhs.rawValue
+    }
 }
 
 class Service {
@@ -78,7 +83,9 @@ extension Service: Equatable {
 extension Service: Comparable {
     static func < (lhs: Service, rhs: Service) -> Bool {
         let sameStatus = lhs.status == rhs.status
-        let differentStatus = lhs.status != .good && rhs.status == .good
+        let differentStatus =
+            lhs.status != .good && lhs.status != .notice
+            && rhs.status == .good || rhs.status == .notice
         return ((lhs.name < rhs.name) && sameStatus) || differentStatus
     }
 }
