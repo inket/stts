@@ -158,7 +158,7 @@ class BottomBar: NSView {
         case .undetermined: statusField.stringValue = ""
         case .updating: statusField.stringValue = "Updating…"
         case .updated(let date):
-            if let (colloquial, _) = try? date.colloquialSinceNow() {
+            if let colloquial = date.colloquialSinceNow() {
                 statusField.stringValue = "Updated \(colloquial)"
             } else {
                 statusField.stringValue = "Updated"
