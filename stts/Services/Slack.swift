@@ -19,46 +19,36 @@ class Slack: Service {
 
             let serviceImages = doc.css("#services .service.header img")
             guard serviceImages.count > 0 else { return selfie._fail("Unexpected response") }
+
             let imageURLs = serviceImages.flatMap { $0["src"] }
+            let statuses = imageURLs.map { selfie.status(from: $0) }
 
-            var resultStatus: ServiceStatus = .undetermined
-            var resultMessage = "Undetermined"
-
-            for url in imageURLs {
-                guard resultStatus != .major else { break } // No need to check the rest if major
-
-                guard let lastPart = url.split(separator: "/").last else { continue }
-                let imageName = String(lastPart).lowercased()
-
-                let (thisStatus, thisMessage) = selfie.status(from: imageName)
-
-                if thisStatus >= resultStatus {
-                    resultStatus = thisStatus
-                    resultMessage = thisMessage
-                }
-            }
-
-            self?.status = resultStatus
-            self?.message = resultMessage
+            self?.status = statuses.max() ?? .undetermined
+            self?.message = doc.css("#current_status h1").first?.text ?? "Undetermined"
         }.resume()
     }
 }
 
 extension Slack {
-    fileprivate func status(from imageName: String) -> (ServiceStatus, String) {
+    fileprivate func status(from imageURL: String) -> ServiceStatus {
+        guard let lastPart = imageURL.split(separator: "/").last else {
+            return .undetermined
+        }
+        let imageName = String(lastPart).lowercased()
+
         switch imageName {
         case "tableoutage.png":
-            return (.major, "Outage")
+            return .major
         case "tableincident.png":
-            return (.minor, "Incident")
+            return .minor
         case "tablemaintenance.png":
-            return (.maintenance, "Maintenance")
+            return .maintenance
         case "tablenotice.png":
-            return (.notice, "[!] Notice Available")
+            return .notice
         case "tablecheck.png":
-            return (.good, "No Issues")
+            return .good
         default:
-            return (.undetermined, "Undetermined")
+            return .undetermined
         }
     }
 }
