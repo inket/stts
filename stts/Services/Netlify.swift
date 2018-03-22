@@ -15,7 +15,7 @@ class Netlify: Service {
 
             guard let data = data else { return selfie._fail(error) }
             guard let body = String(data: data, encoding: .utf8) else { return selfie._fail("Unreadable response") }
-            guard let doc = HTML(html: body, encoding: .utf8) else { return selfie._fail("Couldn't parse response") }
+            guard let doc = try? HTML(html: body, encoding: .utf8) else { return selfie._fail("Couldn't parse response") }
 
             self?.status = selfie.status(from: doc)
             self?.message = doc.css("#days-since-latest").first?.text ?? ""

@@ -25,7 +25,7 @@ struct GoogleCloudPlatformStatusStore {
 
             guard let data = data else { return _fail(error) }
             guard let body = String(data: data, encoding: .utf8) else { return _fail("Unreadable response") }
-            guard let doc = HTML(html: body, encoding: .utf8) else { return _fail("Couldn't parse response") }
+            guard let doc = try? HTML(html: body, encoding: .utf8) else { return _fail("Couldn't parse response") }
 
             for tr in doc.css(".timeline tr") {
                 guard let (name, status) = parseTimelineRow(tr) else { continue }
