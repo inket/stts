@@ -6,6 +6,6 @@
 import Foundation
 
 class TravisCI: StatusPageService {
-    override var url: URL { return URL(string: "https://www.traviscistatus.com/")! }
-    override var statusPageID: String { return "pnpcptp8xh9k" }
+    let url = URL(string: "https://www.traviscistatus.com/")!
+    let statusPageID = "pnpcptp8xh9k"
 }

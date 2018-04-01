@@ -6,6 +6,6 @@
 import Foundation
 
 class Reddit: StatusPageService {
-    override var url: URL { return URL(string: "http://www.redditstatus.com/")! }
-    override var statusPageID: String { return "2kbc0d48tv3j" }
+    let url = URL(string: "http://www.redditstatus.com/")!
+    let statusPageID = "2kbc0d48tv3j"
 }

@@ -6,7 +6,7 @@
 import Foundation
 
 class AuthorizeNet: StatusPageService {
-    override var name: String { return "Authorize.Net" }
-    override var url: URL { return URL(string: "https://status.authorize.net")! }
-    override var statusPageID: String { return "py5v2nkvrdpm" }
+    let name = "Authorize.Net"
+    let url = URL(string: "https://status.authorize.net")!
+    let statusPageID = "py5v2nkvrdpm"
 }

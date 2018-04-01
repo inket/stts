@@ -6,5 +6,5 @@
 import Foundation
 
 class GoogleCloudSQL: GoogleCloudPlatform {
-    override var name: String { return "Google Cloud SQL" }
+    let name = "Google Cloud SQL"
 }

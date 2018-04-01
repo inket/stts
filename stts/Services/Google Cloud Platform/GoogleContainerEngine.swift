@@ -6,5 +6,5 @@
 import Foundation
 
 class GoogleContainerEngine: GoogleCloudPlatform {
-    override var name: String { return "Google Container Engine" }
+    let name = "Google Container Engine"
 }

@@ -18,8 +18,19 @@ enum ServiceStatus: Int, Comparable {
     }
 }
 
-class Service {
+typealias Service = BaseService & RequiredServiceProperties
+
+protocol RequiredServiceProperties {
+    var name: String { get }
+    var url: URL { get }
+}
+
+extension RequiredServiceProperties {
+    // Default implementation of the property `name` is to return the class name
     var name: String { return "\(type(of: self))" }
+}
+
+class BaseService {
     var status: ServiceStatus = .undetermined {
         didSet {
             if oldValue == .undetermined || status == .undetermined || oldValue == status {
@@ -30,25 +41,24 @@ class Service {
         }
     }
     var message: String = "Loading…"
-    var url: URL { return URL(string: "")! }
     var shouldNotify = false
 
-    static func all() -> [Service] {
+    static func all() -> [BaseService] {
         guard let servicesPlist = Bundle.main.path(forResource: "services", ofType: "plist"),
             let services = NSDictionary(contentsOfFile: servicesPlist)?["services"] as? [String] else {
                 fatalError("The services.plist file does not exist. The build phase script might have failed.")
         }
 
-        return services.map(Service.named).flatMap { $0 }
+        return services.map(BaseService.named).compactMap { $0 }
     }
 
-    static func named(_ name: String) -> Service? {
+    static func named(_ name: String) -> BaseService? {
         return (NSClassFromString("stts.\(name)") as? Service.Type)?.init()
     }
 
     required init() {}
 
-    func updateStatus(callback: @escaping (Service) -> Void) {}
+    func updateStatus(callback: @escaping (BaseService) -> Void) {}
 
     func _fail(_ error: Error?) {
         self.status = .undetermined
@@ -61,27 +71,43 @@ class Service {
     }
 
     func notifyIfNecessary() {
+        guard let realSelf = self as? Service else { fatalError("BaseService should not be used directly.") }
+
         guard shouldNotify else { return }
 
         self.shouldNotify = false
 
         let notification = NSUserNotification()
-        let possessiveS = name.hasSuffix("s") ? "'" : "'s"
-        notification.title = "\(name)\(possessiveS) status has changed"
+        let possessiveS = realSelf.name.hasSuffix("s") ? "'" : "'s"
+        notification.title = "\(realSelf.name)\(possessiveS) status has changed"
         notification.informativeText = message
 
         NSUserNotificationCenter.default.deliver(notification)
     }
 }
 
-extension Service: Equatable {
-    public static func == (lhs: Service, rhs: Service) -> Bool {
+extension BaseService: Equatable {
+    internal static func == (lhs: BaseService, rhs: BaseService) -> Bool {
+        guard
+            let lhs = lhs as? Service,
+            let rhs = rhs as? Service
+        else {
+            fatalError("BaseService should not be used directly.")
+        }
+
         return lhs.name == rhs.name
     }
 }
 
-extension Service: Comparable {
-    static func < (lhs: Service, rhs: Service) -> Bool {
+extension BaseService: Comparable {
+    static func < (lhs: BaseService, rhs: BaseService) -> Bool {
+        guard
+            let lhs = lhs as? Service,
+            let rhs = rhs as? Service
+        else {
+            fatalError("BaseService should not be used directly.")
+        }
+
         let sameStatus = lhs.status == rhs.status
         let differentStatus =
             lhs.status != .good && lhs.status != .notice

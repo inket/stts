@@ -6,6 +6,6 @@
 import Foundation
 
 class Mapbox: StatusPageService {
-    override var url: URL { return URL(string: "http://status.mapbox.com")! }
-    override var statusPageID: String { return "l363gv8nm9gc" }
+    let url = URL(string: "http://status.mapbox.com")!
+    let statusPageID = "l363gv8nm9gc"
 }

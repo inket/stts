@@ -57,6 +57,7 @@
 		B25695601E247C8C00FAE413 /* SmartyStreets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695571E247C8C00FAE413 /* SmartyStreets.swift */; };
 		B25695611E247C8C00FAE413 /* Squarespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695581E247C8C00FAE413 /* Squarespace.swift */; };
 		B257469B1E2781A3003A07A4 /* CodeClimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257469A1E2781A3003A07A4 /* CodeClimate.swift */; };
+		B25EC9CC2071265500D2DD3D /* GoogleCloudPlatformAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EC9CB2071265500D2DD3D /* GoogleCloudPlatformAll.swift */; };
 		B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */; };
 		B26350FD1ED7CFC40069EA73 /* Loggly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26350FC1ED7CFC40069EA73 /* Loggly.swift */; };
 		B26350FF1ED7D0210069EA73 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26350FE1ED7D0210069EA73 /* Segment.swift */; };
@@ -197,6 +198,7 @@
 		B25695571E247C8C00FAE413 /* SmartyStreets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartyStreets.swift; sourceTree = "<group>"; };
 		B25695581E247C8C00FAE413 /* Squarespace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Squarespace.swift; sourceTree = "<group>"; };
 		B257469A1E2781A3003A07A4 /* CodeClimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeClimate.swift; sourceTree = "<group>"; };
+		B25EC9CB2071265500D2DD3D /* GoogleCloudPlatformAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudPlatformAll.swift; sourceTree = "<group>"; };
 		B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		B26350FC1ED7CFC40069EA73 /* Loggly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loggly.swift; sourceTree = "<group>"; };
 		B26350FE1ED7D0210069EA73 /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
@@ -305,7 +307,7 @@
 				B2493EED1E26023600556A83 /* GoogleCloudDataflow.swift */,
 				B2493EEE1E26023600556A83 /* GoogleCloudDataproc.swift */,
 				B2493EEF1E26023600556A83 /* GoogleCloudDatastore.swift */,
-				B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */,
+				B25EC9CB2071265500D2DD3D /* GoogleCloudPlatformAll.swift */,
 				B2493EF11E26023600556A83 /* GoogleCloudPubSub.swift */,
 				B2493EF21E26023600556A83 /* GoogleCloudSQL.swift */,
 				B2493EF31E26023600556A83 /* GoogleCloudStorage.swift */,
@@ -486,6 +488,7 @@
 			isa = PBXGroup;
 			children = (
 				B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */,
+				B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */,
 				B2493F081E2607FC00556A83 /* GoogleCloudPlatformStatusStore.swift */,
 				B205A9171D49D67700EA178D /* Service.swift */,
 				B2FDC91B1D67062200F0B728 /* StatusPageService.swift */,
@@ -640,6 +643,7 @@
 				B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */,
 				B2CB0F9B2047A60000873C14 /* Vimeo.swift in Sources */,
 				B2493EF91E26023600556A83 /* GoogleCloudBigtable.swift in Sources */,
+				B25EC9CC2071265500D2DD3D /* GoogleCloudPlatformAll.swift in Sources */,
 				B299C8431DD044160024D2E9 /* NewRelic.swift in Sources */,
 				B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */,
 				B2A0635C1E1340B400EEA762 /* Docker.swift in Sources */,

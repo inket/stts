@@ -6,6 +6,6 @@
 import Foundation
 
 class Codecov: StatusPageService {
-    override var url: URL { return URL(string: "http://status.codecov.io")! }
-    override var statusPageID: String { return "wdzsn5dlywj9" }
+    let url = URL(string: "http://status.codecov.io")!
+    let statusPageID = "wdzsn5dlywj9"
 }

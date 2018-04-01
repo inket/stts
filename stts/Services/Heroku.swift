@@ -6,9 +6,9 @@
 import Foundation
 
 class Heroku: Service {
-    override var url: URL { return URL(string: "https://status.heroku.com/")! }
+    let url = URL(string: "https://status.heroku.com/")!
 
-    override func updateStatus(callback: @escaping (Service) -> Void) {
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
         let statusURL = URL(string: "https://status.heroku.com/api/v3/current-status")!
 
         URLSession.shared.dataTask(with: statusURL) { [weak self] data, _, error in
@@ -17,9 +17,9 @@ class Heroku: Service {
             guard let data = data else { return selfie._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard let dict = json as? [String : Any] else { return selfie._fail("Unexpected data") }
+            guard let dict = json as? [String: Any] else { return selfie._fail("Unexpected data") }
 
-            guard let status = dict["status"] as? [String : String] else { return selfie._fail("Unexpected data") }
+            guard let status = dict["status"] as? [String: String] else { return selfie._fail("Unexpected data") }
 
             let devStatus = status["Development"]
             let prodStatus = status["Production"]
@@ -27,7 +27,7 @@ class Heroku: Service {
             let devGreen = devStatus == "green"
             let prodGreen = prodStatus == "green"
 
-            let statuses = [devStatus, prodStatus].flatMap { $0 }
+            let statuses = [devStatus, prodStatus].compactMap { $0 }
             if statuses.contains("red") {
                 self?.status = .major
             } else if statuses.contains("yellow") {
@@ -46,7 +46,7 @@ class Heroku: Service {
             // Get the title of the current issue if any
             var title: String?
             if !prodGreen || !devGreen {
-                if let issues = dict["issues"] as? [[String : Any]] {
+                if let issues = dict["issues"] as? [[String: Any]] {
                     title = issues.first?["title"] as? String
                 }
             }

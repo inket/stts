@@ -6,7 +6,7 @@
 import Foundation
 
 class PivotalTracker: StatusPageService {
-    override var name: String { return "Pivotal Tracker" }
-    override var url: URL { return URL(string: "https://status.pivotaltracker.com")! }
-    override var statusPageID: String { return "mjwp4vwtvdp8" }
+    let name = "Pivotal Tracker"
+    let url = URL(string: "https://status.pivotaltracker.com")!
+    let statusPageID = "mjwp4vwtvdp8"
 }

@@ -6,6 +6,6 @@
 import Cocoa
 
 class Codacy: ExanaService {
-    override var url: URL { return URL(string: "https://status.codacy.com")! }
-    override var serviceID: String { return "EXID-SRVC-9931x913std5p9x3" }
+    let url = URL(string: "https://status.codacy.com")!
+    let serviceID = "EXID-SRVC-9931x913std5p9x3"
 }

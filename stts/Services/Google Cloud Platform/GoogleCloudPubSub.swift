@@ -6,5 +6,5 @@
 import Foundation
 
 class GoogleCloudPubSub: GoogleCloudPlatform {
-    override var name: String { return "Google Cloud Pub/Sub" }
+    let name = "Google Cloud Pub/Sub"
 }

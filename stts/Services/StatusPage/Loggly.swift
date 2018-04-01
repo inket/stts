@@ -6,6 +6,6 @@
 import Foundation
 
 class Loggly: StatusPageService {
-    override var url: URL { return URL(string: "http://status.loggly.com")! }
-    override var statusPageID: String { return "701xnxqmhdh3" }
+    let url = URL(string: "http://status.loggly.com")!
+    let statusPageID = "701xnxqmhdh3"
 }

@@ -40,10 +40,10 @@ private enum GandiStatus: String, Codable {
 }
 
 class Gandi: Service {
-    override var name: String { return "Gandi.net" }
-    override var url: URL { return URL(string: "https://status.gandi.net")! }
+    let name = "Gandi.net"
+    let url = URL(string: "https://status.gandi.net")!
 
-    override func updateStatus(callback: @escaping (Service) -> Void) {
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
         let statusURL = URL(string: "https://status.gandi.net/api/status")!
 
         URLSession.shared.dataTask(with: statusURL) { [weak self] data, _, error in
@@ -53,7 +53,7 @@ class Gandi: Service {
 
             // Schema is at https://status.gandi.net/api/status/schema
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard let dict = json as? [String : String] else { return selfie._fail("Unexpected data") }
+            guard let dict = json as? [String: String] else { return selfie._fail("Unexpected data") }
 
             guard
                 let rawStatusString = dict["status"],

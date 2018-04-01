@@ -11,9 +11,9 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
     let scrollView: CustomScrollView
     let tableView = NSTableView()
 
-    let allServices: [Service] = Service.all().sorted()
-    var filteredServices: [Service]
-    var selectedServices: [Service] = Preferences.shared.selectedServices
+    let allServices: [BaseService] = BaseService.all().sorted()
+    var filteredServices: [BaseService]
+    var selectedServices: [BaseService] = Preferences.shared.selectedServices
 
     var selectionChanged = false
 
@@ -48,18 +48,21 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
 
         settingsView.isHidden = true
         settingsView.searchCallback = { [weak self] searchString in
-            guard let selfie = self else { return }
+            guard
+                let selfie = self,
+                let allServices = selfie.allServices as? [Service]
+            else { return }
 
             if searchString.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-                selfie.filteredServices = selfie.allServices
+                selfie.filteredServices = allServices
             } else {
                 // Can't filter array with NSPredicate without making Service inherit KVO from NSObject, therefore we create
                 // an array of service names that we can run the predicate on
-                let allServiceNames = selfie.allServices.map { $0.name } as NSArray
+                let allServiceNames = allServices.compactMap { $0.name } as NSArray
                 let predicate = NSPredicate(format: "SELF LIKE[cd] %@", argumentArray: ["*\(searchString)*"])
                 guard let filteredServiceNames = allServiceNames.filtered(using: predicate) as? [String] else { return }
 
-                selfie.filteredServices = selfie.allServices.filter { filteredServiceNames.contains($0.name) }
+                selfie.filteredServices = allServices.filter { filteredServiceNames.contains($0.name) }
             }
 
             selfie.tableView.reloadData()
@@ -127,8 +130,8 @@ extension EditorTableViewController: NSTableViewDelegate {
         let cell = tableView.makeView(withIdentifier: identifier, owner: self) ?? EditorTableCell()
 
         guard let view = cell as? EditorTableCell else { return nil }
+        guard let service = filteredServices[row] as? Service else { return nil }
 
-        let service = filteredServices[row]
         view.textField?.stringValue = service.name
         view.selected = selectedServices.contains(service)
         view.toggleCallback = { [weak self] in

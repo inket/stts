@@ -6,5 +6,5 @@
 import Foundation
 
 class GoogleCloudConsole: GoogleCloudPlatform {
-    override var name: String { return "Google Cloud Console" }
+    let name = "Google Cloud Console"
 }

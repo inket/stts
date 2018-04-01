@@ -6,5 +6,5 @@
 import Foundation
 
 class GoogleStackdriver: GoogleCloudPlatform {
-    override var name: String { return "Google Stackdriver" }
+    let name = "Google Stackdriver"
 }

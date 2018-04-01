@@ -5,11 +5,17 @@
 
 import Kanna
 
-class ExanaService: Service {
-    var serviceID: String { return "" }
+typealias ExanaService = BaseExanaService & RequiredServiceProperties & RequiredExanaProperties
 
-    override func updateStatus(callback: @escaping (Service) -> Void) {
-        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+protocol RequiredExanaProperties {
+    var serviceID: String { get }
+}
+
+class BaseExanaService: BaseService {
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+        guard let realSelf = self as? ExanaService else { fatalError("BaseExanaService should not be used directly.") }
+
+        URLSession.shared.dataTask(with: realSelf.url) { [weak self] data, _, error in
             guard let selfie = self else { return }
             defer { callback(selfie) }
 
@@ -23,11 +29,13 @@ class ExanaService: Service {
         }.resume()
     }
 
-    func getStatus(authorization: String, callback: @escaping (Service) -> Void) {
-        let params: [String : Any] = [
+    func getStatus(authorization: String, callback: @escaping (BaseExanaService) -> Void) {
+        guard let realSelf = self as? ExanaService else { fatalError("BaseExanaService should not be used directly.") }
+
+        let params: [String: Any] = [
             "method": "components.query",
             "params": [
-                "serviceId": serviceID
+                "serviceId": realSelf.serviceID
             ],
             "id": String.init(repeating: "a", count: 40),
             "jsonrpc": "2.0"
@@ -50,9 +58,9 @@ class ExanaService: Service {
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
 
-            guard let jsonRoot = json as? [String : Any],
-                let result = jsonRoot["result"] as? [String : Any],
-                let components = result["components"] as? [[String : Any]] else { return selfie._fail("Unexpected data") }
+            guard let jsonRoot = json as? [String: Any],
+                let result = jsonRoot["result"] as? [String: Any],
+                let components = result["components"] as? [[String: Any]] else { return selfie._fail("Unexpected data") }
 
             let downComponents = components.filter { ($0["status"] as? String)?.lowercased() != "operational" }
 
@@ -61,7 +69,7 @@ class ExanaService: Service {
             if downComponents.isEmpty {
                 selfie.message = "Operational"
             } else {
-                selfie.message = downComponents.map { $0["name"] as? String }.flatMap { $0 }.joined(separator: ", ")
+                selfie.message = downComponents.map { $0["name"] as? String }.compactMap { $0 }.joined(separator: ", ")
             }
         }.resume()
     }

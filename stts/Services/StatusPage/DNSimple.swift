@@ -6,6 +6,6 @@
 import Foundation
 
 class DNSimple: StatusPageService {
-    override var url: URL { return URL(string: "https://dnsimple.statuspage.io")! }
-    override var statusPageID: String { return "tjym90yyv2zt" }
+    let url = URL(string: "https://dnsimple.statuspage.io")!
+    let statusPageID = "tjym90yyv2zt"
 }

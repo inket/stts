@@ -6,6 +6,6 @@
 import Foundation
 
 class Sentry: StatusPageService {
-    override var url: URL { return URL(string: "https://status.sentry.io")! }
-    override var statusPageID: String { return "t687h3m0nh65" }
+    let url = URL(string: "https://status.sentry.io")!
+    let statusPageID = "t687h3m0nh65"
 }

@@ -6,7 +6,7 @@
 import Foundation
 
 class MediaTemple: StatusPageService {
-    override var name: String { return "Media Temple" }
-    override var url: URL { return URL(string: "http://status.mediatemple.net")! }
-    override var statusPageID: String { return "sk0wbwpc3xqq" }
+    let name = "Media Temple"
+    let url = URL(string: "http://status.mediatemple.net")!
+    let statusPageID = "sk0wbwpc3xqq"
 }

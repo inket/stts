@@ -6,9 +6,9 @@
 import Kanna
 
 class MailChimp: Service {
-    override var url: URL { return URL(string: "https://status.mailchimp.com")! }
+    let url = URL(string: "https://status.mailchimp.com")!
 
-    override func updateStatus(callback: @escaping (Service) -> Void) {
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
         let messagesURL = URL(string: "https://status.mailchimp.com/messages")!
 
         URLSession.shared.dataTask(with: messagesURL) { [weak self] data, _, error in

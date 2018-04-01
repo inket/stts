@@ -6,6 +6,6 @@
 import Foundation
 
 class CircleCI: StatusPageService {
-    override var url: URL { return URL(string: "https://status.circleci.com/")! }
-    override var statusPageID: String { return "6w4r0ttlx5ft" }
+    let url = URL(string: "https://status.circleci.com/")!
+    let statusPageID = "6w4r0ttlx5ft"
 }

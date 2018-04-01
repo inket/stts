@@ -6,5 +6,5 @@
 import Foundation
 
 class GoogleAppEngine: GoogleCloudPlatform {
-    override var name: String { return "Google App Engine" }
+    let name = "Google App Engine"
 }

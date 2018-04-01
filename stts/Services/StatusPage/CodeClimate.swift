@@ -6,7 +6,7 @@
 import Foundation
 
 class CodeClimate: StatusPageService {
-    override var name: String { return "Code Climate" }
-    override var url: URL { return URL(string: "http://status.codeclimate.com")! }
-    override var statusPageID: String { return "rh2cj4bllp8l" }
+    let name = "Code Climate"
+    let url = URL(string: "http://status.codeclimate.com")!
+    let statusPageID = "rh2cj4bllp8l"
 }

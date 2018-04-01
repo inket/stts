@@ -6,9 +6,9 @@
 import Kanna
 
 class DigitalOcean: Service {
-    override var url: URL { return URL(string: "https://status.digitalocean.com")! }
+    let url = URL(string: "https://status.digitalocean.com")!
 
-    override func updateStatus(callback: @escaping (Service) -> Void) {
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
         URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard let selfie = self else { return }
             defer { callback(selfie) }
@@ -27,7 +27,7 @@ extension DigitalOcean {
     fileprivate func status(from document: HTMLDocument) -> ServiceStatus {
         guard document.css(".page-status.status-none").count == 0 else { return .good }
 
-        let unresolvedIncidentClasses = document.css(".unresolved-incident").flatMap { $0.className }
+        let unresolvedIncidentClasses = document.css(".unresolved-incident").compactMap { $0.className }
 
         if (unresolvedIncidentClasses.filter { $0.range(of: "impact-critical") != nil || $0.range(of: "impact-major") != nil }).count > 0 {
             return .major

@@ -6,6 +6,6 @@
 import Foundation
 
 class Atlassian: StatusPageService {
-    override var url: URL { return URL(string: "http://status.atlassian.com")! }
-    override var statusPageID: String { return "x67gp49yvrzv" }
+    let url = URL(string: "http://status.atlassian.com")!
+    let statusPageID = "x67gp49yvrzv"
 }

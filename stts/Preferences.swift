@@ -13,13 +13,13 @@ struct Preferences {
         set { UserDefaults.standard.set(newValue, forKey: "notifyOnStatusChange") }
     }
 
-    var selectedServices: [Service] {
+    var selectedServices: [BaseService] {
         get {
             guard let classNames = UserDefaults.standard.array(forKey: "selectedServices") as? [String] else {
                 return []
             }
 
-            return classNames.map(Service.named).flatMap { $0 }.sorted()
+            return classNames.map(BaseService.named).compactMap { $0 }.sorted()
         }
 
         set {

@@ -6,9 +6,9 @@
 import Kanna
 
 class Evernote: Service {
-    override var url: URL { return URL(string: "http://status.evernote.com")! }
+    let url = URL(string: "http://status.evernote.com")!
 
-    override func updateStatus(callback: @escaping (Service) -> Void) {
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
         URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard let selfie = self else { return }
             defer { callback(selfie) }

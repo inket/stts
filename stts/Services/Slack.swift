@@ -6,9 +6,9 @@
 import Kanna
 
 class Slack: Service {
-    override var url: URL { return URL(string: "https://status.slack.com")! }
+    let url = URL(string: "https://status.slack.com")!
 
-    override func updateStatus(callback: @escaping (Service) -> Void) {
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
         URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard let selfie = self else { return }
             defer { callback(selfie) }
@@ -20,7 +20,7 @@ class Slack: Service {
             let serviceImages = doc.css("#services .service.header img")
             guard serviceImages.count > 0 else { return selfie._fail("Unexpected response") }
 
-            let imageURLs = serviceImages.flatMap { $0["src"] }
+            let imageURLs = serviceImages.compactMap { $0["src"] }
             let statuses = imageURLs.map { selfie.status(from: $0) }
 
             self?.status = statuses.max() ?? .undetermined

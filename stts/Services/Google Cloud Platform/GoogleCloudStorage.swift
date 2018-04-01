@@ -6,5 +6,5 @@
 import Foundation
 
 class GoogleCloudStorage: GoogleCloudPlatform {
-    override var name: String { return "Google Cloud Storage" }
+    let name = "Google Cloud Storage"
 }

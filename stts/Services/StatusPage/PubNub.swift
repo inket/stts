@@ -6,6 +6,6 @@
 import Foundation
 
 class PubNub: StatusPageService {
-    override var url: URL { return URL(string: "http://status.pubnub.com")! }
-    override var statusPageID: String { return "j2pr9thwz01t" }
+    let url = URL(string: "http://status.pubnub.com")!
+    let statusPageID = "j2pr9thwz01t"
 }

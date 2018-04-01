@@ -16,13 +16,13 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
 
     var editorTableViewController: EditorTableViewController
 
-    var services: [Service] = Preferences.shared.selectedServices {
+    var services: [BaseService] = Preferences.shared.selectedServices {
         didSet {
             addServicesNoticeField.isHidden = services.count > 0
         }
     }
 
-    var servicesBeingUpdated = [Service]()
+    var servicesBeingUpdated = [BaseService]()
     var generalStatus: ServiceStatus {
         let hasBadServices = services.first { $0.status > .maintenance } != nil
 
@@ -185,7 +185,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         }
 
         self.updateCallback = updateCallback
-        let serviceCallback: ((Service) -> Void) = { [weak self] service in self?.updatedStatus(for: service) }
+        let serviceCallback: ((BaseService) -> Void) = { [weak self] service in self?.updatedStatus(for: service) }
 
         bottomBar.status = .updating
 
@@ -195,7 +195,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         }
     }
 
-    func updatedStatus(for service: Service) {
+    func updatedStatus(for service: BaseService) {
         if let index = servicesBeingUpdated.index(of: service) {
             servicesBeingUpdated.remove(at: index)
         }
@@ -229,8 +229,8 @@ extension ServiceTableViewController: NSTableViewDelegate {
         let cell = tableView.makeView(withIdentifier: identifier, owner: self) ?? StatusTableCell()
 
         guard let view = cell as? StatusTableCell else { return nil }
+        guard let service = services[row] as? Service else { return nil }
 
-        let service = services[row]
         view.textField?.stringValue = service.name
         view.statusField.stringValue = service.message
         view.statusIndicator.status = service.status
@@ -250,7 +250,9 @@ extension ServiceTableViewController: NSTableViewDelegate {
     }
 
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
-        NSWorkspace.shared.open(services[row].url)
+        guard let service = services[row] as? Service else { return false }
+
+        NSWorkspace.shared.open(service.url)
         return false
     }
 }
