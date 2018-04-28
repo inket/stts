@@ -23,6 +23,7 @@
 		B22600311E1562E700EBDD40 /* MediaTemple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22600301E1562E700EBDD40 /* MediaTemple.swift */; };
 		B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22BA3011E8119AB0038D8F6 /* Discord.swift */; };
 		B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23038F01E0DF3CC00B29095 /* Beanstalk.swift */; };
+		B232A18D20944B960066AD01 /* Cloud66.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232A18C20944B950066AD01 /* Cloud66.swift */; };
 		B2357D711E5C08AF0093B8A6 /* Netlify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2357D701E5C08AF0093B8A6 /* Netlify.swift */; };
 		B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235B3BC1DF562C400821936 /* SettingsView.swift */; };
 		B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D4E6C1E13471200B04F18 /* Intercom.swift */; };
@@ -165,6 +166,7 @@
 		B22600301E1562E700EBDD40 /* MediaTemple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTemple.swift; sourceTree = "<group>"; };
 		B22BA3011E8119AB0038D8F6 /* Discord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discord.swift; sourceTree = "<group>"; };
 		B23038F01E0DF3CC00B29095 /* Beanstalk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beanstalk.swift; sourceTree = "<group>"; };
+		B232A18C20944B950066AD01 /* Cloud66.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud66.swift; sourceTree = "<group>"; };
 		B2357D701E5C08AF0093B8A6 /* Netlify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
 		B235B3BC1DF562C400821936 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B23D4E6C1E13471200B04F18 /* Intercom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intercom.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 		B26CB5711E13448900116A33 /* Status.ioV1 */ = {
 			isa = PBXGroup;
 			children = (
+				B232A18C20944B950066AD01 /* Cloud66.swift */,
 				B2A0635B1E1340B400EEA762 /* Docker.swift */,
 			);
 			path = Status.ioV1;
@@ -729,6 +732,7 @@
 				B2C337A51E1417390007E110 /* Mixpanel.swift in Sources */,
 				B2357D711E5C08AF0093B8A6 /* Netlify.swift in Sources */,
 				B2A93ADD1EB814C000D36DD3 /* Snyk.swift in Sources */,
+				B232A18D20944B960066AD01 /* Cloud66.swift in Sources */,
 				B2FFC1F01E261B4A00529A00 /* Dropbox.swift in Sources */,
 				B2EB51CE1E7004A3001D6F78 /* ExanaService.swift in Sources */,
 				B2BA697E1E2DA3A20016AF1A /* PivotalTracker.swift in Sources */,
