@@ -94,6 +94,7 @@
 		B26CD1E81DD59FDD0054A385 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26CD1E71DD59FDD0054A385 /* Kanna.framework */; };
 		B26CD1EA1DD59FE60054A385 /* Kanna.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B26CD1E71DD59FDD0054A385 /* Kanna.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B26CD1EC1DD59FFB0054A385 /* DigitalOcean.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */; };
+		B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27090F0209F52EB0094C3D7 /* Stream.swift */; };
 		B276C8F21DD474200098B451 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B276C8EF1DD474200098B451 /* SwiftDate.framework */; };
 		B276C8F31DD474200098B451 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B276C8F01DD474200098B451 /* SnapKit.framework */; };
 		B276C8F41DD474200098B451 /* MBPopup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B276C8F11DD474200098B451 /* MBPopup.framework */; };
@@ -264,6 +265,7 @@
 		B269FCBA1E261BDF0016041D /* Figma.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Figma.swift; sourceTree = "<group>"; };
 		B26CD1E71DD59FDD0054A385 /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/Mac/Kanna.framework; sourceTree = SOURCE_ROOT; };
 		B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalOcean.swift; sourceTree = "<group>"; };
+		B27090F0209F52EB0094C3D7 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 		B276C8EF1DD474200098B451 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/Mac/SwiftDate.framework; sourceTree = SOURCE_ROOT; };
 		B276C8F01DD474200098B451 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/Mac/SnapKit.framework; sourceTree = SOURCE_ROOT; };
 		B276C8F11DD474200098B451 /* MBPopup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBPopup.framework; path = Carthage/Build/Mac/MBPopup.framework; sourceTree = SOURCE_ROOT; };
@@ -501,6 +503,7 @@
 				B2A93ADC1EB814C000D36DD3 /* Snyk.swift */,
 				B25695581E247C8C00FAE413 /* Squarespace.swift */,
 				B2D2B6CE20870E700011723B /* StatusPage.swift */,
+				B27090F0209F52EB0094C3D7 /* Stream.swift */,
 				B2D032CF1D6455E300D51CB8 /* TravisCI.swift */,
 				B20396351EE6A060008CCA21 /* Trello.swift */,
 				B2F127A81E0B84B50035B20C /* Twilio.swift */,
@@ -869,6 +872,7 @@
 				B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */,
 				B2483CF12037029D00A9FA95 /* Zwift.swift in Sources */,
 				B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */,
+				B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
