@@ -18,16 +18,16 @@ extension GoogleStatusDashboardStoreService {
 
 class GoogleStatusDashboardStore {
     private var dashboardURL: URL
-    private var defaultName: String
+    private var defaultType: GoogleStatusDashboardStoreService.Type
     private var statuses: [String: ServiceStatus] = [:]
     private var loadErrorMessage: String?
     private var callbacks: [() -> Void] = []
     private var lastUpdateTime: TimeInterval = 0
     private var currentlyReloading: Bool = false
 
-    init(url: URL, defaultName name: String) {
+    init(url: URL, generalType type: GoogleStatusDashboardStoreService.Type) {
         dashboardURL = url
-        defaultName = name
+        defaultType = type
     }
 
     func loadStatus(_ callback: @escaping () -> Void) {
@@ -58,7 +58,11 @@ class GoogleStatusDashboardStore {
     }
 
     func status(for service: GoogleStatusDashboardStoreService) -> (ServiceStatus, String) {
-        guard let status = statuses[service.dashboardName] else { return (.undetermined, loadErrorMessage ?? "Unexpected error") }
+        let generalStatus = type(of: service) == defaultType ? statuses["_general"] : nil
+
+        guard let status = generalStatus ?? statuses[service.dashboardName] else {
+            return (.undetermined, loadErrorMessage ?? "Unexpected error")
+        }
 
         switch status {
         case .good: return (status, "Normal Operations")
@@ -87,11 +91,14 @@ class GoogleStatusDashboardStore {
             generalStatus = .good
         }
 
-        statuses[defaultName] = generalStatus
+        statuses["_general"] = generalStatus
     }
 
     private func parseTimelineRow(_ tr: XMLElement) -> (String, ServiceStatus)? {
-        guard let name = tr.css(".service-status").first?.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return nil }
+        let rawName = tr.css(".service-status").first?.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let sanitizedName = rawName?.components(separatedBy: .newlines).first?.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        guard let name = sanitizedName else { return nil }
 
         if tr.css(".end-bubble.ok").count > 0 {
             return (name, .good)

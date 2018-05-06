@@ -24,7 +24,7 @@ extension RequiredFirebaseProperties {
 private let firebaseDashboardURL = URL(string: "https://status.firebase.google.com")!
 
 class BaseFirebaseService: BaseService {
-    private static var store = GoogleStatusDashboardStore(url: firebaseDashboardURL, defaultName: "Firebase (All)")
+    private static var store = GoogleStatusDashboardStore(url: firebaseDashboardURL, generalType: Firebase.self)
 
     let url = firebaseDashboardURL
 
