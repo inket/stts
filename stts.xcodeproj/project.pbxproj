@@ -19,6 +19,36 @@
 		B219C0DA1E2F0E9F001F8E7F /* CocoaPods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */; };
 		B21DC0761F6B436400E8214F /* Aptible.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21DC0751F6B436400E8214F /* Aptible.swift */; };
 		B22527F51E5BD0C70098E73D /* Contentful.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22527F41E5BD0C70098E73D /* Contentful.swift */; };
+		B2253A6B209F3C410039F574 /* GoogleStatusDashboardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A6A209F3C410039F574 /* GoogleStatusDashboardStore.swift */; };
+		B2253A6D209F3F9F0039F574 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A6C209F3F9F0039F574 /* FirebaseService.swift */; };
+		B2253A6F209F42430039F574 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A6E209F42430039F574 /* Firebase.swift */; };
+		B2253A71209F43420039F574 /* GoogleCloudDeveloperTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A70209F43420039F574 /* GoogleCloudDeveloperTools.swift */; };
+		B2253A73209F45170039F574 /* GoogleCloudFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A72209F45170039F574 /* GoogleCloudFunctions.swift */; };
+		B2253A75209F453F0039F574 /* GoogleIdentityAndSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A74209F453F0039F574 /* GoogleIdentityAndSecurity.swift */; };
+		B2253A77209F45780039F574 /* GoogleCloudKeyManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A76209F45780039F574 /* GoogleCloudKeyManagementService.swift */; };
+		B2253A79209F45AC0039F574 /* GoogleCloudMachineLearning.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A78209F45AC0039F574 /* GoogleCloudMachineLearning.swift */; };
+		B2253A7B209F45EB0039F574 /* GoogleCloudNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A7A209F45EB0039F574 /* GoogleCloudNetworking.swift */; };
+		B2253A7D209F46080039F574 /* GoogleCloudSpanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A7C209F46080039F574 /* GoogleCloudSpanner.swift */; };
+		B2253A7F209F463B0039F574 /* GoogleKubernetesEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A7E209F463B0039F574 /* GoogleKubernetesEngine.swift */; };
+		B2253A81209F464F0039F574 /* GoogleCloudSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A80209F464F0039F574 /* GoogleCloudSupport.swift */; };
+		B2253A83209F47FA0039F574 /* FirebaseAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A82209F47FA0039F574 /* FirebaseAnalytics.swift */; };
+		B2253A95209F4D950039F574 /* FirebaseCloudFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A84209F4D940039F574 /* FirebaseCloudFirestore.swift */; };
+		B2253A96209F4D950039F574 /* FirebaseCloudMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A85209F4D940039F574 /* FirebaseCloudMessaging.swift */; };
+		B2253A97209F4D950039F574 /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A86209F4D940039F574 /* FirebaseStorage.swift */; };
+		B2253A98209F4D950039F574 /* FirebaseCrashReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A87209F4D940039F574 /* FirebaseCrashReporting.swift */; };
+		B2253A99209F4D950039F574 /* FirebaseTestLab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A88209F4D940039F574 /* FirebaseTestLab.swift */; };
+		B2253A9A209F4D950039F574 /* FirebaseDynamicLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A89209F4D940039F574 /* FirebaseDynamicLinks.swift */; };
+		B2253A9B209F4D950039F574 /* FirebaseAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A8A209F4D940039F574 /* FirebaseAuthentication.swift */; };
+		B2253A9C209F4D950039F574 /* FirebaseConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A8B209F4D940039F574 /* FirebaseConsole.swift */; };
+		B2253A9D209F4D950039F574 /* FirebaseRemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A8C209F4D940039F574 /* FirebaseRemoteConfig.swift */; };
+		B2253A9E209F4D950039F574 /* FirebasePerformanceMonitoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A8D209F4D940039F574 /* FirebasePerformanceMonitoring.swift */; };
+		B2253A9F209F4D950039F574 /* FirebaseCloudFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A8E209F4D950039F574 /* FirebaseCloudFunctions.swift */; };
+		B2253AA0209F4D950039F574 /* FirebaseAppIndexing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A8F209F4D950039F574 /* FirebaseAppIndexing.swift */; };
+		B2253AA1209F4D950039F574 /* FirebaseHosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A90209F4D950039F574 /* FirebaseHosting.swift */; };
+		B2253AA2209F4D950039F574 /* FirebaseInvites.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A91209F4D950039F574 /* FirebaseInvites.swift */; };
+		B2253AA3209F4D950039F574 /* FirebasePredictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A92209F4D950039F574 /* FirebasePredictions.swift */; };
+		B2253AA4209F4D950039F574 /* FirebaseCrashlytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A93209F4D950039F574 /* FirebaseCrashlytics.swift */; };
+		B2253AA5209F4D950039F574 /* FirebaseRealtimeDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A94209F4D950039F574 /* FirebaseRealtimeDatabase.swift */; };
 		B225E3E01E44830F008E1D3D /* SwitchableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */; };
 		B22600311E1562E700EBDD40 /* MediaTemple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22600301E1562E700EBDD40 /* MediaTemple.swift */; };
 		B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22BA3011E8119AB0038D8F6 /* Discord.swift */; };
@@ -42,10 +72,8 @@
 		B2493F001E26023600556A83 /* GoogleCloudSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EF21E26023600556A83 /* GoogleCloudSQL.swift */; };
 		B2493F011E26023600556A83 /* GoogleCloudStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EF31E26023600556A83 /* GoogleCloudStorage.swift */; };
 		B2493F021E26023600556A83 /* GoogleComputeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EF41E26023600556A83 /* GoogleComputeEngine.swift */; };
-		B2493F031E26023600556A83 /* GoogleContainerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EF51E26023600556A83 /* GoogleContainerEngine.swift */; };
 		B2493F041E26023600556A83 /* GoogleStackdriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EF61E26023600556A83 /* GoogleStackdriver.swift */; };
 		B2493F061E2603F300556A83 /* GoogleCloudPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */; };
-		B2493F091E2607FC00556A83 /* GoogleCloudPlatformStatusStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493F081E2607FC00556A83 /* GoogleCloudPlatformStatusStore.swift */; };
 		B24D19F61DD072840052E539 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D19F51DD072840052E539 /* Preferences.swift */; };
 		B24F91231E8B51A400A77460 /* Auth0.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24F91221E8B51A400A77460 /* Auth0.swift */; };
 		B25695591E247C8C00FAE413 /* Atlassian.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695501E247C8C00FAE413 /* Atlassian.swift */; };
@@ -162,6 +190,36 @@
 		B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaPods.swift; sourceTree = "<group>"; };
 		B21DC0751F6B436400E8214F /* Aptible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aptible.swift; sourceTree = "<group>"; };
 		B22527F41E5BD0C70098E73D /* Contentful.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contentful.swift; sourceTree = "<group>"; };
+		B2253A6A209F3C410039F574 /* GoogleStatusDashboardStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleStatusDashboardStore.swift; sourceTree = "<group>"; };
+		B2253A6C209F3F9F0039F574 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		B2253A6E209F42430039F574 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		B2253A70209F43420039F574 /* GoogleCloudDeveloperTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudDeveloperTools.swift; sourceTree = "<group>"; };
+		B2253A72209F45170039F574 /* GoogleCloudFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudFunctions.swift; sourceTree = "<group>"; };
+		B2253A74209F453F0039F574 /* GoogleIdentityAndSecurity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleIdentityAndSecurity.swift; sourceTree = "<group>"; };
+		B2253A76209F45780039F574 /* GoogleCloudKeyManagementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudKeyManagementService.swift; sourceTree = "<group>"; };
+		B2253A78209F45AC0039F574 /* GoogleCloudMachineLearning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudMachineLearning.swift; sourceTree = "<group>"; };
+		B2253A7A209F45EB0039F574 /* GoogleCloudNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudNetworking.swift; sourceTree = "<group>"; };
+		B2253A7C209F46080039F574 /* GoogleCloudSpanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudSpanner.swift; sourceTree = "<group>"; };
+		B2253A7E209F463B0039F574 /* GoogleKubernetesEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleKubernetesEngine.swift; sourceTree = "<group>"; };
+		B2253A80209F464F0039F574 /* GoogleCloudSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudSupport.swift; sourceTree = "<group>"; };
+		B2253A82209F47FA0039F574 /* FirebaseAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalytics.swift; sourceTree = "<group>"; };
+		B2253A84209F4D940039F574 /* FirebaseCloudFirestore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseCloudFirestore.swift; sourceTree = "<group>"; };
+		B2253A85209F4D940039F574 /* FirebaseCloudMessaging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseCloudMessaging.swift; sourceTree = "<group>"; };
+		B2253A86209F4D940039F574 /* FirebaseStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
+		B2253A87209F4D940039F574 /* FirebaseCrashReporting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseCrashReporting.swift; sourceTree = "<group>"; };
+		B2253A88209F4D940039F574 /* FirebaseTestLab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseTestLab.swift; sourceTree = "<group>"; };
+		B2253A89209F4D940039F574 /* FirebaseDynamicLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDynamicLinks.swift; sourceTree = "<group>"; };
+		B2253A8A209F4D940039F574 /* FirebaseAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthentication.swift; sourceTree = "<group>"; };
+		B2253A8B209F4D940039F574 /* FirebaseConsole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseConsole.swift; sourceTree = "<group>"; };
+		B2253A8C209F4D940039F574 /* FirebaseRemoteConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfig.swift; sourceTree = "<group>"; };
+		B2253A8D209F4D940039F574 /* FirebasePerformanceMonitoring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebasePerformanceMonitoring.swift; sourceTree = "<group>"; };
+		B2253A8E209F4D950039F574 /* FirebaseCloudFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseCloudFunctions.swift; sourceTree = "<group>"; };
+		B2253A8F209F4D950039F574 /* FirebaseAppIndexing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAppIndexing.swift; sourceTree = "<group>"; };
+		B2253A90209F4D950039F574 /* FirebaseHosting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseHosting.swift; sourceTree = "<group>"; };
+		B2253A91209F4D950039F574 /* FirebaseInvites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseInvites.swift; sourceTree = "<group>"; };
+		B2253A92209F4D950039F574 /* FirebasePredictions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebasePredictions.swift; sourceTree = "<group>"; };
+		B2253A93209F4D950039F574 /* FirebaseCrashlytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseCrashlytics.swift; sourceTree = "<group>"; };
+		B2253A94209F4D950039F574 /* FirebaseRealtimeDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseRealtimeDatabase.swift; sourceTree = "<group>"; };
 		B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchableTableViewController.swift; sourceTree = "<group>"; };
 		B22600301E1562E700EBDD40 /* MediaTemple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTemple.swift; sourceTree = "<group>"; };
 		B22BA3011E8119AB0038D8F6 /* Discord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discord.swift; sourceTree = "<group>"; };
@@ -185,10 +243,8 @@
 		B2493EF21E26023600556A83 /* GoogleCloudSQL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudSQL.swift; sourceTree = "<group>"; };
 		B2493EF31E26023600556A83 /* GoogleCloudStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudStorage.swift; sourceTree = "<group>"; };
 		B2493EF41E26023600556A83 /* GoogleComputeEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleComputeEngine.swift; sourceTree = "<group>"; };
-		B2493EF51E26023600556A83 /* GoogleContainerEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleContainerEngine.swift; sourceTree = "<group>"; };
 		B2493EF61E26023600556A83 /* GoogleStackdriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleStackdriver.swift; sourceTree = "<group>"; };
 		B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudPlatform.swift; sourceTree = "<group>"; };
-		B2493F081E2607FC00556A83 /* GoogleCloudPlatformStatusStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudPlatformStatusStore.swift; sourceTree = "<group>"; };
 		B24D19F51DD072840052E539 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		B24F91221E8B51A400A77460 /* Auth0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth0.swift; sourceTree = "<group>"; };
 		B25695501E247C8C00FAE413 /* Atlassian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atlassian.swift; sourceTree = "<group>"; };
@@ -300,6 +356,32 @@
 			path = ServiceTableView;
 			sourceTree = "<group>";
 		};
+		B2253A69209F3B9F0039F574 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				B2253A6E209F42430039F574 /* Firebase.swift */,
+				B2253A82209F47FA0039F574 /* FirebaseAnalytics.swift */,
+				B2253A8F209F4D950039F574 /* FirebaseAppIndexing.swift */,
+				B2253A8A209F4D940039F574 /* FirebaseAuthentication.swift */,
+				B2253A84209F4D940039F574 /* FirebaseCloudFirestore.swift */,
+				B2253A8E209F4D950039F574 /* FirebaseCloudFunctions.swift */,
+				B2253A85209F4D940039F574 /* FirebaseCloudMessaging.swift */,
+				B2253A8B209F4D940039F574 /* FirebaseConsole.swift */,
+				B2253A87209F4D940039F574 /* FirebaseCrashReporting.swift */,
+				B2253A93209F4D950039F574 /* FirebaseCrashlytics.swift */,
+				B2253A89209F4D940039F574 /* FirebaseDynamicLinks.swift */,
+				B2253A90209F4D950039F574 /* FirebaseHosting.swift */,
+				B2253A91209F4D950039F574 /* FirebaseInvites.swift */,
+				B2253A8D209F4D940039F574 /* FirebasePerformanceMonitoring.swift */,
+				B2253A92209F4D950039F574 /* FirebasePredictions.swift */,
+				B2253A94209F4D950039F574 /* FirebaseRealtimeDatabase.swift */,
+				B2253A8C209F4D940039F574 /* FirebaseRemoteConfig.swift */,
+				B2253A86209F4D940039F574 /* FirebaseStorage.swift */,
+				B2253A88209F4D940039F574 /* FirebaseTestLab.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		B2493F071E26052400556A83 /* Google Cloud Platform */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,12 +393,20 @@
 				B2493EED1E26023600556A83 /* GoogleCloudDataflow.swift */,
 				B2493EEE1E26023600556A83 /* GoogleCloudDataproc.swift */,
 				B2493EEF1E26023600556A83 /* GoogleCloudDatastore.swift */,
+				B2253A70209F43420039F574 /* GoogleCloudDeveloperTools.swift */,
+				B2253A72209F45170039F574 /* GoogleCloudFunctions.swift */,
+				B2253A76209F45780039F574 /* GoogleCloudKeyManagementService.swift */,
+				B2253A78209F45AC0039F574 /* GoogleCloudMachineLearning.swift */,
+				B2253A7A209F45EB0039F574 /* GoogleCloudNetworking.swift */,
 				B25EC9CB2071265500D2DD3D /* GoogleCloudPlatformAll.swift */,
 				B2493EF11E26023600556A83 /* GoogleCloudPubSub.swift */,
 				B2493EF21E26023600556A83 /* GoogleCloudSQL.swift */,
+				B2253A7C209F46080039F574 /* GoogleCloudSpanner.swift */,
 				B2493EF31E26023600556A83 /* GoogleCloudStorage.swift */,
+				B2253A80209F464F0039F574 /* GoogleCloudSupport.swift */,
 				B2493EF41E26023600556A83 /* GoogleComputeEngine.swift */,
-				B2493EF51E26023600556A83 /* GoogleContainerEngine.swift */,
+				B2253A74209F453F0039F574 /* GoogleIdentityAndSecurity.swift */,
+				B2253A7E209F463B0039F574 /* GoogleKubernetesEngine.swift */,
 				B2493EF61E26023600556A83 /* GoogleStackdriver.swift */,
 			);
 			path = "Google Cloud Platform";
@@ -472,6 +562,7 @@
 			isa = PBXGroup;
 			children = (
 				B2EB51CC1E70047F001D6F78 /* Exana */,
+				B2253A69209F3B9F0039F574 /* Firebase */,
 				B2493F071E26052400556A83 /* Google Cloud Platform */,
 				B26CB5711E13448900116A33 /* Status.ioV1 */,
 				B299C8561DD051710024D2E9 /* StatusPage */,
@@ -494,8 +585,9 @@
 			isa = PBXGroup;
 			children = (
 				B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */,
+				B2253A6C209F3F9F0039F574 /* FirebaseService.swift */,
 				B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */,
-				B2493F081E2607FC00556A83 /* GoogleCloudPlatformStatusStore.swift */,
+				B2253A6A209F3C410039F574 /* GoogleStatusDashboardStore.swift */,
 				B205A9171D49D67700EA178D /* Service.swift */,
 				B2FDC91B1D67062200F0B728 /* StatusPageService.swift */,
 				B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */,
@@ -643,10 +735,12 @@
 				B211F0B81E607C09008DD360 /* Rollbar.swift in Sources */,
 				B2493F061E2603F300556A83 /* GoogleCloudPlatform.swift in Sources */,
 				B299C8491DD04DCB0024D2E9 /* RubyGems.swift in Sources */,
+				B2253A97209F4D950039F574 /* FirebaseStorage.swift in Sources */,
 				B299C8531DD0505F0024D2E9 /* Sentry.swift in Sources */,
 				B2EB51D01E700517001D6F78 /* Codacy.swift in Sources */,
 				B299C84F1DD04F8F0024D2E9 /* BitBucket.swift in Sources */,
 				B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */,
+				B2253A6B209F3C410039F574 /* GoogleStatusDashboardStore.swift in Sources */,
 				B2CB0F9B2047A60000873C14 /* Vimeo.swift in Sources */,
 				B2493EF91E26023600556A83 /* GoogleCloudBigtable.swift in Sources */,
 				B25EC9CC2071265500D2DD3D /* GoogleCloudPlatformAll.swift in Sources */,
@@ -655,41 +749,54 @@
 				B2A0635C1E1340B400EEA762 /* Docker.swift in Sources */,
 				B24D19F61DD072840052E539 /* Preferences.swift in Sources */,
 				B2A0A16F1E4C45E0000D9B29 /* MailChimp.swift in Sources */,
+				B2253A9D209F4D950039F574 /* FirebaseRemoteConfig.swift in Sources */,
 				B28C1D421E607D2200F9D0DC /* Fabric.swift in Sources */,
+				B2253A75209F453F0039F574 /* GoogleIdentityAndSecurity.swift in Sources */,
 				B2493EFE1E26023600556A83 /* GoogleCloudDNS.swift in Sources */,
 				B2493F001E26023600556A83 /* GoogleCloudSQL.swift in Sources */,
 				B2B2D1031D49D5080014D780 /* AppDelegate.swift in Sources */,
+				B2253A99209F4D950039F574 /* FirebaseTestLab.swift in Sources */,
 				B25695601E247C8C00FAE413 /* SmartyStreets.swift in Sources */,
 				B25695611E247C8C00FAE413 /* Squarespace.swift in Sources */,
 				B2493EF81E26023600556A83 /* GoogleBigQuery.swift in Sources */,
 				B2493F041E26023600556A83 /* GoogleStackdriver.swift in Sources */,
+				B2253A83209F47FA0039F574 /* FirebaseAnalytics.swift in Sources */,
 				B20396361EE6A060008CCA21 /* Trello.swift in Sources */,
 				B2493EFF1E26023600556A83 /* GoogleCloudPubSub.swift in Sources */,
 				B2ABB6171F59770800DF8EC2 /* Imgix.swift in Sources */,
 				B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */,
-				B2493F031E26023600556A83 /* GoogleContainerEngine.swift in Sources */,
 				B2493EFC1E26023600556A83 /* GoogleCloudDataproc.swift in Sources */,
 				B2493EFD1E26023600556A83 /* GoogleCloudDatastore.swift in Sources */,
+				B2253A73209F45170039F574 /* GoogleCloudFunctions.swift in Sources */,
 				B2493F011E26023600556A83 /* GoogleCloudStorage.swift in Sources */,
 				B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */,
 				B299C84B1DD04E850024D2E9 /* Pusher.swift in Sources */,
+				B2253A79209F45AC0039F574 /* GoogleCloudMachineLearning.swift in Sources */,
+				B2253A9B209F4D950039F574 /* FirebaseAuthentication.swift in Sources */,
 				B2D032D01D6455E300D51CB8 /* TravisCI.swift in Sources */,
 				B2D468291E2F0F82000F8F6B /* Coveralls.swift in Sources */,
 				B299C8511DD04FD60024D2E9 /* Cloudflare.swift in Sources */,
 				B256955E1E247C8C00FAE413 /* SauceLabs.swift in Sources */,
 				B2898FD01DC7441D0005F58F /* StatusIndicator.swift in Sources */,
 				B290315C1E4B0CA7005B58CC /* Evernote.swift in Sources */,
+				B2253A6D209F3F9F0039F574 /* FirebaseService.swift in Sources */,
 				B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */,
 				B2DEE0BE1E696D64006B198E /* Slack.swift in Sources */,
+				B2253A7D209F46080039F574 /* GoogleCloudSpanner.swift in Sources */,
 				B2BA36191ED7B0F200051083 /* AuthorizeNet.swift in Sources */,
 				B25695591E247C8C00FAE413 /* Atlassian.swift in Sources */,
 				B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */,
 				B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */,
+				B2253A96209F4D950039F574 /* FirebaseCloudMessaging.swift in Sources */,
+				B2253A98209F4D950039F574 /* FirebaseCrashReporting.swift in Sources */,
 				B2A0635E1E1341C900EEA762 /* StatusioV1Service.swift in Sources */,
 				B2D2B6CF20870E700011723B /* StatusPage.swift in Sources */,
 				B28FF68B1E94761A005897A9 /* Codecov.swift in Sources */,
+				B2253AA0209F4D950039F574 /* FirebaseAppIndexing.swift in Sources */,
 				B256955A1E247C8C00FAE413 /* Cloudinary.swift in Sources */,
+				B2253A95209F4D950039F574 /* FirebaseCloudFirestore.swift in Sources */,
 				B2493EF71E26023600556A83 /* GoogleAppEngine.swift in Sources */,
+				B2253A7B209F45EB0039F574 /* GoogleCloudNetworking.swift in Sources */,
 				B2A2B6A61E459F61008EFD05 /* Waffle.swift in Sources */,
 				B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */,
 				B28E9FC01ED26A40006B89F1 /* Lob.swift in Sources */,
@@ -698,22 +805,33 @@
 				B299C8471DD04D7C0024D2E9 /* NPM.swift in Sources */,
 				B2C4670F1E70012700C5145D /* Zapier.swift in Sources */,
 				B28C1D441E607D8600F9D0DC /* Mapbox.swift in Sources */,
+				B2253A7F209F463B0039F574 /* GoogleKubernetesEngine.swift in Sources */,
 				C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */,
 				B2FDC91C1D67062200F0B728 /* StatusPageService.swift in Sources */,
+				B2253AA4209F4D950039F574 /* FirebaseCrashlytics.swift in Sources */,
 				B2493EFA1E26023600556A83 /* GoogleCloudConsole.swift in Sources */,
 				B256955F1E247C8C00FAE413 /* SendGrid.swift in Sources */,
 				B2F127A71E0B84230035B20C /* PubNub.swift in Sources */,
 				B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */,
+				B2253A9C209F4D950039F574 /* FirebaseConsole.swift in Sources */,
+				B2253AA1209F4D950039F574 /* FirebaseHosting.swift in Sources */,
 				B2493EFB1E26023600556A83 /* GoogleCloudDataflow.swift in Sources */,
 				03C5FB131E203325003C40B8 /* Packet.swift in Sources */,
 				B21DC0761F6B436400E8214F /* Aptible.swift in Sources */,
+				B2253A77209F45780039F574 /* GoogleCloudKeyManagementService.swift in Sources */,
+				B2253AA5209F4D950039F574 /* FirebaseRealtimeDatabase.swift in Sources */,
+				B2253A6F209F42430039F574 /* Firebase.swift in Sources */,
+				B2253AA3209F4D950039F574 /* FirebasePredictions.swift in Sources */,
+				B2253A9E209F4D950039F574 /* FirebasePerformanceMonitoring.swift in Sources */,
 				B26350FD1ED7CFC40069EA73 /* Loggly.swift in Sources */,
+				B2253A81209F464F0039F574 /* GoogleCloudSupport.swift in Sources */,
 				B24220E41E2F6BBA0007E50E /* Typeform.swift in Sources */,
 				B2F127AB1E0B84F00035B20C /* Braintree.swift in Sources */,
 				B225E3E01E44830F008E1D3D /* SwitchableTableViewController.swift in Sources */,
 				B256955D1E247C8C00FAE413 /* Pingdom.swift in Sources */,
 				B219C0DA1E2F0E9F001F8E7F /* CocoaPods.swift in Sources */,
 				B2F35F261E5D181300E3A00E /* Quay.swift in Sources */,
+				B2253A9A209F4D950039F574 /* FirebaseDynamicLinks.swift in Sources */,
 				B299C8451DD046F20024D2E9 /* AmazonWebServices.swift in Sources */,
 				B256955B1E247C8C00FAE413 /* HipChat.swift in Sources */,
 				B299C8551DD051210024D2E9 /* EngineYard.swift in Sources */,
@@ -722,8 +840,11 @@
 				B22600311E1562E700EBDD40 /* MediaTemple.swift in Sources */,
 				B205A9181D49D67700EA178D /* Service.swift in Sources */,
 				B2FAB94C1E5C029A00B8921F /* DNSimple.swift in Sources */,
+				B2253AA2209F4D950039F574 /* FirebaseInvites.swift in Sources */,
 				B2BA69801E2DA3F60016AF1A /* Papertrail.swift in Sources */,
+				B2253A9F209F4D950039F574 /* FirebaseCloudFunctions.swift in Sources */,
 				B28E9FBF1ED26A40006B89F1 /* Dwolla.swift in Sources */,
+				B2253A71209F43420039F574 /* GoogleCloudDeveloperTools.swift in Sources */,
 				B20396381EE6A06C008CCA21 /* Filestack.swift in Sources */,
 				B26CD1EC1DD59FFB0054A385 /* DigitalOcean.swift in Sources */,
 				B299C84D1DD04ED90024D2E9 /* Reddit.swift in Sources */,
@@ -744,7 +865,6 @@
 				B256955C1E247C8C00FAE413 /* PagerDuty.swift in Sources */,
 				B2A23E321DD190EF0051E913 /* EditorTableViewController.swift in Sources */,
 				B2FDC91E1D6706C400F0B728 /* CircleCI.swift in Sources */,
-				B2493F091E2607FC00556A83 /* GoogleCloudPlatformStatusStore.swift in Sources */,
 				B257469B1E2781A3003A07A4 /* CodeClimate.swift in Sources */,
 				B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */,
 				B2483CF12037029D00A9FA95 /* Zwift.swift in Sources */,
