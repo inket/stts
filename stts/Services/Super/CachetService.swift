@@ -1,0 +1,73 @@
+//
+//  CachetService.swift
+//  stts
+//
+
+import Foundation
+
+typealias CachetService = BaseCachetService & RequiredServiceProperties
+
+class BaseCachetService: BaseService {
+    enum ComponentStatus: Int, Comparable {
+        // https://docs.cachethq.io/docs/component-statuses
+        case operational = 1
+        case performanceIssues = 2
+        case partialOutage = 3
+        case majorOutage = 4
+
+        var description: String {
+            switch self {
+            case .operational:
+                return "Operational"
+            case .performanceIssues:
+                return "Performance Issues"
+            case .partialOutage:
+                return "Partial Outage"
+            case .majorOutage:
+                return "Major Outage"
+            }
+        }
+
+        var serviceStatus: ServiceStatus {
+            switch self {
+            case .operational:
+                return .good
+            case .performanceIssues:
+                return .notice
+            case .partialOutage:
+                return .minor
+            case .majorOutage:
+                return .major
+            }
+        }
+
+        static func < (lhs: ComponentStatus, rhs: ComponentStatus) -> Bool {
+            return lhs.rawValue < rhs.rawValue
+        }
+    }
+
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+        guard let realSelf = self as? CachetService else { fatalError("BaseCachetService should not be used directly.") }
+
+        let apiComponentsURL = realSelf.url.appendingPathComponent("api/v1/components")
+
+        URLSession.shared.dataTask(with: apiComponentsURL) { [weak self] data, _, error in
+            guard let selfie = self else { return }
+            defer { callback(selfie) }
+            guard let data = data else { return selfie._fail(error) }
+
+            let json = try? JSONSerialization.jsonObject(with: data, options: [])
+            guard let components = (json as? [String: Any])?["data"] as? [[String: Any]] else {
+                return selfie._fail("Unexpected data")
+            }
+
+            guard !components.isEmpty else { return selfie._fail("Unexpected data") }
+
+            let statuses = components.compactMap({ $0["status"] as? Int }).compactMap(ComponentStatus.init(rawValue:))
+            guard let highestStatus = statuses.max() else { return selfie._fail("Unexpected data") }
+
+            selfie.status = highestStatus.serviceStatus
+            selfie.message = highestStatus.description
+        }.resume()
+    }
+}
