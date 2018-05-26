@@ -137,6 +137,7 @@
 		B2BA697E1E2DA3A20016AF1A /* PivotalTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA697D1E2DA3A20016AF1A /* PivotalTracker.swift */; };
 		B2BA69801E2DA3F60016AF1A /* Papertrail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */; };
 		B2BB19BA20B8FEFD00A97A87 /* CachetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BB19B920B8FEFD00A97A87 /* CachetService.swift */; };
+		B2BB19BC20B9043F00A97A87 /* Yarn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BB19BB20B9043F00A97A87 /* Yarn.swift */; };
 		B2C10F3C203646A7008E1E7D /* Gandi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C10F3B203646A7008E1E7D /* Gandi.swift */; };
 		B2C337A51E1417390007E110 /* Mixpanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C337A41E1417390007E110 /* Mixpanel.swift */; };
 		B2C4670F1E70012700C5145D /* Zapier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4670E1E70012700C5145D /* Zapier.swift */; };
@@ -309,6 +310,7 @@
 		B2BA697D1E2DA3A20016AF1A /* PivotalTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PivotalTracker.swift; sourceTree = "<group>"; };
 		B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Papertrail.swift; sourceTree = "<group>"; };
 		B2BB19B920B8FEFD00A97A87 /* CachetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachetService.swift; sourceTree = "<group>"; };
+		B2BB19BB20B9043F00A97A87 /* Yarn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yarn.swift; sourceTree = "<group>"; };
 		B2C10F3B203646A7008E1E7D /* Gandi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gandi.swift; sourceTree = "<group>"; };
 		B2C337A41E1417390007E110 /* Mixpanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mixpanel.swift; sourceTree = "<group>"; };
 		B2C4670E1E70012700C5145D /* Zapier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zapier.swift; sourceTree = "<group>"; };
@@ -558,6 +560,14 @@
 			path = stts;
 			sourceTree = "<group>";
 		};
+		B2BB19B820B8FEB200A97A87 /* Cachet */ = {
+			isa = PBXGroup;
+			children = (
+				B2BB19BB20B9043F00A97A87 /* Yarn.swift */,
+			);
+			path = Cachet;
+			sourceTree = "<group>";
+		};
 		B2EB51CC1E70047F001D6F78 /* Exana */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,6 +579,7 @@
 		B2FDC91F1D6706FB00F0B728 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B2BB19B820B8FEB200A97A87 /* Cachet */,
 				B2EB51CC1E70047F001D6F78 /* Exana */,
 				B2253A69209F3B9F0039F574 /* Firebase */,
 				B2493F071E26052400556A83 /* Google Cloud Platform */,
@@ -762,6 +773,7 @@
 				B2253A9D209F4D950039F574 /* FirebaseRemoteConfig.swift in Sources */,
 				B28C1D421E607D2200F9D0DC /* Fabric.swift in Sources */,
 				B2253A75209F453F0039F574 /* GoogleIdentityAndSecurity.swift in Sources */,
+				B2BB19BC20B9043F00A97A87 /* Yarn.swift in Sources */,
 				B2493EFE1E26023600556A83 /* GoogleCloudDNS.swift in Sources */,
 				B2493F001E26023600556A83 /* GoogleCloudSQL.swift in Sources */,
 				B2B2D1031D49D5080014D780 /* AppDelegate.swift in Sources */,
