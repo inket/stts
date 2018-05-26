@@ -2,6 +2,7 @@
 //  JAMF.swift
 //  stts
 //
+
 import Foundation
 
 class JAMF: StatusPageService {
