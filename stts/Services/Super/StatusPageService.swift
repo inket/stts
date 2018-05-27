@@ -9,6 +9,13 @@ typealias StatusPageService = BaseStatusPageService & RequiredServiceProperties 
 
 protocol RequiredStatusPageProperties {
     var statusPageID: String { get }
+    var domain: String { get }
+}
+
+extension RequiredStatusPageProperties {
+    var domain: String {
+        return "statuspage.io"
+    }
 }
 
 class BaseStatusPageService: BaseService {
@@ -37,7 +44,7 @@ class BaseStatusPageService: BaseService {
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         guard let realSelf = self as? StatusPageService else { fatalError("BaseStatusPageService should not be used directly.") }
 
-        let statusURL = URL(string: "https://\(realSelf.statusPageID).statuspage.io/api/v2/status.json")!
+        let statusURL = URL(string: "https://\(realSelf.statusPageID).\(realSelf.domain)/api/v2/status.json")!
 
         URLSession.shared.dataTask(with: statusURL) { [weak self] data, _, error in
             guard let selfie = self else { return }
