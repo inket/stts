@@ -25,7 +25,6 @@
 		B2253A6D209F3F9F0039F574 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A6C209F3F9F0039F574 /* FirebaseService.swift */; };
 		B2253A6F209F42430039F574 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A6E209F42430039F574 /* Firebase.swift */; };
 		B2253A71209F43420039F574 /* GoogleCloudDeveloperTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A70209F43420039F574 /* GoogleCloudDeveloperTools.swift */; };
-		B2253A73209F45170039F574 /* GoogleCloudFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A72209F45170039F574 /* GoogleCloudFunctions.swift */; };
 		B2253A75209F453F0039F574 /* GoogleIdentityAndSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A74209F453F0039F574 /* GoogleIdentityAndSecurity.swift */; };
 		B2253A77209F45780039F574 /* GoogleCloudKeyManagementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A76209F45780039F574 /* GoogleCloudKeyManagementService.swift */; };
 		B2253A79209F45AC0039F574 /* GoogleCloudMachineLearning.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A78209F45AC0039F574 /* GoogleCloudMachineLearning.swift */; };
@@ -214,7 +213,6 @@
 		B2253A6C209F3F9F0039F574 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		B2253A6E209F42430039F574 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		B2253A70209F43420039F574 /* GoogleCloudDeveloperTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudDeveloperTools.swift; sourceTree = "<group>"; };
-		B2253A72209F45170039F574 /* GoogleCloudFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudFunctions.swift; sourceTree = "<group>"; };
 		B2253A74209F453F0039F574 /* GoogleIdentityAndSecurity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleIdentityAndSecurity.swift; sourceTree = "<group>"; };
 		B2253A76209F45780039F574 /* GoogleCloudKeyManagementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudKeyManagementService.swift; sourceTree = "<group>"; };
 		B2253A78209F45AC0039F574 /* GoogleCloudMachineLearning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudMachineLearning.swift; sourceTree = "<group>"; };
@@ -442,7 +440,6 @@
 				B2493EEE1E26023600556A83 /* GoogleCloudDataproc.swift */,
 				B2493EEF1E26023600556A83 /* GoogleCloudDatastore.swift */,
 				B2253A70209F43420039F574 /* GoogleCloudDeveloperTools.swift */,
-				B2253A72209F45170039F574 /* GoogleCloudFunctions.swift */,
 				B2253A76209F45780039F574 /* GoogleCloudKeyManagementService.swift */,
 				B2253A78209F45AC0039F574 /* GoogleCloudMachineLearning.swift */,
 				B2253A7A209F45EB0039F574 /* GoogleCloudNetworking.swift */,
@@ -872,7 +869,6 @@
 				B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */,
 				B2493EFC1E26023600556A83 /* GoogleCloudDataproc.swift in Sources */,
 				B2493EFD1E26023600556A83 /* GoogleCloudDatastore.swift in Sources */,
-				B2253A73209F45170039F574 /* GoogleCloudFunctions.swift in Sources */,
 				B2493F011E26023600556A83 /* GoogleCloudStorage.swift in Sources */,
 				B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */,
 				B299C84B1DD04E850024D2E9 /* Pusher.swift in Sources */,
