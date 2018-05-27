@@ -8,7 +8,7 @@ import Foundation
 typealias CachetService = BaseCachetService & RequiredServiceProperties
 
 class BaseCachetService: BaseService {
-    private enum ComponentStatus: Int, Comparable {
+    private enum ComponentStatus: Int, ComparableStatus {
         // https://docs.cachethq.io/docs/component-statuses
         case operational = 1
         case performanceIssues = 2
@@ -40,10 +40,6 @@ class BaseCachetService: BaseService {
                 return .major
             }
         }
-
-        static func < (lhs: ComponentStatus, rhs: ComponentStatus) -> Bool {
-            return lhs.rawValue < rhs.rawValue
-        }
     }
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
@@ -64,10 +60,10 @@ class BaseCachetService: BaseService {
             guard !components.isEmpty else { return selfie._fail("Unexpected data") }
 
             let statuses = components.compactMap({ $0["status"] as? Int }).compactMap(ComponentStatus.init(rawValue:))
-            guard let highestStatus = statuses.max() else { return selfie._fail("Unexpected data") }
 
-            selfie.status = highestStatus.serviceStatus
-            selfie.message = highestStatus.description
+            let highestStatus = statuses.max()
+            selfie.status = highestStatus?.serviceStatus ?? .undetermined
+            selfie.message = highestStatus?.description ?? "Undetermined"
         }.resume()
     }
 }

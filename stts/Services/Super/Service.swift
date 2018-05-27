@@ -18,6 +18,16 @@ public enum ServiceStatus: Int, Comparable {
     }
 }
 
+protocol ComparableStatus: Comparable {
+    var serviceStatus: ServiceStatus { get }
+}
+
+extension ComparableStatus {
+    public static func < (lhs: Self, rhs: Self) -> Bool {
+        return lhs.serviceStatus < rhs.serviceStatus
+    }
+}
+
 typealias Service = BaseService & RequiredServiceProperties
 
 protocol RequiredServiceProperties {
