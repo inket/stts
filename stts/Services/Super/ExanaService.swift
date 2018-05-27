@@ -17,7 +17,6 @@ class BaseExanaService: BaseService {
 
         URLSession.shared.dataTask(with: realSelf.url) { [weak self] data, _, error in
             guard let selfie = self else { return }
-            defer { callback(selfie) }
 
             guard let data = data else { return selfie._fail(error) }
             guard let body = String(data: data, encoding: .utf8) else { return selfie._fail("Unreadable response") }
