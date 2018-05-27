@@ -390,8 +390,8 @@
 		B2163AF620BA4E7500B14A85 /* sttsTests */ = {
 			isa = PBXGroup;
 			children = (
-				B2163AF720BA4E7500B14A85 /* sttsTests.swift */,
 				B2163AF920BA4E7500B14A85 /* Info.plist */,
+				B2163AF720BA4E7500B14A85 /* sttsTests.swift */,
 			);
 			path = sttsTests;
 			sourceTree = "<group>";
@@ -571,8 +571,8 @@
 				B276C8E81DD473B50098B451 /* Frameworks */,
 				B2B2D1001D49D5080014D780 /* Products */,
 				B2FDC9211D67074900F0B728 /* Resources */,
-				B2163AF620BA4E7500B14A85 /* sttsTests */,
 				B2B2D1011D49D5080014D780 /* stts */,
+				B2163AF620BA4E7500B14A85 /* sttsTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -621,12 +621,12 @@
 		B2FDC91F1D6706FB00F0B728 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B2163B0120BA5AE600B14A85 /* StatusCake */,
 				B2BB19B820B8FEB200A97A87 /* Cachet */,
 				B2EB51CC1E70047F001D6F78 /* Exana */,
 				B2253A69209F3B9F0039F574 /* Firebase */,
 				B2493F071E26052400556A83 /* Google Cloud Platform */,
 				B26CB5711E13448900116A33 /* Status.ioV1 */,
+				B2163B0120BA5AE600B14A85 /* StatusCake */,
 				B299C8561DD051710024D2E9 /* StatusPage */,
 				B2FDC9201D67071500F0B728 /* Super */,
 				B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */,
@@ -651,9 +651,9 @@
 				B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */,
 				B2253A6A209F3C410039F574 /* GoogleStatusDashboardStore.swift */,
 				B205A9171D49D67700EA178D /* Service.swift */,
+				B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */,
 				B2FDC91B1D67062200F0B728 /* StatusPageService.swift */,
 				B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */,
-				B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */,
 			);
 			path = Super;
 			sourceTree = "<group>";
