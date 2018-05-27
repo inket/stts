@@ -5,7 +5,7 @@
 
 import Foundation
 
-enum ServiceStatus: Int, Comparable {
+public enum ServiceStatus: Int, Comparable {
     case undetermined
     case good
     case notice
@@ -13,7 +13,7 @@ enum ServiceStatus: Int, Comparable {
     case minor
     case major
 
-    static func < (lhs: ServiceStatus, rhs: ServiceStatus) -> Bool {
+    public static func < (lhs: ServiceStatus, rhs: ServiceStatus) -> Bool {
         return lhs.rawValue < rhs.rawValue
     }
 }
@@ -30,8 +30,8 @@ extension RequiredServiceProperties {
     var name: String { return "\(type(of: self))" }
 }
 
-class BaseService {
-    var status: ServiceStatus = .undetermined {
+public class BaseService {
+    public var status: ServiceStatus = .undetermined {
         didSet {
             if oldValue == .undetermined || status == .undetermined || oldValue == status {
                 self.shouldNotify = false
@@ -43,7 +43,7 @@ class BaseService {
     var message: String = "Loading…"
     var shouldNotify = false
 
-    static func all() -> [BaseService] {
+    public static func all() -> [BaseService] {
         guard let servicesPlist = Bundle.main.path(forResource: "services", ofType: "plist"),
             let services = NSDictionary(contentsOfFile: servicesPlist)?["services"] as? [String] else {
                 fatalError("The services.plist file does not exist. The build phase script might have failed.")
@@ -56,9 +56,9 @@ class BaseService {
         return (NSClassFromString("stts.\(name)") as? Service.Type)?.init()
     }
 
-    required init() {}
+    public required init() {}
 
-    func updateStatus(callback: @escaping (BaseService) -> Void) {}
+    public func updateStatus(callback: @escaping (BaseService) -> Void) {}
 
     func _fail(_ error: Error?) {
         self.status = .undetermined
@@ -87,7 +87,7 @@ class BaseService {
 }
 
 extension BaseService: Equatable {
-    internal static func == (lhs: BaseService, rhs: BaseService) -> Bool {
+    public static func == (lhs: BaseService, rhs: BaseService) -> Bool {
         guard
             let lhs = lhs as? Service,
             let rhs = rhs as? Service
@@ -100,7 +100,7 @@ extension BaseService: Equatable {
 }
 
 extension BaseService: Comparable {
-    static func < (lhs: BaseService, rhs: BaseService) -> Bool {
+    public static func < (lhs: BaseService, rhs: BaseService) -> Bool {
         guard
             let lhs = lhs as? Service,
             let rhs = rhs as? Service

@@ -16,6 +16,7 @@
 		B21308561E55594E009FCF02 /* Quandl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21308551E55594E009FCF02 /* Quandl.swift */; };
 		B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */; };
 		B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */; };
+		B2163AF820BA4E7500B14A85 /* sttsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AF720BA4E7500B14A85 /* sttsTests.swift */; };
 		B219C0DA1E2F0E9F001F8E7F /* CocoaPods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */; };
 		B21DC0761F6B436400E8214F /* Aptible.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21DC0751F6B436400E8214F /* Aptible.swift */; };
 		B22527F51E5BD0C70098E73D /* Contentful.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22527F41E5BD0C70098E73D /* Contentful.swift */; };
@@ -164,6 +165,16 @@
 		C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B2163AFA20BA4E7500B14A85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2B2D0F71D49D5080014D780 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2B2D0FE1D49D5080014D780;
+			remoteInfo = stts;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		B22EC6891D80111900ED7917 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -191,6 +202,9 @@
 		B21308551E55594E009FCF02 /* Quandl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quandl.swift; sourceTree = "<group>"; };
 		B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableViewController.swift; sourceTree = "<group>"; };
 		B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableRowView.swift; sourceTree = "<group>"; };
+		B2163AF520BA4E7500B14A85 /* sttsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sttsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2163AF720BA4E7500B14A85 /* sttsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sttsTests.swift; sourceTree = "<group>"; };
+		B2163AF920BA4E7500B14A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaPods.swift; sourceTree = "<group>"; };
 		B21DC0751F6B436400E8214F /* Aptible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aptible.swift; sourceTree = "<group>"; };
 		B22527F41E5BD0C70098E73D /* Contentful.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contentful.swift; sourceTree = "<group>"; };
@@ -338,6 +352,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B2163AF220BA4E7500B14A85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2B2D0FC1D49D5080014D780 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,6 +383,15 @@
 				B2B015C11DBDE69B00699211 /* StatusTableCell.swift */,
 			);
 			path = ServiceTableView;
+			sourceTree = "<group>";
+		};
+		B2163AF620BA4E7500B14A85 /* sttsTests */ = {
+			isa = PBXGroup;
+			children = (
+				B2163AF720BA4E7500B14A85 /* sttsTests.swift */,
+				B2163AF920BA4E7500B14A85 /* Info.plist */,
+			);
+			path = sttsTests;
 			sourceTree = "<group>";
 		};
 		B2253A69209F3B9F0039F574 /* Firebase */ = {
@@ -531,6 +561,7 @@
 				B276C8E81DD473B50098B451 /* Frameworks */,
 				B2B2D1001D49D5080014D780 /* Products */,
 				B2FDC9211D67074900F0B728 /* Resources */,
+				B2163AF620BA4E7500B14A85 /* sttsTests */,
 				B2B2D1011D49D5080014D780 /* stts */,
 			);
 			sourceTree = "<group>";
@@ -539,6 +570,7 @@
 			isa = PBXGroup;
 			children = (
 				B2B2D0FF1D49D5080014D780 /* stts.app */,
+				B2163AF520BA4E7500B14A85 /* sttsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -628,6 +660,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B2163AF420BA4E7500B14A85 /* sttsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2163AFE20BA4E7500B14A85 /* Build configuration list for PBXNativeTarget "sttsTests" */;
+			buildPhases = (
+				B2163AF120BA4E7500B14A85 /* Sources */,
+				B2163AF220BA4E7500B14A85 /* Frameworks */,
+				B2163AF320BA4E7500B14A85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2163AFB20BA4E7500B14A85 /* PBXTargetDependency */,
+			);
+			name = sttsTests;
+			productName = sttsTests;
+			productReference = B2163AF520BA4E7500B14A85 /* sttsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B2B2D0FE1D49D5080014D780 /* stts */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2B2D10C1D49D5080014D780 /* Build configuration list for PBXNativeTarget "stts" */;
@@ -655,10 +705,16 @@
 		B2B2D0F71D49D5080014D780 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = inket;
 				TargetAttributes = {
+					B2163AF420BA4E7500B14A85 = {
+						CreatedOnToolsVersion = 9.3.1;
+						DevelopmentTeam = PP5UYHJQCD;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B2B2D0FE1D49D5080014D780;
+					};
 					B2B2D0FE1D49D5080014D780 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = PP5UYHJQCD;
@@ -687,11 +743,19 @@
 			projectRoot = "";
 			targets = (
 				B2B2D0FE1D49D5080014D780 /* stts */,
+				B2163AF420BA4E7500B14A85 /* sttsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B2163AF320BA4E7500B14A85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2B2D0FD1D49D5080014D780 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -746,6 +810,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B2163AF120BA4E7500B14A85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2163AF820BA4E7500B14A85 /* sttsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2B2D0FB1D49D5080014D780 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -898,6 +970,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B2163AFB20BA4E7500B14A85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2B2D0FE1D49D5080014D780 /* stts */;
+			targetProxy = B2163AFA20BA4E7500B14A85 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		B2B2D1061D49D5080014D780 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
@@ -911,6 +991,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B2163AFC20BA4E7500B14A85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = PP5UYHJQCD;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = sttsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.mahdi.sttsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/stts.app/Contents/MacOS/stts";
+			};
+			name = Debug;
+		};
+		B2163AFD20BA4E7500B14A85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = PP5UYHJQCD;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = sttsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.mahdi.sttsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/stts.app/Contents/MacOS/stts";
+			};
+			name = Release;
+		};
 		B2B2D10A1D49D5080014D780 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -945,6 +1070,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -959,6 +1085,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1002,6 +1130,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1010,6 +1139,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -1027,13 +1158,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=300 -Xfrontend -warn-long-expression-type-checking=200";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mahdi.stts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1052,13 +1177,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=300 -Xfrontend -warn-long-expression-type-checking=200";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mahdi.stts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1070,6 +1189,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B2163AFE20BA4E7500B14A85 /* Build configuration list for PBXNativeTarget "sttsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2163AFC20BA4E7500B14A85 /* Debug */,
+				B2163AFD20BA4E7500B14A85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B2B2D0FA1D49D5080014D780 /* Build configuration list for PBXProject "stts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
