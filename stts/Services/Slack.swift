@@ -44,7 +44,7 @@ class Slack: Service {
             guard serviceImages.count > 0 else { return selfie._fail("Unexpected response") }
 
             let imageURLs = serviceImages.compactMap { $0["src"] }
-            let statuses = imageURLs.compactMap { SlackStatus(rawValue: ($0 as NSString).lastPathComponent) }
+            let statuses = imageURLs.compactMap { SlackStatus(rawValue: ($0.lowercased() as NSString).lastPathComponent) }
 
             self?.status = statuses.map { $0.serviceStatus }.max() ?? .undetermined
             self?.message = doc.css("#current_status h1").first?.text ?? "Undetermined"
