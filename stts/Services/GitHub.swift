@@ -6,6 +6,23 @@
 import Foundation
 
 class GitHub: Service {
+    private enum GitHubStatus: String {
+        case good
+        case minor
+        case major
+
+        var serviceStatus: ServiceStatus {
+            switch self {
+            case .good:
+                return .good
+            case .minor:
+                return .minor
+            case .major:
+                return .major
+            }
+        }
+    }
+
     let url = URL(string: "https://status.github.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
@@ -17,17 +34,14 @@ class GitHub: Service {
             guard let data = data else { return selfie._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard let dict = json as? [String: String] else { return selfie._fail("Unexpected data") }
 
-            guard let status = dict["status"] else { return selfie._fail("Unexpected data") }
+            guard
+                let dict = json as? [String: String],
+                let statusString = dict["status"],
+                let status = GitHubStatus(rawValue: statusString)
+            else { return selfie._fail("Unexpected data") }
 
-            switch status {
-            case "good": self?.status = .good
-            case "minor": self?.status = .minor
-            case "major": self?.status = .major
-            default: self?.status = .undetermined
-            }
-
+            self?.status = status.serviceStatus
             self?.message = dict["body"] ?? ""
         }.resume()
     }

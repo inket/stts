@@ -8,7 +8,7 @@ import Foundation
 typealias CachetService = BaseCachetService & RequiredServiceProperties
 
 class BaseCachetService: BaseService {
-    enum ComponentStatus: Int, Comparable {
+    private enum ComponentStatus: Int, Comparable {
         // https://docs.cachethq.io/docs/component-statuses
         case operational = 1
         case performanceIssues = 2

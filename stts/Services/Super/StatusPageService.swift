@@ -12,6 +12,28 @@ protocol RequiredStatusPageProperties {
 }
 
 class BaseStatusPageService: BaseService {
+    private enum StatusPageStatus: String {
+        case none
+        case minor
+        case critical
+        case major
+        case maintenance
+
+        var serviceStatus: ServiceStatus {
+            switch self {
+            case .none:
+                return .good
+            case .minor:
+                return .minor
+            case .critical,
+                 .major:
+                return .major
+            case .maintenance:
+                return .maintenance
+            }
+        }
+    }
+
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         guard let realSelf = self as? StatusPageService else { fatalError("BaseStatusPageService should not be used directly.") }
 
@@ -23,20 +45,14 @@ class BaseStatusPageService: BaseService {
             guard let data = data else { return selfie._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard let dict = (json as? [String: Any])?["status"] as? [String: String] else {
-                return selfie._fail("Unexpected data")
-            }
 
-            guard let status = dict["indicator"] else { return selfie._fail("Unexpected data") }
+            guard
+                let dict = (json as? [String: Any])?["status"] as? [String: String],
+                let statusString = dict["indicator"],
+                let status = StatusPageStatus(rawValue: statusString.lowercased())
+            else { return selfie._fail("Unexpected data") }
 
-            switch status.lowercased() {
-            case "none": self?.status = .good
-            case "minor": self?.status = .minor
-            case "major", "critical": self?.status = .major
-            case "maintenance": self?.status = .maintenance
-            default: self?.status = .undetermined
-            }
-
+            self?.status = status.serviceStatus
             self?.message = dict["description"] ?? ""
         }.resume()
     }

@@ -6,6 +6,29 @@
 import Kanna
 
 class Slack: Service {
+    private enum SlackStatus: String {
+        case check = "tablecheck.png"
+        case outage = "tableoutage.png"
+        case incident = "tableincident.png"
+        case maintenance = "tablemaintenance.png"
+        case notice = "tablenotice.png"
+
+        var serviceStatus: ServiceStatus {
+            switch self {
+            case .check:
+                return .good
+            case .outage:
+                return .major
+            case .incident:
+                return .minor
+            case .maintenance:
+                return .maintenance
+            case .notice:
+                return .notice
+            }
+        }
+    }
+
     let url = URL(string: "https://status.slack.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
@@ -21,34 +44,10 @@ class Slack: Service {
             guard serviceImages.count > 0 else { return selfie._fail("Unexpected response") }
 
             let imageURLs = serviceImages.compactMap { $0["src"] }
-            let statuses = imageURLs.map { selfie.status(from: $0) }
+            let statuses = imageURLs.compactMap { SlackStatus(rawValue: ($0 as NSString).lastPathComponent) }
 
-            self?.status = statuses.max() ?? .undetermined
+            self?.status = statuses.map { $0.serviceStatus }.max() ?? .undetermined
             self?.message = doc.css("#current_status h1").first?.text ?? "Undetermined"
         }.resume()
-    }
-}
-
-extension Slack {
-    fileprivate func status(from imageURL: String) -> ServiceStatus {
-        guard let lastPart = imageURL.split(separator: "/").last else {
-            return .undetermined
-        }
-        let imageName = String(lastPart).lowercased()
-
-        switch imageName {
-        case "tableoutage.png":
-            return .major
-        case "tableincident.png":
-            return .minor
-        case "tablemaintenance.png":
-            return .maintenance
-        case "tablenotice.png":
-            return .notice
-        case "tablecheck.png":
-            return .good
-        default:
-            return .undetermined
-        }
     }
 }

@@ -5,41 +5,41 @@
 
 import Foundation
 
-// Schema is at https://status.gandi.net/api/status/schema
-private enum GandiStatus: String, Codable {
-    case sunny = "SUNNY"
-    case cloudy = "CLOUDY"
-    case foggy = "FOGGY"
-    case stormy = "STORMY"
-
-    var serviceStatus: ServiceStatus {
-        switch self {
-        case .sunny:
-            return .good
-        case .cloudy:
-            return .maintenance
-        case .foggy:
-            return .minor
-        case .stormy:
-            return .major
-        }
-    }
-
-    var statusMessage: String {
-        switch self {
-        case .sunny:
-            return "All services are up and running"
-        case .cloudy:
-            return "A scheduled maintenance ongoing"
-        case .foggy:
-            return "Incident which are not impacting our services."
-        case .stormy:
-            return "An incident ongoing"
-        }
-    }
-}
-
 class Gandi: Service {
+    private enum GandiStatus: String, Codable {
+        // Schema is at https://status.gandi.net/api/status/schema
+        case sunny = "SUNNY"
+        case cloudy = "CLOUDY"
+        case foggy = "FOGGY"
+        case stormy = "STORMY"
+
+        var serviceStatus: ServiceStatus {
+            switch self {
+            case .sunny:
+                return .good
+            case .cloudy:
+                return .maintenance
+            case .foggy:
+                return .minor
+            case .stormy:
+                return .major
+            }
+        }
+
+        var statusMessage: String {
+            switch self {
+            case .sunny:
+                return "All services are up and running"
+            case .cloudy:
+                return "A scheduled maintenance ongoing"
+            case .foggy:
+                return "Incident which are not impacting our services."
+            case .stormy:
+                return "An incident ongoing"
+            }
+        }
+    }
+
     let name = "Gandi.net"
     let url = URL(string: "https://status.gandi.net")!
 
