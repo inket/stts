@@ -1,4 +1,4 @@
-## stts ![](https://img.shields.io/badge/Swift-4.0-orange.svg)
+## stts ![](https://img.shields.io/badge/Swift-4.1-orange.svg)
 
 stts is a macOS app for monitoring the status of cloud services.
 
