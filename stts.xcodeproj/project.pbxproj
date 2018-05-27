@@ -89,6 +89,8 @@
 		B257469B1E2781A3003A07A4 /* CodeClimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257469A1E2781A3003A07A4 /* CodeClimate.swift */; };
 		B25EC9CC2071265500D2DD3D /* GoogleCloudPlatformAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25EC9CB2071265500D2DD3D /* GoogleCloudPlatformAll.swift */; };
 		B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */; };
+		B26191B520BA60DA00B9E2FA /* FirebaseABTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26191B420BA60DA00B9E2FA /* FirebaseABTesting.swift */; };
+		B26191B720BA60F500B9E2FA /* FirebaseMLKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26191B620BA60F500B9E2FA /* FirebaseMLKit.swift */; };
 		B26350FD1ED7CFC40069EA73 /* Loggly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26350FC1ED7CFC40069EA73 /* Loggly.swift */; };
 		B26350FF1ED7D0210069EA73 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26350FE1ED7D0210069EA73 /* Segment.swift */; };
 		B269FCBB1E261BDF0016041D /* Figma.swift in Sources */ = {isa = PBXBuildFile; fileRef = B269FCBA1E261BDF0016041D /* Figma.swift */; };
@@ -277,6 +279,8 @@
 		B257469A1E2781A3003A07A4 /* CodeClimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeClimate.swift; sourceTree = "<group>"; };
 		B25EC9CB2071265500D2DD3D /* GoogleCloudPlatformAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudPlatformAll.swift; sourceTree = "<group>"; };
 		B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
+		B26191B420BA60DA00B9E2FA /* FirebaseABTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseABTesting.swift; sourceTree = "<group>"; };
+		B26191B620BA60F500B9E2FA /* FirebaseMLKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMLKit.swift; sourceTree = "<group>"; };
 		B26350FC1ED7CFC40069EA73 /* Loggly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loggly.swift; sourceTree = "<group>"; };
 		B26350FE1ED7D0210069EA73 /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
 		B269FCBA1E261BDF0016041D /* Figma.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Figma.swift; sourceTree = "<group>"; };
@@ -406,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				B2253A6E209F42430039F574 /* Firebase.swift */,
+				B26191B420BA60DA00B9E2FA /* FirebaseABTesting.swift */,
 				B2253A82209F47FA0039F574 /* FirebaseAnalytics.swift */,
 				B2253A8F209F4D950039F574 /* FirebaseAppIndexing.swift */,
 				B2253A8A209F4D940039F574 /* FirebaseAuthentication.swift */,
@@ -418,6 +423,7 @@
 				B2253A89209F4D940039F574 /* FirebaseDynamicLinks.swift */,
 				B2253A90209F4D950039F574 /* FirebaseHosting.swift */,
 				B2253A91209F4D950039F574 /* FirebaseInvites.swift */,
+				B26191B620BA60F500B9E2FA /* FirebaseMLKit.swift */,
 				B2253A8D209F4D940039F574 /* FirebasePerformanceMonitoring.swift */,
 				B2253A92209F4D950039F574 /* FirebasePredictions.swift */,
 				B2253A94209F4D950039F574 /* FirebaseRealtimeDatabase.swift */,
@@ -879,6 +885,7 @@
 				B2D468291E2F0F82000F8F6B /* Coveralls.swift in Sources */,
 				B299C8511DD04FD60024D2E9 /* Cloudflare.swift in Sources */,
 				B256955E1E247C8C00FAE413 /* SauceLabs.swift in Sources */,
+				B26191B720BA60F500B9E2FA /* FirebaseMLKit.swift in Sources */,
 				B2898FD01DC7441D0005F58F /* StatusIndicator.swift in Sources */,
 				B290315C1E4B0CA7005B58CC /* Evernote.swift in Sources */,
 				B2253A6D209F3F9F0039F574 /* FirebaseService.swift in Sources */,
@@ -898,6 +905,7 @@
 				B256955A1E247C8C00FAE413 /* Cloudinary.swift in Sources */,
 				B2253A95209F4D950039F574 /* FirebaseCloudFirestore.swift in Sources */,
 				B2493EF71E26023600556A83 /* GoogleAppEngine.swift in Sources */,
+				B26191B520BA60DA00B9E2FA /* FirebaseABTesting.swift in Sources */,
 				B2253A7B209F45EB0039F574 /* GoogleCloudNetworking.swift in Sources */,
 				B2A2B6A61E459F61008EFD05 /* Waffle.swift in Sources */,
 				B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */,
