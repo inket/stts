@@ -21,6 +21,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        NSWorkspace.shared.notificationCenter.addObserver(
+            self,
+            selector: #selector(AppDelegate.restartTimer),
+            name: NSWorkspace.didWakeNotification,
+            object: nil
+        )
+
         NSUserNotificationCenter.default.delegate = self
 
         popupController.statusItem.button?.title = "stts"
@@ -47,11 +54,18 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             }
         }
 
-        self.timer = Timer.scheduledTimer(timeInterval: 300,
-                                          target: self,
-                                          selector: #selector(AppDelegate.updateServices),
-                                          userInfo: nil,
-                                          repeats: true)
+        restartTimer()
+    }
+
+    @objc func restartTimer() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(
+            timeInterval: 300,
+            target: self,
+            selector: #selector(AppDelegate.updateServices),
+            userInfo: nil,
+            repeats: true
+        )
         timer?.fire()
     }
 
