@@ -14,6 +14,10 @@ stts can be downloaded from the Mac App Store [here](https://itunes.apple.com/ap
 
 Adding services is quite straightforward, and can be as easy as adding a few lines (especially if they're based on statuspage.io). For examples, check `stts/Services/` and `stts/Services/StatusPage`.
 
+#### StatusPage
+
+If you're adding a page which is based off https://statuspage.io, then you will subclass `StatusPageService`. To find `statusPageID` for a new service, go to https://status.<company>.com/api and [view the links](https://github.com/inket/stts/issues/21#issuecomment-273427769).
+
 #### Contact
 
 [@inket](https://github.com/inket) / [@inket](https://twitter.com/inket) on Twitter / [mahdi.jp](https://mahdi.jp)
