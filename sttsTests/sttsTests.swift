@@ -24,7 +24,10 @@ class sttsTests: XCTestCase {
 
             expectations.append(thisExpectation)
 
+            print("Retrieving status for \(type(of: service))…")
+
             service.updateStatus { updatedService in
+                print("Retrieved status for \(type(of: updatedService)): \(updatedService.status)")
                 XCTAssert(
                     updatedService.status != .undetermined,
                     "Retrieved status for \(type(of: updatedService)) should not be .undetermined"
