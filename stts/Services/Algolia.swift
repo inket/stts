@@ -6,7 +6,7 @@
 import Kanna
 
 class Algolia: Service {
-    private enum AlgoliaStatus: String, Codable {
+    private enum AlgoliaStatus: String {
         case operational
         case majorOutage = "major_outage"
         case degradedPerformance = "degraded_performance"
