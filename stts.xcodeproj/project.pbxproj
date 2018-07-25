@@ -63,6 +63,7 @@
 		B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D4E6C1E13471200B04F18 /* Intercom.swift */; };
 		B23D4E6F1E13475900B04F18 /* KeenIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D4E6E1E13475900B04F18 /* KeenIO.swift */; };
 		B24220E41E2F6BBA0007E50E /* Typeform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24220E31E2F6BBA0007E50E /* Typeform.swift */; };
+		B2430807210810D0003F8D07 /* Algolia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2430806210810D0003F8D07 /* Algolia.swift */; };
 		B2483CF12037029D00A9FA95 /* Zwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2483CF02037029D00A9FA95 /* Zwift.swift */; };
 		B2493EF71E26023600556A83 /* GoogleAppEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EE91E26023600556A83 /* GoogleAppEngine.swift */; };
 		B2493EF81E26023600556A83 /* GoogleBigQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493EEA1E26023600556A83 /* GoogleBigQuery.swift */; };
@@ -258,6 +259,7 @@
 		B23D4E6C1E13471200B04F18 /* Intercom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intercom.swift; sourceTree = "<group>"; };
 		B23D4E6E1E13475900B04F18 /* KeenIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeenIO.swift; sourceTree = "<group>"; };
 		B24220E31E2F6BBA0007E50E /* Typeform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typeform.swift; sourceTree = "<group>"; };
+		B2430806210810D0003F8D07 /* Algolia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algolia.swift; sourceTree = "<group>"; };
 		B2483CF02037029D00A9FA95 /* Zwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zwift.swift; sourceTree = "<group>"; };
 		B2493EE91E26023600556A83 /* GoogleAppEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAppEngine.swift; sourceTree = "<group>"; };
 		B2493EEA1E26023600556A83 /* GoogleBigQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleBigQuery.swift; sourceTree = "<group>"; };
@@ -654,6 +656,7 @@
 				B2163B0120BA5AE600B14A85 /* StatusCake */,
 				B299C8561DD051710024D2E9 /* StatusPage */,
 				B2FDC9201D67071500F0B728 /* Super */,
+				B2430806210810D0003F8D07 /* Algolia.swift */,
 				B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */,
 				B23038F01E0DF3CC00B29095 /* Beanstalk.swift */,
 				B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */,
@@ -953,6 +956,7 @@
 				B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */,
 				B2253A9C209F4D950039F574 /* FirebaseConsole.swift in Sources */,
 				B2253AA1209F4D950039F574 /* FirebaseHosting.swift in Sources */,
+				B2430807210810D0003F8D07 /* Algolia.swift in Sources */,
 				B2493EFB1E26023600556A83 /* GoogleCloudDataflow.swift in Sources */,
 				03C5FB131E203325003C40B8 /* Packet.swift in Sources */,
 				B21DC0761F6B436400E8214F /* Aptible.swift in Sources */,
