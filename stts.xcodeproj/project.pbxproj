@@ -571,6 +571,7 @@
 				B299C8521DD0505F0024D2E9 /* Sentry.swift */,
 				B25695571E247C8C00FAE413 /* SmartyStreets.swift */,
 				B2A93ADC1EB814C000D36DD3 /* Snyk.swift */,
+				7B305FAA210237AA0086DCE0 /* Spoke.swift */,
 				B25695581E247C8C00FAE413 /* Squarespace.swift */,
 				B2D2B6CE20870E700011723B /* StatusPage.swift */,
 				B27090F0209F52EB0094C3D7 /* Stream.swift */,
@@ -584,7 +585,6 @@
 				C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */,
 				B2C4670E1E70012700C5145D /* Zapier.swift */,
 				B2483CF02037029D00A9FA95 /* Zwift.swift */,
-				7B305FAA210237AA0086DCE0 /* Spoke.swift */,
 			);
 			path = StatusPage;
 			sourceTree = "<group>";
