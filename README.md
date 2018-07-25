@@ -16,7 +16,7 @@ Adding services is quite straightforward, and can be as easy as adding a few lin
 
 #### StatusPage
 
-If you're adding a page which is based off https://statuspage.io, then you will subclass `StatusPageService`. To find `statusPageID` for a new service, go to https://status.<company>.com/api and [view the links](https://github.com/inket/stts/issues/21#issuecomment-273427769).
+If you're adding a page which is based off https://statuspage.io, then you will subclass `StatusPageService`. To find `statusPageID` for a new service, go to `https://status.<company>.com/api` and [view the links](https://github.com/inket/stts/issues/21#issuecomment-273427769).
 
 #### Contact
 

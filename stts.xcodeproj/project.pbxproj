@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03C5FB131E203325003C40B8 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5FB121E203325003C40B8 /* Packet.swift */; };
+		7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B305FAA210237AA0086DCE0 /* Spoke.swift */; };
 		A125C59E20F7909500C513B3 /* Fastly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125C59D20F7909500C513B3 /* Fastly.swift */; };
 		A133C8B720F8F3670068CFE8 /* Mailgun.swift in Sources */ = {isa = PBXBuildFile; fileRef = A133C8B620F8F3670068CFE8 /* Mailgun.swift */; };
 		B20396361EE6A060008CCA21 /* Trello.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20396351EE6A060008CCA21 /* Trello.swift */; };
@@ -200,6 +201,7 @@
 
 /* Begin PBXFileReference section */
 		03C5FB121E203325003C40B8 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
+		7B305FAA210237AA0086DCE0 /* Spoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spoke.swift; sourceTree = "<group>"; };
 		A125C59D20F7909500C513B3 /* Fastly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fastly.swift; sourceTree = "<group>"; };
 		A133C8B620F8F3670068CFE8 /* Mailgun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailgun.swift; sourceTree = "<group>"; };
 		B20396351EE6A060008CCA21 /* Trello.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trello.swift; sourceTree = "<group>"; };
@@ -582,6 +584,7 @@
 				C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */,
 				B2C4670E1E70012700C5145D /* Zapier.swift */,
 				B2483CF02037029D00A9FA95 /* Zwift.swift */,
+				7B305FAA210237AA0086DCE0 /* Spoke.swift */,
 			);
 			path = StatusPage;
 			sourceTree = "<group>";
@@ -988,6 +991,7 @@
 				B2C337A51E1417390007E110 /* Mixpanel.swift in Sources */,
 				B2357D711E5C08AF0093B8A6 /* Netlify.swift in Sources */,
 				B2A93ADD1EB814C000D36DD3 /* Snyk.swift in Sources */,
+				7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */,
 				B232A18D20944B960066AD01 /* Cloud66.swift in Sources */,
 				B2FFC1F01E261B4A00529A00 /* Dropbox.swift in Sources */,
 				B2EB51CE1E7004A3001D6F78 /* ExanaService.swift in Sources */,
