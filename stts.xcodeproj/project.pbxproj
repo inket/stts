@@ -56,6 +56,11 @@
 		B225E3E01E44830F008E1D3D /* SwitchableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */; };
 		B22600311E1562E700EBDD40 /* MediaTemple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22600301E1562E700EBDD40 /* MediaTemple.swift */; };
 		B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22BA3011E8119AB0038D8F6 /* Discord.swift */; };
+		B22FDE4821089C6200359EC9 /* PayPal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE4721089C6200359EC9 /* PayPal.swift */; };
+		B22FDE4D2108A5AE00359EC9 /* PayPalProductProduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE4C2108A5AE00359EC9 /* PayPalProductProduction.swift */; };
+		B22FDE4F2108A5B700359EC9 /* PayPalProductSandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE4E2108A5B700359EC9 /* PayPalProductSandbox.swift */; };
+		B22FDE512108A5C200359EC9 /* PayPalAPIProduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE502108A5C200359EC9 /* PayPalAPIProduction.swift */; };
+		B22FDE532108A5CC00359EC9 /* PayPalAPISandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE522108A5CC00359EC9 /* PayPalAPISandbox.swift */; };
 		B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23038F01E0DF3CC00B29095 /* Beanstalk.swift */; };
 		B232A18D20944B960066AD01 /* Cloud66.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232A18C20944B950066AD01 /* Cloud66.swift */; };
 		B2357D711E5C08AF0093B8A6 /* Netlify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2357D701E5C08AF0093B8A6 /* Netlify.swift */; };
@@ -252,6 +257,11 @@
 		B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchableTableViewController.swift; sourceTree = "<group>"; };
 		B22600301E1562E700EBDD40 /* MediaTemple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTemple.swift; sourceTree = "<group>"; };
 		B22BA3011E8119AB0038D8F6 /* Discord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discord.swift; sourceTree = "<group>"; };
+		B22FDE4721089C6200359EC9 /* PayPal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPal.swift; sourceTree = "<group>"; };
+		B22FDE4C2108A5AE00359EC9 /* PayPalProductProduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalProductProduction.swift; sourceTree = "<group>"; };
+		B22FDE4E2108A5B700359EC9 /* PayPalProductSandbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalProductSandbox.swift; sourceTree = "<group>"; };
+		B22FDE502108A5C200359EC9 /* PayPalAPIProduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalAPIProduction.swift; sourceTree = "<group>"; };
+		B22FDE522108A5CC00359EC9 /* PayPalAPISandbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalAPISandbox.swift; sourceTree = "<group>"; };
 		B23038F01E0DF3CC00B29095 /* Beanstalk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beanstalk.swift; sourceTree = "<group>"; };
 		B232A18C20944B950066AD01 /* Cloud66.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud66.swift; sourceTree = "<group>"; };
 		B2357D701E5C08AF0093B8A6 /* Netlify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
@@ -444,6 +454,17 @@
 				B2253A88209F4D940039F574 /* FirebaseTestLab.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		B22FDE4921089D4F00359EC9 /* PayPal */ = {
+			isa = PBXGroup;
+			children = (
+				B22FDE502108A5C200359EC9 /* PayPalAPIProduction.swift */,
+				B22FDE522108A5CC00359EC9 /* PayPalAPISandbox.swift */,
+				B22FDE4C2108A5AE00359EC9 /* PayPalProductProduction.swift */,
+				B22FDE4E2108A5B700359EC9 /* PayPalProductSandbox.swift */,
+			);
+			path = PayPal;
 			sourceTree = "<group>";
 		};
 		B2493F071E26052400556A83 /* Google Cloud Platform */ = {
@@ -651,6 +672,7 @@
 				B2EB51CC1E70047F001D6F78 /* Exana */,
 				B2253A69209F3B9F0039F574 /* Firebase */,
 				B2493F071E26052400556A83 /* Google Cloud Platform */,
+				B22FDE4921089D4F00359EC9 /* PayPal */,
 				B2841CEC20BA6423004AFDB7 /* Sorry */,
 				B26CB5711E13448900116A33 /* Status.ioV1 */,
 				B2163B0120BA5AE600B14A85 /* StatusCake */,
@@ -678,6 +700,7 @@
 				B2253A6C209F3F9F0039F574 /* FirebaseService.swift */,
 				B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */,
 				B2253A6A209F3C410039F574 /* GoogleStatusDashboardStore.swift */,
+				B22FDE4721089C6200359EC9 /* PayPal.swift */,
 				B205A9171D49D67700EA178D /* Service.swift */,
 				B2841CEA20BA6207004AFDB7 /* SorryService.swift */,
 				B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */,
@@ -887,6 +910,7 @@
 				B28C1D421E607D2200F9D0DC /* Fabric.swift in Sources */,
 				B2253A75209F453F0039F574 /* GoogleIdentityAndSecurity.swift in Sources */,
 				B2BB19BC20B9043F00A97A87 /* Yarn.swift in Sources */,
+				B22FDE4D2108A5AE00359EC9 /* PayPalProductProduction.swift in Sources */,
 				B2493EFE1E26023600556A83 /* GoogleCloudDNS.swift in Sources */,
 				B2493F001E26023600556A83 /* GoogleCloudSQL.swift in Sources */,
 				B2B2D1031D49D5080014D780 /* AppDelegate.swift in Sources */,
@@ -964,6 +988,7 @@
 				B2253AA5209F4D950039F574 /* FirebaseRealtimeDatabase.swift in Sources */,
 				B2253A6F209F42430039F574 /* Firebase.swift in Sources */,
 				B2253AA3209F4D950039F574 /* FirebasePredictions.swift in Sources */,
+				B22FDE512108A5C200359EC9 /* PayPalAPIProduction.swift in Sources */,
 				B2253A9E209F4D950039F574 /* FirebasePerformanceMonitoring.swift in Sources */,
 				B26350FD1ED7CFC40069EA73 /* Loggly.swift in Sources */,
 				B2253A81209F464F0039F574 /* GoogleCloudSupport.swift in Sources */,
@@ -972,6 +997,7 @@
 				B225E3E01E44830F008E1D3D /* SwitchableTableViewController.swift in Sources */,
 				B256955D1E247C8C00FAE413 /* Pingdom.swift in Sources */,
 				B219C0DA1E2F0E9F001F8E7F /* CocoaPods.swift in Sources */,
+				B22FDE4F2108A5B700359EC9 /* PayPalProductSandbox.swift in Sources */,
 				B2F35F261E5D181300E3A00E /* Quay.swift in Sources */,
 				B2253A9A209F4D950039F574 /* FirebaseDynamicLinks.swift in Sources */,
 				B299C8451DD046F20024D2E9 /* AmazonWebServices.swift in Sources */,
@@ -996,7 +1022,9 @@
 				B2357D711E5C08AF0093B8A6 /* Netlify.swift in Sources */,
 				B2A93ADD1EB814C000D36DD3 /* Snyk.swift in Sources */,
 				7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */,
+				B22FDE4821089C6200359EC9 /* PayPal.swift in Sources */,
 				B232A18D20944B960066AD01 /* Cloud66.swift in Sources */,
+				B22FDE532108A5CC00359EC9 /* PayPalAPISandbox.swift in Sources */,
 				B2FFC1F01E261B4A00529A00 /* Dropbox.swift in Sources */,
 				B2EB51CE1E7004A3001D6F78 /* ExanaService.swift in Sources */,
 				B2BA697E1E2DA3A20016AF1A /* PivotalTracker.swift in Sources */,
