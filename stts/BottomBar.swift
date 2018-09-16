@@ -203,18 +203,18 @@ class BottomBar: NSView {
         let normalFont = NSFont.systemFont(ofSize: 11)
         let boldFont = NSFont.boldSystemFont(ofSize: 11)
 
-        credits.addAttribute(NSAttributedStringKey.font, value: normalFont, range: NSRange(location: 0, length: credits.length))
+        credits.addAttribute(.font, value: normalFont, range: NSRange(location: 0, length: credits.length))
         for word in ["stts", "Activity", "Contributors"] {
-            credits.addAttribute(NSAttributedStringKey.font, value: boldFont, range: (credits.string as NSString).range(of: word))
+            credits.addAttribute(.font, value: boldFont, range: (credits.string as NSString).range(of: word))
         }
 
         credits.addAttribute(
-            NSAttributedStringKey.link,
+            .link,
             value: "https://\(githubLink)",
             range: (credits.string as NSString).range(of: githubLink)
         )
         credits.addAttribute(
-            NSAttributedStringKey.link,
+            .link,
             value: "https://\(contributorsLink)",
             range: (credits.string as NSString).range(of: contributorsLink)
         )

@@ -19,10 +19,10 @@ class EditorTableCell: NSTableCellView {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = .center
 
-            let attributes = [
-                NSAttributedStringKey.font: NSFont.systemFont(ofSize: 11),
-                NSAttributedStringKey.foregroundColor: color,
-                NSAttributedStringKey.paragraphStyle: paragraphStyle
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: NSFont.systemFont(ofSize: 11),
+                .foregroundColor: color,
+                .paragraphStyle: paragraphStyle
             ]
 
             toggleButton.attributedTitle = NSAttributedString(string: title, attributes: attributes)
