@@ -12,6 +12,20 @@ protocol RequiredExanaProperties {
 }
 
 class BaseExanaService: BaseService {
+    private enum ExanaStatus: String {
+        case operational
+        case monitoring
+
+        var serviceStatus: ServiceStatus {
+            switch self {
+            case .operational:
+                return .good
+            case .monitoring:
+                return .maintenance
+            }
+        }
+    }
+
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         guard let realSelf = self as? ExanaService else { fatalError("BaseExanaService should not be used directly.") }
 
@@ -61,13 +75,26 @@ class BaseExanaService: BaseService {
                 let result = jsonRoot["result"] as? [String: Any],
                 let components = result["components"] as? [[String: Any]] else { return selfie._fail("Unexpected data") }
 
-            let downComponents = components.filter { ($0["status"] as? String)?.lowercased() != "operational" }
+            var downComponents = [[String: Any]]()
+            let componentStatuses: [ServiceStatus] = components.compactMap {
+                guard let statusString = ($0["status"] as? String)?.lowercased() else { return nil }
 
-            selfie.status = downComponents.isEmpty ? .good : .major
+                let resultStatus = ExanaStatus(rawValue: statusString)?.serviceStatus ?? .major
+                if resultStatus != .good {
+                    downComponents.append($0)
+                }
+                return resultStatus
+            }
 
-            if downComponents.isEmpty {
+            let maxStatus: ServiceStatus = componentStatuses.max() ?? .undetermined
+            selfie.status = maxStatus
+
+            switch maxStatus {
+            case .good:
                 selfie.message = "Operational"
-            } else {
+            case .undetermined:
+                selfie.message = "Undetermined"
+            default:
                 selfie.message = downComponents.map { $0["name"] as? String }.compactMap { $0 }.joined(separator: ", ")
             }
         }.resume()
