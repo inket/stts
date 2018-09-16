@@ -10,10 +10,7 @@ class EditorTableCell: NSTableCellView {
     let toggleButton = NSButton()
     var selected: Bool = false {
         didSet {
-            let green = NSColor(calibratedRed: 0.46, green: 0.78, blue: 0.56, alpha: 1)
-            let gray = NSColor(calibratedWhite: 0, alpha: 0.4)
-
-            let color = selected ? green : gray
+            let color = selected ? StatusColor.green : StatusColor.darkGray
             let title = selected ? "ON" : "OFF"
 
             let paragraphStyle = NSMutableParagraphStyle()
@@ -60,7 +57,7 @@ class EditorTableCell: NSTableCellView {
         toggleButton.action = #selector(EditorTableCell.toggle)
         toggleButton.wantsLayer = true
         toggleButton.layer?.borderWidth = 1
-        toggleButton.layer?.cornerRadius = 3
+        toggleButton.layer?.cornerRadius = 4
         toggleButton.snp.makeConstraints { make in
             make.left.equalTo(textField.snp.right).offset(-4)
             make.width.equalTo(36)

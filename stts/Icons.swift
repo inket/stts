@@ -18,7 +18,7 @@ class CheckmarkIcon: NSView {
         color.setStroke()
 
         let checkmarkPath = NSBezierPath()
-        checkmarkPath.lineWidth = 2
+        checkmarkPath.lineWidth = 3
         checkmarkPath.move(to: NSPoint(x: 17.01, y: 9.15))
         checkmarkPath.curve(to: NSPoint(x: 16.3, y: 9.45),
                             controlPoint1: NSPoint(x: 16.75, y: 9.15),
@@ -54,13 +54,13 @@ class CrossIcon: NSView {
         NSGraphicsContext.saveGraphicsState()
         context.translateBy(x: 23, y: 23)
         context.rotate(by: -45 * CGFloat.pi / 180)
-        NSBezierPath(rect: NSRect(x: -26.88, y: -1, width: 53.75, height: 2)).fill()
+        NSBezierPath(rect: NSRect(x: -26.88, y: -1, width: 53.75, height: 4)).fill()
         NSGraphicsContext.restoreGraphicsState()
 
         NSGraphicsContext.saveGraphicsState()
         context.translateBy(x: 23, y: 23)
         context.rotate(by: -45 * CGFloat.pi / 180)
-        NSBezierPath(rect: NSRect(x: -1, y: -26.88, width: 2, height: 53.75)).fill()
+        NSBezierPath(rect: NSRect(x: -1, y: -26.88, width: 4, height: 53.75)).fill()
         NSGraphicsContext.restoreGraphicsState()
     }
 }
