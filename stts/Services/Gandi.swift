@@ -47,19 +47,19 @@ class Gandi: Service {
         let statusURL = URL(string: "https://status.gandi.net/api/status")!
 
         URLSession.shared.dataTask(with: statusURL) { [weak self] data, _, error in
-            guard let selfie = self else { return }
-            defer { callback(selfie) }
-            guard let data = data else { return selfie._fail(error) }
+            guard let strongSelf = self else { return }
+            defer { callback(strongSelf) }
+            guard let data = data else { return strongSelf._fail(error) }
 
             // Schema is at https://status.gandi.net/api/status/schema
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard let dict = json as? [String: String] else { return selfie._fail("Unexpected data") }
+            guard let dict = json as? [String: String] else { return strongSelf._fail("Unexpected data") }
 
             guard
                 let rawStatusString = dict["status"],
                 let status = GandiStatus(rawValue: rawStatusString)
             else {
-                return selfie._fail("Unexpected data")
+                return strongSelf._fail("Unexpected data")
             }
 
             self?.status = status.serviceStatus

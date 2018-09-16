@@ -12,14 +12,14 @@ class Heroku: Service {
         let statusURL = URL(string: "https://status.heroku.com/api/v3/current-status")!
 
         URLSession.shared.dataTask(with: statusURL) { [weak self] data, _, error in
-            guard let selfie = self else { return }
-            defer { callback(selfie) }
-            guard let data = data else { return selfie._fail(error) }
+            guard let strongSelf = self else { return }
+            defer { callback(strongSelf) }
+            guard let data = data else { return strongSelf._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard let dict = json as? [String: Any] else { return selfie._fail("Unexpected data") }
+            guard let dict = json as? [String: Any] else { return strongSelf._fail("Unexpected data") }
 
-            guard let status = dict["status"] as? [String: String] else { return selfie._fail("Unexpected data") }
+            guard let status = dict["status"] as? [String: String] else { return strongSelf._fail("Unexpected data") }
 
             let devStatus = status["Development"]
             let prodStatus = status["Production"]

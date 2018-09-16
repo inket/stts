@@ -36,14 +36,14 @@ class BaseStatusCakeService: BaseService {
         let statusURL = URL(string: "https://app.statuscake.com/Workfloor/PublicReportHandler.php?PublicID=\(realSelf.publicID)")!
 
         URLSession.shared.dataTask(with: statusURL) { [weak self] data, _, error in
-            guard let selfie = self else { return }
-            defer { callback(selfie) }
-            guard let data = data else { return selfie._fail(error) }
+            guard let strongSelf = self else { return }
+            defer { callback(strongSelf) }
+            guard let data = data else { return strongSelf._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
 
             guard let testData = (json as? [String: Any])?["TestData"] as? [[String: Any]] else {
-                return selfie._fail("Unexpected data")
+                return strongSelf._fail("Unexpected data")
             }
 
             let statuses = testData.compactMap { $0["Status"] as? String }.compactMap(StatusCakeStatus.init(rawValue:))

@@ -33,15 +33,15 @@ class Slack: Service {
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-            guard let selfie = self else { return }
-            defer { callback(selfie) }
+            guard let strongSelf = self else { return }
+            defer { callback(strongSelf) }
 
-            guard let data = data else { return selfie._fail(error) }
-            guard let body = String(data: data, encoding: .utf8) else { return selfie._fail("Unreadable response") }
-            guard let doc = try? HTML(html: body, encoding: .utf8) else { return selfie._fail("Couldn't parse response") }
+            guard let data = data else { return strongSelf._fail(error) }
+            guard let body = String(data: data, encoding: .utf8) else { return strongSelf._fail("Unreadable response") }
+            guard let doc = try? HTML(html: body, encoding: .utf8) else { return strongSelf._fail("Couldn't parse response") }
 
             let serviceImages = doc.css("#services .service.header img")
-            guard serviceImages.count > 0 else { return selfie._fail("Unexpected response") }
+            guard serviceImages.count > 0 else { return strongSelf._fail("Unexpected response") }
 
             let imageURLs = serviceImages.compactMap { $0["src"] }
             let statuses = imageURLs.compactMap { SlackStatus(rawValue: ($0.lowercased() as NSString).lastPathComponent) }

@@ -30,15 +30,15 @@ class BaseExanaService: BaseService {
         guard let realSelf = self as? ExanaService else { fatalError("BaseExanaService should not be used directly.") }
 
         URLSession.shared.dataTask(with: realSelf.url) { [weak self] data, _, error in
-            guard let selfie = self else { return }
+            guard let strongSelf = self else { return }
 
-            guard let data = data else { return selfie._fail(error) }
-            guard let body = String(data: data, encoding: .utf8) else { return selfie._fail("Unreadable response") }
-            guard let doc = try? HTML(html: body, encoding: .utf8) else { return selfie._fail("Couldn't parse response") }
+            guard let data = data else { return strongSelf._fail(error) }
+            guard let body = String(data: data, encoding: .utf8) else { return strongSelf._fail("Unreadable response") }
+            guard let doc = try? HTML(html: body, encoding: .utf8) else { return strongSelf._fail("Couldn't parse response") }
 
-            guard let jwt = doc.css("meta[name=jwt]").first?["content"] else { return selfie._fail("Couldn't get authorization") }
+            guard let jwt = doc.css("meta[name=jwt]").first?["content"] else { return strongSelf._fail("Couldn't get authorization") }
 
-            selfie.getStatus(authorization: jwt, callback: callback)
+            strongSelf.getStatus(authorization: jwt, callback: callback)
         }.resume()
     }
 
@@ -65,15 +65,15 @@ class BaseExanaService: BaseService {
         request.httpBody = jsonData
 
         URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
-            guard let selfie = self else { return }
-            defer { callback(selfie) }
-            guard let data = data else { return selfie._fail(error) }
+            guard let strongSelf = self else { return }
+            defer { callback(strongSelf) }
+            guard let data = data else { return strongSelf._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
 
             guard let jsonRoot = json as? [String: Any],
                 let result = jsonRoot["result"] as? [String: Any],
-                let components = result["components"] as? [[String: Any]] else { return selfie._fail("Unexpected data") }
+                let components = result["components"] as? [[String: Any]] else { return strongSelf._fail("Unexpected data") }
 
             var downComponents = [[String: Any]]()
             let componentStatuses: [ServiceStatus] = components.compactMap {
@@ -87,15 +87,15 @@ class BaseExanaService: BaseService {
             }
 
             let maxStatus: ServiceStatus = componentStatuses.max() ?? .undetermined
-            selfie.status = maxStatus
+            strongSelf.status = maxStatus
 
             switch maxStatus {
             case .good:
-                selfie.message = "Operational"
+                strongSelf.message = "Operational"
             case .undetermined:
-                selfie.message = "Undetermined"
+                strongSelf.message = "Undetermined"
             default:
-                selfie.message = downComponents.map { $0["name"] as? String }.compactMap { $0 }.joined(separator: ", ")
+                strongSelf.message = downComponents.map { $0["name"] as? String }.compactMap { $0 }.joined(separator: ", ")
             }
         }.resume()
     }

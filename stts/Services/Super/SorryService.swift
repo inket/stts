@@ -45,14 +45,14 @@ class BaseSorryService: BaseService {
         let statusURL = URL(string: "https://api.sorryapp.com/v1/pages/\(realSelf.pageID)/components")!
 
         URLSession.shared.dataTask(with: statusURL) { [weak self] data, _, error in
-            guard let selfie = self else { return }
-            defer { callback(selfie) }
-            guard let data = data else { return selfie._fail(error) }
+            guard let strongSelf = self else { return }
+            defer { callback(strongSelf) }
+            guard let data = data else { return strongSelf._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
 
             guard let components = (json as? [String: Any])?["response"] as? [[String: Any]] else {
-                return selfie._fail("Unexpected data")
+                return strongSelf._fail("Unexpected data")
             }
 
             let statuses = components.compactMap { $0["state"] as? String }.compactMap(SorryStatus.init(rawValue:))

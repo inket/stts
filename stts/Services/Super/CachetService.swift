@@ -48,22 +48,22 @@ class BaseCachetService: BaseService {
         let apiComponentsURL = realSelf.url.appendingPathComponent("api/v1/components")
 
         URLSession.shared.dataTask(with: apiComponentsURL) { [weak self] data, _, error in
-            guard let selfie = self else { return }
-            defer { callback(selfie) }
-            guard let data = data else { return selfie._fail(error) }
+            guard let strongSelf = self else { return }
+            defer { callback(strongSelf) }
+            guard let data = data else { return strongSelf._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
             guard let components = (json as? [String: Any])?["data"] as? [[String: Any]] else {
-                return selfie._fail("Unexpected data")
+                return strongSelf._fail("Unexpected data")
             }
 
-            guard !components.isEmpty else { return selfie._fail("Unexpected data") }
+            guard !components.isEmpty else { return strongSelf._fail("Unexpected data") }
 
             let statuses = components.compactMap({ $0["status"] as? Int }).compactMap(ComponentStatus.init(rawValue:))
 
             let highestStatus = statuses.max()
-            selfie.status = highestStatus?.serviceStatus ?? .undetermined
-            selfie.message = highestStatus?.description ?? "Undetermined"
+            strongSelf.status = highestStatus?.serviceStatus ?? .undetermined
+            strongSelf.message = highestStatus?.description ?? "Undetermined"
         }.resume()
     }
 }

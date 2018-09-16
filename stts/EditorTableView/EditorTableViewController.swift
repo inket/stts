@@ -49,12 +49,12 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
         settingsView.isHidden = true
         settingsView.searchCallback = { [weak self] searchString in
             guard
-                let selfie = self,
-                let allServices = selfie.allServices as? [Service]
+                let strongSelf = self,
+                let allServices = strongSelf.allServices as? [Service]
             else { return }
 
             if searchString.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-                selfie.filteredServices = allServices
+                strongSelf.filteredServices = allServices
             } else {
                 // Can't filter array with NSPredicate without making Service inherit KVO from NSObject, therefore we create
                 // an array of service names that we can run the predicate on
@@ -62,10 +62,10 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
                 let predicate = NSPredicate(format: "SELF LIKE[cd] %@", argumentArray: ["*\(searchString)*"])
                 guard let filteredServiceNames = allServiceNames.filtered(using: predicate) as? [String] else { return }
 
-                selfie.filteredServices = allServices.filter { filteredServiceNames.contains($0.name) }
+                strongSelf.filteredServices = allServices.filter { filteredServiceNames.contains($0.name) }
             }
 
-            selfie.tableView.reloadData()
+            strongSelf.tableView.reloadData()
         }
 
         contentView.addSubview(settingsView)
@@ -135,9 +135,9 @@ extension EditorTableViewController: NSTableViewDelegate {
         view.textField?.stringValue = service.name
         view.selected = selectedServices.contains(service)
         view.toggleCallback = { [weak self] in
-            guard let selfie = self else { return }
+            guard let strongSelf = self else { return }
 
-            selfie.selectionChanged = true
+            strongSelf.selectionChanged = true
 
             if view.selected {
                 self?.selectedServices.append(service)
@@ -147,7 +147,7 @@ extension EditorTableViewController: NSTableViewDelegate {
                 }
             }
 
-            Preferences.shared.selectedServices = selfie.selectedServices
+            Preferences.shared.selectedServices = strongSelf.selectedServices
         }
 
         return view

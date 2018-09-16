@@ -32,13 +32,13 @@ class BaseFirebaseService: BaseService {
         guard let realSelf = self as? FirebaseService else { fatalError("BaseFirebaseService should not be used directly.") }
 
         BaseFirebaseService.store.loadStatus { [weak realSelf] in
-            guard let selfie = realSelf else { return }
+            guard let strongSelf = realSelf else { return }
 
-            let (status, message) = BaseFirebaseService.store.status(for: selfie)
-            selfie.status = status
-            selfie.message = message
+            let (status, message) = BaseFirebaseService.store.status(for: strongSelf)
+            strongSelf.status = status
+            strongSelf.message = message
 
-            callback(selfie)
+            callback(strongSelf)
         }
     }
 }

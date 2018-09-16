@@ -10,14 +10,14 @@ class Evernote: Service {
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-            guard let selfie = self else { return }
-            defer { callback(selfie) }
+            guard let strongSelf = self else { return }
+            defer { callback(strongSelf) }
 
-            guard let data = data else { return selfie._fail(error) }
-            guard let body = String(data: data, encoding: .utf8) else { return selfie._fail("Unreadable response") }
-            guard let doc = try? HTML(html: body, encoding: .utf8) else { return selfie._fail("Couldn't parse response") }
+            guard let data = data else { return strongSelf._fail(error) }
+            guard let body = String(data: data, encoding: .utf8) else { return strongSelf._fail("Unreadable response") }
+            guard let doc = try? HTML(html: body, encoding: .utf8) else { return strongSelf._fail("Couldn't parse response") }
 
-            let (status, message) = selfie.status(from: doc)
+            let (status, message) = strongSelf.status(from: doc)
             self?.status = status
             self?.message = message
         }.resume()

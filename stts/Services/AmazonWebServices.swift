@@ -13,19 +13,19 @@ class AmazonWebServices: Service {
         let dataURL = URL(string: "https://status.aws.amazon.com/data.json")!
 
         URLSession.shared.dataTask(with: dataURL) { [weak self] data, _, error in
-            guard let selfie = self else { return }
-            defer { callback(selfie) }
-            guard let data = data else { return selfie._fail(error) }
+            guard let strongSelf = self else { return }
+            defer { callback(strongSelf) }
+            guard let data = data else { return strongSelf._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard let dict = json as? [String: Any] else { return selfie._fail("Unexpected data") }
+            guard let dict = json as? [String: Any] else { return strongSelf._fail("Unexpected data") }
 
             guard let currentIssues = dict["current"] as? [[String: String]] else {
-                return selfie._fail("Unexpected data")
+                return strongSelf._fail("Unexpected data")
             }
 
-            self?.status = selfie.status(for: currentIssues)
-            self?.message = selfie.message(for: currentIssues)
+            self?.status = strongSelf.status(for: currentIssues)
+            self?.message = strongSelf.message(for: currentIssues)
         }.resume()
     }
 }

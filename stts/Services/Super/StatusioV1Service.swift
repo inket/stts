@@ -40,9 +40,9 @@ class BaseStatusioV1Service: BaseService {
         let statusURL = URL(string: "https://api.status.io/1.0/status/\(realSelf.statusPageID)")!
 
         URLSession.shared.dataTask(with: statusURL) { [weak self] data, _, error in
-            guard let selfie = self else { return }
-            defer { callback(selfie) }
-            guard let data = data else { return selfie._fail(error) }
+            guard let strongSelf = self else { return }
+            defer { callback(strongSelf) }
+            guard let data = data else { return strongSelf._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
             guard
@@ -53,7 +53,7 @@ class BaseStatusioV1Service: BaseService {
                 let status = StatusioV1Status(rawValue: statusCode),
                 let statusMessage = statusOverallJSON["status"] as? String
             else {
-                return selfie._fail("Unexpected data")
+                return strongSelf._fail("Unexpected data")
             }
 
             self?.status = status.serviceStatus

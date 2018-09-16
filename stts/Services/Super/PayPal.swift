@@ -80,21 +80,21 @@ class BasePayPal: BaseService {
         let apiURL = URL(string: "https://www.paypal-status.com/api/v1/components")!
 
         URLSession.shared.dataTask(with: apiURL) { [weak self] data, _, error in
-            guard let selfie = self as? PayPal else { fatalError("BasePayPal should not be used directly.") }
-            defer { callback(selfie) }
-            guard let data = data else { return selfie._fail(error) }
+            guard let strongSelf = self as? PayPal else { fatalError("BasePayPal should not be used directly.") }
+            defer { callback(strongSelf) }
+            guard let data = data else { return strongSelf._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
             guard
                 let dict = json as? [String: Any],
                 let resultArray = dict["result"] as? [[String: Any]]
-            else { return selfie._fail("Unexpected data") }
+            else { return strongSelf._fail("Unexpected data") }
 
             let statuses = resultArray.compactMap {
-                selfie.status(fromResultItem: $0, component: selfie.component)
+                strongSelf.status(fromResultItem: $0, component: strongSelf.component)
             }
 
-            guard let highestStatus = statuses.max() else { return selfie._fail("Unexpected data") }
+            guard let highestStatus = statuses.max() else { return strongSelf._fail("Unexpected data") }
 
             self?.status = highestStatus.serviceStatus
             self?.message = highestStatus.statusMessage

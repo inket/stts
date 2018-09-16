@@ -29,9 +29,9 @@ class GitHub: Service {
         let lastMessageURL = URL(string: "https://status.github.com/api/last-message.json")!
 
         URLSession.shared.dataTask(with: lastMessageURL) { [weak self] data, _, error in
-            guard let selfie = self else { return }
-            defer { callback(selfie) }
-            guard let data = data else { return selfie._fail(error) }
+            guard let strongSelf = self else { return }
+            defer { callback(strongSelf) }
+            guard let data = data else { return strongSelf._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
 
@@ -39,7 +39,7 @@ class GitHub: Service {
                 let dict = json as? [String: String],
                 let statusString = dict["status"],
                 let status = GitHubStatus(rawValue: statusString)
-            else { return selfie._fail("Unexpected data") }
+            else { return strongSelf._fail("Unexpected data") }
 
             self?.status = status.serviceStatus
             self?.message = dict["body"] ?? ""

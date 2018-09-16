@@ -44,9 +44,9 @@ class Algolia: Service {
         let apiURL = URL(string: "https://status.algolia.com/2/status/service/all/period/current")!
 
         URLSession.shared.dataTask(with: apiURL) { [weak self] data, _, error in
-            guard let selfie = self else { return }
-            defer { callback(selfie) }
-            guard let data = data else { return selfie._fail(error) }
+            guard let strongSelf = self else { return }
+            defer { callback(strongSelf) }
+            guard let data = data else { return strongSelf._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
             guard
@@ -54,7 +54,7 @@ class Algolia: Service {
                 let statusDict = dict["global"] as? [String: String],
                 let statusString = statusDict["status"],
                 let status = AlgoliaStatus(rawValue: statusString)
-            else { return selfie._fail("Unexpected data") }
+            else { return strongSelf._fail("Unexpected data") }
 
             self?.status = status.serviceStatus
             self?.message = status.statusMessage

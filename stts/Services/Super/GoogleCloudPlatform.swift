@@ -18,13 +18,13 @@ class BaseGoogleCloudPlatform: BaseService {
         guard let realSelf = self as? GoogleCloudPlatform else { fatalError("BaseGoogleCloudPlatform should not be used directly.") }
 
         BaseGoogleCloudPlatform.store.loadStatus { [weak realSelf] in
-            guard let selfie = realSelf else { return }
+            guard let strongSelf = realSelf else { return }
 
-            let (status, message) = BaseGoogleCloudPlatform.store.status(for: selfie)
-            selfie.status = status
-            selfie.message = message
+            let (status, message) = BaseGoogleCloudPlatform.store.status(for: strongSelf)
+            strongSelf.status = status
+            strongSelf.message = message
 
-            callback(selfie)
+            callback(strongSelf)
         }
     }
 }

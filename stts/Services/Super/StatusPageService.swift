@@ -47,9 +47,9 @@ class BaseStatusPageService: BaseService {
         let statusURL = URL(string: "https://\(realSelf.statusPageID).\(realSelf.domain)/api/v2/status.json")!
 
         URLSession.shared.dataTask(with: statusURL) { [weak self] data, _, error in
-            guard let selfie = self else { return }
-            defer { callback(selfie) }
-            guard let data = data else { return selfie._fail(error) }
+            guard let strongSelf = self else { return }
+            defer { callback(strongSelf) }
+            guard let data = data else { return strongSelf._fail(error) }
 
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
 
@@ -57,7 +57,7 @@ class BaseStatusPageService: BaseService {
                 let dict = (json as? [String: Any])?["status"] as? [String: String],
                 let statusString = dict["indicator"],
                 let status = StatusPageStatus(rawValue: statusString.lowercased())
-            else { return selfie._fail("Unexpected data") }
+            else { return strongSelf._fail("Unexpected data") }
 
             self?.status = status.serviceStatus
             self?.message = dict["description"] ?? ""
