@@ -51,8 +51,8 @@ class Algolia: Service {
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
             guard
                 let dict = json as? [String: Any],
-                let statusDict = dict["global"] as? [String: String],
-                let statusString = statusDict["status"],
+                let statusDict = dict["global"] as? [String: Any],
+                let statusString = statusDict["status"] as? String,
                 let status = AlgoliaStatus(rawValue: statusString)
             else { return strongSelf._fail("Unexpected data") }
 
