@@ -63,6 +63,7 @@
 		B22FDE512108A5C200359EC9 /* PayPalAPIProduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE502108A5C200359EC9 /* PayPalAPIProduction.swift */; };
 		B22FDE532108A5CC00359EC9 /* PayPalAPISandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE522108A5CC00359EC9 /* PayPalAPISandbox.swift */; };
 		B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23038F01E0DF3CC00B29095 /* Beanstalk.swift */; };
+		B230CE7D21B95B5D00E2005D /* Wasabi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B230CE7C21B95B5D00E2005D /* Wasabi.swift */; };
 		B232A18D20944B960066AD01 /* Cloud66.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232A18C20944B950066AD01 /* Cloud66.swift */; };
 		B2357D711E5C08AF0093B8A6 /* Netlify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2357D701E5C08AF0093B8A6 /* Netlify.swift */; };
 		B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235B3BC1DF562C400821936 /* SettingsView.swift */; };
@@ -269,6 +270,7 @@
 		B22FDE502108A5C200359EC9 /* PayPalAPIProduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalAPIProduction.swift; sourceTree = "<group>"; };
 		B22FDE522108A5CC00359EC9 /* PayPalAPISandbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalAPISandbox.swift; sourceTree = "<group>"; };
 		B23038F01E0DF3CC00B29095 /* Beanstalk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beanstalk.swift; sourceTree = "<group>"; };
+		B230CE7C21B95B5D00E2005D /* Wasabi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wasabi.swift; sourceTree = "<group>"; };
 		B232A18C20944B950066AD01 /* Cloud66.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud66.swift; sourceTree = "<group>"; };
 		B2357D701E5C08AF0093B8A6 /* Netlify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
 		B235B3BC1DF562C400821936 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -512,6 +514,7 @@
 				B232A18C20944B950066AD01 /* Cloud66.swift */,
 				B2A0635B1E1340B400EEA762 /* Docker.swift */,
 				B2CBE08E21B95A7B00F5B28F /* GitLab.swift */,
+				B230CE7C21B95B5D00E2005D /* Wasabi.swift */,
 			);
 			path = Status.ioV1;
 			sourceTree = "<group>";
@@ -1051,6 +1054,7 @@
 				B20699D2214E504F008670B0 /* Robinhood.swift in Sources */,
 				B22527F51E5BD0C70098E73D /* Contentful.swift in Sources */,
 				B24F91231E8B51A400A77460 /* Auth0.swift in Sources */,
+				B230CE7D21B95B5D00E2005D /* Wasabi.swift in Sources */,
 				B2A4A8161DC82CE300037E99 /* BottomBar.swift in Sources */,
 				B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */,
 				B2A9BFB41DC6E30F001BD4B7 /* Icons.swift in Sources */,
