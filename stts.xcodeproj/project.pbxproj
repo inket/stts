@@ -64,6 +64,7 @@
 		B22FDE532108A5CC00359EC9 /* PayPalAPISandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE522108A5CC00359EC9 /* PayPalAPISandbox.swift */; };
 		B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23038F01E0DF3CC00B29095 /* Beanstalk.swift */; };
 		B230CE7D21B95B5D00E2005D /* Wasabi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B230CE7C21B95B5D00E2005D /* Wasabi.swift */; };
+		B230CE7F21B95C5500E2005D /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B230CE7E21B95C5500E2005D /* Stripe.swift */; };
 		B232A18D20944B960066AD01 /* Cloud66.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232A18C20944B950066AD01 /* Cloud66.swift */; };
 		B2357D711E5C08AF0093B8A6 /* Netlify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2357D701E5C08AF0093B8A6 /* Netlify.swift */; };
 		B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235B3BC1DF562C400821936 /* SettingsView.swift */; };
@@ -271,6 +272,7 @@
 		B22FDE522108A5CC00359EC9 /* PayPalAPISandbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalAPISandbox.swift; sourceTree = "<group>"; };
 		B23038F01E0DF3CC00B29095 /* Beanstalk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beanstalk.swift; sourceTree = "<group>"; };
 		B230CE7C21B95B5D00E2005D /* Wasabi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wasabi.swift; sourceTree = "<group>"; };
+		B230CE7E21B95C5500E2005D /* Stripe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
 		B232A18C20944B950066AD01 /* Cloud66.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud66.swift; sourceTree = "<group>"; };
 		B2357D701E5C08AF0093B8A6 /* Netlify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
 		B235B3BC1DF562C400821936 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -706,6 +708,7 @@
 				B2FDC9191D67029900F0B728 /* Heroku.swift */,
 				B2357D701E5C08AF0093B8A6 /* Netlify.swift */,
 				B2DEE0BD1E696D64006B198E /* Slack.swift */,
+				B230CE7E21B95C5500E2005D /* Stripe.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -997,6 +1000,7 @@
 				B2CBE08F21B95A7B00F5B28F /* GitLab.swift in Sources */,
 				B2493EFA1E26023600556A83 /* GoogleCloudConsole.swift in Sources */,
 				B256955F1E247C8C00FAE413 /* SendGrid.swift in Sources */,
+				B230CE7F21B95C5500E2005D /* Stripe.swift in Sources */,
 				B2F127A71E0B84230035B20C /* PubNub.swift in Sources */,
 				B2841CEB20BA6207004AFDB7 /* SorryService.swift in Sources */,
 				B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */,
