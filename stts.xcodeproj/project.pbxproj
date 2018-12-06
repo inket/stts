@@ -164,6 +164,7 @@
 		B2D032D01D6455E300D51CB8 /* TravisCI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D032CF1D6455E300D51CB8 /* TravisCI.swift */; };
 		B2D2B6CF20870E700011723B /* StatusPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D2B6CE20870E700011723B /* StatusPage.swift */; };
 		B2D468291E2F0F82000F8F6B /* Coveralls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D468281E2F0F82000F8F6B /* Coveralls.swift */; };
+		B2D6FDAE21B95A0800F95940 /* LastPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D6FDAD21B95A0800F95940 /* LastPass.swift */; };
 		B2DEE0BE1E696D64006B198E /* Slack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DEE0BD1E696D64006B198E /* Slack.swift */; };
 		B2E018FD214E60E700C5F75B /* AppearanceObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E018FC214E60E700C5F75B /* AppearanceObserver.swift */; };
 		B2EAD8D520B8FDB800095F5B /* JAMF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EAD8D420B8FDB700095F5B /* JAMF.swift */; };
@@ -366,6 +367,7 @@
 		B2D032CF1D6455E300D51CB8 /* TravisCI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravisCI.swift; sourceTree = "<group>"; };
 		B2D2B6CE20870E700011723B /* StatusPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPage.swift; sourceTree = "<group>"; };
 		B2D468281E2F0F82000F8F6B /* Coveralls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coveralls.swift; sourceTree = "<group>"; };
+		B2D6FDAD21B95A0800F95940 /* LastPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastPass.swift; sourceTree = "<group>"; };
 		B2DEE0BD1E696D64006B198E /* Slack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slack.swift; sourceTree = "<group>"; };
 		B2E018FC214E60E700C5F75B /* AppearanceObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceObserver.swift; sourceTree = "<group>"; };
 		B2EAD8D420B8FDB700095F5B /* JAMF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JAMF.swift; sourceTree = "<group>"; };
@@ -575,6 +577,7 @@
 				B23D4E6C1E13471200B04F18 /* Intercom.swift */,
 				B2EAD8D420B8FDB700095F5B /* JAMF.swift */,
 				B23D4E6E1E13475900B04F18 /* KeenIO.swift */,
+				B2D6FDAD21B95A0800F95940 /* LastPass.swift */,
 				B28E9FBE1ED26A40006B89F1 /* Lob.swift */,
 				B26350FC1ED7CFC40069EA73 /* Loggly.swift */,
 				A133C8B620F8F3670068CFE8 /* Mailgun.swift */,
@@ -915,6 +918,7 @@
 				B2A0635C1E1340B400EEA762 /* Docker.swift in Sources */,
 				B24D19F61DD072840052E539 /* Preferences.swift in Sources */,
 				B2A0A16F1E4C45E0000D9B29 /* MailChimp.swift in Sources */,
+				B2D6FDAE21B95A0800F95940 /* LastPass.swift in Sources */,
 				B2BB19BA20B8FEFD00A97A87 /* CachetService.swift in Sources */,
 				B2253A9D209F4D950039F574 /* FirebaseRemoteConfig.swift in Sources */,
 				B28C1D421E607D2200F9D0DC /* Fabric.swift in Sources */,
