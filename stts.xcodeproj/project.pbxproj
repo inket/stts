@@ -159,6 +159,7 @@
 		B2C4670F1E70012700C5145D /* Zapier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4670E1E70012700C5145D /* Zapier.swift */; };
 		B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */; };
 		B2CB0F9B2047A60000873C14 /* Vimeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB0F9A2047A60000873C14 /* Vimeo.swift */; };
+		B2CBE08F21B95A7B00F5B28F /* GitLab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBE08E21B95A7B00F5B28F /* GitLab.swift */; };
 		B2CEB9A11DFD8984005FB901 /* StartAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */; };
 		B2CEB9A21DFD8987005FB901 /* StartAtLogin.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2D032D01D6455E300D51CB8 /* TravisCI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D032CF1D6455E300D51CB8 /* TravisCI.swift */; };
@@ -362,6 +363,7 @@
 		B2C4670E1E70012700C5145D /* Zapier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zapier.swift; sourceTree = "<group>"; };
 		B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		B2CB0F9A2047A60000873C14 /* Vimeo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vimeo.swift; sourceTree = "<group>"; };
+		B2CBE08E21B95A7B00F5B28F /* GitLab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitLab.swift; sourceTree = "<group>"; };
 		B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StartAtLogin.framework; path = Carthage/Build/Mac/StartAtLogin.framework; sourceTree = SOURCE_ROOT; };
 		B2CF3FBF1DF7DD2100B66491 /* stts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stts.entitlements; sourceTree = "<group>"; };
 		B2D032CF1D6455E300D51CB8 /* TravisCI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravisCI.swift; sourceTree = "<group>"; };
@@ -509,6 +511,7 @@
 			children = (
 				B232A18C20944B950066AD01 /* Cloud66.swift */,
 				B2A0635B1E1340B400EEA762 /* Docker.swift */,
+				B2CBE08E21B95A7B00F5B28F /* GitLab.swift */,
 			);
 			path = Status.ioV1;
 			sourceTree = "<group>";
@@ -988,6 +991,7 @@
 				C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */,
 				B2FDC91C1D67062200F0B728 /* StatusPageService.swift in Sources */,
 				B2253AA4209F4D950039F574 /* FirebaseCrashlytics.swift in Sources */,
+				B2CBE08F21B95A7B00F5B28F /* GitLab.swift in Sources */,
 				B2493EFA1E26023600556A83 /* GoogleCloudConsole.swift in Sources */,
 				B256955F1E247C8C00FAE413 /* SendGrid.swift in Sources */,
 				B2F127A71E0B84230035B20C /* PubNub.swift in Sources */,
