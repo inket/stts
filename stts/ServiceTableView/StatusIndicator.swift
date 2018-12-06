@@ -27,7 +27,15 @@ class StatusIndicator: NSView {
 
     init() {
         super.init(frame: NSRect.zero)
+        commonInit()
+    }
 
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+
+    private func commonInit() {
         addSubview(checkmarkIcon)
         addSubview(crossIcon)
     }
@@ -38,10 +46,6 @@ class StatusIndicator: NSView {
         checkmarkIcon.frame = bounds
         crossIcon.frame = bounds
     }
-
-    required init?(coder: NSCoder) {
-        fatalError("coder pls")
-    }
 }
 
 class StatusColor {
@@ -49,6 +53,5 @@ class StatusColor {
     static var blue = NSColor(calibratedRed: 0.24, green: 0.54, blue: 1, alpha: 0.8)
     static var orange = NSColor.orange
     static var red = NSColor(calibratedRed: 0.9, green: 0.4, blue: 0.23, alpha: 1)
-    static var gray = NSColor(calibratedWhite: 0, alpha: 0.2)
-    static var darkGray = NSColor(calibratedWhite: 0, alpha: 0.4)
+    static var gray = NSColor.tertiaryLabelColor
 }

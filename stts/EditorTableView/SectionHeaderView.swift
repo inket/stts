@@ -27,7 +27,7 @@ class SectionHeaderView: NSTextField {
                                                      weight: 5,
                                                      size: 10)
         self.font = italicFont
-        self.textColor = NSColor(calibratedWhite: 0, alpha: 0.5)
+        self.textColor = NSColor.secondaryLabelColor
         self.maximumNumberOfLines = 1
         self.cell!.truncatesLastVisibleLine = true
         self.backgroundColor = NSColor.clear

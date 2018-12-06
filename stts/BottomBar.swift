@@ -34,7 +34,15 @@ class BottomBar: NSView {
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
+        commonInit()
+    }
 
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+
+    private func commonInit() {
         addSubview(separator)
         addSubview(settingsButton)
         addSubview(reloadButton)
@@ -116,12 +124,15 @@ class BottomBar: NSView {
         statusField.isBordered = false
         statusField.isSelectable = false
         let font = NSFont.systemFont(ofSize: 12)
-        let italicFont = NSFontManager.shared.font(withFamily: font.fontName,
-                                                     traits: NSFontTraitMask.italicFontMask,
-                                                     weight: 5,
-                                                     size: 10)
+        let italicFont = NSFontManager.shared.font(
+            withFamily: font.fontName,
+            traits: NSFontTraitMask.italicFontMask,
+            weight: 5,
+            size: 10
+        )
+
         statusField.font = italicFont
-        statusField.textColor = NSColor(calibratedWhite: 0, alpha: 0.6)
+        statusField.textColor = NSColor.tertiaryLabelColor
         statusField.maximumNumberOfLines = 1
         statusField.backgroundColor = NSColor.clear
         statusField.alignment = .center
@@ -147,10 +158,6 @@ class BottomBar: NSView {
         quitButton.isHidden = true
         quitButton.target = NSApp
         quitButton.action = #selector(NSApplication.terminate(_:))
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     func updateStatusText() {

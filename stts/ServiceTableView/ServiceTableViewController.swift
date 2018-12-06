@@ -107,12 +107,16 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         addServicesNoticeField.isEditable = false
         addServicesNoticeField.isBordered = false
         addServicesNoticeField.isSelectable = false
-        let italicFont = NSFontManager.shared.font(withFamily: NSFont.systemFont(ofSize: 10).fontName,
-                                                     traits: NSFontTraitMask.italicFontMask,
-                                                     weight: 5,
-                                                     size: 10)
+
+        let italicFont = NSFontManager.shared.font(
+            withFamily: NSFont.systemFont(ofSize: 10).fontName,
+            traits: NSFontTraitMask.italicFontMask,
+            weight: 5,
+            size: 10
+        )
+
         addServicesNoticeField.font = italicFont
-        addServicesNoticeField.textColor = NSColor(calibratedWhite: 0, alpha: 0.5)
+        addServicesNoticeField.textColor = NSColor.textColor
         addServicesNoticeField.maximumNumberOfLines = 1
         addServicesNoticeField.cell!.truncatesLastVisibleLine = true
         addServicesNoticeField.alignment = .center

@@ -12,7 +12,15 @@ class StatusTableCell: NSTableCellView {
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
+        commonInit()
+    }
 
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+
+    private func commonInit() {
         statusIndicator.scaleUnitSquare(to: NSSize(width: 0.3, height: 0.3))
         addSubview(statusIndicator)
 
@@ -29,7 +37,7 @@ class StatusTableCell: NSTableCellView {
         self.textField = textField
         let font = NSFont.systemFont(ofSize: 12)
         textField.font = font
-        textField.textColor = NSColor(calibratedWhite: 0, alpha: 0.8)
+        textField.textColor = NSColor.labelColor
         textField.backgroundColor = NSColor.clear
         addSubview(textField)
 
@@ -43,12 +51,15 @@ class StatusTableCell: NSTableCellView {
         statusField.isEditable = false
         statusField.isBordered = false
         statusField.isSelectable = false
-        let italicFont = NSFontManager.shared.font(withFamily: font.fontName,
-                                                     traits: NSFontTraitMask.italicFontMask,
-                                                     weight: 5,
-                                                     size: 10)
+
+        let italicFont = NSFontManager.shared.font(
+            withFamily: font.fontName,
+            traits: NSFontTraitMask.italicFontMask,
+            weight: 5,
+            size: 10
+        )
         statusField.font = italicFont
-        statusField.textColor = NSColor(calibratedWhite: 0, alpha: 0.5)
+        statusField.textColor = NSColor.secondaryLabelColor
         statusField.maximumNumberOfLines = 1
         statusField.cell!.truncatesLastVisibleLine = true
         statusField.backgroundColor = NSColor.clear
@@ -60,9 +71,5 @@ class StatusTableCell: NSTableCellView {
             make.trailing.equalToSuperview().offset(-8)
             make.centerY.equalToSuperview().offset(10)
         }
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("ain't nobody got time for the coder init")
     }
 }

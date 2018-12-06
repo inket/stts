@@ -10,20 +10,7 @@ class EditorTableCell: NSTableCellView {
     let toggleButton = NSButton()
     var selected: Bool = false {
         didSet {
-            let color = selected ? StatusColor.green : StatusColor.darkGray
-            let title = selected ? "ON" : "OFF"
-
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.alignment = .center
-
-            let attributes: [NSAttributedString.Key: Any] = [
-                .font: NSFont.systemFont(ofSize: 11),
-                .foregroundColor: color,
-                .paragraphStyle: paragraphStyle
-            ]
-
-            toggleButton.attributedTitle = NSAttributedString(string: title, attributes: attributes)
-            toggleButton.layer?.borderColor = color.cgColor
+            setNeedsDisplay(frame)
         }
     }
 
@@ -31,7 +18,15 @@ class EditorTableCell: NSTableCellView {
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
+        commonInit()
+    }
 
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+
+    private func commonInit() {
         let textField = NSTextField()
         textField.isEditable = false
         textField.isBordered = false
@@ -39,7 +34,7 @@ class EditorTableCell: NSTableCellView {
         self.textField = textField
         let font = NSFont.systemFont(ofSize: 11)
         textField.font = font
-        textField.textColor = NSColor(calibratedWhite: 0, alpha: 0.8)
+        textField.textColor = NSColor.textColor
         textField.backgroundColor = NSColor.clear
         addSubview(textField)
 
@@ -67,12 +62,34 @@ class EditorTableCell: NSTableCellView {
         }
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("coder coder coder")
-    }
-
     @objc func toggle() {
         self.selected = !selected
         toggleCallback()
+    }
+
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+
+        let color = selected ? StatusColor.green : NSColor.tertiaryLabelColor
+        let title = selected ? "ON" : "OFF"
+
+        if #available(OSX 10.14, *) {
+            toggleButton.title = title
+            toggleButton.font = NSFont.systemFont(ofSize: 11)
+            toggleButton.contentTintColor = color
+        } else {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .center
+
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: NSFont.systemFont(ofSize: 11),
+                .foregroundColor: color,
+                .paragraphStyle: paragraphStyle
+            ]
+
+            toggleButton.attributedTitle = NSAttributedString(string: title, attributes: attributes)
+        }
+
+        toggleButton.layer?.borderColor = color.cgColor
     }
 }

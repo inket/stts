@@ -28,13 +28,18 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             object: nil
         )
 
+        if #available(OSX 10.14, *) {
+            Appearance.addObserver(self)
+        } else {
+            popupController.backgroundView.backgroundColor = .white
+        }
+
         NSUserNotificationCenter.default.delegate = self
 
         popupController.statusItem.button?.title = "stts"
         popupController.statusItem.button?.font = NSFont(name: "SF Mono Regular", size: 10) ?? NSFont.systemFont(ofSize: 12)
         popupController.statusItem.length = 30
 
-        popupController.backgroundView.backgroundColor = NSColor.white
         popupController.contentView.wantsLayer = true
         popupController.contentView.layer?.masksToBounds = true
 
@@ -84,5 +89,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 extension AppDelegate: NSUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: NSUserNotificationCenter, didActivate notification: NSUserNotification) {
         popupController.openPopup()
+    }
+}
+
+extension AppDelegate: AppearanceObserver {
+    func changeAppearance(to newAppearance: NSAppearance) {
+        popupController.backgroundView.backgroundColor = newAppearance.isDarkMode ? .windowBackgroundColor : .white
     }
 }
