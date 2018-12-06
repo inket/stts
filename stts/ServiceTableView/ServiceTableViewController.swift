@@ -77,7 +77,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         addServicesNoticeField.snp.makeConstraints { make in
             make.height.equalTo(22)
             make.left.right.equalTo(0)
-            make.centerY.equalToSuperview().offset(-10)
+            make.centerY.equalToSuperview().offset(-14)
         }
 
         scrollView.borderType = .noBorder
@@ -109,10 +109,10 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         addServicesNoticeField.isSelectable = false
 
         let italicFont = NSFontManager.shared.font(
-            withFamily: NSFont.systemFont(ofSize: 10).fontName,
+            withFamily: NSFont.systemFont(ofSize: 13).fontName,
             traits: NSFontTraitMask.italicFontMask,
             weight: 5,
-            size: 10
+            size: 13
         )
 
         addServicesNoticeField.font = italicFont
@@ -120,7 +120,8 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         addServicesNoticeField.maximumNumberOfLines = 1
         addServicesNoticeField.cell!.truncatesLastVisibleLine = true
         addServicesNoticeField.alignment = .center
-        addServicesNoticeField.stringValue = "Maybe add some services? :)"
+        addServicesNoticeField.stringValue = "Maybe enable some services? :)"
+        addServicesNoticeField.backgroundColor = .clear
     }
 
     func willOpenPopup() {

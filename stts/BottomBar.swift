@@ -132,7 +132,7 @@ class BottomBar: NSView {
         )
 
         statusField.font = italicFont
-        statusField.textColor = NSColor.tertiaryLabelColor
+        statusField.textColor = NSColor.secondaryLabelColor
         statusField.maximumNumberOfLines = 1
         statusField.backgroundColor = NSColor.clear
         statusField.alignment = .center

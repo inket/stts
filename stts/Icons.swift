@@ -66,7 +66,7 @@ class CrossIcon: NSView {
 }
 
 class RefreshIcon: NSView {
-    var color = NSColor.tertiaryLabelColor {
+    var color = NSColor.secondaryLabelColor {
         didSet {
             self.needsDisplay = true
         }
@@ -125,7 +125,7 @@ class RefreshIcon: NSView {
 }
 
 class GearIcon: NSView {
-    var color = NSColor.tertiaryLabelColor {
+    var color = NSColor.secondaryLabelColor {
         didSet {
             self.needsDisplay = true
         }
