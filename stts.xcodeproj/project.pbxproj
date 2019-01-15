@@ -14,7 +14,6 @@
 		B20396361EE6A060008CCA21 /* Trello.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20396351EE6A060008CCA21 /* Trello.swift */; };
 		B20396381EE6A06C008CCA21 /* Filestack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20396371EE6A06C008CCA21 /* Filestack.swift */; };
 		B205A9181D49D67700EA178D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B205A9171D49D67700EA178D /* Service.swift */; };
-		B205A91A1D49D68500EA178D /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B205A9191D49D68500EA178D /* GitHub.swift */; };
 		B20699D2214E504F008670B0 /* Robinhood.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20699D1214E504E008670B0 /* Robinhood.swift */; };
 		B211F0B81E607C09008DD360 /* Rollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211F0B71E607C09008DD360 /* Rollbar.swift */; };
 		B21308561E55594E009FCF02 /* Quandl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21308551E55594E009FCF02 /* Quandl.swift */; };
@@ -89,6 +88,7 @@
 		B2493F061E2603F300556A83 /* GoogleCloudPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */; };
 		B24D19F61DD072840052E539 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D19F51DD072840052E539 /* Preferences.swift */; };
 		B24F91231E8B51A400A77460 /* Auth0.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24F91221E8B51A400A77460 /* Auth0.swift */; };
+		B254642321EE9AF6003068A4 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254642221EE9AF6003068A4 /* GitHub.swift */; };
 		B25695591E247C8C00FAE413 /* Atlassian.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695501E247C8C00FAE413 /* Atlassian.swift */; };
 		B256955A1E247C8C00FAE413 /* Cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695511E247C8C00FAE413 /* Cloudinary.swift */; };
 		B256955B1E247C8C00FAE413 /* HipChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695521E247C8C00FAE413 /* HipChat.swift */; };
@@ -220,7 +220,6 @@
 		B20396351EE6A060008CCA21 /* Trello.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trello.swift; sourceTree = "<group>"; };
 		B20396371EE6A06C008CCA21 /* Filestack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filestack.swift; sourceTree = "<group>"; };
 		B205A9171D49D67700EA178D /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		B205A9191D49D68500EA178D /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		B20699D1214E504E008670B0 /* Robinhood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Robinhood.swift; sourceTree = "<group>"; };
 		B211F0B71E607C09008DD360 /* Rollbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rollbar.swift; sourceTree = "<group>"; };
 		B21308551E55594E009FCF02 /* Quandl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quandl.swift; sourceTree = "<group>"; };
@@ -297,6 +296,7 @@
 		B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudPlatform.swift; sourceTree = "<group>"; };
 		B24D19F51DD072840052E539 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		B24F91221E8B51A400A77460 /* Auth0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth0.swift; sourceTree = "<group>"; };
+		B254642221EE9AF6003068A4 /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		B25695501E247C8C00FAE413 /* Atlassian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atlassian.swift; sourceTree = "<group>"; };
 		B25695511E247C8C00FAE413 /* Cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloudinary.swift; sourceTree = "<group>"; };
 		B25695521E247C8C00FAE413 /* HipChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChat.swift; sourceTree = "<group>"; };
@@ -580,6 +580,7 @@
 				A125C59D20F7909500C513B3 /* Fastly.swift */,
 				B269FCBA1E261BDF0016041D /* Figma.swift */,
 				B20396371EE6A06C008CCA21 /* Filestack.swift */,
+				B254642221EE9AF6003068A4 /* GitHub.swift */,
 				B25695521E247C8C00FAE413 /* HipChat.swift */,
 				B2ABB6161F59770800DF8EC2 /* Imgix.swift */,
 				B23D4E6C1E13471200B04F18 /* Intercom.swift */,
@@ -704,7 +705,6 @@
 				B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */,
 				B290315B1E4B0CA7005B58CC /* Evernote.swift */,
 				B2C10F3B203646A7008E1E7D /* Gandi.swift */,
-				B205A9191D49D68500EA178D /* GitHub.swift */,
 				B2FDC9191D67029900F0B728 /* Heroku.swift */,
 				B2357D701E5C08AF0093B8A6 /* Netlify.swift */,
 				B2DEE0BD1E696D64006B198E /* Slack.swift */,
@@ -908,7 +908,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2493F021E26023600556A83 /* GoogleComputeEngine.swift in Sources */,
-				B205A91A1D49D68500EA178D /* GitHub.swift in Sources */,
 				B211F0B81E607C09008DD360 /* Rollbar.swift in Sources */,
 				B2493F061E2603F300556A83 /* GoogleCloudPlatform.swift in Sources */,
 				B299C8491DD04DCB0024D2E9 /* RubyGems.swift in Sources */,
@@ -1069,6 +1068,7 @@
 				B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */,
 				B2483CF12037029D00A9FA95 /* Zwift.swift in Sources */,
 				B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */,
+				B254642321EE9AF6003068A4 /* GitHub.swift in Sources */,
 				B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
