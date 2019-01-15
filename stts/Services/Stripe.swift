@@ -14,8 +14,7 @@ class Stripe: Service {
             defer { callback(strongSelf) }
 
             guard let data = data else { return strongSelf._fail(error) }
-            guard let body = String(data: data, encoding: .utf8) else { return strongSelf._fail("Unreadable response") }
-            guard let doc = try? HTML(html: body, encoding: .utf8) else { return strongSelf._fail("Couldn't parse response") }
+            guard let doc = try? HTML(html: data, encoding: .utf8) else { return strongSelf._fail("Couldn't parse response") }
 
             guard let bubbleClassName = doc.css(".status-bubble").first?.className else { return strongSelf._fail("Unexpected response") }
 

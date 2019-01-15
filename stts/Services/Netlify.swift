@@ -14,8 +14,7 @@ class Netlify: Service {
             defer { callback(strongSelf) }
 
             guard let data = data else { return strongSelf._fail(error) }
-            guard let body = String(data: data, encoding: .utf8) else { return strongSelf._fail("Unreadable response") }
-            guard let doc = try? HTML(html: body, encoding: .utf8) else { return strongSelf._fail("Couldn't parse response") }
+            guard let doc = try? HTML(html: data, encoding: .utf8) else { return strongSelf._fail("Couldn't parse response") }
 
             self?.status = strongSelf.status(from: doc)
             self?.message = doc.css("#days-since-latest").first?.text ?? ""

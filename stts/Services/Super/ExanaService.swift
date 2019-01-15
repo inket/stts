@@ -33,8 +33,7 @@ class BaseExanaService: BaseService {
             guard let strongSelf = self else { return }
 
             guard let data = data else { return strongSelf._fail(error) }
-            guard let body = String(data: data, encoding: .utf8) else { return strongSelf._fail("Unreadable response") }
-            guard let doc = try? HTML(html: body, encoding: .utf8) else { return strongSelf._fail("Couldn't parse response") }
+            guard let doc = try? HTML(html: data, encoding: .utf8) else { return strongSelf._fail("Couldn't parse response") }
 
             guard let jwt = doc.css("meta[name=jwt]").first?["content"] else { return strongSelf._fail("Couldn't get authorization") }
 

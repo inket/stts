@@ -42,8 +42,7 @@ class GoogleStatusDashboardStore {
             self.statuses = [:]
 
             guard let data = data else { return self._fail(error) }
-            guard let body = String(data: data, encoding: .utf8) else { return self._fail("Unreadable response") }
-            guard let doc = try? HTML(html: body, encoding: .utf8) else { return self._fail("Couldn't parse response") }
+            guard let doc = try? HTML(html: data, encoding: .utf8) else { return self._fail("Couldn't parse response") }
 
             for tr in doc.css(".timeline tr") {
                 guard let (name, status) = self.parseTimelineRow(tr) else { continue }
