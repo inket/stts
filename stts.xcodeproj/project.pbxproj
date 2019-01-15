@@ -19,6 +19,7 @@
 		B21308561E55594E009FCF02 /* Quandl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21308551E55594E009FCF02 /* Quandl.swift */; };
 		B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */; };
 		B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */; };
+		B21492CB21EE9BD70065103E /* ScaleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21492CA21EE9BD70065103E /* ScaleGrid.swift */; };
 		B2163AF820BA4E7500B14A85 /* sttsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AF720BA4E7500B14A85 /* sttsTests.swift */; };
 		B2163B0020BA56EF00B14A85 /* StatusCakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */; };
 		B219C0DA1E2F0E9F001F8E7F /* CocoaPods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */; };
@@ -225,6 +226,7 @@
 		B21308551E55594E009FCF02 /* Quandl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quandl.swift; sourceTree = "<group>"; };
 		B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableViewController.swift; sourceTree = "<group>"; };
 		B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableRowView.swift; sourceTree = "<group>"; };
+		B21492CA21EE9BD70065103E /* ScaleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleGrid.swift; sourceTree = "<group>"; };
 		B2163AF520BA4E7500B14A85 /* sttsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sttsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2163AF720BA4E7500B14A85 /* sttsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sttsTests.swift; sourceTree = "<group>"; };
 		B2163AF920BA4E7500B14A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -707,6 +709,7 @@
 				B2C10F3B203646A7008E1E7D /* Gandi.swift */,
 				B2FDC9191D67029900F0B728 /* Heroku.swift */,
 				B2357D701E5C08AF0093B8A6 /* Netlify.swift */,
+				B21492CA21EE9BD70065103E /* ScaleGrid.swift */,
 				B2DEE0BD1E696D64006B198E /* Slack.swift */,
 				B230CE7E21B95C5500E2005D /* Stripe.swift */,
 			);
@@ -1015,6 +1018,7 @@
 				B2253A6F209F42430039F574 /* Firebase.swift in Sources */,
 				B2253AA3209F4D950039F574 /* FirebasePredictions.swift in Sources */,
 				B22FDE512108A5C200359EC9 /* PayPalAPIProduction.swift in Sources */,
+				B21492CB21EE9BD70065103E /* ScaleGrid.swift in Sources */,
 				B2253A9E209F4D950039F574 /* FirebasePerformanceMonitoring.swift in Sources */,
 				B26350FD1ED7CFC40069EA73 /* Loggly.swift in Sources */,
 				B2253A81209F464F0039F574 /* GoogleCloudSupport.swift in Sources */,
