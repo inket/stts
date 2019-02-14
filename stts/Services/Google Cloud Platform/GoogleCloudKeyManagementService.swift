@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Cocoa
+import Foundation
 
 class GoogleCloudKeyManagementService: GoogleCloudPlatform {
     let name = "Google Cloud Key Management Service"
