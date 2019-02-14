@@ -172,6 +172,9 @@
 		B2D468291E2F0F82000F8F6B /* Coveralls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D468281E2F0F82000F8F6B /* Coveralls.swift */; };
 		B2D6FDAE21B95A0800F95940 /* LastPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D6FDAD21B95A0800F95940 /* LastPass.swift */; };
 		B2DCE68D221591F2001447D8 /* LambStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCE68C221591F2001447D8 /* LambStatusService.swift */; };
+		B2DCE6902215992E001447D8 /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCE68F2215992E001447D8 /* Apple.swift */; };
+		B2DCE6922215AA4A001447D8 /* AppleDeveloper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCE6912215AA4A001447D8 /* AppleDeveloper.swift */; };
+		B2DCE6952215ACDE001447D8 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCE6942215ACDE001447D8 /* StringExtensions.swift */; };
 		B2DEE0BE1E696D64006B198E /* Slack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DEE0BD1E696D64006B198E /* Slack.swift */; };
 		B2E018FD214E60E700C5F75B /* AppearanceObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E018FC214E60E700C5F75B /* AppearanceObserver.swift */; };
 		B2EAD8D520B8FDB800095F5B /* JAMF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EAD8D420B8FDB700095F5B /* JAMF.swift */; };
@@ -382,6 +385,9 @@
 		B2D468281E2F0F82000F8F6B /* Coveralls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coveralls.swift; sourceTree = "<group>"; };
 		B2D6FDAD21B95A0800F95940 /* LastPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastPass.swift; sourceTree = "<group>"; };
 		B2DCE68C221591F2001447D8 /* LambStatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LambStatusService.swift; sourceTree = "<group>"; };
+		B2DCE68F2215992E001447D8 /* Apple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
+		B2DCE6912215AA4A001447D8 /* AppleDeveloper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleDeveloper.swift; sourceTree = "<group>"; };
+		B2DCE6942215ACDE001447D8 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		B2DEE0BD1E696D64006B198E /* Slack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slack.swift; sourceTree = "<group>"; };
 		B2E018FC214E60E700C5F75B /* AppearanceObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceObserver.swift; sourceTree = "<group>"; };
 		B2EAD8D420B8FDB700095F5B /* JAMF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JAMF.swift; sourceTree = "<group>"; };
@@ -666,6 +672,7 @@
 			isa = PBXGroup;
 			children = (
 				B274C6361DD56A9E00A6B350 /* EditorTableView */,
+				B2DCE6932215ACD0001447D8 /* Extensions */,
 				B213A17A1DC9EA3F008E8E58 /* ServiceTableView */,
 				B2FDC91F1D6706FB00F0B728 /* Services */,
 				B2B2D1021D49D5080014D780 /* AppDelegate.swift */,
@@ -696,6 +703,14 @@
 			path = LambStatus;
 			sourceTree = "<group>";
 		};
+		B2DCE6932215ACD0001447D8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B2DCE6942215ACDE001447D8 /* StringExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B2EB51CC1E70047F001D6F78 /* Exana */ = {
 			isa = PBXGroup;
 			children = (
@@ -719,6 +734,8 @@
 				B2FDC9201D67071500F0B728 /* Super */,
 				B2430806210810D0003F8D07 /* Algolia.swift */,
 				B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */,
+				B2DCE68F2215992E001447D8 /* Apple.swift */,
+				B2DCE6912215AA4A001447D8 /* AppleDeveloper.swift */,
 				B23038F01E0DF3CC00B29095 /* Beanstalk.swift */,
 				B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */,
 				B290315B1E4B0CA7005B58CC /* Evernote.swift */,
@@ -970,6 +987,7 @@
 				B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */,
 				B2493EFC1E26023600556A83 /* GoogleCloudDataproc.swift in Sources */,
 				B2493EFD1E26023600556A83 /* GoogleCloudDatastore.swift in Sources */,
+				B2DCE6922215AA4A001447D8 /* AppleDeveloper.swift in Sources */,
 				B2493F011E26023600556A83 /* GoogleCloudStorage.swift in Sources */,
 				B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */,
 				B299C84B1DD04E850024D2E9 /* Pusher.swift in Sources */,
@@ -999,6 +1017,7 @@
 				B2253AA0209F4D950039F574 /* FirebaseAppIndexing.swift in Sources */,
 				B256955A1E247C8C00FAE413 /* Cloudinary.swift in Sources */,
 				B2253A95209F4D950039F574 /* FirebaseCloudFirestore.swift in Sources */,
+				B2DCE6902215992E001447D8 /* Apple.swift in Sources */,
 				B2493EF71E26023600556A83 /* GoogleAppEngine.swift in Sources */,
 				B26191B520BA60DA00B9E2FA /* FirebaseABTesting.swift in Sources */,
 				B2253A7B209F45EB0039F574 /* GoogleCloudNetworking.swift in Sources */,
@@ -1077,6 +1096,7 @@
 				B22FDE532108A5CC00359EC9 /* PayPalAPISandbox.swift in Sources */,
 				B2FFC1F01E261B4A00529A00 /* Dropbox.swift in Sources */,
 				B2EB51CE1E7004A3001D6F78 /* ExanaService.swift in Sources */,
+				B2DCE6952215ACDE001447D8 /* StringExtensions.swift in Sources */,
 				B2BA697E1E2DA3A20016AF1A /* PivotalTracker.swift in Sources */,
 				B20699D2214E504F008670B0 /* Robinhood.swift in Sources */,
 				B22527F51E5BD0C70098E73D /* Contentful.swift in Sources */,
