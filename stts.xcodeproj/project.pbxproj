@@ -66,6 +66,7 @@
 		B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23038F01E0DF3CC00B29095 /* Beanstalk.swift */; };
 		B230CE7D21B95B5D00E2005D /* Wasabi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B230CE7C21B95B5D00E2005D /* Wasabi.swift */; };
 		B230CE7F21B95C5500E2005D /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B230CE7E21B95C5500E2005D /* Stripe.swift */; };
+		B232047F22158BDF000DC1B0 /* DatadogEU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232047E22158BDF000DC1B0 /* DatadogEU.swift */; };
 		B232A18D20944B960066AD01 /* Cloud66.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232A18C20944B950066AD01 /* Cloud66.swift */; };
 		B2357D711E5C08AF0093B8A6 /* Netlify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2357D701E5C08AF0093B8A6 /* Netlify.swift */; };
 		B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235B3BC1DF562C400821936 /* SettingsView.swift */; };
@@ -276,6 +277,7 @@
 		B23038F01E0DF3CC00B29095 /* Beanstalk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beanstalk.swift; sourceTree = "<group>"; };
 		B230CE7C21B95B5D00E2005D /* Wasabi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wasabi.swift; sourceTree = "<group>"; };
 		B230CE7E21B95C5500E2005D /* Stripe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
+		B232047E22158BDF000DC1B0 /* DatadogEU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatadogEU.swift; sourceTree = "<group>"; };
 		B232A18C20944B950066AD01 /* Cloud66.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud66.swift; sourceTree = "<group>"; };
 		B2357D701E5C08AF0093B8A6 /* Netlify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
 		B235B3BC1DF562C400821936 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -576,6 +578,8 @@
 				B22527F41E5BD0C70098E73D /* Contentful.swift */,
 				B2D468281E2F0F82000F8F6B /* Coveralls.swift */,
 				B2FAB94B1E5C029A00B8921F /* DNSimple.swift */,
+				A0C3F34A220FD630005D9998 /* Datadog.swift */,
+				B232047E22158BDF000DC1B0 /* DatadogEU.swift */,
 				B22BA3011E8119AB0038D8F6 /* Discord.swift */,
 				B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */,
 				B28E9FBD1ED26A40006B89F1 /* Dwolla.swift */,
@@ -594,7 +598,6 @@
 				B28E9FBE1ED26A40006B89F1 /* Lob.swift */,
 				B26350FC1ED7CFC40069EA73 /* Loggly.swift */,
 				A133C8B620F8F3670068CFE8 /* Mailgun.swift */,
-				A0C3F34A220FD630005D9998 /* Datadog.swift */,
 				B28C1D431E607D8600F9D0DC /* Mapbox.swift */,
 				B22600301E1562E700EBDD40 /* MediaTemple.swift */,
 				B2C337A41E1417390007E110 /* Mixpanel.swift */,
@@ -1041,6 +1044,7 @@
 				B21308561E55594E009FCF02 /* Quandl.swift in Sources */,
 				B22600311E1562E700EBDD40 /* MediaTemple.swift in Sources */,
 				B205A9181D49D67700EA178D /* Service.swift in Sources */,
+				B232047F22158BDF000DC1B0 /* DatadogEU.swift in Sources */,
 				B2FAB94C1E5C029A00B8921F /* DNSimple.swift in Sources */,
 				B2253AA2209F4D950039F574 /* FirebaseInvites.swift in Sources */,
 				B2BA69801E2DA3F60016AF1A /* Papertrail.swift in Sources */,
