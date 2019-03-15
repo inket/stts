@@ -12,6 +12,7 @@
 		A0C3F34B220FD630005D9998 /* Datadog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3F34A220FD630005D9998 /* Datadog.swift */; };
 		A125C59E20F7909500C513B3 /* Fastly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125C59D20F7909500C513B3 /* Fastly.swift */; };
 		A133C8B720F8F3670068CFE8 /* Mailgun.swift in Sources */ = {isa = PBXBuildFile; fileRef = A133C8B620F8F3670068CFE8 /* Mailgun.swift */; };
+		B2006CF9223B356F0057E144 /* ProtonMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2006CF8223B356F0057E144 /* ProtonMail.swift */; };
 		B20396361EE6A060008CCA21 /* Trello.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20396351EE6A060008CCA21 /* Trello.swift */; };
 		B20396381EE6A06C008CCA21 /* Filestack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20396371EE6A06C008CCA21 /* Filestack.swift */; };
 		B205A9181D49D67700EA178D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B205A9171D49D67700EA178D /* Service.swift */; };
@@ -58,6 +59,9 @@
 		B225E3E01E44830F008E1D3D /* SwitchableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */; };
 		B22600311E1562E700EBDD40 /* MediaTemple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22600301E1562E700EBDD40 /* MediaTemple.swift */; };
 		B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22BA3011E8119AB0038D8F6 /* Discord.swift */; };
+		B22BB39F223B33AE00B43BED /* CampaignMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */; };
+		B22BB3A1223B341B00B43BED /* OnePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22BB3A0223B341B00B43BED /* OnePassword.swift */; };
+		B22BB3A3223B346E00B43BED /* Dashlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22BB3A2223B346E00B43BED /* Dashlane.swift */; };
 		B22FDE4821089C6200359EC9 /* PayPal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE4721089C6200359EC9 /* PayPal.swift */; };
 		B22FDE4D2108A5AE00359EC9 /* PayPalProductProduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE4C2108A5AE00359EC9 /* PayPalProductProduction.swift */; };
 		B22FDE4F2108A5B700359EC9 /* PayPalProductSandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE4E2108A5B700359EC9 /* PayPalProductSandbox.swift */; };
@@ -226,6 +230,7 @@
 		A0C3F34A220FD630005D9998 /* Datadog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datadog.swift; sourceTree = "<group>"; };
 		A125C59D20F7909500C513B3 /* Fastly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fastly.swift; sourceTree = "<group>"; };
 		A133C8B620F8F3670068CFE8 /* Mailgun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailgun.swift; sourceTree = "<group>"; };
+		B2006CF8223B356F0057E144 /* ProtonMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtonMail.swift; sourceTree = "<group>"; };
 		B20396351EE6A060008CCA21 /* Trello.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trello.swift; sourceTree = "<group>"; };
 		B20396371EE6A06C008CCA21 /* Filestack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filestack.swift; sourceTree = "<group>"; };
 		B205A9171D49D67700EA178D /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -274,6 +279,9 @@
 		B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchableTableViewController.swift; sourceTree = "<group>"; };
 		B22600301E1562E700EBDD40 /* MediaTemple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTemple.swift; sourceTree = "<group>"; };
 		B22BA3011E8119AB0038D8F6 /* Discord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discord.swift; sourceTree = "<group>"; };
+		B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignMonitor.swift; sourceTree = "<group>"; };
+		B22BB3A0223B341B00B43BED /* OnePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePassword.swift; sourceTree = "<group>"; };
+		B22BB3A2223B346E00B43BED /* Dashlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashlane.swift; sourceTree = "<group>"; };
 		B22FDE4721089C6200359EC9 /* PayPal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPal.swift; sourceTree = "<group>"; };
 		B22FDE4C2108A5AE00359EC9 /* PayPalProductProduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalProductProduction.swift; sourceTree = "<group>"; };
 		B22FDE4E2108A5B700359EC9 /* PayPalProductSandbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalProductSandbox.swift; sourceTree = "<group>"; };
@@ -530,6 +538,7 @@
 			isa = PBXGroup;
 			children = (
 				B232A18C20944B950066AD01 /* Cloud66.swift */,
+				B22BB3A2223B346E00B43BED /* Dashlane.swift */,
 				B2A0635B1E1340B400EEA762 /* Docker.swift */,
 				B2CBE08E21B95A7B00F5B28F /* GitLab.swift */,
 				B230CE7C21B95B5D00E2005D /* Wasabi.swift */,
@@ -579,6 +588,7 @@
 				B299C84E1DD04F8F0024D2E9 /* BitBucket.swift */,
 				B2F127AA1E0B84F00035B20C /* Braintree.swift */,
 				B2894CE320EEE2780009CCA3 /* Buildkite.swift */,
+				B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */,
 				B2FDC91D1D6706C400F0B728 /* CircleCI.swift */,
 				B2F34040222630F20055C96F /* CloudApp.swift */,
 				B299C8501DD04FD60024D2E9 /* Cloudflare.swift */,
@@ -614,6 +624,7 @@
 				B2C337A41E1417390007E110 /* Mixpanel.swift */,
 				B299C8461DD04D7C0024D2E9 /* NPM.swift */,
 				B299C8421DD044160024D2E9 /* NewRelic.swift */,
+				B22BB3A0223B341B00B43BED /* OnePassword.swift */,
 				03C5FB121E203325003C40B8 /* Packet.swift */,
 				B25695531E247C8C00FAE413 /* PagerDuty.swift */,
 				B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */,
@@ -693,6 +704,7 @@
 		B2BB19B820B8FEB200A97A87 /* Cachet */ = {
 			isa = PBXGroup;
 			children = (
+				B2006CF8223B356F0057E144 /* ProtonMail.swift */,
 				B2BB19BB20B9043F00A97A87 /* Yarn.swift */,
 			);
 			path = Cachet;
@@ -942,6 +954,7 @@
 				B2493F021E26023600556A83 /* GoogleComputeEngine.swift in Sources */,
 				B211F0B81E607C09008DD360 /* Rollbar.swift in Sources */,
 				B2493F061E2603F300556A83 /* GoogleCloudPlatform.swift in Sources */,
+				B2006CF9223B356F0057E144 /* ProtonMail.swift in Sources */,
 				B299C8491DD04DCB0024D2E9 /* RubyGems.swift in Sources */,
 				B2253A97209F4D950039F574 /* FirebaseStorage.swift in Sources */,
 				B299C8531DD0505F0024D2E9 /* Sentry.swift in Sources */,
@@ -1029,13 +1042,16 @@
 				B2253A7F209F463B0039F574 /* GoogleKubernetesEngine.swift in Sources */,
 				A125C59E20F7909500C513B3 /* Fastly.swift in Sources */,
 				C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */,
+				B22BB3A1223B341B00B43BED /* OnePassword.swift in Sources */,
 				B2FDC91C1D67062200F0B728 /* StatusPageService.swift in Sources */,
 				B2253AA4209F4D950039F574 /* FirebaseCrashlytics.swift in Sources */,
 				B2CBE08F21B95A7B00F5B28F /* GitLab.swift in Sources */,
 				B2493EFA1E26023600556A83 /* GoogleCloudConsole.swift in Sources */,
 				B256955F1E247C8C00FAE413 /* SendGrid.swift in Sources */,
 				B230CE7F21B95C5500E2005D /* Stripe.swift in Sources */,
+				B22BB39F223B33AE00B43BED /* CampaignMonitor.swift in Sources */,
 				B2F127A71E0B84230035B20C /* PubNub.swift in Sources */,
+				B22BB3A3223B346E00B43BED /* Dashlane.swift in Sources */,
 				B2841CEB20BA6207004AFDB7 /* SorryService.swift in Sources */,
 				B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */,
 				B2253A9C209F4D950039F574 /* FirebaseConsole.swift in Sources */,
