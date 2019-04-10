@@ -142,7 +142,7 @@ extension EditorTableViewController: NSTableViewDelegate {
             if view.selected {
                 self?.selectedServices.append(service)
             } else {
-                if let index = self?.selectedServices.index(of: service) {
+                if let index = self?.selectedServices.firstIndex(of: service) {
                     self?.selectedServices.remove(at: index)
                 }
             }

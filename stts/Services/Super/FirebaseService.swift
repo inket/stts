@@ -15,7 +15,10 @@ protocol RequiredFirebaseProperties: GoogleStatusDashboardStoreService {
 extension RequiredFirebaseProperties {
     var dashboardName: String {
         let prefix = "Firebase "
-        guard let prefixRange = name.range(of: prefix), prefixRange.lowerBound.encodedOffset == 0 else { return name }
+
+        guard let prefixRange = name.range(of: prefix), prefixRange.lowerBound.utf16Offset(in: name) == 0 else {
+            return name
+        }
 
         return name.replacingCharacters(in: prefixRange, with: "")
     }

@@ -201,7 +201,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
     }
 
     func updatedStatus(for service: BaseService) {
-        if let index = servicesBeingUpdated.index(of: service) {
+        if let index = servicesBeingUpdated.firstIndex(of: service) {
             servicesBeingUpdated.remove(at: index)
         }
 

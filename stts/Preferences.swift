@@ -37,7 +37,7 @@ struct Preferences {
         // A "migration" of sorts
         if var services = UserDefaults.standard.array(forKey: "selectedServices") as? [String] {
             // v1.0.0 used the name "CloudFlare" instead of the official "Cloudflare", replace it if found
-            if let oldCloudflareIndex = services.index(of: "CloudFlare") {
+            if let oldCloudflareIndex = services.firstIndex(of: "CloudFlare") {
                 services[oldCloudflareIndex] = "Cloudflare"
             }
 
