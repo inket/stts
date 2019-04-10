@@ -40,7 +40,7 @@
 		B2253A7F209F463B0039F574 /* GoogleKubernetesEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A7E209F463B0039F574 /* GoogleKubernetesEngine.swift */; };
 		B2253A81209F464F0039F574 /* GoogleCloudSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A80209F464F0039F574 /* GoogleCloudSupport.swift */; };
 		B2253A83209F47FA0039F574 /* FirebaseAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A82209F47FA0039F574 /* FirebaseAnalytics.swift */; };
-		B2253A95209F4D950039F574 /* FirebaseCloudFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A84209F4D940039F574 /* FirebaseCloudFirestore.swift */; };
+		B2253A95209F4D950039F574 /* GoogleCloudFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A84209F4D940039F574 /* GoogleCloudFirestore.swift */; };
 		B2253A96209F4D950039F574 /* FirebaseCloudMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A85209F4D940039F574 /* FirebaseCloudMessaging.swift */; };
 		B2253A97209F4D950039F574 /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A86209F4D940039F574 /* FirebaseStorage.swift */; };
 		B2253A98209F4D950039F574 /* FirebaseCrashReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A87209F4D940039F574 /* FirebaseCrashReporting.swift */; };
@@ -262,7 +262,7 @@
 		B2253A7E209F463B0039F574 /* GoogleKubernetesEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleKubernetesEngine.swift; sourceTree = "<group>"; };
 		B2253A80209F464F0039F574 /* GoogleCloudSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudSupport.swift; sourceTree = "<group>"; };
 		B2253A82209F47FA0039F574 /* FirebaseAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalytics.swift; sourceTree = "<group>"; };
-		B2253A84209F4D940039F574 /* FirebaseCloudFirestore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseCloudFirestore.swift; sourceTree = "<group>"; };
+		B2253A84209F4D940039F574 /* GoogleCloudFirestore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudFirestore.swift; sourceTree = "<group>"; };
 		B2253A85209F4D940039F574 /* FirebaseCloudMessaging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseCloudMessaging.swift; sourceTree = "<group>"; };
 		B2253A86209F4D940039F574 /* FirebaseStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
 		B2253A87209F4D940039F574 /* FirebaseCrashReporting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseCrashReporting.swift; sourceTree = "<group>"; };
@@ -478,7 +478,6 @@
 				B2253A82209F47FA0039F574 /* FirebaseAnalytics.swift */,
 				B2253A8F209F4D950039F574 /* FirebaseAppIndexing.swift */,
 				B2253A8A209F4D940039F574 /* FirebaseAuthentication.swift */,
-				B2253A84209F4D940039F574 /* FirebaseCloudFirestore.swift */,
 				B2253A8E209F4D950039F574 /* FirebaseCloudFunctions.swift */,
 				B2253A85209F4D940039F574 /* FirebaseCloudMessaging.swift */,
 				B2253A8B209F4D940039F574 /* FirebaseConsole.swift */,
@@ -521,6 +520,7 @@
 				B2493EEE1E26023600556A83 /* GoogleCloudDataproc.swift */,
 				B2493EEF1E26023600556A83 /* GoogleCloudDatastore.swift */,
 				B2253A70209F43420039F574 /* GoogleCloudDeveloperTools.swift */,
+				B2253A84209F4D940039F574 /* GoogleCloudFirestore.swift */,
 				B2253A76209F45780039F574 /* GoogleCloudKeyManagementService.swift */,
 				B2253A78209F45AC0039F574 /* GoogleCloudMachineLearning.swift */,
 				B2253A7A209F45EB0039F574 /* GoogleCloudNetworking.swift */,
@@ -590,6 +590,7 @@
 				B24F91221E8B51A400A77460 /* Auth0.swift */,
 				B2BA36181ED7B0F200051083 /* AuthorizeNet.swift */,
 				B299C84E1DD04F8F0024D2E9 /* BitBucket.swift */,
+				7BA6A0A12240D8E000700C2C /* Bolt.swift */,
 				B2F127AA1E0B84F00035B20C /* Braintree.swift */,
 				B2894CE320EEE2780009CCA3 /* Buildkite.swift */,
 				B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */,
@@ -663,7 +664,6 @@
 				B28DFE4621377A0B000EE4AF /* Wodby.swift */,
 				B2C4670E1E70012700C5145D /* Zapier.swift */,
 				B2483CF02037029D00A9FA95 /* Zwift.swift */,
-				7BA6A0A12240D8E000700C2C /* Bolt.swift */,
 			);
 			path = StatusPage;
 			sourceTree = "<group>";
@@ -1032,7 +1032,7 @@
 				B28FF68B1E94761A005897A9 /* Codecov.swift in Sources */,
 				B2253AA0209F4D950039F574 /* FirebaseAppIndexing.swift in Sources */,
 				B256955A1E247C8C00FAE413 /* Cloudinary.swift in Sources */,
-				B2253A95209F4D950039F574 /* FirebaseCloudFirestore.swift in Sources */,
+				B2253A95209F4D950039F574 /* GoogleCloudFirestore.swift in Sources */,
 				B2DCE6902215992E001447D8 /* Apple.swift in Sources */,
 				B2493EF71E26023600556A83 /* GoogleAppEngine.swift in Sources */,
 				B26191B520BA60DA00B9E2FA /* FirebaseABTesting.swift in Sources */,
