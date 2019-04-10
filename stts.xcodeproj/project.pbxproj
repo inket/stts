@@ -144,6 +144,7 @@
 		B299C8511DD04FD60024D2E9 /* Cloudflare.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8501DD04FD60024D2E9 /* Cloudflare.swift */; };
 		B299C8531DD0505F0024D2E9 /* Sentry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8521DD0505F0024D2E9 /* Sentry.swift */; };
 		B299C8551DD051210024D2E9 /* EngineYard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8541DD051210024D2E9 /* EngineYard.swift */; };
+		B29AEFD0225D7F3900C3B8BD /* UrbanAirship.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29AEFCF225D7F3900C3B8BD /* UrbanAirship.swift */; };
 		B2A0635C1E1340B400EEA762 /* Docker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0635B1E1340B400EEA762 /* Docker.swift */; };
 		B2A0635E1E1341C900EEA762 /* StatusioV1Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */; };
 		B2A0A16F1E4C45E0000D9B29 /* MailChimp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0A16E1E4C45E0000D9B29 /* MailChimp.swift */; };
@@ -361,6 +362,7 @@
 		B299C8501DD04FD60024D2E9 /* Cloudflare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloudflare.swift; sourceTree = "<group>"; };
 		B299C8521DD0505F0024D2E9 /* Sentry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sentry.swift; sourceTree = "<group>"; };
 		B299C8541DD051210024D2E9 /* EngineYard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineYard.swift; sourceTree = "<group>"; };
+		B29AEFCF225D7F3900C3B8BD /* UrbanAirship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanAirship.swift; sourceTree = "<group>"; };
 		B2A0635B1E1340B400EEA762 /* Docker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Docker.swift; sourceTree = "<group>"; };
 		B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusioV1Service.swift; sourceTree = "<group>"; };
 		B2A0A16E1E4C45E0000D9B29 /* MailChimp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailChimp.swift; sourceTree = "<group>"; };
@@ -654,6 +656,7 @@
 				B2F127A81E0B84B50035B20C /* Twilio.swift */,
 				B24220E31E2F6BBA0007E50E /* Typeform.swift */,
 				B2A8AE3C20710EC8002699CE /* Unsplash.swift */,
+				B29AEFCF225D7F3900C3B8BD /* UrbanAirship.swift */,
 				B2CB0F9A2047A60000873C14 /* Vimeo.swift */,
 				B2A2B6A51E459F61008EFD05 /* Waffle.swift */,
 				C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */,
@@ -1024,6 +1027,7 @@
 				B2253A96209F4D950039F574 /* FirebaseCloudMessaging.swift in Sources */,
 				B2253A98209F4D950039F574 /* FirebaseCrashReporting.swift in Sources */,
 				B2A0635E1E1341C900EEA762 /* StatusioV1Service.swift in Sources */,
+				B29AEFD0225D7F3900C3B8BD /* UrbanAirship.swift in Sources */,
 				B2D2B6CF20870E700011723B /* StatusPage.swift in Sources */,
 				B28FF68B1E94761A005897A9 /* Codecov.swift in Sources */,
 				B2253AA0209F4D950039F574 /* FirebaseAppIndexing.swift in Sources */,
