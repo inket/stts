@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03C5FB131E203325003C40B8 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5FB121E203325003C40B8 /* Packet.swift */; };
+		2F1B7559227A095400BA5CBD /* Avalara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B7558227A095400BA5CBD /* Avalara.swift */; };
 		7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B305FAA210237AA0086DCE0 /* Spoke.swift */; };
 		7BA6A0A22240D8E000700C2C /* Bolt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6A0A12240D8E000700C2C /* Bolt.swift */; };
 		A0C3F34B220FD630005D9998 /* Datadog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3F34A220FD630005D9998 /* Datadog.swift */; };
@@ -228,6 +229,7 @@
 
 /* Begin PBXFileReference section */
 		03C5FB121E203325003C40B8 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
+		2F1B7558227A095400BA5CBD /* Avalara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avalara.swift; sourceTree = "<group>"; };
 		7B305FAA210237AA0086DCE0 /* Spoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spoke.swift; sourceTree = "<group>"; };
 		7BA6A0A12240D8E000700C2C /* Bolt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bolt.swift; sourceTree = "<group>"; };
 		A0C3F34A220FD630005D9998 /* Datadog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datadog.swift; sourceTree = "<group>"; };
@@ -751,6 +753,7 @@
 				B2DCE6912215AA4A001447D8 /* AppleDeveloper.swift */,
 				B23038F01E0DF3CC00B29095 /* Beanstalk.swift */,
 				B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */,
+				2F1B7558227A095400BA5CBD /* Avalara.swift */,
 				B290315B1E4B0CA7005B58CC /* Evernote.swift */,
 				B2C10F3B203646A7008E1E7D /* Gandi.swift */,
 				B2FDC9191D67029900F0B728 /* Heroku.swift */,
@@ -1079,6 +1082,7 @@
 				B26350FD1ED7CFC40069EA73 /* Loggly.swift in Sources */,
 				B2253A81209F464F0039F574 /* GoogleCloudSupport.swift in Sources */,
 				B24220E41E2F6BBA0007E50E /* Typeform.swift in Sources */,
+				2F1B7559227A095400BA5CBD /* Avalara.swift in Sources */,
 				B2F127AB1E0B84F00035B20C /* Braintree.swift in Sources */,
 				B225E3E01E44830F008E1D3D /* SwitchableTableViewController.swift in Sources */,
 				B256955D1E247C8C00FAE413 /* Pingdom.swift in Sources */,
