@@ -5,22 +5,22 @@
 
 import Cocoa
 
-protocol SwitchableTableViewController {
+protocol SwitchableTableViewController: class {
     var hidden: Bool { get set }
 
-    mutating func show()
-    mutating func hide()
+    func show()
+    func hide()
     func willShow()
     func willHide()
 }
 
 extension SwitchableTableViewController {
-    mutating func show() {
+    func show() {
         self.hidden = false
         self.willShow()
     }
 
-    mutating func hide() {
+    func hide() {
         self.hidden = true
         self.willHide()
     }
