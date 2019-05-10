@@ -75,6 +75,8 @@
 		B230CE7F21B95C5500E2005D /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B230CE7E21B95C5500E2005D /* Stripe.swift */; };
 		B232047F22158BDF000DC1B0 /* DatadogEU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232047E22158BDF000DC1B0 /* DatadogEU.swift */; };
 		B232A18D20944B960066AD01 /* Cloud66.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232A18C20944B950066AD01 /* Cloud66.swift */; };
+		B23533DF2285B48F00DEDC36 /* DateHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23533DE2285B48E00DEDC36 /* DateHelper.framework */; };
+		B23533E02285B49700DEDC36 /* DateHelper.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B23533DE2285B48E00DEDC36 /* DateHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2357D711E5C08AF0093B8A6 /* Netlify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2357D701E5C08AF0093B8A6 /* Netlify.swift */; };
 		B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235B3BC1DF562C400821936 /* SettingsView.swift */; };
 		B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D4E6C1E13471200B04F18 /* Intercom.swift */; };
@@ -120,9 +122,7 @@
 		B26CD1EA1DD59FE60054A385 /* Kanna.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B26CD1E71DD59FDD0054A385 /* Kanna.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B26CD1EC1DD59FFB0054A385 /* DigitalOcean.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */; };
 		B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27090F0209F52EB0094C3D7 /* Stream.swift */; };
-		B276C8F21DD474200098B451 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B276C8EF1DD474200098B451 /* SwiftDate.framework */; };
 		B276C8F41DD474200098B451 /* MBPopup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B276C8F11DD474200098B451 /* MBPopup.framework */; };
-		B276C8F51DD4742A0098B451 /* SwiftDate.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B276C8EF1DD474200098B451 /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B276C8F71DD4742D0098B451 /* MBPopup.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B276C8F11DD474200098B451 /* MBPopup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2841CEB20BA6207004AFDB7 /* SorryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2841CEA20BA6207004AFDB7 /* SorryService.swift */; };
 		B2894CE420EEE2780009CCA3 /* Buildkite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2894CE320EEE2780009CCA3 /* Buildkite.swift */; };
@@ -218,9 +218,9 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B26CD1EA1DD59FE60054A385 /* Kanna.framework in CopyFiles */,
-				B276C8F51DD4742A0098B451 /* SwiftDate.framework in CopyFiles */,
 				B2CEB9A21DFD8987005FB901 /* StartAtLogin.framework in CopyFiles */,
 				B276C8F71DD4742D0098B451 /* MBPopup.framework in CopyFiles */,
+				B23533E02285B49700DEDC36 /* DateHelper.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +297,7 @@
 		B230CE7E21B95C5500E2005D /* Stripe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
 		B232047E22158BDF000DC1B0 /* DatadogEU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatadogEU.swift; sourceTree = "<group>"; };
 		B232A18C20944B950066AD01 /* Cloud66.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud66.swift; sourceTree = "<group>"; };
+		B23533DE2285B48E00DEDC36 /* DateHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DateHelper.framework; path = Carthage/Build/Mac/DateHelper.framework; sourceTree = SOURCE_ROOT; };
 		B2357D701E5C08AF0093B8A6 /* Netlify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
 		B235B3BC1DF562C400821936 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B23D4E6C1E13471200B04F18 /* Intercom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intercom.swift; sourceTree = "<group>"; };
@@ -341,7 +342,6 @@
 		B26CD1E71DD59FDD0054A385 /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/Mac/Kanna.framework; sourceTree = SOURCE_ROOT; };
 		B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalOcean.swift; sourceTree = "<group>"; };
 		B27090F0209F52EB0094C3D7 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
-		B276C8EF1DD474200098B451 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/Mac/SwiftDate.framework; sourceTree = SOURCE_ROOT; };
 		B276C8F11DD474200098B451 /* MBPopup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBPopup.framework; path = Carthage/Build/Mac/MBPopup.framework; sourceTree = SOURCE_ROOT; };
 		B2841CEA20BA6207004AFDB7 /* SorryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorryService.swift; sourceTree = "<group>"; };
 		B2894CE320EEE2780009CCA3 /* Buildkite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildkite.swift; sourceTree = "<group>"; };
@@ -435,7 +435,7 @@
 			files = (
 				B26CD1E81DD59FDD0054A385 /* Kanna.framework in Frameworks */,
 				B276C8F41DD474200098B451 /* MBPopup.framework in Frameworks */,
-				B276C8F21DD474200098B451 /* SwiftDate.framework in Frameworks */,
+				B23533DF2285B48F00DEDC36 /* DateHelper.framework in Frameworks */,
 				B2CEB9A11DFD8984005FB901 /* StartAtLogin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,9 +565,9 @@
 		B276C8E81DD473B50098B451 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B23533DE2285B48E00DEDC36 /* DateHelper.framework */,
 				B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */,
 				B26CD1E71DD59FDD0054A385 /* Kanna.framework */,
-				B276C8EF1DD474200098B451 /* SwiftDate.framework */,
 				B276C8F11DD474200098B451 /* MBPopup.framework */,
 			);
 			name = Frameworks;

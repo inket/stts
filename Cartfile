@@ -1,4 +1,4 @@
 github "inket/MBPopup"
 github "inket/StartAtLogin"
-github "malcommac/SwiftDate"
+github "melvitax/DateHelper"
 github "tid-kijyun/Kanna"

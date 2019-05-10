@@ -4,7 +4,7 @@
 //
 
 import Cocoa
-import SwiftDate
+import DateHelper
 
 enum BottomBarStatus {
     case undetermined
@@ -157,8 +157,8 @@ class BottomBar: NSView {
         case .undetermined: statusField.stringValue = ""
         case .updating: statusField.stringValue = "Updating…"
         case .updated(let date):
-            let colloquial = date.toRelative(style: RelativeFormatter.defaultStyle())
-            statusField.stringValue = "Updated \(colloquial)"
+            let relativeTime = date.toStringWithRelativeTime()
+            statusField.stringValue = "Updated \(relativeTime)"
         }
     }
 
