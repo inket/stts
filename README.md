@@ -8,7 +8,7 @@ With a click of the menubar icon, you can see the status of your favorite servic
 
 stts is designed to be unobtrusive, only giving you the information you need and allowing you to access the status page with a single click.
 
-stts can be downloaded from the Mac App Store [here](https://itunes.apple.com/app/stts/id1187772509?ls=1&mt=12).
+stts can be downloaded from the Mac App Store [here](https://itunes.apple.com/app/stts/id1187772509?l=en&mt=12).
 
 ### Contributing
 
