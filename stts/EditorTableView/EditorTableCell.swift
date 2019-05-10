@@ -6,6 +6,21 @@
 import Cocoa
 
 class EditorTableCell: NSTableCellView {
+    private enum Design {
+        static let padding = NSEdgeInsets(top: 8, left: 10, bottom: 8, right: 10)
+        static let innerSpacing: CGFloat = 4
+
+        enum Name {
+            static let font = NSFont.systemFont(ofSize: 11)
+        }
+
+        enum ToggleButton {
+            static let size = NSSize(width: 36, height: 20)
+        }
+    }
+
+    static let defaultHeight: CGFloat = 30
+
     let toggleButton = NSButton()
     var selected: Bool = false {
         didSet {
@@ -14,6 +29,17 @@ class EditorTableCell: NSTableCellView {
     }
 
     var toggleCallback: () -> Void = {}
+
+    static func estimatedHeight(for service: Service, maxWidth: CGFloat) -> CGFloat {
+        return
+            service.name.height(forWidth: maxWidth, font: Design.Name.font) +
+            Design.padding.top + Design.padding.bottom
+    }
+
+    static func maxNameWidth(for tableView: NSTableView) -> CGFloat {
+        return tableView.frame.size.width -
+            Design.padding.left - Design.innerSpacing - Design.ToggleButton.size.width - Design.padding.right
+    }
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -31,8 +57,7 @@ class EditorTableCell: NSTableCellView {
         textField.isBordered = false
         textField.isSelectable = false
         self.textField = textField
-        let font = NSFont.systemFont(ofSize: 11)
-        textField.font = font
+        textField.font = Design.Name.font
         textField.textColor = NSColor.textColor
         textField.backgroundColor = NSColor.clear
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -52,14 +77,14 @@ class EditorTableCell: NSTableCellView {
         toggleButton.layer?.cornerRadius = 4
 
         NSLayoutConstraint.activate([
-            textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Design.padding.left),
             textField.centerYAnchor.constraint(equalTo: centerYAnchor),
 
-            toggleButton.leadingAnchor.constraint(equalTo: textField.trailingAnchor, constant: 4),
-            toggleButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            toggleButton.leadingAnchor.constraint(equalTo: textField.trailingAnchor, constant: Design.innerSpacing),
+            toggleButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Design.padding.right),
             toggleButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            toggleButton.widthAnchor.constraint(equalToConstant: 36),
-            toggleButton.heightAnchor.constraint(equalToConstant: 20)
+            toggleButton.widthAnchor.constraint(equalToConstant: Design.ToggleButton.size.width),
+            toggleButton.heightAnchor.constraint(equalToConstant: Design.ToggleButton.size.height)
         ])
     }
 

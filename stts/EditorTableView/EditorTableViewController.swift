@@ -20,6 +20,14 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
 
     var hidden: Bool = true
 
+    private var maxNameWidth: CGFloat? {
+        didSet {
+            if oldValue != maxNameWidth {
+                tableView.tile()
+            }
+        }
+    }
+
     init(contentView: NSStackView, scrollView: CustomScrollView) {
         self.contentView = contentView
         self.scrollView = scrollView
@@ -38,7 +46,6 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
         tableView.wantsLayer = true
         tableView.layer?.cornerRadius = 6
         tableView.headerView = nil
-        tableView.rowHeight = 30
         tableView.gridStyleMask = NSTableView.GridLineStyle.init(rawValue: 0)
         tableView.dataSource = self
         tableView.delegate = self
@@ -128,6 +135,15 @@ extension EditorTableViewController: NSTableViewDataSource {
 }
 
 extension EditorTableViewController: NSTableViewDelegate {
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        guard
+            let maxNameWidth = maxNameWidth,
+            let service = filteredServices[row] as? Service
+        else { return EditorTableCell.defaultHeight }
+
+        return service.name.height(forWidth: maxNameWidth, font: NSFont.systemFont(ofSize: 11)) + (8 * 2)
+    }
+
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let identifier = tableColumn?.identifier ?? NSUserInterfaceItemIdentifier(rawValue: "identifier")
         let cell = tableView.makeView(withIdentifier: identifier, owner: self) ?? EditorTableCell()
@@ -152,6 +168,8 @@ extension EditorTableViewController: NSTableViewDelegate {
 
             Preferences.shared.selectedServices = strongSelf.selectedServices
         }
+
+        maxNameWidth = EditorTableCell.maxNameWidth(for: tableView)
 
         return view
     }

@@ -8,3 +8,4 @@ disabled_rules:
   - function_body_length
   - type_name
   - variable_name
+  - nesting
