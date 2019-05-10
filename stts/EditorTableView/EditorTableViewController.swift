@@ -4,7 +4,6 @@
 //
 
 import Cocoa
-import SnapKit
 
 class EditorTableViewController: NSObject, SwitchableTableViewController {
     let contentView: NSStackView
@@ -68,17 +67,21 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
             strongSelf.tableView.reloadData()
         }
 
+        settingsView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(settingsView)
-        settingsView.snp.makeConstraints { make in
-            make.top.left.right.equalTo(0)
-            make.height.equalTo(130)
-        }
+
+        NSLayoutConstraint.activate([
+            settingsView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            settingsView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            settingsView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            settingsView.heightAnchor.constraint(equalToConstant: 130)
+        ])
     }
 
     func willShow() {
         self.selectionChanged = false
 
-        scrollView.topConstraint?.update(offset: settingsView.frame.size.height)
+        scrollView.topConstraint?.constant = settingsView.frame.size.height
         scrollView.documentView = tableView
 
         settingsView.isHidden = false

@@ -4,7 +4,6 @@
 //
 
 import Cocoa
-import SnapKit
 import MBPopup
 
 class ServiceTableViewController: NSObject, SwitchableTableViewController {
@@ -51,34 +50,47 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
             self?.show()
         }
 
-        contentView.snp.makeConstraints { make in
-            make.left.right.bottom.equalTo(0)
-            make.width.greaterThanOrEqualTo(220)
-            make.height.greaterThanOrEqualTo(40 + 30 + 2) // tableView.rowHeight + bottomBar.frame.size.height + 2
+        guard let superview = contentView.superview else {
+            assertionFailure("Add contentView to another view before calling setup()")
+            return
         }
 
-        contentView.addSubview(scrollView)
-        contentView.addSubview(bottomBar)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
 
-        scrollView.snp.makeConstraints { make in
-            scrollView.topConstraint = make.top.equalToSuperview().constraint
-            make.left.right.equalTo(0)
+        NSLayoutConstraint.activate([
+            contentView.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: superview.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
+            contentView.widthAnchor.constraint(greaterThanOrEqualToConstant: 220),
+
+            // tableView.rowHeight + bottomBar.frame.size.height + 2
+            contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: 40 + 30 + 2)
+        ])
+
+        [scrollView, bottomBar, addServicesNoticeField].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            contentView.addSubview($0)
         }
 
-        bottomBar.snp.makeConstraints { make in
-            make.width.equalToSuperview()
-            make.top.equalTo(scrollView.snp.bottom)
-            make.height.equalTo(30)
-            make.left.right.equalTo(0)
-            make.bottom.equalTo(0)
-        }
+        let scrollViewTopConstraint = scrollView.topAnchor.constraint(equalTo: contentView.topAnchor)
+        scrollView.topConstraint = scrollViewTopConstraint
 
-        contentView.addSubview(addServicesNoticeField)
-        addServicesNoticeField.snp.makeConstraints { make in
-            make.height.equalTo(22)
-            make.left.right.equalTo(0)
-            make.centerY.equalToSuperview().offset(-14)
-        }
+        NSLayoutConstraint.activate([
+            scrollViewTopConstraint,
+            scrollView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+
+            bottomBar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            bottomBar.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            bottomBar.topAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            bottomBar.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            bottomBar.heightAnchor.constraint(equalToConstant: 30),
+
+            addServicesNoticeField.heightAnchor.constraint(equalToConstant: 22),
+            addServicesNoticeField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            addServicesNoticeField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            addServicesNoticeField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -14)
+        ])
 
         scrollView.borderType = .noBorder
         scrollView.hasVerticalScroller = true
@@ -136,7 +148,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
     }
 
     func willShow() {
-        scrollView.topConstraint?.update(offset: 0)
+        scrollView.topConstraint?.constant = 0
         scrollView.documentView = tableView
 
         if editorTableViewController.selectionChanged {

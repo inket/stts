@@ -1,4 +1,3 @@
-github "SnapKit/SnapKit" "4.2.0"
 github "inket/MBPopup" "5.0.1"
 github "inket/StartAtLogin" "v5.0.1"
 github "malcommac/SwiftDate" "6.0.1"

@@ -4,7 +4,6 @@
 //
 
 import Cocoa
-import SnapKit
 
 class EditorTableCell: NSTableCellView {
     let toggleButton = NSButton()
@@ -36,14 +35,12 @@ class EditorTableCell: NSTableCellView {
         textField.font = font
         textField.textColor = NSColor.textColor
         textField.backgroundColor = NSColor.clear
+        textField.translatesAutoresizingMaskIntoConstraints = false
         addSubview(textField)
 
-        textField.snp.makeConstraints { make in
-            make.left.equalTo(10)
-            make.centerY.equalToSuperview()
-        }
-
+        toggleButton.translatesAutoresizingMaskIntoConstraints = false
         addSubview(toggleButton)
+
         toggleButton.title = ""
         toggleButton.isBordered = false
         toggleButton.bezelStyle = .texturedSquare
@@ -53,13 +50,17 @@ class EditorTableCell: NSTableCellView {
         toggleButton.wantsLayer = true
         toggleButton.layer?.borderWidth = 1
         toggleButton.layer?.cornerRadius = 4
-        toggleButton.snp.makeConstraints { make in
-            make.left.equalTo(textField.snp.right).offset(-4)
-            make.width.equalTo(36)
-            make.right.equalTo(-10)
-            make.height.equalTo(20)
-            make.centerY.equalToSuperview()
-        }
+
+        NSLayoutConstraint.activate([
+            textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            textField.centerYAnchor.constraint(equalTo: centerYAnchor),
+
+            toggleButton.leadingAnchor.constraint(equalTo: textField.trailingAnchor, constant: 4),
+            toggleButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            toggleButton.centerYAnchor.constraint(equalTo: centerYAnchor),
+            toggleButton.widthAnchor.constraint(equalToConstant: 36),
+            toggleButton.heightAnchor.constraint(equalToConstant: 20)
+        ])
     }
 
     @objc func toggle() {

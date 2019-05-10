@@ -5,7 +5,6 @@
 
 import Cocoa
 import MBPopup
-import SnapKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {

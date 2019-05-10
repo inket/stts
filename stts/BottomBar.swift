@@ -4,7 +4,6 @@
 //
 
 import Cocoa
-import SnapKit
 import SwiftDate
 
 enum BottomBarStatus {
@@ -43,68 +42,61 @@ class BottomBar: NSView {
     }
 
     private func commonInit() {
-        addSubview(separator)
-        addSubview(settingsButton)
-        addSubview(reloadButton)
-        addSubview(statusField)
-        addSubview(doneButton)
-        addSubview(aboutButton)
-        addSubview(quitButton)
+        [separator, settingsButton, reloadButton, statusField, doneButton, aboutButton, quitButton].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            addSubview($0)
+        }
 
         let gearIcon = GearIcon()
+        gearIcon.translatesAutoresizingMaskIntoConstraints = false
         settingsButton.addSubview(gearIcon)
 
         let refreshIcon = RefreshIcon()
+        refreshIcon.translatesAutoresizingMaskIntoConstraints = false
         reloadButton.addSubview(refreshIcon)
 
-        separator.snp.makeConstraints { make in
-            make.height.equalTo(1)
-            make.left.top.right.equalTo(0)
-        }
+        NSLayoutConstraint.activate([
+            separator.heightAnchor.constraint(equalToConstant: 1),
+            separator.topAnchor.constraint(equalTo: topAnchor),
+            separator.leadingAnchor.constraint(equalTo: leadingAnchor),
+            separator.trailingAnchor.constraint(equalTo: trailingAnchor),
 
-        settingsButton.snp.makeConstraints { make in
-            make.height.width.equalTo(30)
-            make.bottom.left.equalTo(0)
-        }
+            settingsButton.heightAnchor.constraint(equalToConstant: 30),
+            settingsButton.widthAnchor.constraint(equalToConstant: 30),
+            settingsButton.leadingAnchor.constraint(equalTo: leadingAnchor),
+            settingsButton.bottomAnchor.constraint(equalTo: bottomAnchor),
 
-        gearIcon.snp.makeConstraints { make in
-            make.centerX.centerY.equalToSuperview()
-            make.width.height.equalTo(22)
-        }
+            gearIcon.centerYAnchor.constraint(equalTo: settingsButton.centerYAnchor),
+            gearIcon.centerXAnchor.constraint(equalTo: settingsButton.centerXAnchor),
+            gearIcon.heightAnchor.constraint(equalToConstant: 22),
+            gearIcon.widthAnchor.constraint(equalToConstant: 22),
 
-        reloadButton.snp.makeConstraints { make in
-            make.height.width.equalTo(30)
-            make.bottom.right.equalTo(0)
-        }
+            reloadButton.heightAnchor.constraint(equalToConstant: 30),
+            reloadButton.widthAnchor.constraint(equalToConstant: 30),
+            reloadButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            reloadButton.bottomAnchor.constraint(equalTo: bottomAnchor),
 
-        refreshIcon.snp.makeConstraints { make in
-            make.centerX.centerY.equalToSuperview()
-            make.width.height.equalTo(18)
-        }
+            refreshIcon.centerYAnchor.constraint(equalTo: reloadButton.centerYAnchor),
+            refreshIcon.centerXAnchor.constraint(equalTo: reloadButton.centerXAnchor),
+            refreshIcon.heightAnchor.constraint(equalToConstant: 18),
+            refreshIcon.widthAnchor.constraint(equalToConstant: 18),
 
-        statusField.snp.makeConstraints { make in
-            make.left.equalTo(settingsButton.snp.right)
-            make.right.equalTo(reloadButton.snp.left)
-            make.centerY.equalToSuperview()
-        }
+            statusField.leadingAnchor.constraint(equalTo: settingsButton.trailingAnchor),
+            statusField.trailingAnchor.constraint(equalTo: reloadButton.leadingAnchor),
+            statusField.centerYAnchor.constraint(equalTo: centerYAnchor),
 
-        doneButton.snp.makeConstraints { make in
-            make.width.equalTo(60)
-            make.centerY.equalToSuperview()
-            make.right.equalTo(-3)
-        }
+            doneButton.widthAnchor.constraint(equalToConstant: 60),
+            doneButton.centerYAnchor.constraint(equalTo: centerYAnchor),
+            doneButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -3),
 
-        aboutButton.snp.makeConstraints { make in
-            make.width.equalTo(56)
-            make.centerY.equalToSuperview()
-            make.left.equalTo(quitButton.snp.right).offset(6)
-        }
+            aboutButton.widthAnchor.constraint(equalToConstant: 56),
+            aboutButton.centerYAnchor.constraint(equalTo: centerYAnchor),
+            aboutButton.leadingAnchor.constraint(equalTo: quitButton.trailingAnchor, constant: 6),
 
-        quitButton.snp.makeConstraints { make in
-            make.width.equalTo(46)
-            make.centerY.equalToSuperview()
-            make.left.equalTo(3)
-        }
+            quitButton.widthAnchor.constraint(equalToConstant: 46),
+            quitButton.centerYAnchor.constraint(equalTo: centerYAnchor),
+            quitButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 3)
+        ])
 
         settingsButton.isBordered = false
         settingsButton.bezelStyle = .regularSquare

@@ -4,7 +4,6 @@
 //
 
 import Cocoa
-import SnapKit
 
 class StatusTableCell: NSTableCellView {
     let statusIndicator = StatusIndicator()
@@ -22,13 +21,8 @@ class StatusTableCell: NSTableCellView {
 
     private func commonInit() {
         statusIndicator.scaleUnitSquare(to: NSSize(width: 0.3, height: 0.3))
+        statusIndicator.translatesAutoresizingMaskIntoConstraints = false
         addSubview(statusIndicator)
-
-        statusIndicator.snp.makeConstraints { make in
-            make.height.width.equalTo(14)
-            make.left.equalTo(8)
-            make.centerY.equalToSuperview()
-        }
 
         let textField = NSTextField()
         textField.isEditable = false
@@ -39,14 +33,8 @@ class StatusTableCell: NSTableCellView {
         textField.font = font
         textField.textColor = NSColor.labelColor
         textField.backgroundColor = NSColor.clear
+        textField.translatesAutoresizingMaskIntoConstraints = false
         addSubview(textField)
-
-        textField.snp.makeConstraints { make in
-            make.height.equalTo(18)
-            make.leading.equalTo(statusIndicator.snp.trailing).offset(4)
-            make.trailing.equalTo(8)
-            make.centerY.equalToSuperview().offset(-8)
-        }
 
         statusField.isEditable = false
         statusField.isBordered = false
@@ -63,13 +51,24 @@ class StatusTableCell: NSTableCellView {
         statusField.maximumNumberOfLines = 1
         statusField.cell!.truncatesLastVisibleLine = true
         statusField.backgroundColor = NSColor.clear
+        statusField.translatesAutoresizingMaskIntoConstraints = false
         addSubview(statusField)
 
-        statusField.snp.makeConstraints { make in
-            make.height.equalTo(18)
-            make.leading.equalTo(statusIndicator.snp.trailing).offset(4)
-            make.trailing.equalToSuperview().offset(-8)
-            make.centerY.equalToSuperview().offset(10)
-        }
+        NSLayoutConstraint.activate([
+            statusIndicator.heightAnchor.constraint(equalToConstant: 14),
+            statusIndicator.widthAnchor.constraint(equalToConstant: 14),
+            statusIndicator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            statusIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
+
+            textField.heightAnchor.constraint(equalToConstant: 18),
+            textField.leadingAnchor.constraint(equalTo: statusIndicator.trailingAnchor, constant: 4),
+            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            textField.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -8),
+
+            statusField.heightAnchor.constraint(equalToConstant: 18),
+            statusField.leadingAnchor.constraint(equalTo: statusIndicator.trailingAnchor, constant: 4),
+            statusField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            statusField.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 10)
+        ])
     }
 }

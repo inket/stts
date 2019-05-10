@@ -121,10 +121,8 @@
 		B26CD1EC1DD59FFB0054A385 /* DigitalOcean.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */; };
 		B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27090F0209F52EB0094C3D7 /* Stream.swift */; };
 		B276C8F21DD474200098B451 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B276C8EF1DD474200098B451 /* SwiftDate.framework */; };
-		B276C8F31DD474200098B451 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B276C8F01DD474200098B451 /* SnapKit.framework */; };
 		B276C8F41DD474200098B451 /* MBPopup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B276C8F11DD474200098B451 /* MBPopup.framework */; };
 		B276C8F51DD4742A0098B451 /* SwiftDate.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B276C8EF1DD474200098B451 /* SwiftDate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B276C8F61DD4742B0098B451 /* SnapKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B276C8F01DD474200098B451 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B276C8F71DD4742D0098B451 /* MBPopup.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B276C8F11DD474200098B451 /* MBPopup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2841CEB20BA6207004AFDB7 /* SorryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2841CEA20BA6207004AFDB7 /* SorryService.swift */; };
 		B2894CE420EEE2780009CCA3 /* Buildkite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2894CE320EEE2780009CCA3 /* Buildkite.swift */; };
@@ -222,7 +220,6 @@
 				B26CD1EA1DD59FE60054A385 /* Kanna.framework in CopyFiles */,
 				B276C8F51DD4742A0098B451 /* SwiftDate.framework in CopyFiles */,
 				B2CEB9A21DFD8987005FB901 /* StartAtLogin.framework in CopyFiles */,
-				B276C8F61DD4742B0098B451 /* SnapKit.framework in CopyFiles */,
 				B276C8F71DD4742D0098B451 /* MBPopup.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,7 +342,6 @@
 		B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalOcean.swift; sourceTree = "<group>"; };
 		B27090F0209F52EB0094C3D7 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 		B276C8EF1DD474200098B451 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/Mac/SwiftDate.framework; sourceTree = SOURCE_ROOT; };
-		B276C8F01DD474200098B451 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/Mac/SnapKit.framework; sourceTree = SOURCE_ROOT; };
 		B276C8F11DD474200098B451 /* MBPopup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBPopup.framework; path = Carthage/Build/Mac/MBPopup.framework; sourceTree = SOURCE_ROOT; };
 		B2841CEA20BA6207004AFDB7 /* SorryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorryService.swift; sourceTree = "<group>"; };
 		B2894CE320EEE2780009CCA3 /* Buildkite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildkite.swift; sourceTree = "<group>"; };
@@ -441,7 +437,6 @@
 				B276C8F41DD474200098B451 /* MBPopup.framework in Frameworks */,
 				B276C8F21DD474200098B451 /* SwiftDate.framework in Frameworks */,
 				B2CEB9A11DFD8984005FB901 /* StartAtLogin.framework in Frameworks */,
-				B276C8F31DD474200098B451 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,7 +568,6 @@
 				B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */,
 				B26CD1E71DD59FDD0054A385 /* Kanna.framework */,
 				B276C8EF1DD474200098B451 /* SwiftDate.framework */,
-				B276C8F01DD474200098B451 /* SnapKit.framework */,
 				B276C8F11DD474200098B451 /* MBPopup.framework */,
 			);
 			name = Frameworks;

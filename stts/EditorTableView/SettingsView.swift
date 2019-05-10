@@ -4,7 +4,6 @@
 //
 
 import Cocoa
-import SnapKit
 import StartAtLogin
 
 class SettingsView: NSView {
@@ -28,11 +27,10 @@ class SettingsView: NSView {
     }
 
     func setup() {
-        addSubview(settingsHeader)
-        addSubview(startAtLoginCheckbox)
-        addSubview(notifyCheckbox)
-        addSubview(servicesHeader)
-        addSubview(searchField)
+        [settingsHeader, startAtLoginCheckbox, notifyCheckbox, servicesHeader, searchField].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            addSubview($0)
+        }
 
         let smallFont = NSFont.systemFont(ofSize: NSFont.systemFontSize(for: .small))
 
@@ -55,39 +53,32 @@ class SettingsView: NSView {
         searchField.action = #selector(SettingsView.filterServices)
         searchField.target = self
 
-        settingsHeader.snp.makeConstraints { make in
-            make.top.left.equalTo(6)
-            make.right.equalTo(-6)
-            make.height.equalTo(16)
-        }
+        NSLayoutConstraint.activate([
+            settingsHeader.topAnchor.constraint(equalTo: topAnchor, constant: 6),
+            settingsHeader.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
+            settingsHeader.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6),
+            settingsHeader.heightAnchor.constraint(equalToConstant: 16),
 
-        startAtLoginCheckbox.snp.makeConstraints { make in
-            make.top.equalTo(settingsHeader.snp.bottom).offset(6)
-            make.left.equalTo(14)
-            make.right.equalTo(-14)
-            make.height.equalTo(18)
-        }
+            startAtLoginCheckbox.topAnchor.constraint(equalTo: settingsHeader.bottomAnchor, constant: 6),
+            startAtLoginCheckbox.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
+            startAtLoginCheckbox.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
+            startAtLoginCheckbox.heightAnchor.constraint(equalToConstant: 18),
 
-        notifyCheckbox.snp.makeConstraints { make in
-            make.top.equalTo(startAtLoginCheckbox.snp.bottom).offset(6)
-            make.left.equalTo(14)
-            make.right.equalTo(-14).priority(200)
-            make.height.equalTo(18)
-        }
+            notifyCheckbox.topAnchor.constraint(equalTo: startAtLoginCheckbox.bottomAnchor, constant: 6),
+            notifyCheckbox.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
+            notifyCheckbox.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
+            notifyCheckbox.heightAnchor.constraint(equalToConstant: 18),
 
-        servicesHeader.snp.makeConstraints { make in
-            make.top.equalTo(notifyCheckbox.snp.bottom).offset(10)
-            make.left.equalTo(6)
-            make.right.equalTo(-6)
-            make.height.equalTo(16)
-        }
+            servicesHeader.topAnchor.constraint(equalTo: notifyCheckbox.bottomAnchor, constant: 10),
+            servicesHeader.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
+            servicesHeader.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6),
+            servicesHeader.heightAnchor.constraint(equalToConstant: 16),
 
-        searchField.snp.makeConstraints { make in
-            make.top.equalTo(servicesHeader.snp.bottom).offset(6)
-            make.left.equalTo(12)
-            make.right.equalTo(-12)
-            make.height.equalTo(22)
-        }
+            searchField.topAnchor.constraint(equalTo: servicesHeader.bottomAnchor, constant: 6),
+            searchField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+            searchField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            searchField.heightAnchor.constraint(equalToConstant: 22)
+        ])
     }
 
     @objc private func updateStartAtLogin() {
