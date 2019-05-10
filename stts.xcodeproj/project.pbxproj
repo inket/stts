@@ -823,9 +823,9 @@
 				B2B2D0FC1D49D5080014D780 /* Frameworks */,
 				B2B2D0FD1D49D5080014D780 /* Resources */,
 				B22EC6891D80111900ED7917 /* CopyFiles */,
-				B28F83321E24BDC100F2070F /* ShellScript */,
-				B2B2DC631DCC1FA600BF397D /* ShellScript */,
-				B2A264A21DF906C900009BE1 /* ShellScript */,
+				B28F83321E24BDC100F2070F /* Generate Services plist file */,
+				B2B2DC631DCC1FA600BF397D /* Swiftlint */,
+				B2A264A21DF906C900009BE1 /* StartAtLogin */,
 			);
 			buildRules = (
 			);
@@ -906,44 +906,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B28F83321E24BDC100F2070F /* ShellScript */ = {
+		B28F83321E24BDC100F2070F /* Generate Services plist file */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Generate Services plist file";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "RESOURCES_PATH=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\nSERVICES_PLIST=\"$RESOURCES_PATH/services.plist\"\n\n# Retrieve the list of services\nSERVICES=$(find \"$SRCROOT/stts/Services\" -name \"*.swift\" -not -path \"*Super*\" | awk -F/ '{ print $NF }' | sed s/.swift//g | sort | sed -e ':a' -e 'N' -e '$!ba' -e 's/\\n/ /g')\n\n# Create the services plist file\necho \"{}\" > \"$SERVICES_PLIST\"\n\n# Write the list of services into the plist file as an array\ndefaults write \"$SERVICES_PLIST\" \"services\" -array $SERVICES";
+			shellScript = "RESOURCES_PATH=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\nSERVICES_PLIST=\"$RESOURCES_PATH/services.plist\"\n\n# Retrieve the list of services\nSERVICES=$(find \"$SRCROOT/stts/Services\" -name \"*.swift\" -not -path \"*Super*\" | awk -F/ '{ print $NF }' | sed s/.swift//g | sort | sed -e ':a' -e 'N' -e '$!ba' -e 's/\\n/ /g')\n\n# Create the services plist file\necho \"{}\" > \"$SERVICES_PLIST\"\n\n# Write the list of services into the plist file as an array\ndefaults write \"$SERVICES_PLIST\" \"services\" -array $SERVICES\n";
 		};
-		B2A264A21DF906C900009BE1 /* ShellScript */ = {
+		B2A264A21DF906C900009BE1 /* StartAtLogin */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = StartAtLogin;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "FRAMEWORKS_HELPER_PATH=\"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/StartAtLogin.framework/Versions/A/Resources/StartAtLoginHelper.app\"\nHELPER_DIR=\"$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/Library/LoginItems\"\nHELPER_PATH=\"$HELPER_DIR/StartAtLoginHelper.app\"\n\nmkdir -p \"$HELPER_DIR\"\nrm -rf \"$HELPER_PATH\"\ncp -rf \"$FRAMEWORKS_HELPER_PATH\" \"$HELPER_DIR/\"\n\nif [ \"$CONFIGURATION\" == \"Release\" ]; then\n  rm -rf \"$FRAMEWORKS_HELPER_PATH\"\nfi\n\ndefaults write \"$HELPER_PATH/Contents/Info\" CFBundleIdentifier -string \"$PRODUCT_BUNDLE_IDENTIFIER-StartAtLoginHelper\"\ncodesign --force --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$EXPANDED_CODE_SIGN_IDENTITY_NAME\" -v \"$HELPER_PATH\"";
+			shellScript = "FRAMEWORKS_HELPER_PATH=\"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/StartAtLogin.framework/Versions/A/Resources/StartAtLoginHelper.app\"\nHELPER_DIR=\"$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/Library/LoginItems\"\nHELPER_PATH=\"$HELPER_DIR/StartAtLoginHelper.app\"\n\nmkdir -p \"$HELPER_DIR\"\nrm -rf \"$HELPER_PATH\"\ncp -rf \"$FRAMEWORKS_HELPER_PATH\" \"$HELPER_DIR/\"\n\nif [ \"$CONFIGURATION\" == \"Release\" ]; then\n  rm -rf \"$FRAMEWORKS_HELPER_PATH\"\nfi\n\ndefaults write \"$HELPER_PATH/Contents/Info\" CFBundleIdentifier -string \"$PRODUCT_BUNDLE_IDENTIFIER-StartAtLoginHelper\"\ncodesign --force --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$EXPANDED_CODE_SIGN_IDENTITY_NAME\" -v \"$HELPER_PATH\"\n";
 		};
-		B2B2DC631DCC1FA600BF397D /* ShellScript */ = {
+		B2B2DC631DCC1FA600BF397D /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = Swiftlint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
