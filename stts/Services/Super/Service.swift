@@ -122,6 +122,7 @@ extension BaseService: Comparable {
         let differentStatus =
             lhs.status != .good && lhs.status != .notice
             && rhs.status == .good || rhs.status == .notice
-        return ((lhs.name < rhs.name) && sameStatus) || differentStatus
+
+        return (lhs.name.localizedCompare(rhs.name) == .orderedAscending && sameStatus) || differentStatus
     }
 }
