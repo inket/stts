@@ -2,6 +2,7 @@
 //  Sendinblue.swift
 //  stts
 //
+
 import Foundation
 
 class Sendinblue: StatusioV1Service {
