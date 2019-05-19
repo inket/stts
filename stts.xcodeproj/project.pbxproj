@@ -152,7 +152,6 @@
 		B2A0A16F1E4C45E0000D9B29 /* MailChimp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0A16E1E4C45E0000D9B29 /* MailChimp.swift */; };
 		B2A23E321DD190EF0051E913 /* EditorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A23E311DD190EF0051E913 /* EditorTableViewController.swift */; };
 		B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A23E331DD192CD0051E913 /* EditorTableCell.swift */; };
-		B2A2B6A61E459F61008EFD05 /* Waffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A2B6A51E459F61008EFD05 /* Waffle.swift */; };
 		B2A4A8161DC82CE300037E99 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A4A8151DC82CE300037E99 /* BottomBar.swift */; };
 		B2A8AE3D20710EC8002699CE /* Unsplash.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A8AE3C20710EC8002699CE /* Unsplash.swift */; };
 		B2A93ADD1EB814C000D36DD3 /* Snyk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A93ADC1EB814C000D36DD3 /* Snyk.swift */; };
@@ -373,7 +372,6 @@
 		B2A0A16E1E4C45E0000D9B29 /* MailChimp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailChimp.swift; sourceTree = "<group>"; };
 		B2A23E311DD190EF0051E913 /* EditorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorTableViewController.swift; sourceTree = "<group>"; };
 		B2A23E331DD192CD0051E913 /* EditorTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorTableCell.swift; sourceTree = "<group>"; };
-		B2A2B6A51E459F61008EFD05 /* Waffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waffle.swift; sourceTree = "<group>"; };
 		B2A4A8151DC82CE300037E99 /* BottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		B2A8AE3C20710EC8002699CE /* Unsplash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unsplash.swift; sourceTree = "<group>"; };
 		B2A93ADC1EB814C000D36DD3 /* Snyk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snyk.swift; sourceTree = "<group>"; };
@@ -668,7 +666,6 @@
 				B2A8AE3C20710EC8002699CE /* Unsplash.swift */,
 				B29AEFCF225D7F3900C3B8BD /* UrbanAirship.swift */,
 				B2CB0F9A2047A60000873C14 /* Vimeo.swift */,
-				B2A2B6A51E459F61008EFD05 /* Waffle.swift */,
 				C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */,
 				B28DFE4621377A0B000EE4AF /* Wodby.swift */,
 				B2C4670E1E70012700C5145D /* Zapier.swift */,
@@ -1052,7 +1049,6 @@
 				B2493EF71E26023600556A83 /* GoogleAppEngine.swift in Sources */,
 				B26191B520BA60DA00B9E2FA /* FirebaseABTesting.swift in Sources */,
 				B2253A7B209F45EB0039F574 /* GoogleCloudNetworking.swift in Sources */,
-				B2A2B6A61E459F61008EFD05 /* Waffle.swift in Sources */,
 				B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */,
 				B28E9FC01ED26A40006B89F1 /* Lob.swift in Sources */,
 				B2EAD8D520B8FDB800095F5B /* JAMF.swift in Sources */,
