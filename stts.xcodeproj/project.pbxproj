@@ -123,6 +123,7 @@
 		B26CD1EA1DD59FE60054A385 /* Kanna.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B26CD1E71DD59FDD0054A385 /* Kanna.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B26CD1EC1DD59FFB0054A385 /* DigitalOcean.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */; };
 		B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27090F0209F52EB0094C3D7 /* Stream.swift */; };
+		B271688A2291AEEE001E608C /* Asana.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27168892291AEEE001E608C /* Asana.swift */; };
 		B276C8F41DD474200098B451 /* MBPopup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B276C8F11DD474200098B451 /* MBPopup.framework */; };
 		B276C8F71DD4742D0098B451 /* MBPopup.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B276C8F11DD474200098B451 /* MBPopup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2841CEB20BA6207004AFDB7 /* SorryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2841CEA20BA6207004AFDB7 /* SorryService.swift */; };
@@ -344,6 +345,7 @@
 		B26CD1E71DD59FDD0054A385 /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/Mac/Kanna.framework; sourceTree = SOURCE_ROOT; };
 		B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalOcean.swift; sourceTree = "<group>"; };
 		B27090F0209F52EB0094C3D7 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		B27168892291AEEE001E608C /* Asana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asana.swift; sourceTree = "<group>"; };
 		B276C8F11DD474200098B451 /* MBPopup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBPopup.framework; path = Carthage/Build/Mac/MBPopup.framework; sourceTree = SOURCE_ROOT; };
 		B2841CEA20BA6207004AFDB7 /* SorryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorryService.swift; sourceTree = "<group>"; };
 		B2894CE320EEE2780009CCA3 /* Buildkite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildkite.swift; sourceTree = "<group>"; };
@@ -590,6 +592,7 @@
 			children = (
 				B2CE72D5228587E000847E00 /* Acquia.swift */,
 				B21DC0751F6B436400E8214F /* Aptible.swift */,
+				B27168892291AEEE001E608C /* Asana.swift */,
 				B25695501E247C8C00FAE413 /* Atlassian.swift */,
 				B24F91221E8B51A400A77460 /* Auth0.swift */,
 				B2BA36181ED7B0F200051083 /* AuthorizeNet.swift */,
@@ -1014,6 +1017,7 @@
 				B2DCE6922215AA4A001447D8 /* AppleDeveloper.swift in Sources */,
 				B2493F011E26023600556A83 /* GoogleCloudStorage.swift in Sources */,
 				B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */,
+				B271688A2291AEEE001E608C /* Asana.swift in Sources */,
 				B299C84B1DD04E850024D2E9 /* Pusher.swift in Sources */,
 				B2163B0020BA56EF00B14A85 /* StatusCakeService.swift in Sources */,
 				B2253A79209F45AC0039F574 /* GoogleCloudMachineLearning.swift in Sources */,
