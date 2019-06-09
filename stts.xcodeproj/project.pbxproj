@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03C5FB131E203325003C40B8 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5FB121E203325003C40B8 /* Packet.swift */; };
+		194BC88222A8EAC10065E698 /* Clubhouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BC88122A8EAC00065E698 /* Clubhouse.swift */; };
 		2F1B7559227A095400BA5CBD /* Avalara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B7558227A095400BA5CBD /* Avalara.swift */; };
 		2F65F490227A198400432E64 /* Recurly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F65F48F227A198400432E64 /* Recurly.swift */; };
 		7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B305FAA210237AA0086DCE0 /* Spoke.swift */; };
@@ -229,6 +230,7 @@
 
 /* Begin PBXFileReference section */
 		03C5FB121E203325003C40B8 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
+		194BC88122A8EAC00065E698 /* Clubhouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clubhouse.swift; sourceTree = "<group>"; };
 		2F1B7558227A095400BA5CBD /* Avalara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avalara.swift; sourceTree = "<group>"; };
 		2F65F48F227A198400432E64 /* Recurly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recurly.swift; sourceTree = "<group>"; };
 		7B305FAA210237AA0086DCE0 /* Spoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spoke.swift; sourceTree = "<group>"; };
@@ -604,6 +606,7 @@
 				B2F34040222630F20055C96F /* CloudApp.swift */,
 				B299C8501DD04FD60024D2E9 /* Cloudflare.swift */,
 				B25695511E247C8C00FAE413 /* Cloudinary.swift */,
+				194BC88122A8EAC00065E698 /* Clubhouse.swift */,
 				B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */,
 				B257469A1E2781A3003A07A4 /* CodeClimate.swift */,
 				B28FF68A1E94761A005897A9 /* Codecov.swift */,
@@ -1074,6 +1077,7 @@
 				B2841CEB20BA6207004AFDB7 /* SorryService.swift in Sources */,
 				B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */,
 				B2253A9C209F4D950039F574 /* FirebaseConsole.swift in Sources */,
+				194BC88222A8EAC10065E698 /* Clubhouse.swift in Sources */,
 				B28DFE4721377A0B000EE4AF /* Wodby.swift in Sources */,
 				B2253AA1209F4D950039F574 /* FirebaseHosting.swift in Sources */,
 				B2430807210810D0003F8D07 /* Algolia.swift in Sources */,
