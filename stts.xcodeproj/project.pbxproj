@@ -198,6 +198,7 @@
 		B2FDC91C1D67062200F0B728 /* StatusPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91B1D67062200F0B728 /* StatusPageService.swift */; };
 		B2FDC91E1D6706C400F0B728 /* CircleCI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91D1D6706C400F0B728 /* CircleCI.swift */; };
 		B2FFC1F01E261B4A00529A00 /* Dropbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */; };
+		BF7AA78122B03AE4002460FB /* Bitrise.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AA78022B03AE4002460FB /* Bitrise.swift */; };
 		C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */; };
 /* End PBXBuildFile section */
 
@@ -420,6 +421,7 @@
 		B2FDC91B1D67062200F0B728 /* StatusPageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPageService.swift; sourceTree = "<group>"; };
 		B2FDC91D1D6706C400F0B728 /* CircleCI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCI.swift; sourceTree = "<group>"; };
 		B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dropbox.swift; sourceTree = "<group>"; };
+		BF7AA78022B03AE4002460FB /* Bitrise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitrise.swift; sourceTree = "<group>"; };
 		C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeTransfer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -670,6 +672,7 @@
 				B28DFE4621377A0B000EE4AF /* Wodby.swift */,
 				B2C4670E1E70012700C5145D /* Zapier.swift */,
 				B2483CF02037029D00A9FA95 /* Zwift.swift */,
+				BF7AA78022B03AE4002460FB /* Bitrise.swift */,
 			);
 			path = StatusPage;
 			sourceTree = "<group>";
@@ -982,6 +985,7 @@
 				B2493EF91E26023600556A83 /* GoogleCloudBigtable.swift in Sources */,
 				B25EC9CC2071265500D2DD3D /* GoogleCloudPlatformAll.swift in Sources */,
 				B299C8431DD044160024D2E9 /* NewRelic.swift in Sources */,
+				BF7AA78122B03AE4002460FB /* Bitrise.swift in Sources */,
 				B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */,
 				B2A0635C1E1340B400EEA762 /* Docker.swift in Sources */,
 				B24D19F61DD072840052E539 /* Preferences.swift in Sources */,
