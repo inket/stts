@@ -600,6 +600,7 @@
 				B2BA36181ED7B0F200051083 /* AuthorizeNet.swift */,
 				2F1B7558227A095400BA5CBD /* Avalara.swift */,
 				B299C84E1DD04F8F0024D2E9 /* BitBucket.swift */,
+				BF7AA78022B03AE4002460FB /* Bitrise.swift */,
 				7BA6A0A12240D8E000700C2C /* Bolt.swift */,
 				B2F127AA1E0B84F00035B20C /* Braintree.swift */,
 				B2894CE320EEE2780009CCA3 /* Buildkite.swift */,
@@ -675,7 +676,6 @@
 				B28DFE4621377A0B000EE4AF /* Wodby.swift */,
 				B2C4670E1E70012700C5145D /* Zapier.swift */,
 				B2483CF02037029D00A9FA95 /* Zwift.swift */,
-				BF7AA78022B03AE4002460FB /* Bitrise.swift */,
 			);
 			path = StatusPage;
 			sourceTree = "<group>";
