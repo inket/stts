@@ -193,7 +193,10 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
 
         guard services.count > 0 else {
             reloadData()
-            bottomBar.status = .updated(Date())
+
+            // Avoid issues with relative time marking it as "in a few seconds"
+            let oneSecondInThePastDate = Date(timeInterval: -1, since: Date())
+            bottomBar.status = .updated(oneSecondInThePastDate)
 
             self.updateCallback?()
             self.updateCallback = nil
