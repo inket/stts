@@ -34,11 +34,18 @@ class GoogleStatusDashboardStore {
         callbacks.append(callback)
 
         guard !currentlyReloading else { return }
-        guard Date.timeIntervalSinceReferenceDate - lastUpdateTime >= 60 else { return clearCallbacks() }
+
+        // Throttling to prevent multiple requests if the first one finishes too quickly
+        guard Date.timeIntervalSinceReferenceDate - lastUpdateTime >= 3 else { return clearCallbacks() }
 
         currentlyReloading = true
 
         URLSession.sharedWithoutCaching.dataTask(with: dashboardURL) { data, _, error in
+            defer {
+                self.currentlyReloading = false
+                self.clearCallbacks()
+            }
+
             self.statuses = [:]
 
             guard let data = data else { return self._fail(error) }
@@ -49,25 +56,24 @@ class GoogleStatusDashboardStore {
                 self.statuses[name] = status
             }
 
-            self.clearCallbacks()
-
             self.lastUpdateTime = Date.timeIntervalSinceReferenceDate
-            self.currentlyReloading = false
         }.resume()
     }
 
     func status(for service: GoogleStatusDashboardStoreService) -> (ServiceStatus, String) {
-        let generalStatus = type(of: service) == defaultType ? statuses["_general"] : nil
+        let status: ServiceStatus?
 
-        guard let status = generalStatus ?? statuses[service.dashboardName] else {
-            return (.undetermined, loadErrorMessage ?? "Unexpected error")
+        if type(of: service) == defaultType {
+            status = statuses["_general"]
+        } else {
+            status = statuses[service.dashboardName]
         }
 
         switch status {
-        case .good: return (status, "Normal Operations")
-        case .minor: return (status, "Service Disruption")
-        case .major: return (status, "Service Outage")
-        default: return (status, "Unexpected error")
+        case .good?: return (.good, "Normal Operations")
+        case .minor?: return (.minor, "Service Disruption")
+        case .major?: return (.major, "Service Outage")
+        default: return (.undetermined, loadErrorMessage ?? "Unexpected error")
         }
     }
 
@@ -81,13 +87,17 @@ class GoogleStatusDashboardStore {
     private func updateGeneralStatus() {
         let generalStatus: ServiceStatus
 
-        let badServices = statuses.values.filter { ($0 != .good) && ($0 != .undetermined) }
-        if badServices.count > 2 {
-            generalStatus = .major
-        } else if badServices.count > 0 {
-            generalStatus = .minor
+        if statuses.keys.filter({ $0 != "_general" }).isEmpty {
+            generalStatus = .undetermined
         } else {
-            generalStatus = .good
+            let badServices = statuses.values.filter { ($0 != .good) && ($0 != .undetermined) }
+            if badServices.count > 2 {
+                generalStatus = .major
+            } else if badServices.count > 0 {
+                generalStatus = .minor
+            } else {
+                generalStatus = .good
+            }
         }
 
         statuses["_general"] = generalStatus
@@ -111,10 +121,11 @@ class GoogleStatusDashboardStore {
     }
 
     private func _fail(_ error: Error?) {
-        loadErrorMessage = error?.localizedDescription ?? "Unexpected error"
+        _fail(ServiceStatusMessage.from(error))
     }
 
     private func _fail(_ message: String) {
         loadErrorMessage = message
+        lastUpdateTime = 0
     }
 }
