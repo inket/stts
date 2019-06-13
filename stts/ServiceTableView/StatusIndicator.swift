@@ -11,8 +11,8 @@ class StatusIndicator: NSView {
 
     var status: ServiceStatus = .good {
         didSet {
-            checkmarkIcon.isHidden = status > .maintenance
-            crossIcon.isHidden = status <= .maintenance
+            checkmarkIcon.isHidden = status > .maintenance || status == .undetermined
+            crossIcon.isHidden = status <= .maintenance && status != .undetermined
 
             switch status {
             case .good: checkmarkIcon.color = StatusColor.green
