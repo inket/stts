@@ -44,7 +44,7 @@ class BaseSorryService: BaseService {
 
         let statusURL = URL(string: "https://api.sorryapp.com/v1/pages/\(realSelf.pageID)/components")!
 
-        URLSession.shared.dataTask(with: statusURL) { [weak self] data, _, error in
+        URLSession.sharedWithoutCaching.dataTask(with: statusURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }

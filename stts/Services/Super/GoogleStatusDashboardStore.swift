@@ -38,7 +38,7 @@ class GoogleStatusDashboardStore {
 
         currentlyReloading = true
 
-        URLSession.shared.dataTask(with: dashboardURL) { data, _, error in
+        URLSession.sharedWithoutCaching.dataTask(with: dashboardURL) { data, _, error in
             self.statuses = [:]
 
             guard let data = data else { return self._fail(error) }

@@ -18,6 +18,16 @@ public enum ServiceStatus: Int, Comparable {
     }
 }
 
+public enum ServiceStatusMessage {
+    static func from(_ error: Error?) -> String {
+        if (error as NSError?)?.code == NSURLErrorNotConnectedToInternet {
+            return "Internet connection offline."
+        } else {
+            return error?.localizedDescription ?? "Unexpected error"
+        }
+    }
+}
+
 protocol ComparableStatus: Comparable {
     var serviceStatus: ServiceStatus { get }
 }
@@ -72,7 +82,7 @@ public class BaseService {
 
     func _fail(_ error: Error?) {
         self.status = .undetermined
-        self.message = error?.localizedDescription ?? "Unexpected error"
+        self.message = ServiceStatusMessage.from(error)
     }
 
     func _fail(_ message: String) {

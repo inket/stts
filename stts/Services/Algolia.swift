@@ -43,7 +43,7 @@ class Algolia: Service {
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         let apiURL = URL(string: "https://status.algolia.com/2/status/service/all/period/current")!
 
-        URLSession.shared.dataTask(with: apiURL) { [weak self] data, _, error in
+        URLSession.sharedWithoutCaching.dataTask(with: apiURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }

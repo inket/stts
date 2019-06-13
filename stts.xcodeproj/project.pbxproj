@@ -131,6 +131,7 @@
 		B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */; };
 		B2C548E122B27AF200D1D7EF /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C548E022B27AF200D1D7EF /* Reachability.framework */; };
 		B2C548E222B27B0D00D1D7EF /* Reachability.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2C548E022B27AF200D1D7EF /* Reachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B2C548E422B28B3F00D1D7EF /* URLSessionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C548E322B28B3F00D1D7EF /* URLSessionExtensions.swift */; };
 		B2CB0F9B2047A60000873C14 /* Vimeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB0F9A2047A60000873C14 /* Vimeo.swift */; };
 		B2CBE08F21B95A7B00F5B28F /* GitLab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBE08E21B95A7B00F5B28F /* GitLab.swift */; };
 		B2CE72D6228587E000847E00 /* Acquia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE72D5228587E000847E00 /* Acquia.swift */; };
@@ -318,6 +319,7 @@
 		B2C4670E1E70012700C5145D /* Zapier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zapier.swift; sourceTree = "<group>"; };
 		B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		B2C548E022B27AF200D1D7EF /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/Mac/Reachability.framework; sourceTree = SOURCE_ROOT; };
+		B2C548E322B28B3F00D1D7EF /* URLSessionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtensions.swift; sourceTree = "<group>"; };
 		B2CB0F9A2047A60000873C14 /* Vimeo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vimeo.swift; sourceTree = "<group>"; };
 		B2CBE08E21B95A7B00F5B28F /* GitLab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitLab.swift; sourceTree = "<group>"; };
 		B2CE72D5228587E000847E00 /* Acquia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acquia.swift; sourceTree = "<group>"; };
@@ -630,6 +632,7 @@
 			isa = PBXGroup;
 			children = (
 				B2DCE6942215ACDE001447D8 /* StringExtensions.swift */,
+				B2C548E322B28B3F00D1D7EF /* URLSessionExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -952,6 +955,7 @@
 				B2E70FD822B069BA000BCAD2 /* GoogleCloudPlatformServices.swift in Sources */,
 				B2BA36191ED7B0F200051083 /* AuthorizeNet.swift in Sources */,
 				B25695591E247C8C00FAE413 /* Atlassian.swift in Sources */,
+				B2C548E422B28B3F00D1D7EF /* URLSessionExtensions.swift in Sources */,
 				B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */,
 				B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */,
 				B2A0635E1E1341C900EEA762 /* StatusioV1Service.swift in Sources */,

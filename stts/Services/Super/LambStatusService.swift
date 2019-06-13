@@ -43,7 +43,7 @@ class BaseLambStatusService: BaseService {
 
         let apiComponentsURL = realSelf.url.appendingPathComponent("api").appendingPathComponent("components")
 
-        URLSession.shared.dataTask(with: apiComponentsURL) { [weak self] data, _, error in
+        URLSession.sharedWithoutCaching.dataTask(with: apiComponentsURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }

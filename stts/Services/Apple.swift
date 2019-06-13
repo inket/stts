@@ -11,7 +11,7 @@ class Apple: Service {
     private(set) var dataURL = URL(string: "https://www.apple.com/support/systemstatus/data/system_status_en_US.js")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        URLSession.shared.dataTask(with: dataURL) { [weak self] data, _, error in
+        URLSession.sharedWithoutCaching.dataTask(with: dataURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
 

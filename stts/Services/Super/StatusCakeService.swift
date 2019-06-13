@@ -35,7 +35,7 @@ class BaseStatusCakeService: BaseService {
 
         let statusURL = URL(string: "https://app.statuscake.com/Workfloor/PublicReportHandler.php?PublicID=\(realSelf.publicID)")!
 
-        URLSession.shared.dataTask(with: statusURL) { [weak self] data, _, error in
+        URLSession.sharedWithoutCaching.dataTask(with: statusURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }

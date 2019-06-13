@@ -29,7 +29,7 @@ class BaseExanaService: BaseService {
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         guard let realSelf = self as? ExanaService else { fatalError("BaseExanaService should not be used directly.") }
 
-        URLSession.shared.dataTask(with: realSelf.url) { [weak self] data, _, error in
+        URLSession.sharedWithoutCaching.dataTask(with: realSelf.url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
 
             guard let data = data else { return strongSelf._fail(error) }
@@ -63,7 +63,7 @@ class BaseExanaService: BaseService {
         request.httpMethod = "POST"
         request.httpBody = jsonData
 
-        URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
+        URLSession.sharedWithoutCaching.dataTask(with: request) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }

@@ -32,7 +32,7 @@ class Slack: Service {
     let url = URL(string: "https://status.slack.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+        URLSession.sharedWithoutCaching.dataTask(with: url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
 
