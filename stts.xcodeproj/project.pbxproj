@@ -129,6 +129,8 @@
 		B2C337A51E1417390007E110 /* Mixpanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C337A41E1417390007E110 /* Mixpanel.swift */; };
 		B2C4670F1E70012700C5145D /* Zapier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4670E1E70012700C5145D /* Zapier.swift */; };
 		B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */; };
+		B2C548E122B27AF200D1D7EF /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C548E022B27AF200D1D7EF /* Reachability.framework */; };
+		B2C548E222B27B0D00D1D7EF /* Reachability.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2C548E022B27AF200D1D7EF /* Reachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2CB0F9B2047A60000873C14 /* Vimeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB0F9A2047A60000873C14 /* Vimeo.swift */; };
 		B2CBE08F21B95A7B00F5B28F /* GitLab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBE08E21B95A7B00F5B28F /* GitLab.swift */; };
 		B2CE72D6228587E000847E00 /* Acquia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE72D5228587E000847E00 /* Acquia.swift */; };
@@ -181,6 +183,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B2C548E222B27B0D00D1D7EF /* Reachability.framework in CopyFiles */,
 				B26CD1EA1DD59FE60054A385 /* Kanna.framework in CopyFiles */,
 				B2CEB9A21DFD8987005FB901 /* StartAtLogin.framework in CopyFiles */,
 				B276C8F71DD4742D0098B451 /* MBPopup.framework in CopyFiles */,
@@ -314,6 +317,7 @@
 		B2C337A41E1417390007E110 /* Mixpanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mixpanel.swift; sourceTree = "<group>"; };
 		B2C4670E1E70012700C5145D /* Zapier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zapier.swift; sourceTree = "<group>"; };
 		B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		B2C548E022B27AF200D1D7EF /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/Mac/Reachability.framework; sourceTree = SOURCE_ROOT; };
 		B2CB0F9A2047A60000873C14 /* Vimeo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vimeo.swift; sourceTree = "<group>"; };
 		B2CBE08E21B95A7B00F5B28F /* GitLab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitLab.swift; sourceTree = "<group>"; };
 		B2CE72D5228587E000847E00 /* Acquia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acquia.swift; sourceTree = "<group>"; };
@@ -363,6 +367,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2C548E122B27AF200D1D7EF /* Reachability.framework in Frameworks */,
 				B26CD1E81DD59FDD0054A385 /* Kanna.framework in Frameworks */,
 				B276C8F41DD474200098B451 /* MBPopup.framework in Frameworks */,
 				B23533DF2285B48F00DEDC36 /* DateHelper.framework in Frameworks */,
@@ -455,6 +460,7 @@
 		B276C8E81DD473B50098B451 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2C548E022B27AF200D1D7EF /* Reachability.framework */,
 				B23533DE2285B48E00DEDC36 /* DateHelper.framework */,
 				B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */,
 				B26CD1E71DD59FDD0054A385 /* Kanna.framework */,

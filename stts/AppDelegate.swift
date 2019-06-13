@@ -5,10 +5,13 @@
 
 import Cocoa
 import MBPopup
+import Reachability
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     var timer: Timer?
+
+    let reachability = Reachability()! // swiftlint:disable:this force_unwrapping
 
     let popupController: MBPopupController
     let serviceTableViewController = ServiceTableViewController()
@@ -26,6 +29,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             name: NSWorkspace.didWakeNotification,
             object: nil
         )
+
+        reachability.whenReachable = { _ in
+            self.updateServices()
+        }
+
+        try? reachability.startNotifier()
 
         if #available(OSX 10.14, *) {
             Appearance.addObserver(self)
