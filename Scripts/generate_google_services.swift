@@ -104,7 +104,7 @@ extension String {
 
 func envVariable(forKey key: String) -> String {
     guard let variable = ProcessInfo.processInfo.environment[key] else {
-        print("Environment variable '\(key)' not set")
+        print("error: Environment variable '\(key)' not set")
         exit(1)
     }
 
@@ -125,8 +125,8 @@ func discoverServices(for platform: GooglePlatform) -> [Service] {
     _ = semaphore.wait(timeout: .now() + .seconds(10))
 
     guard let data = dataResult, var body = String(data: data, encoding: .utf8) else {
-        print("Could not retrieve list of Google Cloud Platform/Firebase services")
-        exit(1)
+        print("warning: Build script generate_google_services could not retrieve list of Google Cloud Platform/Firebase services")
+        exit(0)
     }
 
     body = body.replacingOccurrences(of: "\n", with: "")
