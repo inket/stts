@@ -30,9 +30,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             object: nil
         )
 
-        reachability.whenReachable = { _ in
-            self.updateServices()
-        }
+        reachability.whenReachable = { _ in self.updateServices() }
+        reachability.whenUnreachable = { _ in self.updateServices() }
 
         try? reachability.startNotifier()
 
