@@ -61,12 +61,12 @@ class StatusTableCell: NSTableCellView {
             statusIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
 
             textField.heightAnchor.constraint(equalToConstant: 18),
-            textField.leadingAnchor.constraint(equalTo: statusIndicator.trailingAnchor, constant: 4),
+            textField.leadingAnchor.constraint(equalTo: statusIndicator.trailingAnchor, constant: 8),
             textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             textField.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -8),
 
             statusField.heightAnchor.constraint(equalToConstant: 18),
-            statusField.leadingAnchor.constraint(equalTo: statusIndicator.trailingAnchor, constant: 4),
+            statusField.leadingAnchor.constraint(equalTo: statusIndicator.trailingAnchor, constant: 8),
             statusField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             statusField.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 10)
         ])
