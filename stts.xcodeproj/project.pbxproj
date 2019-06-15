@@ -85,6 +85,9 @@
 		B271688A2291AEEE001E608C /* Asana.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27168892291AEEE001E608C /* Asana.swift */; };
 		B276C8F41DD474200098B451 /* MBPopup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B276C8F11DD474200098B451 /* MBPopup.framework */; };
 		B276C8F71DD4742D0098B451 /* MBPopup.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B276C8F11DD474200098B451 /* MBPopup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B277BC9222B4BB5C000B55C3 /* AzureDevOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9122B4BB5C000B55C3 /* AzureDevOps.swift */; };
+		B277BC9422B4BB6D000B55C3 /* AzureDevOpsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9322B4BB6D000B55C3 /* AzureDevOpsStore.swift */; };
+		B277BC9822B4C16A000B55C3 /* AzureDevOpsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9722B4C16A000B55C3 /* AzureDevOpsServices.swift */; };
 		B2841CEB20BA6207004AFDB7 /* SorryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2841CEA20BA6207004AFDB7 /* SorryService.swift */; };
 		B2894CE420EEE2780009CCA3 /* Buildkite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2894CE320EEE2780009CCA3 /* Buildkite.swift */; };
 		B2898FD01DC7441D0005F58F /* StatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2898FCF1DC7441D0005F58F /* StatusIndicator.swift */; };
@@ -275,6 +278,10 @@
 		B27090F0209F52EB0094C3D7 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 		B27168892291AEEE001E608C /* Asana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asana.swift; sourceTree = "<group>"; };
 		B276C8F11DD474200098B451 /* MBPopup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBPopup.framework; path = Carthage/Build/Mac/MBPopup.framework; sourceTree = SOURCE_ROOT; };
+		B277BC9122B4BB5C000B55C3 /* AzureDevOps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureDevOps.swift; sourceTree = "<group>"; };
+		B277BC9322B4BB6D000B55C3 /* AzureDevOpsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureDevOpsStore.swift; sourceTree = "<group>"; };
+		B277BC9522B4BC6C000B55C3 /* generate_azure_devops_services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generate_azure_devops_services.swift; sourceTree = "<group>"; };
+		B277BC9722B4C16A000B55C3 /* AzureDevOpsServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureDevOpsServices.swift; sourceTree = "<group>"; };
 		B2841CEA20BA6207004AFDB7 /* SorryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorryService.swift; sourceTree = "<group>"; };
 		B2894CE320EEE2780009CCA3 /* Buildkite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildkite.swift; sourceTree = "<group>"; };
 		B2898FCF1DC7441D0005F58F /* StatusIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusIndicator.swift; sourceTree = "<group>"; };
@@ -647,6 +654,7 @@
 		B2E70FD222B0650A000BCAD2 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				B277BC9522B4BC6C000B55C3 /* generate_azure_devops_services.swift */,
 				B2CEE5DC22B4A9900073C743 /* generate_azure_services.swift */,
 				B2E70FD622B066EC000BCAD2 /* generate_google_services.swift */,
 				B2E70FD322B0657F000BCAD2 /* generate_services_plist.sh */,
@@ -657,6 +665,7 @@
 		B2E70FDF22B0844F000BCAD2 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				B277BC9722B4C16A000B55C3 /* AzureDevOpsServices.swift */,
 				B2CEE5DA22B4A97B0073C743 /* AzureServices.swift */,
 				B2E70FDC22B07FB0000BCAD2 /* FirebaseServices.swift */,
 				B2E70FD722B069BA000BCAD2 /* GoogleCloudPlatformServices.swift */,
@@ -699,6 +708,8 @@
 			isa = PBXGroup;
 			children = (
 				B2CEE5D622B49CB50073C743 /* Azure.swift */,
+				B277BC9122B4BB5C000B55C3 /* AzureDevOps.swift */,
+				B277BC9322B4BB6D000B55C3 /* AzureDevOpsStore.swift */,
 				B2CEE5D822B49CC80073C743 /* AzureStore.swift */,
 				B2BB19B920B8FEFD00A97A87 /* CachetService.swift */,
 				B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */,
@@ -977,6 +988,7 @@
 				B2D2B6CF20870E700011723B /* StatusPage.swift in Sources */,
 				B28FF68B1E94761A005897A9 /* Codecov.swift in Sources */,
 				B256955A1E247C8C00FAE413 /* Cloudinary.swift in Sources */,
+				B277BC9822B4C16A000B55C3 /* AzureDevOpsServices.swift in Sources */,
 				B2DCE6902215992E001447D8 /* Apple.swift in Sources */,
 				B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */,
 				B28E9FC01ED26A40006B89F1 /* Lob.swift in Sources */,
@@ -1019,6 +1031,7 @@
 				B299C8451DD046F20024D2E9 /* AmazonWebServices.swift in Sources */,
 				B256955B1E247C8C00FAE413 /* HipChat.swift in Sources */,
 				B299C8551DD051210024D2E9 /* EngineYard.swift in Sources */,
+				B277BC9222B4BB5C000B55C3 /* AzureDevOps.swift in Sources */,
 				B2C10F3C203646A7008E1E7D /* Gandi.swift in Sources */,
 				B21308561E55594E009FCF02 /* Quandl.swift in Sources */,
 				B22600311E1562E700EBDD40 /* MediaTemple.swift in Sources */,
@@ -1047,6 +1060,7 @@
 				B20699D2214E504F008670B0 /* Robinhood.swift in Sources */,
 				B22527F51E5BD0C70098E73D /* Contentful.swift in Sources */,
 				B24F91231E8B51A400A77460 /* Auth0.swift in Sources */,
+				B277BC9422B4BB6D000B55C3 /* AzureDevOpsStore.swift in Sources */,
 				B230CE7D21B95B5D00E2005D /* Wasabi.swift in Sources */,
 				2F65F490227A198400432E64 /* Recurly.swift in Sources */,
 				B2F34041222630F20055C96F /* CloudApp.swift in Sources */,
