@@ -17,17 +17,12 @@ class AzureAsiaPacific: Azure {
     let zoneIdentifier = "asia"
 }
 
-class AzureAfrica: Azure {
-    let name = "Azure Africa"
-    let zoneIdentifier = "africa"
+class AzureMiddleEastAndAfrica: Azure {
+    let name = "Azure Middle East and Africa"
+    let zoneIdentifier = "middle-east-africa"
 }
 
 class AzureGovernment: Azure {
     let name = "Azure Government"
     let zoneIdentifier = "azure-government"
-}
-
-class AzureMiddleEastAndAfrica: Azure {
-    let name = "Azure Middle East and Africa"
-    let zoneIdentifier = "middle-east-africa"
 }

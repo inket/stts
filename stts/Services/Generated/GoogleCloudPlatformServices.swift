@@ -117,6 +117,11 @@ class GoogleCloudTasks: GoogleCloudPlatform {
     let dashboardName = "Google Cloud Tasks"
 }
 
+class GoogleCloudEndpoints: GoogleCloudPlatform {
+    let name = "Google Cloud Endpoints"
+    let dashboardName = "Cloud Endpoints"
+}
+
 class GoogleCloudDataflow: GoogleCloudPlatform {
     let name = "Google Cloud Dataflow"
     let dashboardName = "Google Cloud Dataflow"
