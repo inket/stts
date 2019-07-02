@@ -11,7 +11,7 @@ class Heroku: Service {
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         let statusURL = URL(string: "https://status.heroku.com/api/v3/current-status")!
 
-        URLSession.sharedWithoutCaching.dataTask(with: statusURL) { [weak self] data, _, error in
+        loadData(with: statusURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }
@@ -52,6 +52,6 @@ class Heroku: Service {
             }
 
             self?.message = title ?? statusText ?? ""
-        }.resume()
+        }
     }
 }

@@ -9,7 +9,7 @@ class ScaleGrid: Service {
     let url = URL(string: "https://scalegrid.io/status.html")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        URLSession.sharedWithoutCaching.dataTask(with: url) { [weak self] data, _, error in
+        loadData(with: url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
 
@@ -22,7 +22,7 @@ class ScaleGrid: Service {
             let (status, message) = ScaleGrid.status(fromLabel: label)
             strongSelf.status = status
             strongSelf.message = message
-        }.resume()
+        }
     }
 }
 

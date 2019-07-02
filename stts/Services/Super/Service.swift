@@ -50,7 +50,7 @@ extension RequiredServiceProperties {
     var name: String { return "\(type(of: self))" }
 }
 
-public class BaseService {
+public class BaseService: Loading {
     public var status: ServiceStatus = .undetermined {
         didSet {
             if oldValue == .undetermined || status == .undetermined || oldValue == status {

@@ -47,7 +47,7 @@ class BaseCachetService: BaseService {
 
         let apiComponentsURL = realSelf.url.appendingPathComponent("api/v1/components")
 
-        URLSession.sharedWithoutCaching.dataTask(with: apiComponentsURL) { [weak self] data, _, error in
+        loadData(with: apiComponentsURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }
@@ -64,6 +64,6 @@ class BaseCachetService: BaseService {
             let highestStatus = statuses.max()
             strongSelf.status = highestStatus?.serviceStatus ?? .undetermined
             strongSelf.message = highestStatus?.description ?? "Undetermined"
-        }.resume()
+        }
     }
 }

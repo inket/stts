@@ -53,7 +53,7 @@ private struct AzureDevOpsDataProviders: Codable {
     let data: ResponseData
 }
 
-class AzureDevOpsStore {
+class AzureDevOpsStore: Loading {
     private var url = URL(string: "https://status.dev.azure.com")!
     private var statuses: [String: ServiceStatus] = [:]
     private var loadErrorMessage: String?
@@ -71,7 +71,7 @@ class AzureDevOpsStore {
 
         currentlyReloading = true
 
-        URLSession.sharedWithoutCaching.dataTask(with: url) { data, _, error in
+        loadData(with: url) { data, _, error in
             defer {
                 self.currentlyReloading = false
                 self.clearCallbacks()
@@ -95,7 +95,7 @@ class AzureDevOpsStore {
             }
 
             self.lastUpdateTime = Date.timeIntervalSinceReferenceDate
-        }.resume()
+        }
     }
 
     func status(for service: AzureDevOpsStoreService) -> (ServiceStatus, String) {

@@ -16,7 +16,7 @@ extension GoogleStatusDashboardStoreService {
     }
 }
 
-class GoogleStatusDashboardStore {
+class GoogleStatusDashboardStore: Loading {
     private var dashboardURL: URL
     private var defaultType: GoogleStatusDashboardStoreService.Type
     private var statuses: [String: ServiceStatus] = [:]
@@ -40,7 +40,7 @@ class GoogleStatusDashboardStore {
 
         currentlyReloading = true
 
-        URLSession.sharedWithoutCaching.dataTask(with: dashboardURL) { data, _, error in
+        loadData(with: dashboardURL) { data, _, error in
             defer {
                 self.currentlyReloading = false
                 self.clearCallbacks()
@@ -57,7 +57,7 @@ class GoogleStatusDashboardStore {
             }
 
             self.lastUpdateTime = Date.timeIntervalSinceReferenceDate
-        }.resume()
+        }
     }
 
     func status(for service: GoogleStatusDashboardStoreService) -> (ServiceStatus, String) {

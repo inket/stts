@@ -46,7 +46,7 @@ class Gandi: Service {
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         let statusURL = URL(string: "https://status.gandi.net/api/status")!
 
-        URLSession.sharedWithoutCaching.dataTask(with: statusURL) { [weak self] data, _, error in
+        loadData(with: statusURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }
@@ -64,6 +64,6 @@ class Gandi: Service {
 
             self?.status = status.serviceStatus
             self?.message = status.statusMessage
-        }.resume()
+        }
     }
 }

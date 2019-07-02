@@ -12,7 +12,7 @@ class AmazonWebServices: Service {
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         let dataURL = URL(string: "https://status.aws.amazon.com/data.json")!
 
-        URLSession.sharedWithoutCaching.dataTask(with: dataURL) { [weak self] data, _, error in
+        loadData(with: dataURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }
@@ -26,7 +26,7 @@ class AmazonWebServices: Service {
 
             self?.status = strongSelf.status(for: currentIssues)
             self?.message = strongSelf.message(for: currentIssues)
-        }.resume()
+        }
     }
 }
 

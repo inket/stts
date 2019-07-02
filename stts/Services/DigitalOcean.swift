@@ -9,7 +9,7 @@ class DigitalOcean: Service {
     let url = URL(string: "https://status.digitalocean.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        URLSession.sharedWithoutCaching.dataTask(with: url) { [weak self] data, _, error in
+        loadData(with: url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
 
@@ -18,7 +18,7 @@ class DigitalOcean: Service {
 
             self?.status = strongSelf.status(from: doc)
             self?.message = strongSelf.message(from: doc)
-        }.resume()
+        }
     }
 }
 

@@ -79,7 +79,7 @@ class BasePayPal: BaseService {
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         let apiURL = URL(string: "https://www.paypal-status.com/api/v1/components")!
 
-        URLSession.sharedWithoutCaching.dataTask(with: apiURL) { [weak self] data, _, error in
+        loadData(with: apiURL) { [weak self] data, _, error in
             guard let strongSelf = self as? PayPal else { fatalError("BasePayPal should not be used directly.") }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }
@@ -98,7 +98,7 @@ class BasePayPal: BaseService {
 
             self?.status = highestStatus.serviceStatus
             self?.message = highestStatus.statusMessage
-        }.resume()
+        }
     }
 
     private func status(fromResultItem resultItem: [String: Any], component: PayPalComponent) -> PayPalStatus? {

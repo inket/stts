@@ -46,7 +46,7 @@ class BaseStatusPageService: BaseService {
 
         let statusURL = URL(string: "https://\(realSelf.statusPageID).\(realSelf.domain)/api/v2/status.json")!
 
-        URLSession.sharedWithoutCaching.dataTask(with: statusURL) { [weak self] data, _, error in
+        loadData(with: statusURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }
@@ -61,6 +61,6 @@ class BaseStatusPageService: BaseService {
 
             self?.status = status.serviceStatus
             self?.message = dict["description"] ?? ""
-        }.resume()
+        }
     }
 }

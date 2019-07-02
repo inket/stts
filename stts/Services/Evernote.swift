@@ -9,7 +9,7 @@ class Evernote: Service {
     let url = URL(string: "http://status.evernote.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        URLSession.sharedWithoutCaching.dataTask(with: url) { [weak self] data, _, error in
+        loadData(with: url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
 
@@ -19,7 +19,7 @@ class Evernote: Service {
             let (status, message) = strongSelf.status(from: doc)
             self?.status = status
             self?.message = message
-        }.resume()
+        }
     }
 }
 

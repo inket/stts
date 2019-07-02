@@ -9,7 +9,7 @@ class Beanstalk: Service {
     let url = URL(string: "http://status.beanstalkapp.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        URLSession.sharedWithoutCaching.dataTask(with: url) { [weak self] data, _, error in
+        loadData(with: url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
 
@@ -18,7 +18,7 @@ class Beanstalk: Service {
 
             self?.status = strongSelf.status(from: doc)
             self?.message = strongSelf.message(for: strongSelf.status)
-        }.resume()
+        }
     }
 }
 

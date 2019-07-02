@@ -29,7 +29,7 @@ class BaseExanaService: BaseService {
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         guard let realSelf = self as? ExanaService else { fatalError("BaseExanaService should not be used directly.") }
 
-        URLSession.sharedWithoutCaching.dataTask(with: realSelf.url) { [weak self] data, _, error in
+        loadData(with: realSelf.url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
 
             guard let data = data else { return strongSelf._fail(error) }
@@ -38,7 +38,7 @@ class BaseExanaService: BaseService {
             guard let jwt = doc.css("meta[name=jwt]").first?["content"] else { return strongSelf._fail("Couldn't get authorization") }
 
             strongSelf.getStatus(authorization: jwt, callback: callback)
-        }.resume()
+        }
     }
 
     func getStatus(authorization: String, callback: @escaping (BaseExanaService) -> Void) {
@@ -63,7 +63,7 @@ class BaseExanaService: BaseService {
         request.httpMethod = "POST"
         request.httpBody = jsonData
 
-        URLSession.sharedWithoutCaching.dataTask(with: request) { [weak self] data, _, error in
+        loadData(with: request) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }
@@ -96,6 +96,6 @@ class BaseExanaService: BaseService {
             default:
                 strongSelf.message = downComponents.map { $0["name"] as? String }.compactMap { $0 }.joined(separator: ", ")
             }
-        }.resume()
+        }
     }
 }

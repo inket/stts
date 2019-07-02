@@ -64,6 +64,8 @@
 		B24D19F61DD072840052E539 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D19F51DD072840052E539 /* Preferences.swift */; };
 		B24F91231E8B51A400A77460 /* Auth0.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24F91221E8B51A400A77460 /* Auth0.swift */; };
 		B254642321EE9AF6003068A4 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254642221EE9AF6003068A4 /* GitHub.swift */; };
+		B2563BBC22CBC3D500532C39 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBB22CBC3D500532C39 /* DataLoader.swift */; };
+		B2563BBE22CBC65A00532C39 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBD22CBC65A00532C39 /* URLSessionMock.swift */; };
 		B25695591E247C8C00FAE413 /* Atlassian.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695501E247C8C00FAE413 /* Atlassian.swift */; };
 		B256955A1E247C8C00FAE413 /* Cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695511E247C8C00FAE413 /* Cloudinary.swift */; };
 		B256955B1E247C8C00FAE413 /* HipChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695521E247C8C00FAE413 /* HipChat.swift */; };
@@ -134,7 +136,6 @@
 		B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */; };
 		B2C548E122B27AF200D1D7EF /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C548E022B27AF200D1D7EF /* Reachability.framework */; };
 		B2C548E222B27B0D00D1D7EF /* Reachability.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2C548E022B27AF200D1D7EF /* Reachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B2C548E422B28B3F00D1D7EF /* URLSessionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C548E322B28B3F00D1D7EF /* URLSessionExtensions.swift */; };
 		B2CB0F9B2047A60000873C14 /* Vimeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB0F9A2047A60000873C14 /* Vimeo.swift */; };
 		B2CBE08F21B95A7B00F5B28F /* GitLab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBE08E21B95A7B00F5B28F /* GitLab.swift */; };
 		B2CE72D6228587E000847E00 /* Acquia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE72D5228587E000847E00 /* Acquia.swift */; };
@@ -259,6 +260,8 @@
 		B24D19F51DD072840052E539 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		B24F91221E8B51A400A77460 /* Auth0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth0.swift; sourceTree = "<group>"; };
 		B254642221EE9AF6003068A4 /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
+		B2563BBB22CBC3D500532C39 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		B2563BBD22CBC65A00532C39 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		B25695501E247C8C00FAE413 /* Atlassian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atlassian.swift; sourceTree = "<group>"; };
 		B25695511E247C8C00FAE413 /* Cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloudinary.swift; sourceTree = "<group>"; };
 		B25695521E247C8C00FAE413 /* HipChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChat.swift; sourceTree = "<group>"; };
@@ -329,7 +332,6 @@
 		B2C4670E1E70012700C5145D /* Zapier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zapier.swift; sourceTree = "<group>"; };
 		B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		B2C548E022B27AF200D1D7EF /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/Mac/Reachability.framework; sourceTree = SOURCE_ROOT; };
-		B2C548E322B28B3F00D1D7EF /* URLSessionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtensions.swift; sourceTree = "<group>"; };
 		B2CB0F9A2047A60000873C14 /* Vimeo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vimeo.swift; sourceTree = "<group>"; };
 		B2CBE08E21B95A7B00F5B28F /* GitLab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitLab.swift; sourceTree = "<group>"; };
 		B2CE72D5228587E000847E00 /* Acquia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acquia.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 			children = (
 				B2163AF920BA4E7500B14A85 /* Info.plist */,
 				B2163AF720BA4E7500B14A85 /* sttsTests.swift */,
+				B2563BC122CBC92400532C39 /* Mocks */,
 			);
 			path = sttsTests;
 			sourceTree = "<group>";
@@ -447,6 +450,14 @@
 				B2E70FDA22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift */,
 			);
 			path = "Google Cloud Platform";
+			sourceTree = "<group>";
+		};
+		B2563BC122CBC92400532C39 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B2563BBD22CBC65A00532C39 /* URLSessionMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		B26CB5711E13448900116A33 /* Status.ioV1 */ = {
@@ -620,6 +631,7 @@
 				B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */,
 				B24D19F51DD072840052E539 /* Preferences.swift */,
 				B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */,
+				B2563BBB22CBC3D500532C39 /* DataLoader.swift */,
 				B2CF3FBF1DF7DD2100B66491 /* stts.entitlements */,
 			);
 			path = stts;
@@ -646,7 +658,6 @@
 			isa = PBXGroup;
 			children = (
 				B2DCE6942215ACDE001447D8 /* StringExtensions.swift */,
-				B2C548E322B28B3F00D1D7EF /* URLSessionExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -917,6 +928,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2563BBE22CBC65A00532C39 /* URLSessionMock.swift in Sources */,
 				B2163AF820BA4E7500B14A85 /* sttsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -980,7 +992,6 @@
 				B2E70FD822B069BA000BCAD2 /* GoogleCloudPlatformServices.swift in Sources */,
 				B2BA36191ED7B0F200051083 /* AuthorizeNet.swift in Sources */,
 				B25695591E247C8C00FAE413 /* Atlassian.swift in Sources */,
-				B2C548E422B28B3F00D1D7EF /* URLSessionExtensions.swift in Sources */,
 				B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */,
 				B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */,
 				B2A0635E1E1341C900EEA762 /* StatusioV1Service.swift in Sources */,
@@ -1029,6 +1040,7 @@
 				B22FDE4F2108A5B700359EC9 /* PayPalProductSandbox.swift in Sources */,
 				B2F35F261E5D181300E3A00E /* Quay.swift in Sources */,
 				B299C8451DD046F20024D2E9 /* AmazonWebServices.swift in Sources */,
+				B2563BBC22CBC3D500532C39 /* DataLoader.swift in Sources */,
 				B256955B1E247C8C00FAE413 /* HipChat.swift in Sources */,
 				B299C8551DD051210024D2E9 /* EngineYard.swift in Sources */,
 				B277BC9222B4BB5C000B55C3 /* AzureDevOps.swift in Sources */,

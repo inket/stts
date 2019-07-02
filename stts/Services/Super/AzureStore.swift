@@ -10,7 +10,7 @@ protocol AzureStoreService {
     var zoneIdentifier: String { get }
 }
 
-class AzureStore {
+class AzureStore: Loading {
     private var url = URL(string: "https://status.azure.com/en-us/status")!
     private var statuses: [String: ServiceStatus] = [:]
     private var loadErrorMessage: String?
@@ -28,7 +28,7 @@ class AzureStore {
 
         currentlyReloading = true
 
-        URLSession.sharedWithoutCaching.dataTask(with: url) { data, _, error in
+        loadData(with: url) { data, _, error in
             defer {
                 self.currentlyReloading = false
                 self.clearCallbacks()
@@ -50,7 +50,7 @@ class AzureStore {
             }
 
             self.lastUpdateTime = Date.timeIntervalSinceReferenceDate
-        }.resume()
+        }
     }
 
     func status(for service: AzureStoreService) -> (ServiceStatus, String) {

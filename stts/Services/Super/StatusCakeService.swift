@@ -35,7 +35,7 @@ class BaseStatusCakeService: BaseService {
 
         let statusURL = URL(string: "https://app.statuscake.com/Workfloor/PublicReportHandler.php?PublicID=\(realSelf.publicID)")!
 
-        URLSession.sharedWithoutCaching.dataTask(with: statusURL) { [weak self] data, _, error in
+        loadData(with: statusURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }
@@ -50,6 +50,6 @@ class BaseStatusCakeService: BaseService {
             let highestStatus = statuses.max()
             self?.status = highestStatus?.serviceStatus ?? .undetermined
             self?.message = highestStatus?.description ?? "Undetermined"
-        }.resume()
+        }
     }
 }

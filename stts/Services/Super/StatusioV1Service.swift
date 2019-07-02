@@ -39,7 +39,7 @@ class BaseStatusioV1Service: BaseService {
 
         let statusURL = URL(string: "https://api.status.io/1.0/status/\(realSelf.statusPageID)")!
 
-        URLSession.sharedWithoutCaching.dataTask(with: statusURL) { [weak self] data, _, error in
+        loadData(with: statusURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }
@@ -58,6 +58,6 @@ class BaseStatusioV1Service: BaseService {
 
             self?.status = status.serviceStatus
             self?.message = statusMessage
-        }.resume()
+        }
     }
 }

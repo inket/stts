@@ -4,11 +4,13 @@
 //
 
 import XCTest
-import stts
+@testable import stts
 
 class sttsTests: XCTestCase {
     override func setUp() {
         super.setUp()
+
+        DataLoader.shared = DataLoader(session: URLSessionMock())
     }
 
     override func tearDown() {

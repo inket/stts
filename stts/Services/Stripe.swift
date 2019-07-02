@@ -9,7 +9,7 @@ class Stripe: Service {
     let url = URL(string: "https://status.stripe.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        URLSession.sharedWithoutCaching.dataTask(with: url) { [weak self] data, _, error in
+        loadData(with: url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
 
@@ -20,7 +20,7 @@ class Stripe: Service {
 
             self?.status = strongSelf.status(fromClassName: bubbleClassName)
             self?.message = doc.css(".title-wrapper .title").first?.text ?? "Undetermined"
-        }.resume()
+        }
     }
 
     private func status(fromClassName className: String) -> ServiceStatus {
