@@ -11,6 +11,7 @@
 		194BC88222A8EAC10065E698 /* Clubhouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BC88122A8EAC00065E698 /* Clubhouse.swift */; };
 		2F1B7559227A095400BA5CBD /* Avalara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B7558227A095400BA5CBD /* Avalara.swift */; };
 		2F65F490227A198400432E64 /* Recurly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F65F48F227A198400432E64 /* Recurly.swift */; };
+		36AD8ED3235A1CE500F2FD73 /* LaunchDarkly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */; };
 		7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B305FAA210237AA0086DCE0 /* Spoke.swift */; };
 		7BA6A0A22240D8E000700C2C /* Bolt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6A0A12240D8E000700C2C /* Bolt.swift */; };
 		A0C3F34B220FD630005D9998 /* Datadog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3F34A220FD630005D9998 /* Datadog.swift */; };
@@ -206,6 +207,7 @@
 		194BC88122A8EAC00065E698 /* Clubhouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clubhouse.swift; sourceTree = "<group>"; };
 		2F1B7558227A095400BA5CBD /* Avalara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avalara.swift; sourceTree = "<group>"; };
 		2F65F48F227A198400432E64 /* Recurly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recurly.swift; sourceTree = "<group>"; };
+		36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDarkly.swift; sourceTree = "<group>"; };
 		7B305FAA210237AA0086DCE0 /* Spoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spoke.swift; sourceTree = "<group>"; };
 		7BA6A0A12240D8E000700C2C /* Bolt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bolt.swift; sourceTree = "<group>"; };
 		A0C3F34A220FD630005D9998 /* Datadog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datadog.swift; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 				B20699D1214E504E008670B0 /* Robinhood.swift */,
 				B211F0B71E607C09008DD360 /* Rollbar.swift */,
 				B299C8481DD04DCB0024D2E9 /* RubyGems.swift */,
+				36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */,
 				B25695551E247C8C00FAE413 /* SauceLabs.swift */,
 				B26350FE1ED7D0210069EA73 /* Segment.swift */,
 				B25695561E247C8C00FAE413 /* SendGrid.swift */,
@@ -976,6 +979,7 @@
 				B299C84B1DD04E850024D2E9 /* Pusher.swift in Sources */,
 				B2CEE5DB22B4A97B0073C743 /* AzureServices.swift in Sources */,
 				B2163B0020BA56EF00B14A85 /* StatusCakeService.swift in Sources */,
+				36AD8ED3235A1CE500F2FD73 /* LaunchDarkly.swift in Sources */,
 				B2CEE5D922B49CC80073C743 /* AzureStore.swift in Sources */,
 				B2D032D01D6455E300D51CB8 /* TravisCI.swift in Sources */,
 				B235341F22888EFE00DEDC36 /* Sendinblue.swift in Sources */,
