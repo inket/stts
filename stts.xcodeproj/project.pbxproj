@@ -11,10 +11,10 @@
 		194BC88222A8EAC10065E698 /* Clubhouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BC88122A8EAC00065E698 /* Clubhouse.swift */; };
 		2F1B7559227A095400BA5CBD /* Avalara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B7558227A095400BA5CBD /* Avalara.swift */; };
 		2F65F490227A198400432E64 /* Recurly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F65F48F227A198400432E64 /* Recurly.swift */; };
-		36AD8ED9235A310500F2FD73 /* Mural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED8235A310500F2FD73 /* Mural.swift */; };
-		36AD8ED7235A2F9B00F2FD73 /* VictorOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */; };
-		36AD8ED5235A1FCA00F2FD73 /* Shopify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED4235A1FCA00F2FD73 /* Shopify.swift */; };
 		36AD8ED3235A1CE500F2FD73 /* LaunchDarkly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */; };
+		36AD8ED5235A1FCA00F2FD73 /* Shopify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED4235A1FCA00F2FD73 /* Shopify.swift */; };
+		36AD8ED7235A2F9B00F2FD73 /* VictorOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */; };
+		36AD8ED9235A310500F2FD73 /* Mural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED8235A310500F2FD73 /* Mural.swift */; };
 		7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B305FAA210237AA0086DCE0 /* Spoke.swift */; };
 		7BA6A0A22240D8E000700C2C /* Bolt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6A0A12240D8E000700C2C /* Bolt.swift */; };
 		A0C3F34B220FD630005D9998 /* Datadog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3F34A220FD630005D9998 /* Datadog.swift */; };
@@ -210,10 +210,10 @@
 		194BC88122A8EAC00065E698 /* Clubhouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clubhouse.swift; sourceTree = "<group>"; };
 		2F1B7558227A095400BA5CBD /* Avalara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avalara.swift; sourceTree = "<group>"; };
 		2F65F48F227A198400432E64 /* Recurly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recurly.swift; sourceTree = "<group>"; };
-		36AD8ED8235A310500F2FD73 /* Mural.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mural.swift; sourceTree = "<group>"; };
-		36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictorOps.swift; sourceTree = "<group>"; };
-		36AD8ED4235A1FCA00F2FD73 /* Shopify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopify.swift; sourceTree = "<group>"; };
 		36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDarkly.swift; sourceTree = "<group>"; };
+		36AD8ED4235A1FCA00F2FD73 /* Shopify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopify.swift; sourceTree = "<group>"; };
+		36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictorOps.swift; sourceTree = "<group>"; };
+		36AD8ED8235A310500F2FD73 /* Mural.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mural.swift; sourceTree = "<group>"; };
 		7B305FAA210237AA0086DCE0 /* Spoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spoke.swift; sourceTree = "<group>"; };
 		7BA6A0A12240D8E000700C2C /* Bolt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bolt.swift; sourceTree = "<group>"; };
 		A0C3F34A220FD630005D9998 /* Datadog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datadog.swift; sourceTree = "<group>"; };
@@ -418,9 +418,9 @@
 		B2163AF620BA4E7500B14A85 /* sttsTests */ = {
 			isa = PBXGroup;
 			children = (
+				B2563BC122CBC92400532C39 /* Mocks */,
 				B2163AF920BA4E7500B14A85 /* Info.plist */,
 				B2163AF720BA4E7500B14A85 /* sttsTests.swift */,
-				B2563BC122CBC92400532C39 /* Mocks */,
 			);
 			path = sttsTests;
 			sourceTree = "<group>";
@@ -557,12 +557,14 @@
 				B2EAD8D420B8FDB700095F5B /* JAMF.swift */,
 				B23D4E6E1E13475900B04F18 /* KeenIO.swift */,
 				B2D6FDAD21B95A0800F95940 /* LastPass.swift */,
+				36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */,
 				B28E9FBE1ED26A40006B89F1 /* Lob.swift */,
 				B26350FC1ED7CFC40069EA73 /* Loggly.swift */,
 				A133C8B620F8F3670068CFE8 /* Mailgun.swift */,
 				B28C1D431E607D8600F9D0DC /* Mapbox.swift */,
 				B22600301E1562E700EBDD40 /* MediaTemple.swift */,
 				B2C337A41E1417390007E110 /* Mixpanel.swift */,
+				36AD8ED8235A310500F2FD73 /* Mural.swift */,
 				B299C8461DD04D7C0024D2E9 /* NPM.swift */,
 				B299C8421DD044160024D2E9 /* NewRelic.swift */,
 				B22BB3A0223B341B00B43BED /* OnePassword.swift */,
@@ -579,16 +581,15 @@
 				B20699D1214E504E008670B0 /* Robinhood.swift */,
 				B211F0B71E607C09008DD360 /* Rollbar.swift */,
 				B299C8481DD04DCB0024D2E9 /* RubyGems.swift */,
-				36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */,
 				B25695551E247C8C00FAE413 /* SauceLabs.swift */,
 				B26350FE1ED7D0210069EA73 /* Segment.swift */,
 				B25695561E247C8C00FAE413 /* SendGrid.swift */,
 				B299C8521DD0505F0024D2E9 /* Sentry.swift */,
+				36AD8ED4235A1FCA00F2FD73 /* Shopify.swift */,
 				B25695571E247C8C00FAE413 /* SmartyStreets.swift */,
 				B2A93ADC1EB814C000D36DD3 /* Snyk.swift */,
 				7B305FAA210237AA0086DCE0 /* Spoke.swift */,
 				B25695581E247C8C00FAE413 /* Squarespace.swift */,
-				36AD8ED4235A1FCA00F2FD73 /* Shopify.swift */,
 				B2D2B6CE20870E700011723B /* StatusPage.swift */,
 				B27090F0209F52EB0094C3D7 /* Stream.swift */,
 				B2D032CF1D6455E300D51CB8 /* TravisCI.swift */,
@@ -603,7 +604,6 @@
 				B28DFE4621377A0B000EE4AF /* Wodby.swift */,
 				B2C4670E1E70012700C5145D /* Zapier.swift */,
 				B2483CF02037029D00A9FA95 /* Zwift.swift */,
-				36AD8ED8235A310500F2FD73 /* Mural.swift */,
 			);
 			path = StatusPage;
 			sourceTree = "<group>";
@@ -640,10 +640,10 @@
 				B2E018FC214E60E700C5F75B /* AppearanceObserver.swift */,
 				B2A4A8151DC82CE300037E99 /* BottomBar.swift */,
 				B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */,
+				B2563BBB22CBC3D500532C39 /* DataLoader.swift */,
 				B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */,
 				B24D19F51DD072840052E539 /* Preferences.swift */,
 				B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */,
-				B2563BBB22CBC3D500532C39 /* DataLoader.swift */,
 				B2CF3FBF1DF7DD2100B66491 /* stts.entitlements */,
 			);
 			path = stts;
