@@ -1,5 +1,5 @@
 github "inket/MBPopup"
 github "inket/StartAtLogin"
-github "melvitax/DateHelper"
+github "inket/DateHelper" "osxversion"
 github "tid-kijyun/Kanna"
 github "ashleymills/Reachability.swift"

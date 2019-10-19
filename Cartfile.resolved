@@ -1,5 +1,5 @@
-github "ashleymills/Reachability.swift" "v4.3.1"
+github "ashleymills/Reachability.swift" "v5.0.0"
+github "inket/DateHelper" "462f052b1a8e80fd4e6260b296e6f3fb82af3d87"
 github "inket/MBPopup" "5.0.1"
 github "inket/StartAtLogin" "v5.0.1"
-github "melvitax/DateHelper" "4.2.8"
 github "tid-kijyun/Kanna" "5.0.0"

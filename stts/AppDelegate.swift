@@ -11,7 +11,7 @@ import Reachability
 class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     var timer: Timer?
 
-    let reachability = Reachability()! // swiftlint:disable:this force_unwrapping
+    let reachability = try! Reachability() // swiftlint:disable:this force_try
 
     let popupController: MBPopupController
     let serviceTableViewController = ServiceTableViewController()

@@ -810,7 +810,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = inket;
 				TargetAttributes = {
 					B2163AF420BA4E7500B14A85 = {
@@ -1299,6 +1299,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=300 -Xfrontend -warn-long-expression-type-checking=200";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mahdi.stts;
@@ -1318,6 +1319,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=300 -Xfrontend -warn-long-expression-type-checking=200";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mahdi.stts;
