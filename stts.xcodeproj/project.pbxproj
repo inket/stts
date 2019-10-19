@@ -11,6 +11,7 @@
 		194BC88222A8EAC10065E698 /* Clubhouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BC88122A8EAC00065E698 /* Clubhouse.swift */; };
 		2F1B7559227A095400BA5CBD /* Avalara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B7558227A095400BA5CBD /* Avalara.swift */; };
 		2F65F490227A198400432E64 /* Recurly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F65F48F227A198400432E64 /* Recurly.swift */; };
+		36AD8ED9235A310500F2FD73 /* Mural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED8235A310500F2FD73 /* Mural.swift */; };
 		36AD8ED7235A2F9B00F2FD73 /* VictorOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */; };
 		36AD8ED5235A1FCA00F2FD73 /* Shopify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED4235A1FCA00F2FD73 /* Shopify.swift */; };
 		36AD8ED3235A1CE500F2FD73 /* LaunchDarkly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */; };
@@ -209,6 +210,7 @@
 		194BC88122A8EAC00065E698 /* Clubhouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clubhouse.swift; sourceTree = "<group>"; };
 		2F1B7558227A095400BA5CBD /* Avalara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avalara.swift; sourceTree = "<group>"; };
 		2F65F48F227A198400432E64 /* Recurly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recurly.swift; sourceTree = "<group>"; };
+		36AD8ED8235A310500F2FD73 /* Mural.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mural.swift; sourceTree = "<group>"; };
 		36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictorOps.swift; sourceTree = "<group>"; };
 		36AD8ED4235A1FCA00F2FD73 /* Shopify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopify.swift; sourceTree = "<group>"; };
 		36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDarkly.swift; sourceTree = "<group>"; };
@@ -601,6 +603,7 @@
 				B28DFE4621377A0B000EE4AF /* Wodby.swift */,
 				B2C4670E1E70012700C5145D /* Zapier.swift */,
 				B2483CF02037029D00A9FA95 /* Zwift.swift */,
+				36AD8ED8235A310500F2FD73 /* Mural.swift */,
 			);
 			path = StatusPage;
 			sourceTree = "<group>";
@@ -1080,6 +1083,7 @@
 				B2EB51CE1E7004A3001D6F78 /* ExanaService.swift in Sources */,
 				B2DCE6952215ACDE001447D8 /* StringExtensions.swift in Sources */,
 				B2BA697E1E2DA3A20016AF1A /* PivotalTracker.swift in Sources */,
+				36AD8ED9235A310500F2FD73 /* Mural.swift in Sources */,
 				B20699D2214E504F008670B0 /* Robinhood.swift in Sources */,
 				B22527F51E5BD0C70098E73D /* Contentful.swift in Sources */,
 				B24F91231E8B51A400A77460 /* Auth0.swift in Sources */,
