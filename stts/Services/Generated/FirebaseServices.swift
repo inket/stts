@@ -10,6 +10,10 @@ class FirebaseAnalytics: FirebaseService {
     let name = "Firebase Analytics"
 }
 
+class FirebaseAppDistribution: FirebaseService {
+    let name = "Firebase App Distribution"
+}
+
 class FirebaseAppIndexing: FirebaseService {
     let name = "Firebase App Indexing"
 }
@@ -24,10 +28,6 @@ class FirebaseCloudMessaging: FirebaseService {
 
 class FirebaseConsole: FirebaseService {
     let name = "Firebase Console"
-}
-
-class FirebaseCrashReporting: FirebaseService {
-    let name = "Firebase Crash Reporting"
 }
 
 class FirebaseCrashlytics: FirebaseService {

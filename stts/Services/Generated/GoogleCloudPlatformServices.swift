@@ -27,6 +27,11 @@ class GoogleCloudDataproc: GoogleCloudPlatform {
     let dashboardName = "Google Cloud Dataproc"
 }
 
+class GoogleCloudAssetInventory: GoogleCloudPlatform {
+    let name = "Google Cloud Asset Inventory"
+    let dashboardName = "Cloud Asset Inventory"
+}
+
 class GoogleCloudDatastore: GoogleCloudPlatform {
     let name = "Google Cloud Datastore"
     let dashboardName = "Google Cloud Datastore"
@@ -122,6 +127,11 @@ class GoogleCloudEndpoints: GoogleCloudPlatform {
     let dashboardName = "Cloud Endpoints"
 }
 
+class GoogleCloudComposer: GoogleCloudPlatform {
+    let name = "Google Cloud Composer"
+    let dashboardName = "Google Cloud Composer"
+}
+
 class GoogleCloudDataflow: GoogleCloudPlatform {
     let name = "Google Cloud Dataflow"
     let dashboardName = "Google Cloud Dataflow"
@@ -150,4 +160,9 @@ class GoogleCloudBigtable: GoogleCloudPlatform {
 class GoogleCloudSupport: GoogleCloudPlatform {
     let name = "Google Cloud Support"
     let dashboardName = "Google Cloud Support"
+}
+
+class GoogleCloudInfrastructureComponents: GoogleCloudPlatform {
+    let name = "Google Cloud infrastructure components"
+    let dashboardName = "Google Cloud infrastructure components"
 }
