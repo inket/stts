@@ -89,6 +89,7 @@
 		B26CD1EC1DD59FFB0054A385 /* DigitalOcean.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */; };
 		B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27090F0209F52EB0094C3D7 /* Stream.swift */; };
 		B271688A2291AEEE001E608C /* Asana.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27168892291AEEE001E608C /* Asana.swift */; };
+		B272E3C8235F460D00B33076 /* Python.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272E3C7235F460D00B33076 /* Python.swift */; };
 		B276C8F41DD474200098B451 /* MBPopup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B276C8F11DD474200098B451 /* MBPopup.framework */; };
 		B276C8F71DD4742D0098B451 /* MBPopup.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B276C8F11DD474200098B451 /* MBPopup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B277BC9222B4BB5C000B55C3 /* AzureDevOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9122B4BB5C000B55C3 /* AzureDevOps.swift */; };
@@ -288,6 +289,7 @@
 		B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalOcean.swift; sourceTree = "<group>"; };
 		B27090F0209F52EB0094C3D7 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 		B27168892291AEEE001E608C /* Asana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asana.swift; sourceTree = "<group>"; };
+		B272E3C7235F460D00B33076 /* Python.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Python.swift; sourceTree = "<group>"; };
 		B276C8F11DD474200098B451 /* MBPopup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBPopup.framework; path = Carthage/Build/Mac/MBPopup.framework; sourceTree = SOURCE_ROOT; };
 		B277BC9122B4BB5C000B55C3 /* AzureDevOps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureDevOps.swift; sourceTree = "<group>"; };
 		B277BC9322B4BB6D000B55C3 /* AzureDevOpsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureDevOpsStore.swift; sourceTree = "<group>"; };
@@ -574,6 +576,7 @@
 				B2BA697D1E2DA3A20016AF1A /* PivotalTracker.swift */,
 				B2F127A61E0B84230035B20C /* PubNub.swift */,
 				B299C84A1DD04E850024D2E9 /* Pusher.swift */,
+				B272E3C7235F460D00B33076 /* Python.swift */,
 				B21308551E55594E009FCF02 /* Quandl.swift */,
 				B2F35F251E5D181300E3A00E /* Quay.swift */,
 				2F65F48F227A198400432E64 /* Recurly.swift */,
@@ -1094,6 +1097,7 @@
 				B2A4A8161DC82CE300037E99 /* BottomBar.swift in Sources */,
 				B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */,
 				B2A9BFB41DC6E30F001BD4B7 /* Icons.swift in Sources */,
+				B272E3C8235F460D00B33076 /* Python.swift in Sources */,
 				36AD8ED5235A1FCA00F2FD73 /* Shopify.swift in Sources */,
 				B256955C1E247C8C00FAE413 /* PagerDuty.swift in Sources */,
 				B2A23E321DD190EF0051E913 /* EditorTableViewController.swift in Sources */,
