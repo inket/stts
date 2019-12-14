@@ -3,35 +3,48 @@
 //  stts
 //
 
-import Kanna
+import Foundation
+
+private struct StripeCurrentStatus: Codable {
+    enum Status: String, Codable {
+        case up
+        case degraded
+        case down
+
+        // Not sure what pending & paused are (maybe temporary states until all data is loaded?), but
+        // we'll add them to the enum just in case, and we'll treat them as maintenance like the old version.
+        case pending
+        case paused
+
+        var serviceStatus: ServiceStatus {
+            switch self {
+            case .up: return .good
+            case .degraded: return .minor
+            case .pending, .paused: return .maintenance
+            case .down: return .major
+            }
+        }
+    }
+
+    let message: String
+    let overallStatus: Status
+}
 
 class Stripe: Service {
     let url = URL(string: "https://status.stripe.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        loadData(with: url) { [weak self] data, _, error in
+        loadData(with: url.appendingPathComponent("current/full")) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
 
             guard let data = data else { return strongSelf._fail(error) }
-            guard let doc = try? HTML(html: data, encoding: .utf8) else { return strongSelf._fail("Couldn't parse response") }
+            guard let currentStatus = try? JSONDecoder().decode(StripeCurrentStatus.self, from: data) else {
+                return strongSelf._fail("Couldn't parse response")
+            }
 
-            guard let bubbleClassName = doc.css(".status-bubble").first?.className else { return strongSelf._fail("Unexpected response") }
-
-            self?.status = strongSelf.status(fromClassName: bubbleClassName)
-            self?.message = doc.css(".title-wrapper .title").first?.text ?? "Undetermined"
-        }
-    }
-
-    private func status(fromClassName className: String) -> ServiceStatus {
-        if className.contains("status-up") {
-            return .good
-        } else if className.contains("status-down") {
-            return .major
-        } else if className.contains("status-paused") || className.contains("status-loading") {
-            return .maintenance
-        } else {
-            return .undetermined
+            self?.status = currentStatus.overallStatus.serviceStatus
+            self?.message = currentStatus.message
         }
     }
 }
