@@ -65,6 +65,7 @@
 		B2430807210810D0003F8D07 /* Algolia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2430806210810D0003F8D07 /* Algolia.swift */; };
 		B2483CF12037029D00A9FA95 /* Zwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2483CF02037029D00A9FA95 /* Zwift.swift */; };
 		B2493F061E2603F300556A83 /* GoogleCloudPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */; };
+		B24B573223A4EAD200AFCF01 /* Pantheon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B573123A4EAD200AFCF01 /* Pantheon.swift */; };
 		B24D19F61DD072840052E539 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D19F51DD072840052E539 /* Preferences.swift */; };
 		B24F91231E8B51A400A77460 /* Auth0.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24F91221E8B51A400A77460 /* Auth0.swift */; };
 		B254642321EE9AF6003068A4 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254642221EE9AF6003068A4 /* GitHub.swift */; };
@@ -266,6 +267,7 @@
 		B2430806210810D0003F8D07 /* Algolia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algolia.swift; sourceTree = "<group>"; };
 		B2483CF02037029D00A9FA95 /* Zwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zwift.swift; sourceTree = "<group>"; };
 		B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudPlatform.swift; sourceTree = "<group>"; };
+		B24B573123A4EAD200AFCF01 /* Pantheon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pantheon.swift; sourceTree = "<group>"; };
 		B24D19F51DD072840052E539 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		B24F91221E8B51A400A77460 /* Auth0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth0.swift; sourceTree = "<group>"; };
 		B254642221EE9AF6003068A4 /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
@@ -572,6 +574,7 @@
 				B22BB3A0223B341B00B43BED /* OnePassword.swift */,
 				03C5FB121E203325003C40B8 /* Packet.swift */,
 				B25695531E247C8C00FAE413 /* PagerDuty.swift */,
+				B24B573123A4EAD200AFCF01 /* Pantheon.swift */,
 				B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */,
 				B2BA697D1E2DA3A20016AF1A /* PivotalTracker.swift */,
 				B2F127A61E0B84230035B20C /* PubNub.swift */,
@@ -1026,6 +1029,7 @@
 				B299C8471DD04D7C0024D2E9 /* NPM.swift in Sources */,
 				B2E018FD214E60E700C5F75B /* AppearanceObserver.swift in Sources */,
 				B2C4670F1E70012700C5145D /* Zapier.swift in Sources */,
+				B24B573223A4EAD200AFCF01 /* Pantheon.swift in Sources */,
 				B28C1D441E607D8600F9D0DC /* Mapbox.swift in Sources */,
 				A125C59E20F7909500C513B3 /* Fastly.swift in Sources */,
 				C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */,
