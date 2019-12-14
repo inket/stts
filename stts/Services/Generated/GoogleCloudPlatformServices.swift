@@ -97,6 +97,11 @@ class GoogleCloudPubSub: GoogleCloudPlatform {
     let dashboardName = "Google Cloud Pub/Sub"
 }
 
+class GoogleCloudRun: GoogleCloudPlatform {
+    let name = "Google Cloud Run"
+    let dashboardName = "Cloud Run"
+}
+
 class GoogleCloudScheduler: GoogleCloudPlatform {
     let name = "Google Cloud Scheduler"
     let dashboardName = "Google Cloud Scheduler"

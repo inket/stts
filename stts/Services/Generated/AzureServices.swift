@@ -26,3 +26,8 @@ class AzureGovernment: Azure {
     let name = "Azure Government"
     let zoneIdentifier = "azure-government"
 }
+
+class AzureChina: Azure {
+    let name = "Azure China"
+    let zoneIdentifier = "azure-china"
+}
