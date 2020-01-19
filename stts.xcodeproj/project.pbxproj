@@ -551,6 +551,7 @@
 				B22BA3011E8119AB0038D8F6 /* Discord.swift */,
 				B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */,
 				B28E9FBD1ED26A40006B89F1 /* Dwolla.swift */,
+				0FDDACCC23CD7EBF00FE96CD /* ElasticCloud.swift */,
 				B299C8541DD051210024D2E9 /* EngineYard.swift */,
 				B28C1D411E607D2200F9D0DC /* Fabric.swift */,
 				A125C59D20F7909500C513B3 /* Fastly.swift */,
@@ -612,7 +613,6 @@
 				B28DFE4621377A0B000EE4AF /* Wodby.swift */,
 				B2C4670E1E70012700C5145D /* Zapier.swift */,
 				B2483CF02037029D00A9FA95 /* Zwift.swift */,
-				0FDDACCC23CD7EBF00FE96CD /* ElasticCloud.swift */,
 			);
 			path = StatusPage;
 			sourceTree = "<group>";
