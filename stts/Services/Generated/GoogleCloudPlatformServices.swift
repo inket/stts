@@ -32,6 +32,11 @@ class GoogleCloudAssetInventory: GoogleCloudPlatform {
     let dashboardName = "Cloud Asset Inventory"
 }
 
+class GoogleCloudDataFusion: GoogleCloudPlatform {
+    let name = "Google Cloud Data Fusion"
+    let dashboardName = "Cloud Data Fusion"
+}
+
 class GoogleCloudDatastore: GoogleCloudPlatform {
     let name = "Google Cloud Datastore"
     let dashboardName = "Google Cloud Datastore"
