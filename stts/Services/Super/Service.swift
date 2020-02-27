@@ -51,17 +51,10 @@ extension RequiredServiceProperties {
 }
 
 public class BaseService: Loading {
-    public var status: ServiceStatus = .undetermined {
-        didSet {
-            if oldValue == .undetermined || status == .undetermined || oldValue == status {
-                self.shouldNotify = false
-            } else if Preferences.shared.notifyOnStatusChange {
-                self.shouldNotify = true
-            }
-        }
-    }
+    public var status: ServiceStatus = .undetermined
     var message: String = "Loading…"
-    var shouldNotify = false
+
+    private var lastNotifiedStatus: ServiceStatus?
 
     public static func all() -> [BaseService] {
         guard let servicesPlist = Bundle.main.path(forResource: "services", ofType: "plist"),
@@ -93,16 +86,21 @@ public class BaseService: Loading {
     func notifyIfNecessary() {
         guard let realSelf = self as? Service else { fatalError("BaseService should not be used directly.") }
 
-        guard shouldNotify else { return }
+        let notifyBecauseDifferent =
+            lastNotifiedStatus != nil
+            && lastNotifiedStatus != .undetermined && status != .undetermined
+            && lastNotifiedStatus != status
 
-        self.shouldNotify = false
+        if notifyBecauseDifferent && Preferences.shared.notifyOnStatusChange {
+            let notification = NSUserNotification()
+            let possessiveS = realSelf.name.hasSuffix("s") ? "'" : "'s"
+            notification.title = "\(realSelf.name)\(possessiveS) status has changed"
+            notification.informativeText = message
 
-        let notification = NSUserNotification()
-        let possessiveS = realSelf.name.hasSuffix("s") ? "'" : "'s"
-        notification.title = "\(realSelf.name)\(possessiveS) status has changed"
-        notification.informativeText = message
+            NSUserNotificationCenter.default.deliver(notification)
+        }
 
-        NSUserNotificationCenter.default.deliver(notification)
+        lastNotifiedStatus = status
     }
 }
 
