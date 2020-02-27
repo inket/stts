@@ -109,7 +109,6 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         tableView.wantsLayer = true
         tableView.layer?.cornerRadius = 6
         tableView.headerView = nil
-        tableView.rowHeight = 40
         tableView.gridStyleMask = NSTableView.GridLineStyle.init(rawValue: 0)
         tableView.dataSource = self
         tableView.delegate = self
@@ -201,6 +200,8 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
             self.updateCallback?()
             self.updateCallback = nil
 
+            resizeViews()
+
             return
         }
 
@@ -222,6 +223,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
 
         DispatchQueue.main.async { [weak self] in
             self?.reloadData()
+            self?.resizeViews()
 
             if self?.servicesBeingUpdated.count == 0 {
                 self?.bottomBar.status = .updated(Date())
@@ -274,5 +276,14 @@ extension ServiceTableViewController: NSTableViewDelegate {
 
         NSWorkspace.shared.open(service.url)
         return false
+    }
+
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        guard let service = services[row] as? Service else { return 40 }
+
+        return StatusTableCell.Layout.heightOfRow(
+            withMessage: service.message,
+            width: tableView.frame.size.width - 3 // tableview padding is 3
+        )
     }
 }
