@@ -97,6 +97,7 @@
 		B277BC9222B4BB5C000B55C3 /* AzureDevOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9122B4BB5C000B55C3 /* AzureDevOps.swift */; };
 		B277BC9422B4BB6D000B55C3 /* AzureDevOpsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9322B4BB6D000B55C3 /* AzureDevOpsStore.swift */; };
 		B277BC9822B4C16A000B55C3 /* AzureDevOpsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9722B4C16A000B55C3 /* AzureDevOpsServices.swift */; };
+		B28285E12405E44100B11A08 /* Zoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28285E02405E44100B11A08 /* Zoom.swift */; };
 		B2841CEB20BA6207004AFDB7 /* SorryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2841CEA20BA6207004AFDB7 /* SorryService.swift */; };
 		B2894CE420EEE2780009CCA3 /* Buildkite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2894CE320EEE2780009CCA3 /* Buildkite.swift */; };
 		B2898FD01DC7441D0005F58F /* StatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2898FCF1DC7441D0005F58F /* StatusIndicator.swift */; };
@@ -299,6 +300,7 @@
 		B277BC9322B4BB6D000B55C3 /* AzureDevOpsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureDevOpsStore.swift; sourceTree = "<group>"; };
 		B277BC9522B4BC6C000B55C3 /* generate_azure_devops_services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generate_azure_devops_services.swift; sourceTree = "<group>"; };
 		B277BC9722B4C16A000B55C3 /* AzureDevOpsServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureDevOpsServices.swift; sourceTree = "<group>"; };
+		B28285E02405E44100B11A08 /* Zoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zoom.swift; sourceTree = "<group>"; };
 		B2841CEA20BA6207004AFDB7 /* SorryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorryService.swift; sourceTree = "<group>"; };
 		B2894CE320EEE2780009CCA3 /* Buildkite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildkite.swift; sourceTree = "<group>"; };
 		B2898FCF1DC7441D0005F58F /* StatusIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusIndicator.swift; sourceTree = "<group>"; };
@@ -612,6 +614,7 @@
 				C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */,
 				B28DFE4621377A0B000EE4AF /* Wodby.swift */,
 				B2C4670E1E70012700C5145D /* Zapier.swift */,
+				B28285E02405E44100B11A08 /* Zoom.swift */,
 				B2483CF02037029D00A9FA95 /* Zwift.swift */,
 			);
 			path = StatusPage;
@@ -1014,6 +1017,7 @@
 				B2CE72D6228587E000847E00 /* Acquia.swift in Sources */,
 				B2E70FD822B069BA000BCAD2 /* GoogleCloudPlatformServices.swift in Sources */,
 				B2BA36191ED7B0F200051083 /* AuthorizeNet.swift in Sources */,
+				B28285E12405E44100B11A08 /* Zoom.swift in Sources */,
 				B25695591E247C8C00FAE413 /* Atlassian.swift in Sources */,
 				0FDDACCD23CD7EBF00FE96CD /* ElasticCloud.swift in Sources */,
 				B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */,
