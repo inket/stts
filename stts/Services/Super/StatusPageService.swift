@@ -23,6 +23,29 @@ class BaseStatusPageService: BaseService {
         let components: [Component]
         let incidents: [Incident]
         let status: Status
+
+        var sortedComponents: [Component] {
+            var rootPositions = [String: Int]()
+            components.forEach {
+                if $0.groupID == nil { // root element
+                    rootPositions[$0.id] = $0.position
+                }
+            }
+
+            let rootPositionForComponent: (_ component: Component) -> Int = {
+                if let groupID = $0.groupID {
+                    return rootPositions[groupID] ?? 0
+                } else {
+                    return rootPositions[$0.id] ?? 0
+                }
+            }
+
+            return components.sorted { (a: Component, b: Component) in
+                let aSortingID = a.sortingID(withRootPosition: rootPositionForComponent(a))
+                let bSortingID = b.sortingID(withRootPosition: rootPositionForComponent(b))
+                return aSortingID.localizedCaseInsensitiveCompare(bSortingID) == .orderedAscending
+            }
+        }
     }
 
     private struct Status: Codable {
@@ -76,6 +99,15 @@ class BaseStatusPageService: BaseService {
     }
 
     private struct Component: Codable {
+        enum CodingKeys: String, CodingKey {
+            case id
+            case groupID = "group_id"
+            case isGroup = "group"
+            case position
+            case name
+            case status
+        }
+
         enum ComponentStatus: String, Codable {
             case operational
             case majorOutage = "major_outage"
@@ -96,26 +128,24 @@ class BaseStatusPageService: BaseService {
                     return .maintenance
                 }
             }
-
-            var statusMessage: String {
-                switch self {
-                case .operational:
-                    return "Operational"
-                case .majorOutage:
-                    return "Major Outage"
-                case .degradedPerformance:
-                    return "Degraded Performance"
-                case .partialOutage:
-                    return "Partial Outage"
-                case .underMaintenance:
-                    return "Under Maintenance"
-                }
-            }
         }
 
         let id: String
+        let isGroup: Bool
+        let groupID: String?
+        let position: Int
+
         let name: String
         let status: ComponentStatus
+
+        func sortingID(withRootPosition rootPosition: Int) -> String {
+            [
+                String(rootPosition),
+                groupID ?? id,
+                isGroup ? "0" : String(position),
+                name
+            ].joined(separator: "_")
+        }
     }
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
@@ -147,12 +177,12 @@ class BaseStatusPageService: BaseService {
             }
 
             // Or from affected the component names
-            let affectedComponents = summary.components.filter { $0.status != .operational }
+            let affectedComponents = summary.sortedComponents.filter { $0.status != .operational }
             if !affectedComponents.isEmpty {
                 let prefix = affectedComponents.count > 1 ? "* " : ""
 
                 self?.message = affectedComponents
-                    .map { "\(prefix)\($0.status.statusMessage) with \($0.name)" }
+                    .map { "\(prefix)\($0.name)" }
                     .joined(separator: "\n")
                 return
             }
