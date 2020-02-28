@@ -173,6 +173,10 @@
 		B2F127AB1E0B84F00035B20C /* Braintree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127AA1E0B84F00035B20C /* Braintree.swift */; };
 		B2F34041222630F20055C96F /* CloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F34040222630F20055C96F /* CloudApp.swift */; };
 		B2F35F261E5D181300E3A00E /* Quay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F35F251E5D181300E3A00E /* Quay.swift */; };
+		B2F55EE92408AB1A003D674C /* PlayStationNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F55EE82408AB1A003D674C /* PlayStationNetwork.swift */; };
+		B2F55EEC2408B5F1003D674C /* PSNAmerica.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F55EEB2408B5F1003D674C /* PSNAmerica.swift */; };
+		B2F55EEE2408B68F003D674C /* PSNAsia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F55EED2408B68F003D674C /* PSNAsia.swift */; };
+		B2F55EF02408B6A2003D674C /* PSNEurope.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F55EEF2408B6A2003D674C /* PSNEurope.swift */; };
 		B2FAB94C1E5C029A00B8921F /* DNSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FAB94B1E5C029A00B8921F /* DNSimple.swift */; };
 		B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC9191D67029900F0B728 /* Heroku.swift */; };
 		B2FDC91C1D67062200F0B728 /* StatusPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91B1D67062200F0B728 /* StatusPageService.swift */; };
@@ -380,6 +384,10 @@
 		B2F127AA1E0B84F00035B20C /* Braintree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Braintree.swift; sourceTree = "<group>"; };
 		B2F34040222630F20055C96F /* CloudApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudApp.swift; sourceTree = "<group>"; };
 		B2F35F251E5D181300E3A00E /* Quay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quay.swift; sourceTree = "<group>"; };
+		B2F55EE82408AB1A003D674C /* PlayStationNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStationNetwork.swift; sourceTree = "<group>"; };
+		B2F55EEB2408B5F1003D674C /* PSNAmerica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSNAmerica.swift; sourceTree = "<group>"; };
+		B2F55EED2408B68F003D674C /* PSNAsia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSNAsia.swift; sourceTree = "<group>"; };
+		B2F55EEF2408B6A2003D674C /* PSNEurope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSNEurope.swift; sourceTree = "<group>"; };
 		B2FAB94B1E5C029A00B8921F /* DNSimple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSimple.swift; sourceTree = "<group>"; };
 		B2FDC9191D67029900F0B728 /* Heroku.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heroku.swift; sourceTree = "<group>"; };
 		B2FDC91B1D67062200F0B728 /* StatusPageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPageService.swift; sourceTree = "<group>"; };
@@ -708,6 +716,16 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		B2F55EEA2408B562003D674C /* PlayStation Network */ = {
+			isa = PBXGroup;
+			children = (
+				B2F55EEB2408B5F1003D674C /* PSNAmerica.swift */,
+				B2F55EED2408B68F003D674C /* PSNAsia.swift */,
+				B2F55EEF2408B6A2003D674C /* PSNEurope.swift */,
+			);
+			path = "PlayStation Network";
+			sourceTree = "<group>";
+		};
 		B2FDC91F1D6706FB00F0B728 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -717,6 +735,7 @@
 				B2493F071E26052400556A83 /* Google Cloud Platform */,
 				B2DCE68E22159731001447D8 /* LambStatus */,
 				B22FDE4921089D4F00359EC9 /* PayPal */,
+				B2F55EEA2408B562003D674C /* PlayStation Network */,
 				B2841CEC20BA6423004AFDB7 /* Sorry */,
 				B26CB5711E13448900116A33 /* Status.ioV1 */,
 				B2163B0120BA5AE600B14A85 /* StatusCake */,
@@ -753,6 +772,7 @@
 				B2253A6A209F3C410039F574 /* GoogleStatusDashboardStore.swift */,
 				B2DCE68C221591F2001447D8 /* LambStatusService.swift */,
 				B22FDE4721089C6200359EC9 /* PayPal.swift */,
+				B2F55EE82408AB1A003D674C /* PlayStationNetwork.swift */,
 				B205A9171D49D67700EA178D /* Service.swift */,
 				B2841CEA20BA6207004AFDB7 /* SorryService.swift */,
 				B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */,
@@ -1046,6 +1066,7 @@
 				B2CBE08F21B95A7B00F5B28F /* GitLab.swift in Sources */,
 				B256955F1E247C8C00FAE413 /* SendGrid.swift in Sources */,
 				B230CE7F21B95C5500E2005D /* Stripe.swift in Sources */,
+				B2F55EE92408AB1A003D674C /* PlayStationNetwork.swift in Sources */,
 				B22BB39F223B33AE00B43BED /* CampaignMonitor.swift in Sources */,
 				B2F127A71E0B84230035B20C /* PubNub.swift in Sources */,
 				B22BB3A3223B346E00B43BED /* Dashlane.swift in Sources */,
@@ -1055,6 +1076,7 @@
 				B28DFE4721377A0B000EE4AF /* Wodby.swift in Sources */,
 				B2430807210810D0003F8D07 /* Algolia.swift in Sources */,
 				03C5FB131E203325003C40B8 /* Packet.swift in Sources */,
+				B2F55EEE2408B68F003D674C /* PSNAsia.swift in Sources */,
 				B21DC0761F6B436400E8214F /* Aptible.swift in Sources */,
 				B2253A6F209F42430039F574 /* Firebase.swift in Sources */,
 				B22FDE512108A5C200359EC9 /* PayPalAPIProduction.swift in Sources */,
@@ -1067,6 +1089,7 @@
 				B256955D1E247C8C00FAE413 /* Pingdom.swift in Sources */,
 				B219C0DA1E2F0E9F001F8E7F /* CocoaPods.swift in Sources */,
 				B22FDE4F2108A5B700359EC9 /* PayPalProductSandbox.swift in Sources */,
+				B2F55EEC2408B5F1003D674C /* PSNAmerica.swift in Sources */,
 				B2F35F261E5D181300E3A00E /* Quay.swift in Sources */,
 				B299C8451DD046F20024D2E9 /* AmazonWebServices.swift in Sources */,
 				B2563BBC22CBC3D500532C39 /* DataLoader.swift in Sources */,
@@ -1119,6 +1142,7 @@
 				B2483CF12037029D00A9FA95 /* Zwift.swift in Sources */,
 				B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */,
 				B254642321EE9AF6003068A4 /* GitHub.swift in Sources */,
+				B2F55EF02408B6A2003D674C /* PSNEurope.swift in Sources */,
 				B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
