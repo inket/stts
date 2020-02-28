@@ -45,6 +45,6 @@ class sttsTests: XCTestCase {
             }
         }
 
-        wait(for: expectations, timeout: 10.0)
+        wait(for: expectations, timeout: 20.0)
     }
 }
