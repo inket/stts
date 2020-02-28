@@ -157,9 +157,9 @@ class GoogleCloudConsole: GoogleCloudPlatform {
     let dashboardName = "Google Cloud Console"
 }
 
-class GoogleStackdriver: GoogleCloudPlatform {
-    let name = "Google Stackdriver"
-    let dashboardName = "Google Stackdriver"
+class GoogleOperations: GoogleCloudPlatform {
+    let name = "Google Operations"
+    let dashboardName = "Operations"
 }
 
 class GoogleCloudBigtable: GoogleCloudPlatform {
