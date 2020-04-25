@@ -178,6 +178,6 @@ class GoogleCloudSupport: GoogleCloudPlatform {
 }
 
 class GoogleCloudInfrastructureComponents: GoogleCloudPlatform {
-    let name = "Google Cloud infrastructure components"
-    let dashboardName = "Google Cloud infrastructure components"
+    let name = "Google Cloud Infrastructure Components"
+    let dashboardName = "Google Cloud Infrastructure Components"
 }
