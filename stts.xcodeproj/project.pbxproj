@@ -168,6 +168,8 @@
 		B2EAD8D520B8FDB800095F5B /* JAMF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EAD8D420B8FDB700095F5B /* JAMF.swift */; };
 		B2EB51CE1E7004A3001D6F78 /* ExanaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */; };
 		B2EB51D01E700517001D6F78 /* Codacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EB51CF1E700517001D6F78 /* Codacy.swift */; };
+		B2EC838E24547371001D2D2F /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EC838C24547370001D2D2F /* Box.swift */; };
+		B2EC838F24547371001D2D2F /* Egnyte.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EC838D24547371001D2D2F /* Egnyte.swift */; };
 		B2F127A71E0B84230035B20C /* PubNub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127A61E0B84230035B20C /* PubNub.swift */; };
 		B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127A81E0B84B50035B20C /* Twilio.swift */; };
 		B2F127AB1E0B84F00035B20C /* Braintree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127AA1E0B84F00035B20C /* Braintree.swift */; };
@@ -379,6 +381,8 @@
 		B2EAD8D420B8FDB700095F5B /* JAMF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JAMF.swift; sourceTree = "<group>"; };
 		B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExanaService.swift; sourceTree = "<group>"; };
 		B2EB51CF1E700517001D6F78 /* Codacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Codacy.swift; sourceTree = "<group>"; };
+		B2EC838C24547370001D2D2F /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		B2EC838D24547371001D2D2F /* Egnyte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Egnyte.swift; sourceTree = "<group>"; };
 		B2F127A61E0B84230035B20C /* PubNub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubNub.swift; sourceTree = "<group>"; };
 		B2F127A81E0B84B50035B20C /* Twilio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twilio.swift; sourceTree = "<group>"; };
 		B2F127AA1E0B84F00035B20C /* Braintree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Braintree.swift; sourceTree = "<group>"; };
@@ -542,6 +546,7 @@
 				B299C84E1DD04F8F0024D2E9 /* BitBucket.swift */,
 				BF7AA78022B03AE4002460FB /* Bitrise.swift */,
 				7BA6A0A12240D8E000700C2C /* Bolt.swift */,
+				B2EC838C24547370001D2D2F /* Box.swift */,
 				B2F127AA1E0B84F00035B20C /* Braintree.swift */,
 				B2894CE320EEE2780009CCA3 /* Buildkite.swift */,
 				B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */,
@@ -561,6 +566,7 @@
 				B22BA3011E8119AB0038D8F6 /* Discord.swift */,
 				B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */,
 				B28E9FBD1ED26A40006B89F1 /* Dwolla.swift */,
+				B2EC838D24547371001D2D2F /* Egnyte.swift */,
 				0FDDACCC23CD7EBF00FE96CD /* ElasticCloud.swift */,
 				B299C8541DD051210024D2E9 /* EngineYard.swift */,
 				B28C1D411E607D2200F9D0DC /* Fabric.swift */,
@@ -994,6 +1000,7 @@
 				A133C8B720F8F3670068CFE8 /* Mailgun.swift in Sources */,
 				B2E70FDD22B07FB0000BCAD2 /* FirebaseServices.swift in Sources */,
 				B2CB0F9B2047A60000873C14 /* Vimeo.swift in Sources */,
+				B2EC838E24547371001D2D2F /* Box.swift in Sources */,
 				B299C8431DD044160024D2E9 /* NewRelic.swift in Sources */,
 				BF7AA78122B03AE4002460FB /* Bitrise.swift in Sources */,
 				B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */,
@@ -1001,6 +1008,7 @@
 				B24D19F61DD072840052E539 /* Preferences.swift in Sources */,
 				B2A0A16F1E4C45E0000D9B29 /* MailChimp.swift in Sources */,
 				B2D6FDAE21B95A0800F95940 /* LastPass.swift in Sources */,
+				B2EC838F24547371001D2D2F /* Egnyte.swift in Sources */,
 				B2BB19BA20B8FEFD00A97A87 /* CachetService.swift in Sources */,
 				7BA6A0A22240D8E000700C2C /* Bolt.swift in Sources */,
 				B28C1D421E607D2200F9D0DC /* Fabric.swift in Sources */,
