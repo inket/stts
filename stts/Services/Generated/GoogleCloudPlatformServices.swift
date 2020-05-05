@@ -162,9 +162,9 @@ class GoogleOperations: GoogleCloudPlatform {
     let dashboardName = "Operations"
 }
 
-class GoogleCloudSecretManager: GoogleCloudPlatform {
-    let name = "Google Cloud Secret Manager"
-    let dashboardName = "Cloud Secret Manager"
+class GoogleSecretManager: GoogleCloudPlatform {
+    let name = "Google Secret Manager"
+    let dashboardName = "Secret Manager"
 }
 
 class GoogleCloudBigtable: GoogleCloudPlatform {
