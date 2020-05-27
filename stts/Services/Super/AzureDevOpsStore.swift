@@ -99,7 +99,13 @@ class AzureDevOpsStore: Loading {
     }
 
     func status(for service: AzureDevOpsStoreService) -> (ServiceStatus, String) {
-        let status = statuses[service.serviceName]
+        let status: ServiceStatus?
+
+        if service.serviceName == "*" {
+            status = statuses.values.max()
+        } else {
+            status = statuses[service.serviceName]
+        }
 
         switch status {
         case .good?: return (.good, "Healthy")

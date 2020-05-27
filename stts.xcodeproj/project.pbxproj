@@ -126,6 +126,8 @@
 		B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A23E331DD192CD0051E913 /* EditorTableCell.swift */; };
 		B2A4A8161DC82CE300037E99 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A4A8151DC82CE300037E99 /* BottomBar.swift */; };
 		B2A4D7E4247E170A0089EA77 /* LetsEncrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A4D7E3247E170A0089EA77 /* LetsEncrypt.swift */; };
+		B2A4D7E7247E72B50089EA77 /* AzureAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A4D7E6247E72B50089EA77 /* AzureAll.swift */; };
+		B2A4D7E9247E73BC0089EA77 /* AzureDevOpsAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A4D7E8247E73BC0089EA77 /* AzureDevOpsAll.swift */; };
 		B2A8AE3D20710EC8002699CE /* Unsplash.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A8AE3C20710EC8002699CE /* Unsplash.swift */; };
 		B2A93ADD1EB814C000D36DD3 /* Snyk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A93ADC1EB814C000D36DD3 /* Snyk.swift */; };
 		B2A9BFB41DC6E30F001BD4B7 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */; };
@@ -337,6 +339,8 @@
 		B2A23E331DD192CD0051E913 /* EditorTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorTableCell.swift; sourceTree = "<group>"; };
 		B2A4A8151DC82CE300037E99 /* BottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		B2A4D7E3247E170A0089EA77 /* LetsEncrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsEncrypt.swift; sourceTree = "<group>"; };
+		B2A4D7E6247E72B50089EA77 /* AzureAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureAll.swift; sourceTree = "<group>"; };
+		B2A4D7E8247E73BC0089EA77 /* AzureDevOpsAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureDevOpsAll.swift; sourceTree = "<group>"; };
 		B2A8AE3C20710EC8002699CE /* Unsplash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unsplash.swift; sourceTree = "<group>"; };
 		B2A93ADC1EB814C000D36DD3 /* Snyk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snyk.swift; sourceTree = "<group>"; };
 		B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
@@ -640,6 +644,15 @@
 			path = StatusPage;
 			sourceTree = "<group>";
 		};
+		B2A4D7E5247E72A00089EA77 /* Azure */ = {
+			isa = PBXGroup;
+			children = (
+				B2A4D7E6247E72B50089EA77 /* AzureAll.swift */,
+				B2A4D7E8247E73BC0089EA77 /* AzureDevOpsAll.swift */,
+			);
+			path = Azure;
+			sourceTree = "<group>";
+		};
 		B2B2D0F61D49D5080014D780 = {
 			isa = PBXGroup;
 			children = (
@@ -741,6 +754,7 @@
 		B2FDC91F1D6706FB00F0B728 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B2A4D7E5247E72A00089EA77 /* Azure */,
 				B2BB19B820B8FEB200A97A87 /* Cachet */,
 				B2253A69209F3B9F0039F574 /* Firebase */,
 				B2E70FDF22B0844F000BCAD2 /* Generated */,
@@ -933,7 +947,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "chmod +x $SRCROOT/Scripts/generate_google_services.swift\n$SRCROOT/Scripts/generate_google_services.swift\nchmod +x $SRCROOT/Scripts/generate_azure_services.swift\n$SRCROOT/Scripts/generate_azure_services.swift\n";
+			shellScript = "chmod +x $SRCROOT/Scripts/generate_google_services.swift\n$SRCROOT/Scripts/generate_google_services.swift\nchmod +x $SRCROOT/Scripts/generate_azure_services.swift\n$SRCROOT/Scripts/generate_azure_services.swift\nchmod +x $SRCROOT/Scripts/generate_azure_devops_services.swift\n$SRCROOT/Scripts/generate_azure_devops_services.swift\n";
 		};
 		B28F83321E24BDC100F2070F /* Generate Services plist file */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1002,6 +1016,7 @@
 				B2EB51D01E700517001D6F78 /* Codacy.swift in Sources */,
 				B299C84F1DD04F8F0024D2E9 /* BitBucket.swift in Sources */,
 				B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */,
+				B2A4D7E7247E72B50089EA77 /* AzureAll.swift in Sources */,
 				B2253A6B209F3C410039F574 /* GoogleStatusDashboardStore.swift in Sources */,
 				A133C8B720F8F3670068CFE8 /* Mailgun.swift in Sources */,
 				B2E70FDD22B07FB0000BCAD2 /* FirebaseServices.swift in Sources */,
@@ -1117,6 +1132,7 @@
 				B22600311E1562E700EBDD40 /* MediaTemple.swift in Sources */,
 				B205A9181D49D67700EA178D /* Service.swift in Sources */,
 				B232047F22158BDF000DC1B0 /* DatadogEU.swift in Sources */,
+				B2A4D7E9247E73BC0089EA77 /* AzureDevOpsAll.swift in Sources */,
 				B2FAB94C1E5C029A00B8921F /* DNSimple.swift in Sources */,
 				B2BA69801E2DA3F60016AF1A /* Papertrail.swift in Sources */,
 				B28E9FBF1ED26A40006B89F1 /* Dwolla.swift in Sources */,

@@ -50,6 +50,16 @@ extension RequiredServiceProperties {
     var name: String { return "\(type(of: self))" }
 }
 
+protocol ServiceCategory {
+    /// The name of the category as it's displayed in the list
+    var categoryName: String { get }
+
+    /// The superclass of the sub services inside that category.
+    var subServiceSuperclass: AnyObject.Type { get }
+}
+
+protocol SubService {} // Fits in a service submenu
+
 public class BaseService: Loading {
     public var status: ServiceStatus = .undetermined
     var message: String = "Loading…"
@@ -63,6 +73,10 @@ public class BaseService: Loading {
         }
 
         return services.map(BaseService.named).compactMap { $0 }
+    }
+
+    public static func allWithoutSubServices() -> [BaseService] {
+        all().filter { !($0 is SubService) }
     }
 
     static func named(_ name: String) -> BaseService? {

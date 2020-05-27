@@ -26,7 +26,7 @@ struct AzureZone {
 
     var output: String {
         return """
-        class \(className): Azure {
+        class \(className): Azure, SubService {
             let name = "\(serviceName)"
             let zoneIdentifier = "\(zoneIdentifier)"
         }

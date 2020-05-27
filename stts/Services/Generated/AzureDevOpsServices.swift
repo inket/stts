@@ -2,37 +2,37 @@
 
 import Foundation
 
-class AzureDevOpsCoreServices: AzureDevOps {
+class AzureDevOpsCoreServices: AzureDevOps, SubService {
     let name = "Azure DevOps Core Services"
     let serviceName = "Core services"
 }
 
-class AzureDevOpsBoards: AzureDevOps {
+class AzureDevOpsBoards: AzureDevOps, SubService {
     let name = "Azure DevOps Boards"
     let serviceName = "Boards"
 }
 
-class AzureDevOpsRepos: AzureDevOps {
+class AzureDevOpsRepos: AzureDevOps, SubService {
     let name = "Azure DevOps Repos"
     let serviceName = "Repos"
 }
 
-class AzureDevOpsPipelines: AzureDevOps {
+class AzureDevOpsPipelines: AzureDevOps, SubService {
     let name = "Azure DevOps Pipelines"
     let serviceName = "Pipelines"
 }
 
-class AzureDevOpsTestPlans: AzureDevOps {
+class AzureDevOpsTestPlans: AzureDevOps, SubService {
     let name = "Azure DevOps Test Plans"
     let serviceName = "Test Plans"
 }
 
-class AzureDevOpsArtifacts: AzureDevOps {
+class AzureDevOpsArtifacts: AzureDevOps, SubService {
     let name = "Azure DevOps Artifacts"
     let serviceName = "Artifacts"
 }
 
-class AzureDevOpsOtherServices: AzureDevOps {
+class AzureDevOpsOtherServices: AzureDevOps, SubService {
     let name = "Azure DevOps Other Services"
     let serviceName = "Other services"
 }

@@ -24,7 +24,7 @@ struct AzureDevOpsService {
 
     var output: String {
         return """
-        class \(className): AzureDevOps {
+        class \(className): AzureDevOps, SubService {
             let name = "\(friendlyName)"
             let serviceName = "\(serviceName)"
         }
