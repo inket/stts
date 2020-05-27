@@ -8,9 +8,11 @@ import Cocoa
 class EditorTableViewController: NSObject, SwitchableTableViewController {
     let contentView: NSStackView
     let scrollView: CustomScrollView
+    let bottomBar: BottomBar
     let tableView = NSTableView()
 
     let allServices: [BaseService] = BaseService.all().sorted()
+    let allServicesWithoutSubServices: [BaseService] = BaseService.allWithoutSubServices().sorted()
     var filteredServices: [BaseService]
     var selectedServices: [BaseService] = Preferences.shared.selectedServices
 
@@ -20,6 +22,64 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
 
     var hidden: Bool = true
 
+    var savedScrollPosition: CGPoint = .zero
+
+    var selectedCategory: ServiceCategory? {
+        didSet {
+            // Save the scroll position between screens
+            let scrollToPosition: CGPoint?
+
+            if selectedCategory != nil && oldValue == nil {
+                savedScrollPosition = CGPoint(x: 0, y: tableView.visibleRect.minY)
+                scrollToPosition = .zero
+            } else if selectedCategory == nil && oldValue != nil {
+                scrollToPosition = savedScrollPosition
+            } else {
+                scrollToPosition = nil
+            }
+
+            // Adjust UI
+            bottomBar.openedCategory(selectedCategory, backCallback: { [weak self] in
+                self?.selectedCategory = nil
+            })
+
+            guard let category = selectedCategory else {
+                // Show the unfiltered services
+                filteredServices = allServicesWithoutSubServices
+                tableView.reloadData()
+
+                if let scrollPosition = scrollToPosition {
+                    tableView.scroll(scrollPosition)
+                }
+
+                return
+            }
+
+            // Find the sub services
+            var subServices = allServices.filter {
+                // Can't check superclass matches without mirror
+                Mirror(reflecting: $0).superclassMirror?.subjectType == category.subServiceSuperclass
+
+                // Exclude the category so that we can add it at the top
+                && $0 != category as? BaseService
+            }.sorted()
+
+            // Add the category as the top item
+            (category as? BaseService).flatMap { subServices.insert($0, at: 0) }
+
+            filteredServices = subServices
+            tableView.reloadData()
+
+            if let scrollPosition = scrollToPosition {
+                tableView.scroll(scrollPosition)
+            }
+        }
+    }
+
+    var isSearching: Bool {
+        settingsView.searchField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines) != ""
+    }
+
     private var maxNameWidth: CGFloat? {
         didSet {
             if oldValue != maxNameWidth {
@@ -28,10 +88,11 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
         }
     }
 
-    init(contentView: NSStackView, scrollView: CustomScrollView) {
+    init(contentView: NSStackView, scrollView: CustomScrollView, bottomBar: BottomBar) {
         self.contentView = contentView
         self.scrollView = scrollView
-        self.filteredServices = allServices
+        self.filteredServices = allServicesWithoutSubServices
+        self.bottomBar = bottomBar
 
         super.init()
         setup()
@@ -56,11 +117,12 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
         settingsView.searchCallback = { [weak self] searchString in
             guard
                 let strongSelf = self,
-                let allServices = strongSelf.allServices as? [Service]
+                let allServices = strongSelf.allServices as? [Service],
+                let allServicesWithoutSubServices = strongSelf.allServicesWithoutSubServices as? [Service]
             else { return }
 
             if searchString.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-                strongSelf.filteredServices = allServices
+                strongSelf.filteredServices = allServicesWithoutSubServices
             } else {
                 // Can't filter array with NSPredicate without making Service inherit KVO from NSObject, therefore we create
                 // an array of service names that we can run the predicate on
@@ -69,6 +131,10 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
                 guard let filteredServiceNames = allServiceNames.filtered(using: predicate) as? [String] else { return }
 
                 strongSelf.filteredServices = allServices.filter { filteredServiceNames.contains($0.name) }
+            }
+
+            if strongSelf.selectedCategory != nil {
+                strongSelf.selectedCategory = nil
             }
 
             strongSelf.tableView.reloadData()
@@ -122,6 +188,10 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
     func willHide() {
         settingsView.isHidden = true
     }
+
+    @objc func deselectCategory() {
+        selectedCategory = nil
+    }
 }
 
 extension EditorTableViewController: NSTableViewDataSource {
@@ -131,6 +201,19 @@ extension EditorTableViewController: NSTableViewDataSource {
 
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         return nil
+    }
+
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        guard tableView.selectedRow != -1 else { return }
+
+        // We're only interested in selections of categories
+        guard
+            selectedCategory == nil,
+            let category = filteredServices[tableView.selectedRow] as? ServiceCategory
+        else { return }
+
+        // Change the selected category
+        selectedCategory = category
     }
 }
 
@@ -151,22 +234,35 @@ extension EditorTableViewController: NSTableViewDelegate {
         guard let view = cell as? EditorTableCell else { return nil }
         guard let service = filteredServices[row] as? Service else { return nil }
 
-        view.textField?.stringValue = service.name
-        view.selected = selectedServices.contains(service)
-        view.toggleCallback = { [weak self] in
-            guard let strongSelf = self else { return }
+        if isSearching || selectedCategory != nil {
+            view.type = .service
+        } else {
+            view.type = (service is ServiceCategory) ? .category : .service
+        }
 
-            strongSelf.selectionChanged = true
+        switch view.type {
+        case .service:
+            view.textField?.stringValue = service.name
+            view.selected = selectedServices.contains(service)
+            view.toggleCallback = { [weak self] in
+                guard let strongSelf = self else { return }
 
-            if view.selected {
-                self?.selectedServices.append(service)
-            } else {
-                if let index = self?.selectedServices.firstIndex(of: service) {
-                    self?.selectedServices.remove(at: index)
+                strongSelf.selectionChanged = true
+
+                if view.selected {
+                    self?.selectedServices.append(service)
+                } else {
+                    if let index = self?.selectedServices.firstIndex(of: service) {
+                        self?.selectedServices.remove(at: index)
+                    }
                 }
-            }
 
-            Preferences.shared.selectedServices = strongSelf.selectedServices
+                Preferences.shared.selectedServices = strongSelf.selectedServices
+            }
+        case .category:
+            view.textField?.stringValue = (service as? ServiceCategory)?.categoryName ?? service.name
+            view.selected = false
+            view.toggleCallback = {}
         }
 
         maxNameWidth = EditorTableCell.maxNameWidth(for: tableView)

@@ -7,7 +7,7 @@ import Cocoa
 import MBPopup
 
 class ServiceTableViewController: NSObject, SwitchableTableViewController {
-    let contentView = NSStackView(frame: CGRect(x: 0, y: 0, width: 220, height: 400))
+    let contentView = NSStackView(frame: CGRect(x: 0, y: 0, width: 240, height: 400))
     let scrollView = CustomScrollView()
     let tableView = NSTableView()
     let bottomBar = BottomBar()
@@ -33,7 +33,12 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
     var updateCallback: (() -> Void)?
 
     override init() {
-        self.editorTableViewController = EditorTableViewController(contentView: contentView, scrollView: scrollView)
+        self.editorTableViewController = EditorTableViewController(
+            contentView: contentView,
+            scrollView: scrollView,
+            bottomBar: bottomBar
+        )
+
         super.init()
     }
 

@@ -18,6 +18,7 @@ class BottomBar: NSView {
     let doneButton = NSButton()
     let aboutButton = NSButton()
     let quitButton = NSButton()
+    let backButton = NSButton()
     let statusField = NSTextField()
     let separator = ServiceTableRowView()
 
@@ -30,6 +31,7 @@ class BottomBar: NSView {
     var reloadServicesCallback: () -> Void = {}
     var openSettingsCallback: () -> Void = {}
     var closeSettingsCallback: () -> Void = {}
+    var backCallback: () -> Void = {}
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -42,7 +44,12 @@ class BottomBar: NSView {
     }
 
     private func commonInit() {
-        [separator, settingsButton, reloadButton, statusField, doneButton, aboutButton, quitButton].forEach {
+        [
+            separator,
+            settingsButton, reloadButton, statusField, // Main view buttons
+            doneButton, aboutButton, quitButton, // Editor view buttons
+            backButton // Category view buttons
+        ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
@@ -95,7 +102,11 @@ class BottomBar: NSView {
 
             quitButton.widthAnchor.constraint(equalToConstant: 46),
             quitButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            quitButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 3)
+            quitButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 3),
+
+            backButton.widthAnchor.constraint(equalToConstant: 46),
+            backButton.centerYAnchor.constraint(equalTo: centerYAnchor),
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 3)
         ])
 
         settingsButton.isBordered = false
@@ -150,6 +161,13 @@ class BottomBar: NSView {
         quitButton.isHidden = true
         quitButton.target = NSApp
         quitButton.action = #selector(NSApplication.terminate(_:))
+
+        backButton.title = "Back"
+        backButton.bezelStyle = .regularSquare
+        backButton.controlSize = .regular
+        backButton.isHidden = true
+        backButton.target = self
+        backButton.action = #selector(BottomBar.back)
     }
 
     func updateStatusText() {
@@ -160,6 +178,16 @@ class BottomBar: NSView {
             let relativeTime = date.toStringWithRelativeTime()
             statusField.stringValue = "Updated \(relativeTime)"
         }
+    }
+
+    func openedCategory(_ category: ServiceCategory?, backCallback: @escaping () -> Void) {
+        doneButton.isHidden = false
+        aboutButton.isHidden = category != nil
+        quitButton.isHidden = category != nil
+
+        backButton.isHidden = category == nil
+
+        self.backCallback = backCallback
     }
 
     @objc func reloadServices() {
@@ -179,6 +207,8 @@ class BottomBar: NSView {
     }
 
     @objc func closeSettings() {
+        backCallback()
+
         settingsButton.isHidden = false
         statusField.isHidden = false
         reloadButton.isHidden = false
@@ -186,6 +216,8 @@ class BottomBar: NSView {
         doneButton.isHidden = true
         aboutButton.isHidden = true
         quitButton.isHidden = true
+
+        backButton.isHidden = true
 
         closeSettingsCallback()
     }
@@ -220,5 +252,15 @@ class BottomBar: NSView {
 
         NSApp.orderFrontStandardAboutPanel(options: [NSApplication.AboutPanelOptionKey(rawValue: "Credits"): credits])
         NSApp.activate(ignoringOtherApps: true)
+    }
+
+    @objc func back() {
+        backButton.isHidden = true
+
+        doneButton.isHidden = false
+        aboutButton.isHidden = false
+        quitButton.isHidden = false
+
+        backCallback()
     }
 }

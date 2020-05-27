@@ -17,11 +17,22 @@ class EditorTableCell: NSTableCellView {
         enum ToggleButton {
             static let size = NSSize(width: 36, height: 20)
         }
+
+        enum ArrowImage {
+            static let size = NSSize(width: 20, height: 20)
+        }
+    }
+
+    enum CellType {
+        case service
+        case category
     }
 
     static let defaultHeight: CGFloat = 30
 
     let toggleButton = NSButton()
+    let arrowImageView = NSImageView()
+
     var selected: Bool = false {
         didSet {
             setNeedsDisplay(frame)
@@ -29,6 +40,19 @@ class EditorTableCell: NSTableCellView {
     }
 
     var toggleCallback: () -> Void = {}
+
+    var type: CellType = .service {
+        didSet {
+            switch type {
+            case .service:
+                toggleButton.isHidden = false
+                arrowImageView.isHidden = true
+            case .category:
+                toggleButton.isHidden = true
+                arrowImageView.isHidden = false
+            }
+        }
+    }
 
     static func estimatedHeight(for service: Service, maxWidth: CGFloat) -> CGFloat {
         return
@@ -60,11 +84,6 @@ class EditorTableCell: NSTableCellView {
         textField.font = Design.Name.font
         textField.textColor = NSColor.textColor
         textField.backgroundColor = NSColor.clear
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(textField)
-
-        toggleButton.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(toggleButton)
 
         toggleButton.title = ""
         toggleButton.isBordered = false
@@ -76,15 +95,34 @@ class EditorTableCell: NSTableCellView {
         toggleButton.layer?.borderWidth = 1
         toggleButton.layer?.cornerRadius = 4
 
+        arrowImageView.image = NSImage(named: "NSGoRightTemplate")
+
+        [textField, toggleButton, arrowImageView].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            addSubview($0)
+        }
+
         NSLayoutConstraint.activate([
             textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Design.padding.left),
             textField.centerYAnchor.constraint(equalTo: centerYAnchor),
 
-            toggleButton.leadingAnchor.constraint(equalTo: textField.trailingAnchor, constant: Design.innerSpacing),
+            toggleButton.leadingAnchor.constraint(
+                greaterThanOrEqualTo: textField.trailingAnchor,
+                constant: Design.innerSpacing
+            ),
             toggleButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Design.padding.right),
             toggleButton.centerYAnchor.constraint(equalTo: centerYAnchor),
             toggleButton.widthAnchor.constraint(equalToConstant: Design.ToggleButton.size.width),
-            toggleButton.heightAnchor.constraint(equalToConstant: Design.ToggleButton.size.height)
+            toggleButton.heightAnchor.constraint(equalToConstant: Design.ToggleButton.size.height),
+
+            arrowImageView.leadingAnchor.constraint(
+                greaterThanOrEqualTo: textField.trailingAnchor,
+                constant: Design.innerSpacing
+            ),
+            arrowImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Design.padding.right),
+            arrowImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            arrowImageView.widthAnchor.constraint(equalToConstant: Design.ArrowImage.size.width),
+            arrowImageView.heightAnchor.constraint(equalToConstant: Design.ArrowImage.size.height)
         ])
     }
 
