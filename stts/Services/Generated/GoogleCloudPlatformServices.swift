@@ -162,6 +162,11 @@ class GoogleOperations: GoogleCloudPlatform, SubService {
     let dashboardName = "Operations"
 }
 
+class GoogleHealthcareAndLifeSciences: GoogleCloudPlatform, SubService {
+    let name = "Google Healthcare and Life Sciences"
+    let dashboardName = "Healthcare and Life Sciences"
+}
+
 class GoogleSecretManager: GoogleCloudPlatform, SubService {
     let name = "Google Secret Manager"
     let dashboardName = "Secret Manager"
