@@ -181,6 +181,7 @@ func main() {
         try! output.write(toFile: platform.outputPath(root: srcRoot), atomically: true, encoding: .utf8)
     }
 
+    print("Finished generating Google services.")
 }
 
 main()

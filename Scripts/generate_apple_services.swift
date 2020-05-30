@@ -170,6 +170,8 @@ func main() {
 
     // swiftlint:disable:next force_try
     try! output.write(toFile: outputPath, atomically: true, encoding: .utf8)
+
+    print("Finished generating Apple services.")
 }
 
 main()
