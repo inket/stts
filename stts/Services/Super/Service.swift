@@ -66,11 +66,6 @@ public class BaseService: Loading {
 
     private var lastNotifiedStatus: ServiceStatus?
 
-    private static let migrationMapping: [String: String] = [
-        "Apple": "AppleAll",
-        "AppleDeveloper": "AppleDeveloperAll"
-    ]
-
     public static func all() -> [BaseService] {
         guard let servicesPlist = Bundle.main.path(forResource: "services", ofType: "plist"),
             let services = NSDictionary(contentsOfFile: servicesPlist)?["services"] as? [String] else {
@@ -85,8 +80,7 @@ public class BaseService: Loading {
     }
 
     static func named(_ name: String) -> BaseService? {
-        let updatedName = migrationMapping[name] ?? name
-        return (NSClassFromString("stts.\(updatedName)") as? Service.Type)?.init()
+        return (NSClassFromString("stts.\(name)") as? Service.Type)?.init()
     }
 
     public required init() {}
