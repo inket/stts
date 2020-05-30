@@ -46,10 +46,6 @@ class FirebaseHosting: FirebaseService, SubService {
     let name = "Firebase Hosting"
 }
 
-class FirebaseInvites: FirebaseService, SubService {
-    let name = "Firebase Invites"
-}
-
 class FirebaseMLKit: FirebaseService, SubService {
     let name = "Firebase ML Kit"
 }

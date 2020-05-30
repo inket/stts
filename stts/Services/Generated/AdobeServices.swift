@@ -42,6 +42,11 @@ class AdobeServicesAll: AdobeServices, ServiceCategory {
     let id = 2785
 }
 
+class AdobeDigitalVideoAndAudio: Adobe {
+    let name = "Adobe Digital Video & Audio"
+    let id = 1627
+}
+
 class AdobeDocumentCloudServicesSDK: Adobe {
     let name = "Adobe Document Cloud Services SDK"
     let id = 4827
@@ -75,6 +80,11 @@ class AdobeAnalytics: AdobeExperienceCloud, SubService {
 class AdobeAudienceManager: AdobeExperienceCloud, SubService {
     let name = "Adobe Audience Manager"
     let id = 1184
+}
+
+class AdobeBehance: AdobeCreativeCloud, SubService {
+    let name = "Adobe Behance"
+    let id = 1442
 }
 
 class AdobeCampaign: AdobeExperienceCloud, SubService {
@@ -125,11 +135,6 @@ class AdobeCreativeCloudLibraries: AdobeCreativeCloud, SubService {
 class AdobeCreativeCloudMarket: AdobeCreativeCloud, SubService {
     let name = "Adobe Creative Cloud Market"
     let id = 2958
-}
-
-class AdobeCreativeServices: AdobeCreativeCloud, SubService {
-    let name = "Adobe Creative Services"
-    let id = 1415
 }
 
 class AdobeCreativeSync: AdobeCreativeCloud, SubService {
@@ -222,13 +227,8 @@ class AdobePDFServices: AdobeDocumentCloud, SubService {
     let id = 1555
 }
 
-class AdobePhoneGapBuild: AdobeCreativeCloud, SubService {
-    let name = "Adobe PhoneGap Build"
-    let id = 2968
-}
-
-class AdobePhotoshopcom: AdobeCreativeCloud, SubService {
-    let name = "Adobe Photoshop.com"
+class AdobePhotoshop: AdobeCreativeCloud, SubService {
+    let name = "Adobe Photoshop"
     let id = 2969
 }
 
