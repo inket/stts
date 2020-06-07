@@ -57,6 +57,11 @@ class AdobeJourneyOrchestration: Adobe {
     let id = 4523
 }
 
+class AdobeJourneyOrchestration5224: Adobe {
+    let name = "Adobe Journey Orchestration (5224)"
+    let id = 5224
+}
+
 class AdobeAccountManagement: AdobeServices, SubService {
     let name = "Adobe Account Management"
     let id = 2941

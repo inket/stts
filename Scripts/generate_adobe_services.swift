@@ -44,6 +44,8 @@ struct AdobeService {
         sanitizedName = sanitizedName.replacingOccurrences(of: ":", with: "")
         sanitizedName = sanitizedName.replacingOccurrences(of: "-", with: "")
         sanitizedName = sanitizedName.replacingOccurrences(of: ".", with: "")
+        sanitizedName = sanitizedName.replacingOccurrences(of: "(", with: "")
+        sanitizedName = sanitizedName.replacingOccurrences(of: ")", with: "")
         return sanitizedName
             .components(separatedBy: " ")
             .map { $0.capitalized(firstLetterOnly: true) }
@@ -138,11 +140,18 @@ func discoverServices() -> [AdobeService] {
         _ = cloudIDs.insert(cloud)
     }
 
+    var uniqueNames = Set<String>()
+
     // Create a map of category ids
     var categories = [Int: AdobeService]()
 
     cloudIDs.forEach { id in
-        guard let name = structure.localizationValues.en.localizeValues["serviceName.\(id)"] else { return }
+        guard var name = structure.localizationValues.en.localizeValues["serviceName.\(id)"] else { return }
+
+        if uniqueNames.contains(name) {
+            name = "\(name) (\(id))"
+        }
+        uniqueNames.insert(name)
 
         categories[id] = AdobeService(id: id, parentName: "", name: name, type: .category)
     }
@@ -152,8 +161,13 @@ func discoverServices() -> [AdobeService] {
         guard
             let cloudID = product.cloud,
             let category = categories[cloudID],
-            let name = structure.localizationValues.en.localizeValues["serviceName.\(product.service.id)"]
+            var name = structure.localizationValues.en.localizeValues["serviceName.\(product.service.id)"]
         else { return nil }
+
+        if uniqueNames.contains(name) {
+            name = "\(name) (\(product.service.id))"
+        }
+        uniqueNames.insert(name)
 
         return AdobeService(
             id: product.service.id,
@@ -164,9 +178,14 @@ func discoverServices() -> [AdobeService] {
     }
 
     let servicesWithoutCategories = productsWithoutCloudID.compactMap {  product -> AdobeService? in
-        guard let name = structure.localizationValues.en.localizeValues["serviceName.\(product.service.id)"] else {
+        guard var name = structure.localizationValues.en.localizeValues["serviceName.\(product.service.id)"] else {
             return nil
         }
+
+        if uniqueNames.contains(name) {
+            name = "\(name) (\(product.service.id))"
+        }
+        uniqueNames.insert(name)
 
         return AdobeService(id: product.service.id, parentName: "Adobe", name: name, type: .service)
     }
