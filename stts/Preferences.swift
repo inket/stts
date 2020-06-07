@@ -42,7 +42,9 @@ struct Preferences {
         let migrationMapping: [String: String] = [
             "CloudFlare": "Cloudflare", // v1.0.0 used the name "CloudFlare" instead of the official "Cloudflare"
             "Apple": "AppleAll", // Apple changed from one service to multiple sub services
-            "AppleDeveloper": "AppleDeveloperAll" // Apple Developer changed from one service to multiple sub services
+            "AppleDeveloper": "AppleDeveloperAll", // Apple Developer changed from one service to multiple sub services
+            // Generated services
+            "FirebaseMLKit": "FirebaseMachineLearning"
         ]
 
         if var services = UserDefaults.standard.array(forKey: "selectedServices") as? [String] {

@@ -46,8 +46,8 @@ class FirebaseHosting: FirebaseService, SubService {
     let name = "Firebase Hosting"
 }
 
-class FirebaseMLKit: FirebaseService, SubService {
-    let name = "Firebase ML Kit"
+class FirebaseMachineLearning: FirebaseService, SubService {
+    let name = "Firebase Machine Learning"
 }
 
 class FirebasePerformanceMonitoring: FirebaseService, SubService {
