@@ -326,3 +326,8 @@ class AdobeUserManagementSDK: AdobeServices, SubService {
     let name = "Adobe User Management SDK"
     let id = 2980
 }
+
+class AdobeXD: AdobeCreativeCloud, SubService {
+    let name = "Adobe XD"
+    let id = 5282
+}

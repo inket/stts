@@ -338,6 +338,11 @@ class AppleDeveloperForums: AppleDeveloper, SubService {
     let serviceName = "Apple Developer Forums"
 }
 
+class AppleMapsAPI: AppleDeveloper, SubService {
+    let name = "Apple Maps API"
+    let serviceName = "Apple Maps API"
+}
+
 class AppleMusicAPI: AppleDeveloper, SubService {
     let name = "Apple Music API"
     let serviceName = "Apple Music API"
@@ -351,11 +356,6 @@ class AppleNewsAPI: AppleDeveloper, SubService {
 class ApplePayDeveloper: AppleDeveloper, SubService {
     let name = "Apple Pay (Developer)"
     let serviceName = "Apple Pay"
-}
-
-class AppleFeedbackAssistant: AppleDeveloper, SubService {
-    let name = "Apple Feedback Assistant"
-    let serviceName = "Feedback Assistant"
 }
 
 class AppleCertificatesIdentifiersAndProfiles: AppleDeveloper, SubService {
@@ -396,6 +396,11 @@ class AppleDeviceCheck: AppleDeveloper, SubService {
 class AppleEnterpriseAppVerification: AppleDeveloper, SubService {
     let name = "Apple Enterprise App Verification"
     let serviceName = "Enterprise App Verification"
+}
+
+class AppleFeedbackAssistant: AppleDeveloper, SubService {
+    let name = "Apple Feedback Assistant"
+    let serviceName = "Feedback Assistant"
 }
 
 class AppleInAppPurchases: AppleDeveloper, SubService {
