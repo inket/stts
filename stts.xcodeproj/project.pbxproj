@@ -126,6 +126,7 @@
 		B299C8531DD0505F0024D2E9 /* Sentry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8521DD0505F0024D2E9 /* Sentry.swift */; };
 		B299C8551DD051210024D2E9 /* EngineYard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8541DD051210024D2E9 /* EngineYard.swift */; };
 		B29AEFD0225D7F3900C3B8BD /* UrbanAirship.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29AEFCF225D7F3900C3B8BD /* UrbanAirship.swift */; };
+		B29D50BD24B053C600F4961B /* Basecamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D50BC24B053C600F4961B /* Basecamp.swift */; };
 		B2A0635C1E1340B400EEA762 /* Docker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0635B1E1340B400EEA762 /* Docker.swift */; };
 		B2A0635E1E1341C900EEA762 /* StatusioV1Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */; };
 		B2A0A16F1E4C45E0000D9B29 /* MailChimp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0A16E1E4C45E0000D9B29 /* MailChimp.swift */; };
@@ -347,6 +348,7 @@
 		B299C8521DD0505F0024D2E9 /* Sentry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sentry.swift; sourceTree = "<group>"; };
 		B299C8541DD051210024D2E9 /* EngineYard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineYard.swift; sourceTree = "<group>"; };
 		B29AEFCF225D7F3900C3B8BD /* UrbanAirship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanAirship.swift; sourceTree = "<group>"; };
+		B29D50BC24B053C600F4961B /* Basecamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basecamp.swift; sourceTree = "<group>"; };
 		B2A0635B1E1340B400EEA762 /* Docker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Docker.swift; sourceTree = "<group>"; };
 		B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusioV1Service.swift; sourceTree = "<group>"; };
 		B2A0A16E1E4C45E0000D9B29 /* MailChimp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailChimp.swift; sourceTree = "<group>"; };
@@ -565,6 +567,7 @@
 				B25695501E247C8C00FAE413 /* Atlassian.swift */,
 				B24F91221E8B51A400A77460 /* Auth0.swift */,
 				2F1B7558227A095400BA5CBD /* Avalara.swift */,
+				B29D50BC24B053C600F4961B /* Basecamp.swift */,
 				B299C84E1DD04F8F0024D2E9 /* BitBucket.swift */,
 				BF7AA78022B03AE4002460FB /* Bitrise.swift */,
 				7BA6A0A12240D8E000700C2C /* Bolt.swift */,
@@ -1050,6 +1053,7 @@
 				B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */,
 				B2A0635C1E1340B400EEA762 /* Docker.swift in Sources */,
 				B24D19F61DD072840052E539 /* Preferences.swift in Sources */,
+				B29D50BD24B053C600F4961B /* Basecamp.swift in Sources */,
 				B2A0A16F1E4C45E0000D9B29 /* MailChimp.swift in Sources */,
 				B2D6FDAE21B95A0800F95940 /* LastPass.swift in Sources */,
 				B210189A249E3FF400F31999 /* Pendo.swift in Sources */,
