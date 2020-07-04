@@ -52,14 +52,9 @@ class AdobeDocumentCloudServicesSDK: Adobe {
     let id = 4827
 }
 
-class AdobeJourneyOrchestration: Adobe {
-    let name = "Adobe Journey Orchestration"
-    let id = 4523
-}
-
-class AdobeJourneyOrchestration5224: Adobe {
-    let name = "Adobe Journey Orchestration (5224)"
-    let id = 5224
+class AdobeExperienceLeague: Adobe {
+    let name = "Adobe Experience League"
+    let id = 5314
 }
 
 class AdobeAccountManagement: AdobeServices, SubService {
@@ -102,16 +97,6 @@ class AdobeCaptivatePrime: AdobeServices, SubService {
     let id = 2951
 }
 
-class AdobeCloudDocuments: AdobeCreativeCloud, SubService {
-    let name = "Adobe Cloud Documents"
-    let id = 4460
-}
-
-class AdobeCollaboration: AdobeCreativeCloud, SubService {
-    let name = "Adobe Collaboration"
-    let id = 2960
-}
-
 class AdobeColor: AdobeCreativeCloud, SubService {
     let name = "Adobe Color"
     let id = 2961
@@ -122,29 +107,9 @@ class AdobeConnect: AdobeExperienceCloud, SubService {
     let id = 3011
 }
 
-class AdobeCreativeCloudAssets: AdobeCreativeCloud, SubService {
-    let name = "Adobe Creative Cloud Assets"
-    let id = 2952
-}
-
-class AdobeCreativeCloudHome: AdobeCreativeCloud, SubService {
-    let name = "Adobe Creative Cloud Home"
-    let id = 2955
-}
-
 class AdobeCreativeCloudLibraries: AdobeCreativeCloud, SubService {
     let name = "Adobe Creative Cloud Libraries"
     let id = 2957
-}
-
-class AdobeCreativeCloudMarket: AdobeCreativeCloud, SubService {
-    let name = "Adobe Creative Cloud Market"
-    let id = 2958
-}
-
-class AdobeCreativeSync: AdobeCreativeCloud, SubService {
-    let name = "Adobe CreativeSync"
-    let id = 2959
 }
 
 class AdobeCrossCloudCapabilities: AdobeExperienceCloud, SubService {
@@ -162,11 +127,6 @@ class AdobeDataScienceWorkspace: AdobeExperiencePlatform, SubService {
     let id = 2505
 }
 
-class AdobeDevicePreview: AdobeCreativeCloud, SubService {
-    let name = "Adobe Device Preview"
-    let id = 2963
-}
-
 class AdobeExperienceCloudHome: AdobeExperienceCloud, SubService {
     let name = "Adobe Experience Cloud Home"
     let id = 3314
@@ -180,11 +140,6 @@ class AdobeExperienceManager: AdobeExperienceCloud, SubService {
 class AdobeExperienceManagerAsACloudService: AdobeExperienceCloud, SubService {
     let name = "Adobe Experience Manager as a Cloud Service"
     let id = 3890
-}
-
-class AdobeExtract: AdobeCreativeCloud, SubService {
-    let name = "Adobe Extract"
-    let id = 2954
 }
 
 class AdobeFonts: AdobeCreativeCloud, SubService {
@@ -205,6 +160,11 @@ class AdobeImageService: AdobeServices, SubService {
 class AdobeInviteAccept: AdobeServices, SubService {
     let name = "Adobe Invite Accept"
     let id = 2964
+}
+
+class AdobeJourneyOrchestration: AdobeExperiencePlatform, SubService {
+    let name = "Adobe Journey Orchestration"
+    let id = 5224
 }
 
 class AdobeLightroom: AdobeCreativeCloud, SubService {
@@ -255,16 +215,6 @@ class AdobePremiereRush: AdobeCreativeCloud, SubService {
 class AdobePrimetime: AdobeExperienceCloud, SubService {
     let name = "Adobe Primetime"
     let id = 1219
-}
-
-class AdobePublishOnline: AdobeCreativeCloud, SubService {
-    let name = "Adobe Publish Online"
-    let id = 2971
-}
-
-class AdobePublishServices: AdobeCreativeCloud, SubService {
-    let name = "Adobe Publish Services"
-    let id = 2973
 }
 
 class AdobeQueryService: AdobeExperiencePlatform, SubService {
