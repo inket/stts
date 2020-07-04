@@ -127,6 +127,7 @@
 		B299C8551DD051210024D2E9 /* EngineYard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8541DD051210024D2E9 /* EngineYard.swift */; };
 		B29AEFD0225D7F3900C3B8BD /* UrbanAirship.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29AEFCF225D7F3900C3B8BD /* UrbanAirship.swift */; };
 		B29D50BD24B053C600F4961B /* Basecamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D50BC24B053C600F4961B /* Basecamp.swift */; };
+		B29D50BF24B0542100F4961B /* PlatformSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D50BE24B0542100F4961B /* PlatformSH.swift */; };
 		B2A0635C1E1340B400EEA762 /* Docker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0635B1E1340B400EEA762 /* Docker.swift */; };
 		B2A0635E1E1341C900EEA762 /* StatusioV1Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */; };
 		B2A0A16F1E4C45E0000D9B29 /* MailChimp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0A16E1E4C45E0000D9B29 /* MailChimp.swift */; };
@@ -349,6 +350,7 @@
 		B299C8541DD051210024D2E9 /* EngineYard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineYard.swift; sourceTree = "<group>"; };
 		B29AEFCF225D7F3900C3B8BD /* UrbanAirship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanAirship.swift; sourceTree = "<group>"; };
 		B29D50BC24B053C600F4961B /* Basecamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basecamp.swift; sourceTree = "<group>"; };
+		B29D50BE24B0542100F4961B /* PlatformSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSH.swift; sourceTree = "<group>"; };
 		B2A0635B1E1340B400EEA762 /* Docker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Docker.swift; sourceTree = "<group>"; };
 		B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusioV1Service.swift; sourceTree = "<group>"; };
 		B2A0A16E1E4C45E0000D9B29 /* MailChimp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailChimp.swift; sourceTree = "<group>"; };
@@ -623,6 +625,7 @@
 				B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */,
 				B2101899249E3FF400F31999 /* Pendo.swift */,
 				B2BA697D1E2DA3A20016AF1A /* PivotalTracker.swift */,
+				B29D50BE24B0542100F4961B /* PlatformSH.swift */,
 				B2F127A61E0B84230035B20C /* PubNub.swift */,
 				B299C84A1DD04E850024D2E9 /* Pusher.swift */,
 				B272E3C7235F460D00B33076 /* Python.swift */,
@@ -1113,6 +1116,7 @@
 				B2EAD8D520B8FDB800095F5B /* JAMF.swift in Sources */,
 				B269FCBB1E261BDF0016041D /* Figma.swift in Sources */,
 				B26350FF1ED7D0210069EA73 /* Segment.swift in Sources */,
+				B29D50BF24B0542100F4961B /* PlatformSH.swift in Sources */,
 				B299C8471DD04D7C0024D2E9 /* NPM.swift in Sources */,
 				B2E018FD214E60E700C5F75B /* AppearanceObserver.swift in Sources */,
 				B2C4670F1E70012700C5145D /* Zapier.swift in Sources */,
