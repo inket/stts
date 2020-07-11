@@ -15,7 +15,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
 
     var editorTableViewController: EditorTableViewController
 
-    var services: [BaseService] = Preferences.shared.selectedServices {
+    var services: [BaseService] = ServiceLoader.current.services(for: Preferences.shared.selectedServices) {
         didSet {
             addServicesNoticeField.isHidden = services.count > 0
         }
@@ -156,7 +156,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         scrollView.documentView = tableView
 
         if editorTableViewController.selectionChanged {
-            self.services = Preferences.shared.selectedServices
+            self.services = ServiceLoader.current.services(for: Preferences.shared.selectedServices)
             reloadData()
 
             (NSApp.delegate as? AppDelegate)?.updateServices()

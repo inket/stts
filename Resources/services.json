@@ -1,0 +1,629 @@
+{
+    "independent": [
+        {
+            "name": "Algolia",
+            "url": "https://status.algolia.com/"
+        },
+        {
+            "old_name": "AmazonWebServices",
+            "class_name": "AmazonWebServices",
+            "name": "Amazon Web Services",
+            "url": "https://status.aws.amazon.com"
+        },
+        {
+            "old_name": "AuthorizeNet",
+            "class_name": "AuthorizeNet",
+            "name": "Authorize.Net",
+            "url": "https://status.authorize.net"
+        },
+        {
+            "name": "Beanstalk",
+            "url": "https://status.beanstalkapp.com"
+        },
+        {
+            "name": "DigitalOcean",
+            "url": "https://status.digitalocean.com"
+        },
+        {
+            "name": "Evernote",
+            "url": "https://status.evernote.com"
+        },
+        {
+            "name": "Heroku",
+            "url": "https://status.heroku.com"
+        },
+        {
+            "name": "Netlify",
+            "url": "https://netlifystatus.com"
+        },
+        {
+            "name": "ScaleGrid",
+            "url": "https://scalegrid.io/status.html"
+        },
+        {
+            "name": "Slack",
+            "url": "https://status.slack.com"
+        },
+        {
+            "name": "Stripe",
+            "url": "https://status.stripe.com"
+        }
+    ],
+    "cachet": [
+        {
+            "name": "ProtonMail",
+            "url": "https://protonstatus.com"
+        },
+        {
+            "name": "Yarn",
+            "url": "https://status.yarnpkg.com"
+        }
+    ],
+    "lamb": [
+        {
+            "name": "Codacy",
+            "url": "https://status.codacy.com"
+        }
+    ],
+    "sorry": [
+        {
+            "name": "Pingdom",
+            "url": "https://status.pingdom.com",
+            "id": "9c53640d"
+        }
+    ],
+    "statusCake": [
+        {
+            "name": "MailChimp",
+            "url": "https://status.mailchimp.com",
+            "id": "58JncZazfp"
+        }
+    ],
+    "statusIO": [
+        {
+            "name": "Cloud66",
+            "url": "https://status.cloud66.com",
+            "id": "55a770a50a54eb8c710005a9"
+        },
+        {
+            "name": "Dashlane",
+            "url": "https://status.dashlane.com",
+            "id": "5aabcb89fccc4b04d3774443"
+        },
+        {
+            "name": "Docker",
+            "url": "https://status.docker.com",
+            "id": "533c6539221ae15e3f000031"
+        },
+        {
+            "name": "GitLab",
+            "url": "https://status.gitlab.com",
+            "id": "5b36dc6502d06804c08349f7"
+        },
+        {
+            "old_name": "LetsEncrypt",
+            "name": "Let's Encrypt",
+            "url": "https://letsencrypt.status.io",
+            "id": "55957a99e800baa4470002da"
+        },
+        {
+            "name": "Sendinblue",
+            "url": "https://status.sendinblue.com",
+            "id": "586a5ae632dde2fc5b0013c1"
+        },
+        {
+            "name": "Wasabi",
+            "url": "https://status.wasabi.com",
+            "id": "5abbc12aeb57a904e44a58d3"
+        }
+    ],
+    "statusPage": [
+        {
+            "name": "Acquia",
+            "url": "https://status.acquia.com",
+            "id": "c3bdbqpxhzcc"
+        },
+        {
+            "name": "Aptible",
+            "url": "https://status.aptible.com",
+            "id": "fmwgqnbnbc4r"
+        },
+        {
+            "name": "Asana",
+            "url": "https://trust.asana.com",
+            "id": "w58858w0sjxx"
+        },
+        {
+            "name": "Atlassian",
+            "url": "https://status.atlassian.com",
+            "id": "x67gp49yvrzv"
+        },
+        {
+            "name": "Auth0",
+            "url": "https://status.auth0.com",
+            "id": "8q60stg1rk7l"
+        },
+        {
+            "name": "Avalara",
+            "url": "https://status.avalara.com",
+            "id": "m10fpsk86bhy"
+        },
+        {
+            "name": "Basecamp",
+            "url": "https://www.basecampstatus.com",
+            "id": "thc30769z1m9"
+        },
+        {
+            "name": "BitBucket",
+            "url": "https://status.bitbucket.org",
+            "id": "bqlf8qjztdtr"
+        },
+        {
+            "name": "Bitrise",
+            "url": "https://status.bitrise.io",
+            "id": "1q8r4n02vb2k"
+        },
+        {
+            "name": "Bolt",
+            "url": "https://status.bolt.com",
+            "id": "hgyc600tg2jq"
+        },
+        {
+            "name": "Box",
+            "url": "https://status.box.com",
+            "id": "208q92hckwws"
+        },
+        {
+            "name": "Braintree",
+            "url": "https://status.braintreepayments.com",
+            "id": "03tltrdl3qkv"
+        },
+        {
+            "name": "Buildkite",
+            "url": "https://www.buildkitestatus.com",
+            "id": "ltljpr68dygn"
+        },
+        {
+            "name": "Campaign Monitor",
+            "url": "https://status.campaignmonitor.com",
+            "id": "j9b13g64tzwn",
+            "old_name": "CampaignMonitor"
+        },
+        {
+            "name": "CircleCI",
+            "url": "https://status.circleci.com",
+            "id": "6w4r0ttlx5ft"
+        },
+        {
+            "name": "CloudApp",
+            "url": "http://status.getcloudapp.com",
+            "id": "jv7lgzmdfxr1"
+        },
+        {
+            "name": "Cloudflare",
+            "url": "https://www.cloudflarestatus.com",
+            "id": "yh6f0r4529hb"
+        },
+        {
+            "name": "Cloudinary",
+            "url": "https://status.cloudinary.com",
+            "id": "d8rszhl2bj7r"
+        },
+        {
+            "name": "Clubhouse",
+            "url": "https://status.clubhouse.io",
+            "id": "27fcn0qntr9w"
+        },
+        {
+            "name": "CocoaPods",
+            "url": "https://status.cocoapods.org",
+            "id": "7k11xygtyyyg"
+        },
+        {
+            "name": "Code Climate",
+            "url": "https://status.codeclimate.com",
+            "id": "rh2cj4bllp8l",
+            "old_name": "CodeClimate"
+        },
+        {
+            "name": "Codecov",
+            "url": "https://status.codecov.io",
+            "id": "wdzsn5dlywj9"
+        },
+        {
+            "name": "Confluent Cloud",
+            "url": "https://status.confluent.cloud",
+            "id": "3yz1tdpdnjl3",
+            "old_name": "ConfluentCloud"
+        },
+        {
+            "name": "Contentful",
+            "url": "https://www.contentfulstatus.com",
+            "id": "4bv17htq00cz"
+        },
+        {
+            "name": "Coveralls",
+            "url": "https://status.coveralls.io",
+            "id": "3h72wtpg5fqs"
+        },
+        {
+            "name": "DNSimple",
+            "url": "https://dnsimple.statuspage.io",
+            "id": "tjym90yyv2zt"
+        },
+        {
+            "name": "Datadog",
+            "url": "https://status.datadoghq.com",
+            "id": "1k6wzpspjf99"
+        },
+        {
+            "name": "Datadog (EU)",
+            "url": "https://status.datadoghq.eu",
+            "id": "5by3sysm209d",
+            "old_name": "DatadogEU"
+        },
+        {
+            "name": "Discord",
+            "url": "https://status.discordapp.com",
+            "id": "srhpyqt94yxb"
+        },
+        {
+            "name": "Dropbox",
+            "url": "https://status.dropbox.com",
+            "id": "t34htyd6jblf"
+        },
+        {
+            "name": "Dwolla",
+            "url": "https://status.dwolla.com",
+            "id": "tnynfs0nwlgr"
+        },
+        {
+            "name": "Egnyte",
+            "url": "https://status.egnyte.com",
+            "id": "jr196z1ns266"
+        },
+        {
+            "name": "Elastic Cloud",
+            "url": "https://cloud-status.elastic.co",
+            "id": "8wpbdv4sl8gv",
+            "old_name": "ElasticCloud"
+        },
+        {
+            "name": "Engine Yard",
+            "url": "https://engineyard.statuspage.io",
+            "id": "76sphw1bc50q",
+            "old_name": "EngineYard"
+        },
+        {
+            "name": "Fastly",
+            "url": "https://status.fastly.com",
+            "id": "889dh1w1xtt0"
+        },
+        {
+            "name": "Figma",
+            "url": "https://status.figma.com",
+            "id": "rxpksf93ynw6"
+        },
+        {
+            "name": "Filestack",
+            "url": "https://status.filestack.com",
+            "id": "z8cjgbr8sqmh"
+        },
+        {
+            "name": "Gandi.net",
+            "url": "https://status.gandi.net",
+            "id": "xnm08yh10bv5",
+            "old_name": "Gandi"
+        },
+        {
+            "name": "GitHub",
+            "url": "https://www.githubstatus.com",
+            "id": "kctbh9vrtdwd"
+        },
+        {
+            "name": "HipChat",
+            "url": "https://status.hipchat.com",
+            "id": "lgt1kx2s9x9s"
+        },
+        {
+            "name": "imgix",
+            "url": "https://status.imgix.com",
+            "id": "032k0f0j3bsz",
+            "old_name": "Imgix"
+        },
+        {
+            "name": "Intercom",
+            "url": "https://status.intercom.com",
+            "id": "1m1j8k4rtldg"
+        },
+        {
+            "name": "JAMF",
+            "url": "https://status.jamf.com",
+            "id": "5z7bmx2nb2yj"
+        },
+        {
+            "name": "KeenIO",
+            "url": "https://status.keen.io",
+            "id": "z3mvdbpvy7yh"
+        },
+        {
+            "name": "LastPass",
+            "url": "https://status.lastpass.com",
+            "id": "ytnz8gj3wjpg"
+        },
+        {
+            "name": "LaunchDarkly",
+            "url": "https://status.launchdarkly.com",
+            "id": "9404kdk7lkn7"
+        },
+        {
+            "name": "Lob",
+            "url": "https://lob.statuspage.io",
+            "id": "2xkb3rfdd3lg"
+        },
+        {
+            "name": "Loggly",
+            "url": "https://status.loggly.com",
+            "id": "701xnxqmhdh3"
+        },
+        {
+            "name": "Mailgun",
+            "url": "https://status.mailgun.com",
+            "id": "6jp439mdyy0k"
+        },
+        {
+            "name": "Mapbox",
+            "url": "https://status.mapbox.com",
+            "id": "l363gv8nm9gc"
+        },
+        {
+            "name": "Media Temple",
+            "url": "https://status.mediatemple.net",
+            "id": "sk0wbwpc3xqq",
+            "old_name": "MediaTemple"
+        },
+        {
+            "name": "Mixpanel",
+            "url": "https://status.mixpanel.com",
+            "id": "x4m91ldrf511"
+        },
+        {
+            "name": "Mural",
+            "url": "https://status.mural.co",
+            "id": "dbk70dpy3n7h"
+        },
+        {
+            "name": "NPM",
+            "url": "https://status.npmjs.org",
+            "id": "wyvgptkd90hm"
+        },
+        {
+            "name": "New Relic",
+            "url": "https://status.newrelic.com",
+            "id": "nwg5xmnm9d17",
+            "old_name": "NewRelic"
+        },
+        {
+            "name": "1Password",
+            "url": "https://1password.statuspage.io",
+            "id": "z5s8xghvb0vf",
+            "old_name": "OnePassword"
+        },
+        {
+            "name": "Packet",
+            "url": "https://status.packet.com",
+            "id": "39f8vhy6rw5d"
+        },
+        {
+            "name": "PagerDuty",
+            "url": "https://status.pagerduty.com",
+            "id": "33yy6hwxnwr3"
+        },
+        {
+            "name": "Pantheon",
+            "url": "https://status.pantheon.io",
+            "id": "80f0zgsx80zh"
+        },
+        {
+            "name": "Papertrail",
+            "url": "https://www.papertrailstatus.com",
+            "id": "0n5jhb30j32t"
+        },
+        {
+            "name": "Pendo",
+            "url": "https://status.pendo.io",
+            "id": "qxvy69hcwh22"
+        },
+        {
+            "name": "Pivotal Tracker",
+            "url": "https://status.pivotaltracker.com",
+            "id": "mjwp4vwtvdp8",
+            "old_name": "PivotalTracker"
+        },
+        {
+            "name": "Platform.sh",
+            "url": "https://status.platform.sh",
+            "id": "l2x5n4czt1ph",
+            "old_name": "PlatformSH"
+        },
+        {
+            "name": "PubNub",
+            "url": "https://status.pubnub.com",
+            "id": "j2pr9thwz01t"
+        },
+        {
+            "name": "Pusher",
+            "url": "https://status.pusher.com",
+            "id": "p6t5x7tdq8yq"
+        },
+        {
+            "name": "Python",
+            "url": "https://status.python.org",
+            "id": "2p66nmmycsj3"
+        },
+        {
+            "name": "Quandl",
+            "url": "https://status.quandl.com",
+            "id": "dyfxchz1hcb1"
+        },
+        {
+            "name": "Quay",
+            "url": "https://status.quay.io",
+            "id": "8szqd6w4s277"
+        },
+        {
+            "name": "Recurly",
+            "url": "https://status.recurly.com",
+            "id": "rq8zvx7w9n0c"
+        },
+        {
+            "name": "Reddit",
+            "url": "https://www.redditstatus.com",
+            "id": "2kbc0d48tv3j"
+        },
+        {
+            "name": "RevenueCat",
+            "url": "https://status.revenuecat.com",
+            "id": "d7wjfp7kgjkd"
+        },
+        {
+            "name": "Robinhood",
+            "url": "https://status.robinhood.com",
+            "id": "49plxygx5s1k"
+        },
+        {
+            "name": "Rollbar",
+            "url": "https://status.rollbar.com",
+            "id": "0hsb4m2rq2h3"
+        },
+        {
+            "name": "RubyGems",
+            "url": "https://status.rubygems.org",
+            "id": "pclby00q90vc"
+        },
+        {
+            "name": "Sauce Labs",
+            "url": "https://status.saucelabs.com",
+            "id": "kd2w7ghdk56w",
+            "old_name": "SauceLabs"
+        },
+        {
+            "name": "Segment",
+            "url": "https://status.segment.com",
+            "id": "yzw83vcxbysq"
+        },
+        {
+            "name": "SendGrid",
+            "url": "https://status.sendgrid.com",
+            "id": "3tgl2vf85cht"
+        },
+        {
+            "name": "Sentry",
+            "url": "https://status.sentry.io",
+            "id": "t687h3m0nh65"
+        },
+        {
+            "name": "Shopify",
+            "url": "https://status.shopify.com",
+            "id": "d33g96wd23dd"
+        },
+        {
+            "name": "SmartyStreets",
+            "url": "https://status.smartystreets.com",
+            "id": "q1z5r94tnt56"
+        },
+        {
+            "name": "Snyk",
+            "url": "https://snyk.statuspage.io",
+            "id": "myj6w6kw42c6"
+        },
+        {
+            "name": "Spoke",
+            "url": "https://status.askspoke.com",
+            "id": "4fw9h14fz72w"
+        },
+        {
+            "name": "Squarespace",
+            "url": "https://status.squarespace.com",
+            "id": "1jkhm1drpysj"
+        },
+        {
+            "name": "Atlassian Statuspage",
+            "url": "https://metastatuspage.com",
+            "id": "y2j98763l56x",
+            "old_name": "StatusPage",
+            "host": "metastatuspage.com"
+        },
+        {
+            "name": "Stream",
+            "url": "http://status.getstream.io",
+            "id": "gsms7w17y9wc"
+        },
+        {
+            "name": "TravisCI",
+            "url": "https://www.traviscistatus.com",
+            "id": "pnpcptp8xh9k"
+        },
+        {
+            "name": "Trello",
+            "url": "https://www.trellostatus.com",
+            "id": "h5frqhb041yq"
+        },
+        {
+            "name": "Twilio",
+            "url": "https://status.twilio.com",
+            "id": "gpkpyklzq55q"
+        },
+        {
+            "name": "Typeform",
+            "url": "https://status.typeform.com",
+            "id": "fv5fyw3p7k8n"
+        },
+        {
+            "name": "Unsplash",
+            "url": "https://status.unsplash.com",
+            "id": "gcw6g25tpdkv"
+        },
+        {
+            "name": "Urban Airship",
+            "url": "https://status.urbanairship.com",
+            "id": "gk8jfj1gbrzn",
+            "old_name": "UrbanAirship"
+        },
+        {
+            "name": "VictorOps",
+            "url": "https://status.victorops.com",
+            "id": "tj7j024mr40d"
+        },
+        {
+            "name": "Vimeo",
+            "url": "https://www.vimeostatus.com",
+            "id": "sccqh0pnqrh8"
+        },
+        {
+            "name": "WeTransfer",
+            "url": "https://wetransfer.statuspage.io",
+            "id": "sc26zwwp3c0r"
+        },
+        {
+            "name": "Wodby",
+            "url": "https://status.wodby.com",
+            "id": "hmm9v8wzw86x"
+        },
+        {
+            "name": "Zapier",
+            "url": "https://status.zapier.com",
+            "id": "vg334k121155"
+        },
+        {
+            "name": "Zoom",
+            "url": "https://status.zoom.us",
+            "id": "14qjgk812kgk"
+        },
+        {
+            "name": "Zwift",
+            "url": "https://status.zwift.com",
+            "id": "sj50pfj5p1yv"
+        }
+    ]
+}

@@ -66,25 +66,6 @@ public class BaseService: Loading {
 
     private var lastNotifiedStatus: ServiceStatus?
 
-    public static func all() -> [BaseService] {
-        guard let servicesPlist = Bundle.main.path(forResource: "services", ofType: "plist"),
-            let services = NSDictionary(contentsOfFile: servicesPlist)?["services"] as? [String] else {
-                fatalError("The services.plist file does not exist. The build phase script might have failed.")
-        }
-
-        return services.map(BaseService.named).compactMap { $0 }
-    }
-
-    public static func allWithoutSubServices() -> [BaseService] {
-        all().filter { !($0 is SubService) }
-    }
-
-    static func named(_ name: String) -> BaseService? {
-        return (NSClassFromString("stts.\(name)") as? Service.Type)?.init()
-    }
-
-    public required init() {}
-
     public func updateStatus(callback: @escaping (BaseService) -> Void) {}
 
     func _fail(_ error: Error?) {

@@ -57,6 +57,11 @@ class AdobeExperienceLeague: Adobe {
     let id = 5314
 }
 
+class AdobeIO: AdobeServices, SubService {
+    let name = "Adobe - I/O"
+    let id = 1675
+}
+
 class AdobeAccountManagement: AdobeServices, SubService {
     let name = "Adobe Account Management"
     let id = 2941
@@ -95,11 +100,6 @@ class AdobeCampaign: AdobeExperienceCloud, SubService {
 class AdobeCaptivatePrime: AdobeServices, SubService {
     let name = "Adobe Captivate Prime"
     let id = 2951
-}
-
-class AdobeColor: AdobeCreativeCloud, SubService {
-    let name = "Adobe Color"
-    let id = 2961
 }
 
 class AdobeConnect: AdobeExperienceCloud, SubService {
@@ -142,14 +142,19 @@ class AdobeExperienceManagerAsACloudService: AdobeExperienceCloud, SubService {
     let id = 3890
 }
 
+class AdobeExperienceManagerManagedServices: AdobeExperienceCloud, SubService {
+    let name = "Adobe Experience Manager Managed Services"
+    let id = 1950
+}
+
 class AdobeFonts: AdobeCreativeCloud, SubService {
     let name = "Adobe Fonts"
     let id = 2948
 }
 
-class AdobeIO: AdobeServices, SubService {
-    let name = "Adobe I/O"
-    let id = 1675
+class AdobeFrescoAdobeColor: AdobeCreativeCloud, SubService {
+    let name = "Adobe Fresco Adobe Color"
+    let id = 5371
 }
 
 class AdobeImageService: AdobeServices, SubService {

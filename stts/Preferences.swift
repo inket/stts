@@ -9,22 +9,26 @@ struct Preferences {
     static var shared = Preferences()
 
     var notifyOnStatusChange: Bool {
-        get { return UserDefaults.standard.bool(forKey: "notifyOnStatusChange") }
+        get { UserDefaults.standard.bool(forKey: "notifyOnStatusChange") }
         set { UserDefaults.standard.set(newValue, forKey: "notifyOnStatusChange") }
     }
 
-    var selectedServices: [BaseService] {
+    var selectedServices: [ServiceDefinition] {
         get {
-            guard let classNames = UserDefaults.standard.array(forKey: "selectedServices") as? [String] else {
-                return []
+            let identifiers = UserDefaults.standard.array(forKey: "selectedServices") as? [String] ?? []
+
+            // Match the identifiers to our loaded service definitions
+            let definitions = identifiers.map(ServiceLoader.current.serviceDefinition(forIdentifier:)).compactMap { $0 }
+            let sortedDefinitions = definitions.sorted { a, b in
+                a.name.localizedCaseInsensitiveCompare(b.name) == .orderedAscending
             }
 
-            return classNames.map(BaseService.named).compactMap { $0 }.sorted()
+            return sortedDefinitions
         }
 
         set {
-            let classNames = newValue.map { "\(type(of: $0))" }
-            UserDefaults.standard.set(classNames, forKey: "selectedServices")
+            let identifiers = newValue.map { $0.globalIdentifier }
+            UserDefaults.standard.set(identifiers, forKey: "selectedServices")
         }
     }
 

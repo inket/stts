@@ -11,10 +11,10 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
     let bottomBar: BottomBar
     let tableView = NSTableView()
 
-    let allServices: [BaseService] = BaseService.all().sorted()
-    let allServicesWithoutSubServices: [BaseService] = BaseService.allWithoutSubServices().sorted()
-    var filteredServices: [BaseService]
-    var selectedServices: [BaseService] = Preferences.shared.selectedServices
+    let allServices: [ServiceDefinition] = ServiceLoader.current.definedServices
+    let allServicesWithoutSubServices: [ServiceDefinition] = ServiceLoader.current.definedServices
+    var filteredServices: [ServiceDefinition]
+    var selectedServices: [ServiceDefinition] = Preferences.shared.selectedServices
 
     var selectionChanged = false
 
@@ -56,18 +56,19 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
             }
 
             // Find the sub services
-            var subServices = allServices.filter {
-                // Can't check superclass matches without mirror
-                Mirror(reflecting: $0).superclassMirror?.subjectType == category.subServiceSuperclass
-
-                // Exclude the category so that we can add it at the top
-                && $0 != category as? BaseService
-            }.sorted()
-
-            // Add the category as the top item
-            (category as? BaseService).flatMap { subServices.insert($0, at: 0) }
-
-            filteredServices = subServices
+            // TODO: rethink categories and subservices
+//            var subServices = allServices.filter {
+//                // Can't check superclass matches without mirror
+//                Mirror(reflecting: $0).superclassMirror?.subjectType == category.subServiceSuperclass
+//
+//                // Exclude the category so that we can add it at the top
+//                && $0 != category as? BaseService
+//            }.sorted()
+//
+//            // Add the category as the top item
+//            (category as? BaseService).flatMap { subServices.insert($0, at: 0) }
+//
+//            filteredServices = subServices
             tableView.reloadData()
 
             if let scrollPosition = scrollToPosition {
@@ -115,11 +116,10 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
 
         settingsView.isHidden = true
         settingsView.searchCallback = { [weak self] searchString in
-            guard
-                let strongSelf = self,
-                let allServices = strongSelf.allServices as? [Service],
-                let allServicesWithoutSubServices = strongSelf.allServicesWithoutSubServices as? [Service]
-            else { return }
+            guard let strongSelf = self else { return }
+
+            let allServices = strongSelf.allServices
+            let allServicesWithoutSubServices = strongSelf.allServicesWithoutSubServices
 
             if searchString.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
                 strongSelf.filteredServices = allServicesWithoutSubServices
@@ -232,7 +232,8 @@ extension EditorTableViewController: NSTableViewDelegate {
         let cell = tableView.makeView(withIdentifier: identifier, owner: self) ?? EditorTableCell()
 
         guard let view = cell as? EditorTableCell else { return nil }
-        guard let service = filteredServices[row] as? Service else { return nil }
+
+        let service = filteredServices[row]
 
         if isSearching || selectedCategory != nil {
             view.type = .service
@@ -243,7 +244,7 @@ extension EditorTableViewController: NSTableViewDelegate {
         switch view.type {
         case .service:
             view.textField?.stringValue = service.name
-            view.selected = selectedServices.contains(service)
+            view.selected = selectedServices.contains(where: service.eq)
             view.toggleCallback = { [weak self] in
                 guard let strongSelf = self else { return }
 
@@ -252,7 +253,7 @@ extension EditorTableViewController: NSTableViewDelegate {
                 if view.selected {
                     self?.selectedServices.append(service)
                 } else {
-                    if let index = self?.selectedServices.firstIndex(of: service) {
+                    if let index = self?.selectedServices.firstIndex(where: service.eq) {
                         self?.selectedServices.remove(at: index)
                     }
                 }

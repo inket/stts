@@ -5,43 +5,34 @@
 
 import Foundation
 
-typealias LambStatusService = BaseLambStatusService & RequiredServiceProperties
-
-class BaseLambStatusService: BaseService {
-    // According to
-    // https://github.com/ks888/LambStatus/blob/ba950df3241ac9143e03411d6c1a06d126cc0180/packages/frontend/src/utils/status.js#L1
-    private enum LambStatus: String, Codable {
-        case operational = "Operational"
-        case underMaintenance = "Under Maintenance"
-        case degradedPerformance = "Degraded Performance"
-        case partialOutage = "Partial Outage"
-        case majorOutage = "Major Outage"
-
-        var serviceStatus: ServiceStatus {
-            switch self {
-            case .operational:
-                return .good
-            case .underMaintenance:
-                return .maintenance
-            case .degradedPerformance,
-                 .partialOutage:
-                return .minor
-            case .majorOutage:
-                return .major
-            }
-        }
+struct LambStatusServiceDefinition: Codable, ServiceDefinition {
+    enum CodingKeys: String, CodingKey {
+        case name
+        case url
     }
 
-    private struct LambComponent: Codable {
-        let componentID: String
-        let name: String
-        let status: LambStatus
+    let name: String
+    let url: URL
+
+    var legacyIdentifier: String { name }
+    var globalIdentifier: String { "lamb.\(alphanumericName)" }
+
+    func build() -> BaseService? {
+        LambStatusService(self)
+    }
+}
+
+class LambStatusService: BaseService {
+    let name: String
+    let url: URL
+
+    init(_ definition: LambStatusServiceDefinition) {
+        name = definition.name
+        url = definition.url
     }
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? LambStatusService else { fatalError("BaseLambStatusService should not be used directly.") }
-
-        let apiComponentsURL = realSelf.url.appendingPathComponent("api").appendingPathComponent("components")
+        let apiComponentsURL = url.appendingPathComponent("api").appendingPathComponent("components")
 
         loadData(with: apiComponentsURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
@@ -63,4 +54,34 @@ class BaseLambStatusService: BaseService {
             self?.message = worstComponent.status.rawValue
         }
     }
+}
+
+// According to
+// https://github.com/ks888/LambStatus/blob/ba950df3241ac9143e03411d6c1a06d126cc0180/packages/frontend/src/utils/status.js#L1
+private enum LambStatus: String, Codable {
+    case operational = "Operational"
+    case underMaintenance = "Under Maintenance"
+    case degradedPerformance = "Degraded Performance"
+    case partialOutage = "Partial Outage"
+    case majorOutage = "Major Outage"
+
+    var serviceStatus: ServiceStatus {
+        switch self {
+        case .operational:
+            return .good
+        case .underMaintenance:
+            return .maintenance
+        case .degradedPerformance,
+             .partialOutage:
+            return .minor
+        case .majorOutage:
+            return .major
+        }
+    }
+}
+
+private struct LambComponent: Codable {
+    let componentID: String
+    let name: String
+    let status: LambStatus
 }
