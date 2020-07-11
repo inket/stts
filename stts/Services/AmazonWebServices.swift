@@ -5,10 +5,7 @@
 
 import Foundation
 
-class AmazonWebServices: Service {
-    let name = "Amazon Web Services"
-    let url = URL(string: "https://status.aws.amazon.com")!
-
+class AmazonWebServices: IndependentService {
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         let dataURL = URL(string: "https://status.aws.amazon.com/data.json")!
 

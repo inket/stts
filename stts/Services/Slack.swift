@@ -5,32 +5,7 @@
 
 import Kanna
 
-class Slack: Service {
-    private enum SlackStatus: String {
-        case check = "tablecheck.png"
-        case outage = "tableoutage.png"
-        case incident = "tableincident.png"
-        case maintenance = "tablemaintenance.png"
-        case notice = "tablenotice.png"
-
-        var serviceStatus: ServiceStatus {
-            switch self {
-            case .check:
-                return .good
-            case .outage:
-                return .major
-            case .incident:
-                return .minor
-            case .maintenance:
-                return .maintenance
-            case .notice:
-                return .notice
-            }
-        }
-    }
-
-    let url = URL(string: "https://status.slack.com")!
-
+class Slack: IndependentService {
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         loadData(with: url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
@@ -47,6 +22,29 @@ class Slack: Service {
 
             self?.status = statuses.map { $0.serviceStatus }.max() ?? .undetermined
             self?.message = doc.css("#current_status h1").first?.text ?? "Undetermined"
+        }
+    }
+}
+
+private enum SlackStatus: String {
+    case check = "tablecheck.png"
+    case outage = "tableoutage.png"
+    case incident = "tableincident.png"
+    case maintenance = "tablemaintenance.png"
+    case notice = "tablenotice.png"
+
+    var serviceStatus: ServiceStatus {
+        switch self {
+        case .check:
+            return .good
+        case .outage:
+            return .major
+        case .incident:
+            return .minor
+        case .maintenance:
+            return .maintenance
+        case .notice:
+            return .notice
         }
     }
 }

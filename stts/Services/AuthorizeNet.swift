@@ -5,10 +5,7 @@
 
 import Foundation
 
-class AuthorizeNet: Service {
-    let name = "Authorize.Net"
-    let url = URL(string: "https://status.authorize.net")!
-
+class AuthorizeNet: IndependentService {
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         let apiURL = URL(string: "https://status.authorize.net/status/v1/products/3/components")!
 

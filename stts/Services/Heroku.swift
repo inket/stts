@@ -5,44 +5,7 @@
 
 import Foundation
 
-private struct HerokuStatusResponse: Codable {
-    struct HerokuStatus: Codable {
-        enum CodingKeys: String, CodingKey {
-            case production = "Production"
-            case development = "Development"
-        }
-
-        enum Status: String, Codable {
-            case green
-            case red
-            case yellow
-            case blue
-
-            var status: ServiceStatus {
-                switch self {
-                case .green: return .good
-                case .red: return .major
-                case .yellow: return .minor
-                case .blue: return .maintenance
-                }
-            }
-        }
-
-        let production: Status
-        let development: Status
-    }
-
-    struct HerokuIssue: Codable {
-        let title: String
-    }
-
-    let status: HerokuStatus
-    let issues: [HerokuIssue]
-}
-
-class Heroku: Service {
-    let url = URL(string: "https://status.heroku.com/")!
-
+class Heroku: IndependentService {
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         let statusURL = URL(string: "https://status.heroku.com/api/v3/current-status")!
 
@@ -78,4 +41,39 @@ class Heroku: Service {
             }
         }
     }
+}
+
+private struct HerokuStatusResponse: Codable {
+    struct HerokuStatus: Codable {
+        enum CodingKeys: String, CodingKey {
+            case production = "Production"
+            case development = "Development"
+        }
+
+        enum Status: String, Codable {
+            case green
+            case red
+            case yellow
+            case blue
+
+            var status: ServiceStatus {
+                switch self {
+                case .green: return .good
+                case .red: return .major
+                case .yellow: return .minor
+                case .blue: return .maintenance
+                }
+            }
+        }
+
+        let production: Status
+        let development: Status
+    }
+
+    struct HerokuIssue: Codable {
+        let title: String
+    }
+
+    let status: HerokuStatus
+    let issues: [HerokuIssue]
 }

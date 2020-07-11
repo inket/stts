@@ -5,6 +5,23 @@
 
 import Foundation
 
+class Stripe: IndependentService {
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+        loadData(with: url.appendingPathComponent("current/full")) { [weak self] data, _, error in
+            guard let strongSelf = self else { return }
+            defer { callback(strongSelf) }
+
+            guard let data = data else { return strongSelf._fail(error) }
+            guard let currentStatus = try? JSONDecoder().decode(StripeCurrentStatus.self, from: data) else {
+                return strongSelf._fail("Couldn't parse response")
+            }
+
+            self?.status = currentStatus.overallStatus.serviceStatus
+            self?.message = currentStatus.message
+        }
+    }
+}
+
 private struct StripeCurrentStatus: Codable {
     enum Status: String, Codable {
         case up
@@ -28,23 +45,4 @@ private struct StripeCurrentStatus: Codable {
 
     let message: String
     let overallStatus: Status
-}
-
-class Stripe: Service {
-    let url = URL(string: "https://status.stripe.com")!
-
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        loadData(with: url.appendingPathComponent("current/full")) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-
-            guard let data = data else { return strongSelf._fail(error) }
-            guard let currentStatus = try? JSONDecoder().decode(StripeCurrentStatus.self, from: data) else {
-                return strongSelf._fail("Couldn't parse response")
-            }
-
-            self?.status = currentStatus.overallStatus.serviceStatus
-            self?.message = currentStatus.message
-        }
-    }
 }
