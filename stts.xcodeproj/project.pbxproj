@@ -67,6 +67,7 @@
 		B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235B3BC1DF562C400821936 /* SettingsView.swift */; };
 		B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D4E6C1E13471200B04F18 /* Intercom.swift */; };
 		B23D4E6F1E13475900B04F18 /* KeenIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D4E6E1E13475900B04F18 /* KeenIO.swift */; };
+		B23EE5B324B9FF430067D800 /* Bullhorn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23EE5B224B9FF430067D800 /* Bullhorn.swift */; };
 		B24220E41E2F6BBA0007E50E /* Typeform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24220E31E2F6BBA0007E50E /* Typeform.swift */; };
 		B2430807210810D0003F8D07 /* Algolia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2430806210810D0003F8D07 /* Algolia.swift */; };
 		B2483CF12037029D00A9FA95 /* Zwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2483CF02037029D00A9FA95 /* Zwift.swift */; };
@@ -290,6 +291,7 @@
 		B235B3BC1DF562C400821936 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B23D4E6C1E13471200B04F18 /* Intercom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intercom.swift; sourceTree = "<group>"; };
 		B23D4E6E1E13475900B04F18 /* KeenIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeenIO.swift; sourceTree = "<group>"; };
+		B23EE5B224B9FF430067D800 /* Bullhorn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullhorn.swift; sourceTree = "<group>"; };
 		B24220E31E2F6BBA0007E50E /* Typeform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typeform.swift; sourceTree = "<group>"; };
 		B2430806210810D0003F8D07 /* Algolia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algolia.swift; sourceTree = "<group>"; };
 		B2483CF02037029D00A9FA95 /* Zwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zwift.swift; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 				B2EC838C24547370001D2D2F /* Box.swift */,
 				B2F127AA1E0B84F00035B20C /* Braintree.swift */,
 				B2894CE320EEE2780009CCA3 /* Buildkite.swift */,
+				B23EE5B224B9FF430067D800 /* Bullhorn.swift */,
 				B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */,
 				B2FDC91D1D6706C400F0B728 /* CircleCI.swift */,
 				B2F34040222630F20055C96F /* CloudApp.swift */,
@@ -1066,6 +1069,7 @@
 				B2BB19BC20B9043F00A97A87 /* Yarn.swift in Sources */,
 				B22FDE4D2108A5AE00359EC9 /* PayPalProductProduction.swift in Sources */,
 				A0C3F34B220FD630005D9998 /* Datadog.swift in Sources */,
+				B23EE5B324B9FF430067D800 /* Bullhorn.swift in Sources */,
 				B2B2D1031D49D5080014D780 /* AppDelegate.swift in Sources */,
 				B25695601E247C8C00FAE413 /* SmartyStreets.swift in Sources */,
 				B2CEE5D722B49CB50073C743 /* Azure.swift in Sources */,
