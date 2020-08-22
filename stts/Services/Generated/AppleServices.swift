@@ -85,9 +85,9 @@ class AppleCareInIOS: Apple, SubService {
     let serviceName = "AppleCare in iOS"
 }
 
-class AppleBeats1: Apple, SubService {
-    let name = "Apple Beats 1"
-    let serviceName = "Beats 1"
+class AppleMusicRadio: Apple, SubService {
+    let name = "Apple Music radio"
+    let serviceName = "Apple Music radio"
 }
 
 class AppleDeviceEnrollmentProgram: Apple, SubService {
@@ -321,6 +321,11 @@ class AppleAPNS: AppleDeveloper, SubService {
 class AppleAPNSSandbox: AppleDeveloper, SubService {
     let name = "Apple APNS Sandbox"
     let serviceName = "APNS Sandbox"
+}
+
+class AppleAppAttest: AppleDeveloper, SubService {
+    let name = "Apple App Attest"
+    let serviceName = "App Attest"
 }
 
 class AppleAppStoreConnect: AppleDeveloper, SubService {

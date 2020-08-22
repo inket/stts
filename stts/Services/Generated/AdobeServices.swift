@@ -52,11 +52,6 @@ class AdobeDocumentCloudServicesSDK: Adobe {
     let id = 4827
 }
 
-class AdobeExperienceLeague: Adobe {
-    let name = "Adobe Experience League"
-    let id = 5314
-}
-
 class AdobeIO: AdobeServices, SubService {
     let name = "Adobe - I/O"
     let id = 1675
@@ -117,6 +112,11 @@ class AdobeCrossCloudCapabilities: AdobeExperienceCloud, SubService {
     let id = 1228
 }
 
+class AdobeCustomerJourneyAnalytics: AdobeExperienceCloud, SubService {
+    let name = "Adobe Customer Journey Analytics"
+    let id = 5446
+}
+
 class AdobeDataFoundation: AdobeExperiencePlatform, SubService {
     let name = "Adobe Data Foundation"
     let id = 3343
@@ -132,6 +132,11 @@ class AdobeExperienceCloudHome: AdobeExperienceCloud, SubService {
     let id = 3314
 }
 
+class AdobeExperienceLeague: AdobeServices, SubService {
+    let name = "Adobe Experience League"
+    let id = 5314
+}
+
 class AdobeExperienceManager: AdobeExperienceCloud, SubService {
     let name = "Adobe Experience Manager"
     let id = 1175
@@ -140,11 +145,6 @@ class AdobeExperienceManager: AdobeExperienceCloud, SubService {
 class AdobeExperienceManagerAsACloudService: AdobeExperienceCloud, SubService {
     let name = "Adobe Experience Manager as a Cloud Service"
     let id = 3890
-}
-
-class AdobeExperienceManagerManagedServices: AdobeExperienceCloud, SubService {
-    let name = "Adobe Experience Manager Managed Services"
-    let id = 1950
 }
 
 class AdobeFonts: AdobeCreativeCloud, SubService {
@@ -205,11 +205,6 @@ class AdobePhotoshop: AdobeCreativeCloud, SubService {
 class AdobePlatformCoreServices: AdobeExperiencePlatform, SubService {
     let name = "Adobe Platform Core Services"
     let id = 2060
-}
-
-class AdobePortfolio: AdobeCreativeCloud, SubService {
-    let name = "Adobe Portfolio"
-    let id = 2970
 }
 
 class AdobePremiereRush: AdobeCreativeCloud, SubService {
