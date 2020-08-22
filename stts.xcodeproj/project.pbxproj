@@ -183,6 +183,7 @@
 		B2EB51D01E700517001D6F78 /* Codacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EB51CF1E700517001D6F78 /* Codacy.swift */; };
 		B2EC838E24547371001D2D2F /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EC838C24547370001D2D2F /* Box.swift */; };
 		B2EC838F24547371001D2D2F /* Egnyte.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EC838D24547371001D2D2F /* Egnyte.swift */; };
+		B2EF186424F1544100C2F89E /* Kentik.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EF186324F1544100C2F89E /* Kentik.swift */; };
 		B2F127A71E0B84230035B20C /* PubNub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127A61E0B84230035B20C /* PubNub.swift */; };
 		B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127A81E0B84B50035B20C /* Twilio.swift */; };
 		B2F127AB1E0B84F00035B20C /* Braintree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127AA1E0B84F00035B20C /* Braintree.swift */; };
@@ -411,6 +412,7 @@
 		B2EB51CF1E700517001D6F78 /* Codacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Codacy.swift; sourceTree = "<group>"; };
 		B2EC838C24547370001D2D2F /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		B2EC838D24547371001D2D2F /* Egnyte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Egnyte.swift; sourceTree = "<group>"; };
+		B2EF186324F1544100C2F89E /* Kentik.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kentik.swift; sourceTree = "<group>"; };
 		B2F127A61E0B84230035B20C /* PubNub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubNub.swift; sourceTree = "<group>"; };
 		B2F127A81E0B84B50035B20C /* Twilio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twilio.swift; sourceTree = "<group>"; };
 		B2F127AA1E0B84F00035B20C /* Braintree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Braintree.swift; sourceTree = "<group>"; };
@@ -610,6 +612,7 @@
 				B23D4E6C1E13471200B04F18 /* Intercom.swift */,
 				B2EAD8D420B8FDB700095F5B /* JAMF.swift */,
 				B23D4E6E1E13475900B04F18 /* KeenIO.swift */,
+				B2EF186324F1544100C2F89E /* Kentik.swift */,
 				B2D6FDAD21B95A0800F95940 /* LastPass.swift */,
 				36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */,
 				B28E9FBE1ED26A40006B89F1 /* Lob.swift */,
@@ -1056,6 +1059,7 @@
 				B299C8431DD044160024D2E9 /* NewRelic.swift in Sources */,
 				B28E9128248250220026BAAA /* AppleServices.swift in Sources */,
 				BF7AA78122B03AE4002460FB /* Bitrise.swift in Sources */,
+				B2EF186424F1544100C2F89E /* Kentik.swift in Sources */,
 				B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */,
 				B2A0635C1E1340B400EEA762 /* Docker.swift in Sources */,
 				B24D19F61DD072840052E539 /* Preferences.swift in Sources */,
