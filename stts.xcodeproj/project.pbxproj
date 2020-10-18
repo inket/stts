@@ -175,6 +175,7 @@
 		B2DCE6952215ACDE001447D8 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCE6942215ACDE001447D8 /* StringExtensions.swift */; };
 		B2DEE0BE1E696D64006B198E /* Slack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DEE0BD1E696D64006B198E /* Slack.swift */; };
 		B2E018FD214E60E700C5F75B /* AppearanceObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E018FC214E60E700C5F75B /* AppearanceObserver.swift */; };
+		B2E6C8F0253C24AE001210E4 /* Fivetran.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E6C8EF253C24AE001210E4 /* Fivetran.swift */; };
 		B2E70FD822B069BA000BCAD2 /* GoogleCloudPlatformServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E70FD722B069BA000BCAD2 /* GoogleCloudPlatformServices.swift */; };
 		B2E70FDB22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E70FDA22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift */; };
 		B2E70FDD22B07FB0000BCAD2 /* FirebaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E70FDC22B07FB0000BCAD2 /* FirebaseServices.swift */; };
@@ -402,6 +403,7 @@
 		B2DCE6942215ACDE001447D8 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		B2DEE0BD1E696D64006B198E /* Slack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slack.swift; sourceTree = "<group>"; };
 		B2E018FC214E60E700C5F75B /* AppearanceObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceObserver.swift; sourceTree = "<group>"; };
+		B2E6C8EF253C24AE001210E4 /* Fivetran.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fivetran.swift; sourceTree = "<group>"; };
 		B2E70FD322B0657F000BCAD2 /* generate_services_plist.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = generate_services_plist.sh; sourceTree = "<group>"; };
 		B2E70FD622B066EC000BCAD2 /* generate_google_services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generate_google_services.swift; sourceTree = "<group>"; };
 		B2E70FD722B069BA000BCAD2 /* GoogleCloudPlatformServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudPlatformServices.swift; sourceTree = "<group>"; };
@@ -605,6 +607,7 @@
 				A125C59D20F7909500C513B3 /* Fastly.swift */,
 				B269FCBA1E261BDF0016041D /* Figma.swift */,
 				B20396371EE6A06C008CCA21 /* Filestack.swift */,
+				B2E6C8EF253C24AE001210E4 /* Fivetran.swift */,
 				B2C10F3B203646A7008E1E7D /* Gandi.swift */,
 				B254642221EE9AF6003068A4 /* GitHub.swift */,
 				B25695521E247C8C00FAE413 /* HipChat.swift */,
@@ -1137,6 +1140,7 @@
 				B2CBE08F21B95A7B00F5B28F /* GitLab.swift in Sources */,
 				B256955F1E247C8C00FAE413 /* SendGrid.swift in Sources */,
 				B230CE7F21B95C5500E2005D /* Stripe.swift in Sources */,
+				B2E6C8F0253C24AE001210E4 /* Fivetran.swift in Sources */,
 				B2F55EE92408AB1A003D674C /* PlayStationNetwork.swift in Sources */,
 				B22BB39F223B33AE00B43BED /* CampaignMonitor.swift in Sources */,
 				B2F127A71E0B84230035B20C /* PubNub.swift in Sources */,
