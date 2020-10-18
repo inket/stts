@@ -62,14 +62,14 @@ class AdobeAccountManagement: AdobeServices, SubService {
     let id = 2941
 }
 
-class AdobeAdminConsole: AdobeServices, SubService {
-    let name = "Adobe Admin Console"
-    let id = 2942
-}
-
 class AdobeAdvertisingCloud: AdobeExperienceCloud, SubService {
     let name = "Adobe Advertising Cloud"
     let id = 2674
+}
+
+class AdobeAero: AdobeCreativeCloud, SubService {
+    let name = "Adobe Aero"
+    let id = 5707
 }
 
 class AdobeAnalytics: AdobeExperienceCloud, SubService {
@@ -97,14 +97,59 @@ class AdobeCaptivatePrime: AdobeServices, SubService {
     let id = 2951
 }
 
+class AdobeCapture: AdobeCreativeCloud, SubService {
+    let name = "Adobe Capture"
+    let id = 5690
+}
+
+class AdobeColor: AdobeCreativeCloud, SubService {
+    let name = "Adobe Color"
+    let id = 5682
+}
+
 class AdobeConnect: AdobeExperienceCloud, SubService {
     let name = "Adobe Connect"
     let id = 3011
 }
 
+class AdobeConsole: AdobeServices, SubService {
+    let name = "Adobe Console"
+    let id = 2942
+}
+
+class AdobeCreativeCloudApplications: AdobeCreativeCloud, SubService {
+    let name = "Adobe Creative Cloud Applications"
+    let id = 5685
+}
+
 class AdobeCreativeCloudLibraries: AdobeCreativeCloud, SubService {
     let name = "Adobe Creative Cloud Libraries"
     let id = 2957
+}
+
+class AdobeCreativeCloudNotifications: AdobeCreativeCloud, SubService {
+    let name = "Adobe Creative Cloud Notifications"
+    let id = 5692
+}
+
+class AdobeCreativeCloudSharingAndCommenting: AdobeCreativeCloud, SubService {
+    let name = "Adobe Creative Cloud Sharing and Commenting"
+    let id = 5694
+}
+
+class AdobeCreativeCloudStorage: AdobeCreativeCloud, SubService {
+    let name = "Adobe Creative Cloud Storage"
+    let id = 5696
+}
+
+class AdobeCreativeCloudSync: AdobeCreativeCloud, SubService {
+    let name = "Adobe Creative Cloud Sync"
+    let id = 5697
+}
+
+class AdobeCreativeCloudWebsite: AdobeCreativeCloud, SubService {
+    let name = "Adobe Creative Cloud Website"
+    let id = 5699
 }
 
 class AdobeCrossCloudCapabilities: AdobeExperienceCloud, SubService {
@@ -125,6 +170,11 @@ class AdobeDataFoundation: AdobeExperiencePlatform, SubService {
 class AdobeDataScienceWorkspace: AdobeExperiencePlatform, SubService {
     let name = "Adobe Data Science Workspace"
     let id = 2505
+}
+
+class AdobeDimension: AdobeCreativeCloud, SubService {
+    let name = "Adobe Dimension"
+    let id = 5701
 }
 
 class AdobeExperienceCloudHome: AdobeExperienceCloud, SubService {
@@ -152,14 +202,29 @@ class AdobeFonts: AdobeCreativeCloud, SubService {
     let id = 2948
 }
 
-class AdobeFrescoAdobeColor: AdobeCreativeCloud, SubService {
-    let name = "Adobe Fresco Adobe Color"
+class AdobeFresco: AdobeCreativeCloud, SubService {
+    let name = "Adobe Fresco"
     let id = 5371
+}
+
+class AdobeIllustrator: AdobeCreativeCloud, SubService {
+    let name = "Adobe Illustrator"
+    let id = 5703
 }
 
 class AdobeImageService: AdobeServices, SubService {
     let name = "Adobe Image Service"
     let id = 2956
+}
+
+class AdobeInDesign: AdobeCreativeCloud, SubService {
+    let name = "Adobe InDesign"
+    let id = 5705
+}
+
+class AdobeIntelligentServices: AdobeExperienceCloud, SubService {
+    let name = "Adobe Intelligent Services"
+    let id = 3186
 }
 
 class AdobeInviteAccept: AdobeServices, SubService {
@@ -175,6 +240,11 @@ class AdobeJourneyOrchestration: AdobeExperiencePlatform, SubService {
 class AdobeLightroom: AdobeCreativeCloud, SubService {
     let name = "Adobe Lightroom"
     let id = 2965
+}
+
+class AdobeLive: AdobeCreativeCloud, SubService {
+    let name = "Adobe Live"
+    let id = 5683
 }
 
 class AdobeMagento: AdobeExperienceCloud, SubService {
@@ -205,6 +275,16 @@ class AdobePhotoshop: AdobeCreativeCloud, SubService {
 class AdobePlatformCoreServices: AdobeExperiencePlatform, SubService {
     let name = "Adobe Platform Core Services"
     let id = 2060
+}
+
+class AdobePortfolio: AdobeCreativeCloud, SubService {
+    let name = "Adobe Portfolio"
+    let id = 5709
+}
+
+class AdobePremierePro: AdobeCreativeCloud, SubService {
+    let name = "Adobe Premiere Pro"
+    let id = 2978
 }
 
 class AdobePremiereRush: AdobeCreativeCloud, SubService {
@@ -257,6 +337,11 @@ class AdobeStock: AdobeCreativeCloud, SubService {
     let id = 2251
 }
 
+class AdobeSubstance: AdobeCreativeCloud, SubService {
+    let name = "Adobe Substance"
+    let id = 5710
+}
+
 class AdobeSupport: AdobeServices, SubService {
     let name = "Adobe Support"
     let id = 2947
@@ -265,11 +350,6 @@ class AdobeSupport: AdobeServices, SubService {
 class AdobeTarget: AdobeExperienceCloud, SubService {
     let name = "Adobe Target"
     let id = 1178
-}
-
-class AdobeTeamProjects: AdobeCreativeCloud, SubService {
-    let name = "Adobe Team Projects"
-    let id = 2978
 }
 
 class AdobeUserManagementSDK: AdobeServices, SubService {

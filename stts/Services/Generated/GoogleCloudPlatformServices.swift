@@ -127,6 +127,11 @@ class GoogleCloudSQL: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Cloud SQL"
 }
 
+class GoogleCloudTalentSolutionJobSearch: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Talent Solution - Job Search"
+    let dashboardName = "Cloud Talent Solution - Job Search"
+}
+
 class GoogleCloudTasks: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Tasks"
     let dashboardName = "Google Cloud Tasks"

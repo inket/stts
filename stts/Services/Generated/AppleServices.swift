@@ -50,6 +50,11 @@ class AppleMusic: Apple, SubService {
     let serviceName = "Apple Music"
 }
 
+class AppleMusicRadio: Apple, SubService {
+    let name = "Apple Music radio"
+    let serviceName = "Apple Music radio"
+}
+
 class AppleMusicSubscriptions: Apple, SubService {
     let name = "Apple Music Subscriptions"
     let serviceName = "Apple Music Subscriptions"
@@ -83,11 +88,6 @@ class AppleTV: Apple, SubService {
 class AppleCareInIOS: Apple, SubService {
     let name = "AppleCare in iOS"
     let serviceName = "AppleCare in iOS"
-}
-
-class AppleMusicRadio: Apple, SubService {
-    let name = "Apple Music radio"
-    let serviceName = "Apple Music radio"
 }
 
 class AppleDeviceEnrollmentProgram: Apple, SubService {
@@ -265,6 +265,11 @@ class AppleRadio: Apple, SubService {
     let serviceName = "Radio"
 }
 
+class AppleSchooltime: Apple, SubService {
+    let name = "Apple Schooltime"
+    let serviceName = "Schooltime"
+}
+
 class AppleSchoolwork: Apple, SubService {
     let name = "Apple Schoolwork"
     let serviceName = "Schoolwork"
@@ -328,6 +333,11 @@ class AppleAppAttest: AppleDeveloper, SubService {
     let serviceName = "App Attest"
 }
 
+class AppleAppStoreAutomaticAppUpdates: AppleDeveloper, SubService {
+    let name = "Apple App Store Automatic App Updates"
+    let serviceName = "App Store Automatic App Updates"
+}
+
 class AppleAppStoreConnect: AppleDeveloper, SubService {
     let name = "Apple App Store Connect"
     let serviceName = "App Store Connect"
@@ -336,6 +346,26 @@ class AppleAppStoreConnect: AppleDeveloper, SubService {
 class AppleAppStoreConnectAPI: AppleDeveloper, SubService {
     let name = "Apple App Store Connect API"
     let serviceName = "App Store Connect API"
+}
+
+class AppleAppStoreConnectAppProcessing: AppleDeveloper, SubService {
+    let name = "Apple App Store Connect App Processing"
+    let serviceName = "App Store Connect App Processing"
+}
+
+class AppleAppStoreReceiptVerification: AppleDeveloper, SubService {
+    let name = "Apple App Store Receipt Verification"
+    let serviceName = "App Store Receipt Verification"
+}
+
+class AppleAppStoreSandbox: AppleDeveloper, SubService {
+    let name = "Apple App Store Sandbox"
+    let serviceName = "App Store Sandbox"
+}
+
+class AppleAppStoreServerNotifications: AppleDeveloper, SubService {
+    let name = "Apple App Store Server Notifications"
+    let serviceName = "App Store Server Notifications"
 }
 
 class AppleDeveloperForums: AppleDeveloper, SubService {
@@ -359,8 +389,8 @@ class AppleNewsAPI: AppleDeveloper, SubService {
 }
 
 class ApplePayDeveloper: AppleDeveloper, SubService {
-    let name = "Apple Pay (Developer)"
-    let serviceName = "Apple Pay"
+    let name = "Apple Pay - Developer"
+    let serviceName = "Apple Pay - Developer"
 }
 
 class AppleCertificatesIdentifiersAndProfiles: AppleDeveloper, SubService {
@@ -411,11 +441,6 @@ class AppleFeedbackAssistant: AppleDeveloper, SubService {
 class AppleInAppPurchases: AppleDeveloper, SubService {
     let name = "Apple In-App Purchases"
     let serviceName = "In-App Purchases"
-}
-
-class AppleITunesSandbox: AppleDeveloper, SubService {
-    let name = "Apple iTunes Sandbox"
-    let serviceName = "iTunes Sandbox"
 }
 
 class AppleMapKitJSDashboard: AppleDeveloper, SubService {
