@@ -39,6 +39,7 @@ extension Service {
         sanitizedName = sanitizedName.replacingOccurrences(of: " & ", with: "And")
         sanitizedName = sanitizedName.replacingOccurrences(of: "/", with: "")
         sanitizedName = sanitizedName.replacingOccurrences(of: ":", with: "")
+        sanitizedName = sanitizedName.replacingOccurrences(of: "-", with: "")
         return sanitizedName.components(separatedBy: " ").map { $0.capitalized(firstLetterOnly: true) }.joined(separator: "")
     }
 }
