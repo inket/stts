@@ -42,6 +42,11 @@ class AdobeServicesAll: AdobeServices, ServiceCategory {
     let id = 2785
 }
 
+class AdobeDigitalImaging: Adobe {
+    let name = "Adobe Digital Imaging"
+    let id = 1591
+}
+
 class AdobeDigitalVideoAndAudio: Adobe {
     let name = "Adobe Digital Video & Audio"
     let id = 1627
@@ -269,7 +274,7 @@ class AdobePDFServices: AdobeDocumentCloud, SubService {
 
 class AdobePhotoshop: AdobeCreativeCloud, SubService {
     let name = "Adobe Photoshop"
-    let id = 2969
+    let id = 5732
 }
 
 class AdobePlatformCoreServices: AdobeExperiencePlatform, SubService {
@@ -329,7 +334,7 @@ class AdobeSocial: AdobeExperienceCloud, SubService {
 
 class AdobeSpark: AdobeCreativeCloud, SubService {
     let name = "Adobe Spark"
-    let id = 2945
+    let id = 5727
 }
 
 class AdobeStock: AdobeCreativeCloud, SubService {
@@ -359,5 +364,5 @@ class AdobeUserManagementSDK: AdobeServices, SubService {
 
 class AdobeXD: AdobeCreativeCloud, SubService {
     let name = "Adobe XD"
-    let id = 5282
+    let id = 5733
 }

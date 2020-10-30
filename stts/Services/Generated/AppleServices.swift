@@ -295,6 +295,11 @@ class AppleSpotlightSuggestions: Apple, SubService {
     let serviceName = "Spotlight suggestions"
 }
 
+class AppleStocks: Apple, SubService {
+    let name = "Apple Stocks"
+    let serviceName = "Stocks"
+}
+
 class AppleVolumePurchaseProgram: Apple, SubService {
     let name = "Apple Volume Purchase Program"
     let serviceName = "Volume Purchase Program"
@@ -303,6 +308,11 @@ class AppleVolumePurchaseProgram: Apple, SubService {
 class AppleWalkieTalkie: Apple, SubService {
     let name = "Apple Walkie-Talkie"
     let serviceName = "Walkie-Talkie"
+}
+
+class AppleWeather: Apple, SubService {
+    let name = "Apple Weather"
+    let serviceName = "Weather"
 }
 
 class AppleDeveloperAll: AppleDeveloper, ServiceCategory {
