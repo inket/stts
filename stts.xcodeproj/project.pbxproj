@@ -31,6 +31,8 @@
 		B20699D2214E504F008670B0 /* Robinhood.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20699D1214E504E008670B0 /* Robinhood.swift */; };
 		B210189A249E3FF400F31999 /* Pendo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2101899249E3FF400F31999 /* Pendo.swift */; };
 		B210189C249E406D00F31999 /* RevenueCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B210189B249E406D00F31999 /* RevenueCat.swift */; };
+		B2107BCE254C970000284EE7 /* Linode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2107BCC254C96FF00284EE7 /* Linode.swift */; };
+		B2107BCF254C970000284EE7 /* Notion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2107BCD254C970000284EE7 /* Notion.swift */; };
 		B211F0B81E607C09008DD360 /* Rollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211F0B71E607C09008DD360 /* Rollbar.swift */; };
 		B21308561E55594E009FCF02 /* Quandl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21308551E55594E009FCF02 /* Quandl.swift */; };
 		B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */; };
@@ -257,6 +259,8 @@
 		B20699D1214E504E008670B0 /* Robinhood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Robinhood.swift; sourceTree = "<group>"; };
 		B2101899249E3FF400F31999 /* Pendo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pendo.swift; sourceTree = "<group>"; };
 		B210189B249E406D00F31999 /* RevenueCat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueCat.swift; sourceTree = "<group>"; };
+		B2107BCC254C96FF00284EE7 /* Linode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Linode.swift; sourceTree = "<group>"; };
+		B2107BCD254C970000284EE7 /* Notion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notion.swift; sourceTree = "<group>"; };
 		B211F0B71E607C09008DD360 /* Rollbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rollbar.swift; sourceTree = "<group>"; };
 		B21308551E55594E009FCF02 /* Quandl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quandl.swift; sourceTree = "<group>"; };
 		B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableViewController.swift; sourceTree = "<group>"; };
@@ -620,6 +624,7 @@
 				B2EF186324F1544100C2F89E /* Kentik.swift */,
 				B2D6FDAD21B95A0800F95940 /* LastPass.swift */,
 				36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */,
+				B2107BCC254C96FF00284EE7 /* Linode.swift */,
 				B28E9FBE1ED26A40006B89F1 /* Lob.swift */,
 				B26350FC1ED7CFC40069EA73 /* Loggly.swift */,
 				B2E6C8F2253C24CD001210E4 /* Lumanox.swift */,
@@ -630,6 +635,7 @@
 				36AD8ED8235A310500F2FD73 /* Mural.swift */,
 				B299C8461DD04D7C0024D2E9 /* NPM.swift */,
 				B299C8421DD044160024D2E9 /* NewRelic.swift */,
+				B2107BCD254C970000284EE7 /* Notion.swift */,
 				B22BB3A0223B341B00B43BED /* OnePassword.swift */,
 				03C5FB121E203325003C40B8 /* Packet.swift */,
 				B25695531E247C8C00FAE413 /* PagerDuty.swift */,
@@ -1117,6 +1123,7 @@
 				B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */,
 				B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */,
 				B2A0635E1E1341C900EEA762 /* StatusioV1Service.swift in Sources */,
+				B2107BCE254C970000284EE7 /* Linode.swift in Sources */,
 				B200CA78247FC8B700DB0868 /* AdobeStore.swift in Sources */,
 				B29AEFD0225D7F3900C3B8BD /* UrbanAirship.swift in Sources */,
 				B2D2B6CF20870E700011723B /* StatusPage.swift in Sources */,
@@ -1133,6 +1140,7 @@
 				B29D50BF24B0542100F4961B /* PlatformSH.swift in Sources */,
 				B299C8471DD04D7C0024D2E9 /* NPM.swift in Sources */,
 				B2E018FD214E60E700C5F75B /* AppearanceObserver.swift in Sources */,
+				B2107BCF254C970000284EE7 /* Notion.swift in Sources */,
 				B2C4670F1E70012700C5145D /* Zapier.swift in Sources */,
 				B24B573223A4EAD200AFCF01 /* Pantheon.swift in Sources */,
 				B2E6C8F3253C24CD001210E4 /* Lumanox.swift in Sources */,
