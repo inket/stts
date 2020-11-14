@@ -67,6 +67,11 @@ class AdobeAccountManagement: AdobeServices, SubService {
     let id = 2941
 }
 
+class AdobeAdministrativeConsoles: AdobeServices, SubService {
+    let name = "Adobe Administrative Consoles"
+    let id = 2942
+}
+
 class AdobeAdvertisingCloud: AdobeExperienceCloud, SubService {
     let name = "Adobe Advertising Cloud"
     let id = 2674
@@ -115,11 +120,6 @@ class AdobeColor: AdobeCreativeCloud, SubService {
 class AdobeConnect: AdobeExperienceCloud, SubService {
     let name = "Adobe Connect"
     let id = 3011
-}
-
-class AdobeConsole: AdobeServices, SubService {
-    let name = "Adobe Console"
-    let id = 2942
 }
 
 class AdobeCreativeCloudApplications: AdobeCreativeCloud, SubService {

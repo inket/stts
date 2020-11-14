@@ -38,10 +38,6 @@ class FirebaseDynamicLinks: FirebaseService, SubService {
     let name = "Firebase Dynamic Links"
 }
 
-class FirebaseCloudFunctions: FirebaseService, SubService {
-    let name = "Firebase Cloud Functions"
-}
-
 class FirebaseHosting: FirebaseService, SubService {
     let name = "Firebase Hosting"
 }
