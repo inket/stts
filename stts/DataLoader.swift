@@ -23,6 +23,15 @@ extension URLSession {
     }
 }
 
+public protocol URLSessionProtocol {
+    typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
+
+    func dataTask(with url: URL, completionHandler: @escaping CompletionHandler) -> URLSessionDataTask
+    func dataTask(with urlRequest: URLRequest, completionHandler: @escaping CompletionHandler) -> URLSessionDataTask
+}
+
+extension URLSession: URLSessionProtocol {}
+
 class DataLoader {
     #if DEBUG
     // For testing
@@ -31,9 +40,9 @@ class DataLoader {
     static let shared = DataLoader()
     #endif
 
-    private let session: URLSession
+    private let session: URLSessionProtocol
 
-    init(session: URLSession = .sharedWithoutCaching) {
+    init(session: URLSessionProtocol = URLSession.sharedWithoutCaching) {
         self.session = session
     }
 
