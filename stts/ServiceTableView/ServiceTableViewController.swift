@@ -119,6 +119,9 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         tableView.delegate = self
         tableView.selectionHighlightStyle = .none
         tableView.backgroundColor = NSColor.clear
+        if #available(OSX 11.0, *) {
+            tableView.style = .fullWidth
+        }
 
         addServicesNoticeField.isEditable = false
         addServicesNoticeField.isBordered = false

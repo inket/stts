@@ -112,6 +112,9 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
         tableView.delegate = self
         tableView.selectionHighlightStyle = .none
         tableView.backgroundColor = NSColor.clear
+        if #available(OSX 11.0, *) {
+            tableView.style = .fullWidth
+        }
 
         settingsView.isHidden = true
         settingsView.searchCallback = { [weak self] searchString in
