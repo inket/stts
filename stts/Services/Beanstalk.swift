@@ -29,7 +29,7 @@ extension Beanstalk {
         guard let status = firstStatus else { return .undetermined }
 
         switch status {
-        case "ok": return .good
+        case "ok", "pending": return .good
         case "maintenance": return .maintenance
         case "problem": return .major
         default: return .undetermined
