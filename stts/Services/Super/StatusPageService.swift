@@ -121,8 +121,9 @@ class BaseStatusPageService: BaseService {
                     return .good
                 case .majorOutage:
                     return .major
-                case .degradedPerformance,
-                     .partialOutage:
+                case .degradedPerformance:
+                    return .notice
+                case .partialOutage:
                     return .minor
                 case .underMaintenance:
                     return .maintenance
