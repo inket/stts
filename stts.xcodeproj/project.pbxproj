@@ -101,6 +101,7 @@
 		B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27090F0209F52EB0094C3D7 /* Stream.swift */; };
 		B271688A2291AEEE001E608C /* Asana.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27168892291AEEE001E608C /* Asana.swift */; };
 		B272E3C8235F460D00B33076 /* Python.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272E3C7235F460D00B33076 /* Python.swift */; };
+		B2767A0F255FBC3E0047A9BE /* Bitmovin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2767A0E255FBC3E0047A9BE /* Bitmovin.swift */; };
 		B276C8F41DD474200098B451 /* MBPopup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B276C8F11DD474200098B451 /* MBPopup.framework */; };
 		B276C8F71DD4742D0098B451 /* MBPopup.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B276C8F11DD474200098B451 /* MBPopup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B277BC9222B4BB5C000B55C3 /* AzureDevOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9122B4BB5C000B55C3 /* AzureDevOps.swift */; };
@@ -330,6 +331,7 @@
 		B27090F0209F52EB0094C3D7 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 		B27168892291AEEE001E608C /* Asana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asana.swift; sourceTree = "<group>"; };
 		B272E3C7235F460D00B33076 /* Python.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Python.swift; sourceTree = "<group>"; };
+		B2767A0E255FBC3E0047A9BE /* Bitmovin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bitmovin.swift; sourceTree = "<group>"; };
 		B276C8F11DD474200098B451 /* MBPopup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBPopup.framework; path = Carthage/Build/Mac/MBPopup.framework; sourceTree = SOURCE_ROOT; };
 		B277BC9122B4BB5C000B55C3 /* AzureDevOps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureDevOps.swift; sourceTree = "<group>"; };
 		B277BC9322B4BB6D000B55C3 /* AzureDevOpsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureDevOpsStore.swift; sourceTree = "<group>"; };
@@ -585,6 +587,7 @@
 				2F1B7558227A095400BA5CBD /* Avalara.swift */,
 				B29D50BC24B053C600F4961B /* Basecamp.swift */,
 				B299C84E1DD04F8F0024D2E9 /* BitBucket.swift */,
+				B2767A0E255FBC3E0047A9BE /* Bitmovin.swift */,
 				BF7AA78022B03AE4002460FB /* Bitrise.swift */,
 				7BA6A0A12240D8E000700C2C /* Bolt.swift */,
 				B2EC838C24547370001D2D2F /* Box.swift */,
@@ -651,6 +654,7 @@
 				B272E3C7235F460D00B33076 /* Python.swift */,
 				B21308551E55594E009FCF02 /* Quandl.swift */,
 				B2F35F251E5D181300E3A00E /* Quay.swift */,
+				6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */,
 				2F65F48F227A198400432E64 /* Recurly.swift */,
 				B299C84C1DD04ED90024D2E9 /* Reddit.swift */,
 				B210189B249E406D00F31999 /* RevenueCat.swift */,
@@ -681,7 +685,6 @@
 				B2C4670E1E70012700C5145D /* Zapier.swift */,
 				B28285E02405E44100B11A08 /* Zoom.swift */,
 				B2483CF02037029D00A9FA95 /* Zwift.swift */,
-				6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */,
 			);
 			path = StatusPage;
 			sourceTree = "<group>";
@@ -1161,6 +1164,7 @@
 				B2F127A71E0B84230035B20C /* PubNub.swift in Sources */,
 				B22BB3A3223B346E00B43BED /* Dashlane.swift in Sources */,
 				B2841CEB20BA6207004AFDB7 /* SorryService.swift in Sources */,
+				B2767A0F255FBC3E0047A9BE /* Bitmovin.swift in Sources */,
 				B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */,
 				194BC88222A8EAC10065E698 /* Clubhouse.swift in Sources */,
 				B28DFE4721377A0B000EE4AF /* Wodby.swift in Sources */,
