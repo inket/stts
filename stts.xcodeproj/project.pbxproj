@@ -65,6 +65,7 @@
 		B231DD5A257B431900647312 /* Airbase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231DD56257B431900647312 /* Airbase.swift */; };
 		B231DD5B257B431900647312 /* AuroraSolar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231DD57257B431900647312 /* AuroraSolar.swift */; };
 		B231DD5C257B431900647312 /* CoderPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231DD58257B431900647312 /* CoderPad.swift */; };
+		B231DD60257B438900647312 /* HubSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231DD5F257B438900647312 /* HubSpot.swift */; };
 		B232047F22158BDF000DC1B0 /* DatadogEU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232047E22158BDF000DC1B0 /* DatadogEU.swift */; };
 		B232A18D20944B960066AD01 /* Cloud66.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232A18C20944B950066AD01 /* Cloud66.swift */; };
 		B23533DF2285B48F00DEDC36 /* DateHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23533DE2285B48E00DEDC36 /* DateHelper.framework */; };
@@ -301,6 +302,7 @@
 		B231DD56257B431900647312 /* Airbase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Airbase.swift; sourceTree = "<group>"; };
 		B231DD57257B431900647312 /* AuroraSolar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuroraSolar.swift; sourceTree = "<group>"; };
 		B231DD58257B431900647312 /* CoderPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoderPad.swift; sourceTree = "<group>"; };
+		B231DD5F257B438900647312 /* HubSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubSpot.swift; sourceTree = "<group>"; };
 		B232047E22158BDF000DC1B0 /* DatadogEU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatadogEU.swift; sourceTree = "<group>"; };
 		B232A18C20944B950066AD01 /* Cloud66.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud66.swift; sourceTree = "<group>"; };
 		B23533DE2285B48E00DEDC36 /* DateHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DateHelper.framework; path = Carthage/Build/Mac/DateHelper.framework; sourceTree = SOURCE_ROOT; };
@@ -633,6 +635,7 @@
 				B2C10F3B203646A7008E1E7D /* Gandi.swift */,
 				B254642221EE9AF6003068A4 /* GitHub.swift */,
 				B25695521E247C8C00FAE413 /* HipChat.swift */,
+				B231DD5F257B438900647312 /* HubSpot.swift */,
 				B2ABB6161F59770800DF8EC2 /* Imgix.swift */,
 				B23D4E6C1E13471200B04F18 /* Intercom.swift */,
 				B2EAD8D420B8FDB700095F5B /* JAMF.swift */,
@@ -1134,6 +1137,7 @@
 				B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */,
 				B2E70FDB22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift in Sources */,
 				B2DEE0BE1E696D64006B198E /* Slack.swift in Sources */,
+				B231DD60257B438900647312 /* HubSpot.swift in Sources */,
 				B2CE72D6228587E000847E00 /* Acquia.swift in Sources */,
 				B2E70FD822B069BA000BCAD2 /* GoogleCloudPlatformServices.swift in Sources */,
 				B2BA36191ED7B0F200051083 /* AuthorizeNet.swift in Sources */,
