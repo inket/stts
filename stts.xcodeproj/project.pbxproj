@@ -61,6 +61,10 @@
 		B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23038F01E0DF3CC00B29095 /* Beanstalk.swift */; };
 		B230CE7D21B95B5D00E2005D /* Wasabi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B230CE7C21B95B5D00E2005D /* Wasabi.swift */; };
 		B230CE7F21B95C5500E2005D /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B230CE7E21B95C5500E2005D /* Stripe.swift */; };
+		B231DD59257B431900647312 /* Xandr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231DD55257B431900647312 /* Xandr.swift */; };
+		B231DD5A257B431900647312 /* Airbase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231DD56257B431900647312 /* Airbase.swift */; };
+		B231DD5B257B431900647312 /* AuroraSolar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231DD57257B431900647312 /* AuroraSolar.swift */; };
+		B231DD5C257B431900647312 /* CoderPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231DD58257B431900647312 /* CoderPad.swift */; };
 		B232047F22158BDF000DC1B0 /* DatadogEU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232047E22158BDF000DC1B0 /* DatadogEU.swift */; };
 		B232A18D20944B960066AD01 /* Cloud66.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232A18C20944B950066AD01 /* Cloud66.swift */; };
 		B23533DF2285B48F00DEDC36 /* DateHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23533DE2285B48E00DEDC36 /* DateHelper.framework */; };
@@ -293,6 +297,10 @@
 		B23038F01E0DF3CC00B29095 /* Beanstalk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beanstalk.swift; sourceTree = "<group>"; };
 		B230CE7C21B95B5D00E2005D /* Wasabi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wasabi.swift; sourceTree = "<group>"; };
 		B230CE7E21B95C5500E2005D /* Stripe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
+		B231DD55257B431900647312 /* Xandr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xandr.swift; sourceTree = "<group>"; };
+		B231DD56257B431900647312 /* Airbase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Airbase.swift; sourceTree = "<group>"; };
+		B231DD57257B431900647312 /* AuroraSolar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuroraSolar.swift; sourceTree = "<group>"; };
+		B231DD58257B431900647312 /* CoderPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoderPad.swift; sourceTree = "<group>"; };
 		B232047E22158BDF000DC1B0 /* DatadogEU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatadogEU.swift; sourceTree = "<group>"; };
 		B232A18C20944B950066AD01 /* Cloud66.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud66.swift; sourceTree = "<group>"; };
 		B23533DE2285B48E00DEDC36 /* DateHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DateHelper.framework; path = Carthage/Build/Mac/DateHelper.framework; sourceTree = SOURCE_ROOT; };
@@ -580,9 +588,11 @@
 			isa = PBXGroup;
 			children = (
 				B2CE72D5228587E000847E00 /* Acquia.swift */,
+				B231DD56257B431900647312 /* Airbase.swift */,
 				B21DC0751F6B436400E8214F /* Aptible.swift */,
 				B27168892291AEEE001E608C /* Asana.swift */,
 				B25695501E247C8C00FAE413 /* Atlassian.swift */,
+				B231DD57257B431900647312 /* AuroraSolar.swift */,
 				B24F91221E8B51A400A77460 /* Auth0.swift */,
 				2F1B7558227A095400BA5CBD /* Avalara.swift */,
 				B29D50BC24B053C600F4961B /* Basecamp.swift */,
@@ -603,6 +613,7 @@
 				B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */,
 				B257469A1E2781A3003A07A4 /* CodeClimate.swift */,
 				B28FF68A1E94761A005897A9 /* Codecov.swift */,
+				B231DD58257B431900647312 /* CoderPad.swift */,
 				B2D0F22324611AD700F5501C /* ConfluentCloud.swift */,
 				B22527F41E5BD0C70098E73D /* Contentful.swift */,
 				B2D468281E2F0F82000F8F6B /* Coveralls.swift */,
@@ -682,6 +693,7 @@
 				B2CB0F9A2047A60000873C14 /* Vimeo.swift */,
 				C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */,
 				B28DFE4621377A0B000EE4AF /* Wodby.swift */,
+				B231DD55257B431900647312 /* Xandr.swift */,
 				B2C4670E1E70012700C5145D /* Zapier.swift */,
 				B28285E02405E44100B11A08 /* Zoom.swift */,
 				B2483CF02037029D00A9FA95 /* Zwift.swift */,
@@ -1076,6 +1088,7 @@
 				B2EC838E24547371001D2D2F /* Box.swift in Sources */,
 				B299C8431DD044160024D2E9 /* NewRelic.swift in Sources */,
 				B28E9128248250220026BAAA /* AppleServices.swift in Sources */,
+				B231DD5A257B431900647312 /* Airbase.swift in Sources */,
 				BF7AA78122B03AE4002460FB /* Bitrise.swift in Sources */,
 				B2EF186424F1544100C2F89E /* Kentik.swift in Sources */,
 				B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */,
@@ -1098,6 +1111,7 @@
 				B25695611E247C8C00FAE413 /* Squarespace.swift in Sources */,
 				B2894CE420EEE2780009CCA3 /* Buildkite.swift in Sources */,
 				B20396361EE6A060008CCA21 /* Trello.swift in Sources */,
+				B231DD59257B431900647312 /* Xandr.swift in Sources */,
 				B2ABB6171F59770800DF8EC2 /* Imgix.swift in Sources */,
 				B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */,
 				B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */,
@@ -1176,6 +1190,7 @@
 				B22FDE512108A5C200359EC9 /* PayPalAPIProduction.swift in Sources */,
 				B21492CB21EE9BD70065103E /* ScaleGrid.swift in Sources */,
 				B26350FD1ED7CFC40069EA73 /* Loggly.swift in Sources */,
+				B231DD5B257B431900647312 /* AuroraSolar.swift in Sources */,
 				B24220E41E2F6BBA0007E50E /* Typeform.swift in Sources */,
 				2F1B7559227A095400BA5CBD /* Avalara.swift in Sources */,
 				B2A4D7E4247E170A0089EA77 /* LetsEncrypt.swift in Sources */,
@@ -1188,6 +1203,7 @@
 				B2F35F261E5D181300E3A00E /* Quay.swift in Sources */,
 				B299C8451DD046F20024D2E9 /* AmazonWebServices.swift in Sources */,
 				B2563BBC22CBC3D500532C39 /* DataLoader.swift in Sources */,
+				B231DD5C257B431900647312 /* CoderPad.swift in Sources */,
 				B256955B1E247C8C00FAE413 /* HipChat.swift in Sources */,
 				B299C8551DD051210024D2E9 /* EngineYard.swift in Sources */,
 				B28E912A248250F40026BAAA /* AppleStore.swift in Sources */,
