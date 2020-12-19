@@ -194,6 +194,7 @@
 		B2EB51D01E700517001D6F78 /* Codacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EB51CF1E700517001D6F78 /* Codacy.swift */; };
 		B2EC838E24547371001D2D2F /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EC838C24547370001D2D2F /* Box.swift */; };
 		B2EC838F24547371001D2D2F /* Egnyte.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EC838D24547371001D2D2F /* Egnyte.swift */; };
+		B2ED7661258E42C000014242 /* Lever.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ED7660258E42C000014242 /* Lever.swift */; };
 		B2EF186424F1544100C2F89E /* Kentik.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EF186324F1544100C2F89E /* Kentik.swift */; };
 		B2F127A71E0B84230035B20C /* PubNub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127A61E0B84230035B20C /* PubNub.swift */; };
 		B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127A81E0B84B50035B20C /* Twilio.swift */; };
@@ -434,6 +435,7 @@
 		B2EB51CF1E700517001D6F78 /* Codacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Codacy.swift; sourceTree = "<group>"; };
 		B2EC838C24547370001D2D2F /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		B2EC838D24547371001D2D2F /* Egnyte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Egnyte.swift; sourceTree = "<group>"; };
+		B2ED7660258E42C000014242 /* Lever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lever.swift; sourceTree = "<group>"; };
 		B2EF186324F1544100C2F89E /* Kentik.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kentik.swift; sourceTree = "<group>"; };
 		B2F127A61E0B84230035B20C /* PubNub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubNub.swift; sourceTree = "<group>"; };
 		B2F127A81E0B84B50035B20C /* Twilio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twilio.swift; sourceTree = "<group>"; };
@@ -643,6 +645,7 @@
 				B2EF186324F1544100C2F89E /* Kentik.swift */,
 				B2D6FDAD21B95A0800F95940 /* LastPass.swift */,
 				36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */,
+				B2ED7660258E42C000014242 /* Lever.swift */,
 				B2107BCC254C96FF00284EE7 /* Linode.swift */,
 				B28E9FBE1ED26A40006B89F1 /* Lob.swift */,
 				B26350FC1ED7CFC40069EA73 /* Loggly.swift */,
@@ -1228,6 +1231,7 @@
 				B2DCE68D221591F2001447D8 /* LambStatusService.swift in Sources */,
 				B23D4E6F1E13475900B04F18 /* KeenIO.swift in Sources */,
 				B2C337A51E1417390007E110 /* Mixpanel.swift in Sources */,
+				B2ED7661258E42C000014242 /* Lever.swift in Sources */,
 				B200CA74247FC5AE00DB0868 /* AdobeServices.swift in Sources */,
 				B2357D711E5C08AF0093B8A6 /* Netlify.swift in Sources */,
 				B2A93ADD1EB814C000D36DD3 /* Snyk.swift in Sources */,
