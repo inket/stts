@@ -40,6 +40,11 @@ class AppleCash: Apple, SubService {
     let serviceName = "Apple Cash"
 }
 
+class AppleFitness: Apple, SubService {
+    let name = "Apple Fitness+"
+    let serviceName = "Apple Fitness+"
+}
+
 class AppleID: Apple, SubService {
     let name = "Apple ID"
     let serviceName = "Apple ID"
@@ -113,6 +118,11 @@ class AppleFaceTime: Apple, SubService {
 class AppleFindMy: Apple, SubService {
     let name = "Apple Find My"
     let serviceName = "Find My"
+}
+
+class AppleFleetsmith: Apple, SubService {
+    let name = "Apple Fleetsmith"
+    let serviceName = "Fleetsmith"
 }
 
 class AppleGameCenter: Apple, SubService {

@@ -137,6 +137,11 @@ class GoogleCloudTasks: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Cloud Tasks"
 }
 
+class GoogleCloudWorkflows: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Workflows"
+    let dashboardName = "Cloud Workflows"
+}
+
 class GoogleCloudEndpoints: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Endpoints"
     let dashboardName = "Cloud Endpoints"
