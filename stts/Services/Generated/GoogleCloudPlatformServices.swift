@@ -32,9 +32,14 @@ class GoogleCloudAssetInventory: GoogleCloudPlatform, SubService {
     let dashboardName = "Cloud Asset Inventory"
 }
 
-class GoogleCloudDataFusion: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Data Fusion"
-    let dashboardName = "Cloud Data Fusion"
+class GoogleCloudDataflow: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Dataflow"
+    let dashboardName = "Google Cloud Dataflow"
+}
+
+class GoogleCloudBigtable: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Bigtable"
+    let dashboardName = "Google Cloud Bigtable"
 }
 
 class GoogleCloudDatastore: GoogleCloudPlatform, SubService {
@@ -152,9 +157,9 @@ class GoogleCloudComposer: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Cloud Composer"
 }
 
-class GoogleCloudDataflow: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Dataflow"
-    let dashboardName = "Google Cloud Dataflow"
+class GoogleApigee: GoogleCloudPlatform, SubService {
+    let name = "Google Apigee"
+    let dashboardName = "Apigee"
 }
 
 class GoogleKubernetesEngine: GoogleCloudPlatform, SubService {
@@ -165,6 +170,11 @@ class GoogleKubernetesEngine: GoogleCloudPlatform, SubService {
 class GoogleCloudConsole: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Console"
     let dashboardName = "Google Cloud Console"
+}
+
+class GoogleEventarc: GoogleCloudPlatform, SubService {
+    let name = "Google Eventarc"
+    let dashboardName = "Eventarc"
 }
 
 class GoogleOperations: GoogleCloudPlatform, SubService {
@@ -182,9 +192,9 @@ class GoogleSecretManager: GoogleCloudPlatform, SubService {
     let dashboardName = "Secret Manager"
 }
 
-class GoogleCloudBigtable: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Bigtable"
-    let dashboardName = "Google Cloud Bigtable"
+class GoogleCloudDataFusion: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Data Fusion"
+    let dashboardName = "Cloud Data Fusion"
 }
 
 class GoogleCloudSupport: GoogleCloudPlatform, SubService {
