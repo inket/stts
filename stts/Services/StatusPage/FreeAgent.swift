@@ -1,10 +1,11 @@
- //
- //  FreeAgent.swift
- //  stts
- //
- import Foundation
+//
+//  FreeAgent.swift
+//  stts
+//
 
- class FreeAgent: StatusPageService {
-     let url = URL(string: "https://status.freeagent.com/")!
-     let statusPageID = "tn2dcgpy021r"
- }
+import Foundation
+
+class FreeAgent: StatusPageService {
+    let url = URL(string: "https://status.freeagent.com/")!
+    let statusPageID = "tn2dcgpy021r"
+}
