@@ -52,6 +52,7 @@
 		B227D30725D5885500951917 /* BigCommerce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227D30625D5885500951917 /* BigCommerce.swift */; };
 		B227D30C25D5886B00951917 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227D30A25D5886B00951917 /* Semaphore.swift */; };
 		B227D30D25D5886B00951917 /* FreeAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227D30B25D5886B00951917 /* FreeAgent.swift */; };
+		B227D31225D7671600951917 /* Poka.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227D31125D7671600951917 /* Poka.swift */; };
 		B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22BA3011E8119AB0038D8F6 /* Discord.swift */; };
 		B22BB39F223B33AE00B43BED /* CampaignMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */; };
 		B22BB3A1223B341B00B43BED /* OnePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22BB3A0223B341B00B43BED /* OnePassword.swift */; };
@@ -293,6 +294,7 @@
 		B227D30625D5885500951917 /* BigCommerce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigCommerce.swift; sourceTree = "<group>"; };
 		B227D30A25D5886B00951917 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
 		B227D30B25D5886B00951917 /* FreeAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeAgent.swift; sourceTree = "<group>"; };
+		B227D31125D7671600951917 /* Poka.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poka.swift; sourceTree = "<group>"; };
 		B22BA3011E8119AB0038D8F6 /* Discord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discord.swift; sourceTree = "<group>"; };
 		B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignMonitor.swift; sourceTree = "<group>"; };
 		B22BB3A0223B341B00B43BED /* OnePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePassword.swift; sourceTree = "<group>"; };
@@ -674,6 +676,7 @@
 				B2101899249E3FF400F31999 /* Pendo.swift */,
 				B2BA697D1E2DA3A20016AF1A /* PivotalTracker.swift */,
 				B29D50BE24B0542100F4961B /* PlatformSH.swift */,
+				B227D31125D7671600951917 /* Poka.swift */,
 				B2F127A61E0B84230035B20C /* PubNub.swift */,
 				B299C84A1DD04E850024D2E9 /* Pusher.swift */,
 				B272E3C7235F460D00B33076 /* Python.swift */,
@@ -1126,6 +1129,7 @@
 				B25695611E247C8C00FAE413 /* Squarespace.swift in Sources */,
 				B2894CE420EEE2780009CCA3 /* Buildkite.swift in Sources */,
 				B20396361EE6A060008CCA21 /* Trello.swift in Sources */,
+				B227D31225D7671600951917 /* Poka.swift in Sources */,
 				B231DD59257B431900647312 /* Xandr.swift in Sources */,
 				B2ABB6171F59770800DF8EC2 /* Imgix.swift in Sources */,
 				B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */,
