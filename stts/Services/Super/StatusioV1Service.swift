@@ -14,6 +14,7 @@ protocol RequiredStatusioV1Properties {
 class BaseStatusioV1Service: BaseService {
     private enum StatusioV1Status: Int {
         case operational = 100
+        case plannedMaintenance = 200
         case degradedPerformance = 300
         case partialServiceDisruption = 400
         case serviceDisruption = 500
@@ -23,6 +24,8 @@ class BaseStatusioV1Service: BaseService {
             switch self {
             case .operational:
                 return .good
+            case .plannedMaintenance:
+                return .maintenance
             case .degradedPerformance:
                 return .minor
             case .partialServiceDisruption:
