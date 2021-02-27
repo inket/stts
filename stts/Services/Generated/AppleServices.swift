@@ -363,6 +363,11 @@ class AppleAppStoreConnect: AppleDeveloper, SubService {
     let serviceName = "App Store Connect"
 }
 
+class AppleAppStoreConnectAnalytics: AppleDeveloper, SubService {
+    let name = "Apple App Store Connect Analytics"
+    let serviceName = "App Store Connect Analytics"
+}
+
 class AppleAppStoreConnectAPI: AppleDeveloper, SubService {
     let name = "Apple App Store Connect API"
     let serviceName = "App Store Connect API"
