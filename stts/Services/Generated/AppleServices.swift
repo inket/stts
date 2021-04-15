@@ -90,9 +90,9 @@ class AppleTV: Apple, SubService {
     let serviceName = "Apple TV+"
 }
 
-class AppleCareInIOS: Apple, SubService {
-    let name = "AppleCare in iOS"
-    let serviceName = "AppleCare in iOS"
+class AppleCareOnDevice: Apple, SubService {
+    let name = "AppleCare on Device"
+    let serviceName = "AppleCare on Device"
 }
 
 class AppleDeviceEnrollmentProgram: Apple, SubService {

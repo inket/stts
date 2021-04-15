@@ -2,29 +2,14 @@
 
 import Foundation
 
+class GoogleApigee: GoogleCloudPlatform, SubService {
+    let name = "Google Apigee"
+    let dashboardName = "Apigee"
+}
+
 class GoogleAppEngine: GoogleCloudPlatform, SubService {
     let name = "Google App Engine"
     let dashboardName = "Google App Engine"
-}
-
-class GoogleComputeEngine: GoogleCloudPlatform, SubService {
-    let name = "Google Compute Engine"
-    let dashboardName = "Google Compute Engine"
-}
-
-class GoogleCloudStorage: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Storage"
-    let dashboardName = "Google Cloud Storage"
-}
-
-class GoogleBigQuery: GoogleCloudPlatform, SubService {
-    let name = "Google BigQuery"
-    let dashboardName = "Google BigQuery"
-}
-
-class GoogleCloudDataproc: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Dataproc"
-    let dashboardName = "Google Cloud Dataproc"
 }
 
 class GoogleCloudAssetInventory: GoogleCloudPlatform, SubService {
@@ -32,14 +17,29 @@ class GoogleCloudAssetInventory: GoogleCloudPlatform, SubService {
     let dashboardName = "Cloud Asset Inventory"
 }
 
-class GoogleCloudDataflow: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Dataflow"
-    let dashboardName = "Google Cloud Dataflow"
+class GoogleBigQuery: GoogleCloudPlatform, SubService {
+    let name = "Google BigQuery"
+    let dashboardName = "Google BigQuery"
 }
 
 class GoogleCloudBigtable: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Bigtable"
     let dashboardName = "Google Cloud Bigtable"
+}
+
+class GoogleCloudDataFusion: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Data Fusion"
+    let dashboardName = "Cloud Data Fusion"
+}
+
+class GoogleCloudDataflow: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Dataflow"
+    let dashboardName = "Google Cloud Dataflow"
+}
+
+class GoogleCloudDataproc: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Dataproc"
+    let dashboardName = "Google Cloud Dataproc"
 }
 
 class GoogleCloudDatastore: GoogleCloudPlatform, SubService {
@@ -157,9 +157,9 @@ class GoogleCloudComposer: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Cloud Composer"
 }
 
-class GoogleApigee: GoogleCloudPlatform, SubService {
-    let name = "Google Apigee"
-    let dashboardName = "Apigee"
+class GoogleComputeEngine: GoogleCloudPlatform, SubService {
+    let name = "Google Compute Engine"
+    let dashboardName = "Google Compute Engine"
 }
 
 class GoogleKubernetesEngine: GoogleCloudPlatform, SubService {
@@ -192,9 +192,9 @@ class GoogleSecretManager: GoogleCloudPlatform, SubService {
     let dashboardName = "Secret Manager"
 }
 
-class GoogleCloudDataFusion: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Data Fusion"
-    let dashboardName = "Cloud Data Fusion"
+class GoogleCloudStorage: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Storage"
+    let dashboardName = "Google Cloud Storage"
 }
 
 class GoogleCloudSupport: GoogleCloudPlatform, SubService {
