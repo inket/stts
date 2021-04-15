@@ -78,6 +78,8 @@
 		B235341F22888EFE00DEDC36 /* Sendinblue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235341E22888EFE00DEDC36 /* Sendinblue.swift */; };
 		B2357D711E5C08AF0093B8A6 /* Netlify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2357D701E5C08AF0093B8A6 /* Netlify.swift */; };
 		B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235B3BC1DF562C400821936 /* SettingsView.swift */; };
+		B23646B12627C14E00AB9486 /* LogzIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23646AF2627C14E00AB9486 /* LogzIO.swift */; };
+		B23646B22627C14E00AB9486 /* VisualStudioAppCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23646B02627C14E00AB9486 /* VisualStudioAppCenter.swift */; };
 		B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D4E6C1E13471200B04F18 /* Intercom.swift */; };
 		B23D4E6F1E13475900B04F18 /* KeenIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D4E6E1E13475900B04F18 /* KeenIO.swift */; };
 		B23EE5B324B9FF430067D800 /* Bullhorn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23EE5B224B9FF430067D800 /* Bullhorn.swift */; };
@@ -320,6 +322,8 @@
 		B235341E22888EFE00DEDC36 /* Sendinblue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sendinblue.swift; sourceTree = "<group>"; };
 		B2357D701E5C08AF0093B8A6 /* Netlify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
 		B235B3BC1DF562C400821936 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B23646AF2627C14E00AB9486 /* LogzIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogzIO.swift; sourceTree = "<group>"; };
+		B23646B02627C14E00AB9486 /* VisualStudioAppCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualStudioAppCenter.swift; sourceTree = "<group>"; };
 		B23D4E6C1E13471200B04F18 /* Intercom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intercom.swift; sourceTree = "<group>"; };
 		B23D4E6E1E13475900B04F18 /* KeenIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeenIO.swift; sourceTree = "<group>"; };
 		B23EE5B224B9FF430067D800 /* Bullhorn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullhorn.swift; sourceTree = "<group>"; };
@@ -661,6 +665,7 @@
 				B2107BCC254C96FF00284EE7 /* Linode.swift */,
 				B28E9FBE1ED26A40006B89F1 /* Lob.swift */,
 				B26350FC1ED7CFC40069EA73 /* Loggly.swift */,
+				B23646AF2627C14E00AB9486 /* LogzIO.swift */,
 				B2E6C8F2253C24CD001210E4 /* Lumanox.swift */,
 				A133C8B620F8F3670068CFE8 /* Mailgun.swift */,
 				B28C1D431E607D8600F9D0DC /* Mapbox.swift */,
@@ -712,6 +717,7 @@
 				B227D31525D7678200951917 /* Vercel.swift */,
 				36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */,
 				B2CB0F9A2047A60000873C14 /* Vimeo.swift */,
+				B23646B02627C14E00AB9486 /* VisualStudioAppCenter.swift */,
 				C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */,
 				B28DFE4621377A0B000EE4AF /* Wodby.swift */,
 				B231DD55257B431900647312 /* Xandr.swift */,
@@ -1119,6 +1125,7 @@
 				B2A0A16F1E4C45E0000D9B29 /* MailChimp.swift in Sources */,
 				B2D6FDAE21B95A0800F95940 /* LastPass.swift in Sources */,
 				B210189A249E3FF400F31999 /* Pendo.swift in Sources */,
+				B23646B12627C14E00AB9486 /* LogzIO.swift in Sources */,
 				B2EC838F24547371001D2D2F /* Egnyte.swift in Sources */,
 				B2BB19BA20B8FEFD00A97A87 /* CachetService.swift in Sources */,
 				7BA6A0A22240D8E000700C2C /* Bolt.swift in Sources */,
@@ -1235,6 +1242,7 @@
 				B277BC9222B4BB5C000B55C3 /* AzureDevOps.swift in Sources */,
 				B2C10F3C203646A7008E1E7D /* Gandi.swift in Sources */,
 				B21308561E55594E009FCF02 /* Quandl.swift in Sources */,
+				B23646B22627C14E00AB9486 /* VisualStudioAppCenter.swift in Sources */,
 				B22600311E1562E700EBDD40 /* MediaTemple.swift in Sources */,
 				B205A9181D49D67700EA178D /* Service.swift in Sources */,
 				B232047F22158BDF000DC1B0 /* DatadogEU.swift in Sources */,
