@@ -31,3 +31,8 @@ class AzureChina: Azure, SubService {
     let name = "Azure China"
     let zoneIdentifier = "azure-china"
 }
+
+class AzureJio: Azure, SubService {
+    let name = "Azure Jio"
+    let zoneIdentifier = "jio"
+}

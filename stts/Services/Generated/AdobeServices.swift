@@ -52,11 +52,6 @@ class AdobeDigitalVideoAndAudio: Adobe {
     let id = 1627
 }
 
-class AdobeDocumentCloudServicesSDK: Adobe {
-    let name = "Adobe Document Cloud Services SDK"
-    let id = 4827
-}
-
 class AdobeIO: AdobeServices, SubService {
     let name = "Adobe - I/O"
     let id = 1675
@@ -272,6 +267,11 @@ class AdobePDFServices: AdobeDocumentCloud, SubService {
     let id = 1555
 }
 
+class AdobePDFServicesAPI: AdobeDocumentCloud, SubService {
+    let name = "Adobe PDF Services API"
+    let id = 4827
+}
+
 class AdobePhotoshop: AdobeCreativeCloud, SubService {
     let name = "Adobe Photoshop"
     let id = 5732
@@ -325,11 +325,6 @@ class AdobeSign: AdobeDocumentCloud, SubService {
 class AdobeSignIn: AdobeServices, SubService {
     let name = "Adobe Sign In"
     let id = 2944
-}
-
-class AdobeSocial: AdobeExperienceCloud, SubService {
-    let name = "Adobe Social"
-    let id = 1177
 }
 
 class AdobeSpark: AdobeCreativeCloud, SubService {

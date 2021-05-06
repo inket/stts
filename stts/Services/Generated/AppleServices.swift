@@ -270,6 +270,11 @@ class ApplePhotos: Apple, SubService {
     let serviceName = "Photos"
 }
 
+class ApplePodcasts: Apple, SubService {
+    let name = "Apple Podcasts"
+    let serviceName = "Podcasts"
+}
+
 class AppleRadio: Apple, SubService {
     let name = "Apple Radio"
     let serviceName = "Radio"
@@ -416,6 +421,11 @@ class AppleNewsAPI: AppleDeveloper, SubService {
 class ApplePayDeveloper: AppleDeveloper, SubService {
     let name = "Apple Pay - Developer"
     let serviceName = "Apple Pay - Developer"
+}
+
+class ApplePodcastsConnect: AppleDeveloper, SubService {
+    let name = "Apple Podcasts Connect"
+    let serviceName = "Apple Podcasts Connect"
 }
 
 class AppleCertificatesIdentifiersAndProfiles: AppleDeveloper, SubService {
