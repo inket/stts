@@ -229,7 +229,9 @@ class BottomBar: NSView {
         let openSourceNotice = "stts is an open-source project\n\(githubLink)"
         let iconGlyphCredit = "Activity glyph (app icon)\nCreated by Gregor Črešnar from the Noun Project"
         let contributors = "Contributors\n\(contributorsLink)"
-        let credits = NSMutableAttributedString(string: "\n\(openSourceNotice)\n\n\(iconGlyphCredit)\n\n\(contributors)\n\n")
+        let credits = NSMutableAttributedString(
+            string: "\n\(openSourceNotice)\n\n\(iconGlyphCredit)\n\n\(contributors)\n\n"
+        )
 
         let normalFont = NSFont.systemFont(ofSize: 11)
         let boldFont = NSFont.boldSystemFont(ofSize: 11)

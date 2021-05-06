@@ -70,7 +70,9 @@ class StatusTableCell: NSTableCellView {
             // Hack to fix sizing… maybe caused by the font being italic? This probably stops working at line 12+
             let additionalHeight = CGFloat(Int(statusMessageHeight / messageLineHeight))
 
-            return verticalPadding + titleHeight + verticalSpacing + statusMessageHeight + verticalPadding + additionalHeight
+            let top = verticalPadding + titleHeight
+            let bottom = statusMessageHeight + verticalPadding
+            return top + verticalSpacing + bottom + additionalHeight
         }
     }
 

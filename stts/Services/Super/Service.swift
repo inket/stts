@@ -87,11 +87,13 @@ public class BaseService: Loading {
 
     public func updateStatus(callback: @escaping (BaseService) -> Void) {}
 
+    // swiftlint:disable:next identifier_name
     func _fail(_ error: Error?) {
         self.status = .undetermined
         self.message = ServiceStatusMessage.from(error)
     }
 
+    // swiftlint:disable:next identifier_name
     func _fail(_ message: String) {
         self.status = .undetermined
         self.message = message

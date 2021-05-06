@@ -179,7 +179,9 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         frame.size.height = min(tableView.intrinsicContentSize.height, 490)
         scrollView.frame = frame
 
-        (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(height: scrollView.frame.size.height + bottomBar.frame.size.height)
+        (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(
+            height: scrollView.frame.size.height + bottomBar.frame.size.height
+        )
     }
 
     func reloadData(at index: Int? = nil) {

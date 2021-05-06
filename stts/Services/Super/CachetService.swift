@@ -43,7 +43,9 @@ class BaseCachetService: BaseService {
     }
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? CachetService else { fatalError("BaseCachetService should not be used directly.") }
+        guard let realSelf = self as? CachetService else {
+            fatalError("BaseCachetService should not be used directly.")
+        }
 
         let apiComponentsURL = realSelf.url.appendingPathComponent("api/v1/components")
 

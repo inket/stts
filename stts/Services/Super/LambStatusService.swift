@@ -39,7 +39,9 @@ class BaseLambStatusService: BaseService {
     }
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? LambStatusService else { fatalError("BaseLambStatusService should not be used directly.") }
+        guard let realSelf = self as? LambStatusService else {
+            fatalError("BaseLambStatusService should not be used directly.")
+        }
 
         let apiComponentsURL = realSelf.url.appendingPathComponent("api").appendingPathComponent("components")
 

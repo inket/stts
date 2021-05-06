@@ -18,7 +18,9 @@ struct AzureDevOpsService {
         sanitizedName = sanitizedName.replacingOccurrences(of: " & ", with: "And")
         sanitizedName = sanitizedName.replacingOccurrences(of: "/", with: "")
         sanitizedName = sanitizedName.replacingOccurrences(of: ":", with: "")
-        sanitizedName = sanitizedName.components(separatedBy: " ").map { $0.capitalized(firstLetterOnly: true) }.joined(separator: "")
+        sanitizedName = sanitizedName.components(separatedBy: " ")
+            .map { $0.capitalized(firstLetterOnly: true) }
+            .joined(separator: "")
         return "AzureDevOps\(sanitizedName)"
     }
 
@@ -106,8 +108,11 @@ func discoverServices() -> [AzureDevOpsService] {
         guard let textCheckingResult = textCheckingResult, textCheckingResult.numberOfRanges == 2 else { return }
 
         let json = body[textCheckingResult.range(at: 1)]
-        guard let decodedProviders = try? JSONDecoder().decode(AzureDevOpsDataProviders.self, from: json.data(using: .utf8)!) else {
-            print("warning: Build script generate_azure_devops_services could not retrieve list of Azure DevOps services")
+        let jsonData = json.data(using: .utf8)!
+        guard let decodedProviders = try? JSONDecoder().decode(AzureDevOpsDataProviders.self, from: jsonData) else {
+            print(
+                "warning: Build script generate_azure_devops_services could not retrieve list of Azure DevOps services"
+            )
             exit(0)
         }
 

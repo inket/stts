@@ -32,7 +32,9 @@ class BaseFirebaseService: BaseService {
     let url = firebaseDashboardURL
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? FirebaseService else { fatalError("BaseFirebaseService should not be used directly.") }
+        guard let realSelf = self as? FirebaseService else {
+            fatalError("BaseFirebaseService should not be used directly.")
+        }
 
         BaseFirebaseService.store.loadStatus { [weak realSelf] in
             guard let strongSelf = realSelf else { return }

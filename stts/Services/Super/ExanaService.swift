@@ -33,9 +33,14 @@ class BaseExanaService: BaseService {
             guard let strongSelf = self else { return }
 
             guard let data = data else { return strongSelf._fail(error) }
-            guard let doc = try? HTML(html: data, encoding: .utf8) else { return strongSelf._fail("Couldn't parse response") }
 
-            guard let jwt = doc.css("meta[name=jwt]").first?["content"] else { return strongSelf._fail("Couldn't get authorization") }
+            guard let doc = try? HTML(html: data, encoding: .utf8) else {
+                return strongSelf._fail("Couldn't parse response")
+            }
+
+            guard let jwt = doc.css("meta[name=jwt]").first?["content"] else {
+                return strongSelf._fail("Couldn't get authorization")
+            }
 
             strongSelf.getStatus(authorization: jwt, callback: callback)
         }
@@ -72,7 +77,9 @@ class BaseExanaService: BaseService {
 
             guard let jsonRoot = json as? [String: Any],
                 let result = jsonRoot["result"] as? [String: Any],
-                let components = result["components"] as? [[String: Any]] else { return strongSelf._fail("Unexpected data") }
+                let components = result["components"] as? [[String: Any]] else {
+                return strongSelf._fail("Unexpected data")
+            }
 
             var downComponents = [[String: Any]]()
             let componentStatuses: [ServiceStatus] = components.compactMap {
@@ -94,7 +101,9 @@ class BaseExanaService: BaseService {
             case .undetermined:
                 strongSelf.message = "Undetermined"
             default:
-                strongSelf.message = downComponents.map { $0["name"] as? String }.compactMap { $0 }.joined(separator: ", ")
+                strongSelf.message = downComponents.map { $0["name"] as? String }
+                    .compactMap { $0 }
+                    .joined(separator: ", ")
             }
         }
     }

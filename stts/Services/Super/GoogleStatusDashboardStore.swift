@@ -105,7 +105,9 @@ class GoogleStatusDashboardStore: Loading {
 
     private func parseDashboardRow(_ tr: XMLElement) -> (String, ServiceStatus)? {
         let rawName = tr.css(".product-name").first?.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let sanitizedName = rawName?.components(separatedBy: .newlines).first?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let sanitizedName = rawName?
+            .components(separatedBy: .newlines).first?
+            .trimmingCharacters(in: .whitespacesAndNewlines)
 
         guard let name = sanitizedName else { return nil }
 

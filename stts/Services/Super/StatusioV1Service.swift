@@ -38,7 +38,9 @@ class BaseStatusioV1Service: BaseService {
     }
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? StatusioV1Service else { fatalError("BaseStatusioV1Service should not be used directly.") }
+        guard let realSelf = self as? StatusioV1Service else {
+            fatalError("BaseStatusioV1Service should not be used directly.")
+        }
 
         let statusURL = URL(string: "https://api.status.io/1.0/status/\(realSelf.statusPageID)")!
 

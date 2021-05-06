@@ -40,9 +40,9 @@ class BaseStatusPageService: BaseService {
                 }
             }
 
-            return components.sorted { (a: Component, b: Component) in
-                let aSortingID = a.sortingID(withRootPosition: rootPositionForComponent(a))
-                let bSortingID = b.sortingID(withRootPosition: rootPositionForComponent(b))
+            return components.sorted { (componentA: Component, componentB: Component) in
+                let aSortingID = componentA.sortingID(withRootPosition: rootPositionForComponent(componentA))
+                let bSortingID = componentB.sortingID(withRootPosition: rootPositionForComponent(componentB))
                 return aSortingID.localizedCaseInsensitiveCompare(bSortingID) == .orderedAscending
             }
         }

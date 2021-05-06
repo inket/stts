@@ -127,8 +127,8 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
             if searchString.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
                 strongSelf.filteredServices = allServicesWithoutSubServices
             } else {
-                // Can't filter array with NSPredicate without making Service inherit KVO from NSObject, therefore we create
-                // an array of service names that we can run the predicate on
+                // Can't filter array with NSPredicate without making Service inherit KVO from NSObject, therefore
+                // we create an array of service names that we can run the predicate on
                 let allServiceNames = allServices.compactMap { $0.name } as NSArray
                 let predicate = NSPredicate(format: "SELF LIKE[cd] %@", argumentArray: ["*\(searchString)*"])
                 guard let filteredServiceNames = allServiceNames.filtered(using: predicate) as? [String] else { return }
@@ -162,8 +162,9 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
 
         settingsView.isHidden = false
 
-        // We should be using NSWindow's makeFirstResponder: instead of the search field's selectText:, but in this case, makeFirstResponder
-        // is causing a bug where the search field "gets focused" twice (focus ring animation) the first time it's drawn.
+        // We should be using NSWindow's makeFirstResponder: instead of the search field's selectText:,
+        // but in this case, makeFirstResponder is causing a bug where the search field "gets focused" twice
+        // (focus ring animation) the first time it's drawn.
         settingsView.searchField.selectText(nil)
 
         resizeViews()
