@@ -134,6 +134,7 @@
 		B290315C1E4B0CA7005B58CC /* Evernote.swift in Sources */ = {isa = PBXBuildFile; fileRef = B290315B1E4B0CA7005B58CC /* Evernote.swift */; };
 		B29222282642EF33001C63AE /* ModeAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29222262642EF33001C63AE /* ModeAnalytics.swift */; };
 		B29222292642EF33001C63AE /* Twitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29222272642EF33001C63AE /* Twitch.swift */; };
+		B292222B2642EFA4001C63AE /* Coinbase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B292222A2642EFA4001C63AE /* Coinbase.swift */; };
 		B299C8431DD044160024D2E9 /* NewRelic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8421DD044160024D2E9 /* NewRelic.swift */; };
 		B299C8451DD046F20024D2E9 /* AmazonWebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */; };
 		B299C8471DD04D7C0024D2E9 /* NPM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8461DD04D7C0024D2E9 /* NPM.swift */; };
@@ -380,6 +381,7 @@
 		B290315B1E4B0CA7005B58CC /* Evernote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evernote.swift; sourceTree = "<group>"; };
 		B29222262642EF33001C63AE /* ModeAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeAnalytics.swift; sourceTree = "<group>"; };
 		B29222272642EF33001C63AE /* Twitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twitch.swift; sourceTree = "<group>"; };
+		B292222A2642EFA4001C63AE /* Coinbase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coinbase.swift; sourceTree = "<group>"; };
 		B299C8421DD044160024D2E9 /* NewRelic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRelic.swift; sourceTree = "<group>"; };
 		B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmazonWebServices.swift; sourceTree = "<group>"; };
 		B299C8461DD04D7C0024D2E9 /* NPM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPM.swift; sourceTree = "<group>"; };
@@ -637,6 +639,7 @@
 				B257469A1E2781A3003A07A4 /* CodeClimate.swift */,
 				B28FF68A1E94761A005897A9 /* Codecov.swift */,
 				B231DD58257B431900647312 /* CoderPad.swift */,
+				B292222A2642EFA4001C63AE /* Coinbase.swift */,
 				B2D0F22324611AD700F5501C /* ConfluentCloud.swift */,
 				B22527F41E5BD0C70098E73D /* Contentful.swift */,
 				B2D468281E2F0F82000F8F6B /* Coveralls.swift */,
@@ -1296,6 +1299,7 @@
 				B256955C1E247C8C00FAE413 /* PagerDuty.swift in Sources */,
 				B2A23E321DD190EF0051E913 /* EditorTableViewController.swift in Sources */,
 				B2FDC91E1D6706C400F0B728 /* CircleCI.swift in Sources */,
+				B292222B2642EFA4001C63AE /* Coinbase.swift in Sources */,
 				B257469B1E2781A3003A07A4 /* CodeClimate.swift in Sources */,
 				B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */,
 				B2483CF12037029D00A9FA95 /* Zwift.swift in Sources */,
