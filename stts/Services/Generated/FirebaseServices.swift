@@ -2,16 +2,12 @@
 
 import Foundation
 
-class FirebaseABTesting: FirebaseService, SubService {
-    let name = "Firebase AB Testing"
+class FirebaseABTestingBETA: FirebaseService, SubService {
+    let name = "Firebase AB Testing (BETA)"
 }
 
-class FirebaseAnalytics: FirebaseService, SubService {
-    let name = "Firebase Analytics"
-}
-
-class FirebaseAppDistribution: FirebaseService, SubService {
-    let name = "Firebase App Distribution"
+class FirebaseAppDistributionBETA: FirebaseService, SubService {
+    let name = "Firebase App Distribution (BETA)"
 }
 
 class FirebaseAppIndexing: FirebaseService, SubService {
@@ -42,8 +38,8 @@ class FirebaseHosting: FirebaseService, SubService {
     let name = "Firebase Hosting"
 }
 
-class FirebaseMachineLearning: FirebaseService, SubService {
-    let name = "Firebase Machine Learning"
+class FirebaseMachineLearningBETA: FirebaseService, SubService {
+    let name = "Firebase Machine Learning (BETA)"
 }
 
 class FirebasePerformanceMonitoring: FirebaseService, SubService {
@@ -60,10 +56,6 @@ class FirebaseRealtimeDatabase: FirebaseService, SubService {
 
 class FirebaseRemoteConfig: FirebaseService, SubService {
     let name = "Firebase Remote Config"
-}
-
-class FirebaseStorage: FirebaseService, SubService {
-    let name = "Firebase Storage"
 }
 
 class FirebaseTestLab: FirebaseService, SubService {

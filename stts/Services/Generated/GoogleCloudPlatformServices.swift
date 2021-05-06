@@ -2,19 +2,94 @@
 
 import Foundation
 
+class GoogleAPIGateway: GoogleCloudPlatform, SubService {
+    let name = "Google API Gateway"
+    let dashboardName = "API Gateway"
+}
+
 class GoogleApigee: GoogleCloudPlatform, SubService {
     let name = "Google Apigee"
     let dashboardName = "Apigee"
 }
 
-class GoogleAppEngine: GoogleCloudPlatform, SubService {
-    let name = "Google App Engine"
-    let dashboardName = "Google App Engine"
-}
-
 class GoogleCloudAssetInventory: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Asset Inventory"
     let dashboardName = "Cloud Asset Inventory"
+}
+
+class GoogleCloudDataFusion: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Data Fusion"
+    let dashboardName = "Cloud Data Fusion"
+}
+
+class GoogleCloudDeveloperTools: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Developer Tools"
+    let dashboardName = "Cloud Developer Tools"
+}
+
+class GoogleCloudEndpoints: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Endpoints"
+    let dashboardName = "Cloud Endpoints"
+}
+
+class GoogleCloudFilestore: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Filestore"
+    let dashboardName = "Cloud Filestore"
+}
+
+class GoogleCloudFirestore: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Firestore"
+    let dashboardName = "Cloud Firestore"
+}
+
+class GoogleCloudKeyManagementService: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Key Management Service"
+    let dashboardName = "Cloud Key Management Service"
+}
+
+class GoogleCloudMachineLearning: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Machine Learning"
+    let dashboardName = "Cloud Machine Learning"
+}
+
+class GoogleCloudMemorystore: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Memorystore"
+    let dashboardName = "Cloud Memorystore"
+}
+
+class GoogleCloudRun: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Run"
+    let dashboardName = "Cloud Run"
+}
+
+class GoogleCloudSecurityCommandCenter: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Security Command Center"
+    let dashboardName = "Cloud Security Command Center"
+}
+
+class GoogleCloudSpanner: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Spanner"
+    let dashboardName = "Cloud Spanner"
+}
+
+class GoogleCloudTalentSolutionJobSearch: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Talent Solution - Job Search"
+    let dashboardName = "Cloud Talent Solution - Job Search"
+}
+
+class GoogleCloudWorkflows: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Workflows"
+    let dashboardName = "Cloud Workflows"
+}
+
+class GoogleEventarc: GoogleCloudPlatform, SubService {
+    let name = "Google Eventarc"
+    let dashboardName = "Eventarc"
+}
+
+class GoogleAppEngine: GoogleCloudPlatform, SubService {
+    let name = "Google App Engine"
+    let dashboardName = "Google App Engine"
 }
 
 class GoogleBigQuery: GoogleCloudPlatform, SubService {
@@ -27,9 +102,14 @@ class GoogleCloudBigtable: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Cloud Bigtable"
 }
 
-class GoogleCloudDataFusion: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Data Fusion"
-    let dashboardName = "Cloud Data Fusion"
+class GoogleCloudComposer: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Composer"
+    let dashboardName = "Google Cloud Composer"
+}
+
+class GoogleCloudConsole: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Console"
+    let dashboardName = "Google Cloud Console"
 }
 
 class GoogleCloudDataflow: GoogleCloudPlatform, SubService {
@@ -47,24 +127,9 @@ class GoogleCloudDatastore: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Cloud Datastore"
 }
 
-class GoogleCloudDeveloperTools: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Developer Tools"
-    let dashboardName = "Cloud Developer Tools"
-}
-
 class GoogleCloudDNS: GoogleCloudPlatform, SubService {
     let name = "Google Cloud DNS"
     let dashboardName = "Google Cloud DNS"
-}
-
-class GoogleCloudFilestore: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Filestore"
-    let dashboardName = "Cloud Filestore"
-}
-
-class GoogleCloudFirestore: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Firestore"
-    let dashboardName = "Cloud Firestore"
 }
 
 class GoogleCloudFunctions: GoogleCloudPlatform, SubService {
@@ -72,29 +137,14 @@ class GoogleCloudFunctions: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Cloud Functions"
 }
 
-class GoogleIdentityAndAccessManagement: GoogleCloudPlatform, SubService {
-    let name = "Google Identity and Access Management"
-    let dashboardName = "Identity and Access Management"
+class GoogleCloudInfrastructureComponents: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Infrastructure Components"
+    let dashboardName = "Google Cloud Infrastructure Components"
 }
 
 class GoogleCloudIoT: GoogleCloudPlatform, SubService {
     let name = "Google Cloud IoT"
     let dashboardName = "Google Cloud IoT"
-}
-
-class GoogleCloudKeyManagementService: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Key Management Service"
-    let dashboardName = "Cloud Key Management Service"
-}
-
-class GoogleCloudMemorystore: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Memorystore"
-    let dashboardName = "Cloud Memorystore"
-}
-
-class GoogleCloudMachineLearning: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Machine Learning"
-    let dashboardName = "Cloud Machine Learning"
 }
 
 class GoogleCloudNetworking: GoogleCloudPlatform, SubService {
@@ -107,89 +157,14 @@ class GoogleCloudPubSub: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Cloud Pub/Sub"
 }
 
-class GoogleCloudRun: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Run"
-    let dashboardName = "Cloud Run"
-}
-
 class GoogleCloudScheduler: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Scheduler"
     let dashboardName = "Google Cloud Scheduler"
 }
 
-class GoogleCloudSecurityCommandCenter: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Security Command Center"
-    let dashboardName = "Cloud Security Command Center"
-}
-
-class GoogleCloudSpanner: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Spanner"
-    let dashboardName = "Cloud Spanner"
-}
-
 class GoogleCloudSQL: GoogleCloudPlatform, SubService {
     let name = "Google Cloud SQL"
     let dashboardName = "Google Cloud SQL"
-}
-
-class GoogleCloudTalentSolutionJobSearch: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Talent Solution - Job Search"
-    let dashboardName = "Cloud Talent Solution - Job Search"
-}
-
-class GoogleCloudTasks: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Tasks"
-    let dashboardName = "Google Cloud Tasks"
-}
-
-class GoogleCloudWorkflows: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Workflows"
-    let dashboardName = "Cloud Workflows"
-}
-
-class GoogleCloudEndpoints: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Endpoints"
-    let dashboardName = "Cloud Endpoints"
-}
-
-class GoogleCloudComposer: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Composer"
-    let dashboardName = "Google Cloud Composer"
-}
-
-class GoogleComputeEngine: GoogleCloudPlatform, SubService {
-    let name = "Google Compute Engine"
-    let dashboardName = "Google Compute Engine"
-}
-
-class GoogleKubernetesEngine: GoogleCloudPlatform, SubService {
-    let name = "Google Kubernetes Engine"
-    let dashboardName = "Google Kubernetes Engine"
-}
-
-class GoogleCloudConsole: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Console"
-    let dashboardName = "Google Cloud Console"
-}
-
-class GoogleEventarc: GoogleCloudPlatform, SubService {
-    let name = "Google Eventarc"
-    let dashboardName = "Eventarc"
-}
-
-class GoogleOperations: GoogleCloudPlatform, SubService {
-    let name = "Google Operations"
-    let dashboardName = "Operations"
-}
-
-class GoogleHealthcareAndLifeSciences: GoogleCloudPlatform, SubService {
-    let name = "Google Healthcare and Life Sciences"
-    let dashboardName = "Healthcare and Life Sciences"
-}
-
-class GoogleSecretManager: GoogleCloudPlatform, SubService {
-    let name = "Google Secret Manager"
-    let dashboardName = "Secret Manager"
 }
 
 class GoogleCloudStorage: GoogleCloudPlatform, SubService {
@@ -202,7 +177,37 @@ class GoogleCloudSupport: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Cloud Support"
 }
 
-class GoogleCloudInfrastructureComponents: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Infrastructure Components"
-    let dashboardName = "Google Cloud Infrastructure Components"
+class GoogleCloudTasks: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Tasks"
+    let dashboardName = "Google Cloud Tasks"
+}
+
+class GoogleComputeEngine: GoogleCloudPlatform, SubService {
+    let name = "Google Compute Engine"
+    let dashboardName = "Google Compute Engine"
+}
+
+class GoogleKubernetesEngine: GoogleCloudPlatform, SubService {
+    let name = "Google Kubernetes Engine"
+    let dashboardName = "Google Kubernetes Engine"
+}
+
+class GoogleHealthcareAndLifeSciences: GoogleCloudPlatform, SubService {
+    let name = "Google Healthcare and Life Sciences"
+    let dashboardName = "Healthcare and Life Sciences"
+}
+
+class GoogleIdentityAndAccessManagement: GoogleCloudPlatform, SubService {
+    let name = "Google Identity and Access Management"
+    let dashboardName = "Identity and Access Management"
+}
+
+class GoogleOperations: GoogleCloudPlatform, SubService {
+    let name = "Google Operations"
+    let dashboardName = "Operations"
+}
+
+class GoogleSecretManager: GoogleCloudPlatform, SubService {
+    let name = "Google Secret Manager"
+    let dashboardName = "Secret Manager"
 }

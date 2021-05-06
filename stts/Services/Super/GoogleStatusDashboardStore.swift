@@ -51,8 +51,8 @@ class GoogleStatusDashboardStore: Loading {
             guard let data = data else { return self._fail(error) }
             guard let doc = try? HTML(html: data, encoding: .utf8) else { return self._fail("Couldn't parse response") }
 
-            for tr in doc.css(".timeline tr") {
-                guard let (name, status) = self.parseTimelineRow(tr) else { continue }
+            for tr in doc.css(".main-dashboard-table tr") {
+                guard let (name, status) = self.parseDashboardRow(tr) else { continue }
                 self.statuses[name] = status
             }
 
@@ -103,18 +103,20 @@ class GoogleStatusDashboardStore: Loading {
         statuses["_general"] = generalStatus
     }
 
-    private func parseTimelineRow(_ tr: XMLElement) -> (String, ServiceStatus)? {
-        let rawName = tr.css(".service-status").first?.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+    private func parseDashboardRow(_ tr: XMLElement) -> (String, ServiceStatus)? {
+        let rawName = tr.css(".product-name").first?.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let sanitizedName = rawName?.components(separatedBy: .newlines).first?.trimmingCharacters(in: .whitespacesAndNewlines)
 
         guard let name = sanitizedName else { return nil }
 
-        if tr.css(".end-bubble.ok").count > 0 {
+        if tr.css(".status-icon.available").count > 0 {
             return (name, .good)
-        } else if tr.css(".end-bubble.medium").count > 0 {
+        } else if tr.css(".status-icon.disruption").count > 0 {
             return (name, .minor)
-        } else if tr.css(".end-bubble.high").count > 0 {
+        } else if tr.css(".status-icon.outage").count > 0 {
             return (name, .major)
+        } else if tr.css(".status-icon.information").count > 0 {
+            return (name, .notice)
         } else {
             return (name, .undetermined)
         }

@@ -40,7 +40,11 @@ extension Service {
         sanitizedName = sanitizedName.replacingOccurrences(of: "/", with: "")
         sanitizedName = sanitizedName.replacingOccurrences(of: ":", with: "")
         sanitizedName = sanitizedName.replacingOccurrences(of: "-", with: "")
-        return sanitizedName.components(separatedBy: " ").map { $0.capitalized(firstLetterOnly: true) }.joined(separator: "")
+        sanitizedName = sanitizedName.replacingOccurrences(of: "(", with: "")
+        sanitizedName = sanitizedName.replacingOccurrences(of: ")", with: "")
+        return sanitizedName.components(separatedBy: " ")
+            .map { $0.capitalized(firstLetterOnly: true) }
+            .joined(separator: "")
     }
 }
 
@@ -134,7 +138,7 @@ func discoverServices(for platform: GooglePlatform) -> [Service] {
 
     // swiftlint:disable:next force_try
     let regex = try! NSRegularExpression(
-        pattern: "class=\"service-status\">[\\s\\n]*(.+?)[\\s\\n]*<.*?\\/tr>",
+        pattern: "class=\"product-name\">[\\s\\n]*(.+?)[\\s\\n]*<.*?\\/tr>",
         options: [.caseInsensitive, .dotMatchesLineSeparators]
     )
 
@@ -145,7 +149,7 @@ func discoverServices(for platform: GooglePlatform) -> [Service] {
         let matchSubstring = body[textCheckingResult.range(at: 0)]
 
         // Some entries are just links to GCP/Firebase and don't have any status data. Skip those.
-        guard matchSubstring.contains("class=\"day ") else { return }
+        guard matchSubstring.contains("class=\"product-day") else { return }
 
         let serviceName = body[textCheckingResult.range(at: 1)]
 
