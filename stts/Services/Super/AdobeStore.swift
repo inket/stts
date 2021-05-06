@@ -121,7 +121,9 @@ class AdobeStore: Loading {
         case .minor?: return (.minor, "Minor issue(s)")
         case .major?: return (.major, "Major issue(s)")
         case .notice?: return (.notice, "Potential issue(s)")
-        default: return (.undetermined, loadErrorMessage ?? "Unexpected error")
+        case .maintenance?: return (.maintenance, "Maintenance")
+        case .some(.undetermined),
+             .none: return (.undetermined, loadErrorMessage ?? "Unexpected error")
         }
     }
 
