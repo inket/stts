@@ -132,6 +132,8 @@
 		B28E9FC01ED26A40006B89F1 /* Lob.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28E9FBE1ED26A40006B89F1 /* Lob.swift */; };
 		B28FF68B1E94761A005897A9 /* Codecov.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28FF68A1E94761A005897A9 /* Codecov.swift */; };
 		B290315C1E4B0CA7005B58CC /* Evernote.swift in Sources */ = {isa = PBXBuildFile; fileRef = B290315B1E4B0CA7005B58CC /* Evernote.swift */; };
+		B29222282642EF33001C63AE /* ModeAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29222262642EF33001C63AE /* ModeAnalytics.swift */; };
+		B29222292642EF33001C63AE /* Twitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29222272642EF33001C63AE /* Twitch.swift */; };
 		B299C8431DD044160024D2E9 /* NewRelic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8421DD044160024D2E9 /* NewRelic.swift */; };
 		B299C8451DD046F20024D2E9 /* AmazonWebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */; };
 		B299C8471DD04D7C0024D2E9 /* NPM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8461DD04D7C0024D2E9 /* NPM.swift */; };
@@ -376,6 +378,8 @@
 		B28E9FBE1ED26A40006B89F1 /* Lob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lob.swift; sourceTree = "<group>"; };
 		B28FF68A1E94761A005897A9 /* Codecov.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Codecov.swift; sourceTree = "<group>"; };
 		B290315B1E4B0CA7005B58CC /* Evernote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evernote.swift; sourceTree = "<group>"; };
+		B29222262642EF33001C63AE /* ModeAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeAnalytics.swift; sourceTree = "<group>"; };
+		B29222272642EF33001C63AE /* Twitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twitch.swift; sourceTree = "<group>"; };
 		B299C8421DD044160024D2E9 /* NewRelic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRelic.swift; sourceTree = "<group>"; };
 		B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmazonWebServices.swift; sourceTree = "<group>"; };
 		B299C8461DD04D7C0024D2E9 /* NPM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPM.swift; sourceTree = "<group>"; };
@@ -671,6 +675,7 @@
 				B28C1D431E607D8600F9D0DC /* Mapbox.swift */,
 				B22600301E1562E700EBDD40 /* MediaTemple.swift */,
 				B2C337A41E1417390007E110 /* Mixpanel.swift */,
+				B29222262642EF33001C63AE /* ModeAnalytics.swift */,
 				36AD8ED8235A310500F2FD73 /* Mural.swift */,
 				B299C8461DD04D7C0024D2E9 /* NPM.swift */,
 				B299C8421DD044160024D2E9 /* NewRelic.swift */,
@@ -711,6 +716,7 @@
 				B2D032CF1D6455E300D51CB8 /* TravisCI.swift */,
 				B20396351EE6A060008CCA21 /* Trello.swift */,
 				B2F127A81E0B84B50035B20C /* Twilio.swift */,
+				B29222272642EF33001C63AE /* Twitch.swift */,
 				B24220E31E2F6BBA0007E50E /* Typeform.swift */,
 				B2A8AE3C20710EC8002699CE /* Unsplash.swift */,
 				B29AEFCF225D7F3900C3B8BD /* UrbanAirship.swift */,
@@ -1240,6 +1246,7 @@
 				B299C8551DD051210024D2E9 /* EngineYard.swift in Sources */,
 				B28E912A248250F40026BAAA /* AppleStore.swift in Sources */,
 				B277BC9222B4BB5C000B55C3 /* AzureDevOps.swift in Sources */,
+				B29222292642EF33001C63AE /* Twitch.swift in Sources */,
 				B2C10F3C203646A7008E1E7D /* Gandi.swift in Sources */,
 				B21308561E55594E009FCF02 /* Quandl.swift in Sources */,
 				B23646B22627C14E00AB9486 /* VisualStudioAppCenter.swift in Sources */,
@@ -1293,6 +1300,7 @@
 				B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */,
 				B2483CF12037029D00A9FA95 /* Zwift.swift in Sources */,
 				B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */,
+				B29222282642EF33001C63AE /* ModeAnalytics.swift in Sources */,
 				B254642321EE9AF6003068A4 /* GitHub.swift in Sources */,
 				B2F55EF02408B6A2003D674C /* PSNEurope.swift in Sources */,
 				B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */,
