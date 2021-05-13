@@ -55,6 +55,11 @@ class AppleMusic: Apple, SubService {
     let serviceName = "Apple Music"
 }
 
+class AppleMusicForArtists: Apple, SubService {
+    let name = "Apple Music for Artists"
+    let serviceName = "Apple Music for Artists"
+}
+
 class AppleMusicRadio: Apple, SubService {
     let name = "Apple Music radio"
     let serviceName = "Apple Music radio"
