@@ -130,7 +130,11 @@ func discoverServices(for platform: GooglePlatform) -> [Service] {
     _ = semaphore.wait(timeout: .now() + .seconds(10))
 
     guard let data = dataResult, var body = String(data: data, encoding: .utf8) else {
-        print("warning: Build script generate_google_services could not retrieve list of Google Cloud Platform/Firebase services")
+        print("""
+            warning: Build script generate_google_services could not retrieve
+            list of Google Cloud Platform/Firebase services
+        """)
+
         exit(0)
     }
 
