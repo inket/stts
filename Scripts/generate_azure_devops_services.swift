@@ -90,12 +90,10 @@ func discoverServices() -> [AzureDevOpsService] {
 
     _ = semaphore.wait(timeout: .now() + .seconds(10))
 
-    guard let data = dataResult, var body = String(data: data, encoding: .utf8) else {
+    guard let data = dataResult, let body = String(data: data, encoding: .utf8) as NSString? else {
         print("warning: Build script generate_azure_devops_services could not retrieve list of Azure DevOps services")
         exit(0)
     }
-
-    body = body.replacingOccurrences(of: "\n", with: "")
 
     // swiftlint:disable:next force_try
     let regex = try! NSRegularExpression(
@@ -103,11 +101,11 @@ func discoverServices() -> [AzureDevOpsService] {
         options: [.caseInsensitive, .dotMatchesLineSeparators]
     )
 
-    let range = NSRange(location: 0, length: body.count)
-    regex.enumerateMatches(in: body, options: [], range: range) { textCheckingResult, _, _ in
+    let range = NSRange(location: 0, length: body.length)
+    regex.enumerateMatches(in: body as String, options: [], range: range) { textCheckingResult, _, _ in
         guard let textCheckingResult = textCheckingResult, textCheckingResult.numberOfRanges == 2 else { return }
 
-        let json = body[textCheckingResult.range(at: 1)]
+        let json = body.substring(with: textCheckingResult.range(at: 1))
         let jsonData = json.data(using: .utf8)!
         guard let decodedProviders = try? JSONDecoder().decode(AzureDevOpsDataProviders.self, from: jsonData) else {
             print(
