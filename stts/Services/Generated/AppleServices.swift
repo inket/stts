@@ -438,9 +438,14 @@ class AppleCertificatesIdentifiersAndProfiles: AppleDeveloper, SubService {
     let serviceName = "Certificates, Identifiers & Profiles"
 }
 
-class AppleCloudKitDashboard: AppleDeveloper, SubService {
-    let name = "Apple CloudKit Dashboard"
-    let serviceName = "CloudKit Dashboard"
+class AppleCloudKitConsole: AppleDeveloper, SubService {
+    let name = "Apple CloudKit Console"
+    let serviceName = "CloudKit Console"
+}
+
+class AppleCloudKitDatabase: AppleDeveloper, SubService {
+    let name = "Apple CloudKit Database"
+    let serviceName = "CloudKit Database"
 }
 
 class AppleCodelevelSupport: AppleDeveloper, SubService {
@@ -488,6 +493,11 @@ class AppleMapKitJSDashboard: AppleDeveloper, SubService {
     let serviceName = "MapKit JS Dashboard"
 }
 
+class AppleMFiPortal: AppleDeveloper, SubService {
+    let name = "Apple MFi Portal"
+    let serviceName = "MFi Portal"
+}
+
 class AppleNewsPublisher: AppleDeveloper, SubService {
     let name = "Apple News Publisher"
     let serviceName = "News Publisher"
@@ -516,4 +526,9 @@ class AppleVideos: AppleDeveloper, SubService {
 class AppleXcodeAutomaticConfiguration: AppleDeveloper, SubService {
     let name = "Apple Xcode Automatic Configuration"
     let serviceName = "Xcode Automatic Configuration"
+}
+
+class AppleXcodeCloud: AppleDeveloper, SubService {
+    let name = "Apple Xcode Cloud"
+    let serviceName = "Xcode Cloud"
 }

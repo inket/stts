@@ -52,6 +52,16 @@ class AdobeDigitalVideoAndAudio: Adobe {
     let id = 1627
 }
 
+class AdobeJourneyOptimizer: Adobe {
+    let name = "Adobe Journey Optimizer"
+    let id = 5538
+}
+
+class AdobeMessageDelivery: Adobe {
+    let name = "Adobe Message Delivery"
+    let id = 6349
+}
+
 class AdobeIO: AdobeServices, SubService {
     let name = "Adobe - I/O"
     let id = 1675
