@@ -39,6 +39,7 @@
 		B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */; };
 		B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */; };
 		B213D1F6269AD941005EBDDA /* Tableau.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F5269AD941005EBDDA /* Tableau.swift */; };
+		B213D1F8269AD9A7005EBDDA /* Pardot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F7269AD9A7005EBDDA /* Pardot.swift */; };
 		B21492CB21EE9BD70065103E /* ScaleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21492CA21EE9BD70065103E /* ScaleGrid.swift */; };
 		B2163AF820BA4E7500B14A85 /* sttsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AF720BA4E7500B14A85 /* sttsTests.swift */; };
 		B2163B0020BA56EF00B14A85 /* StatusCakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */; };
@@ -287,6 +288,7 @@
 		B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableViewController.swift; sourceTree = "<group>"; };
 		B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableRowView.swift; sourceTree = "<group>"; };
 		B213D1F5269AD941005EBDDA /* Tableau.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tableau.swift; sourceTree = "<group>"; };
+		B213D1F7269AD9A7005EBDDA /* Pardot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pardot.swift; sourceTree = "<group>"; };
 		B21492CA21EE9BD70065103E /* ScaleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleGrid.swift; sourceTree = "<group>"; };
 		B2163AF520BA4E7500B14A85 /* sttsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sttsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2163AF720BA4E7500B14A85 /* sttsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sttsTests.swift; sourceTree = "<group>"; };
@@ -692,6 +694,7 @@
 				B25695531E247C8C00FAE413 /* PagerDuty.swift */,
 				B24B573123A4EAD200AFCF01 /* Pantheon.swift */,
 				B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */,
+				B213D1F7269AD9A7005EBDDA /* Pardot.swift */,
 				B2101899249E3FF400F31999 /* Pendo.swift */,
 				B2BA697D1E2DA3A20016AF1A /* PivotalTracker.swift */,
 				B29D50BE24B0542100F4961B /* PlatformSH.swift */,
@@ -1158,6 +1161,7 @@
 				B231DD59257B431900647312 /* Xandr.swift in Sources */,
 				B2ABB6171F59770800DF8EC2 /* Imgix.swift in Sources */,
 				B213D1F6269AD941005EBDDA /* Tableau.swift in Sources */,
+				B213D1F8269AD9A7005EBDDA /* Pardot.swift in Sources */,
 				B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */,
 				B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */,
 				B271688A2291AEEE001E608C /* Asana.swift in Sources */,
