@@ -75,9 +75,9 @@ class AppleOnlineStore: Apple, SubService {
     let serviceName = "Apple Online Store"
 }
 
-class ApplePay: Apple, SubService {
-    let name = "Apple Pay"
-    let serviceName = "Apple Pay"
+class ApplePayAndWallet: Apple, SubService {
+    let name = "Apple Pay & Wallet"
+    let serviceName = "Apple Pay & Wallet"
 }
 
 class AppleSchoolManager: Apple, SubService {
