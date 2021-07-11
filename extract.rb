@@ -108,7 +108,7 @@ def create_file(path, content)
     # Save it
     project.save
 
-    puts "Created #{file_name} to project"
+    puts "Added #{file_name} to project"
 end
 
 def sanitized_name(name)
