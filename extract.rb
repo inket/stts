@@ -141,11 +141,13 @@ def fail_params
     puts
     puts "Example:"
     puts "bundle exec ruby extract.rb https://status.notion.so/"
+    exit
 end
 
 def fail_network
     puts "Could not check that link :("
     puts "Network issue or invalid link?"
+    exit
 end
 
 def fail
@@ -165,7 +167,5 @@ fail_network unless source
 
 finish if extract_instatus(source)
 finish if extract_statuspage(url)
-
-sort
 
 fail
