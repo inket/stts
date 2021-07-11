@@ -17,17 +17,24 @@ def extract_instatus(source)
         site = JSON.parse(data.inner_html)["props"]["pageProps"]["site"]
         name = site["name"]
         url = "https://#{site["subdomain"]}.instatus.com"
+        safe_name = sanitized_name(name)
 
-        create_file "stts/Services/Instatus/#{name}.swift", <<-INSTATUS
+        definitions = [
+            "let url = URL(string: \"#{url}\")!"
+        ]
+
+        definitions.unshift("let name = \"#{name}\"") if safe_name != name
+
+        create_file "stts/Services/Instatus/#{safe_name}.swift", <<-INSTATUS
 //
-//  #{name}.swift
+//  #{safe_name}.swift
 //  stts
 //
 
 import Foundation
 
-class #{name}: InstatusService {
-    let url = URL(string: "#{url}")!
+class #{safe_name}: InstatusService {
+    #{definitions.join("\n    ")}
 }
         INSTATUS
 
@@ -44,18 +51,25 @@ def extract_statuspage(url)
     page = JSON.parse(source)["page"]
     id = page["id"]
     name = page["name"]
+    safe_name = sanitized_name(name)
 
-    create_file "stts/Services/StatusPage/#{name}.swift", <<-STATUSPAGE
+    definitions = [
+        "let url = URL(string: \"#{url}\")!",
+        "let statusPageID = \"#{id}\""
+    ]
+
+    definitions.unshift("let name = \"#{name}\"") if safe_name != name
+
+    create_file "stts/Services/StatusPage/#{safe_name}.swift", <<-STATUSPAGE
 //
-//  #{name}.swift
+//  #{safe_name}.swift
 //  stts
 //
 
 import Foundation
 
-class #{name}: StatusPageService {
-    let url = URL(string: "#{url}")!
-    let statusPageID = "#{id}"
+class #{safe_name}: StatusPageService {
+    #{definitions.join("\n    ")}
 }
     STATUSPAGE
 
@@ -97,12 +111,23 @@ def create_file(path, content)
     puts "Created #{file_name} to project"
 end
 
-def sort_group(group)
-    group.groups.each do |subgroup|
-        sort_group(subgroup)
+def sanitized_name(name)
+    new_name = name.gsub(" & ", "And")
+        .gsub("/", "")
+        .gsub(":", "")
+        .gsub("-", "")
+        .gsub(".", "")
+        .gsub("(", "")
+        .gsub(")", "")
+        .gsub("+", "")
+        .gsub(",", "")
+
+    words = new_name.split(" ").map do |word|
+        # capitalize, first character only (CamelCase)
+        word[0].upcase + word[1..-1]
     end
 
-    group.sort
+    words.join("")
 end
 
 def finish
