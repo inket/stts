@@ -627,11 +627,11 @@
 		B276C8E81DD473B50098B451 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B2C548E022B27AF200D1D7EF /* Reachability.framework */,
 				B23533DE2285B48E00DEDC36 /* DateHelper.framework */,
-				B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */,
 				B26CD1E71DD59FDD0054A385 /* Kanna.framework */,
 				B276C8F11DD474200098B451 /* MBPopup.framework */,
+				B2C548E022B27AF200D1D7EF /* Reachability.framework */,
+				B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */,
 			);
 			name = Frameworks;
 			path = Resources;
@@ -816,6 +816,7 @@
 				B2DCE6932215ACD0001447D8 /* Extensions */,
 				B213A17A1DC9EA3F008E8E58 /* ServiceTableView */,
 				B2FDC91F1D6706FB00F0B728 /* Services */,
+				B2CF3FBF1DF7DD2100B66491 /* stts.entitlements */,
 				B2B2D1021D49D5080014D780 /* AppDelegate.swift */,
 				B2E018FC214E60E700C5F75B /* AppearanceObserver.swift */,
 				B2A4A8151DC82CE300037E99 /* BottomBar.swift */,
@@ -824,7 +825,6 @@
 				B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */,
 				B24D19F51DD072840052E539 /* Preferences.swift */,
 				B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */,
-				B2CF3FBF1DF7DD2100B66491 /* stts.entitlements */,
 			);
 			path = stts;
 			sourceTree = "<group>";
@@ -857,12 +857,12 @@
 		B2E70FD222B0650A000BCAD2 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				B2E70FD322B0657F000BCAD2 /* generate_services_plist.sh */,
 				B200CA71247FBC0A00DB0868 /* generate_adobe_services.swift */,
 				B28E912524824C3A0026BAAA /* generate_apple_services.swift */,
 				B277BC9522B4BC6C000B55C3 /* generate_azure_devops_services.swift */,
 				B2CEE5DC22B4A9900073C743 /* generate_azure_services.swift */,
 				B2E70FD622B066EC000BCAD2 /* generate_google_services.swift */,
-				B2E70FD322B0657F000BCAD2 /* generate_services_plist.sh */,
 			);
 			path = Scripts;
 			sourceTree = "<group>";
@@ -903,10 +903,10 @@
 				B22FDE4921089D4F00359EC9 /* PayPal */,
 				B2F55EEA2408B562003D674C /* PlayStation Network */,
 				B2841CEC20BA6423004AFDB7 /* Sorry */,
-				B26CB5711E13448900116A33 /* Status.ioV1 */,
 				B2163B0120BA5AE600B14A85 /* StatusCake */,
 				B299C8561DD051710024D2E9 /* StatusPage */,
 				B2FDC9201D67071500F0B728 /* Super */,
+				B26CB5711E13448900116A33 /* Status.ioV1 */,
 				B2430806210810D0003F8D07 /* Algolia.swift */,
 				B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */,
 				B2BA36181ED7B0F200051083 /* AuthorizeNet.swift */,
@@ -939,6 +939,7 @@
 				B2253A6C209F3F9F0039F574 /* FirebaseService.swift */,
 				B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */,
 				B2253A6A209F3C410039F574 /* GoogleStatusDashboardStore.swift */,
+				B213D1FF269AFD45005EBDDA /* InstatusService.swift */,
 				B2DCE68C221591F2001447D8 /* LambStatusService.swift */,
 				B22FDE4721089C6200359EC9 /* PayPal.swift */,
 				B2F55EE82408AB1A003D674C /* PlayStationNetwork.swift */,
@@ -947,7 +948,6 @@
 				B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */,
 				B2FDC91B1D67062200F0B728 /* StatusPageService.swift */,
 				B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */,
-				B213D1FF269AFD45005EBDDA /* InstatusService.swift */,
 			);
 			path = Super;
 			sourceTree = "<group>";
@@ -955,8 +955,8 @@
 		B2FDC9211D67074900F0B728 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B2B2D1041D49D5080014D780 /* Assets.xcassets */,
 				B2B2D1091D49D5080014D780 /* Info.plist */,
+				B2B2D1041D49D5080014D780 /* Assets.xcassets */,
 				B2B2D1061D49D5080014D780 /* MainMenu.xib */,
 			);
 			path = Resources;
