@@ -42,6 +42,8 @@
 		B213D1F8269AD9A7005EBDDA /* Pardot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F7269AD9A7005EBDDA /* Pardot.swift */; };
 		B213D1FA269ADA0F005EBDDA /* MuleSoft.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F9269ADA0F005EBDDA /* MuleSoft.swift */; };
 		B213D1FC269ADA5D005EBDDA /* Click.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1FB269ADA5D005EBDDA /* Click.swift */; };
+		B213D200269AFD45005EBDDA /* InstatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1FF269AFD45005EBDDA /* InstatusService.swift */; };
+		B213D207269B05D9005EBDDA /* Instatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D206269B05D9005EBDDA /* Instatus.swift */; };
 		B21492CB21EE9BD70065103E /* ScaleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21492CA21EE9BD70065103E /* ScaleGrid.swift */; };
 		B2163AF820BA4E7500B14A85 /* sttsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AF720BA4E7500B14A85 /* sttsTests.swift */; };
 		B2163B0020BA56EF00B14A85 /* StatusCakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */; };
@@ -293,6 +295,8 @@
 		B213D1F7269AD9A7005EBDDA /* Pardot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pardot.swift; sourceTree = "<group>"; };
 		B213D1F9269ADA0F005EBDDA /* MuleSoft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuleSoft.swift; sourceTree = "<group>"; };
 		B213D1FB269ADA5D005EBDDA /* Click.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Click.swift; sourceTree = "<group>"; };
+		B213D1FF269AFD45005EBDDA /* InstatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstatusService.swift; sourceTree = "<group>"; };
+		B213D206269B05D9005EBDDA /* Instatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instatus.swift; sourceTree = "<group>"; };
 		B21492CA21EE9BD70065103E /* ScaleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleGrid.swift; sourceTree = "<group>"; };
 		B2163AF520BA4E7500B14A85 /* sttsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sttsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2163AF720BA4E7500B14A85 /* sttsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sttsTests.swift; sourceTree = "<group>"; };
@@ -517,6 +521,14 @@
 				B2B015C11DBDE69B00699211 /* StatusTableCell.swift */,
 			);
 			path = ServiceTableView;
+			sourceTree = "<group>";
+		};
+		B213D201269B0449005EBDDA /* Instatus */ = {
+			isa = PBXGroup;
+			children = (
+				B213D206269B05D9005EBDDA /* Instatus.swift */,
+			);
+			path = Instatus;
 			sourceTree = "<group>";
 		};
 		B2163AF620BA4E7500B14A85 /* sttsTests */ = {
@@ -871,6 +883,7 @@
 				B2253A69209F3B9F0039F574 /* Firebase */,
 				B2E70FDF22B0844F000BCAD2 /* Generated */,
 				B2493F071E26052400556A83 /* Google Cloud Platform */,
+				B213D201269B0449005EBDDA /* Instatus */,
 				B2DCE68E22159731001447D8 /* LambStatus */,
 				B22FDE4921089D4F00359EC9 /* PayPal */,
 				B2F55EEA2408B562003D674C /* PlayStation Network */,
@@ -919,6 +932,7 @@
 				B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */,
 				B2FDC91B1D67062200F0B728 /* StatusPageService.swift */,
 				B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */,
+				B213D1FF269AFD45005EBDDA /* InstatusService.swift */,
 			);
 			path = Super;
 			sourceTree = "<group>";
@@ -1177,6 +1191,7 @@
 				36AD8ED3235A1CE500F2FD73 /* LaunchDarkly.swift in Sources */,
 				B2CEE5D922B49CC80073C743 /* AzureStore.swift in Sources */,
 				B2D032D01D6455E300D51CB8 /* TravisCI.swift in Sources */,
+				B213D200269AFD45005EBDDA /* InstatusService.swift in Sources */,
 				B235341F22888EFE00DEDC36 /* Sendinblue.swift in Sources */,
 				B2D468291E2F0F82000F8F6B /* Coveralls.swift in Sources */,
 				B299C8511DD04FD60024D2E9 /* Cloudflare.swift in Sources */,
@@ -1327,6 +1342,7 @@
 				B254642321EE9AF6003068A4 /* GitHub.swift in Sources */,
 				B2F55EF02408B6A2003D674C /* PSNEurope.swift in Sources */,
 				B213D1FA269ADA0F005EBDDA /* MuleSoft.swift in Sources */,
+				B213D207269B05D9005EBDDA /* Instatus.swift in Sources */,
 				B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
