@@ -5,7 +5,6 @@ require 'json'
 
 def source_for(url)
     uri = URI.parse(url)
-    uri = URI.parse("https://#{url}") if uri.scheme == nil
     path = uri.path == "" ? "/" : uri.path
     result = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') { |http| http.get(path) }
     result.code.to_i == 200 ? result.body : nil
@@ -134,6 +133,7 @@ url = ARGV[0]
 url = url.strip if url
 fail_params unless url && url != ""
 
+url = "https://#{url}" if URI.parse(url).scheme == nil
 source = source_for(url)
 
 fail_network unless source
