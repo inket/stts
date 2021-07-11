@@ -40,6 +40,7 @@
 		B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */; };
 		B213D1F6269AD941005EBDDA /* Tableau.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F5269AD941005EBDDA /* Tableau.swift */; };
 		B213D1F8269AD9A7005EBDDA /* Pardot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F7269AD9A7005EBDDA /* Pardot.swift */; };
+		B213D1FA269ADA0F005EBDDA /* MuleSoft.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F9269ADA0F005EBDDA /* MuleSoft.swift */; };
 		B21492CB21EE9BD70065103E /* ScaleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21492CA21EE9BD70065103E /* ScaleGrid.swift */; };
 		B2163AF820BA4E7500B14A85 /* sttsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AF720BA4E7500B14A85 /* sttsTests.swift */; };
 		B2163B0020BA56EF00B14A85 /* StatusCakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */; };
@@ -289,6 +290,7 @@
 		B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableRowView.swift; sourceTree = "<group>"; };
 		B213D1F5269AD941005EBDDA /* Tableau.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tableau.swift; sourceTree = "<group>"; };
 		B213D1F7269AD9A7005EBDDA /* Pardot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pardot.swift; sourceTree = "<group>"; };
+		B213D1F9269ADA0F005EBDDA /* MuleSoft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuleSoft.swift; sourceTree = "<group>"; };
 		B21492CA21EE9BD70065103E /* ScaleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleGrid.swift; sourceTree = "<group>"; };
 		B2163AF520BA4E7500B14A85 /* sttsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sttsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2163AF720BA4E7500B14A85 /* sttsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sttsTests.swift; sourceTree = "<group>"; };
@@ -685,6 +687,7 @@
 				B22600301E1562E700EBDD40 /* MediaTemple.swift */,
 				B2C337A41E1417390007E110 /* Mixpanel.swift */,
 				B29222262642EF33001C63AE /* ModeAnalytics.swift */,
+				B213D1F9269ADA0F005EBDDA /* MuleSoft.swift */,
 				36AD8ED8235A310500F2FD73 /* Mural.swift */,
 				B299C8461DD04D7C0024D2E9 /* NPM.swift */,
 				B299C8421DD044160024D2E9 /* NewRelic.swift */,
@@ -1319,6 +1322,7 @@
 				B29222282642EF33001C63AE /* ModeAnalytics.swift in Sources */,
 				B254642321EE9AF6003068A4 /* GitHub.swift in Sources */,
 				B2F55EF02408B6A2003D674C /* PSNEurope.swift in Sources */,
+				B213D1FA269ADA0F005EBDDA /* MuleSoft.swift in Sources */,
 				B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
