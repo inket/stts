@@ -17,6 +17,7 @@
 		36AD8ED7235A2F9B00F2FD73 /* VictorOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */; };
 		36AD8ED9235A310500F2FD73 /* Mural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED8235A310500F2FD73 /* Mural.swift */; };
 		6BCBA0EA2558643D0019DF23 /* Recruiterbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */; };
+		6E03C0E8C75A66D143BBAB24 /* LinkedInAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E72A43B81FEC2ABB498DCBB /* LinkedInAPI.swift */; };
 		7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B305FAA210237AA0086DCE0 /* Spoke.swift */; };
 		7BA6A0A22240D8E000700C2C /* Bolt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6A0A12240D8E000700C2C /* Bolt.swift */; };
 		A0C3F34B220FD630005D9998 /* Datadog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3F34A220FD630005D9998 /* Datadog.swift */; };
@@ -234,6 +235,7 @@
 		B2FFC1F01E261B4A00529A00 /* Dropbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */; };
 		BF7AA78122B03AE4002460FB /* Bitrise.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AA78022B03AE4002460FB /* Bitrise.swift */; };
 		C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */; };
+		E6CFC61B2975297A0D9EE9CE /* LinkedInAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD39EC5F0FC240DE74BD82D /* LinkedInAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -265,6 +267,7 @@
 
 /* Begin PBXFileReference section */
 		03C5FB121E203325003C40B8 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
+		0E72A43B81FEC2ABB498DCBB /* LinkedInAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinkedInAPI.swift; sourceTree = "<group>"; };
 		0FDDACCC23CD7EBF00FE96CD /* ElasticCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElasticCloud.swift; sourceTree = "<group>"; };
 		194BC88122A8EAC00065E698 /* Clubhouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clubhouse.swift; sourceTree = "<group>"; };
 		2F1B7558227A095400BA5CBD /* Avalara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avalara.swift; sourceTree = "<group>"; };
@@ -276,6 +279,7 @@
 		6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruiterbox.swift; sourceTree = "<group>"; };
 		7B305FAA210237AA0086DCE0 /* Spoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spoke.swift; sourceTree = "<group>"; };
 		7BA6A0A12240D8E000700C2C /* Bolt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bolt.swift; sourceTree = "<group>"; };
+		8FD39EC5F0FC240DE74BD82D /* LinkedInAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinkedInAPI.swift; sourceTree = "<group>"; };
 		A0C3F34A220FD630005D9998 /* Datadog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datadog.swift; sourceTree = "<group>"; };
 		A125C59D20F7909500C513B3 /* Fastly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fastly.swift; sourceTree = "<group>"; };
 		A133C8B620F8F3670068CFE8 /* Mailgun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailgun.swift; sourceTree = "<group>"; };
@@ -707,6 +711,8 @@
 				B2D6FDAD21B95A0800F95940 /* LastPass.swift */,
 				36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */,
 				B2ED7660258E42C000014242 /* Lever.swift */,
+				0E72A43B81FEC2ABB498DCBB /* LinkedInAPI.swift */,
+				8FD39EC5F0FC240DE74BD82D /* LinkedInAPI.swift */,
 				B2107BCC254C96FF00284EE7 /* Linode.swift */,
 				B28E9FBE1ED26A40006B89F1 /* Lob.swift */,
 				B26350FC1ED7CFC40069EA73 /* Loggly.swift */,
@@ -1364,6 +1370,8 @@
 				B213D1FA269ADA0F005EBDDA /* MuleSoft.swift in Sources */,
 				B213D207269B05D9005EBDDA /* Instatus.swift in Sources */,
 				B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */,
+				6E03C0E8C75A66D143BBAB24 /* LinkedInAPI.swift in Sources */,
+				E6CFC61B2975297A0D9EE9CE /* LinkedInAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
