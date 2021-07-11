@@ -31,7 +31,7 @@ bundle exec ruby extract.rb <url>
 bundle exec ruby extract.rb https://status.notion.so/
 ```
 
-For services that cannot be added with the script, feel free to create a issue.
+For services that cannot be added with the script, feel free to create an issue.
 
 #### Contact
 
