@@ -17,6 +17,7 @@
 		36AD8ED5235A1FCA00F2FD73 /* Shopify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED4235A1FCA00F2FD73 /* Shopify.swift */; };
 		36AD8ED7235A2F9B00F2FD73 /* VictorOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */; };
 		36AD8ED9235A310500F2FD73 /* Mural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED8235A310500F2FD73 /* Mural.swift */; };
+		56EB1377353A8087B682B4E6 /* Primcloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160B2F5B66992A4DE58FF49 /* Primcloud.swift */; };
 		6BCBA0EA2558643D0019DF23 /* Recruiterbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */; };
 		6E03C0E8C75A66D143BBAB24 /* LinkedInAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E72A43B81FEC2ABB498DCBB /* LinkedInAPI.swift */; };
 		7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B305FAA210237AA0086DCE0 /* Spoke.swift */; };
@@ -267,6 +268,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0160B2F5B66992A4DE58FF49 /* Primcloud.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Primcloud.swift; sourceTree = "<group>"; };
 		03C5FB121E203325003C40B8 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
 		0E72A43B81FEC2ABB498DCBB /* LinkedInAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinkedInAPI.swift; sourceTree = "<group>"; };
 		0FDDACCC23CD7EBF00FE96CD /* ElasticCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElasticCloud.swift; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 				B213D206269B05D9005EBDDA /* Instatus.swift */,
 				B213D204269B0496005EBDDA /* Linear.swift */,
 				B213D20C269B0B4D005EBDDA /* Plausible.swift */,
+				0160B2F5B66992A4DE58FF49 /* Primcloud.swift */,
 				B213D202269B045C005EBDDA /* Railway.swift */,
 				B213D20A269B0774005EBDDA /* Sketch.swift */,
 				B213D208269B06DD005EBDDA /* Threader.swift */,
@@ -1376,6 +1379,7 @@
 				6E03C0E8C75A66D143BBAB24 /* LinkedInAPI.swift in Sources */,
 				E6CFC61B2975297A0D9EE9CE /* LinkedInAPI.swift in Sources */,
 				2F802A9BB36717992C334CB8 /* Medium.swift in Sources */,
+				56EB1377353A8087B682B4E6 /* Primcloud.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
