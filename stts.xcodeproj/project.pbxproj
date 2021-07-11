@@ -38,6 +38,7 @@
 		B21308561E55594E009FCF02 /* Quandl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21308551E55594E009FCF02 /* Quandl.swift */; };
 		B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */; };
 		B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */; };
+		B213D1F6269AD941005EBDDA /* Tableau.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F5269AD941005EBDDA /* Tableau.swift */; };
 		B21492CB21EE9BD70065103E /* ScaleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21492CA21EE9BD70065103E /* ScaleGrid.swift */; };
 		B2163AF820BA4E7500B14A85 /* sttsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AF720BA4E7500B14A85 /* sttsTests.swift */; };
 		B2163B0020BA56EF00B14A85 /* StatusCakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */; };
@@ -285,6 +286,7 @@
 		B21308551E55594E009FCF02 /* Quandl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quandl.swift; sourceTree = "<group>"; };
 		B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableViewController.swift; sourceTree = "<group>"; };
 		B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableRowView.swift; sourceTree = "<group>"; };
+		B213D1F5269AD941005EBDDA /* Tableau.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tableau.swift; sourceTree = "<group>"; };
 		B21492CA21EE9BD70065103E /* ScaleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleGrid.swift; sourceTree = "<group>"; };
 		B2163AF520BA4E7500B14A85 /* sttsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sttsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2163AF720BA4E7500B14A85 /* sttsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sttsTests.swift; sourceTree = "<group>"; };
@@ -719,6 +721,7 @@
 				B25695581E247C8C00FAE413 /* Squarespace.swift */,
 				B2D2B6CE20870E700011723B /* StatusPage.swift */,
 				B27090F0209F52EB0094C3D7 /* Stream.swift */,
+				B213D1F5269AD941005EBDDA /* Tableau.swift */,
 				B2D032CF1D6455E300D51CB8 /* TravisCI.swift */,
 				B20396351EE6A060008CCA21 /* Trello.swift */,
 				B2F127A81E0B84B50035B20C /* Twilio.swift */,
@@ -1154,6 +1157,7 @@
 				B227D31225D7671600951917 /* Poka.swift in Sources */,
 				B231DD59257B431900647312 /* Xandr.swift in Sources */,
 				B2ABB6171F59770800DF8EC2 /* Imgix.swift in Sources */,
+				B213D1F6269AD941005EBDDA /* Tableau.swift in Sources */,
 				B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */,
 				B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */,
 				B271688A2291AEEE001E608C /* Asana.swift in Sources */,
