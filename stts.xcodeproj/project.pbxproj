@@ -41,6 +41,7 @@
 		B213D1F6269AD941005EBDDA /* Tableau.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F5269AD941005EBDDA /* Tableau.swift */; };
 		B213D1F8269AD9A7005EBDDA /* Pardot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F7269AD9A7005EBDDA /* Pardot.swift */; };
 		B213D1FA269ADA0F005EBDDA /* MuleSoft.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F9269ADA0F005EBDDA /* MuleSoft.swift */; };
+		B213D1FC269ADA5D005EBDDA /* Click.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1FB269ADA5D005EBDDA /* Click.swift */; };
 		B21492CB21EE9BD70065103E /* ScaleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21492CA21EE9BD70065103E /* ScaleGrid.swift */; };
 		B2163AF820BA4E7500B14A85 /* sttsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AF720BA4E7500B14A85 /* sttsTests.swift */; };
 		B2163B0020BA56EF00B14A85 /* StatusCakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */; };
@@ -291,6 +292,7 @@
 		B213D1F5269AD941005EBDDA /* Tableau.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tableau.swift; sourceTree = "<group>"; };
 		B213D1F7269AD9A7005EBDDA /* Pardot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pardot.swift; sourceTree = "<group>"; };
 		B213D1F9269ADA0F005EBDDA /* MuleSoft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuleSoft.swift; sourceTree = "<group>"; };
+		B213D1FB269ADA5D005EBDDA /* Click.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Click.swift; sourceTree = "<group>"; };
 		B21492CA21EE9BD70065103E /* ScaleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleGrid.swift; sourceTree = "<group>"; };
 		B2163AF520BA4E7500B14A85 /* sttsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sttsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2163AF720BA4E7500B14A85 /* sttsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sttsTests.swift; sourceTree = "<group>"; };
@@ -639,6 +641,7 @@
 				B23EE5B224B9FF430067D800 /* Bullhorn.swift */,
 				B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */,
 				B2FDC91D1D6706C400F0B728 /* CircleCI.swift */,
+				B213D1FB269ADA5D005EBDDA /* Click.swift */,
 				B2F34040222630F20055C96F /* CloudApp.swift */,
 				B299C8501DD04FD60024D2E9 /* Cloudflare.swift */,
 				B25695511E247C8C00FAE413 /* Cloudinary.swift */,
@@ -1181,6 +1184,7 @@
 				B2D0F22424611AD700F5501C /* ConfluentCloud.swift in Sources */,
 				B256955E1E247C8C00FAE413 /* SauceLabs.swift in Sources */,
 				B2898FD01DC7441D0005F58F /* StatusIndicator.swift in Sources */,
+				B213D1FC269ADA5D005EBDDA /* Click.swift in Sources */,
 				B290315C1E4B0CA7005B58CC /* Evernote.swift in Sources */,
 				B2253A6D209F3F9F0039F574 /* FirebaseService.swift in Sources */,
 				B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */,
