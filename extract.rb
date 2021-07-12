@@ -81,7 +81,7 @@ def create_file(path, content)
         f.write(content)
     end
 
-    puts "Created #{path}"
+    puts "Updated #{path}"
 
     # Open the existing Xcode project
     project_file = "stts.xcodeproj"
@@ -93,6 +93,11 @@ def create_file(path, content)
 
     path.split("/")[0..-2].each do |group_name|
         group = group[group_name] if group[group_name]
+    end
+
+    if group.files.map(&:path).include?(file_name)
+        puts "Skipped adding #{file_name} to project: already exists"
+        return
     end
 
     # Get the file reference for the file to add
