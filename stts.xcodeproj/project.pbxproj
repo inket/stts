@@ -237,7 +237,6 @@
 		B2FFC1F01E261B4A00529A00 /* Dropbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */; };
 		BF7AA78122B03AE4002460FB /* Bitrise.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AA78022B03AE4002460FB /* Bitrise.swift */; };
 		C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */; };
-		E6CFC61B2975297A0D9EE9CE /* LinkedInAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD39EC5F0FC240DE74BD82D /* LinkedInAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1377,7 +1376,6 @@
 				B213D207269B05D9005EBDDA /* Instatus.swift in Sources */,
 				B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */,
 				6E03C0E8C75A66D143BBAB24 /* LinkedInAPI.swift in Sources */,
-				E6CFC61B2975297A0D9EE9CE /* LinkedInAPI.swift in Sources */,
 				2F802A9BB36717992C334CB8 /* Medium.swift in Sources */,
 				56EB1377353A8087B682B4E6 /* Primcloud.swift in Sources */,
 			);
