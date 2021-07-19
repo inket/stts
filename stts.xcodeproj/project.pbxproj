@@ -1111,7 +1111,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "chmod +x $SRCROOT/Scripts/*.swift\n\n$SRCROOT/Scripts/generate_adobe_services.swift &\n$SRCROOT/Scripts/generate_apple_services.swift &\n$SRCROOT/Scripts/generate_azure_services.swift &\n$SRCROOT/Scripts/generate_azure_devops_services.swift &\n$SRCROOT/Scripts/generate_google_services.swift\nwait\n";
+			shellScript = "chmod +x $SRCROOT/Scripts/*.swift\n\n$SRCROOT/Scripts/generate_adobe_services.swift &\n$SRCROOT/Scripts/generate_apple_services.swift &\n$SRCROOT/Scripts/generate_azure_services.swift &\n$SRCROOT/Scripts/generate_azure_devops_services.swift &\n$SRCROOT/Scripts/generate_google_services.swift &\n$SRCROOT/Scripts/generate_salesforce_services.swift\nwait\n";
 		};
 		B28F83321E24BDC100F2070F /* Generate Services plist file */ = {
 			isa = PBXShellScriptBuildPhase;
