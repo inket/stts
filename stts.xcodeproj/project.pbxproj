@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03C5FB131E203325003C40B8 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5FB121E203325003C40B8 /* Packet.swift */; };
+		0851FE81840F6555301382D8 /* PlausibleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F2CDBBA1C28D8E93EFB1C /* PlausibleAnalytics.swift */; };
 		0FDDACCD23CD7EBF00FE96CD /* ElasticCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDDACCC23CD7EBF00FE96CD /* ElasticCloud.swift */; };
 		194BC88222A8EAC10065E698 /* Clubhouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BC88122A8EAC00065E698 /* Clubhouse.swift */; };
 		2F1B7559227A095400BA5CBD /* Avalara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B7558227A095400BA5CBD /* Avalara.swift */; };
@@ -51,7 +52,6 @@
 		B213D207269B05D9005EBDDA /* Instatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D206269B05D9005EBDDA /* Instatus.swift */; };
 		B213D209269B06DD005EBDDA /* Threader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D208269B06DD005EBDDA /* Threader.swift */; };
 		B213D20B269B0774005EBDDA /* Sketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D20A269B0774005EBDDA /* Sketch.swift */; };
-		B213D20D269B0B4D005EBDDA /* Plausible.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D20C269B0B4D005EBDDA /* Plausible.swift */; };
 		B21492CB21EE9BD70065103E /* ScaleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21492CA21EE9BD70065103E /* ScaleGrid.swift */; };
 		B2163AF820BA4E7500B14A85 /* sttsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AF720BA4E7500B14A85 /* sttsTests.swift */; };
 		B2163B0020BA56EF00B14A85 /* StatusCakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */; };
@@ -313,7 +313,6 @@
 		B213D206269B05D9005EBDDA /* Instatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instatus.swift; sourceTree = "<group>"; };
 		B213D208269B06DD005EBDDA /* Threader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threader.swift; sourceTree = "<group>"; };
 		B213D20A269B0774005EBDDA /* Sketch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sketch.swift; sourceTree = "<group>"; };
-		B213D20C269B0B4D005EBDDA /* Plausible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plausible.swift; sourceTree = "<group>"; };
 		B21492CA21EE9BD70065103E /* ScaleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleGrid.swift; sourceTree = "<group>"; };
 		B2163AF520BA4E7500B14A85 /* sttsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sttsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2163AF720BA4E7500B14A85 /* sttsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sttsTests.swift; sourceTree = "<group>"; };
@@ -504,6 +503,7 @@
 		B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dropbox.swift; sourceTree = "<group>"; };
 		BF7AA78022B03AE4002460FB /* Bitrise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitrise.swift; sourceTree = "<group>"; };
 		C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeTransfer.swift; sourceTree = "<group>"; };
+		D52F2CDBBA1C28D8E93EFB1C /* PlausibleAnalytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlausibleAnalytics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -545,7 +545,7 @@
 			children = (
 				B213D206269B05D9005EBDDA /* Instatus.swift */,
 				B213D204269B0496005EBDDA /* Linear.swift */,
-				B213D20C269B0B4D005EBDDA /* Plausible.swift */,
+				D52F2CDBBA1C28D8E93EFB1C /* PlausibleAnalytics.swift */,
 				0160B2F5B66992A4DE58FF49 /* Primcloud.swift */,
 				B213D202269B045C005EBDDA /* Railway.swift */,
 				B213D20A269B0774005EBDDA /* Sketch.swift */,
@@ -1337,7 +1337,6 @@
 				B227D30D25D5886B00951917 /* FreeAgent.swift in Sources */,
 				B2A93ADD1EB814C000D36DD3 /* Snyk.swift in Sources */,
 				7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */,
-				B213D20D269B0B4D005EBDDA /* Plausible.swift in Sources */,
 				B22FDE4821089C6200359EC9 /* PayPal.swift in Sources */,
 				B232A18D20944B960066AD01 /* Cloud66.swift in Sources */,
 				B22FDE532108A5CC00359EC9 /* PayPalAPISandbox.swift in Sources */,
@@ -1378,6 +1377,7 @@
 				6E03C0E8C75A66D143BBAB24 /* LinkedInAPI.swift in Sources */,
 				2F802A9BB36717992C334CB8 /* Medium.swift in Sources */,
 				56EB1377353A8087B682B4E6 /* Primcloud.swift in Sources */,
+				0851FE81840F6555301382D8 /* PlausibleAnalytics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

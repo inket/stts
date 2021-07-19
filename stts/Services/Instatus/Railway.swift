@@ -6,5 +6,5 @@
 import Foundation
 
 class Railway: InstatusService {
-    let url = URL(string: "https://railway.instatus.com")!
+    let url = URL(string: "https://status.railway.app")!
 }
