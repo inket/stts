@@ -11,6 +11,12 @@ class B2CCommerceCloudAll: B2CCommerceCloud, ServiceCategory {
     let location = "*"
 }
 
+class B2CCommerceCloudAPAC: B2CCommerceCloud, SubService {
+    let name = "B2C Commerce Cloud (APAC)"
+    let key = "B2C_Commerce_Cloud"
+    let location = "APAC"
+}
+
 class B2CCommerceCloudEMEA: B2CCommerceCloud, SubService {
     let name = "B2C Commerce Cloud (EMEA)"
     let key = "B2C_Commerce_Cloud"
@@ -23,12 +29,6 @@ class B2CCommerceCloudNA: B2CCommerceCloud, SubService {
     let location = "NA"
 }
 
-class B2CCommerceCloudAPAC: B2CCommerceCloud, SubService {
-    let name = "B2C Commerce Cloud (APAC)"
-    let key = "B2C_Commerce_Cloud"
-    let location = "APAC"
-}
-
 class ExperienceCloudAll: ExperienceCloud, ServiceCategory {
     let categoryName = "Experience Cloud"
     let subServiceSuperclass: AnyObject.Type = BaseSalesforce.self
@@ -38,10 +38,10 @@ class ExperienceCloudAll: ExperienceCloud, ServiceCategory {
     let location = "*"
 }
 
-class ExperienceCloudNA: ExperienceCloud, SubService {
-    let name = "Experience Cloud (NA)"
+class ExperienceCloudAPAC: ExperienceCloud, SubService {
+    let name = "Experience Cloud (APAC)"
     let key = "Community_Cloud"
-    let location = "NA"
+    let location = "APAC"
 }
 
 class ExperienceCloudEMEA: ExperienceCloud, SubService {
@@ -50,10 +50,10 @@ class ExperienceCloudEMEA: ExperienceCloud, SubService {
     let location = "EMEA"
 }
 
-class ExperienceCloudAPAC: ExperienceCloud, SubService {
-    let name = "Experience Cloud (APAC)"
+class ExperienceCloudNA: ExperienceCloud, SubService {
+    let name = "Experience Cloud (NA)"
     let key = "Community_Cloud"
-    let location = "APAC"
+    let location = "NA"
 }
 
 class MarketingCloudAll: MarketingCloud, ServiceCategory {
@@ -86,6 +86,12 @@ class SalesforceServicesAll: SalesforceServices, ServiceCategory {
     let location = "*"
 }
 
+class SalesforceServicesAPAC: SalesforceServices, SubService {
+    let name = "Salesforce Services (APAC)"
+    let key = "Salesforce_Services"
+    let location = "APAC"
+}
+
 class SalesforceServicesEMEA: SalesforceServices, SubService {
     let name = "Salesforce Services (EMEA)"
     let key = "Salesforce_Services"
@@ -96,12 +102,6 @@ class SalesforceServicesNA: SalesforceServices, SubService {
     let name = "Salesforce Services (NA)"
     let key = "Salesforce_Services"
     let location = "NA"
-}
-
-class SalesforceServicesAPAC: SalesforceServices, SubService {
-    let name = "Salesforce Services (APAC)"
-    let key = "Salesforce_Services"
-    let location = "APAC"
 }
 
 class SocialStudioAll: SocialStudio, ServiceCategory {

@@ -97,7 +97,7 @@ struct SalesforceProductRegion {
         let commonDefinitions: [String] = [
             "let name = \"\(serviceName)\"",
             "let key = \"\(key)\"",
-            "let location = \"\(location.appFormat)\"",
+            "let location = \"\(location.appFormat)\""
         ]
 
         if location == .all {
@@ -184,7 +184,7 @@ func discoverProducts() -> [SalesforceProductRegion] {
     sortedProducts.forEach { productKey in
         result.append(SalesforceProductRegion(key: productKey, location: .all))
 
-        productsAndRegions[productKey]?.forEach {
+        productsAndRegions[productKey]?.sorted().forEach {
             guard let location = Location(rawValue: $0) else { return }
             result.append(SalesforceProductRegion(key: productKey, location: location))
         }
