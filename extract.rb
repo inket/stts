@@ -15,8 +15,16 @@ def extract_instatus(source)
 
     document.css("#__NEXT_DATA__").each do |data|
         site = JSON.parse(data.inner_html)["props"]["pageProps"]["site"]
+
+        custom_domain = site["customDomain"]
+        if custom_domain && custom_domain != ""
+            domain = custom_domain
+        else
+            domain = "#{site["subdomain"]}.instatus.com"
+        end
+
         name = site["name"]
-        url = "https://#{site["subdomain"]}.instatus.com"
+        url = "https://#{domain}"
         safe_name = sanitized_name(name)
 
         definitions = [
