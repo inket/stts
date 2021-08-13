@@ -11,6 +11,7 @@
 		0851FE81840F6555301382D8 /* PlausibleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F2CDBBA1C28D8E93EFB1C /* PlausibleAnalytics.swift */; };
 		0FDDACCD23CD7EBF00FE96CD /* ElasticCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDDACCC23CD7EBF00FE96CD /* ElasticCloud.swift */; };
 		194BC88222A8EAC10065E698 /* Clubhouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BC88122A8EAC00065E698 /* Clubhouse.swift */; };
+		2009CD655C4526247CF38971 /* ReadMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4E2FFFE60AE5D0E0BB449 /* ReadMe.swift */; };
 		2F1B7559227A095400BA5CBD /* Avalara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B7558227A095400BA5CBD /* Avalara.swift */; };
 		2F65F490227A198400432E64 /* Recurly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F65F48F227A198400432E64 /* Recurly.swift */; };
 		2F802A9BB36717992C334CB8 /* Medium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B24BCA673F692E9211E7B8D /* Medium.swift */; };
@@ -273,6 +274,7 @@
 		0E72A43B81FEC2ABB498DCBB /* LinkedInAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinkedInAPI.swift; sourceTree = "<group>"; };
 		0FDDACCC23CD7EBF00FE96CD /* ElasticCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElasticCloud.swift; sourceTree = "<group>"; };
 		194BC88122A8EAC00065E698 /* Clubhouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clubhouse.swift; sourceTree = "<group>"; };
+		1CB4E2FFFE60AE5D0E0BB449 /* ReadMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReadMe.swift; sourceTree = "<group>"; };
 		1CCCFA4ECD8BB402C7254FEF /* Miro.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Miro.swift; sourceTree = "<group>"; };
 		2F1B7558227A095400BA5CBD /* Avalara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avalara.swift; sourceTree = "<group>"; };
 		2F65F48F227A198400432E64 /* Recurly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recurly.swift; sourceTree = "<group>"; };
@@ -751,6 +753,7 @@
 				B272E3C7235F460D00B33076 /* Python.swift */,
 				B21308551E55594E009FCF02 /* Quandl.swift */,
 				B2F35F251E5D181300E3A00E /* Quay.swift */,
+				1CB4E2FFFE60AE5D0E0BB449 /* ReadMe.swift */,
 				6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */,
 				2F65F48F227A198400432E64 /* Recurly.swift */,
 				B299C84C1DD04ED90024D2E9 /* Reddit.swift */,
@@ -1382,6 +1385,7 @@
 				56EB1377353A8087B682B4E6 /* Primcloud.swift in Sources */,
 				0851FE81840F6555301382D8 /* PlausibleAnalytics.swift in Sources */,
 				E5B35A5C6608D856A99842B2 /* Miro.swift in Sources */,
+				2009CD655C4526247CF38971 /* ReadMe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
