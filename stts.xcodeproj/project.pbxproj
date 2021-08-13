@@ -19,6 +19,7 @@
 		36AD8ED5235A1FCA00F2FD73 /* Shopify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED4235A1FCA00F2FD73 /* Shopify.swift */; };
 		36AD8ED7235A2F9B00F2FD73 /* VictorOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */; };
 		36AD8ED9235A310500F2FD73 /* Mural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED8235A310500F2FD73 /* Mural.swift */; };
+		5226672D519C409D932468BA /* Chargebee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3803B461B23AFD8DD026EB59 /* Chargebee.swift */; };
 		56EB1377353A8087B682B4E6 /* Primcloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160B2F5B66992A4DE58FF49 /* Primcloud.swift */; };
 		6BCBA0EA2558643D0019DF23 /* Recruiterbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */; };
 		6E03C0E8C75A66D143BBAB24 /* LinkedInAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E72A43B81FEC2ABB498DCBB /* LinkedInAPI.swift */; };
@@ -282,6 +283,7 @@
 		36AD8ED4235A1FCA00F2FD73 /* Shopify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopify.swift; sourceTree = "<group>"; };
 		36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictorOps.swift; sourceTree = "<group>"; };
 		36AD8ED8235A310500F2FD73 /* Mural.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mural.swift; sourceTree = "<group>"; };
+		3803B461B23AFD8DD026EB59 /* Chargebee.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Chargebee.swift; sourceTree = "<group>"; };
 		6B24BCA673F692E9211E7B8D /* Medium.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Medium.swift; sourceTree = "<group>"; };
 		6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruiterbox.swift; sourceTree = "<group>"; };
 		7B305FAA210237AA0086DCE0 /* Spoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spoke.swift; sourceTree = "<group>"; };
@@ -679,6 +681,7 @@
 				B2894CE320EEE2780009CCA3 /* Buildkite.swift */,
 				B23EE5B224B9FF430067D800 /* Bullhorn.swift */,
 				B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */,
+				3803B461B23AFD8DD026EB59 /* Chargebee.swift */,
 				B2FDC91D1D6706C400F0B728 /* CircleCI.swift */,
 				B213D1FB269ADA5D005EBDDA /* Click.swift */,
 				B2F34040222630F20055C96F /* CloudApp.swift */,
@@ -1386,6 +1389,7 @@
 				0851FE81840F6555301382D8 /* PlausibleAnalytics.swift in Sources */,
 				E5B35A5C6608D856A99842B2 /* Miro.swift in Sources */,
 				2009CD655C4526247CF38971 /* ReadMe.swift in Sources */,
+				5226672D519C409D932468BA /* Chargebee.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
