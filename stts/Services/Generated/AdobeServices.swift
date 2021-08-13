@@ -367,6 +367,11 @@ class AdobeUserManagementSDK: AdobeServices, SubService {
     let id = 2980
 }
 
+class AdobeWorkfront: AdobeExperienceCloud, SubService {
+    let name = "Adobe Workfront"
+    let id = 5943
+}
+
 class AdobeXD: AdobeCreativeCloud, SubService {
     let name = "Adobe XD"
     let id = 5733
