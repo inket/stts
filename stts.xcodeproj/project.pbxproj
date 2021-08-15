@@ -586,14 +586,6 @@
 			path = StatusCake;
 			sourceTree = "<group>";
 		};
-		B2253A69209F3B9F0039F574 /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				B2253A6E209F42430039F574 /* Firebase.swift */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
 		B22FDE4921089D4F00359EC9 /* PayPal */ = {
 			isa = PBXGroup;
 			children = (
@@ -603,14 +595,6 @@
 				B22FDE4E2108A5B700359EC9 /* PayPalProductSandbox.swift */,
 			);
 			path = PayPal;
-			sourceTree = "<group>";
-		};
-		B2493F071E26052400556A83 /* Google Cloud Platform */ = {
-			isa = PBXGroup;
-			children = (
-				B2E70FDA22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift */,
-			);
-			path = "Google Cloud Platform";
 			sourceTree = "<group>";
 		};
 		B2563BC122CBC92400532C39 /* Mocks */ = {
@@ -806,15 +790,6 @@
 			path = StatusPage;
 			sourceTree = "<group>";
 		};
-		B2A4D7E5247E72A00089EA77 /* Azure */ = {
-			isa = PBXGroup;
-			children = (
-				B2A4D7E6247E72B50089EA77 /* AzureAll.swift */,
-				B2A4D7E8247E73BC0089EA77 /* AzureDevOpsAll.swift */,
-			);
-			path = Azure;
-			sourceTree = "<group>";
-		};
 		B2B2D0F61D49D5080014D780 = {
 			isa = PBXGroup;
 			children = (
@@ -905,6 +880,7 @@
 				B2E70FDC22B07FB0000BCAD2 /* FirebaseServices.swift */,
 				B2E70FD722B069BA000BCAD2 /* GoogleCloudPlatformServices.swift */,
 				B24EE0FF26C8BF9500F7CE8B /* SalesforceProducts.swift */,
+				B2228B5D26C95CF5002F01F0 /* SendbirdServices.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -922,11 +898,8 @@
 		B2FDC91F1D6706FB00F0B728 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B2A4D7E5247E72A00089EA77 /* Azure */,
 				B2BB19B820B8FEB200A97A87 /* Cachet */,
-				B2253A69209F3B9F0039F574 /* Firebase */,
 				B2E70FDF22B0844F000BCAD2 /* Generated */,
-				B2493F071E26052400556A83 /* Google Cloud Platform */,
 				B213D201269B0449005EBDDA /* Instatus */,
 				B2DCE68E22159731001447D8 /* LambStatus */,
 				B22FDE4921089D4F00359EC9 /* PayPal */,
@@ -937,6 +910,10 @@
 				B299C8561DD051710024D2E9 /* StatusPage */,
 				B2FDC9201D67071500F0B728 /* Super */,
 				B2430806210810D0003F8D07 /* Algolia.swift */,
+				B2E70FDA22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift */,
+				B2253A6E209F42430039F574 /* Firebase.swift */,
+				B2A4D7E6247E72B50089EA77 /* AzureAll.swift */,
+				B2A4D7E8247E73BC0089EA77 /* AzureDevOpsAll.swift */,
 				B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */,
 				B2BA36181ED7B0F200051083 /* AuthorizeNet.swift */,
 				B23038F01E0DF3CC00B29095 /* Beanstalk.swift */,
