@@ -363,6 +363,7 @@
 		B23646B02627C14E00AB9486 /* VisualStudioAppCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualStudioAppCenter.swift; sourceTree = "<group>"; };
 		B23D4E6C1E13471200B04F18 /* Intercom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intercom.swift; sourceTree = "<group>"; };
 		B23D4E6E1E13475900B04F18 /* KeenIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeenIO.swift; sourceTree = "<group>"; };
+		B23E408B26A559350038DDF1 /* generate_salesforce_services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generate_salesforce_services.swift; sourceTree = "<group>"; };
 		B23EE5B224B9FF430067D800 /* Bullhorn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullhorn.swift; sourceTree = "<group>"; };
 		B24220E31E2F6BBA0007E50E /* Typeform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typeform.swift; sourceTree = "<group>"; };
 		B2430806210810D0003F8D07 /* Algolia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algolia.swift; sourceTree = "<group>"; };
@@ -880,6 +881,7 @@
 				B277BC9522B4BC6C000B55C3 /* generate_azure_devops_services.swift */,
 				B2CEE5DC22B4A9900073C743 /* generate_azure_services.swift */,
 				B2E70FD622B066EC000BCAD2 /* generate_google_services.swift */,
+				B23E408B26A559350038DDF1 /* generate_salesforce_services.swift */,
 				B2E70FD322B0657F000BCAD2 /* generate_services_plist.sh */,
 			);
 			path = Scripts;
