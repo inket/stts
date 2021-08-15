@@ -58,6 +58,9 @@
 		B2163B0020BA56EF00B14A85 /* StatusCakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */; };
 		B219C0DA1E2F0E9F001F8E7F /* CocoaPods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */; };
 		B21DC0761F6B436400E8214F /* Aptible.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21DC0751F6B436400E8214F /* Aptible.swift */; };
+		B2228B5E26C95CF5002F01F0 /* SendbirdServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2228B5D26C95CF5002F01F0 /* SendbirdServices.swift */; };
+		B2228B6026C95D15002F01F0 /* Sendbird.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2228B5F26C95D15002F01F0 /* Sendbird.swift */; };
+		B2228B6226C9623C002F01F0 /* SendbirdAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2228B6126C9623C002F01F0 /* SendbirdAll.swift */; };
 		B22527F51E5BD0C70098E73D /* Contentful.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22527F41E5BD0C70098E73D /* Contentful.swift */; };
 		B2253A6B209F3C410039F574 /* GoogleStatusDashboardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A6A209F3C410039F574 /* GoogleStatusDashboardStore.swift */; };
 		B2253A6D209F3F9F0039F574 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A6C209F3F9F0039F574 /* FirebaseService.swift */; };
@@ -329,6 +332,10 @@
 		B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCakeService.swift; sourceTree = "<group>"; };
 		B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaPods.swift; sourceTree = "<group>"; };
 		B21DC0751F6B436400E8214F /* Aptible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aptible.swift; sourceTree = "<group>"; };
+		B2228B5C26C9110A002F01F0 /* generate_sendbird_services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generate_sendbird_services.swift; sourceTree = "<group>"; };
+		B2228B5D26C95CF5002F01F0 /* SendbirdServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendbirdServices.swift; sourceTree = "<group>"; };
+		B2228B5F26C95D15002F01F0 /* Sendbird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sendbird.swift; sourceTree = "<group>"; };
+		B2228B6126C9623C002F01F0 /* SendbirdAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendbirdAll.swift; sourceTree = "<group>"; };
 		B22527F41E5BD0C70098E73D /* Contentful.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contentful.swift; sourceTree = "<group>"; };
 		B2253A6A209F3C410039F574 /* GoogleStatusDashboardStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleStatusDashboardStore.swift; sourceTree = "<group>"; };
 		B2253A6C209F3F9F0039F574 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
@@ -865,6 +872,7 @@
 				B2CEE5DC22B4A9900073C743 /* generate_azure_services.swift */,
 				B2E70FD622B066EC000BCAD2 /* generate_google_services.swift */,
 				B23E408B26A559350038DDF1 /* generate_salesforce_services.swift */,
+				B2228B5C26C9110A002F01F0 /* generate_sendbird_services.swift */,
 				B2E70FD322B0657F000BCAD2 /* generate_services_plist.sh */,
 			);
 			path = Scripts;
@@ -924,6 +932,7 @@
 				B21492CA21EE9BD70065103E /* ScaleGrid.swift */,
 				B2DEE0BD1E696D64006B198E /* Slack.swift */,
 				B230CE7E21B95C5500E2005D /* Stripe.swift */,
+				B2228B6126C9623C002F01F0 /* SendbirdAll.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -957,6 +966,7 @@
 				B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */,
 				B2FDC91B1D67062200F0B728 /* StatusPageService.swift */,
 				B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */,
+				B2228B5F26C95D15002F01F0 /* Sendbird.swift */,
 			);
 			path = Super;
 			sourceTree = "<group>";
@@ -1100,7 +1110,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "chmod +x $SRCROOT/Scripts/*.swift\n\n$SRCROOT/Scripts/generate_adobe_services.swift &\n$SRCROOT/Scripts/generate_apple_services.swift &\n$SRCROOT/Scripts/generate_azure_services.swift &\n$SRCROOT/Scripts/generate_azure_devops_services.swift &\n$SRCROOT/Scripts/generate_google_services.swift &\n$SRCROOT/Scripts/generate_salesforce_services.swift\nwait\n";
+			shellScript = "chmod +x $SRCROOT/Scripts/*.swift\n\n$SRCROOT/Scripts/generate_adobe_services.swift &\n$SRCROOT/Scripts/generate_apple_services.swift &\n$SRCROOT/Scripts/generate_azure_services.swift &\n$SRCROOT/Scripts/generate_azure_devops_services.swift &\n$SRCROOT/Scripts/generate_google_services.swift &\n$SRCROOT/Scripts/generate_salesforce_services.swift &\n$SRCROOT/Scripts/generate_sendbird_services.swift\nwait\n";
 		};
 		B28F83321E24BDC100F2070F /* Generate Services plist file */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1160,6 +1170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2228B5E26C95CF5002F01F0 /* SendbirdServices.swift in Sources */,
 				B211F0B81E607C09008DD360 /* Rollbar.swift in Sources */,
 				B2493F061E2603F300556A83 /* GoogleCloudPlatform.swift in Sources */,
 				B2006CF9223B356F0057E144 /* ProtonMail.swift in Sources */,
@@ -1265,6 +1276,7 @@
 				B2107BCF254C970000284EE7 /* Notion.swift in Sources */,
 				B2C4670F1E70012700C5145D /* Zapier.swift in Sources */,
 				B24B573223A4EAD200AFCF01 /* Pantheon.swift in Sources */,
+				B2228B6226C9623C002F01F0 /* SendbirdAll.swift in Sources */,
 				B213D205269B0496005EBDDA /* Linear.swift in Sources */,
 				B2E6C8F3253C24CD001210E4 /* Lumanox.swift in Sources */,
 				B28C1D441E607D8600F9D0DC /* Mapbox.swift in Sources */,
@@ -1301,6 +1313,7 @@
 				B2A4D7E4247E170A0089EA77 /* LetsEncrypt.swift in Sources */,
 				B2F127AB1E0B84F00035B20C /* Braintree.swift in Sources */,
 				B225E3E01E44830F008E1D3D /* SwitchableTableViewController.swift in Sources */,
+				B2228B6026C95D15002F01F0 /* Sendbird.swift in Sources */,
 				B256955D1E247C8C00FAE413 /* Pingdom.swift in Sources */,
 				B219C0DA1E2F0E9F001F8E7F /* CocoaPods.swift in Sources */,
 				B22FDE4F2108A5B700359EC9 /* PayPalProductSandbox.swift in Sources */,
