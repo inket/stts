@@ -722,7 +722,6 @@
 				B2D6FDAD21B95A0800F95940 /* LastPass.swift */,
 				36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */,
 				B2ED7660258E42C000014242 /* Lever.swift */,
-				0E72A43B81FEC2ABB498DCBB /* LinkedInAPI.swift */,
 				8FD39EC5F0FC240DE74BD82D /* LinkedInAPI.swift */,
 				B2107BCC254C96FF00284EE7 /* Linode.swift */,
 				B28E9FBE1ED26A40006B89F1 /* Lob.swift */,
@@ -836,7 +835,6 @@
 				B2DCE6932215ACD0001447D8 /* Extensions */,
 				B213A17A1DC9EA3F008E8E58 /* ServiceTableView */,
 				B2FDC91F1D6706FB00F0B728 /* Services */,
-				B2CF3FBF1DF7DD2100B66491 /* stts.entitlements */,
 				B2B2D1021D49D5080014D780 /* AppDelegate.swift */,
 				B2E018FC214E60E700C5F75B /* AppearanceObserver.swift */,
 				B2A4A8151DC82CE300037E99 /* BottomBar.swift */,
@@ -845,6 +843,7 @@
 				B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */,
 				B24D19F51DD072840052E539 /* Preferences.swift */,
 				B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */,
+				B2CF3FBF1DF7DD2100B66491 /* stts.entitlements */,
 			);
 			path = stts;
 			sourceTree = "<group>";
@@ -877,12 +876,12 @@
 		B2E70FD222B0650A000BCAD2 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
-				B2E70FD322B0657F000BCAD2 /* generate_services_plist.sh */,
 				B200CA71247FBC0A00DB0868 /* generate_adobe_services.swift */,
 				B28E912524824C3A0026BAAA /* generate_apple_services.swift */,
 				B277BC9522B4BC6C000B55C3 /* generate_azure_devops_services.swift */,
 				B2CEE5DC22B4A9900073C743 /* generate_azure_services.swift */,
 				B2E70FD622B066EC000BCAD2 /* generate_google_services.swift */,
+				B2E70FD322B0657F000BCAD2 /* generate_services_plist.sh */,
 			);
 			path = Scripts;
 			sourceTree = "<group>";
@@ -923,10 +922,10 @@
 				B22FDE4921089D4F00359EC9 /* PayPal */,
 				B2F55EEA2408B562003D674C /* PlayStation Network */,
 				B2841CEC20BA6423004AFDB7 /* Sorry */,
+				B26CB5711E13448900116A33 /* Status.ioV1 */,
 				B2163B0120BA5AE600B14A85 /* StatusCake */,
 				B299C8561DD051710024D2E9 /* StatusPage */,
 				B2FDC9201D67071500F0B728 /* Super */,
-				B26CB5711E13448900116A33 /* Status.ioV1 */,
 				B2430806210810D0003F8D07 /* Algolia.swift */,
 				B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */,
 				B2BA36181ED7B0F200051083 /* AuthorizeNet.swift */,
@@ -975,8 +974,8 @@
 		B2FDC9211D67074900F0B728 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B2B2D1091D49D5080014D780 /* Info.plist */,
 				B2B2D1041D49D5080014D780 /* Assets.xcassets */,
+				B2B2D1091D49D5080014D780 /* Info.plist */,
 				B2B2D1061D49D5080014D780 /* MainMenu.xib */,
 			);
 			path = Resources;
