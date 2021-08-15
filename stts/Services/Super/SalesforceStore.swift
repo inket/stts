@@ -118,13 +118,19 @@ private struct SalesforceResponseData: Codable {
 
     enum Status: String, Codable {
         case ok = "OK"
+        case maintenanceNonCore = "MAINTENANCE_NONCORE"
         case maintenanceCore = "MAINTENANCE_CORE"
+        case minorNonCore = "MINOR_INCIDENT_NONCORE"
+        case minorCore = "MINOR_INCIDENT_CORE"
+        case majorNonCore = "MAJOR_INCIDENT_NONCORE"
+        case majorCore = "MAJOR_INCIDENT_CORE"
 
-        // TODO: figure out the rest of the status values
         var serviceStatus: ServiceStatus {
             switch self {
             case .ok: return .good
-            case .maintenanceCore: return .maintenance
+            case .maintenanceNonCore, .maintenanceCore: return .maintenance
+            case .minorNonCore, .minorCore, .majorNonCore: return .minor
+            case .majorCore: return .major
             }
         }
     }
