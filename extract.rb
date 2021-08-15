@@ -2,6 +2,9 @@ require 'net/https'
 require 'nokogiri'
 require 'xcodeproj'
 require 'json'
+require 'synx'
+
+@project_file = "stts.xcodeproj"
 
 def source_for(url)
     uri = URI.parse(url)
@@ -92,8 +95,7 @@ def create_file(path, content)
     puts "Updated #{path}"
 
     # Open the existing Xcode project
-    project_file = "stts.xcodeproj"
-    project = Xcodeproj::Project.open(project_file)
+    project = Xcodeproj::Project.open(@project_file)
 
     # Add a file to the project
     file_name = path.split("/").last
@@ -145,6 +147,10 @@ end
 
 def finish
     puts "Done!"
+
+    puts "Running synx..."
+    run_synx
+
     exit
 end
 
@@ -154,19 +160,36 @@ def fail_params
     puts
     puts "Example:"
     puts "bundle exec ruby extract.rb https://status.notion.so/"
-    exit
+    exit 1
 end
 
 def fail_network
     puts "Could not check that link :("
     puts "Network issue or invalid link?"
-    exit
+    exit 1
 end
 
 def fail
     puts "No service found :("
     puts "Maybe create a ticket? https://github.com/inket/stts/issues"
-    exit
+    exit 1
+end
+
+def run_synx
+    project = Synx::Project.open(@project_file)
+    project.sync(
+        prune: true,
+        quiet: true,
+        no_color: false,
+        no_default_exclusions: false,
+        no_sort_by_name: false,
+        group_exclusions: []
+    )
+end
+
+if Process.uid == 0
+    puts "Cannot run extract script as root.".red
+    exit 1
 end
 
 url = ARGV[0]
