@@ -80,12 +80,16 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
         settingsView.searchField.stringValue.trimmingCharacters(in: .whitespacesAndNewlines) != ""
     }
 
+    private var cachedTableViewWidth: CGFloat = 0
+    private var cachedMaxNameWidth: CGFloat?
     private var maxNameWidth: CGFloat? {
-        didSet {
-            if oldValue != maxNameWidth {
-                tableView.tile()
-            }
+        if cachedTableViewWidth != tableView.frame.width || cachedMaxNameWidth == nil {
+            cachedTableViewWidth = tableView.frame.width
+            cachedMaxNameWidth = EditorTableCell.maxNameWidth(for: tableView)
+            return cachedMaxNameWidth!
         }
+
+        return cachedMaxNameWidth
     }
 
     init(contentView: NSStackView, scrollView: CustomScrollView, bottomBar: BottomBar) {
@@ -228,7 +232,7 @@ extension EditorTableViewController: NSTableViewDelegate {
             let service = filteredServices[row] as? Service
         else { return EditorTableCell.defaultHeight }
 
-        return service.name.height(forWidth: maxNameWidth, font: NSFont.systemFont(ofSize: 11)) + (8 * 2)
+        return EditorTableCell.estimatedHeight(for: service, maxWidth: maxNameWidth)
     }
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -268,8 +272,6 @@ extension EditorTableViewController: NSTableViewDelegate {
             view.selected = false
             view.toggleCallback = {}
         }
-
-        maxNameWidth = EditorTableCell.maxNameWidth(for: tableView)
 
         return view
     }

@@ -6,12 +6,12 @@
 import Cocoa
 
 class EditorTableCell: NSTableCellView {
-    private enum Design {
-        static let padding = NSEdgeInsets(top: 8, left: 10, bottom: 8, right: 10)
+    enum Design {
+        static let padding = NSEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         static let innerSpacing: CGFloat = 4
 
         enum Name {
-            static let font = NSFont.systemFont(ofSize: 11)
+            static let font = NSFont.systemFont(ofSize: 12)
         }
 
         enum ToggleButton {

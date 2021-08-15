@@ -70,8 +70,8 @@ class BottomBar: NSView {
 
             settingsButton.heightAnchor.constraint(equalToConstant: 30),
             settingsButton.widthAnchor.constraint(equalToConstant: 30),
-            settingsButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-            settingsButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+            settingsButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
+            settingsButton.centerYAnchor.constraint(equalTo: centerYAnchor),
 
             gearIcon.centerYAnchor.constraint(equalTo: settingsButton.centerYAnchor),
             gearIcon.centerXAnchor.constraint(equalTo: settingsButton.centerXAnchor),
@@ -80,8 +80,8 @@ class BottomBar: NSView {
 
             reloadButton.heightAnchor.constraint(equalToConstant: 30),
             reloadButton.widthAnchor.constraint(equalToConstant: 30),
-            reloadButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            reloadButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+            reloadButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
+            reloadButton.centerYAnchor.constraint(equalTo: centerYAnchor),
 
             refreshIcon.centerYAnchor.constraint(equalTo: reloadButton.centerYAnchor),
             refreshIcon.centerXAnchor.constraint(equalTo: reloadButton.centerXAnchor),
@@ -94,7 +94,7 @@ class BottomBar: NSView {
 
             doneButton.widthAnchor.constraint(equalToConstant: 60),
             doneButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            doneButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -3),
+            doneButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
 
             aboutButton.widthAnchor.constraint(equalToConstant: 56),
             aboutButton.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -102,11 +102,11 @@ class BottomBar: NSView {
 
             quitButton.widthAnchor.constraint(equalToConstant: 46),
             quitButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            quitButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 3),
+            quitButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
 
             backButton.widthAnchor.constraint(equalToConstant: 46),
             backButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 3)
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4)
         ])
 
         settingsButton.isBordered = false
@@ -175,7 +175,13 @@ class BottomBar: NSView {
         case .undetermined: statusField.stringValue = ""
         case .updating: statusField.stringValue = "Updating…"
         case .updated(let date):
-            let relativeTime = date.toStringWithRelativeTime()
+            var relativeDate = date
+            if Int(relativeDate.timeIntervalSince1970) == Int(Date().timeIntervalSince1970) {
+                // Avoid issues with relative time marking it as "in a few seconds"
+                relativeDate = Date(timeInterval: -1, since: Date())
+            }
+
+            let relativeTime = relativeDate.toStringWithRelativeTime()
             statusField.stringValue = "Updated \(relativeTime)"
         }
     }

@@ -7,72 +7,37 @@ import Cocoa
 
 class StatusTableCell: NSTableCellView {
     let statusIndicator = StatusIndicator()
+
+    let stackView = NSStackView()
+    let titleField = NSTextField()
     let statusField = NSTextField()
 
     enum Layout {
-        static let verticalPadding: CGFloat = 6
+        static let verticalPadding: CGFloat = 10
         static let verticalSpacing: CGFloat = 4
         static let horizontalPadding: CGFloat = 8
         static let horizontalSpacing: CGFloat = 8
 
-        static let titleFont = NSFont.systemFont(ofSize: 12)
+        static let titleFont = NSFont.systemFont(ofSize: 13)
         static let messageFont = NSFontManager.shared.font(
             withFamily: titleFont.fontName,
             traits: NSFontTraitMask.italicFontMask,
             weight: 5,
-            size: 10
+            size: 11
         )
 
-        static let titleHeight = NSLayoutManager().defaultLineHeight(for: titleFont)
-        static let messageLineHeight = NSLayoutManager().defaultLineHeight(for: messageFont!)
-        static let messageMaxHeight: CGFloat = 72 // 6 lines
         static let statusIndicatorSize = CGSize(width: 14, height: 14)
 
-        static func availableStatusMessageWidth(fromTotalWidth totalWidth: CGFloat) -> CGFloat {
-            totalWidth - horizontalPadding - statusIndicatorSize.width - horizontalSpacing - horizontalPadding
-        }
+        private static let dummyCell = StatusTableCell(frame: .zero)
+        static func heightOfRow(for service: Service, width: CGFloat) -> CGFloat {
+            let nsScrollerWidth: CGFloat = 16
+            let realRowWidth = width - (nsScrollerWidth - 4) // 4 by trial & error
 
-        static func heightOfStatusMessage(_ message: String, width: CGFloat) -> CGFloat {
-            // https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/TextLayout/Tasks/StringHeight.html
+            dummyCell.frame.size = CGSize(width: realRowWidth, height: 400)
+            dummyCell.setup(with: service)
+            dummyCell.layoutSubtreeIfNeeded()
 
-            let statusMessageWidth = availableStatusMessageWidth(fromTotalWidth: width)
-
-            let textStorage = NSTextStorage(string: message)
-            let textContainer = NSTextContainer(containerSize: .init(width: statusMessageWidth, height: .infinity))
-            let layoutManager = NSLayoutManager()
-
-            layoutManager.addTextContainer(textContainer)
-            textStorage.addLayoutManager(layoutManager)
-
-            let font = NSFont.systemFont(ofSize: 12)
-            let italicFont = NSFontManager.shared.font(
-                withFamily: font.fontName,
-                traits: NSFontTraitMask.italicFontMask,
-                weight: 5,
-                size: 10
-            )
-
-            textStorage.addAttribute(
-                .font,
-                value: italicFont ?? font,
-                range: NSRange(location: 0, length: (message as NSString).length)
-            )
-
-            textContainer.lineFragmentPadding = 0
-
-            _ = layoutManager.glyphRange(for: textContainer)
-            return min(messageMaxHeight, layoutManager.usedRect(for: textContainer).size.height)
-        }
-
-        static func heightOfRow(withMessage message: String, width: CGFloat) -> CGFloat {
-            let statusMessageHeight = heightOfStatusMessage(message, width: width)
-
-            // Hack to fix sizing… maybe caused by the font being italic? This probably stops working at line 12+
-            let additionalHeight = CGFloat(Int(statusMessageHeight / messageLineHeight))
-
-            let top = verticalPadding + titleHeight
-            let bottom = statusMessageHeight + verticalPadding
-            return top + verticalSpacing + bottom + additionalHeight
+            return dummyCell.stackView.frame.size.height + (verticalPadding * 2)
         }
     }
 
@@ -87,21 +52,30 @@ class StatusTableCell: NSTableCellView {
     }
 
     private func commonInit() {
+        textField?.removeFromSuperview()
+
         statusIndicator.scaleUnitSquare(to: NSSize(width: 0.3, height: 0.3))
         statusIndicator.translatesAutoresizingMaskIntoConstraints = false
         addSubview(statusIndicator)
 
-        let textField = NSTextField()
-        textField.isEditable = false
-        textField.isBordered = false
-        textField.isSelectable = false
-        self.textField = textField
+        stackView.orientation = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .leading
+        stackView.spacing = Layout.verticalSpacing
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(stackView)
 
-        textField.font = Layout.titleFont
-        textField.textColor = NSColor.labelColor
-        textField.backgroundColor = NSColor.clear
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(textField)
+        titleField.isEditable = false
+        titleField.isBordered = false
+        titleField.isSelectable = false
+        titleField.maximumNumberOfLines = 2
+        titleField.cell!.truncatesLastVisibleLine = true
+        titleField.cell!.lineBreakMode = .byWordWrapping
+        titleField.cell!.wraps = true
+
+        titleField.font = Layout.titleFont
+        titleField.textColor = NSColor.labelColor
+        titleField.backgroundColor = NSColor.clear
 
         statusField.isEditable = false
         statusField.isBordered = false
@@ -114,8 +88,10 @@ class StatusTableCell: NSTableCellView {
         statusField.cell!.lineBreakMode = .byWordWrapping
         statusField.cell!.wraps = true
         statusField.backgroundColor = NSColor.clear
-        statusField.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(statusField)
+
+        [titleField, statusField].forEach {
+            stackView.addArrangedSubview($0)
+        }
 
         NSLayoutConstraint.activate([
             statusIndicator.heightAnchor.constraint(equalToConstant: Layout.statusIndicatorSize.height),
@@ -123,21 +99,20 @@ class StatusTableCell: NSTableCellView {
             statusIndicator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Layout.horizontalPadding),
             statusIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
 
-            textField.topAnchor.constraint(equalTo: topAnchor, constant: Layout.verticalPadding),
-            textField.heightAnchor.constraint(equalToConstant: Layout.titleHeight),
-            textField.leadingAnchor.constraint(
+            stackView.leadingAnchor.constraint(
                 equalTo: statusIndicator.trailingAnchor,
                 constant: Layout.horizontalSpacing
             ),
-            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Layout.horizontalPadding),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Layout.horizontalPadding),
 
-            statusField.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: Layout.verticalSpacing),
-            statusField.leadingAnchor.constraint(
-                equalTo: statusIndicator.trailingAnchor,
-                constant: Layout.horizontalSpacing
-            ),
-            statusField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Layout.horizontalPadding),
-            statusField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Layout.verticalPadding)
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: Layout.verticalPadding),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Layout.verticalPadding)
         ])
+    }
+
+    func setup(with service: Service) {
+        titleField.stringValue = service.name
+        statusField.stringValue = service.message
+        statusIndicator.status = service.status
     }
 }

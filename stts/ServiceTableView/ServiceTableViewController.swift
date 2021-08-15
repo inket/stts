@@ -7,7 +7,7 @@ import Cocoa
 import MBPopup
 
 class ServiceTableViewController: NSObject, SwitchableTableViewController {
-    let contentView = NSStackView(frame: CGRect(x: 0, y: 0, width: 240, height: 400))
+    let contentView = NSStackView(frame: CGRect(x: 0, y: 0, width: 280, height: 400))
     let scrollView = CustomScrollView()
     let tableView = NSTableView()
     let bottomBar = BottomBar()
@@ -69,7 +69,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
             contentView.widthAnchor.constraint(greaterThanOrEqualToConstant: 220),
 
             // tableView.rowHeight + bottomBar.frame.size.height + 2
-            contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: 40 + 30 + 2)
+            contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: 40 + 36 + 2)
         ])
 
         [scrollView, bottomBar, addServicesNoticeField].forEach {
@@ -89,7 +89,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
             bottomBar.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             bottomBar.topAnchor.constraint(equalTo: scrollView.bottomAnchor),
             bottomBar.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            bottomBar.heightAnchor.constraint(equalToConstant: 30),
+            bottomBar.heightAnchor.constraint(equalToConstant: 36),
 
             addServicesNoticeField.heightAnchor.constraint(equalToConstant: 22),
             addServicesNoticeField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -203,9 +203,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         guard services.count > 0 else {
             reloadData()
 
-            // Avoid issues with relative time marking it as "in a few seconds"
-            let oneSecondInThePastDate = Date(timeInterval: -1, since: Date())
-            bottomBar.status = .updated(oneSecondInThePastDate)
+            bottomBar.status = .updated(Date())
 
             self.updateCallback?()
             self.updateCallback = nil
@@ -263,9 +261,7 @@ extension ServiceTableViewController: NSTableViewDelegate {
         guard let view = cell as? StatusTableCell else { return nil }
         guard let service = services[row] as? Service else { return nil }
 
-        view.textField?.stringValue = service.name
-        view.statusField.stringValue = service.message
-        view.statusIndicator.status = service.status
+        view.setup(with: service)
 
         return view
     }
@@ -292,7 +288,7 @@ extension ServiceTableViewController: NSTableViewDelegate {
         guard let service = services[row] as? Service else { return 40 }
 
         return StatusTableCell.Layout.heightOfRow(
-            withMessage: service.message,
+            for: service,
             width: tableView.frame.size.width - 3 // tableview padding is 3
         )
     }
