@@ -2,32 +2,42 @@
 
 import Foundation
 
-typealias B2CCommerceCloud = BaseB2CCommerceCloud & RequiredServiceProperties & SalesforceStoreService
+typealias SalesforceB2CCommerceCloud =
+    BaseSalesforceB2CCommerceCloud & RequiredServiceProperties & SalesforceStoreService
 
-class BaseB2CCommerceCloud: BaseSalesforce {
-    private static var store = SalesforceStore(key: "B2C_Commerce_Cloud")
+class BaseSalesforceB2CCommerceCloud: BaseSalesforceCategory {
+    static var store = SalesforceStore(key: "B2C_Commerce_Cloud")
+    let url = URL(string: "https://status.salesforce.com/products/B2C_Commerce_Cloud")!
 }
 
-typealias ExperienceCloud = BaseExperienceCloud & RequiredServiceProperties & SalesforceStoreService
+typealias SalesforceExperienceCloud =
+    BaseSalesforceExperienceCloud & RequiredServiceProperties & SalesforceStoreService
 
-class BaseExperienceCloud: BaseSalesforce {
-    private static var store = SalesforceStore(key: "Community_Cloud")
+class BaseSalesforceExperienceCloud: BaseSalesforceCategory {
+    static var store = SalesforceStore(key: "Community_Cloud")
+    let url = URL(string: "https://status.salesforce.com/products/Community_Cloud")!
 }
 
-typealias MarketingCloud = BaseMarketingCloud & RequiredServiceProperties & SalesforceStoreService
+typealias SalesforceMarketingCloud =
+    BaseSalesforceMarketingCloud & RequiredServiceProperties & SalesforceStoreService
 
-class BaseMarketingCloud: BaseSalesforce {
-    private static var store = SalesforceStore(key: "Marketing_Cloud")
+class BaseSalesforceMarketingCloud: BaseSalesforceCategory {
+    static var store = SalesforceStore(key: "Marketing_Cloud")
+    let url = URL(string: "https://status.salesforce.com/products/Marketing_Cloud")!
 }
 
-typealias SalesforceServices = BaseSalesforceServices & RequiredServiceProperties & SalesforceStoreService
+typealias SalesforceServices =
+    BaseSalesforceServices & RequiredServiceProperties & SalesforceStoreService
 
-class BaseSalesforceServices: BaseSalesforce {
-    private static var store = SalesforceStore(key: "Salesforce_Services")
+class BaseSalesforceServices: BaseSalesforceCategory {
+    static var store = SalesforceStore(key: "Salesforce_Services")
+    let url = URL(string: "https://status.salesforce.com/products/Salesforce_Services")!
 }
 
-typealias SocialStudio = BaseSocialStudio & RequiredServiceProperties & SalesforceStoreService
+typealias SalesforceSocialStudio =
+    BaseSalesforceSocialStudio & RequiredServiceProperties & SalesforceStoreService
 
-class BaseSocialStudio: BaseSalesforce {
-    private static var store = SalesforceStore(key: "Social_Studio")
+class BaseSalesforceSocialStudio: BaseSalesforceCategory {
+    static var store = SalesforceStore(key: "Social_Studio")
+    let url = URL(string: "https://status.salesforce.com/products/Social_Studio")!
 }

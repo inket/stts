@@ -104,6 +104,10 @@
 		B2493F061E2603F300556A83 /* GoogleCloudPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */; };
 		B24B573223A4EAD200AFCF01 /* Pantheon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B573123A4EAD200AFCF01 /* Pantheon.swift */; };
 		B24D19F61DD072840052E539 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D19F51DD072840052E539 /* Preferences.swift */; };
+		B24EE10026C8BF9500F7CE8B /* SalesforceProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24EE0FF26C8BF9500F7CE8B /* SalesforceProducts.swift */; };
+		B24EE10226C8BFD500F7CE8B /* Salesforce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24EE10126C8BFD500F7CE8B /* Salesforce.swift */; };
+		B24EE10426C8C07100F7CE8B /* SalesforceCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24EE10326C8C07100F7CE8B /* SalesforceCategories.swift */; };
+		B24EE10626C8C08A00F7CE8B /* SalesforceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24EE10526C8C08A00F7CE8B /* SalesforceStore.swift */; };
 		B24F91231E8B51A400A77460 /* Auth0.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24F91221E8B51A400A77460 /* Auth0.swift */; };
 		B2510954269AD87C005868DE /* Snowflake.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2510953269AD87C005868DE /* Snowflake.swift */; };
 		B254642321EE9AF6003068A4 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254642221EE9AF6003068A4 /* GitHub.swift */; };
@@ -371,6 +375,10 @@
 		B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudPlatform.swift; sourceTree = "<group>"; };
 		B24B573123A4EAD200AFCF01 /* Pantheon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pantheon.swift; sourceTree = "<group>"; };
 		B24D19F51DD072840052E539 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		B24EE0FF26C8BF9500F7CE8B /* SalesforceProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesforceProducts.swift; sourceTree = "<group>"; };
+		B24EE10126C8BFD500F7CE8B /* Salesforce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Salesforce.swift; sourceTree = "<group>"; };
+		B24EE10326C8C07100F7CE8B /* SalesforceCategories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesforceCategories.swift; sourceTree = "<group>"; };
+		B24EE10526C8C08A00F7CE8B /* SalesforceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesforceStore.swift; sourceTree = "<group>"; };
 		B24F91221E8B51A400A77460 /* Auth0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth0.swift; sourceTree = "<group>"; };
 		B2510953269AD87C005868DE /* Snowflake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snowflake.swift; sourceTree = "<group>"; };
 		B254642221EE9AF6003068A4 /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
@@ -896,6 +904,7 @@
 				B2CEE5DA22B4A97B0073C743 /* AzureServices.swift */,
 				B2E70FDC22B07FB0000BCAD2 /* FirebaseServices.swift */,
 				B2E70FD722B069BA000BCAD2 /* GoogleCloudPlatformServices.swift */,
+				B24EE0FF26C8BF9500F7CE8B /* SalesforceProducts.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -963,6 +972,9 @@
 				B2DCE68C221591F2001447D8 /* LambStatusService.swift */,
 				B22FDE4721089C6200359EC9 /* PayPal.swift */,
 				B2F55EE82408AB1A003D674C /* PlayStationNetwork.swift */,
+				B24EE10126C8BFD500F7CE8B /* Salesforce.swift */,
+				B24EE10326C8C07100F7CE8B /* SalesforceCategories.swift */,
+				B24EE10526C8C08A00F7CE8B /* SalesforceStore.swift */,
 				B205A9171D49D67700EA178D /* Service.swift */,
 				B2841CEA20BA6207004AFDB7 /* SorryService.swift */,
 				B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */,
@@ -1177,6 +1189,7 @@
 				36AD8ED7235A2F9B00F2FD73 /* VictorOps.swift in Sources */,
 				B299C8491DD04DCB0024D2E9 /* RubyGems.swift in Sources */,
 				B299C8531DD0505F0024D2E9 /* Sentry.swift in Sources */,
+				B24EE10226C8BFD500F7CE8B /* Salesforce.swift in Sources */,
 				B2EB51D01E700517001D6F78 /* Codacy.swift in Sources */,
 				B299C84F1DD04F8F0024D2E9 /* BitBucket.swift in Sources */,
 				B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */,
@@ -1266,6 +1279,7 @@
 				B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */,
 				B28E9FC01ED26A40006B89F1 /* Lob.swift in Sources */,
 				B2EAD8D520B8FDB800095F5B /* JAMF.swift in Sources */,
+				B24EE10426C8C07100F7CE8B /* SalesforceCategories.swift in Sources */,
 				B269FCBB1E261BDF0016041D /* Figma.swift in Sources */,
 				B26350FF1ED7D0210069EA73 /* Segment.swift in Sources */,
 				B29D50BF24B0542100F4961B /* PlatformSH.swift in Sources */,
@@ -1348,11 +1362,13 @@
 				B2A93ADD1EB814C000D36DD3 /* Snyk.swift in Sources */,
 				7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */,
 				B22FDE4821089C6200359EC9 /* PayPal.swift in Sources */,
+				B24EE10626C8C08A00F7CE8B /* SalesforceStore.swift in Sources */,
 				B232A18D20944B960066AD01 /* Cloud66.swift in Sources */,
 				B22FDE532108A5CC00359EC9 /* PayPalAPISandbox.swift in Sources */,
 				6BCBA0EA2558643D0019DF23 /* Recruiterbox.swift in Sources */,
 				B2FFC1F01E261B4A00529A00 /* Dropbox.swift in Sources */,
 				B2EB51CE1E7004A3001D6F78 /* ExanaService.swift in Sources */,
+				B24EE10026C8BF9500F7CE8B /* SalesforceProducts.swift in Sources */,
 				B2DCE6952215ACDE001447D8 /* StringExtensions.swift in Sources */,
 				B2BA697E1E2DA3A20016AF1A /* PivotalTracker.swift in Sources */,
 				36AD8ED9235A310500F2FD73 /* Mural.swift in Sources */,

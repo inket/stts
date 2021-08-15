@@ -2,84 +2,84 @@
 
 import Foundation
 
-class B2CCommerceCloudAll: B2CCommerceCloud, ServiceCategory {
-    let categoryName = "B2C Commerce Cloud"
-    let subServiceSuperclass: AnyObject.Type = BaseSalesforce.self
+class SalesforceB2CCommerceCloudAll: SalesforceB2CCommerceCloud, ServiceCategory {
+    let categoryName = "Salesforce B2C Commerce Cloud"
+    let subServiceSuperclass: AnyObject.Type = BaseSalesforceB2CCommerceCloud.self
 
-    let name = "B2C Commerce Cloud (All Regions)"
+    let name = "Salesforce B2C Commerce Cloud (All Regions)"
     let key = "B2C_Commerce_Cloud"
     let location = "*"
 }
 
-class B2CCommerceCloudAPAC: B2CCommerceCloud, SubService {
-    let name = "B2C Commerce Cloud (APAC)"
+class SalesforceB2CCommerceCloudAPAC: SalesforceB2CCommerceCloud, SubService {
+    let name = "Salesforce B2C Commerce Cloud (APAC)"
     let key = "B2C_Commerce_Cloud"
     let location = "APAC"
 }
 
-class B2CCommerceCloudEMEA: B2CCommerceCloud, SubService {
-    let name = "B2C Commerce Cloud (EMEA)"
+class SalesforceB2CCommerceCloudEMEA: SalesforceB2CCommerceCloud, SubService {
+    let name = "Salesforce B2C Commerce Cloud (EMEA)"
     let key = "B2C_Commerce_Cloud"
     let location = "EMEA"
 }
 
-class B2CCommerceCloudNA: B2CCommerceCloud, SubService {
-    let name = "B2C Commerce Cloud (NA)"
+class SalesforceB2CCommerceCloudNA: SalesforceB2CCommerceCloud, SubService {
+    let name = "Salesforce B2C Commerce Cloud (NA)"
     let key = "B2C_Commerce_Cloud"
     let location = "NA"
 }
 
-class ExperienceCloudAll: ExperienceCloud, ServiceCategory {
-    let categoryName = "Experience Cloud"
-    let subServiceSuperclass: AnyObject.Type = BaseSalesforce.self
+class SalesforceExperienceCloudAll: SalesforceExperienceCloud, ServiceCategory {
+    let categoryName = "Salesforce Experience Cloud"
+    let subServiceSuperclass: AnyObject.Type = BaseSalesforceExperienceCloud.self
 
-    let name = "Experience Cloud (All Regions)"
+    let name = "Salesforce Experience Cloud (All Regions)"
     let key = "Community_Cloud"
     let location = "*"
 }
 
-class ExperienceCloudAPAC: ExperienceCloud, SubService {
-    let name = "Experience Cloud (APAC)"
+class SalesforceExperienceCloudAPAC: SalesforceExperienceCloud, SubService {
+    let name = "Salesforce Experience Cloud (APAC)"
     let key = "Community_Cloud"
     let location = "APAC"
 }
 
-class ExperienceCloudEMEA: ExperienceCloud, SubService {
-    let name = "Experience Cloud (EMEA)"
+class SalesforceExperienceCloudEMEA: SalesforceExperienceCloud, SubService {
+    let name = "Salesforce Experience Cloud (EMEA)"
     let key = "Community_Cloud"
     let location = "EMEA"
 }
 
-class ExperienceCloudNA: ExperienceCloud, SubService {
-    let name = "Experience Cloud (NA)"
+class SalesforceExperienceCloudNA: SalesforceExperienceCloud, SubService {
+    let name = "Salesforce Experience Cloud (NA)"
     let key = "Community_Cloud"
     let location = "NA"
 }
 
-class MarketingCloudAll: MarketingCloud, ServiceCategory {
-    let categoryName = "Marketing Cloud"
-    let subServiceSuperclass: AnyObject.Type = BaseSalesforce.self
+class SalesforceMarketingCloudAll: SalesforceMarketingCloud, ServiceCategory {
+    let categoryName = "Salesforce Marketing Cloud"
+    let subServiceSuperclass: AnyObject.Type = BaseSalesforceMarketingCloud.self
 
-    let name = "Marketing Cloud (All Regions)"
+    let name = "Salesforce Marketing Cloud (All Regions)"
     let key = "Marketing_Cloud"
     let location = "*"
 }
 
-class MarketingCloudEMEA: MarketingCloud, SubService {
-    let name = "Marketing Cloud (EMEA)"
+class SalesforceMarketingCloudEMEA: SalesforceMarketingCloud, SubService {
+    let name = "Salesforce Marketing Cloud (EMEA)"
     let key = "Marketing_Cloud"
     let location = "EMEA"
 }
 
-class MarketingCloudNA: MarketingCloud, SubService {
-    let name = "Marketing Cloud (NA)"
+class SalesforceMarketingCloudNA: SalesforceMarketingCloud, SubService {
+    let name = "Salesforce Marketing Cloud (NA)"
     let key = "Marketing_Cloud"
     let location = "NA"
 }
 
 class SalesforceServicesAll: SalesforceServices, ServiceCategory {
     let categoryName = "Salesforce Services"
-    let subServiceSuperclass: AnyObject.Type = BaseSalesforce.self
+    let subServiceSuperclass: AnyObject.Type = BaseSalesforceServices.self
 
     let name = "Salesforce Services (All Regions)"
     let key = "Salesforce_Services"
@@ -104,17 +104,17 @@ class SalesforceServicesNA: SalesforceServices, SubService {
     let location = "NA"
 }
 
-class SocialStudioAll: SocialStudio, ServiceCategory {
-    let categoryName = "Social Studio"
-    let subServiceSuperclass: AnyObject.Type = BaseSalesforce.self
+class SalesforceSocialStudioAll: SalesforceSocialStudio, ServiceCategory {
+    let categoryName = "Salesforce Social Studio"
+    let subServiceSuperclass: AnyObject.Type = BaseSalesforceSocialStudio.self
 
-    let name = "Social Studio (All Regions)"
+    let name = "Salesforce Social Studio (All Regions)"
     let key = "Social_Studio"
     let location = "*"
 }
 
-class SocialStudioNA: SocialStudio, SubService {
-    let name = "Social Studio (NA)"
+class SalesforceSocialStudioNA: SalesforceSocialStudio, SubService {
+    let name = "Salesforce Social Studio (NA)"
     let key = "Social_Studio"
     let location = "NA"
 }

@@ -70,13 +70,13 @@ struct SalesforceProductRegion {
         case "Salesforce_Services":
             name = "Salesforce Services"
         case "Marketing_Cloud":
-            name = "Marketing Cloud"
+            name = "Salesforce Marketing Cloud"
         case "B2C_Commerce_Cloud":
-            name = "B2C Commerce Cloud"
+            name = "Salesforce B2C Commerce Cloud"
         case "Social_Studio":
-            name = "Social Studio"
+            name = "Salesforce Social Studio"
         case "Community_Cloud":
-            name = "Experience Cloud"
+            name = "Salesforce Experience Cloud"
         default:
             // Keep it instead of failing so that we notice when new products are added.
             name = key
@@ -85,10 +85,12 @@ struct SalesforceProductRegion {
 
     var superOutput: String {
         """
-        typealias \(className) = Base\(className) & RequiredServiceProperties & SalesforceStoreService
+        typealias \(className) =
+            Base\(className) & RequiredServiceProperties & SalesforceStoreService
 
-        class Base\(className): BaseSalesforce {
-            private static var store = SalesforceStore(key: "\(key)")
+        class Base\(className): BaseSalesforceCategory {
+            static var store = SalesforceStore(key: "\(key)")
+            let url = URL(string: "https://status.salesforce.com/products/\(key)")!
         }
         """
     }
@@ -104,7 +106,7 @@ struct SalesforceProductRegion {
             return """
             class \(classNameWithRegion): \(className), ServiceCategory {
                 let categoryName = "\(name)"
-                let subServiceSuperclass: AnyObject.Type = BaseSalesforce.self
+                let subServiceSuperclass: AnyObject.Type = Base\(className).self
 
                 \(commonDefinitions.joined(separator: "\n    "))
             }
