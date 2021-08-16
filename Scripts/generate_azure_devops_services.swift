@@ -18,13 +18,15 @@ struct AzureDevOpsService {
         sanitizedName = sanitizedName.replacingOccurrences(of: " & ", with: "And")
         sanitizedName = sanitizedName.replacingOccurrences(of: "/", with: "")
         sanitizedName = sanitizedName.replacingOccurrences(of: ":", with: "")
-        sanitizedName = sanitizedName.components(separatedBy: " ").map { $0.capitalized(firstLetterOnly: true) }.joined(separator: "")
+        sanitizedName = sanitizedName.components(separatedBy: " ")
+            .map { $0.capitalized(firstLetterOnly: true) }
+            .joined(separator: "")
         return "AzureDevOps\(sanitizedName)"
     }
 
     var output: String {
         return """
-        class \(className): AzureDevOps {
+        class \(className): AzureDevOps, SubService {
             let name = "\(friendlyName)"
             let serviceName = "\(serviceName)"
         }
@@ -88,12 +90,10 @@ func discoverServices() -> [AzureDevOpsService] {
 
     _ = semaphore.wait(timeout: .now() + .seconds(10))
 
-    guard let data = dataResult, var body = String(data: data, encoding: .utf8) else {
+    guard let data = dataResult, let body = String(data: data, encoding: .utf8) as NSString? else {
         print("warning: Build script generate_azure_devops_services could not retrieve list of Azure DevOps services")
         exit(0)
     }
-
-    body = body.replacingOccurrences(of: "\n", with: "")
 
     // swiftlint:disable:next force_try
     let regex = try! NSRegularExpression(
@@ -101,13 +101,16 @@ func discoverServices() -> [AzureDevOpsService] {
         options: [.caseInsensitive, .dotMatchesLineSeparators]
     )
 
-    let range = NSRange(location: 0, length: body.count)
-    regex.enumerateMatches(in: body, options: [], range: range) { textCheckingResult, _, _ in
+    let range = NSRange(location: 0, length: body.length)
+    regex.enumerateMatches(in: body as String, options: [], range: range) { textCheckingResult, _, _ in
         guard let textCheckingResult = textCheckingResult, textCheckingResult.numberOfRanges == 2 else { return }
 
-        let json = body[textCheckingResult.range(at: 1)]
-        guard let decodedProviders = try? JSONDecoder().decode(AzureDevOpsDataProviders.self, from: json.data(using: .utf8)!) else {
-            print("warning: Build script generate_azure_devops_services could not retrieve list of Azure DevOps services")
+        let json = body.substring(with: textCheckingResult.range(at: 1))
+        let jsonData = json.data(using: .utf8)!
+        guard let decodedProviders = try? JSONDecoder().decode(AzureDevOpsDataProviders.self, from: jsonData) else {
+            print(
+                "warning: Build script generate_azure_devops_services could not retrieve list of Azure DevOps services"
+            )
             exit(0)
         }
 
@@ -138,6 +141,8 @@ func main() {
 
     // swiftlint:disable:next force_try
     try! output.write(toFile: outputPath, atomically: true, encoding: .utf8)
+
+    print("Finished generating Azure DevOps services.")
 }
 
 main()

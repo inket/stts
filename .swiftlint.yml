@@ -1,11 +1,13 @@
 excluded:
   - Pods
   - Carthage
-line_length: 140
-file_length: 500
+line_length:
+    warning: 120
+    ignores_comments: true
+    ignores_interpolated_strings: true
 disabled_rules:
   - type_body_length
   - function_body_length
-  - type_name
-  - variable_name
   - nesting
+  - identifier_name
+  - file_length

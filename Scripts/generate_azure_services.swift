@@ -11,7 +11,9 @@ struct AzureZone {
         sanitizedName = sanitizedName.replacingOccurrences(of: " & ", with: "And")
         sanitizedName = sanitizedName.replacingOccurrences(of: "/", with: "")
         sanitizedName = sanitizedName.replacingOccurrences(of: ":", with: "")
-        return sanitizedName.components(separatedBy: " ").map { $0.capitalized(firstLetterOnly: true) }.joined(separator: "")
+        return sanitizedName.components(separatedBy: " ")
+            .map { $0.capitalized(firstLetterOnly: true) }
+            .joined(separator: "")
     }
 
     init(identifier: String, serviceName: String) {
@@ -26,7 +28,7 @@ struct AzureZone {
 
     var output: String {
         return """
-        class \(className): Azure {
+        class \(className): Azure, SubService {
             let name = "\(serviceName)"
             let zoneIdentifier = "\(zoneIdentifier)"
         }
@@ -115,6 +117,8 @@ func main() {
 
     // swiftlint:disable:next force_try
     try! output.write(toFile: outputPath, atomically: true, encoding: .utf8)
+
+    print("Finished generating Azure services.")
 }
 
 main()

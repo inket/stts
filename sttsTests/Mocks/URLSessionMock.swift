@@ -4,19 +4,18 @@
 //
 
 import Foundation
+import stts
 
-class URLSessionMock: URLSession {
-    typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
-
+class URLSessionMock: URLSessionProtocol {
     private func humanSize(data: Data?) -> String {
         guard let data = data else { return "nil" }
 
         return "\(data.count / 1024)KB"
     }
 
-    override func dataTask(
+    func dataTask(
         with url: URL,
-        completionHandler: @escaping CompletionHandler
+        completionHandler: @escaping URLSessionProtocol.CompletionHandler
     ) -> URLSessionDataTask {
         URLSession.shared.dataTask(with: url) { data, response, error in
             print("[URLSessionMock] \(self.humanSize(data: data)) [\(url.absoluteString)]")
@@ -24,9 +23,9 @@ class URLSessionMock: URLSession {
         }
     }
 
-    override func dataTask(
+    func dataTask(
         with urlRequest: URLRequest,
-        completionHandler: @escaping CompletionHandler
+        completionHandler: @escaping URLSessionProtocol.CompletionHandler
     ) -> URLSessionDataTask {
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             print("[URLSessionMock] \(self.humanSize(data: data)) [\(urlRequest.url?.absoluteString ?? "nil")]")

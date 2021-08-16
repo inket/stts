@@ -31,9 +31,13 @@ class BaseStatusCakeService: BaseService {
     }
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? StatusCakeService else { fatalError("BaseStatusCakeService should not be used directly.") }
+        guard let realSelf = self as? StatusCakeService else {
+            fatalError("BaseStatusCakeService should not be used directly.")
+        }
 
-        let statusURL = URL(string: "https://app.statuscake.com/Workfloor/PublicReportHandler.php?PublicID=\(realSelf.publicID)")!
+        let statusURL = URL(
+            string: "https://app.statuscake.com/Workfloor/PublicReportHandler.php?PublicID=\(realSelf.publicID)"
+        )!
 
         loadData(with: statusURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }

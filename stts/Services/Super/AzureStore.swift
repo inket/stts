@@ -54,7 +54,13 @@ class AzureStore: Loading {
     }
 
     func status(for service: AzureStoreService) -> (ServiceStatus, String) {
-        let status = statuses[service.zoneIdentifier]
+        let status: ServiceStatus?
+
+        if service.zoneIdentifier == "*" {
+            status = statuses.values.max()
+        } else {
+            status = statuses[service.zoneIdentifier]
+        }
 
         switch status {
         case .good?: return (.good, "Good")

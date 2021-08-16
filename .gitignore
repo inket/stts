@@ -69,3 +69,6 @@ fastlane/test_output
 
 # Ignore App Store assets (screenshots)
 App Store
+
+# Ruby vendor
+vendor

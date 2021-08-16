@@ -5,6 +5,41 @@
 
 import Foundation
 
+private struct HerokuStatusResponse: Codable {
+    struct HerokuStatus: Codable {
+        enum CodingKeys: String, CodingKey {
+            case production = "Production"
+            case development = "Development"
+        }
+
+        enum Status: String, Codable {
+            case green
+            case red
+            case yellow
+            case blue
+
+            var status: ServiceStatus {
+                switch self {
+                case .green: return .good
+                case .red: return .major
+                case .yellow: return .minor
+                case .blue: return .maintenance
+                }
+            }
+        }
+
+        let production: Status
+        let development: Status
+    }
+
+    struct HerokuIssue: Codable {
+        let title: String
+    }
+
+    let status: HerokuStatus
+    let issues: [HerokuIssue]
+}
+
 class Heroku: Service {
     let url = URL(string: "https://status.heroku.com/")!
 
@@ -16,42 +51,31 @@ class Heroku: Service {
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }
 
-            let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard let dict = json as? [String: Any] else { return strongSelf._fail("Unexpected data") }
-
-            guard let status = dict["status"] as? [String: String] else { return strongSelf._fail("Unexpected data") }
-
-            let devStatus = status["Development"]
-            let prodStatus = status["Production"]
-
-            let devGreen = devStatus == "green"
-            let prodGreen = prodStatus == "green"
-
-            let statuses = [devStatus, prodStatus].compactMap { $0 }
-            if statuses.contains("red") {
-                self?.status = .major
-            } else if statuses.contains("yellow") {
-                self?.status = .minor
-            } else if statuses.contains("blue") {
-                self?.status = .maintenance
-            } else if devGreen && prodGreen {
-                self?.status = .good
-            } else {
-                self?.status = .undetermined
+            guard let statusResponse = try? JSONDecoder().decode(HerokuStatusResponse.self, from: data) else {
+                return strongSelf._fail("Unexpected data")
             }
+
+            let production = statusResponse.status.production
+            let development = statusResponse.status.development
+
+            guard let max = [production, development].max(by: { $0.status < $1.status }) else {
+                // This will never happen
+                return strongSelf._fail("Unexpected error")
+            }
+
+            self?.status = max.status
 
             // Prefer "production" status text except when it's green
-            let statusText = (prodGreen ? devStatus : prodStatus)?.capitalized
+            let representedStatus = production == .green ? development : production
+            let statusText = representedStatus.rawValue.capitalized
 
-            // Get the title of the current issue if any
-            var title: String?
-            if !prodGreen || !devGreen {
-                if let issues = dict["issues"] as? [[String: Any]] {
-                    title = issues.first?["title"] as? String
-                }
+            switch max {
+            case .green:
+                self?.message = statusText
+            default:
+                // Get the title of the current issue if any
+                self?.message = statusResponse.issues.first?.title ?? statusText
             }
-
-            self?.message = title ?? statusText ?? ""
         }
     }
 }

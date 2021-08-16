@@ -6,7 +6,7 @@
 import XCTest
 @testable import stts
 
-class sttsTests: XCTestCase {
+class SttsTests: XCTestCase {
     override func setUp() {
         super.setUp()
 

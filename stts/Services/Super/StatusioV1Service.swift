@@ -14,6 +14,7 @@ protocol RequiredStatusioV1Properties {
 class BaseStatusioV1Service: BaseService {
     private enum StatusioV1Status: Int {
         case operational = 100
+        case plannedMaintenance = 200
         case degradedPerformance = 300
         case partialServiceDisruption = 400
         case serviceDisruption = 500
@@ -23,6 +24,8 @@ class BaseStatusioV1Service: BaseService {
             switch self {
             case .operational:
                 return .good
+            case .plannedMaintenance:
+                return .maintenance
             case .degradedPerformance:
                 return .minor
             case .partialServiceDisruption:
@@ -35,7 +38,9 @@ class BaseStatusioV1Service: BaseService {
     }
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? StatusioV1Service else { fatalError("BaseStatusioV1Service should not be used directly.") }
+        guard let realSelf = self as? StatusioV1Service else {
+            fatalError("BaseStatusioV1Service should not be used directly.")
+        }
 
         let statusURL = URL(string: "https://api.status.io/1.0/status/\(realSelf.statusPageID)")!
 

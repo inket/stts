@@ -1,4 +1,4 @@
-## stts ![](https://img.shields.io/badge/Swift-5.0-orange.svg)
+## stts ![](https://img.shields.io/badge/Swift-5-orange.svg)
 
 stts is a macOS app for monitoring the status of cloud services.
 
@@ -10,13 +10,28 @@ stts is designed to be unobtrusive, only giving you the information you need and
 
 stts can be downloaded from the Mac App Store [here](https://itunes.apple.com/app/stts/id1187772509?l=en&mt=12).
 
-### Contributing
+### Support the project
 
-Adding services is quite straightforward, and can be as easy as adding a few lines (especially if they're based on statuspage.io). For examples, check `stts/Services/` and `stts/Services/StatusPage`.
+<a href="https://www.buymeacoffee.com/mahdibchatnia" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="48" width="173" ></a>
 
-#### StatusPage
+### Contribute
 
-If you're adding a page which is based off https://statuspage.io, then you will subclass `StatusPageService`. To find `statusPageID` for a new service, go to `https://status.<company>.com/api` and [view the links](https://github.com/inket/stts/issues/21#issuecomment-273427769).
+Most services can be added automatically with the included extract script:
+
+```sh
+# If you haven't already, clone the repo
+git clone https://github.com/inket/stts.git
+cd stts
+
+# Install dependencies and run the extract script
+bundle install
+bundle exec ruby extract.rb <url>
+
+# Example:
+bundle exec ruby extract.rb https://status.notion.so/
+```
+
+For services that cannot be added with the script, feel free to create an issue.
 
 #### Contact
 

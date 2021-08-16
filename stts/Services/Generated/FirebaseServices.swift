@@ -2,78 +2,62 @@
 
 import Foundation
 
-class FirebaseABTesting: FirebaseService {
-    let name = "Firebase AB Testing"
+class FirebaseABTestingBETA: FirebaseService, SubService {
+    let name = "Firebase AB Testing (BETA)"
 }
 
-class FirebaseAnalytics: FirebaseService {
-    let name = "Firebase Analytics"
+class FirebaseAppDistributionBETA: FirebaseService, SubService {
+    let name = "Firebase App Distribution (BETA)"
 }
 
-class FirebaseAppDistribution: FirebaseService {
-    let name = "Firebase App Distribution"
-}
-
-class FirebaseAppIndexing: FirebaseService {
+class FirebaseAppIndexing: FirebaseService, SubService {
     let name = "Firebase App Indexing"
 }
 
-class FirebaseAuthentication: FirebaseService {
+class FirebaseAuthentication: FirebaseService, SubService {
     let name = "Firebase Authentication"
 }
 
-class FirebaseCloudMessaging: FirebaseService {
+class FirebaseCloudMessaging: FirebaseService, SubService {
     let name = "Firebase Cloud Messaging"
 }
 
-class FirebaseConsole: FirebaseService {
+class FirebaseConsole: FirebaseService, SubService {
     let name = "Firebase Console"
 }
 
-class FirebaseCrashlytics: FirebaseService {
+class FirebaseCrashlytics: FirebaseService, SubService {
     let name = "Firebase Crashlytics"
 }
 
-class FirebaseDynamicLinks: FirebaseService {
+class FirebaseDynamicLinks: FirebaseService, SubService {
     let name = "Firebase Dynamic Links"
 }
 
-class FirebaseCloudFunctions: FirebaseService {
-    let name = "Firebase Cloud Functions"
-}
-
-class FirebaseHosting: FirebaseService {
+class FirebaseHosting: FirebaseService, SubService {
     let name = "Firebase Hosting"
 }
 
-class FirebaseInvites: FirebaseService {
-    let name = "Firebase Invites"
+class FirebaseMachineLearningBETA: FirebaseService, SubService {
+    let name = "Firebase Machine Learning (BETA)"
 }
 
-class FirebaseMLKit: FirebaseService {
-    let name = "Firebase ML Kit"
-}
-
-class FirebasePerformanceMonitoring: FirebaseService {
+class FirebasePerformanceMonitoring: FirebaseService, SubService {
     let name = "Firebase Performance Monitoring"
 }
 
-class FirebasePredictions: FirebaseService {
+class FirebasePredictions: FirebaseService, SubService {
     let name = "Firebase Predictions"
 }
 
-class FirebaseRealtimeDatabase: FirebaseService {
+class FirebaseRealtimeDatabase: FirebaseService, SubService {
     let name = "Firebase Realtime Database"
 }
 
-class FirebaseRemoteConfig: FirebaseService {
+class FirebaseRemoteConfig: FirebaseService, SubService {
     let name = "Firebase Remote Config"
 }
 
-class FirebaseStorage: FirebaseService {
-    let name = "Firebase Storage"
-}
-
-class FirebaseTestLab: FirebaseService {
+class FirebaseTestLab: FirebaseService, SubService {
     let name = "Firebase Test Lab"
 }

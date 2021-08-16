@@ -14,7 +14,9 @@ class Beanstalk: Service {
             defer { callback(strongSelf) }
 
             guard let data = data else { return strongSelf._fail(error) }
-            guard let doc = try? HTML(html: data, encoding: .utf8) else { return strongSelf._fail("Couldn't parse response") }
+            guard let doc = try? HTML(html: data, encoding: .utf8) else {
+                return strongSelf._fail("Couldn't parse response")
+            }
 
             self?.status = strongSelf.status(from: doc)
             self?.message = strongSelf.message(for: strongSelf.status)
@@ -29,7 +31,7 @@ extension Beanstalk {
         guard let status = firstStatus else { return .undetermined }
 
         switch status {
-        case "ok": return .good
+        case "ok", "pending": return .good
         case "maintenance": return .maintenance
         case "problem": return .major
         default: return .undetermined

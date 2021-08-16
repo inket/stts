@@ -5,7 +5,7 @@ SERVICES_PLIST="$RESOURCES_PATH/services.plist"
 
 # Retrieve the list of services
 REGULAR_SERVICES=$(find "$SRCROOT/stts/Services" -name "*.swift" -not -path "*Super*" -not -path "*Generated*" | awk -F/ '{ print $NF }' | sed s/.swift//g | sort | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/ /g')
-GENERATED_SERVICES=$(find "$SRCROOT/stts/Services/Generated" -name "*.swift" -print0 | xargs -0 cat | grep class | sed s/'class '//g | sed 's/:.*//' | tr '\n' ' ')
+GENERATED_SERVICES=$(find "$SRCROOT/stts/Services/Generated" -name "*.swift" -print0 | xargs -0 cat | grep "class " | sed s/'class '//g | sed 's/:.*//' | tr '\n' ' ')
 SERVICES="$REGULAR_SERVICES $GENERATED_SERVICES"
 
 # Create the services plist file

@@ -5,7 +5,7 @@
 
 import Cocoa
 
-protocol SwitchableTableViewController: class {
+protocol SwitchableTableViewController: AnyObject {
     var hidden: Bool { get set }
 
     func show()

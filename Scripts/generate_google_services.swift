@@ -39,7 +39,12 @@ extension Service {
         sanitizedName = sanitizedName.replacingOccurrences(of: " & ", with: "And")
         sanitizedName = sanitizedName.replacingOccurrences(of: "/", with: "")
         sanitizedName = sanitizedName.replacingOccurrences(of: ":", with: "")
-        return sanitizedName.components(separatedBy: " ").map { $0.capitalized(firstLetterOnly: true) }.joined(separator: "")
+        sanitizedName = sanitizedName.replacingOccurrences(of: "-", with: "")
+        sanitizedName = sanitizedName.replacingOccurrences(of: "(", with: "")
+        sanitizedName = sanitizedName.replacingOccurrences(of: ")", with: "")
+        return sanitizedName.components(separatedBy: " ")
+            .map { $0.capitalized(firstLetterOnly: true) }
+            .joined(separator: "")
     }
 }
 
@@ -60,7 +65,7 @@ struct GCPService: Service {
 
     var output: String {
         return """
-        class \(className): GoogleCloudPlatform {
+        class \(className): GoogleCloudPlatform, SubService {
             let name = "\(serviceName)"
             let dashboardName = "\(dashboardName)"
         }
@@ -81,7 +86,7 @@ struct FirebaseService: Service {
 
     var output: String {
         return """
-        class \(className): FirebaseService {
+        class \(className): FirebaseService, SubService {
             let name = "\(serviceName)"
         }
         """
@@ -125,7 +130,11 @@ func discoverServices(for platform: GooglePlatform) -> [Service] {
     _ = semaphore.wait(timeout: .now() + .seconds(10))
 
     guard let data = dataResult, var body = String(data: data, encoding: .utf8) else {
-        print("warning: Build script generate_google_services could not retrieve list of Google Cloud Platform/Firebase services")
+        print("""
+            warning: Build script generate_google_services could not retrieve
+            list of Google Cloud Platform/Firebase services
+        """)
+
         exit(0)
     }
 
@@ -133,7 +142,7 @@ func discoverServices(for platform: GooglePlatform) -> [Service] {
 
     // swiftlint:disable:next force_try
     let regex = try! NSRegularExpression(
-        pattern: "class=\"service-status\">[\\s\\n]*(.+?)[\\s\\n]*<.*?\\/tr>",
+        pattern: "class=\"product-name\">[\\s\\n]*(.+?)[\\s\\n]*<.*?\\/tr>",
         options: [.caseInsensitive, .dotMatchesLineSeparators]
     )
 
@@ -144,7 +153,7 @@ func discoverServices(for platform: GooglePlatform) -> [Service] {
         let matchSubstring = body[textCheckingResult.range(at: 0)]
 
         // Some entries are just links to GCP/Firebase and don't have any status data. Skip those.
-        guard matchSubstring.contains("class=\"day ") else { return }
+        guard matchSubstring.contains("class=\"product-day") else { return }
 
         let serviceName = body[textCheckingResult.range(at: 1)]
 
@@ -181,6 +190,7 @@ func main() {
         try! output.write(toFile: platform.outputPath(root: srcRoot), atomically: true, encoding: .utf8)
     }
 
+    print("Finished generating Google services.")
 }
 
 main()

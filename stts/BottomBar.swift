@@ -18,6 +18,7 @@ class BottomBar: NSView {
     let doneButton = NSButton()
     let aboutButton = NSButton()
     let quitButton = NSButton()
+    let backButton = NSButton()
     let statusField = NSTextField()
     let separator = ServiceTableRowView()
 
@@ -30,6 +31,7 @@ class BottomBar: NSView {
     var reloadServicesCallback: () -> Void = {}
     var openSettingsCallback: () -> Void = {}
     var closeSettingsCallback: () -> Void = {}
+    var backCallback: () -> Void = {}
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -42,7 +44,12 @@ class BottomBar: NSView {
     }
 
     private func commonInit() {
-        [separator, settingsButton, reloadButton, statusField, doneButton, aboutButton, quitButton].forEach {
+        [
+            separator,
+            settingsButton, reloadButton, statusField, // Main view buttons
+            doneButton, aboutButton, quitButton, // Editor view buttons
+            backButton // Category view buttons
+        ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
@@ -63,8 +70,8 @@ class BottomBar: NSView {
 
             settingsButton.heightAnchor.constraint(equalToConstant: 30),
             settingsButton.widthAnchor.constraint(equalToConstant: 30),
-            settingsButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-            settingsButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+            settingsButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
+            settingsButton.centerYAnchor.constraint(equalTo: centerYAnchor),
 
             gearIcon.centerYAnchor.constraint(equalTo: settingsButton.centerYAnchor),
             gearIcon.centerXAnchor.constraint(equalTo: settingsButton.centerXAnchor),
@@ -73,8 +80,8 @@ class BottomBar: NSView {
 
             reloadButton.heightAnchor.constraint(equalToConstant: 30),
             reloadButton.widthAnchor.constraint(equalToConstant: 30),
-            reloadButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            reloadButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+            reloadButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
+            reloadButton.centerYAnchor.constraint(equalTo: centerYAnchor),
 
             refreshIcon.centerYAnchor.constraint(equalTo: reloadButton.centerYAnchor),
             refreshIcon.centerXAnchor.constraint(equalTo: reloadButton.centerXAnchor),
@@ -87,7 +94,7 @@ class BottomBar: NSView {
 
             doneButton.widthAnchor.constraint(equalToConstant: 60),
             doneButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            doneButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -3),
+            doneButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
 
             aboutButton.widthAnchor.constraint(equalToConstant: 56),
             aboutButton.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -95,7 +102,11 @@ class BottomBar: NSView {
 
             quitButton.widthAnchor.constraint(equalToConstant: 46),
             quitButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            quitButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 3)
+            quitButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
+
+            backButton.widthAnchor.constraint(equalToConstant: 46),
+            backButton.centerYAnchor.constraint(equalTo: centerYAnchor),
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4)
         ])
 
         settingsButton.isBordered = false
@@ -150,6 +161,13 @@ class BottomBar: NSView {
         quitButton.isHidden = true
         quitButton.target = NSApp
         quitButton.action = #selector(NSApplication.terminate(_:))
+
+        backButton.title = "Back"
+        backButton.bezelStyle = .regularSquare
+        backButton.controlSize = .regular
+        backButton.isHidden = true
+        backButton.target = self
+        backButton.action = #selector(BottomBar.back)
     }
 
     func updateStatusText() {
@@ -157,9 +175,25 @@ class BottomBar: NSView {
         case .undetermined: statusField.stringValue = ""
         case .updating: statusField.stringValue = "Updating…"
         case .updated(let date):
-            let relativeTime = date.toStringWithRelativeTime()
+            var relativeDate = date
+            if Int(relativeDate.timeIntervalSince1970) == Int(Date().timeIntervalSince1970) {
+                // Avoid issues with relative time marking it as "in a few seconds"
+                relativeDate = Date(timeInterval: -1, since: Date())
+            }
+
+            let relativeTime = relativeDate.toStringWithRelativeTime()
             statusField.stringValue = "Updated \(relativeTime)"
         }
+    }
+
+    func openedCategory(_ category: ServiceCategory?, backCallback: @escaping () -> Void) {
+        doneButton.isHidden = false
+        aboutButton.isHidden = category != nil
+        quitButton.isHidden = category != nil
+
+        backButton.isHidden = category == nil
+
+        self.backCallback = backCallback
     }
 
     @objc func reloadServices() {
@@ -179,6 +213,8 @@ class BottomBar: NSView {
     }
 
     @objc func closeSettings() {
+        backCallback()
+
         settingsButton.isHidden = false
         statusField.isHidden = false
         reloadButton.isHidden = false
@@ -186,6 +222,8 @@ class BottomBar: NSView {
         doneButton.isHidden = true
         aboutButton.isHidden = true
         quitButton.isHidden = true
+
+        backButton.isHidden = true
 
         closeSettingsCallback()
     }
@@ -197,7 +235,9 @@ class BottomBar: NSView {
         let openSourceNotice = "stts is an open-source project\n\(githubLink)"
         let iconGlyphCredit = "Activity glyph (app icon)\nCreated by Gregor Črešnar from the Noun Project"
         let contributors = "Contributors\n\(contributorsLink)"
-        let credits = NSMutableAttributedString(string: "\n\(openSourceNotice)\n\n\(iconGlyphCredit)\n\n\(contributors)\n\n")
+        let credits = NSMutableAttributedString(
+            string: "\n\(openSourceNotice)\n\n\(iconGlyphCredit)\n\n\(contributors)\n\n"
+        )
 
         let normalFont = NSFont.systemFont(ofSize: 11)
         let boldFont = NSFont.boldSystemFont(ofSize: 11)
@@ -220,5 +260,15 @@ class BottomBar: NSView {
 
         NSApp.orderFrontStandardAboutPanel(options: [NSApplication.AboutPanelOptionKey(rawValue: "Credits"): credits])
         NSApp.activate(ignoringOtherApps: true)
+    }
+
+    @objc func back() {
+        backButton.isHidden = true
+
+        doneButton.isHidden = false
+        aboutButton.isHidden = false
+        quitButton.isHidden = false
+
+        backCallback()
     }
 }

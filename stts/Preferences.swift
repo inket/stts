@@ -34,11 +34,26 @@ struct Preferences {
             "selectedServices": ["CircleCI", "Cloudflare", "GitHub", "NPM", "TravisCI"]
         ])
 
-        // A "migration" of sorts
+        Preferences.migrate()
+    }
+
+    private static func migrate() {
+        // Migrate old names to new names if needed
+        let migrationMapping: [String: String] = [
+            "CloudFlare": "Cloudflare", // v1.0.0 used the name "CloudFlare" instead of the official "Cloudflare"
+            "Apple": "AppleAll", // Apple changed from one service to multiple sub services
+            "AppleDeveloper": "AppleDeveloperAll", // Apple Developer changed from one service to multiple sub services
+            // Generated services
+            "FirebaseMLKit": "FirebaseMachineLearning"
+        ]
+
         if var services = UserDefaults.standard.array(forKey: "selectedServices") as? [String] {
-            // v1.0.0 used the name "CloudFlare" instead of the official "Cloudflare", replace it if found
-            if let oldCloudflareIndex = services.firstIndex(of: "CloudFlare") {
-                services[oldCloudflareIndex] = "Cloudflare"
+            for (index, oldClassName) in services.enumerated() {
+                if let newClassName = migrationMapping[oldClassName] {
+                    services[index] = newClassName
+
+                    debugPrint("Replaced service \(oldClassName) with \(newClassName)")
+                }
             }
 
             UserDefaults.standard.setValue(services, forKey: "selectedServices")

@@ -37,13 +37,17 @@ class Slack: Service {
             defer { callback(strongSelf) }
 
             guard let data = data else { return strongSelf._fail(error) }
-            guard let doc = try? HTML(html: data, encoding: .utf8) else { return strongSelf._fail("Couldn't parse response") }
+            guard let doc = try? HTML(html: data, encoding: .utf8) else {
+                return strongSelf._fail("Couldn't parse response")
+            }
 
             let serviceImages = doc.css("#services .service.header img")
             guard serviceImages.count > 0 else { return strongSelf._fail("Unexpected response") }
 
             let imageURLs = serviceImages.compactMap { $0["src"] }
-            let statuses = imageURLs.compactMap { SlackStatus(rawValue: ($0.lowercased() as NSString).lastPathComponent) }
+            let statuses = imageURLs.compactMap {
+                SlackStatus(rawValue: ($0.lowercased() as NSString).lastPathComponent)
+            }
 
             self?.status = statuses.map { $0.serviceStatus }.max() ?? .undetermined
             self?.message = doc.css("#current_status h1").first?.text ?? "Undetermined"
