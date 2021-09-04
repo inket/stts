@@ -14,6 +14,7 @@
 		18AAC49BEE71BAA18FAFCDB1 /* AlertLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8797E2420F50AEF8E643093F /* AlertLogic.swift */; };
 		194BC88222A8EAC10065E698 /* Clubhouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BC88122A8EAC00065E698 /* Clubhouse.swift */; };
 		2009CD655C4526247CF38971 /* ReadMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4E2FFFE60AE5D0E0BB449 /* ReadMe.swift */; };
+		23E3868C156CA9A739D83D90 /* Aiven.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB41ECF9F0F03EC8916A646 /* Aiven.swift */; };
 		2F1B7559227A095400BA5CBD /* Avalara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B7558227A095400BA5CBD /* Avalara.swift */; };
 		2F65F490227A198400432E64 /* Recurly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F65F48F227A198400432E64 /* Recurly.swift */; };
 		2F802A9BB36717992C334CB8 /* Medium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B24BCA673F692E9211E7B8D /* Medium.swift */; };
@@ -24,6 +25,7 @@
 		36AD8ED9235A310500F2FD73 /* Mural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED8235A310500F2FD73 /* Mural.swift */; };
 		5226672D519C409D932468BA /* Chargebee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3803B461B23AFD8DD026EB59 /* Chargebee.swift */; };
 		56EB1377353A8087B682B4E6 /* Primcloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160B2F5B66992A4DE58FF49 /* Primcloud.swift */; };
+		5B446BB90D38D8C97F81126F /* Duo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC70B47B228492520C03D36 /* Duo.swift */; };
 		5BE9174C12190D85B29567FD /* HashiCorp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE85B45D490EF40F319860 /* HashiCorp.swift */; };
 		6BCBA0EA2558643D0019DF23 /* Recruiterbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */; };
 		7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B305FAA210237AA0086DCE0 /* Spoke.swift */; };
@@ -31,6 +33,7 @@
 		A0C3F34B220FD630005D9998 /* Datadog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3F34A220FD630005D9998 /* Datadog.swift */; };
 		A125C59E20F7909500C513B3 /* Fastly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125C59D20F7909500C513B3 /* Fastly.swift */; };
 		A133C8B720F8F3670068CFE8 /* Mailgun.swift in Sources */ = {isa = PBXBuildFile; fileRef = A133C8B620F8F3670068CFE8 /* Mailgun.swift */; };
+		B13C143038FEAD318CCA237B /* Doppler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70244989EDA4E2F3CF20FA50 /* Doppler.swift */; };
 		B2006CF9223B356F0057E144 /* ProtonMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2006CF8223B356F0057E144 /* ProtonMail.swift */; };
 		B200CA74247FC5AE00DB0868 /* AdobeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200CA73247FC5AE00DB0868 /* AdobeServices.swift */; };
 		B200CA76247FC88700DB0868 /* Adobe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200CA75247FC88700DB0868 /* Adobe.swift */; };
@@ -252,6 +255,7 @@
 		BF7AA78122B03AE4002460FB /* Bitrise.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AA78022B03AE4002460FB /* Bitrise.swift */; };
 		C1B04EA0748F30D966A77B19 /* Acoustic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439EADCB08D6940C642E98B8 /* Acoustic.swift */; };
 		C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */; };
+		E2AAECBE89E07C6E94464ABF /* Checkly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */; };
 		E5B35A5C6608D856A99842B2 /* Miro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCCFA4ECD8BB402C7254FEF /* Miro.swift */; };
 		FC278203BFB2E7D5A41639ED /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A4F04F86B9C0A9FB7233AE /* Branch.swift */; };
 /* End PBXBuildFile section */
@@ -302,14 +306,17 @@
 		4E2C3B179FEEE9F7F150196F /* JumpCloud.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JumpCloud.swift; sourceTree = "<group>"; };
 		6B24BCA673F692E9211E7B8D /* Medium.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Medium.swift; sourceTree = "<group>"; };
 		6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruiterbox.swift; sourceTree = "<group>"; };
+		70244989EDA4E2F3CF20FA50 /* Doppler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Doppler.swift; sourceTree = "<group>"; };
 		7B305FAA210237AA0086DCE0 /* Spoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spoke.swift; sourceTree = "<group>"; };
 		7BA6A0A12240D8E000700C2C /* Bolt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bolt.swift; sourceTree = "<group>"; };
 		8797E2420F50AEF8E643093F /* AlertLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertLogic.swift; sourceTree = "<group>"; };
 		87DE85B45D490EF40F319860 /* HashiCorp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HashiCorp.swift; sourceTree = "<group>"; };
 		8FD39EC5F0FC240DE74BD82D /* LinkedInAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinkedInAPI.swift; sourceTree = "<group>"; };
+		9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Checkly.swift; sourceTree = "<group>"; };
 		A0C3F34A220FD630005D9998 /* Datadog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datadog.swift; sourceTree = "<group>"; };
 		A125C59D20F7909500C513B3 /* Fastly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fastly.swift; sourceTree = "<group>"; };
 		A133C8B620F8F3670068CFE8 /* Mailgun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailgun.swift; sourceTree = "<group>"; };
+		AFB41ECF9F0F03EC8916A646 /* Aiven.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Aiven.swift; sourceTree = "<group>"; };
 		B2006CF8223B356F0057E144 /* ProtonMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtonMail.swift; sourceTree = "<group>"; };
 		B200CA71247FBC0A00DB0868 /* generate_adobe_services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generate_adobe_services.swift; sourceTree = "<group>"; };
 		B200CA73247FC5AE00DB0868 /* AdobeServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdobeServices.swift; sourceTree = "<group>"; };
@@ -539,6 +546,7 @@
 		C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeTransfer.swift; sourceTree = "<group>"; };
 		D52F2CDBBA1C28D8E93EFB1C /* PlausibleAnalytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlausibleAnalytics.swift; sourceTree = "<group>"; };
 		E5A4F04F86B9C0A9FB7233AE /* Branch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
+		FEC70B47B228492520C03D36 /* Duo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Duo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -679,6 +687,7 @@
 				439EADCB08D6940C642E98B8 /* Acoustic.swift */,
 				B2CE72D5228587E000847E00 /* Acquia.swift */,
 				B231DD56257B431900647312 /* Airbase.swift */,
+				AFB41ECF9F0F03EC8916A646 /* Aiven.swift */,
 				8797E2420F50AEF8E643093F /* AlertLogic.swift */,
 				B21DC0751F6B436400E8214F /* Aptible.swift */,
 				B27168892291AEEE001E608C /* Asana.swift */,
@@ -699,6 +708,7 @@
 				B23EE5B224B9FF430067D800 /* Bullhorn.swift */,
 				B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */,
 				3803B461B23AFD8DD026EB59 /* Chargebee.swift */,
+				9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */,
 				B2FDC91D1D6706C400F0B728 /* CircleCI.swift */,
 				B213D1FB269ADA5D005EBDDA /* Click.swift */,
 				B2F34040222630F20055C96F /* CloudApp.swift */,
@@ -717,7 +727,9 @@
 				A0C3F34A220FD630005D9998 /* Datadog.swift */,
 				B232047E22158BDF000DC1B0 /* DatadogEU.swift */,
 				B22BA3011E8119AB0038D8F6 /* Discord.swift */,
+				70244989EDA4E2F3CF20FA50 /* Doppler.swift */,
 				B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */,
+				FEC70B47B228492520C03D36 /* Duo.swift */,
 				B28E9FBD1ED26A40006B89F1 /* Dwolla.swift */,
 				B2EC838D24547371001D2D2F /* Egnyte.swift */,
 				0FDDACCC23CD7EBF00FE96CD /* ElasticCloud.swift */,
@@ -1424,6 +1436,10 @@
 				07903F3F2A403F03BDDD3AD1 /* JumpCloud.swift in Sources */,
 				5BE9174C12190D85B29567FD /* HashiCorp.swift in Sources */,
 				C1B04EA0748F30D966A77B19 /* Acoustic.swift in Sources */,
+				23E3868C156CA9A739D83D90 /* Aiven.swift in Sources */,
+				5B446BB90D38D8C97F81126F /* Duo.swift in Sources */,
+				B13C143038FEAD318CCA237B /* Doppler.swift in Sources */,
+				E2AAECBE89E07C6E94464ABF /* Checkly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
