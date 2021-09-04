@@ -13,7 +13,7 @@ def source_for(url)
     result.code.to_i == 200 ? result.body : nil
 end
 
-def extract_instatus(source)
+def extract_instatus(source, custom_name)
     document = Nokogiri::HTML(source)
 
     document.css("#__NEXT_DATA__").each do |data|
@@ -26,7 +26,7 @@ def extract_instatus(source)
             domain = "#{site["subdomain"]}.instatus.com"
         end
 
-        name = site["name"]
+        name = custom_name || site["name"]
         url = "https://#{domain}"
         safe_name = sanitized_name(name)
 
@@ -55,13 +55,13 @@ class #{safe_name}: InstatusService {
     return false
 end
 
-def extract_statuspage(url)
+def extract_statuspage(url, custom_name)
     source = source_for("#{url}/api/v2/summary.json")
     return false unless source
 
     page = JSON.parse(source)["page"]
     id = page["id"]
-    name = page["name"]
+    name = custom_name || page["name"]
     safe_name = sanitized_name(name)
 
     definitions = [
@@ -196,12 +196,16 @@ url = ARGV[0]
 url = url.strip if url
 fail_params unless url && url != ""
 
+custom_name = ARGV[1]
+custom_name = custom_name.strip if custom_name
+custom_name = nil if custom_name == ""
+
 url = "https://#{url}" if URI.parse(url).scheme == nil
 source = source_for(url)
 
 fail_network unless source
 
-finish if extract_instatus(source)
-finish if extract_statuspage(url)
+finish if extract_instatus(source, custom_name)
+finish if extract_statuspage(url, custom_name)
 
 fail
