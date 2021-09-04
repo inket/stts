@@ -110,6 +110,7 @@
 		B23EE5B324B9FF430067D800 /* Bullhorn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23EE5B224B9FF430067D800 /* Bullhorn.swift */; };
 		B24220E41E2F6BBA0007E50E /* Typeform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24220E31E2F6BBA0007E50E /* Typeform.swift */; };
 		B242AB3226E34ADA007EE672 /* CoreWeave.swift in Sources */ = {isa = PBXBuildFile; fileRef = B242AB3126E34ADA007EE672 /* CoreWeave.swift */; };
+		B242AB3626E34DE9007EE672 /* SignalWire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B242AB3526E34DE9007EE672 /* SignalWire.swift */; };
 		B2430807210810D0003F8D07 /* Algolia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2430806210810D0003F8D07 /* Algolia.swift */; };
 		B2483CF12037029D00A9FA95 /* Zwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2483CF02037029D00A9FA95 /* Zwift.swift */; };
 		B2493F061E2603F300556A83 /* GoogleCloudPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */; };
@@ -397,6 +398,7 @@
 		B23EE5B224B9FF430067D800 /* Bullhorn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullhorn.swift; sourceTree = "<group>"; };
 		B24220E31E2F6BBA0007E50E /* Typeform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typeform.swift; sourceTree = "<group>"; };
 		B242AB3126E34ADA007EE672 /* CoreWeave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreWeave.swift; sourceTree = "<group>"; };
+		B242AB3526E34DE9007EE672 /* SignalWire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalWire.swift; sourceTree = "<group>"; };
 		B2430806210810D0003F8D07 /* Algolia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algolia.swift; sourceTree = "<group>"; };
 		B2483CF02037029D00A9FA95 /* Zwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zwift.swift; sourceTree = "<group>"; };
 		B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudPlatform.swift; sourceTree = "<group>"; };
@@ -964,6 +966,7 @@
 				B2357D701E5C08AF0093B8A6 /* Netlify.swift */,
 				B21492CA21EE9BD70065103E /* ScaleGrid.swift */,
 				B2228B6126C9623C002F01F0 /* SendbirdAll.swift */,
+				B242AB3526E34DE9007EE672 /* SignalWire.swift */,
 				B2DEE0BD1E696D64006B198E /* Slack.swift */,
 				B230CE7E21B95C5500E2005D /* Stripe.swift */,
 			);
@@ -1371,6 +1374,7 @@
 				B2510954269AD87C005868DE /* Snowflake.swift in Sources */,
 				B2FAB94C1E5C029A00B8921F /* DNSimple.swift in Sources */,
 				B2BA69801E2DA3F60016AF1A /* Papertrail.swift in Sources */,
+				B242AB3626E34DE9007EE672 /* SignalWire.swift in Sources */,
 				B28E9FBF1ED26A40006B89F1 /* Dwolla.swift in Sources */,
 				B20396381EE6A06C008CCA21 /* Filestack.swift in Sources */,
 				B26CD1EC1DD59FFB0054A385 /* DigitalOcean.swift in Sources */,
