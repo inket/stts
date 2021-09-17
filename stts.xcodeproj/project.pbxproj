@@ -255,6 +255,7 @@
 		B2FFC1F01E261B4A00529A00 /* Dropbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */; };
 		BF7AA78122B03AE4002460FB /* Bitrise.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AA78022B03AE4002460FB /* Bitrise.swift */; };
 		C1B04EA0748F30D966A77B19 /* Acoustic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439EADCB08D6940C642E98B8 /* Acoustic.swift */; };
+		C28B812159CF77AD928CCAE9 /* Workflowy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F844F11070AF5B4CD7719E /* Workflowy.swift */; };
 		C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */; };
 		E2AAECBE89E07C6E94464ABF /* Checkly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */; };
 		E5B35A5C6608D856A99842B2 /* Miro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCCFA4ECD8BB402C7254FEF /* Miro.swift */; };
@@ -305,6 +306,7 @@
 		3803B461B23AFD8DD026EB59 /* Chargebee.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Chargebee.swift; sourceTree = "<group>"; };
 		439EADCB08D6940C642E98B8 /* Acoustic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Acoustic.swift; sourceTree = "<group>"; };
 		4E2C3B179FEEE9F7F150196F /* JumpCloud.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JumpCloud.swift; sourceTree = "<group>"; };
+		53F844F11070AF5B4CD7719E /* Workflowy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Workflowy.swift; sourceTree = "<group>"; };
 		6B24BCA673F692E9211E7B8D /* Medium.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Medium.swift; sourceTree = "<group>"; };
 		6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruiterbox.swift; sourceTree = "<group>"; };
 		70244989EDA4E2F3CF20FA50 /* Doppler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Doppler.swift; sourceTree = "<group>"; };
@@ -824,6 +826,7 @@
 				B23646B02627C14E00AB9486 /* VisualStudioAppCenter.swift */,
 				C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */,
 				B28DFE4621377A0B000EE4AF /* Wodby.swift */,
+				53F844F11070AF5B4CD7719E /* Workflowy.swift */,
 				B231DD55257B431900647312 /* Xandr.swift */,
 				B2C4670E1E70012700C5145D /* Zapier.swift */,
 				B28285E02405E44100B11A08 /* Zoom.swift */,
@@ -1444,6 +1447,7 @@
 				5B446BB90D38D8C97F81126F /* Duo.swift in Sources */,
 				B13C143038FEAD318CCA237B /* Doppler.swift in Sources */,
 				E2AAECBE89E07C6E94464ABF /* Checkly.swift in Sources */,
+				C28B812159CF77AD928CCAE9 /* Workflowy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
