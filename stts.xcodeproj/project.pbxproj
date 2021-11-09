@@ -23,6 +23,7 @@
 		36AD8ED5235A1FCA00F2FD73 /* Shopify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED4235A1FCA00F2FD73 /* Shopify.swift */; };
 		36AD8ED7235A2F9B00F2FD73 /* VictorOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */; };
 		36AD8ED9235A310500F2FD73 /* Mural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED8235A310500F2FD73 /* Mural.swift */; };
+		5168C3411EE1FADD160353FF /* FirefoxRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */; };
 		5226672D519C409D932468BA /* Chargebee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3803B461B23AFD8DD026EB59 /* Chargebee.swift */; };
 		56EB1377353A8087B682B4E6 /* Primcloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160B2F5B66992A4DE58FF49 /* Primcloud.swift */; };
 		5B446BB90D38D8C97F81126F /* Duo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC70B47B228492520C03D36 /* Duo.swift */; };
@@ -552,6 +553,7 @@
 		C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeTransfer.swift; sourceTree = "<group>"; };
 		D52F2CDBBA1C28D8E93EFB1C /* PlausibleAnalytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlausibleAnalytics.swift; sourceTree = "<group>"; };
 		E5A4F04F86B9C0A9FB7233AE /* Branch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
+		E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirefoxRelay.swift; sourceTree = "<group>"; };
 		FEC70B47B228492520C03D36 /* Duo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Duo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -744,6 +746,7 @@
 				A125C59D20F7909500C513B3 /* Fastly.swift */,
 				B269FCBA1E261BDF0016041D /* Figma.swift */,
 				B20396371EE6A06C008CCA21 /* Filestack.swift */,
+				E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */,
 				B2E6C8EF253C24AE001210E4 /* Fivetran.swift */,
 				B227D30B25D5886B00951917 /* FreeAgent.swift */,
 				B2C10F3B203646A7008E1E7D /* Gandi.swift */,
@@ -1452,6 +1455,7 @@
 				E2AAECBE89E07C6E94464ABF /* Checkly.swift in Sources */,
 				C28B812159CF77AD928CCAE9 /* Workflowy.swift in Sources */,
 				691A9AA9137E52D210A3A002 /* CloudAMQP.swift in Sources */,
+				5168C3411EE1FADD160353FF /* FirefoxRelay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
