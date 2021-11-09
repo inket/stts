@@ -120,11 +120,6 @@ class AppleFaceTime: Apple, SubService {
     let serviceName = "FaceTime"
 }
 
-class AppleFindMy: Apple, SubService {
-    let name = "Apple Find My"
-    let serviceName = "Find My"
-}
-
 class AppleFleetsmith: Apple, SubService {
     let name = "Apple Fleetsmith"
     let serviceName = "Fleetsmith"
@@ -138,6 +133,11 @@ class AppleGameCenter: Apple, SubService {
 class AppleGlobalServiceExchange: Apple, SubService {
     let name = "Apple Global Service Exchange"
     let serviceName = "Global Service Exchange"
+}
+
+class AppleHealthSharingWithProvider: Apple, SubService {
+    let name = "Apple Health sharing with provider"
+    let serviceName = "Health sharing with provider"
 }
 
 class AppleICloudAccountAndSignIn: Apple, SubService {
@@ -183,6 +183,11 @@ class AppleICloudMail: Apple, SubService {
 class AppleICloudNotes: Apple, SubService {
     let name = "Apple iCloud Notes"
     let serviceName = "iCloud Notes"
+}
+
+class AppleICloudPrivateRelay: Apple, SubService {
+    let name = "Apple iCloud Private Relay"
+    let serviceName = "iCloud Private Relay"
 }
 
 class AppleICloudReminders: Apple, SubService {
@@ -363,6 +368,36 @@ class AppleAppAttest: AppleDeveloper, SubService {
     let serviceName = "App Attest"
 }
 
+class AppleAppStoreInAppPurchases: AppleDeveloper, SubService {
+    let name = "Apple App Store - In-App Purchases"
+    let serviceName = "App Store - In-App Purchases"
+}
+
+class AppleAppStoreReceiptVerification: AppleDeveloper, SubService {
+    let name = "Apple App Store - Receipt Verification"
+    let serviceName = "App Store - Receipt Verification"
+}
+
+class AppleAppStoreSandbox: AppleDeveloper, SubService {
+    let name = "Apple App Store - Sandbox"
+    let serviceName = "App Store - Sandbox"
+}
+
+class AppleAppStoreServerAPIs: AppleDeveloper, SubService {
+    let name = "Apple App Store - Server APIs"
+    let serviceName = "App Store - Server APIs"
+}
+
+class AppleAppStoreServerNotifications: AppleDeveloper, SubService {
+    let name = "Apple App Store - Server Notifications"
+    let serviceName = "App Store - Server Notifications"
+}
+
+class AppleAppStoreTestFlight: AppleDeveloper, SubService {
+    let name = "Apple App Store - TestFlight"
+    let serviceName = "App Store - TestFlight"
+}
+
 class AppleAppStoreAutomaticAppUpdates: AppleDeveloper, SubService {
     let name = "Apple App Store Automatic App Updates"
     let serviceName = "App Store Automatic App Updates"
@@ -386,21 +421,6 @@ class AppleAppStoreConnectAPI: AppleDeveloper, SubService {
 class AppleAppStoreConnectAppProcessing: AppleDeveloper, SubService {
     let name = "Apple App Store Connect App Processing"
     let serviceName = "App Store Connect App Processing"
-}
-
-class AppleAppStoreReceiptVerification: AppleDeveloper, SubService {
-    let name = "Apple App Store Receipt Verification"
-    let serviceName = "App Store Receipt Verification"
-}
-
-class AppleAppStoreSandbox: AppleDeveloper, SubService {
-    let name = "Apple App Store Sandbox"
-    let serviceName = "App Store Sandbox"
-}
-
-class AppleAppStoreServerNotifications: AppleDeveloper, SubService {
-    let name = "Apple App Store Server Notifications"
-    let serviceName = "App Store Server Notifications"
 }
 
 class AppleDeveloperForums: AppleDeveloper, SubService {
@@ -483,11 +503,6 @@ class AppleFeedbackAssistant: AppleDeveloper, SubService {
     let serviceName = "Feedback Assistant"
 }
 
-class AppleInAppPurchases: AppleDeveloper, SubService {
-    let name = "Apple In-App Purchases"
-    let serviceName = "In-App Purchases"
-}
-
 class AppleMapKitJSDashboard: AppleDeveloper, SubService {
     let name = "Apple MapKit JS Dashboard"
     let serviceName = "MapKit JS Dashboard"
@@ -511,11 +526,6 @@ class AppleProgramEnrollmentAndRenewals: AppleDeveloper, SubService {
 class AppleSoftwareDownloads: AppleDeveloper, SubService {
     let name = "Apple Software Downloads"
     let serviceName = "Software Downloads"
-}
-
-class AppleTestFlight: AppleDeveloper, SubService {
-    let name = "Apple TestFlight"
-    let serviceName = "TestFlight"
 }
 
 class AppleVideos: AppleDeveloper, SubService {

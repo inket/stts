@@ -34,6 +34,10 @@ class FirebaseDynamicLinks: FirebaseService, SubService {
     let name = "Firebase Dynamic Links"
 }
 
+class FirebaseExtensions: FirebaseService, SubService {
+    let name = "Firebase Extensions"
+}
+
 class FirebaseHosting: FirebaseService, SubService {
     let name = "Firebase Hosting"
 }

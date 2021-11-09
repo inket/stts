@@ -57,6 +57,11 @@ class AdobeJourneyOptimizer: Adobe {
     let id = 5538
 }
 
+class AdobeMessageAuthoring: Adobe {
+    let name = "Adobe Message Authoring"
+    let id = 6347
+}
+
 class AdobeMessageDelivery: Adobe {
     let name = "Adobe Message Delivery"
     let id = 6349
@@ -185,6 +190,11 @@ class AdobeDataScienceWorkspace: AdobeExperiencePlatform, SubService {
 class AdobeDimension: AdobeCreativeCloud, SubService {
     let name = "Adobe Dimension"
     let id = 5701
+}
+
+class AdobeDocumentCloudIntegrations: AdobeDocumentCloud, SubService {
+    let name = "Adobe Document Cloud Integrations"
+    let id = 2512
 }
 
 class AdobeExperienceCloudHome: AdobeExperienceCloud, SubService {
@@ -335,6 +345,11 @@ class AdobeSign: AdobeDocumentCloud, SubService {
 class AdobeSignIn: AdobeServices, SubService {
     let name = "Adobe Sign In"
     let id = 2944
+}
+
+class AdobeSignIntegrations: AdobeDocumentCloud, SubService {
+    let name = "Adobe Sign Integrations"
+    let id = 5139
 }
 
 class AdobeSpark: AdobeCreativeCloud, SubService {
