@@ -201,7 +201,6 @@
 		B2B2D1051D49D5080014D780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2D1041D49D5080014D780 /* Assets.xcassets */; };
 		B2B2D1081D49D5080014D780 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B2D1061D49D5080014D780 /* MainMenu.xib */; };
 		B2BA36191ED7B0F200051083 /* AuthorizeNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA36181ED7B0F200051083 /* AuthorizeNet.swift */; };
-		B2BA697E1E2DA3A20016AF1A /* PivotalTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA697D1E2DA3A20016AF1A /* PivotalTracker.swift */; };
 		B2BA69801E2DA3F60016AF1A /* Papertrail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */; };
 		B2BB19BA20B8FEFD00A97A87 /* CachetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BB19B920B8FEFD00A97A87 /* CachetService.swift */; };
 		B2BB19BC20B9043F00A97A87 /* Yarn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BB19BB20B9043F00A97A87 /* Yarn.swift */; };
@@ -493,7 +492,6 @@
 		B2B2D1071D49D5080014D780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B2B2D1091D49D5080014D780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2BA36181ED7B0F200051083 /* AuthorizeNet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizeNet.swift; sourceTree = "<group>"; };
-		B2BA697D1E2DA3A20016AF1A /* PivotalTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PivotalTracker.swift; sourceTree = "<group>"; };
 		B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Papertrail.swift; sourceTree = "<group>"; };
 		B2BB19B920B8FEFD00A97A87 /* CachetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachetService.swift; sourceTree = "<group>"; };
 		B2BB19BB20B9043F00A97A87 /* Yarn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yarn.swift; sourceTree = "<group>"; };
@@ -789,7 +787,6 @@
 				B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */,
 				B213D1F7269AD9A7005EBDDA /* Pardot.swift */,
 				B2101899249E3FF400F31999 /* Pendo.swift */,
-				B2BA697D1E2DA3A20016AF1A /* PivotalTracker.swift */,
 				B29D50BE24B0542100F4961B /* PlatformSH.swift */,
 				B227D31125D7671600951917 /* Poka.swift */,
 				B2F127A61E0B84230035B20C /* PubNub.swift */,
@@ -1407,7 +1404,6 @@
 				B2EB51CE1E7004A3001D6F78 /* ExanaService.swift in Sources */,
 				B24EE10026C8BF9500F7CE8B /* SalesforceProducts.swift in Sources */,
 				B2DCE6952215ACDE001447D8 /* StringExtensions.swift in Sources */,
-				B2BA697E1E2DA3A20016AF1A /* PivotalTracker.swift in Sources */,
 				36AD8ED9235A310500F2FD73 /* Mural.swift in Sources */,
 				B227D31625D7678200951917 /* Vercel.swift in Sources */,
 				B20699D2214E504F008670B0 /* Robinhood.swift in Sources */,
