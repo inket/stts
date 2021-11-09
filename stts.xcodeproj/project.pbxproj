@@ -242,7 +242,6 @@
 		B2EF186424F1544100C2F89E /* Kentik.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EF186324F1544100C2F89E /* Kentik.swift */; };
 		B2F127A71E0B84230035B20C /* PubNub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127A61E0B84230035B20C /* PubNub.swift */; };
 		B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127A81E0B84B50035B20C /* Twilio.swift */; };
-		B2F127AB1E0B84F00035B20C /* Braintree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127AA1E0B84F00035B20C /* Braintree.swift */; };
 		B2F34041222630F20055C96F /* CloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F34040222630F20055C96F /* CloudApp.swift */; };
 		B2F35F261E5D181300E3A00E /* Quay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F35F251E5D181300E3A00E /* Quay.swift */; };
 		B2F55EE92408AB1A003D674C /* PlayStationNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F55EE82408AB1A003D674C /* PlayStationNetwork.swift */; };
@@ -535,7 +534,6 @@
 		B2EF186324F1544100C2F89E /* Kentik.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kentik.swift; sourceTree = "<group>"; };
 		B2F127A61E0B84230035B20C /* PubNub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubNub.swift; sourceTree = "<group>"; };
 		B2F127A81E0B84B50035B20C /* Twilio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twilio.swift; sourceTree = "<group>"; };
-		B2F127AA1E0B84F00035B20C /* Braintree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Braintree.swift; sourceTree = "<group>"; };
 		B2F34040222630F20055C96F /* CloudApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudApp.swift; sourceTree = "<group>"; };
 		B2F35F251E5D181300E3A00E /* Quay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quay.swift; sourceTree = "<group>"; };
 		B2F55EE82408AB1A003D674C /* PlayStationNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStationNetwork.swift; sourceTree = "<group>"; };
@@ -708,7 +706,6 @@
 				BF7AA78022B03AE4002460FB /* Bitrise.swift */,
 				7BA6A0A12240D8E000700C2C /* Bolt.swift */,
 				B2EC838C24547370001D2D2F /* Box.swift */,
-				B2F127AA1E0B84F00035B20C /* Braintree.swift */,
 				E5A4F04F86B9C0A9FB7233AE /* Branch.swift */,
 				B2894CE320EEE2780009CCA3 /* Buildkite.swift */,
 				B23EE5B224B9FF430067D800 /* Bullhorn.swift */,
@@ -1354,7 +1351,6 @@
 				B24220E41E2F6BBA0007E50E /* Typeform.swift in Sources */,
 				2F1B7559227A095400BA5CBD /* Avalara.swift in Sources */,
 				B2A4D7E4247E170A0089EA77 /* LetsEncrypt.swift in Sources */,
-				B2F127AB1E0B84F00035B20C /* Braintree.swift in Sources */,
 				B225E3E01E44830F008E1D3D /* SwitchableTableViewController.swift in Sources */,
 				B2228B6026C95D15002F01F0 /* Sendbird.swift in Sources */,
 				B256955D1E247C8C00FAE413 /* Pingdom.swift in Sources */,
