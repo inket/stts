@@ -26,6 +26,7 @@
 		5168C3411EE1FADD160353FF /* FirefoxRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */; };
 		5226672D519C409D932468BA /* Chargebee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3803B461B23AFD8DD026EB59 /* Chargebee.swift */; };
 		56EB1377353A8087B682B4E6 /* Primcloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160B2F5B66992A4DE58FF49 /* Primcloud.swift */; };
+		593FB40FF80AEB54E5E25B71 /* HelloSignHelloFax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881BD2B4F6BC008A1CE1A25B /* HelloSignHelloFax.swift */; };
 		5B446BB90D38D8C97F81126F /* Duo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC70B47B228492520C03D36 /* Duo.swift */; };
 		5BE9174C12190D85B29567FD /* HashiCorp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE85B45D490EF40F319860 /* HashiCorp.swift */; };
 		691A9AA9137E52D210A3A002 /* CloudAMQP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B49374D6F788B72D32911D8 /* CloudAMQP.swift */; };
@@ -315,6 +316,7 @@
 		7BA6A0A12240D8E000700C2C /* Bolt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bolt.swift; sourceTree = "<group>"; };
 		8797E2420F50AEF8E643093F /* AlertLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertLogic.swift; sourceTree = "<group>"; };
 		87DE85B45D490EF40F319860 /* HashiCorp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HashiCorp.swift; sourceTree = "<group>"; };
+		881BD2B4F6BC008A1CE1A25B /* HelloSignHelloFax.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelloSignHelloFax.swift; sourceTree = "<group>"; };
 		8FD39EC5F0FC240DE74BD82D /* LinkedInAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinkedInAPI.swift; sourceTree = "<group>"; };
 		9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Checkly.swift; sourceTree = "<group>"; };
 		A0C3F34A220FD630005D9998 /* Datadog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datadog.swift; sourceTree = "<group>"; };
@@ -747,6 +749,7 @@
 				B2C10F3B203646A7008E1E7D /* Gandi.swift */,
 				B254642221EE9AF6003068A4 /* GitHub.swift */,
 				87DE85B45D490EF40F319860 /* HashiCorp.swift */,
+				881BD2B4F6BC008A1CE1A25B /* HelloSignHelloFax.swift */,
 				B25695521E247C8C00FAE413 /* HipChat.swift */,
 				B231DD5F257B438900647312 /* HubSpot.swift */,
 				B2ABB6161F59770800DF8EC2 /* Imgix.swift */,
@@ -1448,6 +1451,7 @@
 				C28B812159CF77AD928CCAE9 /* Workflowy.swift in Sources */,
 				691A9AA9137E52D210A3A002 /* CloudAMQP.swift in Sources */,
 				5168C3411EE1FADD160353FF /* FirefoxRelay.swift in Sources */,
+				593FB40FF80AEB54E5E25B71 /* HelloSignHelloFax.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
