@@ -12,6 +12,11 @@ class GoogleApigee: GoogleCloudPlatform, SubService {
     let dashboardName = "Apigee"
 }
 
+class GoogleBareMetalSolution: GoogleCloudPlatform, SubService {
+    let name = "Google Bare Metal Solution"
+    let dashboardName = "Bare Metal Solution"
+}
+
 class GoogleCloudAssetInventory: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Asset Inventory"
     let dashboardName = "Cloud Asset Inventory"

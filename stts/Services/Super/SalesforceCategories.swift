@@ -18,6 +18,14 @@ class BaseSalesforceExperienceCloud: BaseSalesforceCategory {
     let url = URL(string: "https://status.salesforce.com/products/Community_Cloud")!
 }
 
+typealias Datorama =
+    BaseDatorama & RequiredServiceProperties & SalesforceStoreService
+
+class BaseDatorama: BaseSalesforceCategory {
+    static var store = SalesforceStore(key: "Datorama")
+    let url = URL(string: "https://status.salesforce.com/products/Datorama")!
+}
+
 typealias SalesforceMarketingCloud =
     BaseSalesforceMarketingCloud & RequiredServiceProperties & SalesforceStoreService
 

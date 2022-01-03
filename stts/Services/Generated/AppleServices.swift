@@ -120,6 +120,11 @@ class AppleFaceTime: Apple, SubService {
     let serviceName = "FaceTime"
 }
 
+class AppleFindMy: Apple, SubService {
+    let name = "Apple Find My"
+    let serviceName = "Find My"
+}
+
 class AppleFleetsmith: Apple, SubService {
     let name = "Apple Fleetsmith"
     let serviceName = "Fleetsmith"
@@ -138,6 +143,16 @@ class AppleGlobalServiceExchange: Apple, SubService {
 class AppleHealthSharingWithProvider: Apple, SubService {
     let name = "Apple Health sharing with provider"
     let serviceName = "Health sharing with provider"
+}
+
+class AppleHomeKit: Apple, SubService {
+    let name = "Apple HomeKit"
+    let serviceName = "HomeKit"
+}
+
+class AppleHomeKitSecureVideo: Apple, SubService {
+    let name = "Apple HomeKit Secure Video"
+    let serviceName = "HomeKit Secure Video"
 }
 
 class AppleICloudAccountAndSignIn: Apple, SubService {
@@ -223,11 +238,6 @@ class AppleITunesMatch: Apple, SubService {
 class AppleITunesStore: Apple, SubService {
     let name = "Apple iTunes Store"
     let serviceName = "iTunes Store"
-}
-
-class AppleITunesU: Apple, SubService {
-    let name = "Apple iTunes U"
-    let serviceName = "iTunes U"
 }
 
 class AppleIWorkForICloud: Apple, SubService {
@@ -353,6 +363,11 @@ class AppleAccount: AppleDeveloper, SubService {
     let serviceName = "Account"
 }
 
+class AppleAMPDeveloperContentDelivery: AppleDeveloper, SubService {
+    let name = "Apple AMP - Developer Content Delivery"
+    let serviceName = "AMP - Developer Content Delivery"
+}
+
 class AppleAPNS: AppleDeveloper, SubService {
     let name = "Apple APNS"
     let serviceName = "APNS"
@@ -453,6 +468,11 @@ class ApplePodcastsConnect: AppleDeveloper, SubService {
     let serviceName = "Apple Podcasts Connect"
 }
 
+class AppleBackToMyMac: AppleDeveloper, SubService {
+    let name = "Apple Back to My Mac"
+    let serviceName = "Back to My Mac"
+}
+
 class AppleCertificatesIdentifiersAndProfiles: AppleDeveloper, SubService {
     let name = "Apple Certificates, Identifiers & Profiles"
     let serviceName = "Certificates, Identifiers & Profiles"
@@ -486,16 +506,6 @@ class AppleDeveloperDocumentation: AppleDeveloper, SubService {
 class AppleDeveloperIDNotaryService: AppleDeveloper, SubService {
     let name = "Apple Developer ID Notary Service"
     let serviceName = "Developer ID Notary Service"
-}
-
-class AppleDeviceCheck: AppleDeveloper, SubService {
-    let name = "Apple Device Check"
-    let serviceName = "Device Check"
-}
-
-class AppleEnterpriseAppVerification: AppleDeveloper, SubService {
-    let name = "Apple Enterprise App Verification"
-    let serviceName = "Enterprise App Verification"
 }
 
 class AppleFeedbackAssistant: AppleDeveloper, SubService {

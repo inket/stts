@@ -56,6 +56,27 @@ class SalesforceExperienceCloudNA: SalesforceExperienceCloud, SubService {
     let location = "NA"
 }
 
+class DatoramaAll: Datorama, ServiceCategory {
+    let categoryName = "Datorama"
+    let subServiceSuperclass: AnyObject.Type = BaseDatorama.self
+
+    let name = "Datorama (All Regions)"
+    let key = "Datorama"
+    let location = "*"
+}
+
+class DatoramaEMEA: Datorama, SubService {
+    let name = "Datorama (EMEA)"
+    let key = "Datorama"
+    let location = "EMEA"
+}
+
+class DatoramaNA: Datorama, SubService {
+    let name = "Datorama (NA)"
+    let key = "Datorama"
+    let location = "NA"
+}
+
 class SalesforceMarketingCloudAll: SalesforceMarketingCloud, ServiceCategory {
     let categoryName = "Salesforce Marketing Cloud"
     let subServiceSuperclass: AnyObject.Type = BaseSalesforceMarketingCloud.self

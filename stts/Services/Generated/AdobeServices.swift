@@ -52,11 +52,6 @@ class AdobeDigitalVideoAndAudio: Adobe {
     let id = 1627
 }
 
-class AdobeJourneyOptimizer: Adobe {
-    let name = "Adobe Journey Optimizer"
-    let id = 5538
-}
-
 class AdobeMessageAuthoring: Adobe {
     let name = "Adobe Message Authoring"
     let id = 6347
@@ -125,6 +120,11 @@ class AdobeCapture: AdobeCreativeCloud, SubService {
 class AdobeColor: AdobeCreativeCloud, SubService {
     let name = "Adobe Color"
     let id = 5682
+}
+
+class AdobeCommerce: AdobeExperienceCloud, SubService {
+    let name = "Adobe Commerce"
+    let id = 3350
 }
 
 class AdobeConnect: AdobeExperienceCloud, SubService {
@@ -252,6 +252,11 @@ class AdobeInviteAccept: AdobeServices, SubService {
     let id = 2964
 }
 
+class AdobeJourneyOptimizer: AdobeExperienceCloud, SubService {
+    let name = "Adobe Journey Optimizer"
+    let id = 5538
+}
+
 class AdobeJourneyOrchestration: AdobeExperiencePlatform, SubService {
     let name = "Adobe Journey Orchestration"
     let id = 5224
@@ -265,11 +270,6 @@ class AdobeLightroom: AdobeCreativeCloud, SubService {
 class AdobeLive: AdobeCreativeCloud, SubService {
     let name = "Adobe Live"
     let id = 5683
-}
-
-class AdobeMagento: AdobeExperienceCloud, SubService {
-    let name = "Adobe Magento"
-    let id = 3350
 }
 
 class AdobeMarketoEngage: AdobeExperienceCloud, SubService {
