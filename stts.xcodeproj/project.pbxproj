@@ -31,6 +31,7 @@
 		5BE9174C12190D85B29567FD /* HashiCorp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE85B45D490EF40F319860 /* HashiCorp.swift */; };
 		691A9AA9137E52D210A3A002 /* CloudAMQP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B49374D6F788B72D32911D8 /* CloudAMQP.swift */; };
 		6BCBA0EA2558643D0019DF23 /* Recruiterbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */; };
+		6D03955E8178A1153BBD9D01 /* Netlify.swift in Sources */ = {isa = PBXBuildFile; fileRef = D819CB63B6576DA05BFC764C /* Netlify.swift */; };
 		7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B305FAA210237AA0086DCE0 /* Spoke.swift */; };
 		7BA6A0A22240D8E000700C2C /* Bolt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6A0A12240D8E000700C2C /* Bolt.swift */; };
 		A0C3F34B220FD630005D9998 /* Datadog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3F34A220FD630005D9998 /* Datadog.swift */; };
@@ -104,7 +105,6 @@
 		B23533DF2285B48F00DEDC36 /* DateHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23533DE2285B48E00DEDC36 /* DateHelper.framework */; };
 		B23533E02285B49700DEDC36 /* DateHelper.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B23533DE2285B48E00DEDC36 /* DateHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B235341F22888EFE00DEDC36 /* Sendinblue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235341E22888EFE00DEDC36 /* Sendinblue.swift */; };
-		B2357D711E5C08AF0093B8A6 /* Netlify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2357D701E5C08AF0093B8A6 /* Netlify.swift */; };
 		B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235B3BC1DF562C400821936 /* SettingsView.swift */; };
 		B23646B12627C14E00AB9486 /* LogzIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23646AF2627C14E00AB9486 /* LogzIO.swift */; };
 		B23646B22627C14E00AB9486 /* VisualStudioAppCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23646B02627C14E00AB9486 /* VisualStudioAppCenter.swift */; };
@@ -393,7 +393,6 @@
 		B232A18C20944B950066AD01 /* Cloud66.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud66.swift; sourceTree = "<group>"; };
 		B23533DE2285B48E00DEDC36 /* DateHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DateHelper.framework; path = Carthage/Build/Mac/DateHelper.framework; sourceTree = SOURCE_ROOT; };
 		B235341E22888EFE00DEDC36 /* Sendinblue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sendinblue.swift; sourceTree = "<group>"; };
-		B2357D701E5C08AF0093B8A6 /* Netlify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
 		B235B3BC1DF562C400821936 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B23646AF2627C14E00AB9486 /* LogzIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogzIO.swift; sourceTree = "<group>"; };
 		B23646B02627C14E00AB9486 /* VisualStudioAppCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualStudioAppCenter.swift; sourceTree = "<group>"; };
@@ -550,6 +549,7 @@
 		BF7AA78022B03AE4002460FB /* Bitrise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitrise.swift; sourceTree = "<group>"; };
 		C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeTransfer.swift; sourceTree = "<group>"; };
 		D52F2CDBBA1C28D8E93EFB1C /* PlausibleAnalytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlausibleAnalytics.swift; sourceTree = "<group>"; };
+		D819CB63B6576DA05BFC764C /* Netlify.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
 		E5A4F04F86B9C0A9FB7233AE /* Branch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
 		E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirefoxRelay.swift; sourceTree = "<group>"; };
 		FEC70B47B228492520C03D36 /* Duo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Duo.swift; sourceTree = "<group>"; };
@@ -777,6 +777,7 @@
 				B213D1F9269ADA0F005EBDDA /* MuleSoft.swift */,
 				36AD8ED8235A310500F2FD73 /* Mural.swift */,
 				B299C8461DD04D7C0024D2E9 /* NPM.swift */,
+				D819CB63B6576DA05BFC764C /* Netlify.swift */,
 				B299C8421DD044160024D2E9 /* NewRelic.swift */,
 				B2107BCD254C970000284EE7 /* Notion.swift */,
 				B22BB3A0223B341B00B43BED /* OnePassword.swift */,
@@ -969,7 +970,6 @@
 				B2253A6E209F42430039F574 /* Firebase.swift */,
 				B2E70FDA22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift */,
 				B2FDC9191D67029900F0B728 /* Heroku.swift */,
-				B2357D701E5C08AF0093B8A6 /* Netlify.swift */,
 				B21492CA21EE9BD70065103E /* ScaleGrid.swift */,
 				B2228B6126C9623C002F01F0 /* SendbirdAll.swift */,
 				B242AB3526E34DE9007EE672 /* SignalWire.swift */,
@@ -1390,7 +1390,6 @@
 				B2C337A51E1417390007E110 /* Mixpanel.swift in Sources */,
 				B2ED7661258E42C000014242 /* Lever.swift in Sources */,
 				B200CA74247FC5AE00DB0868 /* AdobeServices.swift in Sources */,
-				B2357D711E5C08AF0093B8A6 /* Netlify.swift in Sources */,
 				B227D30D25D5886B00951917 /* FreeAgent.swift in Sources */,
 				B2A93ADD1EB814C000D36DD3 /* Snyk.swift in Sources */,
 				7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */,
@@ -1452,6 +1451,7 @@
 				691A9AA9137E52D210A3A002 /* CloudAMQP.swift in Sources */,
 				5168C3411EE1FADD160353FF /* FirefoxRelay.swift in Sources */,
 				593FB40FF80AEB54E5E25B71 /* HelloSignHelloFax.swift in Sources */,
+				6D03955E8178A1153BBD9D01 /* Netlify.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
