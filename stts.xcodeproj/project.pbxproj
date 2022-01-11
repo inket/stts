@@ -10,11 +10,13 @@
 		03C5FB131E203325003C40B8 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5FB121E203325003C40B8 /* Packet.swift */; };
 		07903F3F2A403F03BDDD3AD1 /* JumpCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C3B179FEEE9F7F150196F /* JumpCloud.swift */; };
 		0851FE81840F6555301382D8 /* PlausibleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F2CDBBA1C28D8E93EFB1C /* PlausibleAnalytics.swift */; };
+		0988F07539A4DBD9DA7D690A /* Customerio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA65AF81160DCD231D5F43 /* Customerio.swift */; };
 		0FDDACCD23CD7EBF00FE96CD /* ElasticCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDDACCC23CD7EBF00FE96CD /* ElasticCloud.swift */; };
 		18AAC49BEE71BAA18FAFCDB1 /* AlertLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8797E2420F50AEF8E643093F /* AlertLogic.swift */; };
 		194BC88222A8EAC10065E698 /* Clubhouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BC88122A8EAC00065E698 /* Clubhouse.swift */; };
 		2009CD655C4526247CF38971 /* ReadMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4E2FFFE60AE5D0E0BB449 /* ReadMe.swift */; };
 		23E3868C156CA9A739D83D90 /* Aiven.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB41ECF9F0F03EC8916A646 /* Aiven.swift */; };
+		2DE1BBB015563FC67C35CD03 /* Dialpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AE0427F33807B67A98607 /* Dialpad.swift */; };
 		2F1B7559227A095400BA5CBD /* Avalara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B7558227A095400BA5CBD /* Avalara.swift */; };
 		2F65F490227A198400432E64 /* Recurly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F65F48F227A198400432E64 /* Recurly.swift */; };
 		2F802A9BB36717992C334CB8 /* Medium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B24BCA673F692E9211E7B8D /* Medium.swift */; };
@@ -34,6 +36,7 @@
 		6D03955E8178A1153BBD9D01 /* Netlify.swift in Sources */ = {isa = PBXBuildFile; fileRef = D819CB63B6576DA05BFC764C /* Netlify.swift */; };
 		7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B305FAA210237AA0086DCE0 /* Spoke.swift */; };
 		7BA6A0A22240D8E000700C2C /* Bolt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6A0A12240D8E000700C2C /* Bolt.swift */; };
+		7E1580ED5174442F7B691728 /* Blend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7B31666FF70588A709098 /* Blend.swift */; };
 		A0C3F34B220FD630005D9998 /* Datadog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3F34A220FD630005D9998 /* Datadog.swift */; };
 		A125C59E20F7909500C513B3 /* Fastly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125C59D20F7909500C513B3 /* Fastly.swift */; };
 		A133C8B720F8F3670068CFE8 /* Mailgun.swift in Sources */ = {isa = PBXBuildFile; fileRef = A133C8B620F8F3670068CFE8 /* Mailgun.swift */; };
@@ -254,12 +257,14 @@
 		B2FDC91C1D67062200F0B728 /* StatusPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91B1D67062200F0B728 /* StatusPageService.swift */; };
 		B2FDC91E1D6706C400F0B728 /* CircleCI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91D1D6706C400F0B728 /* CircleCI.swift */; };
 		B2FFC1F01E261B4A00529A00 /* Dropbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */; };
+		B8F6688F6454FD58216F09B7 /* Kustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EACF9101337BC18198C82 /* Kustomer.swift */; };
 		BF7AA78122B03AE4002460FB /* Bitrise.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AA78022B03AE4002460FB /* Bitrise.swift */; };
 		C1B04EA0748F30D966A77B19 /* Acoustic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439EADCB08D6940C642E98B8 /* Acoustic.swift */; };
 		C28B812159CF77AD928CCAE9 /* Workflowy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F844F11070AF5B4CD7719E /* Workflowy.swift */; };
 		C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */; };
 		E2AAECBE89E07C6E94464ABF /* Checkly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */; };
 		E5B35A5C6608D856A99842B2 /* Miro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCCFA4ECD8BB402C7254FEF /* Miro.swift */; };
+		EF67ABCF8677A86151FBBA38 /* Bugsnag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80361FCB72F96FA6F753D7C1 /* Bugsnag.swift */; };
 		FC278203BFB2E7D5A41639ED /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A4F04F86B9C0A9FB7233AE /* Branch.swift */; };
 /* End PBXBuildFile section */
 
@@ -298,6 +303,7 @@
 		194BC88122A8EAC00065E698 /* Clubhouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clubhouse.swift; sourceTree = "<group>"; };
 		1CB4E2FFFE60AE5D0E0BB449 /* ReadMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReadMe.swift; sourceTree = "<group>"; };
 		1CCCFA4ECD8BB402C7254FEF /* Miro.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Miro.swift; sourceTree = "<group>"; };
+		223AE0427F33807B67A98607 /* Dialpad.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Dialpad.swift; sourceTree = "<group>"; };
 		2F1B7558227A095400BA5CBD /* Avalara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avalara.swift; sourceTree = "<group>"; };
 		2F65F48F227A198400432E64 /* Recurly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recurly.swift; sourceTree = "<group>"; };
 		36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDarkly.swift; sourceTree = "<group>"; };
@@ -314,6 +320,7 @@
 		70244989EDA4E2F3CF20FA50 /* Doppler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Doppler.swift; sourceTree = "<group>"; };
 		7B305FAA210237AA0086DCE0 /* Spoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spoke.swift; sourceTree = "<group>"; };
 		7BA6A0A12240D8E000700C2C /* Bolt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bolt.swift; sourceTree = "<group>"; };
+		80361FCB72F96FA6F753D7C1 /* Bugsnag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bugsnag.swift; sourceTree = "<group>"; };
 		8797E2420F50AEF8E643093F /* AlertLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertLogic.swift; sourceTree = "<group>"; };
 		87DE85B45D490EF40F319860 /* HashiCorp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HashiCorp.swift; sourceTree = "<group>"; };
 		881BD2B4F6BC008A1CE1A25B /* HelloSignHelloFax.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelloSignHelloFax.swift; sourceTree = "<group>"; };
@@ -322,6 +329,8 @@
 		A0C3F34A220FD630005D9998 /* Datadog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datadog.swift; sourceTree = "<group>"; };
 		A125C59D20F7909500C513B3 /* Fastly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fastly.swift; sourceTree = "<group>"; };
 		A133C8B620F8F3670068CFE8 /* Mailgun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailgun.swift; sourceTree = "<group>"; };
+		A95EACF9101337BC18198C82 /* Kustomer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Kustomer.swift; sourceTree = "<group>"; };
+		A9CA65AF81160DCD231D5F43 /* Customerio.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Customerio.swift; sourceTree = "<group>"; };
 		AFB41ECF9F0F03EC8916A646 /* Aiven.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Aiven.swift; sourceTree = "<group>"; };
 		B2006CF8223B356F0057E144 /* ProtonMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtonMail.swift; sourceTree = "<group>"; };
 		B200CA71247FBC0A00DB0868 /* generate_adobe_services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generate_adobe_services.swift; sourceTree = "<group>"; };
@@ -547,6 +556,7 @@
 		B2FDC91D1D6706C400F0B728 /* CircleCI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCI.swift; sourceTree = "<group>"; };
 		B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dropbox.swift; sourceTree = "<group>"; };
 		BF7AA78022B03AE4002460FB /* Bitrise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitrise.swift; sourceTree = "<group>"; };
+		C5F7B31666FF70588A709098 /* Blend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Blend.swift; sourceTree = "<group>"; };
 		C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeTransfer.swift; sourceTree = "<group>"; };
 		D52F2CDBBA1C28D8E93EFB1C /* PlausibleAnalytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlausibleAnalytics.swift; sourceTree = "<group>"; };
 		D819CB63B6576DA05BFC764C /* Netlify.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
@@ -706,9 +716,11 @@
 				B299C84E1DD04F8F0024D2E9 /* BitBucket.swift */,
 				B2767A0E255FBC3E0047A9BE /* Bitmovin.swift */,
 				BF7AA78022B03AE4002460FB /* Bitrise.swift */,
+				C5F7B31666FF70588A709098 /* Blend.swift */,
 				7BA6A0A12240D8E000700C2C /* Bolt.swift */,
 				B2EC838C24547370001D2D2F /* Box.swift */,
 				E5A4F04F86B9C0A9FB7233AE /* Branch.swift */,
+				80361FCB72F96FA6F753D7C1 /* Bugsnag.swift */,
 				B2894CE320EEE2780009CCA3 /* Buildkite.swift */,
 				B23EE5B224B9FF430067D800 /* Bullhorn.swift */,
 				B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */,
@@ -729,9 +741,11 @@
 				B2D0F22324611AD700F5501C /* ConfluentCloud.swift */,
 				B22527F41E5BD0C70098E73D /* Contentful.swift */,
 				B2D468281E2F0F82000F8F6B /* Coveralls.swift */,
+				A9CA65AF81160DCD231D5F43 /* Customerio.swift */,
 				B2FAB94B1E5C029A00B8921F /* DNSimple.swift */,
 				A0C3F34A220FD630005D9998 /* Datadog.swift */,
 				B232047E22158BDF000DC1B0 /* DatadogEU.swift */,
+				223AE0427F33807B67A98607 /* Dialpad.swift */,
 				B22BA3011E8119AB0038D8F6 /* Discord.swift */,
 				70244989EDA4E2F3CF20FA50 /* Doppler.swift */,
 				B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */,
@@ -758,6 +772,7 @@
 				4E2C3B179FEEE9F7F150196F /* JumpCloud.swift */,
 				B23D4E6E1E13475900B04F18 /* KeenIO.swift */,
 				B2EF186324F1544100C2F89E /* Kentik.swift */,
+				A95EACF9101337BC18198C82 /* Kustomer.swift */,
 				B2D6FDAD21B95A0800F95940 /* LastPass.swift */,
 				36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */,
 				B2ED7660258E42C000014242 /* Lever.swift */,
@@ -1452,6 +1467,11 @@
 				5168C3411EE1FADD160353FF /* FirefoxRelay.swift in Sources */,
 				593FB40FF80AEB54E5E25B71 /* HelloSignHelloFax.swift in Sources */,
 				6D03955E8178A1153BBD9D01 /* Netlify.swift in Sources */,
+				0988F07539A4DBD9DA7D690A /* Customerio.swift in Sources */,
+				2DE1BBB015563FC67C35CD03 /* Dialpad.swift in Sources */,
+				B8F6688F6454FD58216F09B7 /* Kustomer.swift in Sources */,
+				EF67ABCF8677A86151FBBA38 /* Bugsnag.swift in Sources */,
+				7E1580ED5174442F7B691728 /* Blend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
