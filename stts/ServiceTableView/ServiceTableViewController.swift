@@ -51,6 +51,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         }
 
         bottomBar.closeSettingsCallback = { [weak self] in
+            self?.reloadData()
             self?.editorTableViewController.hide()
             self?.show()
         }
