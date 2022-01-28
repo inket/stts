@@ -10,6 +10,7 @@ class SettingsView: NSView {
     let settingsHeader = SectionHeaderView(name: "Preferences")
     let startAtLoginCheckbox = NSButton()
     let notifyCheckbox = NSButton()
+    let hideGoodStatus = NSButton()
 
     let servicesHeader = SectionHeaderView(name: "Services")
     let searchField = NSSearchField()
@@ -27,7 +28,7 @@ class SettingsView: NSView {
     }
 
     func setup() {
-        [settingsHeader, startAtLoginCheckbox, notifyCheckbox, servicesHeader, searchField].forEach {
+        [settingsHeader, startAtLoginCheckbox, notifyCheckbox, hideGoodStatus, servicesHeader, searchField].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
@@ -47,6 +48,13 @@ class SettingsView: NSView {
         notifyCheckbox.state = Preferences.shared.notifyOnStatusChange ? .on : .off
         notifyCheckbox.action = #selector(SettingsView.updateNotifyOnStatusChange)
         notifyCheckbox.target = self
+
+        hideGoodStatus.setButtonType(.switch)
+        hideGoodStatus.title = "Hide good status description"
+        hideGoodStatus.font = smallFont
+        hideGoodStatus.state = Preferences.shared.hideGoodStatusMessage ? .on : .off
+        hideGoodStatus.action = #selector(SettingsView.hideGoodStatusMessage)
+        hideGoodStatus.target = self
 
         searchField.sendsSearchStringImmediately = true
         searchField.sendsWholeSearchString = false
@@ -69,7 +77,12 @@ class SettingsView: NSView {
             notifyCheckbox.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
             notifyCheckbox.heightAnchor.constraint(equalToConstant: 18),
 
-            servicesHeader.topAnchor.constraint(equalTo: notifyCheckbox.bottomAnchor, constant: 10),
+            hideGoodStatus.topAnchor.constraint(equalTo: notifyCheckbox.bottomAnchor, constant: 6),
+            hideGoodStatus.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
+            hideGoodStatus.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
+            hideGoodStatus.heightAnchor.constraint(equalToConstant: 18),
+
+            servicesHeader.topAnchor.constraint(equalTo: hideGoodStatus.bottomAnchor, constant: 10),
             servicesHeader.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
             servicesHeader.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6),
             servicesHeader.heightAnchor.constraint(equalToConstant: 16),
@@ -87,6 +100,10 @@ class SettingsView: NSView {
 
     @objc private func updateNotifyOnStatusChange() {
         Preferences.shared.notifyOnStatusChange = (notifyCheckbox.state == .on)
+    }
+
+    @objc private func hideGoodStatusMessage() {
+        Preferences.shared.hideGoodStatusMessage = (hideGoodStatus.state == .on)
     }
 
     @objc private func filterServices() {

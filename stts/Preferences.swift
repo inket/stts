@@ -13,6 +13,11 @@ struct Preferences {
         set { UserDefaults.standard.set(newValue, forKey: "notifyOnStatusChange") }
     }
 
+    var hideGoodStatusMessage: Bool {
+        get { return UserDefaults.standard.bool(forKey: "hideGoodStatusMessage") }
+        set { UserDefaults.standard.set(newValue, forKey: "hideGoodStatusMessage") }
+    }
+
     var selectedServices: [BaseService] {
         get {
             guard let classNames = UserDefaults.standard.array(forKey: "selectedServices") as? [String] else {
@@ -31,6 +36,7 @@ struct Preferences {
     init() {
         UserDefaults.standard.register(defaults: [
             "notifyOnStatusChange": true,
+            "hideGoodStatusMessage": false,
             "selectedServices": ["CircleCI", "Cloudflare", "GitHub", "NPM", "TravisCI"]
         ])
 
