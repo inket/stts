@@ -154,7 +154,7 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
             settingsView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             settingsView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             settingsView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            settingsView.heightAnchor.constraint(equalToConstant: 150)
+            settingsView.heightAnchor.constraint(equalToConstant: 170)
         ])
     }
 

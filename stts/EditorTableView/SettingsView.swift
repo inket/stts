@@ -40,25 +40,25 @@ class SettingsView: NSView {
             addSubview($0)
         }
 
-        let smallFont = NSFont.systemFont(ofSize: NSFont.systemFontSize(for: .small))
+        let font = NSFont.systemFont(ofSize: NSFont.systemFontSize(for: .regular))
 
         startAtLoginCheckbox.setButtonType(.switch)
         startAtLoginCheckbox.title = "Start at Login"
-        startAtLoginCheckbox.font = smallFont
+        startAtLoginCheckbox.font = font
         startAtLoginCheckbox.state = StartAtLogin.enabled ? .on : .off
         startAtLoginCheckbox.action = #selector(SettingsView.updateStartAtLogin)
         startAtLoginCheckbox.target = self
 
         notifyCheckbox.setButtonType(.switch)
         notifyCheckbox.title = "Notify when a status changes"
-        notifyCheckbox.font = smallFont
+        notifyCheckbox.font = font
         notifyCheckbox.state = Preferences.shared.notifyOnStatusChange ? .on : .off
         notifyCheckbox.action = #selector(SettingsView.updateNotifyOnStatusChange)
         notifyCheckbox.target = self
 
         hideServiceDetailsIfAvailableCheckbox.setButtonType(.switch)
         hideServiceDetailsIfAvailableCheckbox.title = "Hide details of available services"
-        hideServiceDetailsIfAvailableCheckbox.font = smallFont
+        hideServiceDetailsIfAvailableCheckbox.font = font
         hideServiceDetailsIfAvailableCheckbox.state = Preferences.shared.hideServiceDetailsIfAvailable ? .on : .off
         hideServiceDetailsIfAvailableCheckbox.action = #selector(SettingsView.updateHideServiceDetailsIfAvailable)
         hideServiceDetailsIfAvailableCheckbox.target = self
@@ -72,17 +72,17 @@ class SettingsView: NSView {
             settingsHeader.topAnchor.constraint(equalTo: topAnchor, constant: 6),
             settingsHeader.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
             settingsHeader.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6),
-            settingsHeader.heightAnchor.constraint(equalToConstant: 16),
+            settingsHeader.heightAnchor.constraint(equalToConstant: 20),
 
             startAtLoginCheckbox.topAnchor.constraint(equalTo: settingsHeader.bottomAnchor, constant: 6),
             startAtLoginCheckbox.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
             startAtLoginCheckbox.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
-            startAtLoginCheckbox.heightAnchor.constraint(equalToConstant: 18),
+            startAtLoginCheckbox.heightAnchor.constraint(equalToConstant: 22),
 
             notifyCheckbox.topAnchor.constraint(equalTo: startAtLoginCheckbox.bottomAnchor, constant: 6),
             notifyCheckbox.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
             notifyCheckbox.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
-            notifyCheckbox.heightAnchor.constraint(equalToConstant: 18),
+            notifyCheckbox.heightAnchor.constraint(equalToConstant: 22),
 
             hideServiceDetailsIfAvailableCheckbox.topAnchor.constraint(
                 equalTo: notifyCheckbox.bottomAnchor,
@@ -90,7 +90,7 @@ class SettingsView: NSView {
             ),
             hideServiceDetailsIfAvailableCheckbox.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
             hideServiceDetailsIfAvailableCheckbox.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
-            hideServiceDetailsIfAvailableCheckbox.heightAnchor.constraint(equalToConstant: 18),
+            hideServiceDetailsIfAvailableCheckbox.heightAnchor.constraint(equalToConstant: 22),
 
             servicesHeader.topAnchor.constraint(
                 equalTo: hideServiceDetailsIfAvailableCheckbox.bottomAnchor,
@@ -98,7 +98,7 @@ class SettingsView: NSView {
             ),
             servicesHeader.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
             servicesHeader.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6),
-            servicesHeader.heightAnchor.constraint(equalToConstant: 16),
+            servicesHeader.heightAnchor.constraint(equalToConstant: 20),
 
             searchField.topAnchor.constraint(equalTo: servicesHeader.bottomAnchor, constant: 6),
             searchField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),

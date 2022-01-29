@@ -22,11 +22,17 @@ class SectionHeaderView: NSTextField {
         self.isEditable = false
         self.isBordered = false
         self.isSelectable = false
-        let italicFont = NSFontManager.shared.font(withFamily: NSFont.systemFont(ofSize: 10).fontName,
-                                                     traits: NSFontTraitMask.italicFontMask,
-                                                     weight: 5,
-                                                     size: 10)
+
+        let fontSize = NSFont.systemFontSize(for: .regular)
+        let font = NSFont.systemFont(ofSize: fontSize)
+        let italicFont = NSFontManager.shared.font(
+            withFamily: font.fontName,
+            traits: NSFontTraitMask.italicFontMask,
+            weight: 5,
+            size: fontSize
+        )
         self.font = italicFont
+
         self.textColor = NSColor.secondaryLabelColor
         self.maximumNumberOfLines = 1
         self.cell!.truncatesLastVisibleLine = true

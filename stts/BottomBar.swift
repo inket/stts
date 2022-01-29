@@ -126,15 +126,17 @@ class BottomBar: NSView {
         statusField.isEditable = false
         statusField.isBordered = false
         statusField.isSelectable = false
-        let font = NSFont.systemFont(ofSize: 12)
+
+        let fontSize = NSFont.systemFontSize(for: .small)
+        let font = NSFont.systemFont(ofSize: fontSize)
         let italicFont = NSFontManager.shared.font(
             withFamily: font.fontName,
             traits: NSFontTraitMask.italicFontMask,
             weight: 5,
-            size: 10
+            size: fontSize
         )
-
         statusField.font = italicFont
+
         statusField.textColor = NSColor.secondaryLabelColor
         statusField.maximumNumberOfLines = 1
         statusField.backgroundColor = NSColor.clear
