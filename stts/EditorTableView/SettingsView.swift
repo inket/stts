@@ -43,7 +43,7 @@ class SettingsView: NSView {
         let font = NSFont.systemFont(ofSize: NSFont.systemFontSize(for: .regular))
 
         startAtLoginCheckbox.setButtonType(.switch)
-        startAtLoginCheckbox.title = "Start at Login"
+        startAtLoginCheckbox.title = "Start at login"
         startAtLoginCheckbox.font = font
         startAtLoginCheckbox.state = StartAtLogin.enabled ? .on : .off
         startAtLoginCheckbox.action = #selector(SettingsView.updateStartAtLogin)
