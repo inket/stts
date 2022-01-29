@@ -13,9 +13,9 @@ struct Preferences {
         set { UserDefaults.standard.set(newValue, forKey: "notifyOnStatusChange") }
     }
 
-    var hideGoodStatusMessage: Bool {
-        get { return UserDefaults.standard.bool(forKey: "hideGoodStatusMessage") }
-        set { UserDefaults.standard.set(newValue, forKey: "hideGoodStatusMessage") }
+    var hideServiceDetailsIfAvailable: Bool {
+        get { return UserDefaults.standard.bool(forKey: "hideServiceDetailsIfAvailable") }
+        set { UserDefaults.standard.set(newValue, forKey: "hideServiceDetailsIfAvailable") }
     }
 
     var selectedServices: [BaseService] {
@@ -36,7 +36,7 @@ struct Preferences {
     init() {
         UserDefaults.standard.register(defaults: [
             "notifyOnStatusChange": true,
-            "hideGoodStatusMessage": false,
+            "hideServiceDetailsIfAvailable": false,
             "selectedServices": ["CircleCI", "Cloudflare", "GitHub", "NPM", "TravisCI"]
         ])
 

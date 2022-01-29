@@ -10,7 +10,7 @@ class SettingsView: NSView {
     let settingsHeader = SectionHeaderView(name: "Preferences")
     let startAtLoginCheckbox = NSButton()
     let notifyCheckbox = NSButton()
-    let hideGoodStatus = NSButton()
+    let hideServiceDetailsIfAvailableCheckbox = NSButton()
 
     let servicesHeader = SectionHeaderView(name: "Services")
     let searchField = NSSearchField()
@@ -28,7 +28,14 @@ class SettingsView: NSView {
     }
 
     func setup() {
-        [settingsHeader, startAtLoginCheckbox, notifyCheckbox, hideGoodStatus, servicesHeader, searchField].forEach {
+        [
+            settingsHeader,
+            startAtLoginCheckbox,
+            notifyCheckbox,
+            hideServiceDetailsIfAvailableCheckbox,
+            servicesHeader,
+            searchField
+        ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
@@ -49,12 +56,12 @@ class SettingsView: NSView {
         notifyCheckbox.action = #selector(SettingsView.updateNotifyOnStatusChange)
         notifyCheckbox.target = self
 
-        hideGoodStatus.setButtonType(.switch)
-        hideGoodStatus.title = "Hide good status description"
-        hideGoodStatus.font = smallFont
-        hideGoodStatus.state = Preferences.shared.hideGoodStatusMessage ? .on : .off
-        hideGoodStatus.action = #selector(SettingsView.hideGoodStatusMessage)
-        hideGoodStatus.target = self
+        hideServiceDetailsIfAvailableCheckbox.setButtonType(.switch)
+        hideServiceDetailsIfAvailableCheckbox.title = "Hide details of available services"
+        hideServiceDetailsIfAvailableCheckbox.font = smallFont
+        hideServiceDetailsIfAvailableCheckbox.state = Preferences.shared.hideServiceDetailsIfAvailable ? .on : .off
+        hideServiceDetailsIfAvailableCheckbox.action = #selector(SettingsView.updateHideServiceDetailsIfAvailable)
+        hideServiceDetailsIfAvailableCheckbox.target = self
 
         searchField.sendsSearchStringImmediately = true
         searchField.sendsWholeSearchString = false
@@ -77,12 +84,18 @@ class SettingsView: NSView {
             notifyCheckbox.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
             notifyCheckbox.heightAnchor.constraint(equalToConstant: 18),
 
-            hideGoodStatus.topAnchor.constraint(equalTo: notifyCheckbox.bottomAnchor, constant: 6),
-            hideGoodStatus.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
-            hideGoodStatus.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
-            hideGoodStatus.heightAnchor.constraint(equalToConstant: 18),
+            hideServiceDetailsIfAvailableCheckbox.topAnchor.constraint(
+                equalTo: notifyCheckbox.bottomAnchor,
+                constant: 6
+            ),
+            hideServiceDetailsIfAvailableCheckbox.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
+            hideServiceDetailsIfAvailableCheckbox.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
+            hideServiceDetailsIfAvailableCheckbox.heightAnchor.constraint(equalToConstant: 18),
 
-            servicesHeader.topAnchor.constraint(equalTo: hideGoodStatus.bottomAnchor, constant: 10),
+            servicesHeader.topAnchor.constraint(
+                equalTo: hideServiceDetailsIfAvailableCheckbox.bottomAnchor,
+                constant: 10
+            ),
             servicesHeader.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
             servicesHeader.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6),
             servicesHeader.heightAnchor.constraint(equalToConstant: 16),
@@ -95,15 +108,15 @@ class SettingsView: NSView {
     }
 
     @objc private func updateStartAtLogin() {
-        StartAtLogin.enabled = (startAtLoginCheckbox.state == .on)
+        StartAtLogin.enabled = startAtLoginCheckbox.state == .on
     }
 
     @objc private func updateNotifyOnStatusChange() {
-        Preferences.shared.notifyOnStatusChange = (notifyCheckbox.state == .on)
+        Preferences.shared.notifyOnStatusChange = notifyCheckbox.state == .on
     }
 
-    @objc private func hideGoodStatusMessage() {
-        Preferences.shared.hideGoodStatusMessage = (hideGoodStatus.state == .on)
+    @objc private func updateHideServiceDetailsIfAvailable() {
+        Preferences.shared.hideServiceDetailsIfAvailable = hideServiceDetailsIfAvailableCheckbox.state == .on
     }
 
     @objc private func filterServices() {

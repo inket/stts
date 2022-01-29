@@ -12,8 +12,6 @@ class StatusTableCell: NSTableCellView {
     let titleField = NSTextField()
     let statusField = NSTextField()
 
-    var hideGoodStatus = false
-
     enum Layout {
         static let verticalPadding: CGFloat = 10
         static let verticalSpacing: CGFloat = 4
@@ -116,6 +114,6 @@ class StatusTableCell: NSTableCellView {
         titleField.stringValue = service.name
         statusIndicator.status = service.status
         statusField.stringValue = service.message
-        statusField.isHidden = service.status == .good && Preferences.shared.hideGoodStatusMessage
+        statusField.isHidden = service.status == .good && Preferences.shared.hideServiceDetailsIfAvailable
     }
 }
