@@ -232,6 +232,7 @@
 		B2DCE6952215ACDE001447D8 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCE6942215ACDE001447D8 /* StringExtensions.swift */; };
 		B2DEE0BE1E696D64006B198E /* Slack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DEE0BD1E696D64006B198E /* Slack.swift */; };
 		B2E018FD214E60E700C5F75B /* AppearanceObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E018FC214E60E700C5F75B /* AppearanceObserver.swift */; };
+		B2E128E727A4DCD6009B1B4C /* ClickUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E128E627A4DCD6009B1B4C /* ClickUp.swift */; };
 		B2E6C8F0253C24AE001210E4 /* Fivetran.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E6C8EF253C24AE001210E4 /* Fivetran.swift */; };
 		B2E6C8F3253C24CD001210E4 /* Lumanox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E6C8F2253C24CD001210E4 /* Lumanox.swift */; };
 		B2E70FD822B069BA000BCAD2 /* GoogleCloudPlatformServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E70FD722B069BA000BCAD2 /* GoogleCloudPlatformServices.swift */; };
@@ -528,6 +529,7 @@
 		B2DCE6942215ACDE001447D8 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		B2DEE0BD1E696D64006B198E /* Slack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slack.swift; sourceTree = "<group>"; };
 		B2E018FC214E60E700C5F75B /* AppearanceObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceObserver.swift; sourceTree = "<group>"; };
+		B2E128E627A4DCD6009B1B4C /* ClickUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickUp.swift; sourceTree = "<group>"; };
 		B2E6C8EF253C24AE001210E4 /* Fivetran.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fivetran.swift; sourceTree = "<group>"; };
 		B2E6C8F2253C24CD001210E4 /* Lumanox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lumanox.swift; sourceTree = "<group>"; };
 		B2E70FD322B0657F000BCAD2 /* generate_services_plist.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = generate_services_plist.sh; sourceTree = "<group>"; };
@@ -653,6 +655,7 @@
 		B26CB5711E13448900116A33 /* Status.ioV1 */ = {
 			isa = PBXGroup;
 			children = (
+				B2E128E627A4DCD6009B1B4C /* ClickUp.swift */,
 				B232A18C20944B950066AD01 /* Cloud66.swift */,
 				B242AB3126E34ADA007EE672 /* CoreWeave.swift */,
 				B22BB3A2223B346E00B43BED /* Dashlane.swift */,
@@ -1414,6 +1417,7 @@
 				B22FDE532108A5CC00359EC9 /* PayPalAPISandbox.swift in Sources */,
 				6BCBA0EA2558643D0019DF23 /* Recruiterbox.swift in Sources */,
 				B2FFC1F01E261B4A00529A00 /* Dropbox.swift in Sources */,
+				B2E128E727A4DCD6009B1B4C /* ClickUp.swift in Sources */,
 				B2EB51CE1E7004A3001D6F78 /* ExanaService.swift in Sources */,
 				B24EE10026C8BF9500F7CE8B /* SalesforceProducts.swift in Sources */,
 				B2DCE6952215ACDE001447D8 /* StringExtensions.swift in Sources */,
