@@ -41,7 +41,7 @@ private struct HerokuStatusResponse: Codable {
 }
 
 class Heroku: Service {
-    let url = URL(string: "https://status.heroku.com/")!
+    let url = URL(string: "https://status.heroku.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         let statusURL = URL(string: "https://status.heroku.com/api/v3/current-status")!

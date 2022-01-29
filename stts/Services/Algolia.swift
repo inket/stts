@@ -38,7 +38,7 @@ class Algolia: Service {
         }
     }
 
-    let url = URL(string: "https://status.algolia.com/")!
+    let url = URL(string: "https://status.algolia.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         let apiURL = URL(string: "https://status.algolia.com/2/status/service/all/period/current")!

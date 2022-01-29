@@ -44,7 +44,7 @@ class BasePlayStationNetwork: BaseService {
         let status: [Status]
     }
 
-    let url = URL(string: "https://status.playstation.com/")!
+    let url = URL(string: "https://status.playstation.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         guard let realSelf = self as? PlayStationNetwork else {
