@@ -33,6 +33,7 @@
 		593FB40FF80AEB54E5E25B71 /* HelloSignHelloFax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881BD2B4F6BC008A1CE1A25B /* HelloSignHelloFax.swift */; };
 		5B446BB90D38D8C97F81126F /* Duo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC70B47B228492520C03D36 /* Duo.swift */; };
 		5BE9174C12190D85B29567FD /* HashiCorp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE85B45D490EF40F319860 /* HashiCorp.swift */; };
+		68296A7E9330DE2E157D9736 /* MessageBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E14834A02FABD0C75361E /* MessageBird.swift */; };
 		691A9AA9137E52D210A3A002 /* CloudAMQP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B49374D6F788B72D32911D8 /* CloudAMQP.swift */; };
 		6B291731B5774C3480F89A92 /* PlayFab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1F86EF25EF8B3548E43010 /* PlayFab.swift */; };
 		6BCBA0EA2558643D0019DF23 /* Recruiterbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */; };
@@ -305,6 +306,7 @@
 /* Begin PBXFileReference section */
 		0160B2F5B66992A4DE58FF49 /* Primcloud.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Primcloud.swift; sourceTree = "<group>"; };
 		03C5FB121E203325003C40B8 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
+		067E14834A02FABD0C75361E /* MessageBird.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessageBird.swift; sourceTree = "<group>"; };
 		0BDEA739C3989EA43886F0F6 /* OneSignal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OneSignal.swift; sourceTree = "<group>"; };
 		0FDDACCC23CD7EBF00FE96CD /* ElasticCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElasticCloud.swift; sourceTree = "<group>"; };
 		194BC88122A8EAC00065E698 /* Clubhouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clubhouse.swift; sourceTree = "<group>"; };
@@ -803,6 +805,7 @@
 				B28C1D431E607D8600F9D0DC /* Mapbox.swift */,
 				B22600301E1562E700EBDD40 /* MediaTemple.swift */,
 				6B24BCA673F692E9211E7B8D /* Medium.swift */,
+				067E14834A02FABD0C75361E /* MessageBird.swift */,
 				1CCCFA4ECD8BB402C7254FEF /* Miro.swift */,
 				B2C337A41E1417390007E110 /* Mixpanel.swift */,
 				B29222262642EF33001C63AE /* ModeAnalytics.swift */,
@@ -1500,6 +1503,7 @@
 				2A56161DBC04D7BDD8477759 /* VMwareWorkspaceONE.swift in Sources */,
 				502ADE3E3386F6B64643682F /* Wasabi.swift in Sources */,
 				6B291731B5774C3480F89A92 /* PlayFab.swift in Sources */,
+				68296A7E9330DE2E157D9736 /* MessageBird.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
