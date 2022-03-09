@@ -52,16 +52,6 @@ class AdobeDigitalVideoAndAudio: Adobe {
     let id = 1627
 }
 
-class AdobeMessageAuthoring: Adobe {
-    let name = "Adobe Message Authoring"
-    let id = 6347
-}
-
-class AdobeMessageDelivery: Adobe {
-    let name = "Adobe Message Delivery"
-    let id = 6349
-}
-
 class AdobeIO: AdobeServices, SubService {
     let name = "Adobe - I/O"
     let id = 1675
@@ -135,6 +125,11 @@ class AdobeConnect: AdobeExperienceCloud, SubService {
 class AdobeCreativeCloudApplications: AdobeCreativeCloud, SubService {
     let name = "Adobe Creative Cloud Applications"
     let id = 5685
+}
+
+class AdobeCreativeCloudExpress: AdobeCreativeCloud, SubService {
+    let name = "Adobe Creative Cloud Express"
+    let id = 5727
 }
 
 class AdobeCreativeCloudLibraries: AdobeCreativeCloud, SubService {
@@ -350,11 +345,6 @@ class AdobeSignIn: AdobeServices, SubService {
 class AdobeSignIntegrations: AdobeDocumentCloud, SubService {
     let name = "Adobe Sign Integrations"
     let id = 5139
-}
-
-class AdobeSpark: AdobeCreativeCloud, SubService {
-    let name = "Adobe Spark"
-    let id = 5727
 }
 
 class AdobeStock: AdobeCreativeCloud, SubService {
