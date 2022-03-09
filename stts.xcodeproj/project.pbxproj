@@ -16,6 +16,7 @@
 		194BC88222A8EAC10065E698 /* Clubhouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BC88122A8EAC00065E698 /* Clubhouse.swift */; };
 		2009CD655C4526247CF38971 /* ReadMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4E2FFFE60AE5D0E0BB449 /* ReadMe.swift */; };
 		23E3868C156CA9A739D83D90 /* Aiven.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB41ECF9F0F03EC8916A646 /* Aiven.swift */; };
+		2A56161DBC04D7BDD8477759 /* VMwareWorkspaceONE.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9F6AE3667A268D4169B4A /* VMwareWorkspaceONE.swift */; };
 		2DE1BBB015563FC67C35CD03 /* Dialpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AE0427F33807B67A98607 /* Dialpad.swift */; };
 		2F1B7559227A095400BA5CBD /* Avalara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B7558227A095400BA5CBD /* Avalara.swift */; };
 		2F65F490227A198400432E64 /* Recurly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F65F48F227A198400432E64 /* Recurly.swift */; };
@@ -40,6 +41,7 @@
 		A0C3F34B220FD630005D9998 /* Datadog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3F34A220FD630005D9998 /* Datadog.swift */; };
 		A125C59E20F7909500C513B3 /* Fastly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125C59D20F7909500C513B3 /* Fastly.swift */; };
 		A133C8B720F8F3670068CFE8 /* Mailgun.swift in Sources */ = {isa = PBXBuildFile; fileRef = A133C8B620F8F3670068CFE8 /* Mailgun.swift */; };
+		A57CA3889BDE9140B1D96CF8 /* Cypress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AF196D47310053DE2A8A0 /* Cypress.swift */; };
 		B13C143038FEAD318CCA237B /* Doppler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70244989EDA4E2F3CF20FA50 /* Doppler.swift */; };
 		B2006CF9223B356F0057E144 /* ProtonMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2006CF8223B356F0057E144 /* ProtonMail.swift */; };
 		B200CA74247FC5AE00DB0868 /* AdobeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200CA73247FC5AE00DB0868 /* AdobeServices.swift */; };
@@ -268,6 +270,7 @@
 		ED78F07A7D2AB1F665182667 /* Temporal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D9C362F03D1C2E95A663D /* Temporal.swift */; };
 		EF67ABCF8677A86151FBBA38 /* Bugsnag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80361FCB72F96FA6F753D7C1 /* Bugsnag.swift */; };
 		FC278203BFB2E7D5A41639ED /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A4F04F86B9C0A9FB7233AE /* Branch.swift */; };
+		FF28BED980D893016972C9B2 /* SumoLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B730B6BF88700B5DC9212E /* SumoLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -327,6 +330,7 @@
 		87DE85B45D490EF40F319860 /* HashiCorp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HashiCorp.swift; sourceTree = "<group>"; };
 		881BD2B4F6BC008A1CE1A25B /* HelloSignHelloFax.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelloSignHelloFax.swift; sourceTree = "<group>"; };
 		8FD39EC5F0FC240DE74BD82D /* LinkedInAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinkedInAPI.swift; sourceTree = "<group>"; };
+		9C6AF196D47310053DE2A8A0 /* Cypress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cypress.swift; sourceTree = "<group>"; };
 		9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Checkly.swift; sourceTree = "<group>"; };
 		A0C3F34A220FD630005D9998 /* Datadog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datadog.swift; sourceTree = "<group>"; };
 		A125C59D20F7909500C513B3 /* Fastly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fastly.swift; sourceTree = "<group>"; };
@@ -563,9 +567,11 @@
 		C5F7B31666FF70588A709098 /* Blend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Blend.swift; sourceTree = "<group>"; };
 		C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeTransfer.swift; sourceTree = "<group>"; };
 		D52F2CDBBA1C28D8E93EFB1C /* PlausibleAnalytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlausibleAnalytics.swift; sourceTree = "<group>"; };
+		D6B730B6BF88700B5DC9212E /* SumoLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SumoLogic.swift; sourceTree = "<group>"; };
 		D819CB63B6576DA05BFC764C /* Netlify.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
 		E5A4F04F86B9C0A9FB7233AE /* Branch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
 		E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirefoxRelay.swift; sourceTree = "<group>"; };
+		F0A9F6AE3667A268D4169B4A /* VMwareWorkspaceONE.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VMwareWorkspaceONE.swift; sourceTree = "<group>"; };
 		FEC70B47B228492520C03D36 /* Duo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Duo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -665,6 +671,7 @@
 				B2CBE08E21B95A7B00F5B28F /* GitLab.swift */,
 				B2A4D7E3247E170A0089EA77 /* LetsEncrypt.swift */,
 				B235341E22888EFE00DEDC36 /* Sendinblue.swift */,
+				D6B730B6BF88700B5DC9212E /* SumoLogic.swift */,
 				B230CE7C21B95B5D00E2005D /* Wasabi.swift */,
 			);
 			path = Status.ioV1;
@@ -747,6 +754,7 @@
 				B22527F41E5BD0C70098E73D /* Contentful.swift */,
 				B2D468281E2F0F82000F8F6B /* Coveralls.swift */,
 				A9CA65AF81160DCD231D5F43 /* Customerio.swift */,
+				9C6AF196D47310053DE2A8A0 /* Cypress.swift */,
 				B2FAB94B1E5C029A00B8921F /* DNSimple.swift */,
 				A0C3F34A220FD630005D9998 /* Datadog.swift */,
 				B232047E22158BDF000DC1B0 /* DatadogEU.swift */,
@@ -845,6 +853,7 @@
 				B24220E31E2F6BBA0007E50E /* Typeform.swift */,
 				B2A8AE3C20710EC8002699CE /* Unsplash.swift */,
 				B29AEFCF225D7F3900C3B8BD /* UrbanAirship.swift */,
+				F0A9F6AE3667A268D4169B4A /* VMwareWorkspaceONE.swift */,
 				B227D31525D7678200951917 /* Vercel.swift */,
 				36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */,
 				B2CB0F9A2047A60000873C14 /* Vimeo.swift */,
@@ -1480,6 +1489,9 @@
 				EF67ABCF8677A86151FBBA38 /* Bugsnag.swift in Sources */,
 				7E1580ED5174442F7B691728 /* Blend.swift in Sources */,
 				ED78F07A7D2AB1F665182667 /* Temporal.swift in Sources */,
+				A57CA3889BDE9140B1D96CF8 /* Cypress.swift in Sources */,
+				FF28BED980D893016972C9B2 /* SumoLogic.swift in Sources */,
+				2A56161DBC04D7BDD8477759 /* VMwareWorkspaceONE.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1676,11 +1688,11 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 59;
+				CURRENT_PROJECT_VERSION = 60;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
-				MARKETING_VERSION = 2.3;
+				MARKETING_VERSION = 2.4;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=300 -Xfrontend -warn-long-expression-type-checking=200";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mahdi.stts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1698,11 +1710,11 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 59;
+				CURRENT_PROJECT_VERSION = 60;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
-				MARKETING_VERSION = 2.3;
+				MARKETING_VERSION = 2.4;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=300 -Xfrontend -warn-long-expression-type-checking=200";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mahdi.stts;
 				PRODUCT_NAME = "$(TARGET_NAME)";

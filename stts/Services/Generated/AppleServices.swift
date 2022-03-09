@@ -538,6 +538,11 @@ class AppleSoftwareDownloads: AppleDeveloper, SubService {
     let serviceName = "Software Downloads"
 }
 
+class AppleTapToPayOnIPhone: AppleDeveloper, SubService {
+    let name = "Apple Tap to Pay on iPhone"
+    let serviceName = "Tap to Pay on iPhone"
+}
+
 class AppleVideos: AppleDeveloper, SubService {
     let name = "Apple Videos"
     let serviceName = "Videos"

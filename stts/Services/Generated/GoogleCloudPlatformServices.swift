@@ -87,6 +87,11 @@ class GoogleCloudWorkflows: GoogleCloudPlatform, SubService {
     let dashboardName = "Cloud Workflows"
 }
 
+class GoogleDataplex: GoogleCloudPlatform, SubService {
+    let name = "Google Dataplex"
+    let dashboardName = "Dataplex"
+}
+
 class GoogleEventarc: GoogleCloudPlatform, SubService {
     let name = "Google Eventarc"
     let dashboardName = "Eventarc"
