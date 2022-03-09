@@ -26,6 +26,7 @@
 		36AD8ED5235A1FCA00F2FD73 /* Shopify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED4235A1FCA00F2FD73 /* Shopify.swift */; };
 		36AD8ED7235A2F9B00F2FD73 /* VictorOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */; };
 		36AD8ED9235A310500F2FD73 /* Mural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED8235A310500F2FD73 /* Mural.swift */; };
+		502ADE3E3386F6B64643682F /* Wasabi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CD7B91FCE3B9B61003A00 /* Wasabi.swift */; };
 		5168C3411EE1FADD160353FF /* FirefoxRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */; };
 		5226672D519C409D932468BA /* Chargebee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3803B461B23AFD8DD026EB59 /* Chargebee.swift */; };
 		56EB1377353A8087B682B4E6 /* Primcloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160B2F5B66992A4DE58FF49 /* Primcloud.swift */; };
@@ -99,7 +100,6 @@
 		B22FDE512108A5C200359EC9 /* PayPalAPIProduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE502108A5C200359EC9 /* PayPalAPIProduction.swift */; };
 		B22FDE532108A5CC00359EC9 /* PayPalAPISandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE522108A5CC00359EC9 /* PayPalAPISandbox.swift */; };
 		B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23038F01E0DF3CC00B29095 /* Beanstalk.swift */; };
-		B230CE7D21B95B5D00E2005D /* Wasabi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B230CE7C21B95B5D00E2005D /* Wasabi.swift */; };
 		B230CE7F21B95C5500E2005D /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B230CE7E21B95C5500E2005D /* Stripe.swift */; };
 		B231DD59257B431900647312 /* Xandr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231DD55257B431900647312 /* Xandr.swift */; };
 		B231DD5A257B431900647312 /* Airbase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231DD56257B431900647312 /* Airbase.swift */; };
@@ -399,7 +399,6 @@
 		B22FDE502108A5C200359EC9 /* PayPalAPIProduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalAPIProduction.swift; sourceTree = "<group>"; };
 		B22FDE522108A5CC00359EC9 /* PayPalAPISandbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalAPISandbox.swift; sourceTree = "<group>"; };
 		B23038F01E0DF3CC00B29095 /* Beanstalk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beanstalk.swift; sourceTree = "<group>"; };
-		B230CE7C21B95B5D00E2005D /* Wasabi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wasabi.swift; sourceTree = "<group>"; };
 		B230CE7E21B95C5500E2005D /* Stripe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
 		B231DD55257B431900647312 /* Xandr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xandr.swift; sourceTree = "<group>"; };
 		B231DD56257B431900647312 /* Airbase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Airbase.swift; sourceTree = "<group>"; };
@@ -566,6 +565,7 @@
 		B2FDC91D1D6706C400F0B728 /* CircleCI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCI.swift; sourceTree = "<group>"; };
 		B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dropbox.swift; sourceTree = "<group>"; };
 		BF7AA78022B03AE4002460FB /* Bitrise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitrise.swift; sourceTree = "<group>"; };
+		C28CD7B91FCE3B9B61003A00 /* Wasabi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Wasabi.swift; sourceTree = "<group>"; };
 		C5F7B31666FF70588A709098 /* Blend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Blend.swift; sourceTree = "<group>"; };
 		C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeTransfer.swift; sourceTree = "<group>"; };
 		D52F2CDBBA1C28D8E93EFB1C /* PlausibleAnalytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlausibleAnalytics.swift; sourceTree = "<group>"; };
@@ -675,7 +675,6 @@
 				B235341E22888EFE00DEDC36 /* Sendinblue.swift */,
 				D6B730B6BF88700B5DC9212E /* SumoLogic.swift */,
 				B22602AC27D878FD001190F1 /* Unity.swift */,
-				B230CE7C21B95B5D00E2005D /* Wasabi.swift */,
 			);
 			path = Status.ioV1;
 			sourceTree = "<group>";
@@ -861,6 +860,7 @@
 				36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */,
 				B2CB0F9A2047A60000873C14 /* Vimeo.swift */,
 				B23646B02627C14E00AB9486 /* VisualStudioAppCenter.swift */,
+				C28CD7B91FCE3B9B61003A00 /* Wasabi.swift */,
 				C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */,
 				B28DFE4621377A0B000EE4AF /* Wodby.swift */,
 				53F844F11070AF5B4CD7719E /* Workflowy.swift */,
@@ -1444,7 +1444,6 @@
 				B24F91231E8B51A400A77460 /* Auth0.swift in Sources */,
 				B277BC9422B4BB6D000B55C3 /* AzureDevOpsStore.swift in Sources */,
 				B210189C249E406D00F31999 /* RevenueCat.swift in Sources */,
-				B230CE7D21B95B5D00E2005D /* Wasabi.swift in Sources */,
 				2F65F490227A198400432E64 /* Recurly.swift in Sources */,
 				B2F34041222630F20055C96F /* CloudApp.swift in Sources */,
 				B2A4A8161DC82CE300037E99 /* BottomBar.swift in Sources */,
@@ -1496,6 +1495,7 @@
 				A57CA3889BDE9140B1D96CF8 /* Cypress.swift in Sources */,
 				FF28BED980D893016972C9B2 /* SumoLogic.swift in Sources */,
 				2A56161DBC04D7BDD8477759 /* VMwareWorkspaceONE.swift in Sources */,
+				502ADE3E3386F6B64643682F /* Wasabi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

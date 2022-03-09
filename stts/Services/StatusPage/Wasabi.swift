@@ -5,7 +5,7 @@
 
 import Foundation
 
-class Wasabi: StatusioV1Service {
+class Wasabi: StatusPageService {
     let url = URL(string: "https://status.wasabi.com")!
-    let statusPageID = "5abbc12aeb57a904e44a58d3"
+    let statusPageID = "2r1tdgqr8ld5"
 }
