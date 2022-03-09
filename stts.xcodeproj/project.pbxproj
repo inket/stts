@@ -41,6 +41,7 @@
 		A0C3F34B220FD630005D9998 /* Datadog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C3F34A220FD630005D9998 /* Datadog.swift */; };
 		A125C59E20F7909500C513B3 /* Fastly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125C59D20F7909500C513B3 /* Fastly.swift */; };
 		A133C8B720F8F3670068CFE8 /* Mailgun.swift in Sources */ = {isa = PBXBuildFile; fileRef = A133C8B620F8F3670068CFE8 /* Mailgun.swift */; };
+		A57CA3889BDE9140B1D96CF8 /* Cypress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AF196D47310053DE2A8A0 /* Cypress.swift */; };
 		B13C143038FEAD318CCA237B /* Doppler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70244989EDA4E2F3CF20FA50 /* Doppler.swift */; };
 		B2006CF9223B356F0057E144 /* ProtonMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2006CF8223B356F0057E144 /* ProtonMail.swift */; };
 		B200CA74247FC5AE00DB0868 /* AdobeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200CA73247FC5AE00DB0868 /* AdobeServices.swift */; };
@@ -328,6 +329,7 @@
 		87DE85B45D490EF40F319860 /* HashiCorp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HashiCorp.swift; sourceTree = "<group>"; };
 		881BD2B4F6BC008A1CE1A25B /* HelloSignHelloFax.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelloSignHelloFax.swift; sourceTree = "<group>"; };
 		8FD39EC5F0FC240DE74BD82D /* LinkedInAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinkedInAPI.swift; sourceTree = "<group>"; };
+		9C6AF196D47310053DE2A8A0 /* Cypress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cypress.swift; sourceTree = "<group>"; };
 		9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Checkly.swift; sourceTree = "<group>"; };
 		A0C3F34A220FD630005D9998 /* Datadog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datadog.swift; sourceTree = "<group>"; };
 		A125C59D20F7909500C513B3 /* Fastly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fastly.swift; sourceTree = "<group>"; };
@@ -750,6 +752,7 @@
 				B22527F41E5BD0C70098E73D /* Contentful.swift */,
 				B2D468281E2F0F82000F8F6B /* Coveralls.swift */,
 				A9CA65AF81160DCD231D5F43 /* Customerio.swift */,
+				9C6AF196D47310053DE2A8A0 /* Cypress.swift */,
 				B2FAB94B1E5C029A00B8921F /* DNSimple.swift */,
 				A0C3F34A220FD630005D9998 /* Datadog.swift */,
 				B232047E22158BDF000DC1B0 /* DatadogEU.swift */,
@@ -1482,6 +1485,7 @@
 				B8F6688F6454FD58216F09B7 /* Kustomer.swift in Sources */,
 				EF67ABCF8677A86151FBBA38 /* Bugsnag.swift in Sources */,
 				7E1580ED5174442F7B691728 /* Blend.swift in Sources */,
+				A57CA3889BDE9140B1D96CF8 /* Cypress.swift in Sources */,
 				FF28BED980D893016972C9B2 /* SumoLogic.swift in Sources */,
 				2A56161DBC04D7BDD8477759 /* VMwareWorkspaceONE.swift in Sources */,
 			);
