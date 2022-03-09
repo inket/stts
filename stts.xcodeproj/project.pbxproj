@@ -89,6 +89,7 @@
 		B22600311E1562E700EBDD40 /* MediaTemple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22600301E1562E700EBDD40 /* MediaTemple.swift */; };
 		B22602AD27D878FE001190F1 /* Unity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22602AC27D878FD001190F1 /* Unity.swift */; };
 		B22602AF27D87D96001190F1 /* UptimeDotCom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22602AE27D87D96001190F1 /* UptimeDotCom.swift */; };
+		B22602B127D881AF001190F1 /* OracleNetSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22602B027D881AF001190F1 /* OracleNetSuite.swift */; };
 		B227D30725D5885500951917 /* BigCommerce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227D30625D5885500951917 /* BigCommerce.swift */; };
 		B227D30C25D5886B00951917 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227D30A25D5886B00951917 /* Semaphore.swift */; };
 		B227D30D25D5886B00951917 /* FreeAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227D30B25D5886B00951917 /* FreeAgent.swift */; };
@@ -391,6 +392,7 @@
 		B22600301E1562E700EBDD40 /* MediaTemple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTemple.swift; sourceTree = "<group>"; };
 		B22602AC27D878FD001190F1 /* Unity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unity.swift; sourceTree = "<group>"; };
 		B22602AE27D87D96001190F1 /* UptimeDotCom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UptimeDotCom.swift; sourceTree = "<group>"; };
+		B22602B027D881AF001190F1 /* OracleNetSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleNetSuite.swift; sourceTree = "<group>"; };
 		B227D30625D5885500951917 /* BigCommerce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigCommerce.swift; sourceTree = "<group>"; };
 		B227D30A25D5886B00951917 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
 		B227D30B25D5886B00951917 /* FreeAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeAgent.swift; sourceTree = "<group>"; };
@@ -1014,6 +1016,7 @@
 				B2253A6E209F42430039F574 /* Firebase.swift */,
 				B2E70FDA22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift */,
 				B2FDC9191D67029900F0B728 /* Heroku.swift */,
+				B22602B027D881AF001190F1 /* OracleNetSuite.swift */,
 				B21492CA21EE9BD70065103E /* ScaleGrid.swift */,
 				B2228B6126C9623C002F01F0 /* SendbirdAll.swift */,
 				B242AB3526E34DE9007EE672 /* SignalWire.swift */,
@@ -1503,6 +1506,7 @@
 				2DE1BBB015563FC67C35CD03 /* Dialpad.swift in Sources */,
 				B8F6688F6454FD58216F09B7 /* Kustomer.swift in Sources */,
 				EF67ABCF8677A86151FBBA38 /* Bugsnag.swift in Sources */,
+				B22602B127D881AF001190F1 /* OracleNetSuite.swift in Sources */,
 				7E1580ED5174442F7B691728 /* Blend.swift in Sources */,
 				ED78F07A7D2AB1F665182667 /* Temporal.swift in Sources */,
 				A57CA3889BDE9140B1D96CF8 /* Cypress.swift in Sources */,
