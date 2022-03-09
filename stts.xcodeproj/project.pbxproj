@@ -267,6 +267,7 @@
 		C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */; };
 		E2AAECBE89E07C6E94464ABF /* Checkly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */; };
 		E5B35A5C6608D856A99842B2 /* Miro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCCFA4ECD8BB402C7254FEF /* Miro.swift */; };
+		ED78F07A7D2AB1F665182667 /* Temporal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D9C362F03D1C2E95A663D /* Temporal.swift */; };
 		EF67ABCF8677A86151FBBA38 /* Bugsnag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80361FCB72F96FA6F753D7C1 /* Bugsnag.swift */; };
 		FC278203BFB2E7D5A41639ED /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A4F04F86B9C0A9FB7233AE /* Branch.swift */; };
 		FF28BED980D893016972C9B2 /* SumoLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B730B6BF88700B5DC9212E /* SumoLogic.swift */; };
@@ -422,6 +423,7 @@
 		B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudPlatform.swift; sourceTree = "<group>"; };
 		B24B573123A4EAD200AFCF01 /* Pantheon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pantheon.swift; sourceTree = "<group>"; };
 		B24D19F51DD072840052E539 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		B24D9C362F03D1C2E95A663D /* Temporal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Temporal.swift; sourceTree = "<group>"; };
 		B24EE0FF26C8BF9500F7CE8B /* SalesforceProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesforceProducts.swift; sourceTree = "<group>"; };
 		B24EE10126C8BFD500F7CE8B /* Salesforce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Salesforce.swift; sourceTree = "<group>"; };
 		B24EE10326C8C07100F7CE8B /* SalesforceCategories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesforceCategories.swift; sourceTree = "<group>"; };
@@ -843,6 +845,7 @@
 				B2D2B6CE20870E700011723B /* StatusPage.swift */,
 				B27090F0209F52EB0094C3D7 /* Stream.swift */,
 				B213D1F5269AD941005EBDDA /* Tableau.swift */,
+				B24D9C362F03D1C2E95A663D /* Temporal.swift */,
 				B2D032CF1D6455E300D51CB8 /* TravisCI.swift */,
 				B20396351EE6A060008CCA21 /* Trello.swift */,
 				B2F127A81E0B84B50035B20C /* Twilio.swift */,
@@ -1485,6 +1488,7 @@
 				B8F6688F6454FD58216F09B7 /* Kustomer.swift in Sources */,
 				EF67ABCF8677A86151FBBA38 /* Bugsnag.swift in Sources */,
 				7E1580ED5174442F7B691728 /* Blend.swift in Sources */,
+				ED78F07A7D2AB1F665182667 /* Temporal.swift in Sources */,
 				A57CA3889BDE9140B1D96CF8 /* Cypress.swift in Sources */,
 				FF28BED980D893016972C9B2 /* SumoLogic.swift in Sources */,
 				2A56161DBC04D7BDD8477759 /* VMwareWorkspaceONE.swift in Sources */,
