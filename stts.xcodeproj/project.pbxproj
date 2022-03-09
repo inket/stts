@@ -34,6 +34,7 @@
 		5B446BB90D38D8C97F81126F /* Duo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC70B47B228492520C03D36 /* Duo.swift */; };
 		5BE9174C12190D85B29567FD /* HashiCorp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE85B45D490EF40F319860 /* HashiCorp.swift */; };
 		691A9AA9137E52D210A3A002 /* CloudAMQP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B49374D6F788B72D32911D8 /* CloudAMQP.swift */; };
+		6B291731B5774C3480F89A92 /* PlayFab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1F86EF25EF8B3548E43010 /* PlayFab.swift */; };
 		6BCBA0EA2558643D0019DF23 /* Recruiterbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */; };
 		6D03955E8178A1153BBD9D01 /* Netlify.swift in Sources */ = {isa = PBXBuildFile; fileRef = D819CB63B6576DA05BFC764C /* Netlify.swift */; };
 		7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B305FAA210237AA0086DCE0 /* Spoke.swift */; };
@@ -568,6 +569,7 @@
 		C28CD7B91FCE3B9B61003A00 /* Wasabi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Wasabi.swift; sourceTree = "<group>"; };
 		C5F7B31666FF70588A709098 /* Blend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Blend.swift; sourceTree = "<group>"; };
 		C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeTransfer.swift; sourceTree = "<group>"; };
+		CA1F86EF25EF8B3548E43010 /* PlayFab.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayFab.swift; sourceTree = "<group>"; };
 		D52F2CDBBA1C28D8E93EFB1C /* PlausibleAnalytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlausibleAnalytics.swift; sourceTree = "<group>"; };
 		D6B730B6BF88700B5DC9212E /* SumoLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SumoLogic.swift; sourceTree = "<group>"; };
 		D819CB63B6576DA05BFC764C /* Netlify.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
@@ -819,6 +821,7 @@
 				B213D1F7269AD9A7005EBDDA /* Pardot.swift */,
 				B2101899249E3FF400F31999 /* Pendo.swift */,
 				B29D50BE24B0542100F4961B /* PlatformSH.swift */,
+				CA1F86EF25EF8B3548E43010 /* PlayFab.swift */,
 				B227D31125D7671600951917 /* Poka.swift */,
 				B2F127A61E0B84230035B20C /* PubNub.swift */,
 				B299C84A1DD04E850024D2E9 /* Pusher.swift */,
@@ -1496,6 +1499,7 @@
 				FF28BED980D893016972C9B2 /* SumoLogic.swift in Sources */,
 				2A56161DBC04D7BDD8477759 /* VMwareWorkspaceONE.swift in Sources */,
 				502ADE3E3386F6B64643682F /* Wasabi.swift in Sources */,
+				6B291731B5774C3480F89A92 /* PlayFab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
