@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03C5FB131E203325003C40B8 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5FB121E203325003C40B8 /* Packet.swift */; };
+		04344BEDCC48E34DA3370B42 /* VMwareCarbonBlack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C548E19B1B95EFDBB7898 /* VMwareCarbonBlack.swift */; };
 		07903F3F2A403F03BDDD3AD1 /* JumpCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C3B179FEEE9F7F150196F /* JumpCloud.swift */; };
 		0851FE81840F6555301382D8 /* PlausibleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F2CDBBA1C28D8E93EFB1C /* PlausibleAnalytics.swift */; };
 		0988F07539A4DBD9DA7D690A /* Customerio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA65AF81160DCD231D5F43 /* Customerio.swift */; };
@@ -329,6 +330,7 @@
 		4B49374D6F788B72D32911D8 /* CloudAMQP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CloudAMQP.swift; sourceTree = "<group>"; };
 		4E2C3B179FEEE9F7F150196F /* JumpCloud.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JumpCloud.swift; sourceTree = "<group>"; };
 		53F844F11070AF5B4CD7719E /* Workflowy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Workflowy.swift; sourceTree = "<group>"; };
+		599C548E19B1B95EFDBB7898 /* VMwareCarbonBlack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VMwareCarbonBlack.swift; sourceTree = "<group>"; };
 		6B24BCA673F692E9211E7B8D /* Medium.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Medium.swift; sourceTree = "<group>"; };
 		6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruiterbox.swift; sourceTree = "<group>"; };
 		70244989EDA4E2F3CF20FA50 /* Doppler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Doppler.swift; sourceTree = "<group>"; };
@@ -870,6 +872,7 @@
 				B24220E31E2F6BBA0007E50E /* Typeform.swift */,
 				B2A8AE3C20710EC8002699CE /* Unsplash.swift */,
 				B29AEFCF225D7F3900C3B8BD /* UrbanAirship.swift */,
+				599C548E19B1B95EFDBB7898 /* VMwareCarbonBlack.swift */,
 				F0A9F6AE3667A268D4169B4A /* VMwareWorkspaceONE.swift */,
 				B227D31525D7678200951917 /* Vercel.swift */,
 				36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */,
@@ -1520,6 +1523,7 @@
 				6B291731B5774C3480F89A92 /* PlayFab.swift in Sources */,
 				68296A7E9330DE2E157D9736 /* MessageBird.swift in Sources */,
 				A071B75709D9B1CD27CB9A34 /* MongoDBCloud.swift in Sources */,
+				04344BEDCC48E34DA3370B42 /* VMwareCarbonBlack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
