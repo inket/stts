@@ -10,10 +10,7 @@ typealias GoogleCloudPlatform = BaseGoogleCloudPlatform & RequiredServicePropert
 private let gcpDashboardURL = URL(string: "https://status.cloud.google.com")!
 
 class BaseGoogleCloudPlatform: BaseService {
-    private static var store = GoogleStatusDashboardStore(
-        url: gcpDashboardURL,
-        generalType: GoogleCloudPlatformAll.self
-    )
+    private static var store = GoogleStatusDashboardStore(url: gcpDashboardURL)
 
     let url = gcpDashboardURL
 

@@ -213,6 +213,7 @@
 		B2B2D1031D49D5080014D780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2D1021D49D5080014D780 /* AppDelegate.swift */; };
 		B2B2D1051D49D5080014D780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2D1041D49D5080014D780 /* Assets.xcassets */; };
 		B2B2D1081D49D5080014D780 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B2D1061D49D5080014D780 /* MainMenu.xib */; };
+		B2B77AA927FBC729009B9C2A /* FirebaseStatusDashboardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B77AA827FBC729009B9C2A /* FirebaseStatusDashboardStore.swift */; };
 		B2BA36191ED7B0F200051083 /* AuthorizeNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA36181ED7B0F200051083 /* AuthorizeNet.swift */; };
 		B2BA69801E2DA3F60016AF1A /* Papertrail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */; };
 		B2BB19BA20B8FEFD00A97A87 /* CachetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BB19B920B8FEFD00A97A87 /* CachetService.swift */; };
@@ -519,6 +520,7 @@
 		B2B2D1041D49D5080014D780 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2B2D1071D49D5080014D780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B2B2D1091D49D5080014D780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2B77AA827FBC729009B9C2A /* FirebaseStatusDashboardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStatusDashboardStore.swift; sourceTree = "<group>"; };
 		B2BA36181ED7B0F200051083 /* AuthorizeNet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizeNet.swift; sourceTree = "<group>"; };
 		B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Papertrail.swift; sourceTree = "<group>"; };
 		B2BB19B920B8FEFD00A97A87 /* CachetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachetService.swift; sourceTree = "<group>"; };
@@ -1045,6 +1047,7 @@
 				B2BB19B920B8FEFD00A97A87 /* CachetService.swift */,
 				B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */,
 				B2253A6C209F3F9F0039F574 /* FirebaseService.swift */,
+				B2B77AA827FBC729009B9C2A /* FirebaseStatusDashboardStore.swift */,
 				B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */,
 				B2253A6A209F3C410039F574 /* GoogleStatusDashboardStore.swift */,
 				B213D1FF269AFD45005EBDDA /* InstatusService.swift */,
@@ -1508,6 +1511,7 @@
 				6D03955E8178A1153BBD9D01 /* Netlify.swift in Sources */,
 				0988F07539A4DBD9DA7D690A /* Customerio.swift in Sources */,
 				2DE1BBB015563FC67C35CD03 /* Dialpad.swift in Sources */,
+				B2B77AA927FBC729009B9C2A /* FirebaseStatusDashboardStore.swift in Sources */,
 				B8F6688F6454FD58216F09B7 /* Kustomer.swift in Sources */,
 				EF67ABCF8677A86151FBBA38 /* Bugsnag.swift in Sources */,
 				B22602B127D881AF001190F1 /* OracleNetSuite.swift in Sources */,

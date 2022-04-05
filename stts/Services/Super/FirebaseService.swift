@@ -7,7 +7,7 @@ import Foundation
 
 typealias FirebaseService = BaseFirebaseService & RequiredServiceProperties & RequiredFirebaseProperties
 
-protocol RequiredFirebaseProperties: GoogleStatusDashboardStoreService {
+protocol RequiredFirebaseProperties: FirebaseStatusDashboardStoreService {
     var name: String { get }
     var dashboardName: String { get }
 }
@@ -27,7 +27,7 @@ extension RequiredFirebaseProperties {
 private let firebaseDashboardURL = URL(string: "https://status.firebase.google.com")!
 
 class BaseFirebaseService: BaseService {
-    private static var store = GoogleStatusDashboardStore(url: firebaseDashboardURL, generalType: Firebase.self)
+    private static var store = FirebaseStatusDashboardStore(url: firebaseDashboardURL)
 
     let url = firebaseDashboardURL
 

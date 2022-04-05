@@ -1,22 +1,22 @@
 //
-//  GoogleStatusDashboardStore.swift
+//  FirebaseStatusDashboardStore.swift
 //  stts
 //
 
 import Kanna
 
-protocol GoogleStatusDashboardStoreService {
+protocol FirebaseStatusDashboardStoreService {
     var name: String { get }
     var dashboardName: String { get }
 }
 
-extension GoogleStatusDashboardStoreService {
+extension FirebaseStatusDashboardStoreService {
     var dashboardName: String {
         return name
     }
 }
 
-class GoogleStatusDashboardStore: Loading {
+class FirebaseStatusDashboardStore: Loading {
     private var dashboardURL: URL
     private var statuses: [String: ServiceStatus] = [:]
     private var loadErrorMessage: String?
@@ -49,7 +49,7 @@ class GoogleStatusDashboardStore: Loading {
             guard let data = data else { return self._fail(error) }
             guard let doc = try? HTML(html: data, encoding: .utf8) else { return self._fail("Couldn't parse response") }
 
-            for tr in doc.css("psd-regional-table tbody tr") {
+            for tr in doc.css(".main-dashboard-table tr") {
                 guard let (name, status) = self.parseDashboardRow(tr) else { continue }
                 self.statuses[name] = status
             }
@@ -58,20 +58,19 @@ class GoogleStatusDashboardStore: Loading {
         }
     }
 
-    func status(for service: GoogleStatusDashboardStoreService) -> (ServiceStatus, String) {
+    func status(for service: FirebaseStatusDashboardStoreService) -> (ServiceStatus, String) {
         let status: ServiceStatus?
 
-        if type(of: service) == GoogleCloudPlatformAll.self {
+        if type(of: service) == Firebase.self {
             status = statuses["_general"]
         } else {
             status = statuses[service.dashboardName]
         }
 
         switch status {
-        case .good: return (.good, "Available")
-        case .notice: return (.notice, "Service information")
-        case .minor: return (.minor, "One or more regions affected")
-        case .major: return (.major, "Service outage")
+        case .good?: return (.good, "Normal Operations")
+        case .minor?: return (.minor, "Service Disruption")
+        case .major?: return (.major, "Service Outage")
         default: return (.undetermined, loadErrorMessage ?? "Unexpected error")
         }
     }
@@ -103,35 +102,24 @@ class GoogleStatusDashboardStore: Loading {
     }
 
     private func parseDashboardRow(_ tr: XMLElement) -> (String, ServiceStatus)? {
-        let rawName = tr.css("th").first?.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let rawName = tr.css(".product-name").first?.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let sanitizedName = rawName?
             .components(separatedBy: .newlines).first?
             .trimmingCharacters(in: .whitespacesAndNewlines)
 
         guard let name = sanitizedName else { return nil }
 
-        let iconClassNames = tr.css("psd-status-icon svg").compactMap { $0.className }
-        guard !iconClassNames.isEmpty else {
-            // Unexpected
-            return nil
+        if tr.css(".status-icon.available").count > 0 {
+            return (name, .good)
+        } else if tr.css(".status-icon.disruption").count > 0 {
+            return (name, .minor)
+        } else if tr.css(".status-icon.outage").count > 0 {
+            return (name, .major)
+        } else if tr.css(".status-icon.information").count > 0 {
+            return (name, .notice)
+        } else {
+            return (name, .undetermined)
         }
-
-        let statuses: [ServiceStatus] = iconClassNames.map {
-            if $0.contains("__available") {
-                return .good
-            } else if $0.contains("__information") {
-                return .notice
-            } else if $0.contains("__warning") || $0.contains("__disruption") {
-                return .minor
-            } else if $0.contains("__outage") {
-                return .major
-            } else {
-                return .undetermined
-            }
-        }
-
-        let max = statuses.max() ?? .undetermined
-        return (name, max)
     }
 
     private func _fail(_ error: Error?) {

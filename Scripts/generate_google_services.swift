@@ -140,20 +140,35 @@ func discoverServices(for platform: GooglePlatform) -> [Service] {
 
     body = body.replacingOccurrences(of: "\n", with: "")
 
-    // swiftlint:disable:next force_try
-    let regex = try! NSRegularExpression(
-        pattern: "class=\"product-name\">[\\s\\n]*(.+?)[\\s\\n]*<.*?\\/tr>",
-        options: [.caseInsensitive, .dotMatchesLineSeparators]
-    )
+    let regex: NSRegularExpression
+    switch platform {
+    case .cloudPlatform:
+        // swiftlint:disable:next force_try
+        regex = try! NSRegularExpression(
+            pattern: "__product\">[\\s\\n]*(.+?)[\\s\\n]*<.*?\\/th>",
+            options: [.caseInsensitive, .dotMatchesLineSeparators]
+        )
+    case .firebase:
+        // swiftlint:disable:next force_try
+        regex = try! NSRegularExpression(
+            pattern: "class=\"product-name\">[\\s\\n]*(.+?)[\\s\\n]*<.*?\\/tr>",
+            options: [.caseInsensitive, .dotMatchesLineSeparators]
+        )
+    }
 
     let range = NSRange(location: 0, length: body.count)
     regex.enumerateMatches(in: body, options: [], range: range) { textCheckingResult, _, _ in
         guard let textCheckingResult = textCheckingResult, textCheckingResult.numberOfRanges == 2 else { return }
 
-        let matchSubstring = body[textCheckingResult.range(at: 0)]
+        switch platform {
+        case .cloudPlatform:
+            break
+        case .firebase:
+            let matchSubstring = body[textCheckingResult.range(at: 0)]
 
-        // Some entries are just links to GCP/Firebase and don't have any status data. Skip those.
-        guard matchSubstring.contains("class=\"product-day") else { return }
+            // Some entries are just links to Firebase and don't have any status data. Skip those.
+            guard matchSubstring.contains("class=\"product-day") else { return }
+        }
 
         let serviceName = body[textCheckingResult.range(at: 1)]
 
@@ -171,7 +186,8 @@ func discoverServices(for platform: GooglePlatform) -> [Service] {
 func main() {
     let srcRoot = envVariable(forKey: "SRCROOT")
 
-    GooglePlatform.allCases.forEach { platform in
+    let allCases = [GooglePlatform.cloudPlatform]
+    allCases.forEach { platform in
         let services = discoverServices(for: platform)
 
         let header = """
