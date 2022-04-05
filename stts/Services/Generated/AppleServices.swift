@@ -25,6 +25,11 @@ class AppleBooks: Apple, SubService {
     let serviceName = "Apple Books"
 }
 
+class AppleBusinessEssentials: Apple, SubService {
+    let name = "Apple Business Essentials"
+    let serviceName = "Apple Business Essentials"
+}
+
 class AppleBusinessManager: Apple, SubService {
     let name = "Apple Business Manager"
     let serviceName = "Apple Business Manager"
@@ -48,6 +53,11 @@ class AppleFitness: Apple, SubService {
 class AppleID: Apple, SubService {
     let name = "Apple ID"
     let serviceName = "Apple ID"
+}
+
+class AppleMessagesForBusiness: Apple, SubService {
+    let name = "Apple Messages for Business"
+    let serviceName = "Apple Messages for Business"
 }
 
 class AppleMusic: Apple, SubService {
@@ -458,9 +468,19 @@ class AppleNewsAPI: AppleDeveloper, SubService {
     let serviceName = "Apple News API"
 }
 
-class ApplePayDeveloper: AppleDeveloper, SubService {
-    let name = "Apple Pay - Developer"
-    let serviceName = "Apple Pay - Developer"
+class ApplePayDeveloperApplePayDemo: AppleDeveloper, SubService {
+    let name = "Apple Pay Developer | Apple Pay Demo"
+    let serviceName = "Apple Pay Developer | Apple Pay Demo"
+}
+
+class ApplePayProductionInstance: AppleDeveloper, SubService {
+    let name = "Apple Pay Production Instance"
+    let serviceName = "Apple Pay Production Instance"
+}
+
+class ApplePaySandboxInstance: AppleDeveloper, SubService {
+    let name = "Apple Pay Sandbox Instance"
+    let serviceName = "Apple Pay Sandbox Instance"
 }
 
 class ApplePodcastsConnect: AppleDeveloper, SubService {
