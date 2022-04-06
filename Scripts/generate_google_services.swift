@@ -186,8 +186,7 @@ func discoverServices(for platform: GooglePlatform) -> [Service] {
 func main() {
     let srcRoot = envVariable(forKey: "SRCROOT")
 
-    let allCases = [GooglePlatform.cloudPlatform]
-    allCases.forEach { platform in
+    GooglePlatform.allCases.forEach { platform in
         let services = discoverServices(for: platform)
 
         let header = """
