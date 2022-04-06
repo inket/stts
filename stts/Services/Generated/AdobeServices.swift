@@ -62,6 +62,16 @@ class AdobeAccountManagement: AdobeServices, SubService {
     let id = 2941
 }
 
+class AdobeAcrobatSign: AdobeDocumentCloud, SubService {
+    let name = "Adobe Acrobat Sign"
+    let id = 1554
+}
+
+class AdobeAcrobatSignIntegrations: AdobeDocumentCloud, SubService {
+    let name = "Adobe Acrobat Sign Integrations"
+    let id = 5139
+}
+
 class AdobeAdministrativeConsoles: AdobeServices, SubService {
     let name = "Adobe Administrative Consoles"
     let id = 2942
@@ -332,19 +342,9 @@ class AdobeSearch: AdobeServices, SubService {
     let id = 2943
 }
 
-class AdobeSign: AdobeDocumentCloud, SubService {
-    let name = "Adobe Sign"
-    let id = 1554
-}
-
 class AdobeSignIn: AdobeServices, SubService {
     let name = "Adobe Sign In"
     let id = 2944
-}
-
-class AdobeSignIntegrations: AdobeDocumentCloud, SubService {
-    let name = "Adobe Sign Integrations"
-    let id = 5139
 }
 
 class AdobeStock: AdobeCreativeCloud, SubService {
