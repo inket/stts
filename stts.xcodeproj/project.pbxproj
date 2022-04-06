@@ -34,6 +34,7 @@
 		593FB40FF80AEB54E5E25B71 /* HelloSignHelloFax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881BD2B4F6BC008A1CE1A25B /* HelloSignHelloFax.swift */; };
 		5B446BB90D38D8C97F81126F /* Duo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC70B47B228492520C03D36 /* Duo.swift */; };
 		5BE9174C12190D85B29567FD /* HashiCorp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE85B45D490EF40F319860 /* HashiCorp.swift */; };
+		604E5ED195443A1FF7BBDE08 /* EasyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFC32AB6F1A8F278412D26 /* EasyPost.swift */; };
 		68296A7E9330DE2E157D9736 /* MessageBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E14834A02FABD0C75361E /* MessageBird.swift */; };
 		691A9AA9137E52D210A3A002 /* CloudAMQP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B49374D6F788B72D32911D8 /* CloudAMQP.swift */; };
 		6B291731B5774C3480F89A92 /* PlayFab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1F86EF25EF8B3548E43010 /* PlayFab.swift */; };
@@ -577,6 +578,7 @@
 		B2FDC91B1D67062200F0B728 /* StatusPageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPageService.swift; sourceTree = "<group>"; };
 		B2FDC91D1D6706C400F0B728 /* CircleCI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCI.swift; sourceTree = "<group>"; };
 		B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dropbox.swift; sourceTree = "<group>"; };
+		BCCFC32AB6F1A8F278412D26 /* EasyPost.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EasyPost.swift; sourceTree = "<group>"; };
 		BF7AA78022B03AE4002460FB /* Bitrise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitrise.swift; sourceTree = "<group>"; };
 		C28CD7B91FCE3B9B61003A00 /* Wasabi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Wasabi.swift; sourceTree = "<group>"; };
 		C5F7B31666FF70588A709098 /* Blend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Blend.swift; sourceTree = "<group>"; };
@@ -781,6 +783,7 @@
 				B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */,
 				FEC70B47B228492520C03D36 /* Duo.swift */,
 				B28E9FBD1ED26A40006B89F1 /* Dwolla.swift */,
+				BCCFC32AB6F1A8F278412D26 /* EasyPost.swift */,
 				B2EC838D24547371001D2D2F /* Egnyte.swift */,
 				0FDDACCC23CD7EBF00FE96CD /* ElasticCloud.swift */,
 				B299C8541DD051210024D2E9 /* EngineYard.swift */,
@@ -1524,6 +1527,7 @@
 				68296A7E9330DE2E157D9736 /* MessageBird.swift in Sources */,
 				A071B75709D9B1CD27CB9A34 /* MongoDBCloud.swift in Sources */,
 				04344BEDCC48E34DA3370B42 /* VMwareCarbonBlack.swift in Sources */,
+				604E5ED195443A1FF7BBDE08 /* EasyPost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
