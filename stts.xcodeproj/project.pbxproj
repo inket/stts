@@ -274,6 +274,7 @@
 		C1B04EA0748F30D966A77B19 /* Acoustic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439EADCB08D6940C642E98B8 /* Acoustic.swift */; };
 		C28B812159CF77AD928CCAE9 /* Workflowy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F844F11070AF5B4CD7719E /* Workflowy.swift */; };
 		C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */; };
+		D5F7C57260F512BDB844AD08 /* TeleportCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FEC29C375721FE85A4ED27 /* TeleportCloud.swift */; };
 		E2AAECBE89E07C6E94464ABF /* Checkly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */; };
 		E5B35A5C6608D856A99842B2 /* Miro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCCFA4ECD8BB402C7254FEF /* Miro.swift */; };
 		ED78F07A7D2AB1F665182667 /* Temporal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D9C362F03D1C2E95A663D /* Temporal.swift */; };
@@ -578,6 +579,7 @@
 		B2FDC91B1D67062200F0B728 /* StatusPageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPageService.swift; sourceTree = "<group>"; };
 		B2FDC91D1D6706C400F0B728 /* CircleCI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCI.swift; sourceTree = "<group>"; };
 		B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dropbox.swift; sourceTree = "<group>"; };
+		B7FEC29C375721FE85A4ED27 /* TeleportCloud.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeleportCloud.swift; sourceTree = "<group>"; };
 		BCCFC32AB6F1A8F278412D26 /* EasyPost.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EasyPost.swift; sourceTree = "<group>"; };
 		BF7AA78022B03AE4002460FB /* Bitrise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitrise.swift; sourceTree = "<group>"; };
 		C28CD7B91FCE3B9B61003A00 /* Wasabi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Wasabi.swift; sourceTree = "<group>"; };
@@ -868,6 +870,7 @@
 				B2D2B6CE20870E700011723B /* StatusPage.swift */,
 				B27090F0209F52EB0094C3D7 /* Stream.swift */,
 				B213D1F5269AD941005EBDDA /* Tableau.swift */,
+				B7FEC29C375721FE85A4ED27 /* TeleportCloud.swift */,
 				B24D9C362F03D1C2E95A663D /* Temporal.swift */,
 				B2D032CF1D6455E300D51CB8 /* TravisCI.swift */,
 				B20396351EE6A060008CCA21 /* Trello.swift */,
@@ -1528,6 +1531,7 @@
 				A071B75709D9B1CD27CB9A34 /* MongoDBCloud.swift in Sources */,
 				04344BEDCC48E34DA3370B42 /* VMwareCarbonBlack.swift in Sources */,
 				604E5ED195443A1FF7BBDE08 /* EasyPost.swift in Sources */,
+				D5F7C57260F512BDB844AD08 /* TeleportCloud.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
