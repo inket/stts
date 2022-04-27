@@ -7,8 +7,10 @@ import Cocoa
 
 extension String {
     var innerJSONString: String {
+        /// at some point Apple started sending new line at the end of json callback wrapper
+        /// therefore, we probe end of string, to assign callbackSuffix accordingly
         let callbackPrefix = "jsonCallback("
-        let callbackSuffix = ");"
+        let callbackSuffix = hasSuffix("\n") ? ");\n" : ");"
 
         guard hasPrefix(callbackPrefix) && hasSuffix(callbackSuffix) else { return self }
 
