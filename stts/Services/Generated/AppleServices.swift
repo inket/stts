@@ -250,6 +250,11 @@ class AppleITunesStore: Apple, SubService {
     let serviceName = "iTunes Store"
 }
 
+class AppleIWorkCollaboration: Apple, SubService {
+    let name = "Apple iWork Collaboration"
+    let serviceName = "iWork Collaboration"
+}
+
 class AppleIWorkForICloud: Apple, SubService {
     let name = "Apple iWork for iCloud"
     let serviceName = "iWork for iCloud"
