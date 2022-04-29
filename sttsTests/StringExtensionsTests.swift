@@ -7,19 +7,16 @@ import XCTest
 @testable import stts
 
 class StringExtensionsTests: XCTestCase {
-
-    func testInnerJsonStringWithNewLine() throws {
-        let jsonCallback = "jsonCallback(✅);\n"
-        XCTAssertEqual(jsonCallback.innerJSONString, "✅")
+    func testInnerJSONStringWithNewLine() throws {
+        XCTAssertEqual("jsonCallback(✅);\n".innerJSONString, "✅")
+        XCTAssertEqual("jsonCallback(✅); \n\n\n ".innerJSONString, "✅")
     }
 
-    func testInnerJsonStringWithoutNewLine() throws {
-        let jsonCallback = "jsonCallback(✅);"
-        XCTAssertEqual(jsonCallback.innerJSONString, "✅")
+    func testInnerJSONStringWithoutNewLine() throws {
+        XCTAssertEqual("jsonCallback(✅);".innerJSONString, "✅")
     }
 
-    func testInnerJsonStringOther() throws {
-        let jsonCallback = "out of scope"
-        XCTAssertEqual(jsonCallback.innerJSONString, "out of scope")
+    func testInnerJSONStringOther() throws {
+        XCTAssertEqual("out of scope".innerJSONString, "out of scope")
     }
 }
