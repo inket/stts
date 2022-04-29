@@ -226,6 +226,8 @@
 		B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */; };
 		B2C548E122B27AF200D1D7EF /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C548E022B27AF200D1D7EF /* Reachability.framework */; };
 		B2C548E222B27B0D00D1D7EF /* Reachability.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2C548E022B27AF200D1D7EF /* Reachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B2C5ED1B281CA96200009B68 /* OneLoginUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5ED1A281CA96200009B68 /* OneLoginUS.swift */; };
+		B2C5ED1D281CAA3400009B68 /* OneLoginEU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5ED1C281CAA3400009B68 /* OneLoginEU.swift */; };
 		B2CB0F9B2047A60000873C14 /* Vimeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB0F9A2047A60000873C14 /* Vimeo.swift */; };
 		B2CBE08F21B95A7B00F5B28F /* GitLab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBE08E21B95A7B00F5B28F /* GitLab.swift */; };
 		B2CE72D6228587E000847E00 /* Acquia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE72D5228587E000847E00 /* Acquia.swift */; };
@@ -534,6 +536,8 @@
 		B2C4670E1E70012700C5145D /* Zapier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zapier.swift; sourceTree = "<group>"; };
 		B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		B2C548E022B27AF200D1D7EF /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/Mac/Reachability.framework; sourceTree = SOURCE_ROOT; };
+		B2C5ED1A281CA96200009B68 /* OneLoginUS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLoginUS.swift; sourceTree = "<group>"; };
+		B2C5ED1C281CAA3400009B68 /* OneLoginEU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLoginEU.swift; sourceTree = "<group>"; };
 		B2CB0F9A2047A60000873C14 /* Vimeo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vimeo.swift; sourceTree = "<group>"; };
 		B2CBE08E21B95A7B00F5B28F /* GitLab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitLab.swift; sourceTree = "<group>"; };
 		B2CE72D5228587E000847E00 /* Acquia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acquia.swift; sourceTree = "<group>"; };
@@ -693,6 +697,8 @@
 				B2A0635B1E1340B400EEA762 /* Docker.swift */,
 				B2CBE08E21B95A7B00F5B28F /* GitLab.swift */,
 				B2A4D7E3247E170A0089EA77 /* LetsEncrypt.swift */,
+				B2C5ED1C281CAA3400009B68 /* OneLoginEU.swift */,
+				B2C5ED1A281CA96200009B68 /* OneLoginUS.swift */,
 				B235341E22888EFE00DEDC36 /* Sendinblue.swift */,
 				D6B730B6BF88700B5DC9212E /* SumoLogic.swift */,
 				B22602AC27D878FD001190F1 /* Unity.swift */,
@@ -1382,6 +1388,7 @@
 				B2E018FD214E60E700C5F75B /* AppearanceObserver.swift in Sources */,
 				B2107BCF254C970000284EE7 /* Notion.swift in Sources */,
 				B2C4670F1E70012700C5145D /* Zapier.swift in Sources */,
+				B2C5ED1D281CAA3400009B68 /* OneLoginEU.swift in Sources */,
 				B24B573223A4EAD200AFCF01 /* Pantheon.swift in Sources */,
 				B2228B6226C9623C002F01F0 /* SendbirdAll.swift in Sources */,
 				B213D205269B0496005EBDDA /* Linear.swift in Sources */,
@@ -1500,6 +1507,7 @@
 				2F802A9BB36717992C334CB8 /* Medium.swift in Sources */,
 				56EB1377353A8087B682B4E6 /* Primcloud.swift in Sources */,
 				0851FE81840F6555301382D8 /* PlausibleAnalytics.swift in Sources */,
+				B2C5ED1B281CA96200009B68 /* OneLoginUS.swift in Sources */,
 				E5B35A5C6608D856A99842B2 /* Miro.swift in Sources */,
 				2009CD655C4526247CF38971 /* ReadMe.swift in Sources */,
 				5226672D519C409D932468BA /* Chargebee.swift in Sources */,
