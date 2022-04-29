@@ -83,10 +83,13 @@ extension String {
         let callbackPrefix = "jsonCallback("
         let callbackSuffix = ");"
 
-        guard hasPrefix(callbackPrefix) && hasSuffix(callbackSuffix) else { return self }
+        let trimmedString = trimmingCharacters(in: .whitespacesAndNewlines)
 
-        return String(self[
-            index(startIndex, offsetBy: callbackPrefix.count) ..< index(endIndex, offsetBy: -callbackSuffix.count)
+        guard trimmedString.hasPrefix(callbackPrefix) && trimmedString.hasSuffix(callbackSuffix) else { return self }
+
+        return String(trimmedString[
+            trimmedString.index(trimmedString.startIndex, offsetBy: callbackPrefix.count) ..<
+            trimmedString.index(trimmedString.endIndex, offsetBy: -callbackSuffix.count)
         ])
     }
 }
