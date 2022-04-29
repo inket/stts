@@ -42,6 +42,11 @@ class AdobeServicesAll: AdobeServices, ServiceCategory {
     let id = 2785
 }
 
+class AdobeB2BEnrichment: Adobe {
+    let name = "Adobe B2B Enrichment"
+    let id = 7073
+}
+
 class AdobeDigitalImaging: Adobe {
     let name = "Adobe Digital Imaging"
     let id = 1591
