@@ -38,7 +38,7 @@ class Zendesk: Service {
     let url = URL(string: "https://status.zendesk.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        loadData(with: url.appendingPathComponent("api/internal/incidents.json")) { [weak self] data, _, error in
+        loadData(with: url.appendingPathComponent("api/ssp/incidents.json")) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
 
