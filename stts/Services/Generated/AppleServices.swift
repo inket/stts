@@ -16,6 +16,11 @@ class AppleAppStore: Apple, SubService {
     let serviceName = "App Store"
 }
 
+class AppleAccount: Apple, SubService {
+    let name = "Apple Account"
+    let serviceName = "Apple Account"
+}
+
 class AppleArcade: Apple, SubService {
     let name = "Apple Arcade"
     let serviceName = "Apple Arcade"
@@ -119,11 +124,6 @@ class AppleDeviceEnrollmentProgram: Apple, SubService {
 class AppleDictation: Apple, SubService {
     let name = "Apple Dictation"
     let serviceName = "Dictation"
-}
-
-class AppleDocumentsInTheCloud: Apple, SubService {
-    let name = "Apple Documents in the Cloud"
-    let serviceName = "Documents in the Cloud"
 }
 
 class AppleFaceTime: Apple, SubService {
@@ -374,14 +374,9 @@ class AppleDeveloperAll: AppleDeveloper, ServiceCategory {
     let serviceName = "*"
 }
 
-class AppleAccount: AppleDeveloper, SubService {
-    let name = "Apple Account"
+class AppleAccountDeveloper: AppleDeveloper, SubService {
+    let name = "Apple Account (Developer)"
     let serviceName = "Account"
-}
-
-class AppleAMPDeveloperContentDelivery: AppleDeveloper, SubService {
-    let name = "Apple AMP - Developer Content Delivery"
-    let serviceName = "AMP - Developer Content Delivery"
 }
 
 class AppleAPNS: AppleDeveloper, SubService {
@@ -439,6 +434,16 @@ class AppleAppStoreConnect: AppleDeveloper, SubService {
     let serviceName = "App Store Connect"
 }
 
+class AppleAppStoreConnectAppProcessing: AppleDeveloper, SubService {
+    let name = "Apple App Store Connect - App Processing "
+    let serviceName = "App Store Connect - App Processing "
+}
+
+class AppleAppStoreConnectAppUpload: AppleDeveloper, SubService {
+    let name = "Apple App Store Connect - App Upload"
+    let serviceName = "App Store Connect - App Upload"
+}
+
 class AppleAppStoreConnectAnalytics: AppleDeveloper, SubService {
     let name = "Apple App Store Connect Analytics"
     let serviceName = "App Store Connect Analytics"
@@ -447,11 +452,6 @@ class AppleAppStoreConnectAnalytics: AppleDeveloper, SubService {
 class AppleAppStoreConnectAPI: AppleDeveloper, SubService {
     let name = "Apple App Store Connect API"
     let serviceName = "App Store Connect API"
-}
-
-class AppleAppStoreConnectAppProcessing: AppleDeveloper, SubService {
-    let name = "Apple App Store Connect App Processing"
-    let serviceName = "App Store Connect App Processing"
 }
 
 class AppleDeveloperForums: AppleDeveloper, SubService {
@@ -572,6 +572,11 @@ class AppleTapToPayOnIPhone: AppleDeveloper, SubService {
 class AppleVideos: AppleDeveloper, SubService {
     let name = "Apple Videos"
     let serviceName = "Videos"
+}
+
+class AppleWeatherKit: AppleDeveloper, SubService {
+    let name = "Apple WeatherKit"
+    let serviceName = "WeatherKit"
 }
 
 class AppleXcodeAutomaticConfiguration: AppleDeveloper, SubService {

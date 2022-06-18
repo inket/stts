@@ -123,6 +123,11 @@ class GoogleCloudBuild: GoogleCloudPlatform, SubService {
     let dashboardName = "Cloud Build"
 }
 
+class GoogleCloudCDN: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud CDN"
+    let dashboardName = "Cloud CDN"
+}
+
 class GoogleCloudDataFusion: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Data Fusion"
     let dashboardName = "Cloud Data Fusion"
@@ -171,6 +176,11 @@ class GoogleCloudIDS: GoogleCloudPlatform, SubService {
 class GoogleCloudKeyManagementService: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Key Management Service"
     let dashboardName = "Cloud Key Management Service"
+}
+
+class GoogleCloudLoadBalancing: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Load Balancing"
+    let dashboardName = "Cloud Load Balancing"
 }
 
 class GoogleCloudLogging: GoogleCloudPlatform, SubService {
@@ -443,6 +453,11 @@ class GoogleHealthcareAndLifeSciences: GoogleCloudPlatform, SubService {
     let dashboardName = "Healthcare and Life Sciences"
 }
 
+class GoogleHybridConnectivity: GoogleCloudPlatform, SubService {
+    let name = "Google Hybrid Connectivity"
+    let dashboardName = "Hybrid Connectivity"
+}
+
 class GoogleIdentityAndAccessManagement: GoogleCloudPlatform, SubService {
     let name = "Google Identity and Access Management"
     let dashboardName = "Identity and Access Management"
@@ -466,6 +481,11 @@ class GoogleLendingDocAI: GoogleCloudPlatform, SubService {
 class GoogleManagedServiceForMicrosoftActiveDirectoryAD: GoogleCloudPlatform, SubService {
     let name = "Google Managed Service for Microsoft Active Directory (AD)"
     let dashboardName = "Managed Service for Microsoft Active Directory (AD)"
+}
+
+class GoogleMediaCDN: GoogleCloudPlatform, SubService {
+    let name = "Google Media CDN"
+    let dashboardName = "Media CDN"
 }
 
 class GoogleNetworkConnectivityCenter: GoogleCloudPlatform, SubService {
@@ -546,6 +566,11 @@ class GoogleStorageTransferService: GoogleCloudPlatform, SubService {
 class GoogleTexttoSpeech: GoogleCloudPlatform, SubService {
     let name = "Google Text-to-Speech"
     let dashboardName = "Text-to-Speech"
+}
+
+class GoogleTrafficDirector: GoogleCloudPlatform, SubService {
+    let name = "Google Traffic Director"
+    let dashboardName = "Traffic Director"
 }
 
 class GoogleTranscoderAPI: GoogleCloudPlatform, SubService {
@@ -641,6 +666,11 @@ class GoogleVertexAIWorkbenchUserManagedNotebooks: GoogleCloudPlatform, SubServi
 class GoogleVideoIntelligenceAPI: GoogleCloudPlatform, SubService {
     let name = "Google Video Intelligence API"
     let dashboardName = "Video Intelligence API"
+}
+
+class GoogleVirtualPrivateCloudVPC: GoogleCloudPlatform, SubService {
+    let name = "Google Virtual Private Cloud (VPC)"
+    let dashboardName = "Virtual Private Cloud (VPC)"
 }
 
 class GoogleVMWareEngine: GoogleCloudPlatform, SubService {

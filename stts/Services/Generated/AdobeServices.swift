@@ -73,11 +73,6 @@ class AdobeAcrobatSign: AdobeDocumentCloud, SubService {
     let id = 1554
 }
 
-class AdobeAcrobatSignIntegrations: AdobeDocumentCloud, SubService {
-    let name = "Adobe Acrobat Sign Integrations"
-    let id = 5139
-}
-
 class AdobeAdministrativeConsoles: AdobeServices, SubService {
     let name = "Adobe Administrative Consoles"
     let id = 2942
