@@ -49,6 +49,8 @@ struct Preferences {
             "CloudFlare": "Cloudflare", // v1.0.0 used the name "CloudFlare" instead of the official "Cloudflare"
             "Apple": "AppleAll", // Apple changed from one service to multiple sub services
             "AppleDeveloper": "AppleDeveloperAll", // Apple Developer changed from one service to multiple sub services
+            "BitBucket": "Bitbucket", // v2.8
+            "StatusPage": "Statuspage", // v2.8
             // Generated services
             "FirebaseMLKit": "FirebaseMachineLearning"
         ]
