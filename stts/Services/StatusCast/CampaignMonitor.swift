@@ -5,8 +5,7 @@
 
 import Foundation
 
-class CampaignMonitor: StatusPageService {
+class CampaignMonitor: StatusCastService {
     let name = "Campaign Monitor"
     let url = URL(string: "https://status.campaignmonitor.com")!
-    let statusPageID = "j9b13g64tzwn"
 }
