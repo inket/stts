@@ -57,7 +57,10 @@ class BaseStatusCastService: BaseService {
             let statuses: [(ServiceStatus, String?)] = doc.css(".status-list-component-status-text").map { element in
                 for status in StatusCastStatus.allCases {
                     if element.className?.contains("component-\(status.rawValue)") == true {
-                        return (status.serviceStatus, element.innerHTML)
+                        return (
+                            status.serviceStatus,
+                            element.innerHTML?.trimmingCharacters(in: .whitespacesAndNewlines)
+                        )
                     }
                 }
 
