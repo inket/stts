@@ -717,7 +717,6 @@
 			isa = PBXGroup;
 			children = (
 				B2E128E627A4DCD6009B1B4C /* ClickUp.swift */,
-				B232A18C20944B950066AD01 /* Cloud66.swift */,
 				B242AB3126E34ADA007EE672 /* CoreWeave.swift */,
 				B22BB3A2223B346E00B43BED /* Dashlane.swift */,
 				B2A0635B1E1340B400EEA762 /* Docker.swift */,
@@ -806,6 +805,7 @@
 				9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */,
 				B2FDC91D1D6706C400F0B728 /* CircleCI.swift */,
 				B213D1FB269ADA5D005EBDDA /* Click.swift */,
+				B232A18C20944B950066AD01 /* Cloud66.swift */,
 				4B49374D6F788B72D32911D8 /* CloudAMQP.swift */,
 				B2F34040222630F20055C96F /* CloudApp.swift */,
 				B299C8501DD04FD60024D2E9 /* Cloudflare.swift */,

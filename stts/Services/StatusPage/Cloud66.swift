@@ -5,7 +5,7 @@
 
 import Foundation
 
-class Cloud66: StatusioV1Service {
+class Cloud66: StatusPageService {
     let url = URL(string: "https://status.cloud66.com")!
-    let statusPageID = "55a770a50a54eb8c710005a9"
+    let statusPageID = "mpfrt81d47gt"
 }
