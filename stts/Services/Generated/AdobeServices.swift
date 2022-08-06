@@ -68,6 +68,11 @@ class AdobeAccountManagement: AdobeServices, SubService {
     let id = 2941
 }
 
+class AdobeAcrobatOnline: AdobeDocumentCloud, SubService {
+    let name = "Adobe Acrobat Online"
+    let id = 2662
+}
+
 class AdobeAcrobatSign: AdobeDocumentCloud, SubService {
     let name = "Adobe Acrobat Sign"
     let id = 1554

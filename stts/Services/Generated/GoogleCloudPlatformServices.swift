@@ -633,6 +633,11 @@ class GoogleVertexAIModelMonitoring: GoogleCloudPlatform, SubService {
     let dashboardName = "Vertex AI Model Monitoring"
 }
 
+class GoogleVertexAIModelRegistry: GoogleCloudPlatform, SubService {
+    let name = "Google Vertex AI Model Registry"
+    let dashboardName = "Vertex AI Model Registry"
+}
+
 class GoogleVertexAIOnlinePrediction: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI Online Prediction"
     let dashboardName = "Vertex AI Online Prediction"
