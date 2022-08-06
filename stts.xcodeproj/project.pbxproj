@@ -86,7 +86,6 @@
 		B213D207269B05D9005EBDDA /* Instatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D206269B05D9005EBDDA /* Instatus.swift */; };
 		B213D209269B06DD005EBDDA /* Threader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D208269B06DD005EBDDA /* Threader.swift */; };
 		B213D20B269B0774005EBDDA /* Sketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D20A269B0774005EBDDA /* Sketch.swift */; };
-		B21492CB21EE9BD70065103E /* ScaleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21492CA21EE9BD70065103E /* ScaleGrid.swift */; };
 		B2163AF820BA4E7500B14A85 /* sttsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AF720BA4E7500B14A85 /* sttsTests.swift */; };
 		B2163B0020BA56EF00B14A85 /* StatusCakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */; };
 		B219C0DA1E2F0E9F001F8E7F /* CocoaPods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */; };
@@ -406,7 +405,6 @@
 		B213D206269B05D9005EBDDA /* Instatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instatus.swift; sourceTree = "<group>"; };
 		B213D208269B06DD005EBDDA /* Threader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threader.swift; sourceTree = "<group>"; };
 		B213D20A269B0774005EBDDA /* Sketch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sketch.swift; sourceTree = "<group>"; };
-		B21492CA21EE9BD70065103E /* ScaleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleGrid.swift; sourceTree = "<group>"; };
 		B2163AF520BA4E7500B14A85 /* sttsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sttsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2163AF720BA4E7500B14A85 /* sttsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sttsTests.swift; sourceTree = "<group>"; };
 		B2163AF920BA4E7500B14A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1082,7 +1080,6 @@
 				B2E70FDA22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift */,
 				B2FDC9191D67029900F0B728 /* Heroku.swift */,
 				B22602B027D881AF001190F1 /* OracleNetSuite.swift */,
-				B21492CA21EE9BD70065103E /* ScaleGrid.swift */,
 				B2228B6126C9623C002F01F0 /* SendbirdAll.swift */,
 				B242AB3526E34DE9007EE672 /* SignalWire.swift */,
 				B2DEE0BD1E696D64006B198E /* Slack.swift */,
@@ -1465,7 +1462,6 @@
 				B21DC0761F6B436400E8214F /* Aptible.swift in Sources */,
 				B2253A6F209F42430039F574 /* Firebase.swift in Sources */,
 				B22FDE512108A5C200359EC9 /* PayPalAPIProduction.swift in Sources */,
-				B21492CB21EE9BD70065103E /* ScaleGrid.swift in Sources */,
 				B26350FD1ED7CFC40069EA73 /* Loggly.swift in Sources */,
 				B231DD5B257B431900647312 /* AuroraSolar.swift in Sources */,
 				B24220E41E2F6BBA0007E50E /* Typeform.swift in Sources */,
