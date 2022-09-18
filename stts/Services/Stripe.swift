@@ -26,8 +26,13 @@ private struct StripeCurrentStatus: Codable {
         }
     }
 
+    enum CodingKeys: String, CodingKey {
+        case message
+        case uptimeStatus = "UptimeStatus"
+    }
+
     let message: String
-    let overallStatus: Status
+    let uptimeStatus: Status
 }
 
 class Stripe: Service {
@@ -43,7 +48,7 @@ class Stripe: Service {
                 return strongSelf._fail("Couldn't parse response")
             }
 
-            self?.status = currentStatus.overallStatus.serviceStatus
+            self?.status = currentStatus.uptimeStatus.serviceStatus
             self?.message = currentStatus.message
         }
     }
