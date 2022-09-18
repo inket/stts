@@ -16,9 +16,9 @@ class AppleAppStore: Apple, SubService {
     let serviceName = "App Store"
 }
 
-class AppleAccount: Apple, SubService {
-    let name = "Apple Account"
-    let serviceName = "Apple Account"
+class AppleAccountCard: Apple, SubService {
+    let name = "Apple Account Card"
+    let serviceName = "Apple Account Card"
 }
 
 class AppleArcade: Apple, SubService {
@@ -374,8 +374,8 @@ class AppleDeveloperAll: AppleDeveloper, ServiceCategory {
     let serviceName = "*"
 }
 
-class AppleAccountDeveloper: AppleDeveloper, SubService {
-    let name = "Apple Account (Developer)"
+class AppleAccount: AppleDeveloper, SubService {
+    let name = "Apple Account"
     let serviceName = "Account"
 }
 

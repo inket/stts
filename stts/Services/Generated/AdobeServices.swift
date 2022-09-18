@@ -43,21 +43,6 @@ class AdobeServicesAll: AdobeServices, ServiceCategory {
     let id = 2785
 }
 
-class AdobeB2BEnrichment: Adobe {
-    let name = "Adobe B2B Enrichment"
-    let id = 7073
-}
-
-class AdobeDigitalImaging: Adobe {
-    let name = "Adobe Digital Imaging"
-    let id = 1591
-}
-
-class AdobeDigitalVideoAndAudio: Adobe {
-    let name = "Adobe Digital Video & Audio"
-    let id = 1627
-}
-
 class AdobeIO: AdobeServices, SubService {
     let name = "Adobe - I/O"
     let id = 1675
@@ -111,11 +96,6 @@ class AdobeBehance: AdobeCreativeCloud, SubService {
 class AdobeCampaign: AdobeExperienceCloud, SubService {
     let name = "Adobe Campaign"
     let id = 1576
-}
-
-class AdobeCaptivatePrime: AdobeServices, SubService {
-    let name = "Adobe Captivate Prime"
-    let id = 2951
 }
 
 class AdobeCapture: AdobeCreativeCloud, SubService {
@@ -273,6 +253,11 @@ class AdobeJourneyOrchestration: AdobeExperiencePlatform, SubService {
     let id = 5224
 }
 
+class AdobeLearningManager: AdobeServices, SubService {
+    let name = "Adobe Learning Manager"
+    let id = 2951
+}
+
 class AdobeLightroom: AdobeCreativeCloud, SubService {
     let name = "Adobe Lightroom"
     let id = 2965
@@ -351,11 +336,6 @@ class AdobeSearch: AdobeServices, SubService {
 class AdobeSignIn: AdobeServices, SubService {
     let name = "Adobe Sign In"
     let id = 2944
-}
-
-class AdobeStock: AdobeCreativeCloud, SubService {
-    let name = "Adobe Stock"
-    let id = 2251
 }
 
 class AdobeSubstance: AdobeCreativeCloud, SubService {

@@ -5,6 +5,7 @@ import Foundation
 
 enum Sendbird {
     static let classes = [
+        SendbirdCanada.self,
         SendbirdFrankfurt.self,
         SendbirdMumbai.self,
         SendbirdNorthVirginia.self,
@@ -16,6 +17,13 @@ enum Sendbird {
         SendbirdSydney.self,
         SendbirdTokyo.self
     ]
+}
+
+class SendbirdCanada: SendbirdService, SubService {
+    let id = "canada"
+    let name = "Sendbird (Canada)"
+    let url = URL(string: "https://status-canada.sendbird.com")!
+    let statusPageID = "xnlfmklffhwg"
 }
 
 class SendbirdFrankfurt: SendbirdService, SubService {
