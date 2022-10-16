@@ -109,13 +109,13 @@ class FirebaseStatusDashboardStore: Loading {
 
         guard let name = sanitizedName else { return nil }
 
-        if tr.css(".status-icon.available").count > 0 {
+        if tr.css("svg.psd__status-icon.psd__available").count > 0 {
             return (name, .good)
-        } else if tr.css(".status-icon.disruption").count > 0 {
+        } else if tr.css("svg.psd__status-icon.psd__disruption").count > 0 {
             return (name, .minor)
-        } else if tr.css(".status-icon.outage").count > 0 {
+        } else if tr.css("svg.psd__status-icon.psd__outage").count > 0 {
             return (name, .major)
-        } else if tr.css(".status-icon.information").count > 0 {
+        } else if tr.css("svg.psd__status-icon.psd__information").count > 0 {
             return (name, .notice)
         } else {
             return (name, .undetermined)
