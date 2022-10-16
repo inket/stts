@@ -303,6 +303,16 @@ class GoogleDatastream: GoogleCloudPlatform, SubService {
     let dashboardName = "Datastream"
 }
 
+class GoogleDialogflowCX: GoogleCloudPlatform, SubService {
+    let name = "Google Dialogflow CX"
+    let dashboardName = "Dialogflow CX"
+}
+
+class GoogleDialogflowES: GoogleCloudPlatform, SubService {
+    let name = "Google Dialogflow ES"
+    let dashboardName = "Dialogflow ES"
+}
+
 class GoogleDocumentAI: GoogleCloudPlatform, SubService {
     let name = "Google Document AI"
     let dashboardName = "Document AI"
@@ -438,6 +448,11 @@ class GoogleComputeEngine: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Compute Engine"
 }
 
+class GoogleKubernetesEngine: GoogleCloudPlatform, SubService {
+    let name = "Google Kubernetes Engine"
+    let dashboardName = "Google Kubernetes Engine"
+}
+
 class GoogleHealthcareAndLifeSciences: GoogleCloudPlatform, SubService {
     let name = "Google Healthcare and Life Sciences"
     let dashboardName = "Healthcare and Life Sciences"
@@ -541,6 +556,11 @@ class GoogleSecretManager: GoogleCloudPlatform, SubService {
 class GoogleServiceDirectory: GoogleCloudPlatform, SubService {
     let name = "Google Service Directory"
     let dashboardName = "Service Directory"
+}
+
+class GoogleSpeechtoText: GoogleCloudPlatform, SubService {
+    let name = "Google Speech-to-Text"
+    let dashboardName = "Speech-to-Text"
 }
 
 class GoogleStorageTransferService: GoogleCloudPlatform, SubService {
