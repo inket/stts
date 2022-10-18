@@ -10,7 +10,6 @@
 		03C5FB131E203325003C40B8 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5FB121E203325003C40B8 /* Packet.swift */; };
 		04344BEDCC48E34DA3370B42 /* VMwareCarbonBlack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C548E19B1B95EFDBB7898 /* VMwareCarbonBlack.swift */; };
 		07903F3F2A403F03BDDD3AD1 /* JumpCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C3B179FEEE9F7F150196F /* JumpCloud.swift */; };
-		0851FE81840F6555301382D8 /* PlausibleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F2CDBBA1C28D8E93EFB1C /* PlausibleAnalytics.swift */; };
 		0988F07539A4DBD9DA7D690A /* Customerio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA65AF81160DCD231D5F43 /* Customerio.swift */; };
 		0FDDACCD23CD7EBF00FE96CD /* ElasticCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDDACCC23CD7EBF00FE96CD /* ElasticCloud.swift */; };
 		124032654D5819163AA771F2 /* AtlassianPartners.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A0B13DB442169F731592B /* AtlassianPartners.swift */; };
@@ -152,6 +151,7 @@
 		B24F91231E8B51A400A77460 /* Auth0.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24F91221E8B51A400A77460 /* Auth0.swift */; };
 		B2510954269AD87C005868DE /* Snowflake.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2510953269AD87C005868DE /* Snowflake.swift */; };
 		B254098D28FE71990009F956 /* BetterUptimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254098C28FE71990009F956 /* BetterUptimeService.swift */; };
+		B254099028FE75CA0009F956 /* PlausibleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254098F28FE75CA0009F956 /* PlausibleAnalytics.swift */; };
 		B254642321EE9AF6003068A4 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254642221EE9AF6003068A4 /* GitHub.swift */; };
 		B2563BBC22CBC3D500532C39 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBB22CBC3D500532C39 /* DataLoader.swift */; };
 		B2563BBE22CBC65A00532C39 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBD22CBC65A00532C39 /* URLSessionMock.swift */; };
@@ -479,6 +479,7 @@
 		B24F91221E8B51A400A77460 /* Auth0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth0.swift; sourceTree = "<group>"; };
 		B2510953269AD87C005868DE /* Snowflake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snowflake.swift; sourceTree = "<group>"; };
 		B254098C28FE71990009F956 /* BetterUptimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterUptimeService.swift; sourceTree = "<group>"; };
+		B254098F28FE75CA0009F956 /* PlausibleAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlausibleAnalytics.swift; sourceTree = "<group>"; };
 		B254642221EE9AF6003068A4 /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		B2563BBB22CBC3D500532C39 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		B2563BBD22CBC65A00532C39 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
@@ -621,7 +622,6 @@
 		C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeTransfer.swift; sourceTree = "<group>"; };
 		CA1F86EF25EF8B3548E43010 /* PlayFab.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayFab.swift; sourceTree = "<group>"; };
 		CA6A0B13DB442169F731592B /* AtlassianPartners.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtlassianPartners.swift; sourceTree = "<group>"; };
-		D52F2CDBBA1C28D8E93EFB1C /* PlausibleAnalytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlausibleAnalytics.swift; sourceTree = "<group>"; };
 		D6B730B6BF88700B5DC9212E /* SumoLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SumoLogic.swift; sourceTree = "<group>"; };
 		D819CB63B6576DA05BFC764C /* Netlify.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
 		E5A4F04F86B9C0A9FB7233AE /* Branch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
@@ -672,7 +672,6 @@
 			children = (
 				B213D206269B05D9005EBDDA /* Instatus.swift */,
 				B213D204269B0496005EBDDA /* Linear.swift */,
-				D52F2CDBBA1C28D8E93EFB1C /* PlausibleAnalytics.swift */,
 				0160B2F5B66992A4DE58FF49 /* Primcloud.swift */,
 				B213D202269B045C005EBDDA /* Railway.swift */,
 				B213D20A269B0774005EBDDA /* Sketch.swift */,
@@ -1448,6 +1447,7 @@
 				B26350FF1ED7D0210069EA73 /* Segment.swift in Sources */,
 				B29D50BF24B0542100F4961B /* PlatformSH.swift in Sources */,
 				B299C8471DD04D7C0024D2E9 /* NPM.swift in Sources */,
+				B254099028FE75CA0009F956 /* PlausibleAnalytics.swift in Sources */,
 				B2E018FD214E60E700C5F75B /* AppearanceObserver.swift in Sources */,
 				B2107BCF254C970000284EE7 /* Notion.swift in Sources */,
 				B2C4670F1E70012700C5145D /* Zapier.swift in Sources */,
@@ -1569,7 +1569,6 @@
 				B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */,
 				2F802A9BB36717992C334CB8 /* Medium.swift in Sources */,
 				56EB1377353A8087B682B4E6 /* Primcloud.swift in Sources */,
-				0851FE81840F6555301382D8 /* PlausibleAnalytics.swift in Sources */,
 				B2C5ED1B281CA96200009B68 /* OneLoginUS.swift in Sources */,
 				E5B35A5C6608D856A99842B2 /* Miro.swift in Sources */,
 				2009CD655C4526247CF38971 /* ReadMe.swift in Sources */,
