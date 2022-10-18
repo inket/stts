@@ -40,6 +40,7 @@
 		5BE9174C12190D85B29567FD /* HashiCorp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DE85B45D490EF40F319860 /* HashiCorp.swift */; };
 		604E5ED195443A1FF7BBDE08 /* EasyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFC32AB6F1A8F278412D26 /* EasyPost.swift */; };
 		6074BFF1D6DC04BB94FB0ACA /* JiraWorkManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7D189B0FC2B9F9E6ECDCDB /* JiraWorkManagement.swift */; };
+		623F648895DB729F0E1EE354 /* Scaleway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71284C408241E2CE20F2330D /* Scaleway.swift */; };
 		67B20C4C76EDC39B65A6FB99 /* JiraAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C785BEA1BEF2A0DD068A4DD /* JiraAlign.swift */; };
 		68296A7E9330DE2E157D9736 /* MessageBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E14834A02FABD0C75361E /* MessageBird.swift */; };
 		691A9AA9137E52D210A3A002 /* CloudAMQP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B49374D6F788B72D32911D8 /* CloudAMQP.swift */; };
@@ -360,6 +361,7 @@
 		6B24BCA673F692E9211E7B8D /* Medium.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Medium.swift; sourceTree = "<group>"; };
 		6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruiterbox.swift; sourceTree = "<group>"; };
 		70244989EDA4E2F3CF20FA50 /* Doppler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Doppler.swift; sourceTree = "<group>"; };
+		71284C408241E2CE20F2330D /* Scaleway.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Scaleway.swift; sourceTree = "<group>"; };
 		7B305FAA210237AA0086DCE0 /* Spoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spoke.swift; sourceTree = "<group>"; };
 		7BA6A0A12240D8E000700C2C /* Bolt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bolt.swift; sourceTree = "<group>"; };
 		80361FCB72F96FA6F753D7C1 /* Bugsnag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bugsnag.swift; sourceTree = "<group>"; };
@@ -915,6 +917,7 @@
 				B211F0B71E607C09008DD360 /* Rollbar.swift */,
 				B299C8481DD04DCB0024D2E9 /* RubyGems.swift */,
 				B25695551E247C8C00FAE413 /* SauceLabs.swift */,
+				71284C408241E2CE20F2330D /* Scaleway.swift */,
 				45F333DF556929BF0340E824 /* SecurID.swift */,
 				B26350FE1ED7D0210069EA73 /* Segment.swift */,
 				B227D30A25D5886B00951917 /* Semaphore.swift */,
@@ -1608,6 +1611,7 @@
 				124032654D5819163AA771F2 /* AtlassianPartners.swift in Sources */,
 				B8521A537A25ACC686F15EB7 /* AtlassianDeveloper.swift in Sources */,
 				885398879BE642F02CBA18BB /* QuickBooks.swift in Sources */,
+				623F648895DB729F0E1EE354 /* Scaleway.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
