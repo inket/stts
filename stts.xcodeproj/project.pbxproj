@@ -151,6 +151,7 @@
 		B24EE10626C8C08A00F7CE8B /* SalesforceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24EE10526C8C08A00F7CE8B /* SalesforceStore.swift */; };
 		B24F91231E8B51A400A77460 /* Auth0.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24F91221E8B51A400A77460 /* Auth0.swift */; };
 		B2510954269AD87C005868DE /* Snowflake.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2510953269AD87C005868DE /* Snowflake.swift */; };
+		B254098D28FE71990009F956 /* BetterUptimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254098C28FE71990009F956 /* BetterUptimeService.swift */; };
 		B254642321EE9AF6003068A4 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254642221EE9AF6003068A4 /* GitHub.swift */; };
 		B2563BBC22CBC3D500532C39 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBB22CBC3D500532C39 /* DataLoader.swift */; };
 		B2563BBE22CBC65A00532C39 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBD22CBC65A00532C39 /* URLSessionMock.swift */; };
@@ -477,6 +478,7 @@
 		B24EE10526C8C08A00F7CE8B /* SalesforceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesforceStore.swift; sourceTree = "<group>"; };
 		B24F91221E8B51A400A77460 /* Auth0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth0.swift; sourceTree = "<group>"; };
 		B2510953269AD87C005868DE /* Snowflake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snowflake.swift; sourceTree = "<group>"; };
+		B254098C28FE71990009F956 /* BetterUptimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterUptimeService.swift; sourceTree = "<group>"; };
 		B254642221EE9AF6003068A4 /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		B2563BBB22CBC3D500532C39 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		B2563BBD22CBC65A00532C39 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
@@ -707,6 +709,14 @@
 				B22FDE4E2108A5B700359EC9 /* PayPalProductSandbox.swift */,
 			);
 			path = PayPal;
+			sourceTree = "<group>";
+		};
+		B254098E28FE75B00009F956 /* BetterUptime */ = {
+			isa = PBXGroup;
+			children = (
+				B254098F28FE75CA0009F956 /* PlausibleAnalytics.swift */,
+			);
+			path = BetterUptime;
 			sourceTree = "<group>";
 		};
 		B2563BC122CBC92400532C39 /* Mocks */ = {
@@ -1067,6 +1077,7 @@
 		B2FDC91F1D6706FB00F0B728 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B254098E28FE75B00009F956 /* BetterUptime */,
 				B2BB19B820B8FEB200A97A87 /* Cachet */,
 				B2E70FDF22B0844F000BCAD2 /* Generated */,
 				B213D201269B0449005EBDDA /* Instatus */,
@@ -1111,6 +1122,7 @@
 				B277BC9122B4BB5C000B55C3 /* AzureDevOps.swift */,
 				B277BC9322B4BB6D000B55C3 /* AzureDevOpsStore.swift */,
 				B2CEE5D822B49CC80073C743 /* AzureStore.swift */,
+				B254098C28FE71990009F956 /* BetterUptimeService.swift */,
 				B2BB19B920B8FEFD00A97A87 /* CachetService.swift */,
 				B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */,
 				B2253A6C209F3F9F0039F574 /* FirebaseService.swift */,
@@ -1464,6 +1476,7 @@
 				B2767A0F255FBC3E0047A9BE /* Bitmovin.swift in Sources */,
 				B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */,
 				194BC88222A8EAC10065E698 /* Clubhouse.swift in Sources */,
+				B254098D28FE71990009F956 /* BetterUptimeService.swift in Sources */,
 				B28DFE4721377A0B000EE4AF /* Wodby.swift in Sources */,
 				B2430807210810D0003F8D07 /* Algolia.swift in Sources */,
 				03C5FB131E203325003C40B8 /* Packet.swift in Sources */,
