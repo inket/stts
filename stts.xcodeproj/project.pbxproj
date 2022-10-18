@@ -152,6 +152,7 @@
 		B2510954269AD87C005868DE /* Snowflake.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2510953269AD87C005868DE /* Snowflake.swift */; };
 		B254098D28FE71990009F956 /* BetterUptimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254098C28FE71990009F956 /* BetterUptimeService.swift */; };
 		B254099028FE75CA0009F956 /* PlausibleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254098F28FE75CA0009F956 /* PlausibleAnalytics.swift */; };
+		B254099228FE76AA0009F956 /* Keygen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254099128FE76AA0009F956 /* Keygen.swift */; };
 		B254642321EE9AF6003068A4 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254642221EE9AF6003068A4 /* GitHub.swift */; };
 		B2563BBC22CBC3D500532C39 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBB22CBC3D500532C39 /* DataLoader.swift */; };
 		B2563BBE22CBC65A00532C39 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBD22CBC65A00532C39 /* URLSessionMock.swift */; };
@@ -480,6 +481,7 @@
 		B2510953269AD87C005868DE /* Snowflake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snowflake.swift; sourceTree = "<group>"; };
 		B254098C28FE71990009F956 /* BetterUptimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterUptimeService.swift; sourceTree = "<group>"; };
 		B254098F28FE75CA0009F956 /* PlausibleAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlausibleAnalytics.swift; sourceTree = "<group>"; };
+		B254099128FE76AA0009F956 /* Keygen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keygen.swift; sourceTree = "<group>"; };
 		B254642221EE9AF6003068A4 /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		B2563BBB22CBC3D500532C39 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		B2563BBD22CBC65A00532C39 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
@@ -713,6 +715,7 @@
 		B254098E28FE75B00009F956 /* BetterUptime */ = {
 			isa = PBXGroup;
 			children = (
+				B254099128FE76AA0009F956 /* Keygen.swift */,
 				B254098F28FE75CA0009F956 /* PlausibleAnalytics.swift */,
 			);
 			path = BetterUptime;
@@ -1452,6 +1455,7 @@
 				B2107BCF254C970000284EE7 /* Notion.swift in Sources */,
 				B2C4670F1E70012700C5145D /* Zapier.swift in Sources */,
 				B2C5ED1D281CAA3400009B68 /* OneLoginEU.swift in Sources */,
+				B254099228FE76AA0009F956 /* Keygen.swift in Sources */,
 				B24B573223A4EAD200AFCF01 /* Pantheon.swift in Sources */,
 				B2228B6226C9623C002F01F0 /* SendbirdAll.swift in Sources */,
 				B213D205269B0496005EBDDA /* Linear.swift in Sources */,
