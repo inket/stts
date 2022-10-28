@@ -1,5 +1,4 @@
 require 'net/https'
-require 'nokogiri'
 require 'xcodeproj'
 require 'json'
 require 'synx'
@@ -14,29 +13,29 @@ def source_for(url)
 end
 
 def extract_instatus(source, custom_name)
-    document = Nokogiri::HTML(source)
+    data = source.scan(/__NEXT_DATA__.*?(\{.*?\})<\/script>/mi).flatten.first
+    return false if data == nil || data.empty?
 
-    document.css("#__NEXT_DATA__").each do |data|
-        site = JSON.parse(data.inner_html)["props"]["pageProps"]["site"]
+    site = JSON.parse(data)["props"]["pageProps"]["site"]
 
-        custom_domain = site["customDomain"]
-        if custom_domain && custom_domain != ""
-            domain = custom_domain
-        else
-            domain = "#{site["subdomain"]}.instatus.com"
-        end
+    custom_domain = site["customDomain"]
+    if custom_domain && custom_domain != ""
+        domain = custom_domain
+    else
+        domain = "#{site["subdomain"]}.instatus.com"
+    end
 
-        name = custom_name || site["name"]
-        url = "https://#{domain}"
-        safe_name = sanitized_name(name)
+    name = custom_name || site["name"]
+    url = "https://#{domain}"
+    safe_name = sanitized_name(name)
 
-        definitions = [
-            "let url = URL(string: \"#{url}\")!"
-        ]
+    definitions = [
+        "let url = URL(string: \"#{url}\")!"
+    ]
 
-        definitions.unshift("let name = \"#{name}\"") if safe_name != name
+    definitions.unshift("let name = \"#{name}\"") if safe_name != name
 
-        create_file "stts/Services/Instatus/#{safe_name}.swift", <<-INSTATUS
+    create_file "stts/Services/Instatus/#{safe_name}.swift", <<-INSTATUS
 //
 //  #{safe_name}.swift
 //  stts
@@ -47,12 +46,9 @@ import Foundation
 class #{safe_name}: InstatusService {
     #{definitions.join("\n    ")}
 }
-        INSTATUS
+    INSTATUS
 
-        return true
-    end
-
-    return false
+    return true
 end
 
 def extract_statuspage(url, custom_name)
