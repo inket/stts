@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03C5FB131E203325003C40B8 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5FB121E203325003C40B8 /* Packet.swift */; };
 		04344BEDCC48E34DA3370B42 /* VMwareCarbonBlack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C548E19B1B95EFDBB7898 /* VMwareCarbonBlack.swift */; };
 		06476158F5A7352BE05544BB /* Proton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE5D41DDC4D721C254C004 /* Proton.swift */; };
 		07903F3F2A403F03BDDD3AD1 /* JumpCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C3B179FEEE9F7F150196F /* JumpCloud.swift */; };
@@ -334,7 +333,6 @@
 
 /* Begin PBXFileReference section */
 		0160B2F5B66992A4DE58FF49 /* Primcloud.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Primcloud.swift; sourceTree = "<group>"; };
-		03C5FB121E203325003C40B8 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
 		067E14834A02FABD0C75361E /* MessageBird.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessageBird.swift; sourceTree = "<group>"; };
 		0BDEA739C3989EA43886F0F6 /* OneSignal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OneSignal.swift; sourceTree = "<group>"; };
 		0EF59C4AA2A53663EAE8DA39 /* MongoDBCloud.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MongoDBCloud.swift; sourceTree = "<group>"; };
@@ -912,7 +910,6 @@
 				B22BB3A0223B341B00B43BED /* OnePassword.swift */,
 				0BDEA739C3989EA43886F0F6 /* OneSignal.swift */,
 				3F6D6DE9B7048DB851580651 /* Opsgenie.swift */,
-				03C5FB121E203325003C40B8 /* Packet.swift */,
 				B25695531E247C8C00FAE413 /* PagerDuty.swift */,
 				B24B573123A4EAD200AFCF01 /* Pantheon.swift */,
 				B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */,
@@ -1480,7 +1477,6 @@
 				B254098D28FE71990009F956 /* BetterUptimeService.swift in Sources */,
 				B28DFE4721377A0B000EE4AF /* Wodby.swift in Sources */,
 				B2430807210810D0003F8D07 /* Algolia.swift in Sources */,
-				03C5FB131E203325003C40B8 /* Packet.swift in Sources */,
 				B2F55EEE2408B68F003D674C /* PSNAsia.swift in Sources */,
 				B21DC0761F6B436400E8214F /* Aptible.swift in Sources */,
 				B2253A6F209F42430039F574 /* Firebase.swift in Sources */,
