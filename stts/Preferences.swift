@@ -54,6 +54,7 @@ struct Preferences {
             "ProtonMail": "Proton", // v2.12
             "Packet": "EquinixMetal", // v2.12
             "Quandl": "NasdaqDataLink", // v2.12
+            "Quay": "QuayIO", // v2.12
             // Generated services
             "FirebaseMLKit": "FirebaseMachineLearning"
         ]

@@ -273,7 +273,7 @@
 		B2F127A71E0B84230035B20C /* PubNub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127A61E0B84230035B20C /* PubNub.swift */; };
 		B2F127A91E0B84B50035B20C /* Twilio.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F127A81E0B84B50035B20C /* Twilio.swift */; };
 		B2F34041222630F20055C96F /* CloudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F34040222630F20055C96F /* CloudApp.swift */; };
-		B2F35F261E5D181300E3A00E /* Quay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F35F251E5D181300E3A00E /* Quay.swift */; };
+		B2F35F261E5D181300E3A00E /* QuayIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F35F251E5D181300E3A00E /* QuayIO.swift */; };
 		B2F55EE92408AB1A003D674C /* PlayStationNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F55EE82408AB1A003D674C /* PlayStationNetwork.swift */; };
 		B2F55EEC2408B5F1003D674C /* PSNAmerica.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F55EEB2408B5F1003D674C /* PSNAmerica.swift */; };
 		B2F55EEE2408B68F003D674C /* PSNAsia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F55EED2408B68F003D674C /* PSNAsia.swift */; };
@@ -606,7 +606,7 @@
 		B2F127A61E0B84230035B20C /* PubNub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubNub.swift; sourceTree = "<group>"; };
 		B2F127A81E0B84B50035B20C /* Twilio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twilio.swift; sourceTree = "<group>"; };
 		B2F34040222630F20055C96F /* CloudApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudApp.swift; sourceTree = "<group>"; };
-		B2F35F251E5D181300E3A00E /* Quay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quay.swift; sourceTree = "<group>"; };
+		B2F35F251E5D181300E3A00E /* QuayIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuayIO.swift; sourceTree = "<group>"; };
 		B2F55EE82408AB1A003D674C /* PlayStationNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayStationNetwork.swift; sourceTree = "<group>"; };
 		B2F55EEB2408B5F1003D674C /* PSNAmerica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSNAmerica.swift; sourceTree = "<group>"; };
 		B2F55EED2408B68F003D674C /* PSNAsia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSNAsia.swift; sourceTree = "<group>"; };
@@ -922,7 +922,7 @@
 				B2F127A61E0B84230035B20C /* PubNub.swift */,
 				B299C84A1DD04E850024D2E9 /* Pusher.swift */,
 				B272E3C7235F460D00B33076 /* Python.swift */,
-				B2F35F251E5D181300E3A00E /* Quay.swift */,
+				B2F35F251E5D181300E3A00E /* QuayIO.swift */,
 				0FE9B86802DA92D1851DA069 /* QuickBooks.swift */,
 				1CB4E2FFFE60AE5D0E0BB449 /* ReadMe.swift */,
 				6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */,
@@ -1492,7 +1492,7 @@
 				B219C0DA1E2F0E9F001F8E7F /* CocoaPods.swift in Sources */,
 				B22FDE4F2108A5B700359EC9 /* PayPalProductSandbox.swift in Sources */,
 				B2F55EEC2408B5F1003D674C /* PSNAmerica.swift in Sources */,
-				B2F35F261E5D181300E3A00E /* Quay.swift in Sources */,
+				B2F35F261E5D181300E3A00E /* QuayIO.swift in Sources */,
 				B299C8451DD046F20024D2E9 /* AmazonWebServices.swift in Sources */,
 				B2563BBC22CBC3D500532C39 /* DataLoader.swift in Sources */,
 				B231DD5C257B431900647312 /* CoderPad.swift in Sources */,
