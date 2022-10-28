@@ -51,6 +51,7 @@ struct Preferences {
             "AppleDeveloper": "AppleDeveloperAll", // Apple Developer changed from one service to multiple sub services
             "BitBucket": "Bitbucket", // v2.8
             "StatusPage": "Statuspage", // v2.8
+            "ProtonMail": "Proton", // v2.12
             // Generated services
             "FirebaseMLKit": "FirebaseMachineLearning"
         ]
