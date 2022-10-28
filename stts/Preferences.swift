@@ -55,6 +55,7 @@ struct Preferences {
             "Packet": "EquinixMetal", // v2.12
             "Quandl": "NasdaqDataLink", // v2.12
             "Quay": "QuayIO", // v2.12
+            "SmartyStreets": "Smarty", // v2.12
             // Generated services
             "FirebaseMLKit": "FirebaseMachineLearning"
         ]

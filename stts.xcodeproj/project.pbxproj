@@ -161,7 +161,6 @@
 		B256955D1E247C8C00FAE413 /* Pingdom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695541E247C8C00FAE413 /* Pingdom.swift */; };
 		B256955E1E247C8C00FAE413 /* SauceLabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695551E247C8C00FAE413 /* SauceLabs.swift */; };
 		B256955F1E247C8C00FAE413 /* SendGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695561E247C8C00FAE413 /* SendGrid.swift */; };
-		B25695601E247C8C00FAE413 /* SmartyStreets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695571E247C8C00FAE413 /* SmartyStreets.swift */; };
 		B25695611E247C8C00FAE413 /* Squarespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695581E247C8C00FAE413 /* Squarespace.swift */; };
 		B257469B1E2781A3003A07A4 /* CodeClimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B257469A1E2781A3003A07A4 /* CodeClimate.swift */; };
 		B25ACB64289E01700014C95C /* Roblox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25ACB63289E01700014C95C /* Roblox.swift */; };
@@ -295,6 +294,7 @@
 		C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */; };
 		D25675615FE77EF34E668B99 /* JiraSoftware.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1243DB051144F27DE071F9 /* JiraSoftware.swift */; };
 		D5F7C57260F512BDB844AD08 /* TeleportCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FEC29C375721FE85A4ED27 /* TeleportCloud.swift */; };
+		D6FC1C0B5C45F3865F9D6543 /* Smarty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2764C094034CD61A24624DA6 /* Smarty.swift */; };
 		E2AAECBE89E07C6E94464ABF /* Checkly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */; };
 		E5B35A5C6608D856A99842B2 /* Miro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCCFA4ECD8BB402C7254FEF /* Miro.swift */; };
 		ED78F07A7D2AB1F665182667 /* Temporal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D9C362F03D1C2E95A663D /* Temporal.swift */; };
@@ -343,6 +343,7 @@
 		1CB4E2FFFE60AE5D0E0BB449 /* ReadMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReadMe.swift; sourceTree = "<group>"; };
 		1CCCFA4ECD8BB402C7254FEF /* Miro.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Miro.swift; sourceTree = "<group>"; };
 		223AE0427F33807B67A98607 /* Dialpad.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Dialpad.swift; sourceTree = "<group>"; };
+		2764C094034CD61A24624DA6 /* Smarty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Smarty.swift; sourceTree = "<group>"; };
 		2B88D0162448690134C1E7D9 /* JiraServiceManagement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JiraServiceManagement.swift; sourceTree = "<group>"; };
 		2D7D189B0FC2B9F9E6ECDCDB /* JiraWorkManagement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JiraWorkManagement.swift; sourceTree = "<group>"; };
 		2F1B7558227A095400BA5CBD /* Avalara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avalara.swift; sourceTree = "<group>"; };
@@ -491,7 +492,6 @@
 		B25695541E247C8C00FAE413 /* Pingdom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pingdom.swift; sourceTree = "<group>"; };
 		B25695551E247C8C00FAE413 /* SauceLabs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SauceLabs.swift; sourceTree = "<group>"; };
 		B25695561E247C8C00FAE413 /* SendGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendGrid.swift; sourceTree = "<group>"; };
-		B25695571E247C8C00FAE413 /* SmartyStreets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartyStreets.swift; sourceTree = "<group>"; };
 		B25695581E247C8C00FAE413 /* Squarespace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Squarespace.swift; sourceTree = "<group>"; };
 		B257469A1E2781A3003A07A4 /* CodeClimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeClimate.swift; sourceTree = "<group>"; };
 		B25ACB63289E01700014C95C /* Roblox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roblox.swift; sourceTree = "<group>"; };
@@ -940,7 +940,7 @@
 				B25695561E247C8C00FAE413 /* SendGrid.swift */,
 				B299C8521DD0505F0024D2E9 /* Sentry.swift */,
 				36AD8ED4235A1FCA00F2FD73 /* Shopify.swift */,
-				B25695571E247C8C00FAE413 /* SmartyStreets.swift */,
+				2764C094034CD61A24624DA6 /* Smarty.swift */,
 				B2510953269AD87C005868DE /* Snowflake.swift */,
 				B2A93ADC1EB814C000D36DD3 /* Snyk.swift */,
 				7B305FAA210237AA0086DCE0 /* Spoke.swift */,
@@ -1382,7 +1382,6 @@
 				A0C3F34B220FD630005D9998 /* Datadog.swift in Sources */,
 				B23EE5B324B9FF430067D800 /* Bullhorn.swift in Sources */,
 				B2B2D1031D49D5080014D780 /* AppDelegate.swift in Sources */,
-				B25695601E247C8C00FAE413 /* SmartyStreets.swift in Sources */,
 				B2CEE5D722B49CB50073C743 /* Azure.swift in Sources */,
 				B25695611E247C8C00FAE413 /* Squarespace.swift in Sources */,
 				B2894CE420EEE2780009CCA3 /* Buildkite.swift in Sources */,
@@ -1624,6 +1623,7 @@
 				06476158F5A7352BE05544BB /* Proton.swift in Sources */,
 				7F96823683B97EF8AEA15F62 /* EquinixMetal.swift in Sources */,
 				BA54439EB4493BD4A4665F80 /* NasdaqDataLink.swift in Sources */,
+				D6FC1C0B5C45F3865F9D6543 /* Smarty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
