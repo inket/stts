@@ -338,6 +338,11 @@ class AdobeSignIn: AdobeServices, SubService {
     let id = 2944
 }
 
+class AdobeStock: AdobeCreativeCloud, SubService {
+    let name = "Adobe Stock"
+    let id = 2251
+}
+
 class AdobeSubstance: AdobeCreativeCloud, SubService {
     let name = "Adobe Substance"
     let id = 5710
