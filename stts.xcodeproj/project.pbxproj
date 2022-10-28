@@ -299,6 +299,7 @@
 		E5B35A5C6608D856A99842B2 /* Miro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCCFA4ECD8BB402C7254FEF /* Miro.swift */; };
 		ED78F07A7D2AB1F665182667 /* Temporal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D9C362F03D1C2E95A663D /* Temporal.swift */; };
 		EF67ABCF8677A86151FBBA38 /* Bugsnag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80361FCB72F96FA6F753D7C1 /* Bugsnag.swift */; };
+		FBB552B59A4951F2DAB48CCD /* KeeperSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E9DE62ED9C9E27F1B4BB3C /* KeeperSecurity.swift */; };
 		FC278203BFB2E7D5A41639ED /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A4F04F86B9C0A9FB7233AE /* Branch.swift */; };
 		FF28BED980D893016972C9B2 /* SumoLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B730B6BF88700B5DC9212E /* SumoLogic.swift */; };
 /* End PBXBuildFile section */
@@ -616,6 +617,7 @@
 		B2FDC91B1D67062200F0B728 /* StatusPageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPageService.swift; sourceTree = "<group>"; };
 		B2FDC91D1D6706C400F0B728 /* CircleCI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCI.swift; sourceTree = "<group>"; };
 		B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dropbox.swift; sourceTree = "<group>"; };
+		B4E9DE62ED9C9E27F1B4BB3C /* KeeperSecurity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeeperSecurity.swift; sourceTree = "<group>"; };
 		B7FEC29C375721FE85A4ED27 /* TeleportCloud.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TeleportCloud.swift; sourceTree = "<group>"; };
 		BCCFC32AB6F1A8F278412D26 /* EasyPost.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EasyPost.swift; sourceTree = "<group>"; };
 		BF7AA78022B03AE4002460FB /* Bitrise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitrise.swift; sourceTree = "<group>"; };
@@ -876,6 +878,7 @@
 				2D7D189B0FC2B9F9E6ECDCDB /* JiraWorkManagement.swift */,
 				4E2C3B179FEEE9F7F150196F /* JumpCloud.swift */,
 				B23D4E6E1E13475900B04F18 /* KeenIO.swift */,
+				B4E9DE62ED9C9E27F1B4BB3C /* KeeperSecurity.swift */,
 				B2EF186324F1544100C2F89E /* Kentik.swift */,
 				A95EACF9101337BC18198C82 /* Kustomer.swift */,
 				B2D6FDAD21B95A0800F95940 /* LastPass.swift */,
@@ -1628,6 +1631,7 @@
 				B8521A537A25ACC686F15EB7 /* AtlassianDeveloper.swift in Sources */,
 				885398879BE642F02CBA18BB /* QuickBooks.swift in Sources */,
 				623F648895DB729F0E1EE354 /* Scaleway.swift in Sources */,
+				FBB552B59A4951F2DAB48CCD /* KeeperSecurity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
