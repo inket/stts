@@ -52,6 +52,7 @@ struct Preferences {
             "BitBucket": "Bitbucket", // v2.8
             "StatusPage": "Statuspage", // v2.8
             "ProtonMail": "Proton", // v2.12
+            "Packet": "EquinixMetal", // v2.12
             // Generated services
             "FirebaseMLKit": "FirebaseMachineLearning"
         ]

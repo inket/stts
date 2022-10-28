@@ -52,6 +52,7 @@
 		7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B305FAA210237AA0086DCE0 /* Spoke.swift */; };
 		7BA6A0A22240D8E000700C2C /* Bolt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6A0A12240D8E000700C2C /* Bolt.swift */; };
 		7E1580ED5174442F7B691728 /* Blend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7B31666FF70588A709098 /* Blend.swift */; };
+		7F96823683B97EF8AEA15F62 /* EquinixMetal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF74DC57A426C3EBFCC2E90 /* EquinixMetal.swift */; };
 		885398879BE642F02CBA18BB /* QuickBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE9B86802DA92D1851DA069 /* QuickBooks.swift */; };
 		91B0A21428197857007D8E8F /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0A21328197857007D8E8F /* StringExtensionsTests.swift */; };
 		949744F91617B020975F6707 /* Bitbucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D7AA16CE8CF0B13B8DF242 /* Bitbucket.swift */; };
@@ -377,6 +378,7 @@
 		94D7AA16CE8CF0B13B8DF242 /* Bitbucket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bitbucket.swift; sourceTree = "<group>"; };
 		9656BD00C255628C438D394F /* JiraProductDiscovery.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JiraProductDiscovery.swift; sourceTree = "<group>"; };
 		9AFE09F6E559505EECD0AF8D /* AtlassianSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtlassianSupport.swift; sourceTree = "<group>"; };
+		9BF74DC57A426C3EBFCC2E90 /* EquinixMetal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EquinixMetal.swift; sourceTree = "<group>"; };
 		9C6AF196D47310053DE2A8A0 /* Cypress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cypress.swift; sourceTree = "<group>"; };
 		9C785BEA1BEF2A0DD068A4DD /* JiraAlign.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JiraAlign.swift; sourceTree = "<group>"; };
 		9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Checkly.swift; sourceTree = "<group>"; };
@@ -856,6 +858,7 @@
 				B2EC838D24547371001D2D2F /* Egnyte.swift */,
 				0FDDACCC23CD7EBF00FE96CD /* ElasticCloud.swift */,
 				B299C8541DD051210024D2E9 /* EngineYard.swift */,
+				9BF74DC57A426C3EBFCC2E90 /* EquinixMetal.swift */,
 				A125C59D20F7909500C513B3 /* Fastly.swift */,
 				B269FCBA1E261BDF0016041D /* Figma.swift */,
 				B20396371EE6A06C008CCA21 /* Filestack.swift */,
@@ -1624,6 +1627,7 @@
 				623F648895DB729F0E1EE354 /* Scaleway.swift in Sources */,
 				FBB552B59A4951F2DAB48CCD /* KeeperSecurity.swift in Sources */,
 				06476158F5A7352BE05544BB /* Proton.swift in Sources */,
+				7F96823683B97EF8AEA15F62 /* EquinixMetal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
