@@ -75,7 +75,6 @@
 		B2107BCE254C970000284EE7 /* Linode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2107BCC254C96FF00284EE7 /* Linode.swift */; };
 		B2107BCF254C970000284EE7 /* Notion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2107BCD254C970000284EE7 /* Notion.swift */; };
 		B211F0B81E607C09008DD360 /* Rollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211F0B71E607C09008DD360 /* Rollbar.swift */; };
-		B21308561E55594E009FCF02 /* Quandl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21308551E55594E009FCF02 /* Quandl.swift */; };
 		B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */; };
 		B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */; };
 		B213D1F6269AD941005EBDDA /* Tableau.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F5269AD941005EBDDA /* Tableau.swift */; };
@@ -287,6 +286,7 @@
 		B2FFC1F01E261B4A00529A00 /* Dropbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */; };
 		B8521A537A25ACC686F15EB7 /* AtlassianDeveloper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6A2E1502F35DA915891FD /* AtlassianDeveloper.swift */; };
 		B8F6688F6454FD58216F09B7 /* Kustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EACF9101337BC18198C82 /* Kustomer.swift */; };
+		BA54439EB4493BD4A4665F80 /* NasdaqDataLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F679F245A03F4CCC7F2DA71F /* NasdaqDataLink.swift */; };
 		BF7AA78122B03AE4002460FB /* Bitrise.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AA78022B03AE4002460FB /* Bitrise.swift */; };
 		C1B04EA0748F30D966A77B19 /* Acoustic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439EADCB08D6940C642E98B8 /* Acoustic.swift */; };
 		C26BBF46916F30160A67C5C0 /* SecurID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F333DF556929BF0340E824 /* SecurID.swift */; };
@@ -402,7 +402,6 @@
 		B2107BCC254C96FF00284EE7 /* Linode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Linode.swift; sourceTree = "<group>"; };
 		B2107BCD254C970000284EE7 /* Notion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notion.swift; sourceTree = "<group>"; };
 		B211F0B71E607C09008DD360 /* Rollbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rollbar.swift; sourceTree = "<group>"; };
-		B21308551E55594E009FCF02 /* Quandl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quandl.swift; sourceTree = "<group>"; };
 		B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableViewController.swift; sourceTree = "<group>"; };
 		B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableRowView.swift; sourceTree = "<group>"; };
 		B213D1F5269AD941005EBDDA /* Tableau.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tableau.swift; sourceTree = "<group>"; };
@@ -635,6 +634,7 @@
 		EC5567996ECADCC9A8C9AE3F /* Confluence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Confluence.swift; sourceTree = "<group>"; };
 		EF354371EC40FA322AEEFF5F /* AtlassianAccess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtlassianAccess.swift; sourceTree = "<group>"; };
 		F0A9F6AE3667A268D4169B4A /* VMwareWorkspaceONE.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VMwareWorkspaceONE.swift; sourceTree = "<group>"; };
+		F679F245A03F4CCC7F2DA71F /* NasdaqDataLink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NasdaqDataLink.swift; sourceTree = "<group>"; };
 		F7D13B6E0F576096D5F10B19 /* Compass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Compass.swift; sourceTree = "<group>"; };
 		FEC70B47B228492520C03D36 /* Duo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Duo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -905,6 +905,7 @@
 				B213D1F9269ADA0F005EBDDA /* MuleSoft.swift */,
 				36AD8ED8235A310500F2FD73 /* Mural.swift */,
 				B299C8461DD04D7C0024D2E9 /* NPM.swift */,
+				F679F245A03F4CCC7F2DA71F /* NasdaqDataLink.swift */,
 				D819CB63B6576DA05BFC764C /* Netlify.swift */,
 				B299C8421DD044160024D2E9 /* NewRelic.swift */,
 				B2107BCD254C970000284EE7 /* Notion.swift */,
@@ -924,7 +925,6 @@
 				B2F127A61E0B84230035B20C /* PubNub.swift */,
 				B299C84A1DD04E850024D2E9 /* Pusher.swift */,
 				B272E3C7235F460D00B33076 /* Python.swift */,
-				B21308551E55594E009FCF02 /* Quandl.swift */,
 				B2F35F251E5D181300E3A00E /* Quay.swift */,
 				0FE9B86802DA92D1851DA069 /* QuickBooks.swift */,
 				1CB4E2FFFE60AE5D0E0BB449 /* ReadMe.swift */,
@@ -1506,7 +1506,6 @@
 				B277BC9222B4BB5C000B55C3 /* AzureDevOps.swift in Sources */,
 				B29222292642EF33001C63AE /* Twitch.swift in Sources */,
 				B2C10F3C203646A7008E1E7D /* Gandi.swift in Sources */,
-				B21308561E55594E009FCF02 /* Quandl.swift in Sources */,
 				B23646B22627C14E00AB9486 /* VisualStudioAppCenter.swift in Sources */,
 				B22600311E1562E700EBDD40 /* MediaTemple.swift in Sources */,
 				B205A9181D49D67700EA178D /* Service.swift in Sources */,
@@ -1628,6 +1627,7 @@
 				FBB552B59A4951F2DAB48CCD /* KeeperSecurity.swift in Sources */,
 				06476158F5A7352BE05544BB /* Proton.swift in Sources */,
 				7F96823683B97EF8AEA15F62 /* EquinixMetal.swift in Sources */,
+				BA54439EB4493BD4A4665F80 /* NasdaqDataLink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

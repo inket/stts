@@ -53,6 +53,7 @@ struct Preferences {
             "StatusPage": "Statuspage", // v2.8
             "ProtonMail": "Proton", // v2.12
             "Packet": "EquinixMetal", // v2.12
+            "Quandl": "NasdaqDataLink", // v2.12
             // Generated services
             "FirebaseMLKit": "FirebaseMachineLearning"
         ]
