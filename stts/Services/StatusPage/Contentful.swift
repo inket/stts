@@ -6,6 +6,6 @@
 import Foundation
 
 class Contentful: StatusPageService {
-    let url = URL(string: "http://status.contentful.com")!
+    let url = URL(string: "https://www.contentfulstatus.com")!
     let statusPageID = "4bv17htq00cz"
 }

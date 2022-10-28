@@ -6,7 +6,7 @@
 import Kanna
 
 class Beanstalk: Service {
-    let url = URL(string: "http://status.beanstalkapp.com")!
+    let url = URL(string: "https://status.beanstalkapp.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         loadData(with: url) { [weak self] data, _, error in
