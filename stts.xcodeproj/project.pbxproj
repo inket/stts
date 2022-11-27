@@ -289,6 +289,7 @@
 		C1B04EA0748F30D966A77B19 /* Acoustic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439EADCB08D6940C642E98B8 /* Acoustic.swift */; };
 		C26BBF46916F30160A67C5C0 /* SecurID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F333DF556929BF0340E824 /* SecurID.swift */; };
 		C28B812159CF77AD928CCAE9 /* Workflowy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F844F11070AF5B4CD7719E /* Workflowy.swift */; };
+		C6B979E923630AC2F73717B0 /* Cybersource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FBDC323AC595F540679B9 /* Cybersource.swift */; };
 		C70168A2035294FE955F3F1D /* AtlassianAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF354371EC40FA322AEEFF5F /* AtlassianAccess.swift */; };
 		C7A2CE6D063A54F296F6D4C5 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D13B6E0F576096D5F10B19 /* Compass.swift */; };
 		C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */; };
@@ -360,6 +361,7 @@
 		4E2C3B179FEEE9F7F150196F /* JumpCloud.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JumpCloud.swift; sourceTree = "<group>"; };
 		4FF6A2E1502F35DA915891FD /* AtlassianDeveloper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtlassianDeveloper.swift; sourceTree = "<group>"; };
 		53F844F11070AF5B4CD7719E /* Workflowy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Workflowy.swift; sourceTree = "<group>"; };
+		563FBDC323AC595F540679B9 /* Cybersource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cybersource.swift; sourceTree = "<group>"; };
 		599C548E19B1B95EFDBB7898 /* VMwareCarbonBlack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VMwareCarbonBlack.swift; sourceTree = "<group>"; };
 		6B24BCA673F692E9211E7B8D /* Medium.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Medium.swift; sourceTree = "<group>"; };
 		6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruiterbox.swift; sourceTree = "<group>"; };
@@ -841,6 +843,7 @@
 				B22527F41E5BD0C70098E73D /* Contentful.swift */,
 				B2D468281E2F0F82000F8F6B /* Coveralls.swift */,
 				A9CA65AF81160DCD231D5F43 /* Customerio.swift */,
+				563FBDC323AC595F540679B9 /* Cybersource.swift */,
 				9C6AF196D47310053DE2A8A0 /* Cypress.swift */,
 				B2FAB94B1E5C029A00B8921F /* DNSimple.swift */,
 				A0C3F34A220FD630005D9998 /* Datadog.swift */,
@@ -1624,6 +1627,7 @@
 				7F96823683B97EF8AEA15F62 /* EquinixMetal.swift in Sources */,
 				BA54439EB4493BD4A4665F80 /* NasdaqDataLink.swift in Sources */,
 				D6FC1C0B5C45F3865F9D6543 /* Smarty.swift in Sources */,
+				C6B979E923630AC2F73717B0 /* Cybersource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
