@@ -29,6 +29,7 @@
 		36AD8ED5235A1FCA00F2FD73 /* Shopify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED4235A1FCA00F2FD73 /* Shopify.swift */; };
 		36AD8ED7235A2F9B00F2FD73 /* VictorOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */; };
 		36AD8ED9235A310500F2FD73 /* Mural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED8235A310500F2FD73 /* Mural.swift */; };
+		3DD3827D39BBDDBDA24DA4B9 /* Roadmunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E87BF974F75C95D80FC426 /* Roadmunk.swift */; };
 		4A0BDA3CE55B64C29F1F4280 /* AtlassianSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE09F6E559505EECD0AF8D /* AtlassianSupport.swift */; };
 		502ADE3E3386F6B64643682F /* Wasabi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CD7B91FCE3B9B61003A00 /* Wasabi.swift */; };
 		5168C3411EE1FADD160353FF /* FirefoxRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */; };
@@ -377,6 +378,7 @@
 		8FD39EC5F0FC240DE74BD82D /* LinkedInAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinkedInAPI.swift; sourceTree = "<group>"; };
 		91B0A21328197857007D8E8F /* StringExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
 		94D7AA16CE8CF0B13B8DF242 /* Bitbucket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bitbucket.swift; sourceTree = "<group>"; };
+		95E87BF974F75C95D80FC426 /* Roadmunk.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Roadmunk.swift; sourceTree = "<group>"; };
 		9656BD00C255628C438D394F /* JiraProductDiscovery.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JiraProductDiscovery.swift; sourceTree = "<group>"; };
 		9AFE09F6E559505EECD0AF8D /* AtlassianSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtlassianSupport.swift; sourceTree = "<group>"; };
 		9BF74DC57A426C3EBFCC2E90 /* EquinixMetal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EquinixMetal.swift; sourceTree = "<group>"; };
@@ -932,6 +934,7 @@
 				2F65F48F227A198400432E64 /* Recurly.swift */,
 				B299C84C1DD04ED90024D2E9 /* Reddit.swift */,
 				B210189B249E406D00F31999 /* RevenueCat.swift */,
+				95E87BF974F75C95D80FC426 /* Roadmunk.swift */,
 				B20699D1214E504E008670B0 /* Robinhood.swift */,
 				B211F0B71E607C09008DD360 /* Rollbar.swift */,
 				B299C8481DD04DCB0024D2E9 /* RubyGems.swift */,
@@ -1628,6 +1631,7 @@
 				BA54439EB4493BD4A4665F80 /* NasdaqDataLink.swift in Sources */,
 				D6FC1C0B5C45F3865F9D6543 /* Smarty.swift in Sources */,
 				C6B979E923630AC2F73717B0 /* Cybersource.swift in Sources */,
+				3DD3827D39BBDDBDA24DA4B9 /* Roadmunk.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
