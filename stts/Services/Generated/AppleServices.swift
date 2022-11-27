@@ -136,11 +136,6 @@ class AppleFindMy: Apple, SubService {
     let serviceName = "Find My"
 }
 
-class AppleFleetsmith: Apple, SubService {
-    let name = "Apple Fleetsmith"
-    let serviceName = "Fleetsmith"
-}
-
 class AppleGameCenter: Apple, SubService {
     let name = "Apple Game Center"
     let serviceName = "Game Center"
@@ -557,6 +552,11 @@ class AppleNewsPublisher: AppleDeveloper, SubService {
 class AppleProgramEnrollmentAndRenewals: AppleDeveloper, SubService {
     let name = "Apple Program Enrollment and Renewals"
     let serviceName = "Program Enrollment and Renewals"
+}
+
+class AppleSKAdNetwork: AppleDeveloper, SubService {
+    let name = "Apple SKAdNetwork"
+    let serviceName = "SKAdNetwork"
 }
 
 class AppleSoftwareDownloads: AppleDeveloper, SubService {

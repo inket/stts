@@ -443,6 +443,11 @@ class GoogleCloudTasks: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Cloud Tasks"
 }
 
+class GoogleComputeEngine: GoogleCloudPlatform, SubService {
+    let name = "Google Compute Engine"
+    let dashboardName = "Google Compute Engine"
+}
+
 class GoogleKubernetesEngine: GoogleCloudPlatform, SubService {
     let name = "Google Kubernetes Engine"
     let dashboardName = "Google Kubernetes Engine"
