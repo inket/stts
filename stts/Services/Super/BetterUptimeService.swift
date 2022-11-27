@@ -31,6 +31,21 @@ class BaseBetterUptimeService: BaseService {
                 return .notice
             }
         }
+
+        var iconCSSClass: String {
+            switch self {
+            case .operational:
+                return "text-statuspage-green"
+            case .degraded:
+                return "text-statuspage-yellow"
+            case .downtime:
+                return "text-statuspage-red"
+            case .maintenance:
+                return "text-statuspage-blue"
+            case .notMonitored:
+                return "not-supported-in-v2-maybe?-make-an-issue-if-wrong"
+            }
+        }
     }
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
@@ -47,16 +62,22 @@ class BaseBetterUptimeService: BaseService {
                 return strongSelf._fail("Couldn't parse response")
             }
 
-            guard let overviewElement = doc.css(".status-page__overview").first else {
+            if let overviewElement = doc.css(".status-page__overview").first {
+                // v1 page
+                if let iconElement = overviewElement.css(".status-page__overview-icon").first {
+                    self?.status = self?.status(from: iconElement)?.serviceStatus ?? .undetermined
+                } else {
+                    self?.status = .undetermined
+                }
+            } else if let headerIconElement = doc.css("h1 svg").first {
+                // v2 page
+                self?.status = self?.status(fromV2Icon: headerIconElement)?.serviceStatus ?? .undetermined
+            } else {
                 return strongSelf._fail("Unexpected response")
             }
 
-            if let iconElement = overviewElement.css(".status-page__overview-icon").first {
-                self?.status = self?.status(from: iconElement)?.serviceStatus ?? .undetermined
-            } else {
-                self?.status = .undetermined
-            }
-            self?.message = overviewElement.css(".status-page__title").first?.content ?? "Unexpected response"
+            self?.message =
+                doc.css("h1").first?.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "Unexpected response"
         }
     }
 
@@ -65,6 +86,18 @@ class BaseBetterUptimeService: BaseService {
 
         for statusCase in BetterUptimeStatus.allCases {
             if className.contains(statusCase.rawValue) {
+                return statusCase
+            }
+        }
+
+        return nil
+    }
+
+    private func status(fromV2Icon element: XMLElement) -> BetterUptimeStatus? {
+        guard let className = element.className, !className.isEmpty else { return nil }
+
+        for statusCase in BetterUptimeStatus.allCases {
+            if className.contains(statusCase.iconCSSClass) {
                 return statusCase
             }
         }
