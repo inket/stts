@@ -153,6 +153,8 @@
 		B254098D28FE71990009F956 /* BetterUptimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254098C28FE71990009F956 /* BetterUptimeService.swift */; };
 		B254099028FE75CA0009F956 /* PlausibleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254098F28FE75CA0009F956 /* PlausibleAnalytics.swift */; };
 		B254099228FE76AA0009F956 /* Keygen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254099128FE76AA0009F956 /* Keygen.swift */; };
+		B2542502293591610093AC83 /* StatusHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2542501293591610093AC83 /* StatusHubService.swift */; };
+		B2542505293595B20093AC83 /* WPEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2542504293595B20093AC83 /* WPEngine.swift */; };
 		B254642321EE9AF6003068A4 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254642221EE9AF6003068A4 /* GitHub.swift */; };
 		B2563BBC22CBC3D500532C39 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBB22CBC3D500532C39 /* DataLoader.swift */; };
 		B2563BBE22CBC65A00532C39 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBD22CBC65A00532C39 /* URLSessionMock.swift */; };
@@ -487,6 +489,8 @@
 		B254098C28FE71990009F956 /* BetterUptimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterUptimeService.swift; sourceTree = "<group>"; };
 		B254098F28FE75CA0009F956 /* PlausibleAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlausibleAnalytics.swift; sourceTree = "<group>"; };
 		B254099128FE76AA0009F956 /* Keygen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keygen.swift; sourceTree = "<group>"; };
+		B2542501293591610093AC83 /* StatusHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHubService.swift; sourceTree = "<group>"; };
+		B2542504293595B20093AC83 /* WPEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPEngine.swift; sourceTree = "<group>"; };
 		B254642221EE9AF6003068A4 /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		B2563BBB22CBC3D500532C39 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		B2563BBD22CBC65A00532C39 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
@@ -725,6 +729,14 @@
 				B254098F28FE75CA0009F956 /* PlausibleAnalytics.swift */,
 			);
 			path = BetterUptime;
+			sourceTree = "<group>";
+		};
+		B25425032935958D0093AC83 /* StatusHub */ = {
+			isa = PBXGroup;
+			children = (
+				B2542504293595B20093AC83 /* WPEngine.swift */,
+			);
+			path = StatusHub;
 			sourceTree = "<group>";
 		};
 		B2563BC122CBC92400532C39 /* Mocks */ = {
@@ -1091,6 +1103,7 @@
 				B26CB5711E13448900116A33 /* Status.ioV1 */,
 				B2163B0120BA5AE600B14A85 /* StatusCake */,
 				B286ECA3285E39C300E9CCE6 /* StatusCast */,
+				B25425032935958D0093AC83 /* StatusHub */,
 				B299C8561DD051710024D2E9 /* StatusPage */,
 				B2FDC9201D67071500F0B728 /* Super */,
 				B2430806210810D0003F8D07 /* Algolia.swift */,
@@ -1144,6 +1157,7 @@
 				B2841CEA20BA6207004AFDB7 /* SorryService.swift */,
 				B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */,
 				B286ECA4285E39D700E9CCE6 /* StatusCastService.swift */,
+				B2542501293591610093AC83 /* StatusHubService.swift */,
 				B2FDC91B1D67062200F0B728 /* StatusPageService.swift */,
 				B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */,
 			);
@@ -1427,6 +1441,7 @@
 				B2CE72D6228587E000847E00 /* Acquia.swift in Sources */,
 				B2E70FD822B069BA000BCAD2 /* GoogleCloudPlatformServices.swift in Sources */,
 				B2BA36191ED7B0F200051083 /* AuthorizeNet.swift in Sources */,
+				B2542502293591610093AC83 /* StatusHubService.swift in Sources */,
 				B28285E12405E44100B11A08 /* Zoom.swift in Sources */,
 				0FDDACCD23CD7EBF00FE96CD /* ElasticCloud.swift in Sources */,
 				B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */,
@@ -1447,6 +1462,7 @@
 				B24EE10426C8C07100F7CE8B /* SalesforceCategories.swift in Sources */,
 				B269FCBB1E261BDF0016041D /* Figma.swift in Sources */,
 				B26350FF1ED7D0210069EA73 /* Segment.swift in Sources */,
+				B2542505293595B20093AC83 /* WPEngine.swift in Sources */,
 				B29D50BF24B0542100F4961B /* PlatformSH.swift in Sources */,
 				B299C8471DD04D7C0024D2E9 /* NPM.swift in Sources */,
 				B254099028FE75CA0009F956 /* PlausibleAnalytics.swift in Sources */,
