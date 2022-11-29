@@ -42,42 +42,46 @@ class BaseStatusHubService: BaseService {
                 return strongSelf._fail("Unexpected data")
             }
 
-            var status: ServiceStatus = .undetermined
-            var messageComponents: [String] = []
-
-            if response.counters.upCount > 0 {
-                status = .good
-                messageComponents.append("\(response.counters.upCount) up")
-            }
-
-            if response.counters.affectedCount > 0 {
-                status = .minor
-                messageComponents.append("\(response.counters.affectedCount) affected")
-            }
-
-            if response.counters.downCount > 0 {
-                status = .major
-                messageComponents.append("\(response.counters.downCount) down")
-            }
-
-            strongSelf.status = status
-
-            let prefix: String
-
-            switch status {
-            case .good:
-                prefix = "Operating normally"
-                // We don't need the extra "X up" message when all is good
-                messageComponents = []
-            case .minor:
-                prefix = "Performance issues"
-            case .major:
-                prefix = "Service disruption"
-            default:
-                prefix = "Unexpected response"
-            }
-
-            strongSelf.message = [prefix, messageComponents.joined(separator: ", ")].joined(separator: "\n")
+            strongSelf.updateStatus(from: response)
         }
+    }
+
+    private func updateStatus(from response: StatusHubResponse) {
+        var status: ServiceStatus = .undetermined
+        var messageComponents: [String] = []
+
+        if response.counters.upCount > 0 {
+            status = .good
+            messageComponents.append("\(response.counters.upCount) up")
+        }
+
+        if response.counters.affectedCount > 0 {
+            status = .minor
+            messageComponents.append("\(response.counters.affectedCount) affected")
+        }
+
+        if response.counters.downCount > 0 {
+            status = .major
+            messageComponents.append("\(response.counters.downCount) down")
+        }
+
+        self.status = status
+
+        let prefix: String
+
+        switch status {
+        case .good:
+            prefix = "Operating normally"
+            // We don't need the extra "X up" message when all is good
+            messageComponents = []
+        case .minor:
+            prefix = "Performance issues"
+        case .major:
+            prefix = "Service disruption"
+        default:
+            prefix = "Unexpected response"
+        }
+
+        message = [prefix, messageComponents.joined(separator: ", ")].joined(separator: "\n")
     }
 }
