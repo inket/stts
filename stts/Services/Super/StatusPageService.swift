@@ -19,7 +19,7 @@ extension RequiredStatusPageProperties {
 }
 
 class BaseStatusPageService: BaseService {
-    private struct Summary: Codable {
+    struct Summary: Codable {
         let components: [Component]
         let incidents: [Incident]
         let status: Status
@@ -48,7 +48,7 @@ class BaseStatusPageService: BaseService {
         }
     }
 
-    private struct Status: Codable {
+    struct Status: Codable {
         enum Indicator: String, Codable {
             case none
             case minor
@@ -75,7 +75,7 @@ class BaseStatusPageService: BaseService {
         let indicator: Indicator
     }
 
-    private struct Incident: Codable {
+    struct Incident: Codable {
         enum IncidentStatus: String, Codable {
             case investigating
             case identified
@@ -98,7 +98,7 @@ class BaseStatusPageService: BaseService {
         }
     }
 
-    private struct Component: Codable {
+    struct Component: Codable {
         enum CodingKeys: String, CodingKey {
             case id
             case groupID = "group_id"
@@ -166,30 +166,34 @@ class BaseStatusPageService: BaseService {
                 return strongSelf._fail("Unexpected data")
             }
 
-            // Set the status
-            self?.status = summary.status.indicator.serviceStatus
-
-            // Set the message by combining the unresolved incident names
-            let unresolvedIncidents = summary.incidents.filter { $0.isUnresolved }
-            if !unresolvedIncidents.isEmpty {
-                let prefix = unresolvedIncidents.count > 1 ? "* " : ""
-                self?.message = unresolvedIncidents.map { "\(prefix)\($0.name)" }.joined(separator: "\n")
-                return
-            }
-
-            // Or from affected the component names
-            let affectedComponents = summary.sortedComponents.filter { $0.status != .operational }
-            if !affectedComponents.isEmpty {
-                let prefix = affectedComponents.count > 1 ? "* " : ""
-
-                self?.message = affectedComponents
-                    .map { "\(prefix)\($0.name)" }
-                    .joined(separator: "\n")
-                return
-            }
-
-            // Fallback to the status description
-            self?.message = summary.status.description
+            strongSelf.updateStatus(from: summary)
         }
+    }
+
+    func updateStatus(from summary: Summary) {
+        // Set the status
+        status = summary.status.indicator.serviceStatus
+
+        // Set the message by combining the unresolved incident names
+        let unresolvedIncidents = summary.incidents.filter { $0.isUnresolved }
+        if !unresolvedIncidents.isEmpty {
+            let prefix = unresolvedIncidents.count > 1 ? "* " : ""
+            message = unresolvedIncidents.map { "\(prefix)\($0.name)" }.joined(separator: "\n")
+            return
+        }
+
+        // Or from the affected component names
+        let affectedComponents = summary.sortedComponents.filter { $0.status != .operational }
+        if !affectedComponents.isEmpty {
+            let prefix = affectedComponents.count > 1 ? "* " : ""
+
+            message = affectedComponents
+                .map { "\(prefix)\($0.name)" }
+                .joined(separator: "\n")
+            return
+        }
+
+        // Fallback to the status description
+        message = summary.status.description
     }
 }
