@@ -156,6 +156,11 @@
 		B2542502293591610093AC83 /* StatusHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2542501293591610093AC83 /* StatusHubService.swift */; };
 		B2542505293595B20093AC83 /* WPEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2542504293595B20093AC83 /* WPEngine.swift */; };
 		B254642321EE9AF6003068A4 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254642221EE9AF6003068A4 /* GitHub.swift */; };
+		B2552EFF29954AEB003FF9EC /* fastly-normal.html in Resources */ = {isa = PBXBuildFile; fileRef = B2552EFD29954AEB003FF9EC /* fastly-normal.html */; };
+		B2552F0029954AEB003FF9EC /* fastly-unavailable.html in Resources */ = {isa = PBXBuildFile; fileRef = B2552EFE29954AEB003FF9EC /* fastly-unavailable.html */; };
+		B2552F0229954B18003FF9EC /* FastlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2552F0129954B18003FF9EC /* FastlyTests.swift */; };
+		B2552F0429954C26003FF9EC /* ResponseOverridingURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2552F0329954C26003FF9EC /* ResponseOverridingURLSession.swift */; };
+		B2552F082995516B003FF9EC /* TestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2552F072995516B003FF9EC /* TestBundle.swift */; };
 		B2563BBC22CBC3D500532C39 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBB22CBC3D500532C39 /* DataLoader.swift */; };
 		B2563BBE22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBD22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift */; };
 		B256955A1E247C8C00FAE413 /* Cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695511E247C8C00FAE413 /* Cloudinary.swift */; };
@@ -491,6 +496,11 @@
 		B2542501293591610093AC83 /* StatusHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHubService.swift; sourceTree = "<group>"; };
 		B2542504293595B20093AC83 /* WPEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPEngine.swift; sourceTree = "<group>"; };
 		B254642221EE9AF6003068A4 /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
+		B2552EFD29954AEB003FF9EC /* fastly-normal.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fastly-normal.html"; sourceTree = "<group>"; };
+		B2552EFE29954AEB003FF9EC /* fastly-unavailable.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fastly-unavailable.html"; sourceTree = "<group>"; };
+		B2552F0129954B18003FF9EC /* FastlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastlyTests.swift; sourceTree = "<group>"; };
+		B2552F0329954C26003FF9EC /* ResponseOverridingURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseOverridingURLSession.swift; sourceTree = "<group>"; };
+		B2552F072995516B003FF9EC /* TestBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBundle.swift; sourceTree = "<group>"; };
 		B2563BBB22CBC3D500532C39 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		B2563BBD22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSizeTrackingURLSession.swift; sourceTree = "<group>"; };
 		B25695511E247C8C00FAE413 /* Cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloudinary.swift; sourceTree = "<group>"; };
@@ -693,7 +703,10 @@
 		B2163AF620BA4E7500B14A85 /* sttsTests */ = {
 			isa = PBXGroup;
 			children = (
+				B2552F0929955365003FF9EC /* Helpers */,
 				B2563BC122CBC92400532C39 /* Mocks */,
+				B2552EFC29954AE0003FF9EC /* Resources */,
+				B2552F0129954B18003FF9EC /* FastlyTests.swift */,
 				B2163AF920BA4E7500B14A85 /* Info.plist */,
 				91B0A21328197857007D8E8F /* StringExtensionsTests.swift */,
 				B2163AF720BA4E7500B14A85 /* sttsTests.swift */,
@@ -737,9 +750,27 @@
 			path = StatusHub;
 			sourceTree = "<group>";
 		};
+		B2552EFC29954AE0003FF9EC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B2552EFD29954AEB003FF9EC /* fastly-normal.html */,
+				B2552EFE29954AEB003FF9EC /* fastly-unavailable.html */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B2552F0929955365003FF9EC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B2552F072995516B003FF9EC /* TestBundle.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		B2563BC122CBC92400532C39 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				B2552F0329954C26003FF9EC /* ResponseOverridingURLSession.swift */,
 				B2563BBD22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift */,
 			);
 			path = Mocks;
@@ -1261,6 +1292,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2552F0029954AEB003FF9EC /* fastly-unavailable.html in Resources */,
+				B2552EFF29954AEB003FF9EC /* fastly-normal.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1349,6 +1382,9 @@
 			files = (
 				91B0A21428197857007D8E8F /* StringExtensionsTests.swift in Sources */,
 				B2563BBE22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift in Sources */,
+				B2552F0229954B18003FF9EC /* FastlyTests.swift in Sources */,
+				B2552F082995516B003FF9EC /* TestBundle.swift in Sources */,
+				B2552F0429954C26003FF9EC /* ResponseOverridingURLSession.swift in Sources */,
 				B2163AF820BA4E7500B14A85 /* sttsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
