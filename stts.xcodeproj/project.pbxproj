@@ -186,7 +186,6 @@
 		B277BC9822B4C16A000B55C3 /* AzureDevOpsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9722B4C16A000B55C3 /* AzureDevOpsServices.swift */; };
 		B28285E12405E44100B11A08 /* Zoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28285E02405E44100B11A08 /* Zoom.swift */; };
 		B2841CEB20BA6207004AFDB7 /* SorryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2841CEA20BA6207004AFDB7 /* SorryService.swift */; };
-		B286ECA5285E39D700E9CCE6 /* StatusCastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B286ECA4285E39D700E9CCE6 /* StatusCastService.swift */; };
 		B2894CE420EEE2780009CCA3 /* Buildkite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2894CE320EEE2780009CCA3 /* Buildkite.swift */; };
 		B2898FD01DC7441D0005F58F /* StatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2898FCF1DC7441D0005F58F /* StatusIndicator.swift */; };
 		B28C1D441E607D8600F9D0DC /* Mapbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C1D431E607D8600F9D0DC /* Mapbox.swift */; };
@@ -520,7 +519,6 @@
 		B277BC9722B4C16A000B55C3 /* AzureDevOpsServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureDevOpsServices.swift; sourceTree = "<group>"; };
 		B28285E02405E44100B11A08 /* Zoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zoom.swift; sourceTree = "<group>"; };
 		B2841CEA20BA6207004AFDB7 /* SorryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorryService.swift; sourceTree = "<group>"; };
-		B286ECA4285E39D700E9CCE6 /* StatusCastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCastService.swift; sourceTree = "<group>"; };
 		B2894CE320EEE2780009CCA3 /* Buildkite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildkite.swift; sourceTree = "<group>"; };
 		B2898FCF1DC7441D0005F58F /* StatusIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusIndicator.swift; sourceTree = "<group>"; };
 		B28C1D431E607D8600F9D0DC /* Mapbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapbox.swift; sourceTree = "<group>"; };
@@ -798,14 +796,6 @@
 			path = Sorry;
 			sourceTree = "<group>";
 		};
-		B286ECA3285E39C300E9CCE6 /* StatusCast */ = {
-			isa = PBXGroup;
-			children = (
-				B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */,
-			);
-			path = StatusCast;
-			sourceTree = "<group>";
-		};
 		B299C8561DD051710024D2E9 /* StatusPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -874,7 +864,6 @@
 				0FDDACCC23CD7EBF00FE96CD /* ElasticCloud.swift */,
 				B299C8541DD051210024D2E9 /* EngineYard.swift */,
 				9BF74DC57A426C3EBFCC2E90 /* EquinixMetal.swift */,
-				A125C59D20F7909500C513B3 /* Fastly.swift */,
 				B269FCBA1E261BDF0016041D /* Figma.swift */,
 				B20396371EE6A06C008CCA21 /* Filestack.swift */,
 				E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */,
@@ -1102,7 +1091,6 @@
 				B2841CEC20BA6423004AFDB7 /* Sorry */,
 				B26CB5711E13448900116A33 /* Status.ioV1 */,
 				B2163B0120BA5AE600B14A85 /* StatusCake */,
-				B286ECA3285E39C300E9CCE6 /* StatusCast */,
 				B25425032935958D0093AC83 /* StatusHub */,
 				B299C8561DD051710024D2E9 /* StatusPage */,
 				B2FDC9201D67071500F0B728 /* Super */,
@@ -1111,7 +1099,9 @@
 				B2A4D7E6247E72B50089EA77 /* AzureAll.swift */,
 				B2A4D7E8247E73BC0089EA77 /* AzureDevOpsAll.swift */,
 				B23038F01E0DF3CC00B29095 /* Beanstalk.swift */,
+				B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */,
 				B290315B1E4B0CA7005B58CC /* Evernote.swift */,
+				A125C59D20F7909500C513B3 /* Fastly.swift */,
 				B2253A6E209F42430039F574 /* Firebase.swift */,
 				B2E70FDA22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift */,
 				B2FDC9191D67029900F0B728 /* Heroku.swift */,
@@ -1156,7 +1146,6 @@
 				B205A9171D49D67700EA178D /* Service.swift */,
 				B2841CEA20BA6207004AFDB7 /* SorryService.swift */,
 				B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */,
-				B286ECA4285E39D700E9CCE6 /* StatusCastService.swift */,
 				B2542501293591610093AC83 /* StatusHubService.swift */,
 				B2FDC91B1D67062200F0B728 /* StatusPageService.swift */,
 				B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */,
@@ -1411,7 +1400,6 @@
 				B2894CE420EEE2780009CCA3 /* Buildkite.swift in Sources */,
 				B20396361EE6A060008CCA21 /* Trello.swift in Sources */,
 				B227D31225D7671600951917 /* Poka.swift in Sources */,
-				B286ECA5285E39D700E9CCE6 /* StatusCastService.swift in Sources */,
 				B231DD59257B431900647312 /* Xandr.swift in Sources */,
 				B2ABB6171F59770800DF8EC2 /* Imgix.swift in Sources */,
 				B213D1F6269AD941005EBDDA /* Tableau.swift in Sources */,

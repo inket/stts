@@ -1,17 +1,13 @@
 //
-//  StatusCastService.swift
+//  CampaignMonitor.swift
 //  stts
 //
 
 import Foundation
 import Kanna
 
-typealias StatusCastService = BaseStatusCastService & RequiredServiceProperties & RequiredStatusCastProperties
-
-protocol RequiredStatusCastProperties {}
-
-class BaseStatusCastService: BaseService {
-    private enum StatusCastStatus: String, CaseIterable {
+class CampaignMonitor: Service {
+    private enum Status: String, CaseIterable {
         case available
         case unavailable
         case informational
@@ -37,14 +33,11 @@ class BaseStatusCastService: BaseService {
         }
     }
 
+    let name = "Campaign Monitor"
+    let url = URL(string: "https://status.campaignmonitor.com")!
+
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? StatusCastService else {
-            fatalError("BaseStatusCastService should not be used directly.")
-        }
-
-        let statusURL = realSelf.url
-
-        loadData(with: statusURL) { [weak self] data, _, error in
+        loadData(with: url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }
@@ -53,9 +46,8 @@ class BaseStatusCastService: BaseService {
                 return strongSelf._fail("Couldn't parse response")
             }
 
-            // Not all StatusCast services support this format or this method of looking for status…
             let statuses: [(ServiceStatus, String?)] = doc.css(".status-list-component-status-text").map { element in
-                for status in StatusCastStatus.allCases {
+                for status in Status.allCases {
                     if element.className?.contains("component-\(status.rawValue)") == true {
                         return (
                             status.serviceStatus,
