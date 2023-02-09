@@ -93,6 +93,11 @@ class GoogleBeyondCorpEnterprise: GoogleCloudPlatform, SubService {
     let dashboardName = "BeyondCorp Enterprise"
 }
 
+class GoogleBigQueryDataTransferService: GoogleCloudPlatform, SubService {
+    let name = "Google BigQuery Data Transfer Service"
+    let dashboardName = "BigQuery Data Transfer Service"
+}
+
 class GoogleBinaryAuthorization: GoogleCloudPlatform, SubService {
     let name = "Google Binary Authorization"
     let dashboardName = "Binary Authorization"
@@ -101,6 +106,11 @@ class GoogleBinaryAuthorization: GoogleCloudPlatform, SubService {
 class GoogleCertificateAuthorityService: GoogleCloudPlatform, SubService {
     let name = "Google Certificate Authority Service"
     let dashboardName = "Certificate Authority Service"
+}
+
+class GoogleChronicleSecurity: GoogleCloudPlatform, SubService {
+    let name = "Google Chronicle Security"
+    let dashboardName = "Chronicle Security"
 }
 
 class GoogleCloudArmor: GoogleCloudPlatform, SubService {
@@ -288,6 +298,11 @@ class GoogleDatabaseMigrationService: GoogleCloudPlatform, SubService {
     let dashboardName = "Database Migration Service"
 }
 
+class GoogleDataform: GoogleCloudPlatform, SubService {
+    let name = "Google Dataform"
+    let dashboardName = "Dataform"
+}
+
 class GoogleDataplex: GoogleCloudPlatform, SubService {
     let name = "Google Dataplex"
     let dashboardName = "Dataplex"
@@ -316,6 +331,11 @@ class GoogleDialogflowES: GoogleCloudPlatform, SubService {
 class GoogleDocumentAI: GoogleCloudPlatform, SubService {
     let name = "Google Document AI"
     let dashboardName = "Document AI"
+}
+
+class GoogleDocumentAIWarehouse: GoogleCloudPlatform, SubService {
+    let name = "Google Document AI Warehouse"
+    let dashboardName = "Document AI Warehouse"
 }
 
 class GoogleEventarc: GoogleCloudPlatform, SubService {
@@ -408,11 +428,6 @@ class GoogleCloudMarketplace: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Cloud Marketplace"
 }
 
-class GoogleCloudNetworking: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Networking"
-    let dashboardName = "Google Cloud Networking"
-}
-
 class GoogleCloudPubSub: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Pub/Sub"
     let dashboardName = "Google Cloud Pub/Sub"
@@ -446,6 +461,11 @@ class GoogleCloudTasks: GoogleCloudPlatform, SubService {
 class GoogleComputeEngine: GoogleCloudPlatform, SubService {
     let name = "Google Compute Engine"
     let dashboardName = "Google Compute Engine"
+}
+
+class GoogleDistributedCloudEdge: GoogleCloudPlatform, SubService {
+    let name = "Google Distributed Cloud Edge"
+    let dashboardName = "Google Distributed Cloud Edge"
 }
 
 class GoogleKubernetesEngine: GoogleCloudPlatform, SubService {
@@ -508,6 +528,11 @@ class GoogleNetworkTelemetry: GoogleCloudPlatform, SubService {
     let dashboardName = "Network Telemetry"
 }
 
+class GooglePaymentGateway: GoogleCloudPlatform, SubService {
+    let name = "Google Payment Gateway"
+    let dashboardName = "Payment Gateway"
+}
+
 class GooglePersistentDisk: GoogleCloudPlatform, SubService {
     let name = "Google Persistent Disk"
     let dashboardName = "Persistent Disk"
@@ -546,6 +571,11 @@ class GoogleRecommender: GoogleCloudPlatform, SubService {
 class GoogleResourceManagerAPI: GoogleCloudPlatform, SubService {
     let name = "Google Resource Manager API"
     let dashboardName = "Resource Manager API"
+}
+
+class GoogleRetailAPI: GoogleCloudPlatform, SubService {
+    let name = "Google Retail API"
+    let dashboardName = "Retail API"
 }
 
 class GoogleSecretManager: GoogleCloudPlatform, SubService {

@@ -87,6 +87,12 @@ class SalesforceMarketingCloudAll: SalesforceMarketingCloud, ServiceCategory {
     let location = "*"
 }
 
+class SalesforceMarketingCloudAPAC: SalesforceMarketingCloud, SubService {
+    let name = "Salesforce Marketing Cloud (APAC)"
+    let key = "Marketing_Cloud"
+    let location = "APAC"
+}
+
 class SalesforceMarketingCloudEMEA: SalesforceMarketingCloud, SubService {
     let name = "Salesforce Marketing Cloud (EMEA)"
     let key = "Marketing_Cloud"

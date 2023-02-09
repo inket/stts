@@ -143,11 +143,6 @@ class AdobeCreativeCloudSharingAndCommenting: AdobeCreativeCloud, SubService {
     let id = 5694
 }
 
-class AdobeCreativeCloudStorage: AdobeCreativeCloud, SubService {
-    let name = "Adobe Creative Cloud Storage"
-    let id = 5696
-}
-
 class AdobeCreativeCloudSync: AdobeCreativeCloud, SubService {
     let name = "Adobe Creative Cloud Sync"
     let id = 5697
@@ -176,6 +171,11 @@ class AdobeDataFoundation: AdobeExperiencePlatform, SubService {
 class AdobeDataScienceWorkspace: AdobeExperiencePlatform, SubService {
     let name = "Adobe Data Science Workspace"
     let id = 2505
+}
+
+class AdobeDigitalImagingServices: AdobeCreativeCloud, SubService {
+    let name = "Adobe Digital Imaging Services"
+    let id = 7533
 }
 
 class AdobeDimension: AdobeCreativeCloud, SubService {
@@ -246,11 +246,6 @@ class AdobeInviteAccept: AdobeServices, SubService {
 class AdobeJourneyOptimizer: AdobeExperienceCloud, SubService {
     let name = "Adobe Journey Optimizer"
     let id = 5538
-}
-
-class AdobeJourneyOrchestration: AdobeExperiencePlatform, SubService {
-    let name = "Adobe Journey Orchestration"
-    let id = 5224
 }
 
 class AdobeLearningManager: AdobeServices, SubService {
@@ -336,6 +331,11 @@ class AdobeSearch: AdobeServices, SubService {
 class AdobeSignIn: AdobeServices, SubService {
     let name = "Adobe Sign In"
     let id = 2944
+}
+
+class AdobeStock: AdobeCreativeCloud, SubService {
+    let name = "Adobe Stock"
+    let id = 2251
 }
 
 class AdobeSubstance: AdobeCreativeCloud, SubService {

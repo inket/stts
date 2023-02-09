@@ -71,11 +71,6 @@ class AppleMusic: Apple, SubService {
     let serviceName = "Apple Music"
 }
 
-class AppleMusicForArtists: Apple, SubService {
-    let name = "Apple Music for Artists"
-    let serviceName = "Apple Music for Artists"
-}
-
 class AppleMusicRadio: Apple, SubService {
     let name = "Apple Music radio"
     let serviceName = "Apple Music radio"
@@ -114,6 +109,11 @@ class AppleTV: Apple, SubService {
 class AppleCareOnDevice: Apple, SubService {
     let name = "AppleCare on Device"
     let serviceName = "AppleCare on Device"
+}
+
+class AppleBusinessConnect: Apple, SubService {
+    let name = "Apple BusinessConnect"
+    let serviceName = "BusinessConnect"
 }
 
 class AppleDeviceEnrollmentProgram: Apple, SubService {
@@ -414,11 +414,6 @@ class AppleAppStoreServerNotifications: AppleDeveloper, SubService {
     let serviceName = "App Store - Server Notifications"
 }
 
-class AppleAppStoreTestFlight: AppleDeveloper, SubService {
-    let name = "Apple App Store - TestFlight"
-    let serviceName = "App Store - TestFlight"
-}
-
 class AppleAppStoreAutomaticAppUpdates: AppleDeveloper, SubService {
     let name = "Apple App Store Automatic App Updates"
     let serviceName = "App Store Automatic App Updates"
@@ -427,6 +422,11 @@ class AppleAppStoreAutomaticAppUpdates: AppleDeveloper, SubService {
 class AppleAppStoreConnect: AppleDeveloper, SubService {
     let name = "Apple App Store Connect"
     let serviceName = "App Store Connect"
+}
+
+class AppleAppStoreConnectAnalytics: AppleDeveloper, SubService {
+    let name = "Apple App Store Connect - Analytics"
+    let serviceName = "App Store Connect - Analytics"
 }
 
 class AppleAppStoreConnectAppProcessing: AppleDeveloper, SubService {
@@ -439,9 +439,9 @@ class AppleAppStoreConnectAppUpload: AppleDeveloper, SubService {
     let serviceName = "App Store Connect - App Upload"
 }
 
-class AppleAppStoreConnectAnalytics: AppleDeveloper, SubService {
-    let name = "Apple App Store Connect Analytics"
-    let serviceName = "App Store Connect Analytics"
+class AppleAppStoreConnectTestFlight: AppleDeveloper, SubService {
+    let name = "Apple App Store Connect - TestFlight"
+    let serviceName = "App Store Connect - TestFlight"
 }
 
 class AppleAppStoreConnectAPI: AppleDeveloper, SubService {
@@ -462,6 +462,11 @@ class AppleMapsAPI: AppleDeveloper, SubService {
 class AppleMusicAPI: AppleDeveloper, SubService {
     let name = "Apple Music API"
     let serviceName = "Apple Music API"
+}
+
+class AppleMusicForArtists: AppleDeveloper, SubService {
+    let name = "Apple Music for Artists"
+    let serviceName = "Apple Music for Artists"
 }
 
 class AppleNewsAPI: AppleDeveloper, SubService {
@@ -487,11 +492,6 @@ class ApplePaySandboxInstance: AppleDeveloper, SubService {
 class ApplePodcastsConnect: AppleDeveloper, SubService {
     let name = "Apple Podcasts Connect"
     let serviceName = "Apple Podcasts Connect"
-}
-
-class AppleBackToMyMac: AppleDeveloper, SubService {
-    let name = "Apple Back to My Mac"
-    let serviceName = "Back to My Mac"
 }
 
 class AppleCertificatesIdentifiersAndProfiles: AppleDeveloper, SubService {
