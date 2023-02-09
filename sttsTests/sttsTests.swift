@@ -7,17 +7,11 @@ import XCTest
 @testable import stts
 
 class SttsTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-
-        DataLoader.shared = DataLoader(session: URLSessionMock())
+    override func setUpWithError() throws {
+        DataLoader.shared = DataLoader(session: ResponseSizeTrackingURLSession())
     }
 
-    override func tearDown() {
-        super.tearDown()
-    }
-
-    func testServices() {
+    func testServices() throws {
         var expectations = [XCTestExpectation]()
 
         let services = BaseService.all().sorted()
@@ -25,6 +19,12 @@ class SttsTests: XCTestCase {
             let thisExpectation = XCTestExpectation(description: "Retrieve status for \(type(of: service))")
 
             expectations.append(thisExpectation)
+
+            if service is StatusPageService {
+                // Status page servers don't like being hammered by this many requests, so we slow it down.
+                // I really wish they would add an API for querying the status of many services at once.
+                sleep(1)
+            }
 
             print("Retrieving status for \(type(of: service))…")
 
@@ -45,6 +45,7 @@ class SttsTests: XCTestCase {
             }
         }
 
-        wait(for: expectations, timeout: 20.0)
+        let timeout = TimeInterval(services.count) + 2 // Expect to wait one second per service, worst case scenario
+        wait(for: expectations, timeout: timeout)
     }
 }

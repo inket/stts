@@ -157,7 +157,7 @@
 		B2542505293595B20093AC83 /* WPEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2542504293595B20093AC83 /* WPEngine.swift */; };
 		B254642321EE9AF6003068A4 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254642221EE9AF6003068A4 /* GitHub.swift */; };
 		B2563BBC22CBC3D500532C39 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBB22CBC3D500532C39 /* DataLoader.swift */; };
-		B2563BBE22CBC65A00532C39 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBD22CBC65A00532C39 /* URLSessionMock.swift */; };
+		B2563BBE22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBD22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift */; };
 		B256955A1E247C8C00FAE413 /* Cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695511E247C8C00FAE413 /* Cloudinary.swift */; };
 		B256955B1E247C8C00FAE413 /* HipChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695521E247C8C00FAE413 /* HipChat.swift */; };
 		B256955C1E247C8C00FAE413 /* PagerDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695531E247C8C00FAE413 /* PagerDuty.swift */; };
@@ -492,7 +492,7 @@
 		B2542504293595B20093AC83 /* WPEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPEngine.swift; sourceTree = "<group>"; };
 		B254642221EE9AF6003068A4 /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		B2563BBB22CBC3D500532C39 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
-		B2563BBD22CBC65A00532C39 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		B2563BBD22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSizeTrackingURLSession.swift; sourceTree = "<group>"; };
 		B25695511E247C8C00FAE413 /* Cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloudinary.swift; sourceTree = "<group>"; };
 		B25695521E247C8C00FAE413 /* HipChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HipChat.swift; sourceTree = "<group>"; };
 		B25695531E247C8C00FAE413 /* PagerDuty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerDuty.swift; sourceTree = "<group>"; };
@@ -740,7 +740,7 @@
 		B2563BC122CBC92400532C39 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				B2563BBD22CBC65A00532C39 /* URLSessionMock.swift */,
+				B2563BBD22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1348,7 +1348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B0A21428197857007D8E8F /* StringExtensionsTests.swift in Sources */,
-				B2563BBE22CBC65A00532C39 /* URLSessionMock.swift in Sources */,
+				B2563BBE22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift in Sources */,
 				B2163AF820BA4E7500B14A85 /* sttsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
