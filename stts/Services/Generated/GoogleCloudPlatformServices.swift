@@ -83,6 +83,11 @@ class GoogleAutoMLVision: GoogleCloudPlatform, SubService {
     let dashboardName = "AutoML Vision"
 }
 
+class GoogleBackupAndDR: GoogleCloudPlatform, SubService {
+    let name = "Google Backup and DR"
+    let dashboardName = "Backup and DR"
+}
+
 class GoogleBareMetalSolution: GoogleCloudPlatform, SubService {
     let name = "Google Bare Metal Solution"
     let dashboardName = "Bare Metal Solution"
@@ -426,6 +431,11 @@ class GoogleCloudIoT: GoogleCloudPlatform, SubService {
 class GoogleCloudMarketplace: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Marketplace"
     let dashboardName = "Google Cloud Marketplace"
+}
+
+class GoogleCloudNetworking: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Networking"
+    let dashboardName = "Google Cloud Networking"
 }
 
 class GoogleCloudPubSub: GoogleCloudPlatform, SubService {

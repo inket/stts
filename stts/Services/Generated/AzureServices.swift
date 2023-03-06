@@ -3,6 +3,11 @@
 
 import Foundation
 
+class AzureCurrentImpact: Azure, SubService {
+    let name = "Azure CurrentImpact"
+    let zoneIdentifier = "current-impact"
+}
+
 class AzureAmericas: Azure, SubService {
     let name = "Azure Americas"
     let zoneIdentifier = "americas"

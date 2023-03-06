@@ -346,6 +346,11 @@ class AppleStocks: Apple, SubService {
     let serviceName = "Stocks"
 }
 
+class AppleSubscriptionPurchase: Apple, SubService {
+    let name = "Apple Subscription Purchase"
+    let serviceName = "Subscription Purchase"
+}
+
 class AppleVolumePurchaseProgram: Apple, SubService {
     let name = "Apple Volume Purchase Program"
     let serviceName = "Volume Purchase Program"
