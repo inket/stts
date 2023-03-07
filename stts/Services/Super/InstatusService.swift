@@ -74,7 +74,7 @@ class BaseInstatusService: BaseService {
         struct Props: Codable {
             struct PageProps: Codable {
                 let site: Site
-                let incidents: [Incident]
+                let activeIncidents: [Incident]
             }
 
             let pageProps: PageProps
@@ -110,7 +110,7 @@ class BaseInstatusService: BaseService {
             )
 
             // Set the message by combining the unresolved incident names
-            let unresolvedIncidents = statusData.props.pageProps.incidents.filter { $0.isUnresolved }
+            let unresolvedIncidents = statusData.props.pageProps.activeIncidents.filter { $0.isUnresolved }
             if !unresolvedIncidents.isEmpty {
                 let prefix = unresolvedIncidents.count > 1 ? "* " : ""
                 self?.message = unresolvedIncidents.map { "\(prefix)\($0.name)" }.joined(separator: "\n")

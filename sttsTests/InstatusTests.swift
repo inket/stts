@@ -1,25 +1,25 @@
 //
-//  FastlyTests.swift
+//  InstatusTests.swift
 //  sttsTests
 //
 
 import XCTest
 @testable import stts
 
-final class FastlyTests: XCTestCase {
+final class InstatusTests: XCTestCase {
     func testNormalStatus() throws {
-        let fastly = Fastly()
+        let linear = Linear()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
             .init(
-                url: fastly.url,
-                response: try Data(contentsOf: Bundle.test.url(forResource: "fastly-good", withExtension: "html")!)
+                url: linear.url,
+                response: try Data(contentsOf: Bundle.test.url(forResource: "linear-good", withExtension: "html")!)
             )
         ]))
 
-        let expectation = XCTestExpectation(description: "Retrieve mocked status for Fastly")
+        let expectation = XCTestExpectation(description: "Retrieve mocked status for Linear")
 
-        fastly.updateStatus { service in
+        linear.updateStatus { service in
             XCTAssertEqual(service.status, .good)
             expectation.fulfill()
         }
@@ -27,23 +27,23 @@ final class FastlyTests: XCTestCase {
         wait(for: [expectation], timeout: 3)
     }
 
-    func testMajorStatus() throws {
-        let fastly = Fastly()
+    func testMinorStatus() throws {
+        let whereby = Whereby()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
             .init(
-                url: fastly.url,
+                url: whereby.url,
                 response: try Data(contentsOf: Bundle.test.url(
-                    forResource: "fastly-major",
+                    forResource: "whereby-notice",
                     withExtension: "html"
                 )!)
             )
         ]))
 
-        let expectation = XCTestExpectation(description: "Retrieve mocked status for Fastly")
+        let expectation = XCTestExpectation(description: "Retrieve mocked status for Whereby")
 
-        fastly.updateStatus { service in
-            XCTAssertEqual(service.status, .major)
+        whereby.updateStatus { service in
+            XCTAssertEqual(service.status, .notice)
             expectation.fulfill()
         }
 

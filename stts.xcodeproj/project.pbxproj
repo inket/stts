@@ -157,8 +157,8 @@
 		B2542502293591610093AC83 /* StatusHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2542501293591610093AC83 /* StatusHubService.swift */; };
 		B2542505293595B20093AC83 /* WPEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2542504293595B20093AC83 /* WPEngine.swift */; };
 		B254642321EE9AF6003068A4 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254642221EE9AF6003068A4 /* GitHub.swift */; };
-		B2552EFF29954AEB003FF9EC /* fastly-normal.html in Resources */ = {isa = PBXBuildFile; fileRef = B2552EFD29954AEB003FF9EC /* fastly-normal.html */; };
-		B2552F0029954AEB003FF9EC /* fastly-unavailable.html in Resources */ = {isa = PBXBuildFile; fileRef = B2552EFE29954AEB003FF9EC /* fastly-unavailable.html */; };
+		B2552EFF29954AEB003FF9EC /* fastly-good.html in Resources */ = {isa = PBXBuildFile; fileRef = B2552EFD29954AEB003FF9EC /* fastly-good.html */; };
+		B2552F0029954AEB003FF9EC /* fastly-major.html in Resources */ = {isa = PBXBuildFile; fileRef = B2552EFE29954AEB003FF9EC /* fastly-major.html */; };
 		B2552F0229954B18003FF9EC /* FastlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2552F0129954B18003FF9EC /* FastlyTests.swift */; };
 		B2552F0429954C26003FF9EC /* ResponseOverridingURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2552F0329954C26003FF9EC /* ResponseOverridingURLSession.swift */; };
 		B2552F082995516B003FF9EC /* TestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2552F072995516B003FF9EC /* TestBundle.swift */; };
@@ -258,6 +258,9 @@
 		B2D032D01D6455E300D51CB8 /* TravisCI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D032CF1D6455E300D51CB8 /* TravisCI.swift */; };
 		B2D0F22424611AD700F5501C /* ConfluentCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D0F22324611AD700F5501C /* ConfluentCloud.swift */; };
 		B2D468291E2F0F82000F8F6B /* Coveralls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D468281E2F0F82000F8F6B /* Coveralls.swift */; };
+		B2D655E729B802ED00DBE417 /* InstatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D655E629B802ED00DBE417 /* InstatusTests.swift */; };
+		B2D655E929B803B800DBE417 /* whereby-notice.html in Resources */ = {isa = PBXBuildFile; fileRef = B2D655E829B803B800DBE417 /* whereby-notice.html */; };
+		B2D655EB29B8045300DBE417 /* linear-good.html in Resources */ = {isa = PBXBuildFile; fileRef = B2D655EA29B8045300DBE417 /* linear-good.html */; };
 		B2D6FDAE21B95A0800F95940 /* LastPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D6FDAD21B95A0800F95940 /* LastPass.swift */; };
 		B2DCE68D221591F2001447D8 /* LambStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCE68C221591F2001447D8 /* LambStatusService.swift */; };
 		B2DCE6902215992E001447D8 /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCE68F2215992E001447D8 /* Apple.swift */; };
@@ -304,6 +307,7 @@
 		D25675615FE77EF34E668B99 /* JiraSoftware.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1243DB051144F27DE071F9 /* JiraSoftware.swift */; };
 		D5F7C57260F512BDB844AD08 /* TeleportCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FEC29C375721FE85A4ED27 /* TeleportCloud.swift */; };
 		D6FC1C0B5C45F3865F9D6543 /* Smarty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2764C094034CD61A24624DA6 /* Smarty.swift */; };
+		DE9EE76511329A776976FDC5 /* Whereby.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039BB24FFC209E99B42916 /* Whereby.swift */; };
 		E2AAECBE89E07C6E94464ABF /* Checkly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */; };
 		E5B35A5C6608D856A99842B2 /* Miro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCCFA4ECD8BB402C7254FEF /* Miro.swift */; };
 		ED78F07A7D2AB1F665182667 /* Temporal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D9C362F03D1C2E95A663D /* Temporal.swift */; };
@@ -498,8 +502,8 @@
 		B2542501293591610093AC83 /* StatusHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHubService.swift; sourceTree = "<group>"; };
 		B2542504293595B20093AC83 /* WPEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPEngine.swift; sourceTree = "<group>"; };
 		B254642221EE9AF6003068A4 /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
-		B2552EFD29954AEB003FF9EC /* fastly-normal.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fastly-normal.html"; sourceTree = "<group>"; };
-		B2552EFE29954AEB003FF9EC /* fastly-unavailable.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fastly-unavailable.html"; sourceTree = "<group>"; };
+		B2552EFD29954AEB003FF9EC /* fastly-good.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fastly-good.html"; sourceTree = "<group>"; };
+		B2552EFE29954AEB003FF9EC /* fastly-major.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fastly-major.html"; sourceTree = "<group>"; };
 		B2552F0129954B18003FF9EC /* FastlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastlyTests.swift; sourceTree = "<group>"; };
 		B2552F0329954C26003FF9EC /* ResponseOverridingURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseOverridingURLSession.swift; sourceTree = "<group>"; };
 		B2552F072995516B003FF9EC /* TestBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBundle.swift; sourceTree = "<group>"; };
@@ -600,6 +604,9 @@
 		B2D032CF1D6455E300D51CB8 /* TravisCI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravisCI.swift; sourceTree = "<group>"; };
 		B2D0F22324611AD700F5501C /* ConfluentCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfluentCloud.swift; sourceTree = "<group>"; };
 		B2D468281E2F0F82000F8F6B /* Coveralls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coveralls.swift; sourceTree = "<group>"; };
+		B2D655E629B802ED00DBE417 /* InstatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstatusTests.swift; sourceTree = "<group>"; };
+		B2D655E829B803B800DBE417 /* whereby-notice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "whereby-notice.html"; sourceTree = "<group>"; };
+		B2D655EA29B8045300DBE417 /* linear-good.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "linear-good.html"; sourceTree = "<group>"; };
 		B2D6FDAD21B95A0800F95940 /* LastPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastPass.swift; sourceTree = "<group>"; };
 		B2DCE68C221591F2001447D8 /* LambStatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LambStatusService.swift; sourceTree = "<group>"; };
 		B2DCE68F2215992E001447D8 /* Apple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
@@ -643,6 +650,7 @@
 		C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeTransfer.swift; sourceTree = "<group>"; };
 		CA1F86EF25EF8B3548E43010 /* PlayFab.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayFab.swift; sourceTree = "<group>"; };
 		CA6A0B13DB442169F731592B /* AtlassianPartners.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtlassianPartners.swift; sourceTree = "<group>"; };
+		CE039BB24FFC209E99B42916 /* Whereby.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Whereby.swift; sourceTree = "<group>"; };
 		D6B730B6BF88700B5DC9212E /* SumoLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SumoLogic.swift; sourceTree = "<group>"; };
 		D819CB63B6576DA05BFC764C /* Netlify.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
 		E5A4F04F86B9C0A9FB7233AE /* Branch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
@@ -698,6 +706,7 @@
 				B213D202269B045C005EBDDA /* Railway.swift */,
 				B213D20A269B0774005EBDDA /* Sketch.swift */,
 				B213D208269B06DD005EBDDA /* Threader.swift */,
+				CE039BB24FFC209E99B42916 /* Whereby.swift */,
 			);
 			path = Instatus;
 			sourceTree = "<group>";
@@ -710,6 +719,7 @@
 				B2552EFC29954AE0003FF9EC /* Resources */,
 				B2552F0129954B18003FF9EC /* FastlyTests.swift */,
 				B2163AF920BA4E7500B14A85 /* Info.plist */,
+				B2D655E629B802ED00DBE417 /* InstatusTests.swift */,
 				91B0A21328197857007D8E8F /* StringExtensionsTests.swift */,
 				B2163AF720BA4E7500B14A85 /* sttsTests.swift */,
 			);
@@ -755,8 +765,10 @@
 		B2552EFC29954AE0003FF9EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B2552EFD29954AEB003FF9EC /* fastly-normal.html */,
-				B2552EFE29954AEB003FF9EC /* fastly-unavailable.html */,
+				B2D655EA29B8045300DBE417 /* linear-good.html */,
+				B2552EFD29954AEB003FF9EC /* fastly-good.html */,
+				B2552EFE29954AEB003FF9EC /* fastly-major.html */,
+				B2D655E829B803B800DBE417 /* whereby-notice.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1295,8 +1307,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2552F0029954AEB003FF9EC /* fastly-unavailable.html in Resources */,
-				B2552EFF29954AEB003FF9EC /* fastly-normal.html in Resources */,
+				B2D655EB29B8045300DBE417 /* linear-good.html in Resources */,
+				B2D655E929B803B800DBE417 /* whereby-notice.html in Resources */,
+				B2552F0029954AEB003FF9EC /* fastly-major.html in Resources */,
+				B2552EFF29954AEB003FF9EC /* fastly-good.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1388,6 +1402,7 @@
 				B2552F0229954B18003FF9EC /* FastlyTests.swift in Sources */,
 				B2552F082995516B003FF9EC /* TestBundle.swift in Sources */,
 				B2552F0429954C26003FF9EC /* ResponseOverridingURLSession.swift in Sources */,
+				B2D655E729B802ED00DBE417 /* InstatusTests.swift in Sources */,
 				B2163AF820BA4E7500B14A85 /* sttsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1680,6 +1695,7 @@
 				C6B979E923630AC2F73717B0 /* Cybersource.swift in Sources */,
 				3DD3827D39BBDDBDA24DA4B9 /* Roadmunk.swift in Sources */,
 				7E729FE2526A0074B32685C4 /* NetskopeTrustPortal.swift in Sources */,
+				DE9EE76511329A776976FDC5 /* Whereby.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
