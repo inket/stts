@@ -85,6 +85,9 @@ func discoverZones() -> [AzureZone] {
         options: [.caseInsensitive, .dotMatchesLineSeparators]
     )
 
+    // Some tabs in the Azure status website do not correspond to actual zones, so we exclude them
+    let excludedZoneIdentifiers = Set(["current-impact"])
+
     let range = NSRange(location: 0, length: body.count)
     regex.enumerateMatches(in: body, options: [], range: range) { textCheckingResult, _, _ in
         guard let textCheckingResult = textCheckingResult, textCheckingResult.numberOfRanges == 3 else { return }
@@ -92,7 +95,9 @@ func discoverZones() -> [AzureZone] {
         let identifier = body[textCheckingResult.range(at: 1)]
         let serviceName = body[textCheckingResult.range(at: 2)]
 
-        result.append(AzureZone(identifier: identifier, serviceName: serviceName))
+        if excludedZoneIdentifiers.contains(identifier) == false {
+            result.append(AzureZone(identifier: identifier, serviceName: serviceName))
+        }
     }
 
     return result
