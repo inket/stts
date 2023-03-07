@@ -28,6 +28,11 @@ class GoogleAIPlatformTraining: GoogleCloudPlatform, SubService {
     let dashboardName = "AI Platform Training"
 }
 
+class GoogleAlloyDBForPostgreSQL: GoogleCloudPlatform, SubService {
+    let name = "Google AlloyDB for PostgreSQL"
+    let dashboardName = "AlloyDB for PostgreSQL"
+}
+
 class GoogleAnthosServiceMesh: GoogleCloudPlatform, SubService {
     let name = "Google Anthos Service Mesh"
     let dashboardName = "Anthos Service Mesh"
@@ -366,11 +371,6 @@ class GoogleGameServers: GoogleCloudPlatform, SubService {
 class GoogleAppEngine: GoogleCloudPlatform, SubService {
     let name = "Google App Engine"
     let dashboardName = "Google App Engine"
-}
-
-class GoogleBigQuery: GoogleCloudPlatform, SubService {
-    let name = "Google BigQuery"
-    let dashboardName = "Google BigQuery"
 }
 
 class GoogleCloudBigtable: GoogleCloudPlatform, SubService {
