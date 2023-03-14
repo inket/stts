@@ -439,7 +439,6 @@
 		B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCakeService.swift; sourceTree = "<group>"; };
 		B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaPods.swift; sourceTree = "<group>"; };
 		B21DC0751F6B436400E8214F /* Aptible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aptible.swift; sourceTree = "<group>"; };
-		B2228B5C26C9110A002F01F0 /* generate_sendbird_services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generate_sendbird_services.swift; sourceTree = "<group>"; };
 		B2228B5D26C95CF5002F01F0 /* SendbirdServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendbirdServices.swift; sourceTree = "<group>"; };
 		B2228B5F26C95D15002F01F0 /* Sendbird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sendbird.swift; sourceTree = "<group>"; };
 		B2228B6126C9623C002F01F0 /* SendbirdAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendbirdAll.swift; sourceTree = "<group>"; };
@@ -1109,7 +1108,6 @@
 				B2CEE5DC22B4A9900073C743 /* generate_azure_services.swift */,
 				B2E70FD622B066EC000BCAD2 /* generate_google_services.swift */,
 				B23E408B26A559350038DDF1 /* generate_salesforce_services.swift */,
-				B2228B5C26C9110A002F01F0 /* generate_sendbird_services.swift */,
 				B2E70FD322B0657F000BCAD2 /* generate_services_plist.sh */,
 			);
 			path = Scripts;
@@ -1360,7 +1358,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "chmod +x $SRCROOT/Scripts/*.swift\n\n$SRCROOT/Scripts/generate_adobe_services.swift &\n$SRCROOT/Scripts/generate_apple_services.swift &\n$SRCROOT/Scripts/generate_azure_services.swift &\n$SRCROOT/Scripts/generate_azure_devops_services.swift &\n$SRCROOT/Scripts/generate_google_services.swift &\n$SRCROOT/Scripts/generate_salesforce_services.swift &\n$SRCROOT/Scripts/generate_sendbird_services.swift\nwait\n";
+			shellScript = "chmod +x $SRCROOT/Scripts/*.swift\n\n$SRCROOT/Scripts/generate_adobe_services.swift &\n$SRCROOT/Scripts/generate_apple_services.swift &\n$SRCROOT/Scripts/generate_azure_services.swift &\n$SRCROOT/Scripts/generate_azure_devops_services.swift &\n$SRCROOT/Scripts/generate_google_services.swift &\n$SRCROOT/Scripts/generate_salesforce_services.swift\nwait\n";
 		};
 		B28F83321E24BDC100F2070F /* Generate Services plist file */ = {
 			isa = PBXShellScriptBuildPhase;
