@@ -771,9 +771,9 @@
 		B2552EFC29954AE0003FF9EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B2D655EA29B8045300DBE417 /* linear-good.html */,
 				B2552EFD29954AEB003FF9EC /* fastly-good.html */,
 				B2552EFE29954AEB003FF9EC /* fastly-major.html */,
+				B2D655EA29B8045300DBE417 /* linear-good.html */,
 				B2D655E829B803B800DBE417 /* whereby-notice.html */,
 			);
 			path = Resources;
