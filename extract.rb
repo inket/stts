@@ -83,6 +83,44 @@ class #{safe_name}: StatusPageService {
     true
 end
 
+def extract_site24x7(url, source, custom_name)
+    encrypted_status_page_id = source.scan(/"enc_statuspage_id":.*?"(.*?)"/mi).flatten.first
+    return false if encrypted_status_page_id == nil || encrypted_status_page_id.empty?
+
+    if custom_name == nil || custom_name.empty?
+        puts "Site24x7 service detected! Please provide the service name since it cannot be automatically found."
+        puts
+        puts "Usage:"
+        puts "bundle exec ruby extract.rb <url> <name>"
+        exit(1)
+    end
+
+    id = encrypted_status_page_id
+    safe_name = sanitized_name(custom_name)
+
+    definitions = [
+        "let url = URL(string: \"#{url}\")!",
+        "let encryptedStatusPageID = \"#{id}\""
+    ]
+
+    definitions.unshift("let name = \"#{custom_name}\"") if safe_name != custom_name
+
+    create_file "stts/Services/Site24x7/#{safe_name}.swift", <<-SITE24X7
+//
+//  #{safe_name}.swift
+//  stts
+//
+
+import Foundation
+
+class #{safe_name}: Site24x7Service {
+    #{definitions.join("\n    ")}
+}
+    SITE24X7
+
+    true
+end
+
 def create_file(path, content)
     File.open(path, "w") do |f|
         f.write(content)
@@ -202,6 +240,7 @@ source = source_for(url)
 fail_network unless source
 
 finish if extract_instatus(source, custom_name)
+finish if extract_site24x7(url, source, custom_name)
 finish if extract_statuspage(url, custom_name)
 
 fail

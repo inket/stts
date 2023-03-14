@@ -206,6 +206,7 @@
 		B29222282642EF33001C63AE /* ModeAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29222262642EF33001C63AE /* ModeAnalytics.swift */; };
 		B29222292642EF33001C63AE /* Twitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29222272642EF33001C63AE /* Twitch.swift */; };
 		B292222B2642EFA4001C63AE /* Coinbase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B292222A2642EFA4001C63AE /* Coinbase.swift */; };
+		B2928FE729C08A9F00C85A6C /* Site24x7.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2928FE629C08A9F00C85A6C /* Site24x7.swift */; };
 		B299C8431DD044160024D2E9 /* NewRelic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8421DD044160024D2E9 /* NewRelic.swift */; };
 		B299C8451DD046F20024D2E9 /* AmazonWebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */; };
 		B299C8471DD04D7C0024D2E9 /* NPM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8461DD04D7C0024D2E9 /* NPM.swift */; };
@@ -261,6 +262,7 @@
 		B2D655E729B802ED00DBE417 /* InstatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D655E629B802ED00DBE417 /* InstatusTests.swift */; };
 		B2D655E929B803B800DBE417 /* whereby-notice.html in Resources */ = {isa = PBXBuildFile; fileRef = B2D655E829B803B800DBE417 /* whereby-notice.html */; };
 		B2D655EB29B8045300DBE417 /* linear-good.html in Resources */ = {isa = PBXBuildFile; fileRef = B2D655EA29B8045300DBE417 /* linear-good.html */; };
+		B2D655EE29B807BF00DBE417 /* Site24x7Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D655ED29B807BF00DBE417 /* Site24x7Service.swift */; };
 		B2D6FDAE21B95A0800F95940 /* LastPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D6FDAD21B95A0800F95940 /* LastPass.swift */; };
 		B2DCE68D221591F2001447D8 /* LambStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCE68C221591F2001447D8 /* LambStatusService.swift */; };
 		B2DCE6902215992E001447D8 /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCE68F2215992E001447D8 /* Apple.swift */; };
@@ -314,6 +316,7 @@
 		EF67ABCF8677A86151FBBA38 /* Bugsnag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80361FCB72F96FA6F753D7C1 /* Bugsnag.swift */; };
 		FBB552B59A4951F2DAB48CCD /* KeeperSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E9DE62ED9C9E27F1B4BB3C /* KeeperSecurity.swift */; };
 		FC278203BFB2E7D5A41639ED /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A4F04F86B9C0A9FB7233AE /* Branch.swift */; };
+		FF0965074312E22E4FD26062 /* Canonical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BDC63E10EDB5C1EAD0D481 /* Canonical.swift */; };
 		FF28BED980D893016972C9B2 /* SumoLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B730B6BF88700B5DC9212E /* SumoLogic.swift */; };
 /* End PBXBuildFile section */
 
@@ -357,6 +360,7 @@
 		1CCCFA4ECD8BB402C7254FEF /* Miro.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Miro.swift; sourceTree = "<group>"; };
 		223AE0427F33807B67A98607 /* Dialpad.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Dialpad.swift; sourceTree = "<group>"; };
 		2764C094034CD61A24624DA6 /* Smarty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Smarty.swift; sourceTree = "<group>"; };
+		28BDC63E10EDB5C1EAD0D481 /* Canonical.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Canonical.swift; sourceTree = "<group>"; };
 		2B88D0162448690134C1E7D9 /* JiraServiceManagement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JiraServiceManagement.swift; sourceTree = "<group>"; };
 		2D7D189B0FC2B9F9E6ECDCDB /* JiraWorkManagement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JiraWorkManagement.swift; sourceTree = "<group>"; };
 		2F1B7558227A095400BA5CBD /* Avalara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avalara.swift; sourceTree = "<group>"; };
@@ -550,6 +554,7 @@
 		B29222262642EF33001C63AE /* ModeAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeAnalytics.swift; sourceTree = "<group>"; };
 		B29222272642EF33001C63AE /* Twitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twitch.swift; sourceTree = "<group>"; };
 		B292222A2642EFA4001C63AE /* Coinbase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coinbase.swift; sourceTree = "<group>"; };
+		B2928FE629C08A9F00C85A6C /* Site24x7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site24x7.swift; sourceTree = "<group>"; };
 		B299C8421DD044160024D2E9 /* NewRelic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRelic.swift; sourceTree = "<group>"; };
 		B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmazonWebServices.swift; sourceTree = "<group>"; };
 		B299C8461DD04D7C0024D2E9 /* NPM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPM.swift; sourceTree = "<group>"; };
@@ -607,6 +612,7 @@
 		B2D655E629B802ED00DBE417 /* InstatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstatusTests.swift; sourceTree = "<group>"; };
 		B2D655E829B803B800DBE417 /* whereby-notice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "whereby-notice.html"; sourceTree = "<group>"; };
 		B2D655EA29B8045300DBE417 /* linear-good.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "linear-good.html"; sourceTree = "<group>"; };
+		B2D655ED29B807BF00DBE417 /* Site24x7Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site24x7Service.swift; sourceTree = "<group>"; };
 		B2D6FDAD21B95A0800F95940 /* LastPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastPass.swift; sourceTree = "<group>"; };
 		B2DCE68C221591F2001447D8 /* LambStatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LambStatusService.swift; sourceTree = "<group>"; };
 		B2DCE68F2215992E001447D8 /* Apple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
@@ -1069,6 +1075,15 @@
 			path = stts;
 			sourceTree = "<group>";
 		};
+		B2D655EC29B8079D00DBE417 /* Site24x7 */ = {
+			isa = PBXGroup;
+			children = (
+				28BDC63E10EDB5C1EAD0D481 /* Canonical.swift */,
+				B2928FE629C08A9F00C85A6C /* Site24x7.swift */,
+			);
+			path = Site24x7;
+			sourceTree = "<group>";
+		};
 		B2DCE68E22159731001447D8 /* LambStatus */ = {
 			isa = PBXGroup;
 			children = (
@@ -1134,6 +1149,7 @@
 				B2DCE68E22159731001447D8 /* LambStatus */,
 				B22FDE4921089D4F00359EC9 /* PayPal */,
 				B2F55EEA2408B562003D674C /* PlayStation Network */,
+				B2D655EC29B8079D00DBE417 /* Site24x7 */,
 				B2841CEC20BA6423004AFDB7 /* Sorry */,
 				B26CB5711E13448900116A33 /* Status.ioV1 */,
 				B2163B0120BA5AE600B14A85 /* StatusCake */,
@@ -1190,6 +1206,7 @@
 				B24EE10526C8C08A00F7CE8B /* SalesforceStore.swift */,
 				B2228B5F26C95D15002F01F0 /* Sendbird.swift */,
 				B205A9171D49D67700EA178D /* Service.swift */,
+				B2D655ED29B807BF00DBE417 /* Site24x7Service.swift */,
 				B2841CEA20BA6207004AFDB7 /* SorryService.swift */,
 				B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */,
 				B2542501293591610093AC83 /* StatusHubService.swift */,
@@ -1482,6 +1499,7 @@
 				B2253A6D209F3F9F0039F574 /* FirebaseService.swift in Sources */,
 				B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */,
 				B2E70FDB22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift in Sources */,
+				B2D655EE29B807BF00DBE417 /* Site24x7Service.swift in Sources */,
 				B2DEE0BE1E696D64006B198E /* Slack.swift in Sources */,
 				B231DD60257B438900647312 /* HubSpot.swift in Sources */,
 				B2CE72D6228587E000847E00 /* Acquia.swift in Sources */,
@@ -1522,6 +1540,7 @@
 				B213D205269B0496005EBDDA /* Linear.swift in Sources */,
 				B2E6C8F3253C24CD001210E4 /* Lumanox.swift in Sources */,
 				B28C1D441E607D8600F9D0DC /* Mapbox.swift in Sources */,
+				B2928FE729C08A9F00C85A6C /* Site24x7.swift in Sources */,
 				A125C59E20F7909500C513B3 /* Fastly.swift in Sources */,
 				C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */,
 				B22BB3A1223B341B00B43BED /* OnePassword.swift in Sources */,
@@ -1696,6 +1715,7 @@
 				3DD3827D39BBDDBDA24DA4B9 /* Roadmunk.swift in Sources */,
 				7E729FE2526A0074B32685C4 /* NetskopeTrustPortal.swift in Sources */,
 				DE9EE76511329A776976FDC5 /* Whereby.swift in Sources */,
+				FF0965074312E22E4FD26062 /* Canonical.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
