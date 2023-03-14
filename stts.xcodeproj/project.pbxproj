@@ -312,6 +312,7 @@
 		DE9EE76511329A776976FDC5 /* Whereby.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039BB24FFC209E99B42916 /* Whereby.swift */; };
 		E2AAECBE89E07C6E94464ABF /* Checkly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */; };
 		E5B35A5C6608D856A99842B2 /* Miro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCCFA4ECD8BB402C7254FEF /* Miro.swift */; };
+		EA0E7177A4634EF99C4AF31A /* MastodonSocial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB09BB83A2FE186710F65682 /* MastodonSocial.swift */; };
 		ED78F07A7D2AB1F665182667 /* Temporal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D9C362F03D1C2E95A663D /* Temporal.swift */; };
 		EF67ABCF8677A86151FBBA38 /* Bugsnag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80361FCB72F96FA6F753D7C1 /* Bugsnag.swift */; };
 		FBB552B59A4951F2DAB48CCD /* KeeperSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E9DE62ED9C9E27F1B4BB3C /* KeeperSecurity.swift */; };
@@ -655,6 +656,7 @@
 		C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeTransfer.swift; sourceTree = "<group>"; };
 		CA1F86EF25EF8B3548E43010 /* PlayFab.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayFab.swift; sourceTree = "<group>"; };
 		CA6A0B13DB442169F731592B /* AtlassianPartners.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtlassianPartners.swift; sourceTree = "<group>"; };
+		CB09BB83A2FE186710F65682 /* MastodonSocial.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MastodonSocial.swift; sourceTree = "<group>"; };
 		CE039BB24FFC209E99B42916 /* Whereby.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Whereby.swift; sourceTree = "<group>"; };
 		D6B730B6BF88700B5DC9212E /* SumoLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SumoLogic.swift; sourceTree = "<group>"; };
 		D819CB63B6576DA05BFC764C /* Netlify.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
@@ -707,6 +709,7 @@
 			children = (
 				B213D206269B05D9005EBDDA /* Instatus.swift */,
 				B213D204269B0496005EBDDA /* Linear.swift */,
+				CB09BB83A2FE186710F65682 /* MastodonSocial.swift */,
 				0160B2F5B66992A4DE58FF49 /* Primcloud.swift */,
 				B213D202269B045C005EBDDA /* Railway.swift */,
 				B213D20A269B0774005EBDDA /* Sketch.swift */,
@@ -1714,6 +1717,7 @@
 				7E729FE2526A0074B32685C4 /* NetskopeTrustPortal.swift in Sources */,
 				DE9EE76511329A776976FDC5 /* Whereby.swift in Sources */,
 				FF0965074312E22E4FD26062 /* Canonical.swift in Sources */,
+				EA0E7177A4634EF99C4AF31A /* MastodonSocial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
