@@ -78,6 +78,33 @@ class DatoramaNA: Datorama, SubService {
     let location = "NA"
 }
 
+class MCPersonalizationAll: MCPersonalization, ServiceCategory {
+    let categoryName = "MCPersonalization"
+    let subServiceSuperclass: AnyObject.Type = BaseMCPersonalization.self
+
+    let name = "MCPersonalization (All Regions)"
+    let key = "MCPersonalization"
+    let location = "*"
+}
+
+class MCPersonalizationAPAC: MCPersonalization, SubService {
+    let name = "MCPersonalization (APAC)"
+    let key = "MCPersonalization"
+    let location = "APAC"
+}
+
+class MCPersonalizationEMEA: MCPersonalization, SubService {
+    let name = "MCPersonalization (EMEA)"
+    let key = "MCPersonalization"
+    let location = "EMEA"
+}
+
+class MCPersonalizationNA: MCPersonalization, SubService {
+    let name = "MCPersonalization (NA)"
+    let key = "MCPersonalization"
+    let location = "NA"
+}
+
 class SalesforceMarketingCloudAll: SalesforceMarketingCloud, ServiceCategory {
     let categoryName = "Salesforce Marketing Cloud"
     let subServiceSuperclass: AnyObject.Type = BaseSalesforceMarketingCloud.self

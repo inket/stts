@@ -98,11 +98,6 @@ class AdobeCampaign: AdobeExperienceCloud, SubService {
     let id = 1576
 }
 
-class AdobeCapture: AdobeCreativeCloud, SubService {
-    let name = "Adobe Capture"
-    let id = 5690
-}
-
 class AdobeColor: AdobeCreativeCloud, SubService {
     let name = "Adobe Color"
     let id = 5682
@@ -116,11 +111,6 @@ class AdobeCommerce: AdobeExperienceCloud, SubService {
 class AdobeConnect: AdobeExperienceCloud, SubService {
     let name = "Adobe Connect"
     let id = 3011
-}
-
-class AdobeCreativeCloudLibraries: AdobeCreativeCloud, SubService {
-    let name = "Adobe Creative Cloud Libraries"
-    let id = 2957
 }
 
 class AdobeCrossCloudCapabilities: AdobeExperienceCloud, SubService {
@@ -181,11 +171,6 @@ class AdobeFonts: AdobeCreativeCloud, SubService {
 class AdobeFresco: AdobeCreativeCloud, SubService {
     let name = "Adobe Fresco"
     let id = 5371
-}
-
-class AdobeIllustrator: AdobeCreativeCloud, SubService {
-    let name = "Adobe Illustrator"
-    let id = 5703
 }
 
 class AdobeImageService: AdobeServices, SubService {
@@ -256,11 +241,6 @@ class AdobeResellerConsole: AdobeServices, SubService {
 class AdobeSearch: AdobeServices, SubService {
     let name = "Adobe Search"
     let id = 2943
-}
-
-class AdobeSignIn: AdobeServices, SubService {
-    let name = "Adobe Sign In"
-    let id = 2944
 }
 
 class AdobeStock: AdobeCreativeCloud, SubService {

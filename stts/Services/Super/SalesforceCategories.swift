@@ -27,6 +27,14 @@ class BaseDatorama: BaseSalesforceCategory {
     let url = URL(string: "https://status.salesforce.com/products/Datorama")!
 }
 
+typealias MCPersonalization =
+    BaseMCPersonalization & RequiredServiceProperties & SalesforceStoreService
+
+class BaseMCPersonalization: BaseSalesforceCategory {
+    static var store = SalesforceStore(key: "MCPersonalization")
+    let url = URL(string: "https://status.salesforce.com/products/MCPersonalization")!
+}
+
 typealias SalesforceMarketingCloud =
     BaseSalesforceMarketingCloud & RequiredServiceProperties & SalesforceStoreService
 
