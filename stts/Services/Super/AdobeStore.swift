@@ -6,61 +6,231 @@
 import Foundation
 
 protocol AdobeStoreService {
-    var id: Int { get }
+    var id: String { get }
 }
 
-private struct JSONStructure: Codable {
-    struct Product: Codable {
-        struct Service: Codable {
-            let id: Int
+private enum Status: String {
+    case opened
+    case started
+    case updated
+    case reopened
+    case discovery
+    case scheduled
+    case closed
+    case canceled
+    case completed
+    case dismissed
+
+    var isOpen: Bool {
+        switch self {
+        case .opened, .started, .updated, .reopened, .discovery, .scheduled:
+            return true
+        case .closed, .canceled, .completed, .dismissed:
+            return false
         }
+    }
 
-        struct Event: Codable {
-            // 1=major, 2=minor, 4=maintenance, 5=potential-issue
-            let eventType: Int
+    init?(_ string: String) {
+        self.init(rawValue: string.lowercased())
+    }
+}
 
-            // Don't know what this means besides > 3 meaning it shouldn't count
-            let eventState: Int
+private enum Severity: String {
+    case major
+    case minor
+    case potential
+    case maintenance
+    case trivial
 
-            // 1=opened, 2=started, 3=updated, 4=closed, 5=cancelled, 6=completed, 7=reopened, 8=updated, 9=scheduled
-            // let eventStatus: Int
+    var status: ServiceStatus {
+        switch self {
+        case .major: return .major
+        case .minor: return .minor
+        case .maintenance: return .maintenance
+        case .potential, .trivial: return .notice
+        }
+    }
 
-            var status: ServiceStatus {
-                switch eventType {
-                case 1: return .major
-                case 2: return .minor
-                case 4: return .maintenance
-                case 5: return .notice // "Potential issue"
-                default: return .undetermined
-                }
+    init?(_ string: String) {
+        self.init(rawValue: string.lowercased())
+    }
+}
+
+private struct StatusEvents {
+    struct Cloud {
+        let id: String
+        let name: String
+
+        static func clouds(from dictionary: [String: Any]) -> [Self] {
+            dictionary.compactMap { _, object in
+                guard let dict = object as? [String: Any] else { return nil }
+                return Self(dict)
             }
         }
 
-        let service: Service
-        let cloud: Int?
-        let ongoing: [Event]?
+        init?(_ dict: [String: Any]) {
+            guard
+                let id = dict["id"] as? String,
+                let name = dict["name"] as? String
+            else { return nil }
 
-        var status: ServiceStatus {
-            let currentEvents = ongoing?.filter({ $0.eventState <= 3 })
-            return currentEvents?.map { $0.status }.max() ?? .good
+            self.id = id
+            self.name = name
         }
     }
 
-    struct Localization: Codable {
-        struct English: Codable {
-            let localizeValues: [String: String]
+    struct MaintenanceProduct {
+        let id: String
+        let name: String
+
+        static func products(from dictionary: [String: Any]) -> [Self] {
+            dictionary.compactMap { _, object in
+                guard let dict = object as? [String: Any] else { return nil }
+                return Self(dict)
+            }
         }
 
-        let en: English
+        init?(_ dict: [String: Any]) {
+            guard
+                let id = dict["id"] as? String,
+                let name = dict["name"] as? String
+            else { return nil }
+
+            self.id = id
+            self.name = name
+        }
     }
 
-    let products: [Product]
-    let localizationValues: Localization
+    struct IncidentProduct {
+        let id: String
+        let name: String
+        let history: [IncidentHistoryItem]
+
+        static func products(from dictionary: [String: Any]) -> [Self] {
+            dictionary.compactMap { _, object in
+                guard let dict = object as? [String: Any] else { return nil }
+                return Self(dict)
+            }
+        }
+
+        init?(_ dict: [String: Any]) {
+            guard
+                let id = dict["id"] as? String,
+                let name = dict["name"] as? String,
+                let historyDictionary = dict["history"] as? [String: Any]
+            else { return nil }
+
+            self.id = id
+            self.name = name
+            self.history = IncidentHistoryItem.historyItems(from: historyDictionary)
+        }
+    }
+
+    struct IncidentHistoryItem {
+        let id: String
+        let status: Status
+        let severity: Severity
+
+        static func historyItems(from dictionary: [String: Any]) -> [Self] {
+            // We want them to be sorted by date and in this case the keys are timestamps
+            let sortedKeys = dictionary.keys.sorted()
+
+            return sortedKeys.compactMap { (key: String) -> Self? in
+                guard let dict = dictionary[key] as? [String: Any] else { return nil }
+                return Self(dict)
+            }
+        }
+
+        init?(_ dict: [String: Any]) {
+            guard
+                let id = dict["id"] as? String,
+                let status = Status(dict["status"] as? String ?? ""),
+                let severity = Severity(dict["severity"] as? String ?? "")
+            else { return nil }
+
+            self.id = id
+            self.status = status
+            self.severity = severity
+        }
+    }
+
+    struct MaintenanceEvent {
+        let id: String
+        let status: Status
+
+        let clouds: [Cloud]
+        let products: [MaintenanceProduct]
+
+        static func events(from dictionary: [String: Any]) -> [Self] {
+            dictionary.compactMap { _, object in
+                guard let dict = object as? [String: Any] else { return nil }
+                return Self(dict)
+            }
+        }
+
+        init?(_ dict: [String: Any]) {
+            guard
+                let id = dict["id"] as? String,
+                let status = Status(dict["status"] as? String ?? ""),
+                let cloudsDictionary = dict["clouds"] as? [String: Any],
+                let productsDictionary = dict["products"] as? [String: Any]
+            else { return nil }
+
+            self.id = id
+            self.status = status
+            self.clouds = Cloud.clouds(from: cloudsDictionary)
+            self.products = MaintenanceProduct.products(from: productsDictionary)
+        }
+    }
+
+    struct IncidentEvent {
+        let id: String
+
+        let clouds: [Cloud]
+        let products: [IncidentProduct]
+
+        static func events(from dictionary: [String: Any]) -> [Self] {
+            dictionary.compactMap { _, object in
+                guard let dict = object as? [String: Any] else { return nil }
+                return Self(dict)
+            }
+        }
+
+        init?(_ dict: [String: Any]) {
+            guard
+                let id = dict["id"] as? String,
+                let cloudsDictionary = dict["clouds"] as? [String: Any],
+                let productsDictionary = dict["products"] as? [String: Any]
+            else { return nil }
+
+            self.id = id
+            self.clouds = Cloud.clouds(from: cloudsDictionary)
+            self.products = IncidentProduct.products(from: productsDictionary)
+        }
+    }
+
+    let maintenanceEvents: [MaintenanceEvent]
+    let incidentEvents: [IncidentEvent]
+
+    init?(_ data: Data) {
+        guard
+            let structure = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+            let maintenanceEventDictionary = structure["maintenanceEvent"] as? [String: Any],
+            let maintenanceDictionary = maintenanceEventDictionary["maintenance"] as? [String: Any],
+            let incidentEventDictionary = structure["incidentEvent"] as? [String: Any],
+            let incidentsDictionary = incidentEventDictionary["incidents"] as? [String: Any]
+        else {
+            return nil
+        }
+
+        maintenanceEvents = MaintenanceEvent.events(from: maintenanceDictionary)
+        incidentEvents = IncidentEvent.events(from: incidentsDictionary)
+    }
 }
 
 class AdobeStore: Loading {
-    private var url = URL(string: "https://data.status.adobe.com/adobestatus/currentstatus")!
-    private var statuses: [Int: ServiceStatus] = [:]
+    let url = URL(string: "https://data.status.adobe.com/adobestatus/StatusEvents")!
+    private var statuses: [String: ServiceStatus] = [:]
     private var loadErrorMessage: String?
     private var callbacks: [() -> Void] = []
     private var lastUpdateTime: TimeInterval = 0
@@ -86,29 +256,44 @@ class AdobeStore: Loading {
 
             guard let data = data else { return self._fail(error) }
 
-            guard let structure = try? JSONDecoder().decode(JSONStructure.self, from: data) else {
+            guard let statusEvents = StatusEvents(data) else {
                 return self._fail("Unexpected data")
             }
 
-            var cloudStatuses = [Int: [ServiceStatus]]()
+            var statuses: [String: ServiceStatus] = [:]
 
-            structure.products.forEach {
-                // Add the status of that particular service
-                self.statuses[$0.service.id] = $0.status
+            statusEvents.maintenanceEvents.forEach { maintenanceEvent in
+                if maintenanceEvent.status == .started {
+                    let affectedIDs = maintenanceEvent.clouds.map { $0.id } + maintenanceEvent.products.map { $0.id }
 
-                guard let cloud = $0.cloud else { return }
-
-                // Add the status of that service to the category, so that we can deduce a status for it
-                var thisCloudStatuses = cloudStatuses[cloud] ?? []
-                thisCloudStatuses.append($0.status)
-                cloudStatuses[cloud] = thisCloudStatuses
+                    affectedIDs.forEach {
+                        statuses[$0] = .maintenance
+                    }
+                }
             }
 
-            cloudStatuses.forEach { cloudID, statuses in
-                guard let maxStatus = statuses.max() else { return }
-                self.statuses[cloudID] = maxStatus
+            statusEvents.incidentEvents.forEach { incidentEvent in
+                let affectedCloudIDs = incidentEvent.clouds.map { $0.id }
+
+                incidentEvent.products.forEach { incidentProduct in
+                    guard let mostRecentUpdate = incidentProduct.history.last else { return }
+
+                    if mostRecentUpdate.status.isOpen {
+                        let status = mostRecentUpdate.severity.status
+                        let affectedIDs = affectedCloudIDs + [incidentProduct.id]
+
+                        affectedIDs.forEach {
+                            if let addedStatus = statuses[$0] {
+                                statuses[$0] = max(addedStatus, status)
+                            } else {
+                                statuses[$0] = status
+                            }
+                        }
+                    }
+                }
             }
 
+            self.statuses = statuses
             self.lastUpdateTime = Date.timeIntervalSinceReferenceDate
         }
     }
@@ -122,8 +307,8 @@ class AdobeStore: Loading {
         case .major?: return (.major, "Major issue(s)")
         case .notice?: return (.notice, "Potential issue(s)")
         case .maintenance?: return (.maintenance, "Maintenance")
-        case .some(.undetermined),
-             .none: return (.undetermined, loadErrorMessage ?? "Unexpected error")
+        case .some(.undetermined): return (.undetermined, loadErrorMessage ?? "Unexpected error")
+        case .none: return (.good, "Available")
         }
     }
 

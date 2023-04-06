@@ -275,6 +275,8 @@
 		B2E70FD822B069BA000BCAD2 /* GoogleCloudPlatformServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E70FD722B069BA000BCAD2 /* GoogleCloudPlatformServices.swift */; };
 		B2E70FDB22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E70FDA22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift */; };
 		B2E70FDD22B07FB0000BCAD2 /* FirebaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E70FDC22B07FB0000BCAD2 /* FirebaseServices.swift */; };
+		B2E832EC29DE4F5E000FA1BE /* AdobeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E832EB29DE4F5E000FA1BE /* AdobeTests.swift */; };
+		B2E832EE29DE5104000FA1BE /* adobe-analytics-minor.json in Resources */ = {isa = PBXBuildFile; fileRef = B2E832ED29DE5104000FA1BE /* adobe-analytics-minor.json */; };
 		B2EAD8D520B8FDB800095F5B /* JAMF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EAD8D420B8FDB700095F5B /* JAMF.swift */; };
 		B2EB51CE1E7004A3001D6F78 /* ExanaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */; };
 		B2EB51D01E700517001D6F78 /* Codacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EB51CF1E700517001D6F78 /* Codacy.swift */; };
@@ -627,6 +629,8 @@
 		B2E70FD722B069BA000BCAD2 /* GoogleCloudPlatformServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCloudPlatformServices.swift; sourceTree = "<group>"; };
 		B2E70FDA22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudPlatformAll.swift; sourceTree = "<group>"; };
 		B2E70FDC22B07FB0000BCAD2 /* FirebaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServices.swift; sourceTree = "<group>"; };
+		B2E832EB29DE4F5E000FA1BE /* AdobeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdobeTests.swift; sourceTree = "<group>"; };
+		B2E832ED29DE5104000FA1BE /* adobe-analytics-minor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "adobe-analytics-minor.json"; sourceTree = "<group>"; };
 		B2EAD8D420B8FDB700095F5B /* JAMF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JAMF.swift; sourceTree = "<group>"; };
 		B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExanaService.swift; sourceTree = "<group>"; };
 		B2EB51CF1E700517001D6F78 /* Codacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Codacy.swift; sourceTree = "<group>"; };
@@ -725,6 +729,7 @@
 				B2552F0929955365003FF9EC /* Helpers */,
 				B2563BC122CBC92400532C39 /* Mocks */,
 				B2552EFC29954AE0003FF9EC /* Resources */,
+				B2E832EB29DE4F5E000FA1BE /* AdobeTests.swift */,
 				B2552F0129954B18003FF9EC /* FastlyTests.swift */,
 				B2163AF920BA4E7500B14A85 /* Info.plist */,
 				B2D655E629B802ED00DBE417 /* InstatusTests.swift */,
@@ -773,6 +778,7 @@
 		B2552EFC29954AE0003FF9EC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B2E832ED29DE5104000FA1BE /* adobe-analytics-minor.json */,
 				B2552EFD29954AEB003FF9EC /* fastly-good.html */,
 				B2552EFE29954AEB003FF9EC /* fastly-major.html */,
 				B2D655EA29B8045300DBE417 /* linear-good.html */,
@@ -1325,6 +1331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2E832EE29DE5104000FA1BE /* adobe-analytics-minor.json in Resources */,
 				B2D655EB29B8045300DBE417 /* linear-good.html in Resources */,
 				B2D655E929B803B800DBE417 /* whereby-notice.html in Resources */,
 				B2552F0029954AEB003FF9EC /* fastly-major.html in Resources */,
@@ -1416,6 +1423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B0A21428197857007D8E8F /* StringExtensionsTests.swift in Sources */,
+				B2E832EC29DE4F5E000FA1BE /* AdobeTests.swift in Sources */,
 				B2563BBE22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift in Sources */,
 				B2552F0229954B18003FF9EC /* FastlyTests.swift in Sources */,
 				B2552F082995516B003FF9EC /* TestBundle.swift in Sources */,

@@ -2,26 +2,41 @@
 
 import Foundation
 
-struct JSONStructure: Codable {
-    struct Product: Codable {
-        struct Service: Codable {
-            let id: Int
-        }
-
-        let service: Service
-        let cloud: Int?
-    }
-
-    struct Localization: Codable {
-        struct English: Codable {
-            let localizeValues: [String: String]
-        }
-
-        let en: English
-    }
-
+struct Cloud {
+    let id: String
+    let name: String
     let products: [Product]
-    let localizationValues: Localization
+
+    init?(dictionary: [String: Any], productsMap: [String: Product]) {
+        guard
+            let id = dictionary["id"] as? String,
+            let name = dictionary["name"] as? String,
+            let productIDs = dictionary["cloudProducts"] as? [String]
+        else {
+            return nil
+        }
+
+        self.id = id
+        self.name = name
+        products = productIDs.compactMap { productsMap[$0] }
+    }
+}
+
+struct Product {
+    let id: String
+    let name: String
+
+    init?(dictionary: [String: Any]) {
+        guard
+            let id = dictionary["id"] as? String,
+            let name = dictionary["name"] as? String
+        else {
+            return nil
+        }
+
+        self.id = id
+        self.name = name
+    }
 }
 
 struct AdobeService {
@@ -31,7 +46,7 @@ struct AdobeService {
         case subService
     }
 
-    let id: Int
+    let id: String
 
     let parentName: String
     let name: String
@@ -52,7 +67,7 @@ struct AdobeService {
             .joined(separator: "")
     }
 
-    init(id: Int, parentName: String, name: String, type: ServiceType) {
+    init(id: String, parentName: String, name: String, type: ServiceType) {
         self.id = id
         self.parentName = parentName
         self.type = type
@@ -73,21 +88,21 @@ struct AdobeService {
                 let subServiceSuperclass: AnyObject.Type = Base\(className).self
 
                 let name = "\(name) (All)"
-                let id = \(id)
+                let id = "\(id)"
             }
             """
         case .service:
             return """
             class \(className): \(parentName) {
                 let name = "\(name)"
-                let id = \(id)
+                let id = "\(id)"
             }
             """
         case .subService:
             return """
             class \(className): \(parentName), SubService {
                 let name = "\(name)"
-                let id = \(id)
+                let id = "\(id)"
             }
             """
         }
@@ -113,7 +128,7 @@ func discoverServices() -> [AdobeService] {
     var dataResult: Data?
 
     let semaphore = DispatchSemaphore(value: 0)
-    let url = URL(string: "https://data.status.adobe.com/adobestatus/currentstatus")!
+    let url = URL(string: "https://data.status.adobe.com/adobestatus/SnowServiceRegistry")!
 
     URLSession.shared.dataTask(with: url) { data, _, _ in
         dataResult = data
@@ -122,78 +137,58 @@ func discoverServices() -> [AdobeService] {
 
     _ = semaphore.wait(timeout: .now() + .seconds(10))
 
-    guard let data = dataResult, let structure = try? JSONDecoder().decode(JSONStructure.self, from: data) else {
+    guard
+        let data = dataResult,
+        let structure = try? JSONSerialization.jsonObject(with: data) as? [String: Any]
+    else {
         print("warning: Build script generate_adobe_services could not retrieve list of Adobe services")
         exit(0)
     }
 
-    var productsWithoutCloudID = [JSONStructure.Product]()
+    let productsDictionary = (structure["products"] as? [String: Any]) ?? [:]
+    let productsMap = productsDictionary.compactMapValues { (value: Any) -> Product? in
+        guard let dict = value as? [String: Any] else { return nil }
+        return Product(dictionary: dict)
+    }
 
-    // Get the category ids (cloud ids)
-    var cloudIDs = Set<Int>()
-    structure.products.forEach {
-        guard let cloud = $0.cloud else {
-            productsWithoutCloudID.append($0)
-            return
-        }
-
-        _ = cloudIDs.insert(cloud)
+    let cloudsDictionary = (structure["clouds"] as? [String: Any]) ?? [:]
+    let clouds = cloudsDictionary.compactMap { (_, value) -> Cloud? in
+        guard let dict = value as? [String: Any] else { return nil }
+        return Cloud(dictionary: dict, productsMap: productsMap)
     }
 
     var uniqueNames = Set<String>()
 
-    // Create a map of category ids
-    var categories = [Int: AdobeService]()
-
-    cloudIDs.forEach { id in
-        guard var name = structure.localizationValues.en.localizeValues["serviceName.\(id)"] else { return }
+    // Create the categories from the clouds
+    var categories = [String: AdobeService]()
+    clouds.forEach { cloud in
+        var name = cloud.name
 
         if uniqueNames.contains(name) {
-            name = "\(name) (\(id))"
+            name = "\(name) (\(cloud.id))"
         }
         uniqueNames.insert(name)
 
-        categories[id] = AdobeService(id: id, parentName: "", name: name, type: .category)
+        let category = AdobeService(id: cloud.id, parentName: "", name: name, type: .category)
+        categories[cloud.id] = category
+
+        // Create the subservices from the products
+        cloud.products.forEach { product in
+            var name = product.name
+
+            if uniqueNames.contains(name) {
+                name = "\(name) (\(product.id))"
+            }
+            uniqueNames.insert(name)
+
+            let subService = AdobeService(id: product.id, parentName: category.className, name: name, type: .subService)
+            categories[product.id] = subService
+        }
     }
 
-    // Get the sub services and assign their categories in the process
-    let subServices = structure.products.compactMap { product -> AdobeService? in
-        guard
-            let cloudID = product.cloud,
-            let category = categories[cloudID],
-            var name = structure.localizationValues.en.localizeValues["serviceName.\(product.service.id)"]
-        else { return nil }
-
-        if uniqueNames.contains(name) {
-            name = "\(name) (\(product.service.id))"
-        }
-        uniqueNames.insert(name)
-
-        return AdobeService(
-            id: product.service.id,
-            parentName: category.className,
-            name: name,
-            type: .subService
-        )
+    let result: [AdobeService] = categories.values.sorted {
+        $0.name.caseInsensitiveCompare($1.name) != .orderedDescending
     }
-
-    let servicesWithoutCategories = productsWithoutCloudID.compactMap {  product -> AdobeService? in
-        guard var name = structure.localizationValues.en.localizeValues["serviceName.\(product.service.id)"] else {
-            return nil
-        }
-
-        if uniqueNames.contains(name) {
-            name = "\(name) (\(product.service.id))"
-        }
-        uniqueNames.insert(name)
-
-        return AdobeService(id: product.service.id, parentName: "Adobe", name: name, type: .service)
-    }
-
-    let result: [AdobeService] =
-        categories.values.sorted(by: { $0.name.caseInsensitiveCompare($1.name) != .orderedDescending })
-        + servicesWithoutCategories.sorted(by: { $0.name.caseInsensitiveCompare($1.name) != .orderedDescending })
-        + subServices.sorted(by: { $0.name.caseInsensitiveCompare($1.name) != .orderedDescending })
 
     return result
 }

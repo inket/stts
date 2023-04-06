@@ -22,7 +22,7 @@ class BaseAdobeServices: BaseAdobe {}
 
 typealias Adobe = BaseAdobe & RequiredServiceProperties & AdobeStoreService
 class BaseAdobe: BaseService {
-    private static var store = AdobeStore()
+    static var store = AdobeStore()
 
     let url = URL(string: "https://status.adobe.com")!
 

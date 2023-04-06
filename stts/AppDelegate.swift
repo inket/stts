@@ -9,6 +9,13 @@ import Reachability
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
+    private var shouldAutomaticallyCheckServices: Bool {
+        // We don't want to start the updating timer when unit testing because:
+        // 1. It will be checking services unnecessarily
+        // 2. It will check services that have a Store (like Adobe) before our tests and cache statuses
+        return ProcessInfo.processInfo.environment["UNIT_TESTING"] == nil
+    }
+
     var timer: Timer?
 
     let reachability = try! Reachability() // swiftlint:disable:this force_try
@@ -30,8 +37,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             object: nil
         )
 
-        reachability.whenReachable = { _ in self.updateServices() }
-        reachability.whenUnreachable = { _ in self.updateServices() }
+        if shouldAutomaticallyCheckServices {
+            reachability.whenReachable = { _ in self.updateServices() }
+            reachability.whenUnreachable = { _ in self.updateServices() }
+        }
 
         try? reachability.startNotifier()
 
@@ -67,7 +76,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             }
         }
 
-        restartTimer()
+        if shouldAutomaticallyCheckServices {
+            restartTimer()
+        }
     }
 
     @objc func restartTimer() {
