@@ -309,6 +309,7 @@
 		C7A2CE6D063A54F296F6D4C5 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D13B6E0F576096D5F10B19 /* Compass.swift */; };
 		C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F751891E2CCA7A0013E8E2 /* WeTransfer.swift */; };
 		D25675615FE77EF34E668B99 /* JiraSoftware.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1243DB051144F27DE071F9 /* JiraSoftware.swift */; };
+		D4947171924A035959AF11BA /* Flyio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731B5A91DEB565683F25AF1 /* Flyio.swift */; };
 		D5F7C57260F512BDB844AD08 /* TeleportCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FEC29C375721FE85A4ED27 /* TeleportCloud.swift */; };
 		D6FC1C0B5C45F3865F9D6543 /* Smarty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2764C094034CD61A24624DA6 /* Smarty.swift */; };
 		DE9EE76511329A776976FDC5 /* Whereby.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039BB24FFC209E99B42916 /* Whereby.swift */; };
@@ -665,6 +666,7 @@
 		D6B730B6BF88700B5DC9212E /* SumoLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SumoLogic.swift; sourceTree = "<group>"; };
 		D819CB63B6576DA05BFC764C /* Netlify.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
 		E5A4F04F86B9C0A9FB7233AE /* Branch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
+		E731B5A91DEB565683F25AF1 /* Flyio.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Flyio.swift; sourceTree = "<group>"; };
 		E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirefoxRelay.swift; sourceTree = "<group>"; };
 		EC5567996ECADCC9A8C9AE3F /* Confluence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Confluence.swift; sourceTree = "<group>"; };
 		EF354371EC40FA322AEEFF5F /* AtlassianAccess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtlassianAccess.swift; sourceTree = "<group>"; };
@@ -927,6 +929,7 @@
 				B20396371EE6A06C008CCA21 /* Filestack.swift */,
 				E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */,
 				B2E6C8EF253C24AE001210E4 /* Fivetran.swift */,
+				E731B5A91DEB565683F25AF1 /* Flyio.swift */,
 				B227D30B25D5886B00951917 /* FreeAgent.swift */,
 				B2C10F3B203646A7008E1E7D /* Gandi.swift */,
 				B254642221EE9AF6003068A4 /* GitHub.swift */,
@@ -1726,6 +1729,7 @@
 				DE9EE76511329A776976FDC5 /* Whereby.swift in Sources */,
 				FF0965074312E22E4FD26062 /* Canonical.swift in Sources */,
 				EA0E7177A4634EF99C4AF31A /* MastodonSocial.swift in Sources */,
+				D4947171924A035959AF11BA /* Flyio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
