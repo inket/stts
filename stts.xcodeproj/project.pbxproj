@@ -277,6 +277,7 @@
 		B2E70FDD22B07FB0000BCAD2 /* FirebaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E70FDC22B07FB0000BCAD2 /* FirebaseServices.swift */; };
 		B2E832EC29DE4F5E000FA1BE /* AdobeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E832EB29DE4F5E000FA1BE /* AdobeTests.swift */; };
 		B2E832EE29DE5104000FA1BE /* adobe-analytics-minor.json in Resources */ = {isa = PBXBuildFile; fileRef = B2E832ED29DE5104000FA1BE /* adobe-analytics-minor.json */; };
+		B2E832F029EF74D9000FA1BE /* OpenAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E832EF29EF74D9000FA1BE /* OpenAI.swift */; };
 		B2EAD8D520B8FDB800095F5B /* JAMF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EAD8D420B8FDB700095F5B /* JAMF.swift */; };
 		B2EB51CE1E7004A3001D6F78 /* ExanaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */; };
 		B2EB51D01E700517001D6F78 /* Codacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EB51CF1E700517001D6F78 /* Codacy.swift */; };
@@ -632,6 +633,7 @@
 		B2E70FDC22B07FB0000BCAD2 /* FirebaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServices.swift; sourceTree = "<group>"; };
 		B2E832EB29DE4F5E000FA1BE /* AdobeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdobeTests.swift; sourceTree = "<group>"; };
 		B2E832ED29DE5104000FA1BE /* adobe-analytics-minor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "adobe-analytics-minor.json"; sourceTree = "<group>"; };
+		B2E832EF29EF74D9000FA1BE /* OpenAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAI.swift; sourceTree = "<group>"; };
 		B2EAD8D420B8FDB700095F5B /* JAMF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JAMF.swift; sourceTree = "<group>"; };
 		B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExanaService.swift; sourceTree = "<group>"; };
 		B2EB51CF1E700517001D6F78 /* Codacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Codacy.swift; sourceTree = "<group>"; };
@@ -978,6 +980,7 @@
 				B2107BCD254C970000284EE7 /* Notion.swift */,
 				B22BB3A0223B341B00B43BED /* OnePassword.swift */,
 				0BDEA739C3989EA43886F0F6 /* OneSignal.swift */,
+				B2E832EF29EF74D9000FA1BE /* OpenAI.swift */,
 				3F6D6DE9B7048DB851580651 /* Opsgenie.swift */,
 				B25695531E247C8C00FAE413 /* PagerDuty.swift */,
 				B24B573123A4EAD200AFCF01 /* Pantheon.swift */,
@@ -1494,6 +1497,7 @@
 				B299C84B1DD04E850024D2E9 /* Pusher.swift in Sources */,
 				B2CEE5DB22B4A97B0073C743 /* AzureServices.swift in Sources */,
 				B2163B0020BA56EF00B14A85 /* StatusCakeService.swift in Sources */,
+				B2E832F029EF74D9000FA1BE /* OpenAI.swift in Sources */,
 				36AD8ED3235A1CE500F2FD73 /* LaunchDarkly.swift in Sources */,
 				B2CEE5D922B49CC80073C743 /* AzureStore.swift in Sources */,
 				B2D032D01D6455E300D51CB8 /* TravisCI.swift in Sources */,
