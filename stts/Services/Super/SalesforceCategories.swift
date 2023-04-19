@@ -27,6 +27,14 @@ class BaseDatorama: BaseSalesforceCategory {
     let url = URL(string: "https://status.salesforce.com/products/Datorama")!
 }
 
+typealias MCAccountEngagement =
+    BaseMCAccountEngagement & RequiredServiceProperties & SalesforceStoreService
+
+class BaseMCAccountEngagement: BaseSalesforceCategory {
+    static var store = SalesforceStore(key: "MCAccountEngagement")
+    let url = URL(string: "https://status.salesforce.com/products/MCAccountEngagement")!
+}
+
 typealias MCPersonalization =
     BaseMCPersonalization & RequiredServiceProperties & SalesforceStoreService
 

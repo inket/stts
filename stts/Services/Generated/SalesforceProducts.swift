@@ -78,6 +78,21 @@ class DatoramaNA: Datorama, SubService {
     let location = "NA"
 }
 
+class MCAccountEngagementAll: MCAccountEngagement, ServiceCategory {
+    let categoryName = "MCAccountEngagement"
+    let subServiceSuperclass: AnyObject.Type = BaseMCAccountEngagement.self
+
+    let name = "MCAccountEngagement (All Regions)"
+    let key = "MCAccountEngagement"
+    let location = "*"
+}
+
+class MCAccountEngagementNA: MCAccountEngagement, SubService {
+    let name = "MCAccountEngagement (NA)"
+    let key = "MCAccountEngagement"
+    let location = "NA"
+}
+
 class MCPersonalizationAll: MCPersonalization, ServiceCategory {
     let categoryName = "MCPersonalization"
     let subServiceSuperclass: AnyObject.Type = BaseMCPersonalization.self

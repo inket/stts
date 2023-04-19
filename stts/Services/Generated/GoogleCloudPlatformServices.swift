@@ -373,6 +373,11 @@ class GoogleAppEngine: GoogleCloudPlatform, SubService {
     let dashboardName = "Google App Engine"
 }
 
+class GoogleBigQuery: GoogleCloudPlatform, SubService {
+    let name = "Google BigQuery"
+    let dashboardName = "Google BigQuery"
+}
+
 class GoogleCloudBigtable: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Bigtable"
     let dashboardName = "Google Cloud Bigtable"
