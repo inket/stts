@@ -299,6 +299,7 @@
 		B2FDC91E1D6706C400F0B728 /* CircleCI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91D1D6706C400F0B728 /* CircleCI.swift */; };
 		B2FFC1F01E261B4A00529A00 /* Dropbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */; };
 		B8521A537A25ACC686F15EB7 /* AtlassianDeveloper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6A2E1502F35DA915891FD /* AtlassianDeveloper.swift */; };
+		B85F0E8056E1906F66CC95C2 /* Lattice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ACBDAE9667EAFE834B633D /* Lattice.swift */; };
 		B8F6688F6454FD58216F09B7 /* Kustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95EACF9101337BC18198C82 /* Kustomer.swift */; };
 		BA54439EB4493BD4A4665F80 /* NasdaqDataLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F679F245A03F4CCC7F2DA71F /* NasdaqDataLink.swift */; };
 		BF7AA78122B03AE4002460FB /* Bitrise.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7AA78022B03AE4002460FB /* Bitrise.swift */; };
@@ -385,6 +386,7 @@
 		563FBDC323AC595F540679B9 /* Cybersource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cybersource.swift; sourceTree = "<group>"; };
 		599C548E19B1B95EFDBB7898 /* VMwareCarbonBlack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VMwareCarbonBlack.swift; sourceTree = "<group>"; };
 		66B0258BF6AA353F9AC12443 /* NetskopeTrustPortal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetskopeTrustPortal.swift; sourceTree = "<group>"; };
+		67ACBDAE9667EAFE834B633D /* Lattice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Lattice.swift; sourceTree = "<group>"; };
 		6B24BCA673F692E9211E7B8D /* Medium.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Medium.swift; sourceTree = "<group>"; };
 		6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruiterbox.swift; sourceTree = "<group>"; };
 		70244989EDA4E2F3CF20FA50 /* Doppler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Doppler.swift; sourceTree = "<group>"; };
@@ -953,6 +955,7 @@
 				B2EF186324F1544100C2F89E /* Kentik.swift */,
 				A95EACF9101337BC18198C82 /* Kustomer.swift */,
 				B2D6FDAD21B95A0800F95940 /* LastPass.swift */,
+				67ACBDAE9667EAFE834B633D /* Lattice.swift */,
 				36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */,
 				B2ED7660258E42C000014242 /* Lever.swift */,
 				8FD39EC5F0FC240DE74BD82D /* LinkedInAPI.swift */,
@@ -1734,6 +1737,7 @@
 				FF0965074312E22E4FD26062 /* Canonical.swift in Sources */,
 				EA0E7177A4634EF99C4AF31A /* MastodonSocial.swift in Sources */,
 				D4947171924A035959AF11BA /* Flyio.swift in Sources */,
+				B85F0E8056E1906F66CC95C2 /* Lattice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
