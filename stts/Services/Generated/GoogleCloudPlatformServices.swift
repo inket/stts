@@ -368,11 +368,6 @@ class GoogleGameServers: GoogleCloudPlatform, SubService {
     let dashboardName = "Game Servers"
 }
 
-class GoogleAppEngine: GoogleCloudPlatform, SubService {
-    let name = "Google App Engine"
-    let dashboardName = "Google App Engine"
-}
-
 class GoogleBigQuery: GoogleCloudPlatform, SubService {
     let name = "Google BigQuery"
     let dashboardName = "Google BigQuery"
@@ -601,6 +596,11 @@ class GoogleSecretManager: GoogleCloudPlatform, SubService {
 class GoogleServiceDirectory: GoogleCloudPlatform, SubService {
     let name = "Google Service Directory"
     let dashboardName = "Service Directory"
+}
+
+class GoogleSpectrumAccessSystem: GoogleCloudPlatform, SubService {
+    let name = "Google Spectrum Access System"
+    let dashboardName = "Spectrum Access System"
 }
 
 class GoogleSpeechtoText: GoogleCloudPlatform, SubService {

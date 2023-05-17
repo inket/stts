@@ -296,6 +296,11 @@ class AppleMapsTraffic: Apple, SubService {
     let serviceName = "Maps Traffic"
 }
 
+class AppleMLSSeasonPass: Apple, SubService {
+    let name = "Apple MLS Season Pass"
+    let serviceName = "MLS Season Pass"
+}
+
 class AppleNews: Apple, SubService {
     let name = "Apple News"
     let serviceName = "News"
