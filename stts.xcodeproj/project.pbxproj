@@ -228,6 +228,8 @@
 		B2A4D7E4247E170A0089EA77 /* LetsEncrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A4D7E3247E170A0089EA77 /* LetsEncrypt.swift */; };
 		B2A4D7E7247E72B50089EA77 /* AzureAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A4D7E6247E72B50089EA77 /* AzureAll.swift */; };
 		B2A4D7E9247E73BC0089EA77 /* AzureDevOpsAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A4D7E8247E73BC0089EA77 /* AzureDevOpsAll.swift */; };
+		B2A7EFED2A14537B0013C7AE /* CStateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A7EFEC2A14537B0013C7AE /* CStateService.swift */; };
+		B2A7EFEF2A145A3E0013C7AE /* Civo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A7EFEE2A145A3E0013C7AE /* Civo.swift */; };
 		B2A8AE3D20710EC8002699CE /* Unsplash.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A8AE3C20710EC8002699CE /* Unsplash.swift */; };
 		B2A93ADD1EB814C000D36DD3 /* Snyk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A93ADC1EB814C000D36DD3 /* Snyk.swift */; };
 		B2A9BFB41DC6E30F001BD4B7 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */; };
@@ -582,6 +584,8 @@
 		B2A4D7E3247E170A0089EA77 /* LetsEncrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsEncrypt.swift; sourceTree = "<group>"; };
 		B2A4D7E6247E72B50089EA77 /* AzureAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureAll.swift; sourceTree = "<group>"; };
 		B2A4D7E8247E73BC0089EA77 /* AzureDevOpsAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureDevOpsAll.swift; sourceTree = "<group>"; };
+		B2A7EFEC2A14537B0013C7AE /* CStateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CStateService.swift; sourceTree = "<group>"; };
+		B2A7EFEE2A145A3E0013C7AE /* Civo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Civo.swift; sourceTree = "<group>"; };
 		B2A8AE3C20710EC8002699CE /* Unsplash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unsplash.swift; sourceTree = "<group>"; };
 		B2A93ADC1EB814C000D36DD3 /* Snyk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snyk.swift; sourceTree = "<group>"; };
 		B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
@@ -1051,6 +1055,14 @@
 			path = StatusPage;
 			sourceTree = "<group>";
 		};
+		B2A7EFEB2A14536D0013C7AE /* CState */ = {
+			isa = PBXGroup;
+			children = (
+				B2A7EFEE2A145A3E0013C7AE /* Civo.swift */,
+			);
+			path = CState;
+			sourceTree = "<group>";
+		};
 		B2B2D0F61D49D5080014D780 = {
 			isa = PBXGroup;
 			children = (
@@ -1160,6 +1172,7 @@
 			isa = PBXGroup;
 			children = (
 				B254098E28FE75B00009F956 /* BetterUptime */,
+				B2A7EFEB2A14536D0013C7AE /* CState */,
 				B2E70FDF22B0844F000BCAD2 /* Generated */,
 				B213D201269B0449005EBDDA /* Instatus */,
 				B2DCE68E22159731001447D8 /* LambStatus */,
@@ -1207,6 +1220,7 @@
 				B277BC9322B4BB6D000B55C3 /* AzureDevOpsStore.swift */,
 				B2CEE5D822B49CC80073C743 /* AzureStore.swift */,
 				B254098C28FE71990009F956 /* BetterUptimeService.swift */,
+				B2A7EFEC2A14537B0013C7AE /* CStateService.swift */,
 				B2BB19B920B8FEFD00A97A87 /* CachetService.swift */,
 				B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */,
 				B2253A6C209F3F9F0039F574 /* FirebaseService.swift */,
@@ -1468,6 +1482,7 @@
 				BF7AA78122B03AE4002460FB /* Bitrise.swift in Sources */,
 				B2EF186424F1544100C2F89E /* Kentik.swift in Sources */,
 				B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */,
+				B2A7EFED2A14537B0013C7AE /* CStateService.swift in Sources */,
 				B2A0635C1E1340B400EEA762 /* Docker.swift in Sources */,
 				B24D19F61DD072840052E539 /* Preferences.swift in Sources */,
 				B29D50BD24B053C600F4961B /* Basecamp.swift in Sources */,
@@ -1549,6 +1564,7 @@
 				B29D50BF24B0542100F4961B /* PlatformSH.swift in Sources */,
 				B299C8471DD04D7C0024D2E9 /* NPM.swift in Sources */,
 				B254099028FE75CA0009F956 /* PlausibleAnalytics.swift in Sources */,
+				B2A7EFEF2A145A3E0013C7AE /* Civo.swift in Sources */,
 				B2E018FD214E60E700C5F75B /* AppearanceObserver.swift in Sources */,
 				B2107BCF254C970000284EE7 /* Notion.swift in Sources */,
 				B2C4670F1E70012700C5145D /* Zapier.swift in Sources */,
