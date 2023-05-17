@@ -296,6 +296,7 @@
 		B2F55EEE2408B68F003D674C /* PSNAsia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F55EED2408B68F003D674C /* PSNAsia.swift */; };
 		B2F55EF02408B6A2003D674C /* PSNEurope.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F55EEF2408B6A2003D674C /* PSNEurope.swift */; };
 		B2FAB94C1E5C029A00B8921F /* DNSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FAB94B1E5C029A00B8921F /* DNSimple.swift */; };
+		B2FBDF5D2A14E3C600734667 /* InternetComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDF5C2A14E3C600734667 /* InternetComputer.swift */; };
 		B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC9191D67029900F0B728 /* Heroku.swift */; };
 		B2FDC91C1D67062200F0B728 /* StatusPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91B1D67062200F0B728 /* StatusPageService.swift */; };
 		B2FDC91E1D6706C400F0B728 /* CircleCI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91D1D6706C400F0B728 /* CircleCI.swift */; };
@@ -656,6 +657,7 @@
 		B2F55EED2408B68F003D674C /* PSNAsia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSNAsia.swift; sourceTree = "<group>"; };
 		B2F55EEF2408B6A2003D674C /* PSNEurope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSNEurope.swift; sourceTree = "<group>"; };
 		B2FAB94B1E5C029A00B8921F /* DNSimple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSimple.swift; sourceTree = "<group>"; };
+		B2FBDF5C2A14E3C600734667 /* InternetComputer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetComputer.swift; sourceTree = "<group>"; };
 		B2FDC9191D67029900F0B728 /* Heroku.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heroku.swift; sourceTree = "<group>"; };
 		B2FDC91B1D67062200F0B728 /* StatusPageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPageService.swift; sourceTree = "<group>"; };
 		B2FDC91D1D6706C400F0B728 /* CircleCI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCI.swift; sourceTree = "<group>"; };
@@ -947,6 +949,7 @@
 				B231DD5F257B438900647312 /* HubSpot.swift */,
 				B2ABB6161F59770800DF8EC2 /* Imgix.swift */,
 				B23D4E6C1E13471200B04F18 /* Intercom.swift */,
+				B2FBDF5C2A14E3C600734667 /* InternetComputer.swift */,
 				B2EAD8D420B8FDB700095F5B /* JAMF.swift */,
 				9C785BEA1BEF2A0DD068A4DD /* JiraAlign.swift */,
 				9656BD00C255628C438D394F /* JiraProductDiscovery.swift */,
@@ -1702,6 +1705,7 @@
 				B25ACB64289E01700014C95C /* Roblox.swift in Sources */,
 				E2AAECBE89E07C6E94464ABF /* Checkly.swift in Sources */,
 				C28B812159CF77AD928CCAE9 /* Workflowy.swift in Sources */,
+				B2FBDF5D2A14E3C600734667 /* InternetComputer.swift in Sources */,
 				691A9AA9137E52D210A3A002 /* CloudAMQP.swift in Sources */,
 				5168C3411EE1FADD160353FF /* FirefoxRelay.swift in Sources */,
 				593FB40FF80AEB54E5E25B71 /* HelloSignHelloFax.swift in Sources */,
