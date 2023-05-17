@@ -121,6 +121,40 @@ class #{safe_name}: Site24x7Service {
     true
 end
 
+def extract_cstate(url, custom_name)
+    source = source_for("#{url}/index.json")
+    return false unless source
+
+    data = JSON.parse(source)
+    return false unless data["cStateVersion"] != nil
+
+    name = custom_name || better_name(data["title"])
+    base_url = data["baseURL"] || url
+
+    safe_name = sanitized_name(name)
+
+    definitions = [
+        "let url = URL(string: \"#{base_url}\")!"
+    ]
+
+    definitions.unshift("let name = \"#{name}\"") if safe_name != name
+
+    create_file "stts/Services/CState/#{safe_name}.swift", <<-CSTATE
+//
+//  #{safe_name}.swift
+//  stts
+//
+
+import Foundation
+
+class #{safe_name}: CStateService {
+    #{definitions.join("\n    ")}
+}
+    CSTATE
+
+    true
+end
+
 def create_file(path, content)
     File.open(path, "w") do |f|
         f.write(content)
@@ -160,6 +194,10 @@ def create_file(path, content)
     puts "Added #{file_name} to project"
 end
 
+def better_name(name)
+    name.gsub(/(\'|\‘)?\sstatus$/i, "")
+end
+
 def sanitized_name(name)
     new_name = name.gsub(" & ", "And")
         .gsub("/", "")
@@ -170,6 +208,7 @@ def sanitized_name(name)
         .gsub(")", "")
         .gsub("+", "")
         .gsub(",", "")
+        .gsub(/(\'|\‘)?\sstatus$/i, "")
 
     words = new_name.split(" ").map do |word|
         # capitalize, first character only (CamelCase)
@@ -242,5 +281,6 @@ fail_network unless source
 finish if extract_instatus(source, custom_name)
 finish if extract_site24x7(url, source, custom_name)
 finish if extract_statuspage(url, custom_name)
+finish if extract_cstate(url, custom_name)
 
 fail
