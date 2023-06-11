@@ -3,7 +3,7 @@
 //  stts
 //
 
-import Kanna
+import Foundation
 
 typealias PayPal = BasePayPal & RequiredServiceProperties & RequiredPayPalProperties
 
