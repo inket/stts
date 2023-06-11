@@ -16,13 +16,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         return ProcessInfo.processInfo.environment["UNIT_TESTING"] == nil
     }
 
-    var timer: Timer?
+    private var timer: Timer?
 
-    let reachability = try! Reachability() // swiftlint:disable:this force_try
+    private let reachability = try! Reachability() // swiftlint:disable:this force_try
+    private var initialReachabilityChange: Bool = true
 
     let popupController: MBPopupController
-    let serviceTableViewController = ServiceTableViewController()
-    let editorTableViewController: EditorTableViewController
+    private let serviceTableViewController = ServiceTableViewController()
+    private let editorTableViewController: EditorTableViewController
 
     override init() {
         self.popupController = MBPopupController(contentView: serviceTableViewController.contentView)
@@ -38,8 +39,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         )
 
         if shouldAutomaticallyCheckServices {
-            reachability.whenReachable = { _ in self.updateServices() }
-            reachability.whenUnreachable = { _ in self.updateServices() }
+            reachability.whenReachable = { [weak self] _ in self?.reachabilityChanged() }
+            reachability.whenUnreachable = { [weak self] _ in self?.reachabilityChanged() }
         }
 
         try? reachability.startNotifier()
@@ -81,7 +82,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         }
     }
 
-    @objc func restartTimer() {
+    @objc
+    private func restartTimer() {
         timer?.invalidate()
         timer = Timer.scheduledTimer(
             timeInterval: 300,
@@ -101,6 +103,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             if Preferences.shared.notifyOnStatusChange {
                 self?.serviceTableViewController.services.forEach { $0.notifyIfNecessary() }
             }
+        }
+    }
+
+    private func reachabilityChanged() {
+        if initialReachabilityChange {
+            // Reachability notifies us of a change on app launch (after calling startNotifier()),
+            // we don't need it because it causes duplicate updateServices()
+            initialReachabilityChange = false
+        } else {
+            updateServices()
         }
     }
 }
