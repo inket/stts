@@ -190,6 +190,9 @@
 		B277BC9222B4BB5C000B55C3 /* AzureDevOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9122B4BB5C000B55C3 /* AzureDevOps.swift */; };
 		B277BC9422B4BB6D000B55C3 /* AzureDevOpsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9322B4BB6D000B55C3 /* AzureDevOpsStore.swift */; };
 		B277BC9822B4C16A000B55C3 /* AzureDevOpsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9722B4C16A000B55C3 /* AzureDevOpsServices.swift */; };
+		B27F66A62A3609E8008DAF33 /* AWSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F66A52A3609E8008DAF33 /* AWSService.swift */; };
+		B27F66A82A360DFF008DAF33 /* AWSStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F66A72A360DFF008DAF33 /* AWSStore.swift */; };
+		B27F66AA2A3621F7008DAF33 /* AWSServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F66A92A3621F7008DAF33 /* AWSServices.swift */; };
 		B28285E12405E44100B11A08 /* Zoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28285E02405E44100B11A08 /* Zoom.swift */; };
 		B2841CEB20BA6207004AFDB7 /* SorryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2841CEA20BA6207004AFDB7 /* SorryService.swift */; };
 		B2894CE420EEE2780009CCA3 /* Buildkite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2894CE320EEE2780009CCA3 /* Buildkite.swift */; };
@@ -208,7 +211,6 @@
 		B292222B2642EFA4001C63AE /* Coinbase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B292222A2642EFA4001C63AE /* Coinbase.swift */; };
 		B2928FE729C08A9F00C85A6C /* Site24x7.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2928FE629C08A9F00C85A6C /* Site24x7.swift */; };
 		B299C8431DD044160024D2E9 /* NewRelic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8421DD044160024D2E9 /* NewRelic.swift */; };
-		B299C8451DD046F20024D2E9 /* AmazonWebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */; };
 		B299C8471DD04D7C0024D2E9 /* NPM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8461DD04D7C0024D2E9 /* NPM.swift */; };
 		B299C8491DD04DCB0024D2E9 /* RubyGems.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8481DD04DCB0024D2E9 /* RubyGems.swift */; };
 		B299C84B1DD04E850024D2E9 /* Pusher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C84A1DD04E850024D2E9 /* Pusher.swift */; };
@@ -548,6 +550,10 @@
 		B277BC9322B4BB6D000B55C3 /* AzureDevOpsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureDevOpsStore.swift; sourceTree = "<group>"; };
 		B277BC9522B4BC6C000B55C3 /* generate_azure_devops_services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generate_azure_devops_services.swift; sourceTree = "<group>"; };
 		B277BC9722B4C16A000B55C3 /* AzureDevOpsServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AzureDevOpsServices.swift; sourceTree = "<group>"; };
+		B27F66A42A35EBAA008DAF33 /* generate_aws_services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generate_aws_services.swift; sourceTree = "<group>"; };
+		B27F66A52A3609E8008DAF33 /* AWSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSService.swift; sourceTree = "<group>"; };
+		B27F66A72A360DFF008DAF33 /* AWSStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSStore.swift; sourceTree = "<group>"; };
+		B27F66A92A3621F7008DAF33 /* AWSServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSServices.swift; sourceTree = "<group>"; };
 		B28285E02405E44100B11A08 /* Zoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zoom.swift; sourceTree = "<group>"; };
 		B2841CEA20BA6207004AFDB7 /* SorryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorryService.swift; sourceTree = "<group>"; };
 		B2894CE320EEE2780009CCA3 /* Buildkite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buildkite.swift; sourceTree = "<group>"; };
@@ -567,7 +573,6 @@
 		B292222A2642EFA4001C63AE /* Coinbase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coinbase.swift; sourceTree = "<group>"; };
 		B2928FE629C08A9F00C85A6C /* Site24x7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site24x7.swift; sourceTree = "<group>"; };
 		B299C8421DD044160024D2E9 /* NewRelic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRelic.swift; sourceTree = "<group>"; };
-		B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmazonWebServices.swift; sourceTree = "<group>"; };
 		B299C8461DD04D7C0024D2E9 /* NPM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPM.swift; sourceTree = "<group>"; };
 		B299C8481DD04DCB0024D2E9 /* RubyGems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubyGems.swift; sourceTree = "<group>"; };
 		B299C84A1DD04E850024D2E9 /* Pusher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pusher.swift; sourceTree = "<group>"; };
@@ -1145,6 +1150,7 @@
 				B2E70FD622B066EC000BCAD2 /* generate_google_services.swift */,
 				B23E408B26A559350038DDF1 /* generate_salesforce_services.swift */,
 				B2E70FD322B0657F000BCAD2 /* generate_services_plist.sh */,
+				B27F66A42A35EBAA008DAF33 /* generate_aws_services.swift */,
 			);
 			path = Scripts;
 			sourceTree = "<group>";
@@ -1152,6 +1158,7 @@
 		B2E70FDF22B0844F000BCAD2 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				B27F66A92A3621F7008DAF33 /* AWSServices.swift */,
 				B200CA73247FC5AE00DB0868 /* AdobeServices.swift */,
 				B28E9127248250220026BAAA /* AppleServices.swift */,
 				B277BC9722B4C16A000B55C3 /* AzureDevOpsServices.swift */,
@@ -1202,7 +1209,6 @@
 				B299C8561DD051710024D2E9 /* StatusPage */,
 				B2FDC9201D67071500F0B728 /* Super */,
 				B2430806210810D0003F8D07 /* Algolia.swift */,
-				B299C8441DD046F20024D2E9 /* AmazonWebServices.swift */,
 				B2A4D7E6247E72B50089EA77 /* AzureAll.swift */,
 				B2A4D7E8247E73BC0089EA77 /* AzureDevOpsAll.swift */,
 				B23038F01E0DF3CC00B29095 /* Beanstalk.swift */,
@@ -1259,6 +1265,8 @@
 				B2542501293591610093AC83 /* StatusHubService.swift */,
 				B2FDC91B1D67062200F0B728 /* StatusPageService.swift */,
 				B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */,
+				B27F66A52A3609E8008DAF33 /* AWSService.swift */,
+				B27F66A72A360DFF008DAF33 /* AWSStore.swift */,
 			);
 			path = Super;
 			sourceTree = "<group>";
@@ -1408,7 +1416,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "chmod +x $SRCROOT/Scripts/*.swift\n\n$SRCROOT/Scripts/generate_adobe_services.swift &\n$SRCROOT/Scripts/generate_apple_services.swift &\n$SRCROOT/Scripts/generate_azure_services.swift &\n$SRCROOT/Scripts/generate_azure_devops_services.swift &\n$SRCROOT/Scripts/generate_google_services.swift &\n$SRCROOT/Scripts/generate_salesforce_services.swift\nwait\n";
+			shellScript = "chmod +x $SRCROOT/Scripts/*.swift\n\n$SRCROOT/Scripts/generate_adobe_services.swift &\n$SRCROOT/Scripts/generate_apple_services.swift &\n$SRCROOT/Scripts/generate_aws_services.swift &\n$SRCROOT/Scripts/generate_azure_services.swift &\n$SRCROOT/Scripts/generate_azure_devops_services.swift &\n$SRCROOT/Scripts/generate_google_services.swift &\n$SRCROOT/Scripts/generate_salesforce_services.swift\nwait\n";
 		};
 		B28F83321E24BDC100F2070F /* Generate Services plist file */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1520,6 +1528,7 @@
 				B25695611E247C8C00FAE413 /* Squarespace.swift in Sources */,
 				B2894CE420EEE2780009CCA3 /* Buildkite.swift in Sources */,
 				B20396361EE6A060008CCA21 /* Trello.swift in Sources */,
+				B27F66A82A360DFF008DAF33 /* AWSStore.swift in Sources */,
 				B227D31225D7671600951917 /* Poka.swift in Sources */,
 				B231DD59257B431900647312 /* Xandr.swift in Sources */,
 				B2ABB6171F59770800DF8EC2 /* Imgix.swift in Sources */,
@@ -1558,6 +1567,7 @@
 				B2E70FD822B069BA000BCAD2 /* GoogleCloudPlatformServices.swift in Sources */,
 				B2BA36191ED7B0F200051083 /* AuthorizeNet.swift in Sources */,
 				B2542502293591610093AC83 /* StatusHubService.swift in Sources */,
+				B27F66A62A3609E8008DAF33 /* AWSService.swift in Sources */,
 				B28285E12405E44100B11A08 /* Zoom.swift in Sources */,
 				0FDDACCD23CD7EBF00FE96CD /* ElasticCloud.swift in Sources */,
 				B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */,
@@ -1622,6 +1632,7 @@
 				B22FDE512108A5C200359EC9 /* PayPalAPIProduction.swift in Sources */,
 				B26350FD1ED7CFC40069EA73 /* Loggly.swift in Sources */,
 				B231DD5B257B431900647312 /* AuroraSolar.swift in Sources */,
+				B27F66AA2A3621F7008DAF33 /* AWSServices.swift in Sources */,
 				B24220E41E2F6BBA0007E50E /* Typeform.swift in Sources */,
 				2F1B7559227A095400BA5CBD /* Avalara.swift in Sources */,
 				B2A4D7E4247E170A0089EA77 /* LetsEncrypt.swift in Sources */,
@@ -1632,7 +1643,6 @@
 				B22FDE4F2108A5B700359EC9 /* PayPalProductSandbox.swift in Sources */,
 				B2F55EEC2408B5F1003D674C /* PSNAmerica.swift in Sources */,
 				B2F35F261E5D181300E3A00E /* QuayIO.swift in Sources */,
-				B299C8451DD046F20024D2E9 /* AmazonWebServices.swift in Sources */,
 				B2563BBC22CBC3D500532C39 /* DataLoader.swift in Sources */,
 				B231DD5C257B431900647312 /* CoderPad.swift in Sources */,
 				B256955B1E247C8C00FAE413 /* HipChat.swift in Sources */,
