@@ -1145,12 +1145,12 @@
 			children = (
 				B200CA71247FBC0A00DB0868 /* generate_adobe_services.swift */,
 				B28E912524824C3A0026BAAA /* generate_apple_services.swift */,
+				B27F66A42A35EBAA008DAF33 /* generate_aws_services.swift */,
 				B277BC9522B4BC6C000B55C3 /* generate_azure_devops_services.swift */,
 				B2CEE5DC22B4A9900073C743 /* generate_azure_services.swift */,
 				B2E70FD622B066EC000BCAD2 /* generate_google_services.swift */,
 				B23E408B26A559350038DDF1 /* generate_salesforce_services.swift */,
 				B2E70FD322B0657F000BCAD2 /* generate_services_plist.sh */,
-				B27F66A42A35EBAA008DAF33 /* generate_aws_services.swift */,
 			);
 			path = Scripts;
 			sourceTree = "<group>";
@@ -1232,6 +1232,8 @@
 		B2FDC9201D67071500F0B728 /* Super */ = {
 			isa = PBXGroup;
 			children = (
+				B27F66A52A3609E8008DAF33 /* AWSService.swift */,
+				B27F66A72A360DFF008DAF33 /* AWSStore.swift */,
 				B200CA75247FC88700DB0868 /* Adobe.swift */,
 				B200CA77247FC8B700DB0868 /* AdobeStore.swift */,
 				B2DCE68F2215992E001447D8 /* Apple.swift */,
@@ -1265,8 +1267,6 @@
 				B2542501293591610093AC83 /* StatusHubService.swift */,
 				B2FDC91B1D67062200F0B728 /* StatusPageService.swift */,
 				B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */,
-				B27F66A52A3609E8008DAF33 /* AWSService.swift */,
-				B27F66A72A360DFF008DAF33 /* AWSStore.swift */,
 			);
 			path = Super;
 			sourceTree = "<group>";
