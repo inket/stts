@@ -12,15 +12,15 @@ protocol RequiredIncidentIOProperties {}
 
 class BaseIncidentIOService: BaseService {
     private enum IncidentIOStatus: String, CaseIterable {
-        //e.exports = {
-        //    default: "ContentBox_default__oUSYA",
-        //    header: "ContentBox_header__qxuY8",
-        //    operational: "ContentBox_operational__vH2cn",
-        //    degradedPerformance: "ContentBox_degradedPerformance__MxeFS",
-        //    partialOutage: "ContentBox_partialOutage__smHQh",
-        //    fullOutage: "ContentBox_fullOutage__plntp",
-        //    underMaintenance: "ContentBox_underMaintenance__hXg3P"
-        //}
+        // e.exports = {
+        //     default: "ContentBox_default__oUSYA",
+        //     header: "ContentBox_header__qxuY8",
+        //     operational: "ContentBox_operational__vH2cn",
+        //     degradedPerformance: "ContentBox_degradedPerformance__MxeFS",
+        //     partialOutage: "ContentBox_partialOutage__smHQh",
+        //     fullOutage: "ContentBox_fullOutage__plntp",
+        //     underMaintenance: "ContentBox_underMaintenance__hXg3P"
+        // }
 
         case operational
         case degradedPerformance
