@@ -283,6 +283,11 @@ class GoogleCloudWorkflows: GoogleCloudPlatform, SubService {
     let dashboardName = "Cloud Workflows"
 }
 
+class GoogleCloudWorkstations: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Workstations"
+    let dashboardName = "Cloud Workstations"
+}
+
 class GoogleContactCenterAIPlatform: GoogleCloudPlatform, SubService {
     let name = "Google Contact Center AI Platform"
     let dashboardName = "Contact Center AI Platform"
@@ -366,6 +371,11 @@ class GoogleFirebaseTestLab: GoogleCloudPlatform, SubService {
 class GoogleGameServers: GoogleCloudPlatform, SubService {
     let name = "Google Game Servers"
     let dashboardName = "Game Servers"
+}
+
+class GoogleAppEngine: GoogleCloudPlatform, SubService {
+    let name = "Google App Engine"
+    let dashboardName = "Google App Engine"
 }
 
 class GoogleBigQuery: GoogleCloudPlatform, SubService {

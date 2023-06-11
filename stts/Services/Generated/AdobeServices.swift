@@ -8,9 +8,14 @@ class AdobeAccountManagement: AdobeServices, SubService {
     let id = "503498"
 }
 
-class AdobeAcrobatOnline: AdobeDocumentCloud, SubService {
-    let name = "Adobe Acrobat Online"
+class AdobeAcrobat: AdobeDocumentCloud, SubService {
+    let name = "Adobe Acrobat"
     let id = "512699"
+}
+
+class AdobeAcrobatServices: AdobeDocumentCloud, SubService {
+    let name = "Adobe Acrobat Services"
+    let id = "503500"
 }
 
 class AdobeAcrobatSign: AdobeDocumentCloud, SubService {
@@ -159,11 +164,6 @@ class AdobeDocumentCloudAll: AdobeDocumentCloud, ServiceCategory {
     let id = "503457"
 }
 
-class AdobeDocumentCloudIntegrations: AdobeDocumentCloud, SubService {
-    let name = "Adobe Document Cloud Integrations"
-    let id = "503472"
-}
-
 class AdobeExperienceCloudAll: AdobeExperienceCloud, ServiceCategory {
     let categoryName = "Adobe Experience Cloud"
     let subServiceSuperclass: AnyObject.Type = BaseAdobeExperienceCloud.self
@@ -273,11 +273,6 @@ class AdobeMarketoEngage: AdobeExperienceCloud, SubService {
 class AdobeMixamo: AdobeCreativeCloud, SubService {
     let name = "Adobe Mixamo"
     let id = "503585"
-}
-
-class AdobePDFServices: AdobeDocumentCloud, SubService {
-    let name = "Adobe PDF Services"
-    let id = "503500"
 }
 
 class AdobePhotoshop: AdobeCreativeCloud, SubService {
