@@ -263,7 +263,7 @@
 		B2D468291E2F0F82000F8F6B /* Coveralls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D468281E2F0F82000F8F6B /* Coveralls.swift */; };
 		B2D655E729B802ED00DBE417 /* InstatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D655E629B802ED00DBE417 /* InstatusTests.swift */; };
 		B2D655E929B803B800DBE417 /* whereby-notice.html in Resources */ = {isa = PBXBuildFile; fileRef = B2D655E829B803B800DBE417 /* whereby-notice.html */; };
-		B2D655EB29B8045300DBE417 /* linear-good.html in Resources */ = {isa = PBXBuildFile; fileRef = B2D655EA29B8045300DBE417 /* linear-good.html */; };
+		B2D655EB29B8045300DBE417 /* mastodonsocial-good.html in Resources */ = {isa = PBXBuildFile; fileRef = B2D655EA29B8045300DBE417 /* mastodonsocial-good.html */; };
 		B2D655EE29B807BF00DBE417 /* Site24x7Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D655ED29B807BF00DBE417 /* Site24x7Service.swift */; };
 		B2D6FDAE21B95A0800F95940 /* LastPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D6FDAD21B95A0800F95940 /* LastPass.swift */; };
 		B2DCE68D221591F2001447D8 /* LambStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCE68C221591F2001447D8 /* LambStatusService.swift */; };
@@ -624,7 +624,7 @@
 		B2D468281E2F0F82000F8F6B /* Coveralls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coveralls.swift; sourceTree = "<group>"; };
 		B2D655E629B802ED00DBE417 /* InstatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstatusTests.swift; sourceTree = "<group>"; };
 		B2D655E829B803B800DBE417 /* whereby-notice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "whereby-notice.html"; sourceTree = "<group>"; };
-		B2D655EA29B8045300DBE417 /* linear-good.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "linear-good.html"; sourceTree = "<group>"; };
+		B2D655EA29B8045300DBE417 /* mastodonsocial-good.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "mastodonsocial-good.html"; sourceTree = "<group>"; };
 		B2D655ED29B807BF00DBE417 /* Site24x7Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site24x7Service.swift; sourceTree = "<group>"; };
 		B2D6FDAD21B95A0800F95940 /* LastPass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastPass.swift; sourceTree = "<group>"; };
 		B2DCE68C221591F2001447D8 /* LambStatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LambStatusService.swift; sourceTree = "<group>"; };
@@ -796,7 +796,7 @@
 				B2E832ED29DE5104000FA1BE /* adobe-analytics-minor.json */,
 				B2552EFD29954AEB003FF9EC /* fastly-good.html */,
 				B2552EFE29954AEB003FF9EC /* fastly-major.html */,
-				B2D655EA29B8045300DBE417 /* linear-good.html */,
+				B2D655EA29B8045300DBE417 /* mastodonsocial-good.html */,
 				B2D655E829B803B800DBE417 /* whereby-notice.html */,
 			);
 			path = Resources;
@@ -1372,7 +1372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2E832EE29DE5104000FA1BE /* adobe-analytics-minor.json in Resources */,
-				B2D655EB29B8045300DBE417 /* linear-good.html in Resources */,
+				B2D655EB29B8045300DBE417 /* mastodonsocial-good.html in Resources */,
 				B2D655E929B803B800DBE417 /* whereby-notice.html in Resources */,
 				B2552F0029954AEB003FF9EC /* fastly-major.html in Resources */,
 				B2552EFF29954AEB003FF9EC /* fastly-good.html in Resources */,

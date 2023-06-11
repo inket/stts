@@ -8,18 +8,20 @@ import XCTest
 
 final class InstatusTests: XCTestCase {
     func testNormalStatus() throws {
-        let linear = Linear()
+        let mastodonSocial = MastodonSocial()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
             .init(
-                url: linear.url,
-                response: try Data(contentsOf: Bundle.test.url(forResource: "linear-good", withExtension: "html")!)
+                url: mastodonSocial.url,
+                response: try Data(
+                    contentsOf: Bundle.test.url(forResource: "mastodonsocial-good", withExtension: "html")!
+                )
             )
         ]))
 
-        let expectation = XCTestExpectation(description: "Retrieve mocked status for Linear")
+        let expectation = XCTestExpectation(description: "Retrieve mocked status for mastodon.social")
 
-        linear.updateStatus { service in
+        mastodonSocial.updateStatus { service in
             XCTAssertEqual(service.status, .good)
             expectation.fulfill()
         }
