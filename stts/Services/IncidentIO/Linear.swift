@@ -5,6 +5,6 @@
 
 import Foundation
 
-class Linear: InstatusService {
+class Linear: IncidentIOService {
     let url = URL(string: "https://linearstatus.com")!
 }

@@ -297,6 +297,8 @@
 		B2F55EF02408B6A2003D674C /* PSNEurope.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F55EEF2408B6A2003D674C /* PSNEurope.swift */; };
 		B2FAB94C1E5C029A00B8921F /* DNSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FAB94B1E5C029A00B8921F /* DNSimple.swift */; };
 		B2FBDF5D2A14E3C600734667 /* InternetComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDF5C2A14E3C600734667 /* InternetComputer.swift */; };
+		B2FBDF5F2A35D82000734667 /* IncidentIOService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDF5E2A35D82000734667 /* IncidentIOService.swift */; };
+		B2FBDF622A35E1C800734667 /* Loom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDF612A35E1C800734667 /* Loom.swift */; };
 		B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC9191D67029900F0B728 /* Heroku.swift */; };
 		B2FDC91C1D67062200F0B728 /* StatusPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91B1D67062200F0B728 /* StatusPageService.swift */; };
 		B2FDC91E1D6706C400F0B728 /* CircleCI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91D1D6706C400F0B728 /* CircleCI.swift */; };
@@ -658,6 +660,8 @@
 		B2F55EEF2408B6A2003D674C /* PSNEurope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSNEurope.swift; sourceTree = "<group>"; };
 		B2FAB94B1E5C029A00B8921F /* DNSimple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSimple.swift; sourceTree = "<group>"; };
 		B2FBDF5C2A14E3C600734667 /* InternetComputer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetComputer.swift; sourceTree = "<group>"; };
+		B2FBDF5E2A35D82000734667 /* IncidentIOService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentIOService.swift; sourceTree = "<group>"; };
+		B2FBDF612A35E1C800734667 /* Loom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loom.swift; sourceTree = "<group>"; };
 		B2FDC9191D67029900F0B728 /* Heroku.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heroku.swift; sourceTree = "<group>"; };
 		B2FDC91B1D67062200F0B728 /* StatusPageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPageService.swift; sourceTree = "<group>"; };
 		B2FDC91D1D6706C400F0B728 /* CircleCI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCI.swift; sourceTree = "<group>"; };
@@ -724,7 +728,6 @@
 			isa = PBXGroup;
 			children = (
 				B213D206269B05D9005EBDDA /* Instatus.swift */,
-				B213D204269B0496005EBDDA /* Linear.swift */,
 				CB09BB83A2FE186710F65682 /* MastodonSocial.swift */,
 				0160B2F5B66992A4DE58FF49 /* Primcloud.swift */,
 				B213D202269B045C005EBDDA /* Railway.swift */,
@@ -1171,12 +1174,22 @@
 			path = "PlayStation Network";
 			sourceTree = "<group>";
 		};
+		B2FBDF602A35E1BB00734667 /* IncidentIO */ = {
+			isa = PBXGroup;
+			children = (
+				B213D204269B0496005EBDDA /* Linear.swift */,
+				B2FBDF612A35E1C800734667 /* Loom.swift */,
+			);
+			path = IncidentIO;
+			sourceTree = "<group>";
+		};
 		B2FDC91F1D6706FB00F0B728 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				B254098E28FE75B00009F956 /* BetterUptime */,
 				B2A7EFEB2A14536D0013C7AE /* CState */,
 				B2E70FDF22B0844F000BCAD2 /* Generated */,
+				B2FBDF602A35E1BB00734667 /* IncidentIO */,
 				B213D201269B0449005EBDDA /* Instatus */,
 				B2DCE68E22159731001447D8 /* LambStatus */,
 				B22FDE4921089D4F00359EC9 /* PayPal */,
@@ -1230,6 +1243,7 @@
 				B2B77AA827FBC729009B9C2A /* FirebaseStatusDashboardStore.swift */,
 				B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */,
 				B2253A6A209F3C410039F574 /* GoogleStatusDashboardStore.swift */,
+				B2FBDF5E2A35D82000734667 /* IncidentIOService.swift */,
 				B213D1FF269AFD45005EBDDA /* InstatusService.swift */,
 				B2DCE68C221591F2001447D8 /* LambStatusService.swift */,
 				B22FDE4721089C6200359EC9 /* PayPal.swift */,
@@ -1514,6 +1528,7 @@
 				B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */,
 				B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */,
 				B271688A2291AEEE001E608C /* Asana.swift in Sources */,
+				B2FBDF622A35E1C800734667 /* Loom.swift in Sources */,
 				B213D203269B045C005EBDDA /* Railway.swift in Sources */,
 				B299C84B1DD04E850024D2E9 /* Pusher.swift in Sources */,
 				B2CEE5DB22B4A97B0073C743 /* AzureServices.swift in Sources */,
@@ -1680,6 +1695,7 @@
 				B257469B1E2781A3003A07A4 /* CodeClimate.swift in Sources */,
 				B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */,
 				B2483CF12037029D00A9FA95 /* Zwift.swift in Sources */,
+				B2FBDF5F2A35D82000734667 /* IncidentIOService.swift in Sources */,
 				B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */,
 				B29222282642EF33001C63AE /* ModeAnalytics.swift in Sources */,
 				B254642321EE9AF6003068A4 /* GitHub.swift in Sources */,
