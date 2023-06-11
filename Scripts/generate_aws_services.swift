@@ -72,7 +72,7 @@ class OutputNamedService: OutputService {
         class \(className): AWSNamedService, SubService {
             let name = "\(usableName)"
             let ids = Set<String>([
-                "\(ids.joined(separator: "\",\n        \""))"
+                "\(ids.sorted().joined(separator: "\",\n        \""))"
             ])
         }
         """
