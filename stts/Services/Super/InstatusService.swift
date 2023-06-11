@@ -22,7 +22,32 @@ class BaseInstatusService: BaseService {
 
     private struct Component: Codable {
         let name: String
-        let status: Status
+        let status: Status?
+        let children: [Component]?
+
+        /// The status of the current component and its children if any
+        var effectiveStatus: ServiceStatus {
+            if let children, let firstChild = children.first {
+                return children.map { $0.effectiveStatus }.max() ?? firstChild.effectiveStatus
+            } else if let status {
+                return status.status
+            } else {
+                return .undetermined
+            }
+        }
+
+        var affectedComponentsNames: [String] {
+            if let children, !children.isEmpty {
+                return children
+                    .filter { $0.status != nil && $0.status != .operational }
+                    .flatMap { $0.affectedComponentsNames }
+                    .map { "\(name): \($0)"}
+            } else if status != nil, status != .operational {
+                return [name]
+            } else {
+                return []
+            }
+        }
 
         enum Status: String, Codable {
             case operational = "OPERATIONAL"
@@ -118,13 +143,9 @@ class BaseInstatusService: BaseService {
             }
 
             // Or from affected the component names
-            let affectedComponents = statusData.props.pageProps.site.components.filter { $0.status != .operational }
+            let affectedComponents = statusData.props.pageProps.site.components.flatMap { $0.affectedComponentsNames }
             if !affectedComponents.isEmpty {
-                let prefix = affectedComponents.count > 1 ? "* " : ""
-
-                self?.message = affectedComponents
-                    .map { "\(prefix)\($0.name)" }
-                    .joined(separator: "\n")
+                self?.message = affectedComponents.joined(separator: "\n")
                 return
             }
 
@@ -146,7 +167,7 @@ class BaseInstatusService: BaseService {
         case .up:
             return .good
         case .hasIssues:
-            return components.map { $0.status.status }.max() ?? .undetermined
+            return components.map { $0.effectiveStatus }.max() ?? .undetermined
         }
     }
 }
