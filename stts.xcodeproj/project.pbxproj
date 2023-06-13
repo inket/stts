@@ -49,6 +49,7 @@
 		6BCBA0EA2558643D0019DF23 /* Recruiterbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */; };
 		6D03955E8178A1153BBD9D01 /* Netlify.swift in Sources */ = {isa = PBXBuildFile; fileRef = D819CB63B6576DA05BFC764C /* Netlify.swift */; };
 		776E8314B2F7910C11B36F6A /* Statuspage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166DB4CDA6EACD6BF7EC77B0 /* Statuspage.swift */; };
+		79A2CABEDD66272C3579EB95 /* Robin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3859428AAF182EC79C4ED3E /* Robin.swift */; };
 		7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B305FAA210237AA0086DCE0 /* Spoke.swift */; };
 		7BA6A0A22240D8E000700C2C /* Bolt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6A0A12240D8E000700C2C /* Bolt.swift */; };
 		7E1580ED5174442F7B691728 /* Blend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7B31666FF70588A709098 /* Blend.swift */; };
@@ -690,6 +691,7 @@
 		EC5567996ECADCC9A8C9AE3F /* Confluence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Confluence.swift; sourceTree = "<group>"; };
 		EF354371EC40FA322AEEFF5F /* AtlassianAccess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtlassianAccess.swift; sourceTree = "<group>"; };
 		F0A9F6AE3667A268D4169B4A /* VMwareWorkspaceONE.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VMwareWorkspaceONE.swift; sourceTree = "<group>"; };
+		F3859428AAF182EC79C4ED3E /* Robin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Robin.swift; sourceTree = "<group>"; };
 		F679F245A03F4CCC7F2DA71F /* NasdaqDataLink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NasdaqDataLink.swift; sourceTree = "<group>"; };
 		F7D13B6E0F576096D5F10B19 /* Compass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Compass.swift; sourceTree = "<group>"; };
 		FEC70B47B228492520C03D36 /* Duo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Duo.swift; sourceTree = "<group>"; };
@@ -1020,6 +1022,7 @@
 				B299C84C1DD04ED90024D2E9 /* Reddit.swift */,
 				B210189B249E406D00F31999 /* RevenueCat.swift */,
 				95E87BF974F75C95D80FC426 /* Roadmunk.swift */,
+				F3859428AAF182EC79C4ED3E /* Robin.swift */,
 				B20699D1214E504E008670B0 /* Robinhood.swift */,
 				B211F0B71E607C09008DD360 /* Rollbar.swift */,
 				B299C8481DD04DCB0024D2E9 /* RubyGems.swift */,
@@ -1784,6 +1787,7 @@
 				EA0E7177A4634EF99C4AF31A /* MastodonSocial.swift in Sources */,
 				D4947171924A035959AF11BA /* Flyio.swift in Sources */,
 				B85F0E8056E1906F66CC95C2 /* Lattice.swift in Sources */,
+				79A2CABEDD66272C3579EB95 /* Robin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
