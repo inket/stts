@@ -31,6 +31,7 @@
 		36AD8ED9235A310500F2FD73 /* Mural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED8235A310500F2FD73 /* Mural.swift */; };
 		3DD3827D39BBDDBDA24DA4B9 /* Roadmunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E87BF974F75C95D80FC426 /* Roadmunk.swift */; };
 		4A0BDA3CE55B64C29F1F4280 /* AtlassianSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE09F6E559505EECD0AF8D /* AtlassianSupport.swift */; };
+		4A16338D27A2F37840AA987C /* PlanningCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530CF1C4E2034E887D9227A5 /* PlanningCenter.swift */; };
 		502ADE3E3386F6B64643682F /* Wasabi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CD7B91FCE3B9B61003A00 /* Wasabi.swift */; };
 		5168C3411EE1FADD160353FF /* FirefoxRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */; };
 		5226672D519C409D932468BA /* Chargebee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3803B461B23AFD8DD026EB59 /* Chargebee.swift */; };
@@ -389,6 +390,7 @@
 		4B49374D6F788B72D32911D8 /* CloudAMQP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CloudAMQP.swift; sourceTree = "<group>"; };
 		4E2C3B179FEEE9F7F150196F /* JumpCloud.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JumpCloud.swift; sourceTree = "<group>"; };
 		4FF6A2E1502F35DA915891FD /* AtlassianDeveloper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtlassianDeveloper.swift; sourceTree = "<group>"; };
+		530CF1C4E2034E887D9227A5 /* PlanningCenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlanningCenter.swift; sourceTree = "<group>"; };
 		53F844F11070AF5B4CD7719E /* Workflowy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Workflowy.swift; sourceTree = "<group>"; };
 		563FBDC323AC595F540679B9 /* Cybersource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cybersource.swift; sourceTree = "<group>"; };
 		599C548E19B1B95EFDBB7898 /* VMwareCarbonBlack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VMwareCarbonBlack.swift; sourceTree = "<group>"; };
@@ -1005,6 +1007,7 @@
 				B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */,
 				B213D1F7269AD9A7005EBDDA /* Pardot.swift */,
 				B2101899249E3FF400F31999 /* Pendo.swift */,
+				530CF1C4E2034E887D9227A5 /* PlanningCenter.swift */,
 				B29D50BE24B0542100F4961B /* PlatformSH.swift */,
 				CA1F86EF25EF8B3548E43010 /* PlayFab.swift */,
 				B227D31125D7671600951917 /* Poka.swift */,
@@ -1784,6 +1787,7 @@
 				EA0E7177A4634EF99C4AF31A /* MastodonSocial.swift in Sources */,
 				D4947171924A035959AF11BA /* Flyio.swift in Sources */,
 				B85F0E8056E1906F66CC95C2 /* Lattice.swift in Sources */,
+				4A16338D27A2F37840AA987C /* PlanningCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
