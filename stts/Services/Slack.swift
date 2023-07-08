@@ -3,6 +3,7 @@
 //  stts
 //
 
+import Foundation
 import Kanna
 
 class Slack: Service {

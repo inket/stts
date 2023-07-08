@@ -3,6 +3,7 @@
 //  stts
 //
 
+import Foundation
 import Kanna
 
 protocol GoogleStatusDashboardStoreService {
@@ -102,7 +103,7 @@ class GoogleStatusDashboardStore: Loading {
         statuses["_general"] = generalStatus
     }
 
-    private func parseDashboardRow(_ tr: XMLElement) -> (String, ServiceStatus)? {
+    private func parseDashboardRow(_ tr: Kanna.XMLElement) -> (String, ServiceStatus)? {
         let rawName = tr.css("th").first?.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let sanitizedName = rawName?
             .components(separatedBy: .newlines).first?

@@ -4,7 +4,6 @@
 //
 
 import Cocoa
-import DateHelper
 
 enum BottomBarStatus {
     case undetermined
@@ -179,12 +178,22 @@ class BottomBar: NSView {
         case .updated(let date):
             var relativeDate = date
             if Int(relativeDate.timeIntervalSince1970) == Int(Date().timeIntervalSince1970) {
-                // Avoid issues with relative time marking it as "in a few seconds"
-                relativeDate = Date(timeInterval: -1, since: Date())
+                // Avoid issues with relative time marking it as "in 0 sec."
+                relativeDate = Date(timeIntervalSinceNow: -1)
             }
 
-            let relativeTime = relativeDate.toStringWithRelativeTime()
-            statusField.stringValue = "Updated \(relativeTime)"
+            if #available(macOS 10.15, *) {
+                let dateTimeFormatter = RelativeDateTimeFormatter()
+                dateTimeFormatter.dateTimeStyle = .numeric
+                dateTimeFormatter.unitsStyle = .short
+                let dateString = dateTimeFormatter.string(for: relativeDate)! // Cannot be nil when date is Date
+                statusField.stringValue = "Updated \(dateString)"
+            } else {
+                let dateFormatter = DateFormatter()
+                dateFormatter.timeStyle = .short
+                let dateString = dateFormatter.string(from: relativeDate)
+                statusField.stringValue = "Updated at \(dateString)"
+            }
         }
     }
 

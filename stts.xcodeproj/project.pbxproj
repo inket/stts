@@ -72,6 +72,9 @@
 		B20396381EE6A06C008CCA21 /* Filestack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20396371EE6A06C008CCA21 /* Filestack.swift */; };
 		B205A9181D49D67700EA178D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B205A9171D49D67700EA178D /* Service.swift */; };
 		B20699D2214E504F008670B0 /* Robinhood.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20699D1214E504E008670B0 /* Robinhood.swift */; };
+		B20883E52A59143E007578C8 /* MBPopup in Frameworks */ = {isa = PBXBuildFile; productRef = B20883E42A59143E007578C8 /* MBPopup */; };
+		B20883E82A59144F007578C8 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = B20883E72A59144F007578C8 /* Kanna */; };
+		B20883EB2A59146C007578C8 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = B20883EA2A59146C007578C8 /* Reachability */; };
 		B210189A249E3FF400F31999 /* Pendo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2101899249E3FF400F31999 /* Pendo.swift */; };
 		B210189C249E406D00F31999 /* RevenueCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B210189B249E406D00F31999 /* RevenueCat.swift */; };
 		B2107BCE254C970000284EE7 /* Linode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2107BCC254C96FF00284EE7 /* Linode.swift */; };
@@ -129,8 +132,6 @@
 		B231DD60257B438900647312 /* HubSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231DD5F257B438900647312 /* HubSpot.swift */; };
 		B232047F22158BDF000DC1B0 /* DatadogEU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232047E22158BDF000DC1B0 /* DatadogEU.swift */; };
 		B232A18D20944B960066AD01 /* Cloud66.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232A18C20944B950066AD01 /* Cloud66.swift */; };
-		B23533DF2285B48F00DEDC36 /* DateHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23533DE2285B48E00DEDC36 /* DateHelper.framework */; };
-		B23533E02285B49700DEDC36 /* DateHelper.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B23533DE2285B48E00DEDC36 /* DateHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B235341F22888EFE00DEDC36 /* Sendinblue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235341E22888EFE00DEDC36 /* Sendinblue.swift */; };
 		B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235B3BC1DF562C400821936 /* SettingsView.swift */; };
 		B23646B12627C14E00AB9486 /* LogzIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23646AF2627C14E00AB9486 /* LogzIO.swift */; };
@@ -179,15 +180,11 @@
 		B26350FF1ED7D0210069EA73 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26350FE1ED7D0210069EA73 /* Segment.swift */; };
 		B2667D4726C8BE5000BA6105 /* LinkedInAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD39EC5F0FC240DE74BD82D /* LinkedInAPI.swift */; };
 		B269FCBB1E261BDF0016041D /* Figma.swift in Sources */ = {isa = PBXBuildFile; fileRef = B269FCBA1E261BDF0016041D /* Figma.swift */; };
-		B26CD1E81DD59FDD0054A385 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26CD1E71DD59FDD0054A385 /* Kanna.framework */; };
-		B26CD1EA1DD59FE60054A385 /* Kanna.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B26CD1E71DD59FDD0054A385 /* Kanna.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B26CD1EC1DD59FFB0054A385 /* DigitalOcean.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */; };
 		B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27090F0209F52EB0094C3D7 /* Stream.swift */; };
 		B271688A2291AEEE001E608C /* Asana.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27168892291AEEE001E608C /* Asana.swift */; };
 		B272E3C8235F460D00B33076 /* Python.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272E3C7235F460D00B33076 /* Python.swift */; };
 		B2767A0F255FBC3E0047A9BE /* Bitmovin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2767A0E255FBC3E0047A9BE /* Bitmovin.swift */; };
-		B276C8F41DD474200098B451 /* MBPopup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B276C8F11DD474200098B451 /* MBPopup.framework */; };
-		B276C8F71DD4742D0098B451 /* MBPopup.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B276C8F11DD474200098B451 /* MBPopup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B277BC9222B4BB5C000B55C3 /* AzureDevOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9122B4BB5C000B55C3 /* AzureDevOps.swift */; };
 		B277BC9422B4BB6D000B55C3 /* AzureDevOpsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9322B4BB6D000B55C3 /* AzureDevOpsStore.swift */; };
 		B277BC9822B4C16A000B55C3 /* AzureDevOpsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9722B4C16A000B55C3 /* AzureDevOpsServices.swift */; };
@@ -249,8 +246,6 @@
 		B2C337A51E1417390007E110 /* Mixpanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C337A41E1417390007E110 /* Mixpanel.swift */; };
 		B2C4670F1E70012700C5145D /* Zapier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4670E1E70012700C5145D /* Zapier.swift */; };
 		B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */; };
-		B2C548E122B27AF200D1D7EF /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C548E022B27AF200D1D7EF /* Reachability.framework */; };
-		B2C548E222B27B0D00D1D7EF /* Reachability.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2C548E022B27AF200D1D7EF /* Reachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2C5ED1B281CA96200009B68 /* OneLoginUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5ED1A281CA96200009B68 /* OneLoginUS.swift */; };
 		B2C5ED1D281CAA3400009B68 /* OneLoginEU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5ED1C281CAA3400009B68 /* OneLoginEU.swift */; };
 		B2CB0F9B2047A60000873C14 /* Vimeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB0F9A2047A60000873C14 /* Vimeo.swift */; };
@@ -352,11 +347,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B2C548E222B27B0D00D1D7EF /* Reachability.framework in CopyFiles */,
-				B26CD1EA1DD59FE60054A385 /* Kanna.framework in CopyFiles */,
 				B2CEB9A21DFD8987005FB901 /* StartAtLogin.framework in CopyFiles */,
-				B276C8F71DD4742D0098B451 /* MBPopup.framework in CopyFiles */,
-				B23533E02285B49700DEDC36 /* DateHelper.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,7 +482,6 @@
 		B231DD5F257B438900647312 /* HubSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubSpot.swift; sourceTree = "<group>"; };
 		B232047E22158BDF000DC1B0 /* DatadogEU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatadogEU.swift; sourceTree = "<group>"; };
 		B232A18C20944B950066AD01 /* Cloud66.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud66.swift; sourceTree = "<group>"; };
-		B23533DE2285B48E00DEDC36 /* DateHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DateHelper.framework; path = Carthage/Build/Mac/DateHelper.framework; sourceTree = SOURCE_ROOT; };
 		B235341E22888EFE00DEDC36 /* Sendinblue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sendinblue.swift; sourceTree = "<group>"; };
 		B235B3BC1DF562C400821936 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B23646AF2627C14E00AB9486 /* LogzIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogzIO.swift; sourceTree = "<group>"; };
@@ -541,13 +531,11 @@
 		B26350FC1ED7CFC40069EA73 /* Loggly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loggly.swift; sourceTree = "<group>"; };
 		B26350FE1ED7D0210069EA73 /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
 		B269FCBA1E261BDF0016041D /* Figma.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Figma.swift; sourceTree = "<group>"; };
-		B26CD1E71DD59FDD0054A385 /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/Mac/Kanna.framework; sourceTree = SOURCE_ROOT; };
 		B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalOcean.swift; sourceTree = "<group>"; };
 		B27090F0209F52EB0094C3D7 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 		B27168892291AEEE001E608C /* Asana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asana.swift; sourceTree = "<group>"; };
 		B272E3C7235F460D00B33076 /* Python.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Python.swift; sourceTree = "<group>"; };
 		B2767A0E255FBC3E0047A9BE /* Bitmovin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bitmovin.swift; sourceTree = "<group>"; };
-		B276C8F11DD474200098B451 /* MBPopup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBPopup.framework; path = Carthage/Build/Mac/MBPopup.framework; sourceTree = SOURCE_ROOT; };
 		B277BC9122B4BB5C000B55C3 /* AzureDevOps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureDevOps.swift; sourceTree = "<group>"; };
 		B277BC9322B4BB6D000B55C3 /* AzureDevOpsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureDevOpsStore.swift; sourceTree = "<group>"; };
 		B277BC9522B4BC6C000B55C3 /* generate_azure_devops_services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generate_azure_devops_services.swift; sourceTree = "<group>"; };
@@ -614,7 +602,6 @@
 		B2C337A41E1417390007E110 /* Mixpanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mixpanel.swift; sourceTree = "<group>"; };
 		B2C4670E1E70012700C5145D /* Zapier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zapier.swift; sourceTree = "<group>"; };
 		B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
-		B2C548E022B27AF200D1D7EF /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/Mac/Reachability.framework; sourceTree = SOURCE_ROOT; };
 		B2C5ED1A281CA96200009B68 /* OneLoginUS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLoginUS.swift; sourceTree = "<group>"; };
 		B2C5ED1C281CAA3400009B68 /* OneLoginEU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLoginEU.swift; sourceTree = "<group>"; };
 		B2CB0F9A2047A60000873C14 /* Vimeo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vimeo.swift; sourceTree = "<group>"; };
@@ -711,10 +698,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2C548E122B27AF200D1D7EF /* Reachability.framework in Frameworks */,
-				B26CD1E81DD59FDD0054A385 /* Kanna.framework in Frameworks */,
-				B276C8F41DD474200098B451 /* MBPopup.framework in Frameworks */,
-				B23533DF2285B48F00DEDC36 /* DateHelper.framework in Frameworks */,
+				B20883E52A59143E007578C8 /* MBPopup in Frameworks */,
+				B20883EB2A59146C007578C8 /* Reachability in Frameworks */,
+				B20883E82A59144F007578C8 /* Kanna in Frameworks */,
 				B2CEB9A11DFD8984005FB901 /* StartAtLogin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -861,10 +847,6 @@
 		B276C8E81DD473B50098B451 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B23533DE2285B48E00DEDC36 /* DateHelper.framework */,
-				B26CD1E71DD59FDD0054A385 /* Kanna.framework */,
-				B276C8F11DD474200098B451 /* MBPopup.framework */,
-				B2C548E022B27AF200D1D7EF /* Reachability.framework */,
 				B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */,
 			);
 			name = Frameworks;
@@ -1318,7 +1300,7 @@
 				B2B2D0FD1D49D5080014D780 /* Resources */,
 				B22EC6891D80111900ED7917 /* CopyFiles */,
 				B28F83321E24BDC100F2070F /* Generate Services plist file */,
-				B2B2DC631DCC1FA600BF397D /* Swiftlint */,
+				B2B2DC631DCC1FA600BF397D /* SwiftLint */,
 				B2A264A21DF906C900009BE1 /* StartAtLogin */,
 			);
 			buildRules = (
@@ -1326,6 +1308,11 @@
 			dependencies = (
 			);
 			name = stts;
+			packageProductDependencies = (
+				B20883E42A59143E007578C8 /* MBPopup */,
+				B20883E72A59144F007578C8 /* Kanna */,
+				B20883EA2A59146C007578C8 /* Reachability */,
+			);
 			productName = stts;
 			productReference = B2B2D0FF1D49D5080014D780 /* stts.app */;
 			productType = "com.apple.product-type.application";
@@ -1337,22 +1324,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = inket;
 				TargetAttributes = {
 					B2163AF420BA4E7500B14A85 = {
 						CreatedOnToolsVersion = 9.3.1;
-						DevelopmentTeam = PP5UYHJQCD;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
 						TestTargetID = B2B2D0FE1D49D5080014D780;
 					};
 					B2B2D0FE1D49D5080014D780 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = PP5UYHJQCD;
 						DevelopmentTeamName = "Mahdi Bchatnia";
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -1370,6 +1353,11 @@
 				Base,
 			);
 			mainGroup = B2B2D0F61D49D5080014D780;
+			packageReferences = (
+				B20883E32A59143E007578C8 /* XCRemoteSwiftPackageReference "MBPopup" */,
+				B20883E62A59144F007578C8 /* XCRemoteSwiftPackageReference "Kanna" */,
+				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */,
+			);
 			productRefGroup = B2B2D1001D49D5080014D780 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1454,7 +1442,7 @@
 			shellPath = /bin/sh;
 			shellScript = "FRAMEWORKS_HELPER_PATH=\"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/StartAtLogin.framework/Versions/A/Resources/StartAtLoginHelper.app\"\nHELPER_DIR=\"$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/Library/LoginItems\"\nHELPER_PATH=\"$HELPER_DIR/StartAtLoginHelper.app\"\n\nmkdir -p \"$HELPER_DIR\"\nrm -rf \"$HELPER_PATH\"\ncp -rf \"$FRAMEWORKS_HELPER_PATH\" \"$HELPER_DIR/\"\n\nif [ \"$CONFIGURATION\" == \"Release\" ]; then\n  rm -rf \"$FRAMEWORKS_HELPER_PATH\"\nfi\n\ndefaults write \"$HELPER_PATH/Contents/Info\" CFBundleIdentifier -string \"$PRODUCT_BUNDLE_IDENTIFIER-StartAtLoginHelper\"\ncodesign --force --entitlements \"$CODE_SIGN_ENTITLEMENTS\" -s \"$EXPANDED_CODE_SIGN_IDENTITY_NAME\" -v \"$HELPER_PATH\"\n";
 		};
-		B2B2DC631DCC1FA600BF397D /* Swiftlint */ = {
+		B2B2DC631DCC1FA600BF397D /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -1462,7 +1450,7 @@
 			);
 			inputPaths = (
 			);
-			name = Swiftlint;
+			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1826,10 +1814,11 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = PP5UYHJQCD;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = sttsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1840,6 +1829,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mahdi.sttsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/stts.app/Contents/MacOS/stts";
 			};
@@ -1854,10 +1844,11 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = PP5UYHJQCD;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = sttsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1868,6 +1859,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mahdi.sttsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/stts.app/Contents/MacOS/stts";
 			};
@@ -1995,16 +1987,16 @@
 		B2B2D10D1D49D5080014D780 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = stts/stts.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 74;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
@@ -2020,10 +2012,10 @@
 		B2B2D10E1D49D5080014D780 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = stts/stts.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 74;
@@ -2073,6 +2065,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B20883E32A59143E007578C8 /* XCRemoteSwiftPackageReference "MBPopup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/inket/MBPopup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		B20883E62A59144F007578C8 /* XCRemoteSwiftPackageReference "Kanna" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tid-kijyun/Kanna";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B20883E42A59143E007578C8 /* MBPopup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B20883E32A59143E007578C8 /* XCRemoteSwiftPackageReference "MBPopup" */;
+			productName = MBPopup;
+		};
+		B20883E72A59144F007578C8 /* Kanna */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B20883E62A59144F007578C8 /* XCRemoteSwiftPackageReference "Kanna" */;
+			productName = Kanna;
+		};
+		B20883EA2A59146C007578C8 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B2B2D0F71D49D5080014D780 /* Project object */;
 }

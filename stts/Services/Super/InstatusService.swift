@@ -3,6 +3,7 @@
 //  stts
 //
 
+import Foundation
 import Kanna
 
 typealias InstatusService = BaseInstatusService & RequiredServiceProperties & RequiredInstatusProperties

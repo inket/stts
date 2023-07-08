@@ -3,6 +3,7 @@
 //  stts
 //
 
+import Foundation
 import Kanna
 
 class UptimeDotCom: Service {

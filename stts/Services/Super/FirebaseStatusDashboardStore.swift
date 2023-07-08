@@ -3,6 +3,7 @@
 //  stts
 //
 
+import Foundation
 import Kanna
 
 protocol FirebaseStatusDashboardStoreService {
@@ -101,7 +102,7 @@ class FirebaseStatusDashboardStore: Loading {
         statuses["_general"] = generalStatus
     }
 
-    private func parseDashboardRow(_ tr: XMLElement) -> (String, ServiceStatus)? {
+    private func parseDashboardRow(_ tr: Kanna.XMLElement) -> (String, ServiceStatus)? {
         let rawName = tr.css(".product-name").first?.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let sanitizedName = rawName?
             .components(separatedBy: .newlines).first?

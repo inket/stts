@@ -24,7 +24,7 @@ extension URLSession {
 }
 
 public protocol URLSessionProtocol {
-    typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
+    typealias CompletionHandler = @Sendable (Data?, URLResponse?, Error?) -> Void
 
     func dataTask(with url: URL, completionHandler: @escaping CompletionHandler) -> URLSessionDataTask
     func dataTask(with urlRequest: URLRequest, completionHandler: @escaping CompletionHandler) -> URLSessionDataTask
@@ -48,7 +48,7 @@ class DataLoader {
 
     func loadData(
         with urlRequest: URLRequest,
-        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
+        completionHandler: @escaping URLSessionProtocol.CompletionHandler
     ) -> URLSessionDataTask {
         let task = session.dataTask(with: urlRequest, completionHandler: completionHandler)
         task.resume()
@@ -57,7 +57,7 @@ class DataLoader {
 
     func loadData(
         with url: URL,
-        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
+        completionHandler: @escaping URLSessionProtocol.CompletionHandler
     ) -> URLSessionDataTask {
         let task = session.dataTask(with: url, completionHandler: completionHandler)
         task.resume()
@@ -68,12 +68,12 @@ class DataLoader {
 protocol Loading {
     func loadData(
         with urlRequest: URLRequest,
-        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
+        completionHandler: @escaping URLSessionProtocol.CompletionHandler
     ) -> URLSessionDataTask
 
     func loadData(
         with url: URL,
-        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
+        completionHandler: @escaping URLSessionProtocol.CompletionHandler
     ) -> URLSessionDataTask
 }
 
@@ -81,7 +81,7 @@ extension Loading {
     @discardableResult
     public func loadData(
         with urlRequest: URLRequest,
-        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
+        completionHandler: @escaping URLSessionProtocol.CompletionHandler
     ) -> URLSessionDataTask {
         return DataLoader.shared.loadData(with: urlRequest, completionHandler: completionHandler)
     }
@@ -89,7 +89,7 @@ extension Loading {
     @discardableResult
     public func loadData(
         with url: URL,
-        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
+        completionHandler: @escaping URLSessionProtocol.CompletionHandler
     ) -> URLSessionDataTask {
         return DataLoader.shared.loadData(with: url, completionHandler: completionHandler)
     }

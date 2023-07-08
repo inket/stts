@@ -11,3 +11,5 @@ disabled_rules:
   - nesting
   - identifier_name
   - file_length
+  - for_where
+  - blanket_disable_command

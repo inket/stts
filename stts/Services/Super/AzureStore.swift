@@ -3,6 +3,7 @@
 //  stts
 //
 
+import Foundation
 import Kanna
 
 protocol AzureStoreService {
@@ -76,7 +77,7 @@ class AzureStore: Loading {
         callbacks = []
     }
 
-    private func parseZoneTable(_ table: XMLElement) -> ServiceStatus? {
+    private func parseZoneTable(_ table: Kanna.XMLElement) -> ServiceStatus? {
         return table.css("use").compactMap { svgElement -> ServiceStatus? in
             guard let svgName = svgElement["xlink:href"] else { return nil }
 
