@@ -56,6 +56,7 @@ struct Preferences {
             "Quandl": "NasdaqDataLink", // v2.12
             "Quay": "QuayIO", // v2.12
             "SmartyStreets": "Smarty", // v2.12
+            "UrbanAirship": "AirshipUS", // v2.19
             // Generated services
             "FirebaseMLKit": "FirebaseMachineLearning"
         ]

@@ -75,6 +75,8 @@
 		B20883E52A59143E007578C8 /* MBPopup in Frameworks */ = {isa = PBXBuildFile; productRef = B20883E42A59143E007578C8 /* MBPopup */; };
 		B20883E82A59144F007578C8 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = B20883E72A59144F007578C8 /* Kanna */; };
 		B20883EB2A59146C007578C8 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = B20883EA2A59146C007578C8 /* Reachability */; };
+		B20883F32A59ADAE007578C8 /* StatusCastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20883F22A59ADAE007578C8 /* StatusCastService.swift */; };
+		B20883F52A59AE37007578C8 /* AirshipEU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20883F42A59AE37007578C8 /* AirshipEU.swift */; };
 		B210189A249E3FF400F31999 /* Pendo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2101899249E3FF400F31999 /* Pendo.swift */; };
 		B210189C249E406D00F31999 /* RevenueCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B210189B249E406D00F31999 /* RevenueCat.swift */; };
 		B2107BCE254C970000284EE7 /* Linode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2107BCC254C96FF00284EE7 /* Linode.swift */; };
@@ -216,7 +218,7 @@
 		B299C8511DD04FD60024D2E9 /* Cloudflare.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8501DD04FD60024D2E9 /* Cloudflare.swift */; };
 		B299C8531DD0505F0024D2E9 /* Sentry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8521DD0505F0024D2E9 /* Sentry.swift */; };
 		B299C8551DD051210024D2E9 /* EngineYard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8541DD051210024D2E9 /* EngineYard.swift */; };
-		B29AEFD0225D7F3900C3B8BD /* UrbanAirship.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29AEFCF225D7F3900C3B8BD /* UrbanAirship.swift */; };
+		B29AEFD0225D7F3900C3B8BD /* AirshipUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29AEFCF225D7F3900C3B8BD /* AirshipUS.swift */; };
 		B29D50BD24B053C600F4961B /* Basecamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D50BC24B053C600F4961B /* Basecamp.swift */; };
 		B29D50BF24B0542100F4961B /* PlatformSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D50BE24B0542100F4961B /* PlatformSH.swift */; };
 		B2A0635C1E1340B400EEA762 /* Docker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0635B1E1340B400EEA762 /* Docker.swift */; };
@@ -423,6 +425,8 @@
 		B20396371EE6A06C008CCA21 /* Filestack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filestack.swift; sourceTree = "<group>"; };
 		B205A9171D49D67700EA178D /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		B20699D1214E504E008670B0 /* Robinhood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Robinhood.swift; sourceTree = "<group>"; };
+		B20883F22A59ADAE007578C8 /* StatusCastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCastService.swift; sourceTree = "<group>"; };
+		B20883F42A59AE37007578C8 /* AirshipEU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirshipEU.swift; sourceTree = "<group>"; };
 		B2101899249E3FF400F31999 /* Pendo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pendo.swift; sourceTree = "<group>"; };
 		B210189B249E406D00F31999 /* RevenueCat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueCat.swift; sourceTree = "<group>"; };
 		B2107BCC254C96FF00284EE7 /* Linode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Linode.swift; sourceTree = "<group>"; };
@@ -570,7 +574,7 @@
 		B299C8501DD04FD60024D2E9 /* Cloudflare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloudflare.swift; sourceTree = "<group>"; };
 		B299C8521DD0505F0024D2E9 /* Sentry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sentry.swift; sourceTree = "<group>"; };
 		B299C8541DD051210024D2E9 /* EngineYard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineYard.swift; sourceTree = "<group>"; };
-		B29AEFCF225D7F3900C3B8BD /* UrbanAirship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanAirship.swift; sourceTree = "<group>"; };
+		B29AEFCF225D7F3900C3B8BD /* AirshipUS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirshipUS.swift; sourceTree = "<group>"; };
 		B29D50BC24B053C600F4961B /* Basecamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basecamp.swift; sourceTree = "<group>"; };
 		B29D50BE24B0542100F4961B /* PlatformSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSH.swift; sourceTree = "<group>"; };
 		B2A0635B1E1340B400EEA762 /* Docker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Docker.swift; sourceTree = "<group>"; };
@@ -708,6 +712,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B20883F12A59AD8E007578C8 /* StatusCast */ = {
+			isa = PBXGroup;
+			children = (
+				B20883F42A59AE37007578C8 /* AirshipEU.swift */,
+				B29AEFCF225D7F3900C3B8BD /* AirshipUS.swift */,
+				B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */,
+			);
+			path = StatusCast;
+			sourceTree = "<group>";
+		};
 		B213A17A1DC9EA3F008E8E58 /* ServiceTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1035,7 +1049,6 @@
 				B29222272642EF33001C63AE /* Twitch.swift */,
 				B24220E31E2F6BBA0007E50E /* Typeform.swift */,
 				B2A8AE3C20710EC8002699CE /* Unsplash.swift */,
-				B29AEFCF225D7F3900C3B8BD /* UrbanAirship.swift */,
 				599C548E19B1B95EFDBB7898 /* VMwareCarbonBlack.swift */,
 				F0A9F6AE3667A268D4169B4A /* VMwareWorkspaceONE.swift */,
 				B227D31525D7678200951917 /* Vercel.swift */,
@@ -1193,6 +1206,7 @@
 				B2841CEC20BA6423004AFDB7 /* Sorry */,
 				B26CB5711E13448900116A33 /* Status.ioV1 */,
 				B2163B0120BA5AE600B14A85 /* StatusCake */,
+				B20883F12A59AD8E007578C8 /* StatusCast */,
 				B25425032935958D0093AC83 /* StatusHub */,
 				B299C8561DD051710024D2E9 /* StatusPage */,
 				B2FDC9201D67071500F0B728 /* Super */,
@@ -1200,7 +1214,6 @@
 				B2A4D7E6247E72B50089EA77 /* AzureAll.swift */,
 				B2A4D7E8247E73BC0089EA77 /* AzureDevOpsAll.swift */,
 				B23038F01E0DF3CC00B29095 /* Beanstalk.swift */,
-				B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */,
 				B290315B1E4B0CA7005B58CC /* Evernote.swift */,
 				A125C59D20F7909500C513B3 /* Fastly.swift */,
 				B2253A6E209F42430039F574 /* Firebase.swift */,
@@ -1252,6 +1265,7 @@
 				B2D655ED29B807BF00DBE417 /* Site24x7Service.swift */,
 				B2841CEA20BA6207004AFDB7 /* SorryService.swift */,
 				B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */,
+				B20883F22A59ADAE007578C8 /* StatusCastService.swift */,
 				B2542501293591610093AC83 /* StatusHubService.swift */,
 				B2FDC91B1D67062200F0B728 /* StatusPageService.swift */,
 				B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */,
@@ -1356,7 +1370,7 @@
 			packageReferences = (
 				B20883E32A59143E007578C8 /* XCRemoteSwiftPackageReference "MBPopup" */,
 				B20883E62A59144F007578C8 /* XCRemoteSwiftPackageReference "Kanna" */,
-				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */,
+				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
 			);
 			productRefGroup = B2B2D1001D49D5080014D780 /* Products */;
 			projectDirPath = "";
@@ -1512,6 +1526,7 @@
 				B2EC838F24547371001D2D2F /* Egnyte.swift in Sources */,
 				B2BB19BA20B8FEFD00A97A87 /* CachetService.swift in Sources */,
 				B2667D4726C8BE5000BA6105 /* LinkedInAPI.swift in Sources */,
+				B20883F52A59AE37007578C8 /* AirshipEU.swift in Sources */,
 				7BA6A0A22240D8E000700C2C /* Bolt.swift in Sources */,
 				B213D209269B06DD005EBDDA /* Threader.swift in Sources */,
 				B22FDE4D2108A5AE00359EC9 /* PayPalProductProduction.swift in Sources */,
@@ -1571,7 +1586,7 @@
 				B2A0635E1E1341C900EEA762 /* StatusioV1Service.swift in Sources */,
 				B2107BCE254C970000284EE7 /* Linode.swift in Sources */,
 				B200CA78247FC8B700DB0868 /* AdobeStore.swift in Sources */,
-				B29AEFD0225D7F3900C3B8BD /* UrbanAirship.swift in Sources */,
+				B29AEFD0225D7F3900C3B8BD /* AirshipUS.swift in Sources */,
 				B28FF68B1E94761A005897A9 /* Codecov.swift in Sources */,
 				B256955A1E247C8C00FAE413 /* Cloudinary.swift in Sources */,
 				B277BC9822B4C16A000B55C3 /* AzureDevOpsServices.swift in Sources */,
@@ -1751,6 +1766,7 @@
 				D5F7C57260F512BDB844AD08 /* TeleportCloud.swift in Sources */,
 				C26BBF46916F30160A67C5C0 /* SecurID.swift in Sources */,
 				D25675615FE77EF34E668B99 /* JiraSoftware.swift in Sources */,
+				B20883F32A59ADAE007578C8 /* StatusCastService.swift in Sources */,
 				15CE0B762051A5DEC3AB19E5 /* JiraServiceManagement.swift in Sources */,
 				6074BFF1D6DC04BB94FB0ACA /* JiraWorkManagement.swift in Sources */,
 				6A1415429E75423F428A5ED9 /* JiraProductDiscovery.swift in Sources */,
@@ -2083,7 +2099,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
 			requirement = {
@@ -2106,7 +2122,7 @@
 		};
 		B20883EA2A59146C007578C8 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */;
+			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
 			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */

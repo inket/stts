@@ -1,12 +1,16 @@
 //
-//  CampaignMonitor.swift
+//  StatusCastService.swift
 //  stts
 //
 
 import Foundation
 import Kanna
 
-class CampaignMonitor: Service {
+typealias StatusCastService = BaseStatusCastService & RequiredServiceProperties & RequiredStatusCastProperties
+
+protocol RequiredStatusCastProperties {}
+
+class BaseStatusCastService: BaseService {
     private enum Status: String, CaseIterable {
         case available
         case unavailable
@@ -33,11 +37,12 @@ class CampaignMonitor: Service {
         }
     }
 
-    let name = "Campaign Monitor"
-    let url = URL(string: "https://status.campaignmonitor.com")!
-
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        loadData(with: url) { [weak self] data, _, error in
+        guard let realSelf = self as? StatusCastService else {
+            fatalError("BaseStatusCastService should not be used directly.")
+        }
+
+        loadData(with: realSelf.url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }
