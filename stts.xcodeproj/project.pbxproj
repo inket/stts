@@ -64,6 +64,7 @@
 		A125C59E20F7909500C513B3 /* Fastly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125C59D20F7909500C513B3 /* Fastly.swift */; };
 		A133C8B720F8F3670068CFE8 /* Mailgun.swift in Sources */ = {isa = PBXBuildFile; fileRef = A133C8B620F8F3670068CFE8 /* Mailgun.swift */; };
 		A57CA3889BDE9140B1D96CF8 /* Cypress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6AF196D47310053DE2A8A0 /* Cypress.swift */; };
+		AD52283A2FD0F01D516BC6EA /* Bunnynet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD419616E85E9D06BC7D324 /* Bunnynet.swift */; };
 		B13C143038FEAD318CCA237B /* Doppler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70244989EDA4E2F3CF20FA50 /* Doppler.swift */; };
 		B200CA74247FC5AE00DB0868 /* AdobeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200CA73247FC5AE00DB0868 /* AdobeServices.swift */; };
 		B200CA76247FC88700DB0868 /* Adobe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200CA75247FC88700DB0868 /* Adobe.swift */; };
@@ -400,6 +401,7 @@
 		8797E2420F50AEF8E643093F /* AlertLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertLogic.swift; sourceTree = "<group>"; };
 		87DE85B45D490EF40F319860 /* HashiCorp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HashiCorp.swift; sourceTree = "<group>"; };
 		881BD2B4F6BC008A1CE1A25B /* HelloSignHelloFax.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelloSignHelloFax.swift; sourceTree = "<group>"; };
+		8BD419616E85E9D06BC7D324 /* Bunnynet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bunnynet.swift; sourceTree = "<group>"; };
 		8FD39EC5F0FC240DE74BD82D /* LinkedInAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinkedInAPI.swift; sourceTree = "<group>"; };
 		91B0A21328197857007D8E8F /* StringExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
 		94D7AA16CE8CF0B13B8DF242 /* Bitbucket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bitbucket.swift; sourceTree = "<group>"; };
@@ -905,6 +907,7 @@
 				80361FCB72F96FA6F753D7C1 /* Bugsnag.swift */,
 				B2894CE320EEE2780009CCA3 /* Buildkite.swift */,
 				B23EE5B224B9FF430067D800 /* Bullhorn.swift */,
+				8BD419616E85E9D06BC7D324 /* Bunnynet.swift */,
 				3803B461B23AFD8DD026EB59 /* Chargebee.swift */,
 				9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */,
 				B2FDC91D1D6706C400F0B728 /* CircleCI.swift */,
@@ -1796,6 +1799,7 @@
 				D4947171924A035959AF11BA /* Flyio.swift in Sources */,
 				B85F0E8056E1906F66CC95C2 /* Lattice.swift in Sources */,
 				79A2CABEDD66272C3579EB95 /* Robin.swift in Sources */,
+				AD52283A2FD0F01D516BC6EA /* Bunnynet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
