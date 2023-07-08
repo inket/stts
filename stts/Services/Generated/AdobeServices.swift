@@ -245,11 +245,6 @@ class AdobeJourneyOptimizer: AdobeExperienceCloud, SubService {
     let id = "503488"
 }
 
-class AdobeJourneyOrchestration: AdobeExperiencePlatform, SubService {
-    let name = "Adobe Journey Orchestration"
-    let id = "503483"
-}
-
 class AdobeLearningManager: AdobeServices, SubService {
     let name = "Adobe Learning Manager"
     let id = "503520"
@@ -303,6 +298,11 @@ class AdobePrimetime: AdobeExperienceCloud, SubService {
 class AdobeQueryService: AdobeExperiencePlatform, SubService {
     let name = "Adobe Query Service"
     let id = "503482"
+}
+
+class AdobeRealTimeCDP: AdobeExperienceCloud, SubService {
+    let name = "Adobe Real Time CDP"
+    let id = "533248"
 }
 
 class AdobeResellerConsole: AdobeServices, SubService {

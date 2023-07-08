@@ -22,6 +22,11 @@ class AWSBahrain: AWSRegionService, SubService {
     let name = "AWS (Bahrain)"
 }
 
+class AWSCanadaCentral: AWSRegionService, SubService {
+    let id = "ca-central-1"
+    let name = "AWS (Canada-Central)"
+}
+
 class AWSCapeTown: AWSRegionService, SubService {
     let id = "af-south-1"
     let name = "AWS (Cape Town)"
@@ -65,11 +70,6 @@ class AWSMelbourne: AWSRegionService, SubService {
 class AWSMilan: AWSRegionService, SubService {
     let id = "eu-south-1"
     let name = "AWS (Milan)"
-}
-
-class AWSMontreal: AWSRegionService, SubService {
-    let id = "ca-central-1"
-    let name = "AWS (Montreal)"
 }
 
 class AWSMumbai: AWSRegionService, SubService {
@@ -356,13 +356,17 @@ class AWSApplicationMigrationService: AWSNamedService, SubService {
         "mgn-ap-northeast-2",
         "mgn-ap-northeast-3",
         "mgn-ap-south-1",
+        "mgn-ap-south-2",
         "mgn-ap-southeast-1",
         "mgn-ap-southeast-2",
         "mgn-ap-southeast-3",
+        "mgn-ap-southeast-4",
         "mgn-ca-central-1",
         "mgn-eu-central-1",
+        "mgn-eu-central-2",
         "mgn-eu-north-1",
         "mgn-eu-south-1",
+        "mgn-eu-south-2",
         "mgn-eu-west-1",
         "mgn-eu-west-2",
         "mgn-eu-west-3",
@@ -740,12 +744,16 @@ class AWSCloudShell: AWSNamedService, SubService {
         "cloudshell-ap-northeast-2",
         "cloudshell-ap-northeast-3",
         "cloudshell-ap-south-1",
+        "cloudshell-ap-southeast-1",
         "cloudshell-ap-southeast-2",
+        "cloudshell-ap-southeast-3",
         "cloudshell-ca-central-1",
         "cloudshell-eu-central-1",
+        "cloudshell-eu-north-1",
         "cloudshell-eu-south-1",
         "cloudshell-eu-west-1",
         "cloudshell-eu-west-2",
+        "cloudshell-eu-west-3",
         "cloudshell-me-central-1",
         "cloudshell-me-south-1",
         "cloudshell-sa-east-1",
@@ -1379,9 +1387,11 @@ class AWSElasticDisasterRecovery: AWSNamedService, SubService {
 class AWSElemental: AWSNamedService, SubService {
     let name = "AWS Elemental"
     let ids = Set<String>([
+        "elemental-af-south-1",
         "elemental-ap-east-1",
         "elemental-ap-northeast-1",
         "elemental-ap-northeast-2",
+        "elemental-ap-northeast-3",
         "elemental-ap-south-1",
         "elemental-ap-southeast-1",
         "elemental-ap-southeast-2",
@@ -1657,16 +1667,21 @@ class AWSInfrastructurePerformance: AWSNamedService, SubService {
         "infrastructureperformance-ap-northeast-2",
         "infrastructureperformance-ap-northeast-3",
         "infrastructureperformance-ap-south-1",
+        "infrastructureperformance-ap-south-2",
         "infrastructureperformance-ap-southeast-1",
         "infrastructureperformance-ap-southeast-2",
         "infrastructureperformance-ap-southeast-3",
+        "infrastructureperformance-ap-southeast-4",
         "infrastructureperformance-ca-central-1",
         "infrastructureperformance-eu-central-1",
+        "infrastructureperformance-eu-central-2",
         "infrastructureperformance-eu-north-1",
         "infrastructureperformance-eu-south-1",
+        "infrastructureperformance-eu-south-2",
         "infrastructureperformance-eu-west-1",
         "infrastructureperformance-eu-west-2",
         "infrastructureperformance-eu-west-3",
+        "infrastructureperformance-me-central-1",
         "infrastructureperformance-me-south-1",
         "infrastructureperformance-sa-east-1",
         "infrastructureperformance-us-east-1",
@@ -2836,6 +2851,8 @@ class AWSSimSpaceWeaver: AWSNamedService, SubService {
         "simspaceweaver-eu-west-1",
         "simspaceweaver-us-east-1",
         "simspaceweaver-us-east-2",
+        "simspaceweaver-us-gov-east-1",
+        "simspaceweaver-us-gov-west-1",
         "simspaceweaver-us-west-2"
     ])
 }
@@ -3269,6 +3286,7 @@ class AWSWellArchitectedTool: AWSNamedService, SubService {
 class AWSWickr: AWSNamedService, SubService {
     let name = "AWS Wickr"
     let ids = Set<String>([
+        "wickr-ca-central-1",
         "wickr-us-east-1"
     ])
 }
@@ -3438,6 +3456,7 @@ class AmazonAthena: AWSNamedService, SubService {
         "athena-eu-west-1",
         "athena-eu-west-2",
         "athena-eu-west-3",
+        "athena-me-central-1",
         "athena-me-south-1",
         "athena-sa-east-1",
         "athena-us-east-1",
@@ -5052,10 +5071,15 @@ class AmazonNimbleStudio: AWSNamedService, SubService {
     let name = "Amazon Nimble Studio"
     let ids = Set<String>([
         "nimble-ap-northeast-1",
+        "nimble-ap-southeast-1",
         "nimble-ap-southeast-2",
         "nimble-ca-central-1",
+        "nimble-eu-central-1",
+        "nimble-eu-north-1",
+        "nimble-eu-west-1",
         "nimble-eu-west-2",
         "nimble-us-east-1",
+        "nimble-us-east-2",
         "nimble-us-west-2"
     ])
 }

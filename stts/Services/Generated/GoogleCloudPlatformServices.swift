@@ -153,6 +153,11 @@ class GoogleCloudDataFusion: GoogleCloudPlatform, SubService {
     let dashboardName = "Cloud Data Fusion"
 }
 
+class GoogleCloudDataLossPrevention: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Data Loss Prevention"
+    let dashboardName = "Cloud Data Loss Prevention"
+}
+
 class GoogleCloudDebugger: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Debugger"
     let dashboardName = "Cloud Debugger"
@@ -486,11 +491,6 @@ class GoogleComputeEngine: GoogleCloudPlatform, SubService {
 class GoogleDistributedCloudEdge: GoogleCloudPlatform, SubService {
     let name = "Google Distributed Cloud Edge"
     let dashboardName = "Google Distributed Cloud Edge"
-}
-
-class GoogleKubernetesEngine: GoogleCloudPlatform, SubService {
-    let name = "Google Kubernetes Engine"
-    let dashboardName = "Google Kubernetes Engine"
 }
 
 class GoogleHealthcareAndLifeSciences: GoogleCloudPlatform, SubService {
