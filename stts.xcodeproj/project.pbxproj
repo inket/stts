@@ -298,6 +298,7 @@
 		B2F55EEC2408B5F1003D674C /* PSNAmerica.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F55EEB2408B5F1003D674C /* PSNAmerica.swift */; };
 		B2F55EEE2408B68F003D674C /* PSNAsia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F55EED2408B68F003D674C /* PSNAsia.swift */; };
 		B2F55EF02408B6A2003D674C /* PSNEurope.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F55EEF2408B6A2003D674C /* PSNEurope.swift */; };
+		B2F8724B2A58F9D9003B0625 /* PlanningCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8724A2A58F9D9003B0625 /* PlanningCenter.swift */; };
 		B2FAB94C1E5C029A00B8921F /* DNSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FAB94B1E5C029A00B8921F /* DNSimple.swift */; };
 		B2FBDF5D2A14E3C600734667 /* InternetComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDF5C2A14E3C600734667 /* InternetComputer.swift */; };
 		B2FBDF5F2A35D82000734667 /* IncidentIOService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDF5E2A35D82000734667 /* IncidentIOService.swift */; };
@@ -664,6 +665,7 @@
 		B2F55EEB2408B5F1003D674C /* PSNAmerica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSNAmerica.swift; sourceTree = "<group>"; };
 		B2F55EED2408B68F003D674C /* PSNAsia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSNAsia.swift; sourceTree = "<group>"; };
 		B2F55EEF2408B6A2003D674C /* PSNEurope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSNEurope.swift; sourceTree = "<group>"; };
+		B2F8724A2A58F9D9003B0625 /* PlanningCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanningCenter.swift; sourceTree = "<group>"; };
 		B2FAB94B1E5C029A00B8921F /* DNSimple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSimple.swift; sourceTree = "<group>"; };
 		B2FBDF5C2A14E3C600734667 /* InternetComputer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetComputer.swift; sourceTree = "<group>"; };
 		B2FBDF5E2A35D82000734667 /* IncidentIOService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentIOService.swift; sourceTree = "<group>"; };
@@ -1007,6 +1009,7 @@
 				B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */,
 				B213D1F7269AD9A7005EBDDA /* Pardot.swift */,
 				B2101899249E3FF400F31999 /* Pendo.swift */,
+				B2F8724A2A58F9D9003B0625 /* PlanningCenter.swift */,
 				B29D50BE24B0542100F4961B /* PlatformSH.swift */,
 				CA1F86EF25EF8B3548E43010 /* PlayFab.swift */,
 				B227D31125D7671600951917 /* Poka.swift */,
@@ -1563,6 +1566,7 @@
 				B2253A6D209F3F9F0039F574 /* FirebaseService.swift in Sources */,
 				B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */,
 				B2E70FDB22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift in Sources */,
+				B2F8724B2A58F9D9003B0625 /* PlanningCenter.swift in Sources */,
 				B2D655EE29B807BF00DBE417 /* Site24x7Service.swift in Sources */,
 				B2DEE0BE1E696D64006B198E /* Slack.swift in Sources */,
 				B231DD60257B438900647312 /* HubSpot.swift in Sources */,
