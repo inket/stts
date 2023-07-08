@@ -66,16 +66,33 @@ class AppleStore: Loading {
     }
 
     func status(for service: AppleStoreService) -> (ServiceStatus, String) {
-        let worstStatus: (ServiceStatus, String)?
+        let status: ServiceStatus?
+        let message: String?
 
         if service.serviceName == "*" {
-            worstStatus = statuses.values.max(by: { e1, e2 in e1.0 < e2.0 }) // get the worst by service status
-        } else {
-            worstStatus = statuses[service.serviceName]
-        }
+            var lines: [String] = []
+            var worstStatus: (ServiceStatus, String)?
 
-        let status = worstStatus?.0
-        let message = worstStatus?.1
+            for (serviceName, serviceStatusAndDescription) in statuses {
+                let serviceStatus = serviceStatusAndDescription.0
+                let serviceStatusDescription = serviceStatusAndDescription.1
+
+                if serviceStatus != .good {
+                    lines.append("\(serviceName): \(serviceStatusDescription)")
+                }
+
+                if serviceStatus > worstStatus?.0 ?? .undetermined {
+                    worstStatus = serviceStatusAndDescription
+                }
+            }
+
+            status = worstStatus?.0
+            message = lines.isEmpty ? worstStatus?.1 : lines.joined(separator: "\n")
+        } else {
+            let worstStatus: (ServiceStatus, String)? = statuses[service.serviceName]
+            status = worstStatus?.0
+            message = worstStatus?.1
+        }
 
         return (status ?? .undetermined, message ?? loadErrorMessage ?? "Unexpected error")
     }
