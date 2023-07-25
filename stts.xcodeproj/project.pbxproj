@@ -321,6 +321,7 @@
 		D4947171924A035959AF11BA /* Flyio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731B5A91DEB565683F25AF1 /* Flyio.swift */; };
 		D5F7C57260F512BDB844AD08 /* TeleportCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FEC29C375721FE85A4ED27 /* TeleportCloud.swift */; };
 		D6FC1C0B5C45F3865F9D6543 /* Smarty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2764C094034CD61A24624DA6 /* Smarty.swift */; };
+		D931427018A46A278E9200CD /* Productboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AC9BFDF1A9E7FDF4B7EBEC /* Productboard.swift */; };
 		DE9EE76511329A776976FDC5 /* Whereby.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039BB24FFC209E99B42916 /* Whereby.swift */; };
 		E2AAECBE89E07C6E94464ABF /* Checkly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */; };
 		E5B35A5C6608D856A99842B2 /* Miro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCCFA4ECD8BB402C7254FEF /* Miro.swift */; };
@@ -374,6 +375,7 @@
 		2D7D189B0FC2B9F9E6ECDCDB /* JiraWorkManagement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JiraWorkManagement.swift; sourceTree = "<group>"; };
 		2F1B7558227A095400BA5CBD /* Avalara.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avalara.swift; sourceTree = "<group>"; };
 		2F65F48F227A198400432E64 /* Recurly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recurly.swift; sourceTree = "<group>"; };
+		34AC9BFDF1A9E7FDF4B7EBEC /* Productboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Productboard.swift; sourceTree = "<group>"; };
 		36AD8ED2235A1CE500F2FD73 /* LaunchDarkly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDarkly.swift; sourceTree = "<group>"; };
 		36AD8ED4235A1FCA00F2FD73 /* Shopify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopify.swift; sourceTree = "<group>"; };
 		36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictorOps.swift; sourceTree = "<group>"; };
@@ -1012,6 +1014,7 @@
 				B29D50BE24B0542100F4961B /* PlatformSH.swift */,
 				CA1F86EF25EF8B3548E43010 /* PlayFab.swift */,
 				B227D31125D7671600951917 /* Poka.swift */,
+				34AC9BFDF1A9E7FDF4B7EBEC /* Productboard.swift */,
 				71CE5D41DDC4D721C254C004 /* Proton.swift */,
 				B2F127A61E0B84230035B20C /* PubNub.swift */,
 				B299C84A1DD04E850024D2E9 /* Pusher.swift */,
@@ -1800,6 +1803,7 @@
 				B85F0E8056E1906F66CC95C2 /* Lattice.swift in Sources */,
 				79A2CABEDD66272C3579EB95 /* Robin.swift in Sources */,
 				AD52283A2FD0F01D516BC6EA /* Bunnynet.swift in Sources */,
+				D931427018A46A278E9200CD /* Productboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
