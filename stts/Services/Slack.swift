@@ -50,8 +50,9 @@ class Slack: Service {
                 SlackStatus(rawValue: ($0.lowercased() as NSString).lastPathComponent)
             }
 
-            self?.status = statuses.map { $0.serviceStatus }.max() ?? .undetermined
-            self?.message = doc.css("#current_status h1").first?.text ?? "Undetermined"
+            let status = statuses.map { $0.serviceStatus }.max() ?? .undetermined
+            let message = doc.css("#current_status h1").first?.text ?? "Unexpected response"
+            strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
         }
     }
 }

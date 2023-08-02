@@ -21,14 +21,20 @@ class UptimeDotCom: Service {
             }
 
             if raw.range(of: "global_is_operational\": true") != nil {
-                self?.status = .good
-                self?.message = "All systems operational"
+                strongSelf.statusDescription = ServiceStatusDescription(
+                    status: .good,
+                    message: "All systems operational"
+                )
             } else if raw.range(of: "global_is_operational\": false") != nil {
-                self?.status = .major
-                self?.message = "Some systems are experiencing problems"
+                strongSelf.statusDescription = ServiceStatusDescription(
+                    status: .major,
+                    message: "Some systems are experiencing problems"
+                )
             } else {
-                self?.status = .undetermined
-                self?.message = "Undetermined"
+                strongSelf.statusDescription = ServiceStatusDescription(
+                    status: .undetermined,
+                    message: "Unexpected response"
+                )
             }
         }
     }

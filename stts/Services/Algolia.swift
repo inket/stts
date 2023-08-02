@@ -37,6 +37,10 @@ class Algolia: Service {
                 return "Partial outage"
             }
         }
+
+        var serviceDescription: ServiceStatusDescription {
+            ServiceStatusDescription(status: serviceStatus, message: statusMessage)
+        }
     }
 
     let url = URL(string: "https://status.algolia.com")!
@@ -57,8 +61,7 @@ class Algolia: Service {
                 let status = AlgoliaStatus(rawValue: statusString)
             else { return strongSelf._fail("Unexpected data") }
 
-            self?.status = status.serviceStatus
-            self?.message = status.statusMessage
+            strongSelf.statusDescription = status.serviceDescription
         }
     }
 }

@@ -94,18 +94,20 @@ class BaseExanaService: BaseService {
             }
 
             let maxStatus: ServiceStatus = componentStatuses.max() ?? .undetermined
-            strongSelf.status = maxStatus
 
+            let message: String
             switch maxStatus {
             case .good:
-                strongSelf.message = "Operational"
+                message = "Operational"
             case .undetermined:
-                strongSelf.message = "Undetermined"
+                message = "Unexpected response"
             default:
-                strongSelf.message = downComponents.map { $0["name"] as? String }
+                message = downComponents.map { $0["name"] as? String }
                     .compactMap { $0 }
                     .joined(separator: ", ")
             }
+
+            strongSelf.statusDescription = ServiceStatusDescription(status: maxStatus, message: message)
         }
     }
 }

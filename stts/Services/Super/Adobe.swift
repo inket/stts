@@ -32,10 +32,7 @@ class BaseAdobe: BaseService {
         BaseAdobe.store.loadStatus { [weak realSelf] in
             guard let strongSelf = realSelf else { return }
 
-            let (status, message) = BaseAdobe.store.status(for: strongSelf)
-            strongSelf.status = status
-            strongSelf.message = message
-
+            strongSelf.statusDescription = BaseAdobe.store.status(for: strongSelf)
             callback(strongSelf)
         }
     }

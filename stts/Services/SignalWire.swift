@@ -12,7 +12,7 @@ class SignalWire: Service {
         let componentsURL = URL(string: "https://status.signalwire.com/api/components")!
 
         loadData(with: componentsURL) { [weak self] data, _, error in
-            guard let self = self else { return }
+            guard let self else { return }
             defer { callback(self) }
 
             guard let data = data else { return self._fail(error) }
@@ -22,13 +22,17 @@ class SignalWire: Service {
 
             let affectedComponents = components.filter { $0.status.status != .good }
 
+            let status: ServiceStatus
+            let message: String
             if affectedComponents.isEmpty {
-                self.status = .good
-                self.message = "Operational"
+                status = .good
+                message = "Operational"
             } else {
-                self.status = affectedComponents.map { $0.status.status }.max() ?? .undetermined
-                self.message = affectedComponents.map { "* \($0.name): \($0.status.rawValue)" }.joined(separator: "\n")
+                status = affectedComponents.map { $0.status.status }.max() ?? .undetermined
+                message = affectedComponents.map { "* \($0.name): \($0.status.rawValue)" }.joined(separator: "\n")
             }
+
+            statusDescription = ServiceStatusDescription(status: status, message: message)
         }
     }
 }

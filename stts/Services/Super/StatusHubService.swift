@@ -65,8 +65,6 @@ class BaseStatusHubService: BaseService {
             messageComponents.append("\(response.counters.downCount) down")
         }
 
-        self.status = status
-
         let prefix: String
 
         switch status {
@@ -82,6 +80,7 @@ class BaseStatusHubService: BaseService {
             prefix = "Unexpected response"
         }
 
-        message = [prefix, messageComponents.joined(separator: ", ")].joined(separator: "\n")
+        let message = [prefix, messageComponents.joined(separator: ", ")].joined(separator: "\n")
+        statusDescription = ServiceStatusDescription(status: status, message: message)
     }
 }

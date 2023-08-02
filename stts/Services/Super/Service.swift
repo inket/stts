@@ -18,8 +18,15 @@ public enum ServiceStatus: Int, Comparable {
     }
 }
 
-public enum ServiceStatusMessage {
-    static func from(_ error: Error?) -> String {
+public struct ServiceStatusDescription {
+    public let status: ServiceStatus
+    public let message: ServiceStatusMessage
+}
+
+public typealias ServiceStatusMessage = String
+
+public extension ServiceStatusMessage {
+    static func from(_ error: Error?) -> Self {
         if (error as NSError?)?.code == NSURLErrorNotConnectedToInternet {
             return "Internet connection offline."
         } else {
@@ -61,8 +68,13 @@ protocol ServiceCategory {
 protocol SubService {} // Fits in a service submenu
 
 public class BaseService: Loading {
-    public var status: ServiceStatus = .undetermined
-    var message: String = "Loading…"
+    @Atomic var statusDescription: ServiceStatusDescription = .init(
+        status: .undetermined,
+        message: "Loading…"
+    )
+
+    var status: ServiceStatus { statusDescription.status }
+    var message: ServiceStatusMessage { statusDescription.message }
 
     private var lastNotifiedStatus: ServiceStatus?
 
@@ -89,14 +101,12 @@ public class BaseService: Loading {
 
     // swiftlint:disable:next identifier_name
     func _fail(_ error: Error?) {
-        self.status = .undetermined
-        self.message = ServiceStatusMessage.from(error)
+        statusDescription = ServiceStatusDescription(status: .undetermined, message: ServiceStatusMessage.from(error))
     }
 
     // swiftlint:disable:next identifier_name
     func _fail(_ message: String) {
-        self.status = .undetermined
-        self.message = message
+        statusDescription = ServiceStatusDescription(status: .undetermined, message: message)
     }
 
     func notifyIfNecessary() {
@@ -148,5 +158,15 @@ extension BaseService: Comparable {
             && rhs.status == .good || rhs.status == .notice
 
         return (lhs.name.localizedCompare(rhs.name) == .orderedAscending && sameStatus) || differentStatus
+    }
+}
+
+extension BaseService: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        guard let service = self as? Service else {
+            fatalError("BaseService should not be used directly.")
+        }
+
+        hasher.combine(service.name)
     }
 }

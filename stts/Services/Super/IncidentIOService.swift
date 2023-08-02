@@ -74,11 +74,13 @@ class BaseIncidentIOService: BaseService {
             }
 
             if let statusNode, let foundStatus {
-                self.status = foundStatus.serviceStatus
-                self.message = statusNode.css("li")
+                let status = foundStatus.serviceStatus
+                let message = statusNode.css("li")
                     .first?
                     .content?
                     .trimmingCharacters(in: .whitespacesAndNewlines) ?? "Unexpected response"
+
+                self.statusDescription = ServiceStatusDescription(status: status, message: message)
             } else {
                 self._fail("Unexpected response")
             }

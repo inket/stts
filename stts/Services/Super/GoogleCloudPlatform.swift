@@ -22,10 +22,7 @@ class BaseGoogleCloudPlatform: BaseService {
         BaseGoogleCloudPlatform.store.loadStatus { [weak realSelf] in
             guard let strongSelf = realSelf else { return }
 
-            let (status, message) = BaseGoogleCloudPlatform.store.status(for: strongSelf)
-            strongSelf.status = status
-            strongSelf.message = message
-
+            strongSelf.statusDescription = BaseGoogleCloudPlatform.store.status(for: strongSelf)
             callback(strongSelf)
         }
     }

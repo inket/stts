@@ -52,8 +52,11 @@ class BaseStatusCakeService: BaseService {
 
             let statuses = testData.compactMap { $0["Status"] as? String }.compactMap(StatusCakeStatus.init(rawValue:))
             let highestStatus = statuses.max()
-            self?.status = highestStatus?.serviceStatus ?? .undetermined
-            self?.message = highestStatus?.description ?? "Undetermined"
+
+            strongSelf.statusDescription = ServiceStatusDescription(
+                status: highestStatus?.serviceStatus ?? .undetermined,
+                message: highestStatus?.description ?? "Unexpected response"
+            )
         }
     }
 }

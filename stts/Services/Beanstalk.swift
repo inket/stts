@@ -19,8 +19,10 @@ class Beanstalk: Service {
                 return strongSelf._fail("Couldn't parse response")
             }
 
-            self?.status = strongSelf.status(from: doc)
-            self?.message = strongSelf.message(for: strongSelf.status)
+            strongSelf.statusDescription = ServiceStatusDescription(
+                status: strongSelf.status(from: doc),
+                message: strongSelf.message(for: strongSelf.status)
+            )
         }
     }
 }
@@ -44,7 +46,7 @@ extension Beanstalk {
         case .good: return "Services operating normally."
         case .major: return "Experiencing service interruptions."
         case .maintenance: return "Scheduled maintenance in progress."
-        default: return "Undetermined"
+        default: return "Unexpected response"
         }
     }
 }

@@ -61,6 +61,8 @@ class Cloudflare: StatusPageService {
 
         let degradedStatus = !affectedComponents.isEmpty
 
+        let status: ServiceStatus
+        let message: String
         if degradedStatus {
             status = summary.status.indicator.serviceStatus
 
@@ -82,5 +84,7 @@ class Cloudflare: StatusPageService {
             status = .good
             message = "All Systems Operational"
         }
+
+        statusDescription = ServiceStatusDescription(status: status, message: message)
     }
 }

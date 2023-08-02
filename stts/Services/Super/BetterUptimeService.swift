@@ -62,22 +62,25 @@ class BaseBetterUptimeService: BaseService {
                 return strongSelf._fail("Couldn't parse response")
             }
 
+            let status: ServiceStatus
             if let overviewElement = doc.css(".status-page__overview").first {
                 // v1 page
                 if let iconElement = overviewElement.css(".status-page__overview-icon").first {
-                    self?.status = self?.status(from: iconElement)?.serviceStatus ?? .undetermined
+                    status = self?.status(from: iconElement)?.serviceStatus ?? .undetermined
                 } else {
-                    self?.status = .undetermined
+                    status = .undetermined
                 }
             } else if let headerIconElement = doc.css("h1 svg").first {
                 // v2 page
-                self?.status = self?.status(fromV2Icon: headerIconElement)?.serviceStatus ?? .undetermined
+                status = self?.status(fromV2Icon: headerIconElement)?.serviceStatus ?? .undetermined
             } else {
                 return strongSelf._fail("Unexpected response")
             }
 
-            self?.message =
+            let message =
                 doc.css("h1").first?.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "Unexpected response"
+
+            strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
         }
     }
 

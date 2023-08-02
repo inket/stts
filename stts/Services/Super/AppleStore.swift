@@ -65,7 +65,7 @@ class AppleStore: Loading {
         }
     }
 
-    func status(for service: AppleStoreService) -> (ServiceStatus, String) {
+    func status(for service: AppleStoreService) -> ServiceStatusDescription {
         let status: ServiceStatus?
         let message: String?
 
@@ -94,7 +94,10 @@ class AppleStore: Loading {
             message = worstStatus?.1
         }
 
-        return (status ?? .undetermined, message ?? loadErrorMessage ?? "Unexpected error")
+        return ServiceStatusDescription(
+            status: status ?? .undetermined,
+            message: message ?? loadErrorMessage ?? "Unexpected error"
+        )
     }
 
     private func clearCallbacks() {

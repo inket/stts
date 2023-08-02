@@ -48,8 +48,10 @@ class Stripe: Service {
                 return strongSelf._fail("Couldn't parse response")
             }
 
-            self?.status = currentStatus.uptimeStatus.serviceStatus
-            self?.message = currentStatus.message
+            strongSelf.statusDescription = ServiceStatusDescription(
+                status: currentStatus.uptimeStatus.serviceStatus,
+                message: currentStatus.message
+            )
         }
     }
 }

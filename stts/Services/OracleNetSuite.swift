@@ -49,8 +49,10 @@ class OracleNetSuite: Service {
                 return strongSelf._fail("Couldn't parse response")
             }
 
-            self?.status = response.status.indicator.serviceStatus
-            self?.message = response.status.description
+            strongSelf.statusDescription = ServiceStatusDescription(
+                status: response.status.indicator.serviceStatus,
+                message: response.status.description
+            )
         }
     }
 }

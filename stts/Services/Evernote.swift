@@ -19,23 +19,23 @@ class Evernote: Service {
                 return strongSelf._fail("Couldn't parse response")
             }
 
-            let (status, message) = strongSelf.status(from: doc)
-            self?.status = status
-            self?.message = message
+            strongSelf.statusDescription = strongSelf.status(from: doc)
         }
     }
 }
 
 extension Evernote {
-    fileprivate func status(from document: HTMLDocument) -> (ServiceStatus, String) {
-        guard let mostRecentPost = document.css(".post h3").first?.text else { return (.undetermined, "") }
+    fileprivate func status(from document: HTMLDocument) -> ServiceStatusDescription {
+        guard let mostRecentPost = document.css(".post h3").first?.text else {
+            return ServiceStatusDescription(status: .undetermined, message: "Unexpected response")
+        }
 
         if mostRecentPost.hasPrefix("[ok]") {
-            return (.good, mostRecentPost)
+            return ServiceStatusDescription(status: .good, message: mostRecentPost)
         } else if mostRecentPost.hasPrefix("[!]") {
-            return (.major, mostRecentPost)
+            return ServiceStatusDescription(status: .major, message: mostRecentPost)
         } else {
-            return (.maintenance, mostRecentPost)
+            return ServiceStatusDescription(status: .maintenance, message: mostRecentPost)
         }
     }
 }

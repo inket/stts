@@ -34,25 +34,19 @@ class BaseAWSService: BaseService {
         if let allService = self as? AWSAllService {
             BaseAWSService.store.loadStatus { [weak allService] in
                 guard let allService else { return }
-                let (status, message) = BaseAWSService.store.status(for: allService)
-                allService.status = status
-                allService.message = message
+                allService.statusDescription = BaseAWSService.store.status(for: allService)
                 callback(allService)
             }
         } else if let namedService = self as? AWSNamedService {
             BaseAWSService.store.loadStatus { [weak namedService] in
                 guard let namedService else { return }
-                let (status, message) = BaseAWSService.store.status(for: namedService)
-                namedService.status = status
-                namedService.message = message
+                namedService.statusDescription = BaseAWSService.store.status(for: namedService)
                 callback(namedService)
             }
         } else if let regionService = self as? AWSRegionService {
             BaseAWSService.store.loadStatus { [weak regionService] in
                 guard let regionService else { return }
-                let (status, message) = BaseAWSService.store.status(for: regionService)
-                regionService.status = status
-                regionService.message = message
+                regionService.statusDescription = BaseAWSService.store.status(for: regionService)
                 callback(regionService)
             }
         } else {

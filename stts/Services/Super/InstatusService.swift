@@ -130,7 +130,7 @@ class BaseInstatusService: BaseService {
             }
 
             // Set the status
-            self?.status = strongSelf.serviceStatus(
+            let status = strongSelf.serviceStatus(
                 for: statusData.props.pageProps.site,
                 components: statusData.props.pageProps.site.components
             )
@@ -139,24 +139,28 @@ class BaseInstatusService: BaseService {
             let unresolvedIncidents = statusData.props.pageProps.activeIncidents.filter { $0.isUnresolved }
             if !unresolvedIncidents.isEmpty {
                 let prefix = unresolvedIncidents.count > 1 ? "* " : ""
-                self?.message = unresolvedIncidents.map { "\(prefix)\($0.name)" }.joined(separator: "\n")
+                let message = unresolvedIncidents.map { "\(prefix)\($0.name)" }.joined(separator: "\n")
+                strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
                 return
             }
 
             // Or from affected the component names
             let affectedComponents = statusData.props.pageProps.site.components.flatMap { $0.affectedComponentsNames }
             if !affectedComponents.isEmpty {
-                self?.message = affectedComponents.joined(separator: "\n")
+                let message = affectedComponents.joined(separator: "\n")
+                strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
                 return
             }
 
             // Fallback to the status description
+            let message: String
             switch statusData.props.pageProps.site.status {
             case .up:
-                self?.message = "All systems operational"
+                message = "All systems operational"
             case .hasIssues:
-                self?.message = "Experiencing issues"
+                message = "Experiencing issues"
             }
+            strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
         }
     }
 

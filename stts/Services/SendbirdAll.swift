@@ -26,13 +26,13 @@ class SendbirdAll: SendbirdService, ServiceCategory {
         }
 
         group.notify(queue: .main) { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
 
             let worstStatus = services.map { $0.status }.max() ?? .undetermined
             let message: String
 
             switch worstStatus {
-            case .undetermined: message = "Undetermined"
+            case .undetermined: message = "Unexpected response"
             case .good: message = "Operational"
             case .minor: message = "Minor outage"
             case .major: message = "Major outage"
@@ -40,9 +40,7 @@ class SendbirdAll: SendbirdService, ServiceCategory {
             case .maintenance: message = "Maintenance"
             }
 
-            self.status = worstStatus
-            self.message = message
-
+            statusDescription = ServiceStatusDescription(status: worstStatus, message: message)
             callback(self)
         }
     }

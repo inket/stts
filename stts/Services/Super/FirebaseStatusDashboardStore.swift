@@ -59,7 +59,7 @@ class FirebaseStatusDashboardStore: Loading {
         }
     }
 
-    func status(for service: FirebaseStatusDashboardStoreService) -> (ServiceStatus, String) {
+    func status(for service: FirebaseStatusDashboardStoreService) -> ServiceStatusDescription {
         let status: ServiceStatus?
 
         if type(of: service) == Firebase.self {
@@ -69,10 +69,10 @@ class FirebaseStatusDashboardStore: Loading {
         }
 
         switch status {
-        case .good?: return (.good, "Normal Operations")
-        case .minor?: return (.minor, "Service Disruption")
-        case .major?: return (.major, "Service Outage")
-        default: return (.undetermined, loadErrorMessage ?? "Unexpected error")
+        case .good?: return ServiceStatusDescription(status: .good, message: "Normal Operations")
+        case .minor?: return ServiceStatusDescription(status: .minor, message: "Service Disruption")
+        case .major?: return ServiceStatusDescription(status: .major, message: "Service Outage")
+        default: return ServiceStatusDescription(status: .undetermined, message: loadErrorMessage ?? "Unexpected error")
         }
     }
 

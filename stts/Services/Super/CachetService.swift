@@ -64,8 +64,10 @@ class BaseCachetService: BaseService {
             let statuses = components.compactMap({ $0["status"] as? Int }).compactMap(ComponentStatus.init(rawValue:))
 
             let highestStatus = statuses.max()
-            strongSelf.status = highestStatus?.serviceStatus ?? .undetermined
-            strongSelf.message = highestStatus?.description ?? "Undetermined"
+            strongSelf.statusDescription = ServiceStatusDescription(
+                status: highestStatus?.serviceStatus ?? .undetermined,
+                message: highestStatus?.description ?? "Unexpected response"
+            )
         }
     }
 }

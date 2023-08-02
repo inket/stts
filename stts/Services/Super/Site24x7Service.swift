@@ -138,9 +138,11 @@ class BaseSite24x7Service: BaseService {
 
             guard !response.data.components.isEmpty else { return self._fail("Unexpected response") }
 
-            let status = self.status(for: response.data.components)
-            self.status = status.status
-            self.message = self.statusMessage(for: status, components: response.data.components)
+            let status = status(for: response.data.components)
+            statusDescription = ServiceStatusDescription(
+                status: status.status,
+                message: statusMessage(for: status, components: response.data.components)
+            )
         }
     }
 

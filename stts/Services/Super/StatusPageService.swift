@@ -172,13 +172,14 @@ class BaseStatusPageService: BaseService {
 
     func updateStatus(from summary: Summary) {
         // Set the status
-        status = summary.status.indicator.serviceStatus
+        let status = summary.status.indicator.serviceStatus
 
         // Set the message by combining the unresolved incident names
         let unresolvedIncidents = summary.incidents.filter { $0.isUnresolved }
         if !unresolvedIncidents.isEmpty {
             let prefix = unresolvedIncidents.count > 1 ? "* " : ""
-            message = unresolvedIncidents.map { "\(prefix)\($0.name)" }.joined(separator: "\n")
+            let message = unresolvedIncidents.map { "\(prefix)\($0.name)" }.joined(separator: "\n")
+            statusDescription = ServiceStatusDescription(status: status, message: message)
             return
         }
 
@@ -186,14 +187,15 @@ class BaseStatusPageService: BaseService {
         let affectedComponents = summary.sortedComponents.filter { $0.status != .operational }
         if !affectedComponents.isEmpty {
             let prefix = affectedComponents.count > 1 ? "* " : ""
-
-            message = affectedComponents
+            let message = affectedComponents
                 .map { "\(prefix)\($0.name)" }
                 .joined(separator: "\n")
+
+            statusDescription = ServiceStatusDescription(status: status, message: message)
             return
         }
 
         // Fallback to the status description
-        message = summary.status.description
+        statusDescription = ServiceStatusDescription(status: status, message: summary.status.description)
     }
 }

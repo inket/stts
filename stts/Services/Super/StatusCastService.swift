@@ -68,8 +68,10 @@ class BaseStatusCastService: BaseService {
                 return strongSelf._fail("Unexpected response")
             }
 
-            self?.status = worstStatus.0
-            self?.message = worstStatus.1 ?? "Unexpected response"
+            strongSelf.statusDescription = ServiceStatusDescription(
+                status: worstStatus.0,
+                message: worstStatus.1 ?? "Unexpected response"
+            )
         }
     }
 }

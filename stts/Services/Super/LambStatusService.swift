@@ -61,8 +61,10 @@ class BaseLambStatusService: BaseService {
                 one.status.serviceStatus < two.status.serviceStatus
             })! // We checked that it's not empty above
 
-            self?.status = worstComponent.status.serviceStatus
-            self?.message = worstComponent.status.rawValue
+            strongSelf.statusDescription = ServiceStatusDescription(
+                status: worstComponent.status.serviceStatus,
+                message: worstComponent.status.rawValue
+            )
         }
     }
 }

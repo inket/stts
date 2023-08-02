@@ -61,8 +61,10 @@ class BaseStatusioV1Service: BaseService {
                 return strongSelf._fail("Unexpected data")
             }
 
-            self?.status = status.serviceStatus
-            self?.message = statusMessage
+            strongSelf.statusDescription = ServiceStatusDescription(
+                status: status.serviceStatus,
+                message: statusMessage
+            )
         }
     }
 }

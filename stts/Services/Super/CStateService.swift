@@ -74,8 +74,10 @@ class BaseCStateService: BaseService {
                 return self._fail("Unexpected data")
             }
 
-            self.status = response.summaryStatus.serviceStatus
-            self.message = self.message(from: response)
+            self.statusDescription = ServiceStatusDescription(
+                status: response.summaryStatus.serviceStatus,
+                message: self.message(from: response)
+            )
         }
     }
 

@@ -87,8 +87,7 @@ class Fastly: Service {
                 return strongSelf._fail("Unexpected response")
             }
 
-            strongSelf.status = status.serviceStatus
-            strongSelf.message = statusText
+            strongSelf.statusDescription = ServiceStatusDescription(status: status.serviceStatus, message: statusText)
         }
     }
 }

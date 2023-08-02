@@ -63,19 +63,22 @@ class Heroku: Service {
                 return strongSelf._fail("Unexpected error")
             }
 
-            self?.status = max.status
+            let status = max.status
 
             // Prefer "production" status text except when it's green
             let representedStatus = production == .green ? development : production
             let statusText = representedStatus.rawValue.capitalized
 
+            let message: String
             switch max {
             case .green:
-                self?.message = statusText
+                message = statusText
             default:
                 // Get the title of the current issue if any
-                self?.message = statusResponse.issues.first?.title ?? statusText
+                message = statusResponse.issues.first?.title ?? statusText
             }
+
+            strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
         }
     }
 }

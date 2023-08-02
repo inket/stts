@@ -20,10 +20,7 @@ class BaseApple: BaseService {
         BaseApple.store.loadStatus { [weak realSelf] in
             guard let strongSelf = realSelf else { return }
 
-            let (status, message) = BaseApple.store.status(for: strongSelf)
-            strongSelf.status = status
-            strongSelf.message = message
-
+            strongSelf.statusDescription = BaseApple.store.status(for: strongSelf)
             callback(strongSelf)
         }
     }

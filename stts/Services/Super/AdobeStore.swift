@@ -298,17 +298,20 @@ class AdobeStore: Loading {
         }
     }
 
-    func status(for service: AdobeStoreService) -> (ServiceStatus, String) {
+    func status(for service: AdobeStoreService) -> ServiceStatusDescription {
         let status = statuses[service.id]
 
         switch status {
-        case .good?: return (.good, "Available")
-        case .minor?: return (.minor, "Minor issue(s)")
-        case .major?: return (.major, "Major issue(s)")
-        case .notice?: return (.notice, "Potential issue(s)")
-        case .maintenance?: return (.maintenance, "Maintenance")
-        case .some(.undetermined): return (.undetermined, loadErrorMessage ?? "Unexpected error")
-        case .none: return (.good, "Available")
+        case .good?: return ServiceStatusDescription(status: .good, message: "Available")
+        case .minor?: return ServiceStatusDescription(status: .minor, message: "Minor issue(s)")
+        case .major?: return ServiceStatusDescription(status: .major, message: "Major issue(s)")
+        case .notice?: return ServiceStatusDescription(status: .notice, message: "Potential issue(s)")
+        case .maintenance?: return ServiceStatusDescription(status: .maintenance, message: "Maintenance")
+        case .some(.undetermined): return ServiceStatusDescription(
+            status: .undetermined,
+            message: loadErrorMessage ?? "Unexpected error"
+        )
+        case .none: return ServiceStatusDescription(status: .good, message: "Available")
         }
     }
 

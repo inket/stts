@@ -68,7 +68,7 @@ class SalesforceStore: Loading {
         }
     }
 
-    func status(for service: SalesforceStoreService) -> (ServiceStatus, String) {
+    func status(for service: SalesforceStoreService) -> ServiceStatusDescription {
         let status = statuses[service.location] ?? .undetermined
         let message: String
 
@@ -87,7 +87,7 @@ class SalesforceStore: Loading {
             message = loadErrorMessage ?? "Unexpected error"
         }
 
-        return (status, message)
+        return ServiceStatusDescription(status: status, message: message)
     }
 
     private func clearCallbacks() {

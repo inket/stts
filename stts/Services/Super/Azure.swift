@@ -18,10 +18,7 @@ class BaseAzure: BaseService {
         BaseAzure.store.loadStatus { [weak realSelf] in
             guard let strongSelf = realSelf else { return }
 
-            let (status, message) = BaseAzure.store.status(for: strongSelf)
-            strongSelf.status = status
-            strongSelf.message = message
-
+            strongSelf.statusDescription = BaseAzure.store.status(for: strongSelf)
             callback(strongSelf)
         }
     }

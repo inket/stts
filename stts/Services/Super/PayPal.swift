@@ -99,8 +99,10 @@ class BasePayPal: BaseService {
 
             guard let highestStatus = statuses.max() else { return strongSelf._fail("Unexpected data") }
 
-            strongSelf.status = highestStatus.serviceStatus
-            strongSelf.message = highestStatus.statusMessage
+            strongSelf.statusDescription = ServiceStatusDescription(
+                status: highestStatus.serviceStatus,
+                message: highestStatus.statusMessage
+            )
         }
     }
 

@@ -54,7 +54,7 @@ class AzureStore: Loading {
         }
     }
 
-    func status(for service: AzureStoreService) -> (ServiceStatus, String) {
+    func status(for service: AzureStoreService) -> ServiceStatusDescription {
         let status: ServiceStatus?
 
         if service.zoneIdentifier == "*" {
@@ -64,11 +64,11 @@ class AzureStore: Loading {
         }
 
         switch status {
-        case .good?: return (.good, "Good")
-        case .minor?: return (.minor, "Warning")
-        case .major?: return (.major, "Critical")
-        case .notice?: return (.notice, "Information")
-        default: return (.undetermined, loadErrorMessage ?? "Unexpected error")
+        case .good?: return ServiceStatusDescription(status: .good, message: "Good")
+        case .minor?: return ServiceStatusDescription(status: .minor, message: "Warning")
+        case .major?: return ServiceStatusDescription(status: .major, message: "Critical")
+        case .notice?: return ServiceStatusDescription(status: .notice, message: "Information")
+        default: return ServiceStatusDescription(status: .undetermined, message: loadErrorMessage ?? "Unexpected error")
         }
     }
 

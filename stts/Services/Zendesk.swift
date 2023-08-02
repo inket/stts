@@ -48,16 +48,17 @@ class Zendesk: Service {
             }
 
             let status = response.globalStatus
-            self?.status = status
-
+            let message: String
             switch status {
             case .good:
-                self?.message = "No incidents"
+                message = "No incidents"
             case .major, .minor:
-                self?.message = "Active incidents"
+                message = "Active incidents"
             default:
-                self?.message = "Undetermined"
+                message = "Unexpected response"
             }
+
+            strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
         }
     }
 }

@@ -63,20 +63,23 @@ class BasePlayStationNetwork: BaseService {
 
             let statusType = response.status.first?.statusType ?? .ok
 
+            let status: ServiceStatus
+            let message: String
             switch statusType {
             case .degraded:
-                strongSelf.status = .minor
-                strongSelf.message = "Some services are experiencing issues."
+                status = .minor
+                message = "Some services are experiencing issues."
             case .outage:
-                strongSelf.status = .major
-                strongSelf.message = "Some services are experiencing issues."
+                status = .major
+                message = "Some services are experiencing issues."
             case .maintenance:
-                strongSelf.status = .maintenance
-                strongSelf.message = "Some services are undergoing scheduled maintenance."
+                status = .maintenance
+                message = "Some services are undergoing scheduled maintenance."
             case .ok:
-                strongSelf.status = .good
-                strongSelf.message = "All services are up and running."
+                status = .good
+                message = "All services are up and running."
             }
+            strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
         }
     }
 }

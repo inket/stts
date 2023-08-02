@@ -18,10 +18,7 @@ class BaseAzureDevOps: BaseService {
         BaseAzureDevOps.store.loadStatus { [weak realSelf] in
             guard let strongSelf = realSelf else { return }
 
-            let (status, message) = BaseAzureDevOps.store.status(for: strongSelf)
-            strongSelf.status = status
-            strongSelf.message = message
-
+            strongSelf.statusDescription = BaseAzureDevOps.store.status(for: strongSelf)
             callback(strongSelf)
         }
     }

@@ -59,7 +59,7 @@ class GoogleStatusDashboardStore: Loading {
         }
     }
 
-    func status(for service: GoogleStatusDashboardStoreService) -> (ServiceStatus, String) {
+    func status(for service: GoogleStatusDashboardStoreService) -> ServiceStatusDescription {
         let status: ServiceStatus?
 
         if type(of: service) == GoogleCloudPlatformAll.self {
@@ -69,11 +69,11 @@ class GoogleStatusDashboardStore: Loading {
         }
 
         switch status {
-        case .good: return (.good, "Available")
-        case .notice: return (.notice, "Service information")
-        case .minor: return (.minor, "One or more regions affected")
-        case .major: return (.major, "Service outage")
-        default: return (.undetermined, loadErrorMessage ?? "Unexpected error")
+        case .good: return ServiceStatusDescription(status: .good, message: "Available")
+        case .notice: return ServiceStatusDescription(status: .notice, message: "Service information")
+        case .minor: return ServiceStatusDescription(status: .minor, message: "One or more regions affected")
+        case .major: return ServiceStatusDescription(status: .major, message: "Service outage")
+        default: return ServiceStatusDescription(status: .undetermined, message: loadErrorMessage ?? "Unexpected error")
         }
     }
 

@@ -58,8 +58,10 @@ class BaseSorryService: BaseService {
             let statuses = components.compactMap { $0["state"] as? String }.compactMap(SorryStatus.init(rawValue:))
 
             let highestStatus = statuses.max()
-            self?.status = highestStatus?.serviceStatus ?? .undetermined
-            self?.message = highestStatus?.description ?? "Undetermined"
+            strongSelf.statusDescription = ServiceStatusDescription(
+                status: highestStatus?.serviceStatus ?? .undetermined,
+                message: highestStatus?.description ?? "Unexpected response"
+            )
         }
     }
 }

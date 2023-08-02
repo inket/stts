@@ -99,7 +99,7 @@ class AzureDevOpsStore: Loading {
         }
     }
 
-    func status(for service: AzureDevOpsStoreService) -> (ServiceStatus, String) {
+    func status(for service: AzureDevOpsStoreService) -> ServiceStatusDescription {
         let status: ServiceStatus?
 
         if service.serviceName == "*" {
@@ -109,11 +109,11 @@ class AzureDevOpsStore: Loading {
         }
 
         switch status {
-        case .good?: return (.good, "Healthy")
-        case .minor?: return (.minor, "Degraded")
-        case .major?: return (.major, "Unhealthy")
-        case .notice?: return (.notice, "Advisory")
-        default: return (.undetermined, loadErrorMessage ?? "Unexpected error")
+        case .good?: return ServiceStatusDescription(status: .good, message: "Healthy")
+        case .minor?: return ServiceStatusDescription(status: .minor, message: "Degraded")
+        case .major?: return ServiceStatusDescription(status: .major, message: "Unhealthy")
+        case .notice?: return ServiceStatusDescription(status: .notice, message: "Advisory")
+        default: return ServiceStatusDescription(status: .undetermined, message: loadErrorMessage ?? "Unexpected error")
         }
     }
 

@@ -126,7 +126,7 @@ class AWSStore: Loading {
         }
     }
 
-    func status(for aws: AWSAllService) -> (ServiceStatus, String) {
+    func status(for aws: AWSAllService) -> ServiceStatusDescription {
         var status: ServiceStatus = .good
         var impactedServiceNames = Set<String>()
 
@@ -141,10 +141,13 @@ class AWSStore: Loading {
             }
         }
 
-        return (status, message(for: status, impactedServiceNames: impactedServiceNames))
+        return ServiceStatusDescription(
+            status: status,
+            message: message(for: status, impactedServiceNames: impactedServiceNames)
+        )
     }
 
-    func status(for region: AWSRegionService) -> (ServiceStatus, String) {
+    func status(for region: AWSRegionService) -> ServiceStatusDescription {
         var status: ServiceStatus = .good
         var impactedServiceNames = Set<String>()
 
@@ -161,10 +164,13 @@ class AWSStore: Loading {
             }
         }
 
-        return (status, message(for: status, impactedServiceNames: impactedServiceNames))
+        return ServiceStatusDescription(
+            status: status,
+            message: message(for: status, impactedServiceNames: impactedServiceNames)
+        )
     }
 
-    func status(for namedService: AWSNamedService) -> (ServiceStatus, String) {
+    func status(for namedService: AWSNamedService) -> ServiceStatusDescription {
         var status: ServiceStatus = .good
 
         for incident in (incidents ?? []) {
@@ -177,7 +183,10 @@ class AWSStore: Loading {
             }
         }
 
-        return (status, message(for: status, impactedServiceNames: nil))
+        return ServiceStatusDescription(
+            status: status,
+            message: message(for: status, impactedServiceNames: nil)
+        )
     }
 
     private func message(for status: ServiceStatus, impactedServiceNames: Set<String>?) -> String {
