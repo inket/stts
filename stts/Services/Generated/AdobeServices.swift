@@ -3,6 +3,11 @@
 
 import Foundation
 
+class AdobeAdobePhotoshopAPI: AdobeCreativeCloud, SubService {
+    let name = "Adobe  Adobe Photoshop API "
+    let id = "525665"
+}
+
 class AdobeAccountManagement: AdobeServices, SubService {
     let name = "Adobe Account Management"
     let id = "503498"
@@ -144,11 +149,6 @@ class AdobeDataScienceWorkspace: AdobeExperiencePlatform, SubService {
 class AdobeDeveloperPlatform: AdobeServices, SubService {
     let name = "Adobe Developer Platform"
     let id = "503495"
-}
-
-class AdobeDigitalImaging: AdobeCreativeCloud, SubService {
-    let name = "Adobe Digital Imaging"
-    let id = "525664"
 }
 
 class AdobeDimension: AdobeCreativeCloud, SubService {
@@ -341,11 +341,6 @@ class AdobeSupport: AdobeServices, SubService {
 class AdobeTarget: AdobeExperienceCloud, SubService {
     let name = "Adobe Target"
     let id = "503476"
-}
-
-class AdobeUserManagementSDK: AdobeServices, SubService {
-    let name = "Adobe User Management SDK"
-    let id = "503504"
 }
 
 class AdobeWorkfront: AdobeExperienceCloud, SubService {

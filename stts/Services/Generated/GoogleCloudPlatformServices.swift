@@ -18,6 +18,11 @@ class GoogleAccessTransparency: GoogleCloudPlatform, SubService {
     let dashboardName = "Access Transparency"
 }
 
+class GoogleAgentAssist: GoogleCloudPlatform, SubService {
+    let name = "Google Agent Assist"
+    let dashboardName = "Agent Assist"
+}
+
 class GoogleAIPlatformPrediction: GoogleCloudPlatform, SubService {
     let name = "Google AI Platform Prediction"
     let dashboardName = "AI Platform Prediction"
@@ -98,6 +103,11 @@ class GoogleBareMetalSolution: GoogleCloudPlatform, SubService {
     let dashboardName = "Bare Metal Solution"
 }
 
+class GoogleBatch: GoogleCloudPlatform, SubService {
+    let name = "Google Batch"
+    let dashboardName = "Batch"
+}
+
 class GoogleBeyondCorpEnterprise: GoogleCloudPlatform, SubService {
     let name = "Google BeyondCorp Enterprise"
     let dashboardName = "BeyondCorp Enterprise"
@@ -118,9 +128,9 @@ class GoogleCertificateAuthorityService: GoogleCloudPlatform, SubService {
     let dashboardName = "Certificate Authority Service"
 }
 
-class GoogleChronicleSecurity: GoogleCloudPlatform, SubService {
-    let name = "Google Chronicle Security"
-    let dashboardName = "Chronicle Security"
+class GoogleChronicleSOAR: GoogleCloudPlatform, SubService {
+    let name = "Google Chronicle SOAR"
+    let dashboardName = "Chronicle SOAR"
 }
 
 class GoogleCloudArmor: GoogleCloudPlatform, SubService {
@@ -491,6 +501,11 @@ class GoogleComputeEngine: GoogleCloudPlatform, SubService {
 class GoogleDistributedCloudEdge: GoogleCloudPlatform, SubService {
     let name = "Google Distributed Cloud Edge"
     let dashboardName = "Google Distributed Cloud Edge"
+}
+
+class GoogleKubernetesEngine: GoogleCloudPlatform, SubService {
+    let name = "Google Kubernetes Engine"
+    let dashboardName = "Google Kubernetes Engine"
 }
 
 class GoogleHealthcareAndLifeSciences: GoogleCloudPlatform, SubService {
