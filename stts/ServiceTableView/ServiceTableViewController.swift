@@ -21,7 +21,8 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         }
     }
 
-    var servicesBeingUpdated = [BaseService]()
+    @Atomic var servicesBeingUpdated = Set<BaseService>()
+
     var generalStatus: ServiceStatus {
         let hasBadServices = services.first { $0.status > .maintenance } != nil
 
@@ -199,9 +200,9 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
     }
 
     func updateServices(updateCallback: @escaping () -> Void) {
-        self.servicesBeingUpdated = [Service]()
+        servicesBeingUpdated = Set<BaseService>()
 
-        guard services.count > 0 else {
+        guard !services.isEmpty else {
             reloadData()
 
             bottomBar.status = .updated(Date())
@@ -219,26 +220,27 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
 
         bottomBar.status = .updating
 
-        services.forEach {
-            servicesBeingUpdated.append($0)
-            $0.updateStatus(callback: serviceCallback)
+        let servicesToUpdate = Set<BaseService>(services)
+        servicesBeingUpdated = servicesToUpdate
+
+        for service in servicesToUpdate {
+            service.updateStatus(callback: serviceCallback)
         }
     }
 
     func updatedStatus(for service: BaseService) {
-        if let index = servicesBeingUpdated.firstIndex(of: service) {
-            servicesBeingUpdated.remove(at: index)
-        }
+        servicesBeingUpdated.remove(service)
 
         DispatchQueue.main.async { [weak self] in
-            self?.reloadData()
-            self?.resizeViews()
+            guard let self else { return }
+            reloadData()
+            resizeViews()
 
-            if self?.servicesBeingUpdated.count == 0 {
-                self?.bottomBar.status = .updated(Date())
+            if servicesBeingUpdated.isEmpty {
+                bottomBar.status = .updated(Date())
 
-                self?.updateCallback?()
-                self?.updateCallback = nil
+                updateCallback?()
+                updateCallback = nil
             }
         }
     }

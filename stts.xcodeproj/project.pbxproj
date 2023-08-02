@@ -281,6 +281,7 @@
 		B2E832EC29DE4F5E000FA1BE /* AdobeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E832EB29DE4F5E000FA1BE /* AdobeTests.swift */; };
 		B2E832EE29DE5104000FA1BE /* adobe-analytics-minor.json in Resources */ = {isa = PBXBuildFile; fileRef = B2E832ED29DE5104000FA1BE /* adobe-analytics-minor.json */; };
 		B2E832F029EF74D9000FA1BE /* OpenAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E832EF29EF74D9000FA1BE /* OpenAI.swift */; };
+		B2E8C0232A7A9203000239F0 /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E8C0222A7A9203000239F0 /* Atomic.swift */; };
 		B2EAD8D520B8FDB800095F5B /* JAMF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EAD8D420B8FDB700095F5B /* JAMF.swift */; };
 		B2EB51CE1E7004A3001D6F78 /* ExanaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */; };
 		B2EB51D01E700517001D6F78 /* Codacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EB51CF1E700517001D6F78 /* Codacy.swift */; };
@@ -645,6 +646,7 @@
 		B2E832EB29DE4F5E000FA1BE /* AdobeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdobeTests.swift; sourceTree = "<group>"; };
 		B2E832ED29DE5104000FA1BE /* adobe-analytics-minor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "adobe-analytics-minor.json"; sourceTree = "<group>"; };
 		B2E832EF29EF74D9000FA1BE /* OpenAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAI.swift; sourceTree = "<group>"; };
+		B2E8C0222A7A9203000239F0 /* Atomic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
 		B2EAD8D420B8FDB700095F5B /* JAMF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JAMF.swift; sourceTree = "<group>"; };
 		B2EB51CD1E7004A3001D6F78 /* ExanaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExanaService.swift; sourceTree = "<group>"; };
 		B2EB51CF1E700517001D6F78 /* Codacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Codacy.swift; sourceTree = "<group>"; };
@@ -1142,6 +1144,7 @@
 		B2DCE6932215ACD0001447D8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B2E8C0222A7A9203000239F0 /* Atomic.swift */,
 				B2DCE6942215ACDE001447D8 /* StringExtensions.swift */,
 			);
 			path = Extensions;
@@ -1376,7 +1379,7 @@
 			packageReferences = (
 				B20883E32A59143E007578C8 /* XCRemoteSwiftPackageReference "MBPopup" */,
 				B20883E62A59144F007578C8 /* XCRemoteSwiftPackageReference "Kanna" */,
-				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */,
+				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
 			);
 			productRefGroup = B2B2D1001D49D5080014D780 /* Products */;
 			projectDirPath = "";
@@ -1635,6 +1638,7 @@
 				B2F127A71E0B84230035B20C /* PubNub.swift in Sources */,
 				B22BB3A3223B346E00B43BED /* Dashlane.swift in Sources */,
 				B22602AD27D878FE001190F1 /* Unity.swift in Sources */,
+				B2E8C0232A7A9203000239F0 /* Atomic.swift in Sources */,
 				B2841CEB20BA6207004AFDB7 /* SorryService.swift in Sources */,
 				B2767A0F255FBC3E0047A9BE /* Bitmovin.swift in Sources */,
 				B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */,
@@ -2103,7 +2107,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
 			requirement = {
@@ -2126,7 +2130,7 @@
 		};
 		B20883EA2A59146C007578C8 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */;
+			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
 			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
