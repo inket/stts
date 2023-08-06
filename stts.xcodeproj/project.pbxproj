@@ -237,6 +237,7 @@
 		B2A93ADD1EB814C000D36DD3 /* Snyk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A93ADC1EB814C000D36DD3 /* Snyk.swift */; };
 		B2A9BFB41DC6E30F001BD4B7 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */; };
 		B2ABB6171F59770800DF8EC2 /* Imgix.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB6161F59770800DF8EC2 /* Imgix.swift */; };
+		B2AF06AB2A7AB42100448D1E /* StatuspalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF06AA2A7AB42100448D1E /* StatuspalService.swift */; };
 		B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B015C11DBDE69B00699211 /* StatusTableCell.swift */; };
 		B2B2D1031D49D5080014D780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2D1021D49D5080014D780 /* AppDelegate.swift */; };
 		B2B2D1051D49D5080014D780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2D1041D49D5080014D780 /* Assets.xcassets */; };
@@ -597,6 +598,7 @@
 		B2A93ADC1EB814C000D36DD3 /* Snyk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snyk.swift; sourceTree = "<group>"; };
 		B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		B2ABB6161F59770800DF8EC2 /* Imgix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Imgix.swift; sourceTree = "<group>"; };
+		B2AF06AA2A7AB42100448D1E /* StatuspalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatuspalService.swift; sourceTree = "<group>"; };
 		B2B015C11DBDE69B00699211 /* StatusTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableCell.swift; sourceTree = "<group>"; };
 		B2B2D0FF1D49D5080014D780 /* stts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B2D1021D49D5080014D780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -1083,6 +1085,13 @@
 			path = CState;
 			sourceTree = "<group>";
 		};
+		B2AF06AC2A7AB74800448D1E /* Statuspal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Statuspal;
+			sourceTree = "<group>";
+		};
 		B2B2D0F61D49D5080014D780 = {
 			isa = PBXGroup;
 			children = (
@@ -1218,6 +1227,7 @@
 				B20883F12A59AD8E007578C8 /* StatusCast */,
 				B25425032935958D0093AC83 /* StatusHub */,
 				B299C8561DD051710024D2E9 /* StatusPage */,
+				B2AF06AC2A7AB74800448D1E /* Statuspal */,
 				B2FDC9201D67071500F0B728 /* Super */,
 				B2430806210810D0003F8D07 /* Algolia.swift */,
 				B2A4D7E6247E72B50089EA77 /* AzureAll.swift */,
@@ -1278,6 +1288,7 @@
 				B2542501293591610093AC83 /* StatusHubService.swift */,
 				B2FDC91B1D67062200F0B728 /* StatusPageService.swift */,
 				B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */,
+				B2AF06AA2A7AB42100448D1E /* StatuspalService.swift */,
 			);
 			path = Super;
 			sourceTree = "<group>";
@@ -1582,6 +1593,7 @@
 				B2D655EE29B807BF00DBE417 /* Site24x7Service.swift in Sources */,
 				B2DEE0BE1E696D64006B198E /* Slack.swift in Sources */,
 				B231DD60257B438900647312 /* HubSpot.swift in Sources */,
+				B2AF06AB2A7AB42100448D1E /* StatuspalService.swift in Sources */,
 				B2CE72D6228587E000847E00 /* Acquia.swift in Sources */,
 				B2E70FD822B069BA000BCAD2 /* GoogleCloudPlatformServices.swift in Sources */,
 				B2BA36191ED7B0F200051083 /* AuthorizeNet.swift in Sources */,
