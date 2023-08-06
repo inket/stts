@@ -238,6 +238,7 @@
 		B2A9BFB41DC6E30F001BD4B7 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */; };
 		B2ABB6171F59770800DF8EC2 /* Imgix.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB6161F59770800DF8EC2 /* Imgix.swift */; };
 		B2AF06AB2A7AB42100448D1E /* StatuspalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF06AA2A7AB42100448D1E /* StatuspalService.swift */; };
+		B2AF06AE2A7AB97300448D1E /* Booxi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF06AD2A7AB97300448D1E /* Booxi.swift */; };
 		B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B015C11DBDE69B00699211 /* StatusTableCell.swift */; };
 		B2B2D1031D49D5080014D780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2D1021D49D5080014D780 /* AppDelegate.swift */; };
 		B2B2D1051D49D5080014D780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2D1041D49D5080014D780 /* Assets.xcassets */; };
@@ -599,6 +600,7 @@
 		B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		B2ABB6161F59770800DF8EC2 /* Imgix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Imgix.swift; sourceTree = "<group>"; };
 		B2AF06AA2A7AB42100448D1E /* StatuspalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatuspalService.swift; sourceTree = "<group>"; };
+		B2AF06AD2A7AB97300448D1E /* Booxi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booxi.swift; sourceTree = "<group>"; };
 		B2B015C11DBDE69B00699211 /* StatusTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableCell.swift; sourceTree = "<group>"; };
 		B2B2D0FF1D49D5080014D780 /* stts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B2D1021D49D5080014D780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -1087,6 +1089,7 @@
 		B2AF06AC2A7AB74800448D1E /* Statuspal */ = {
 			isa = PBXGroup;
 			children = (
+				B2AF06AD2A7AB97300448D1E /* Booxi.swift */,
 				B22602AC27D878FD001190F1 /* Unity.swift */,
 			);
 			path = Statuspal;
@@ -1524,6 +1527,7 @@
 				B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */,
 				B2A4D7E7247E72B50089EA77 /* AzureAll.swift in Sources */,
 				B2253A6B209F3C410039F574 /* GoogleStatusDashboardStore.swift in Sources */,
+				B2AF06AE2A7AB97300448D1E /* Booxi.swift in Sources */,
 				A133C8B720F8F3670068CFE8 /* Mailgun.swift in Sources */,
 				B2E70FDD22B07FB0000BCAD2 /* FirebaseServices.swift in Sources */,
 				B2CB0F9B2047A60000873C14 /* Vimeo.swift in Sources */,
