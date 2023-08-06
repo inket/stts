@@ -117,6 +117,12 @@
 		B227D30D25D5886B00951917 /* FreeAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227D30B25D5886B00951917 /* FreeAgent.swift */; };
 		B227D31225D7671600951917 /* Poka.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227D31125D7671600951917 /* Poka.swift */; };
 		B227D31625D7678200951917 /* Vercel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227D31525D7678200951917 /* Vercel.swift */; };
+		B228DC092A7F51AA00D8DC5E /* BuildJet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228DC082A7F51AA00D8DC5E /* BuildJet.swift */; };
+		B228DC0C2A7F520700D8DC5E /* BetterStackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228DC0B2A7F520700D8DC5E /* BetterStackService.swift */; };
+		B228DC0E2A7F840A00D8DC5E /* BetterStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228DC0D2A7F840A00D8DC5E /* BetterStack.swift */; };
+		B228DC132A7F86F900D8DC5E /* eyloo-major.html in Resources */ = {isa = PBXBuildFile; fileRef = B228DC112A7F86F900D8DC5E /* eyloo-major.html */; };
+		B228DC142A7F86F900D8DC5E /* buildjet-good.html in Resources */ = {isa = PBXBuildFile; fileRef = B228DC122A7F86F900D8DC5E /* buildjet-good.html */; };
+		B228DC162A7F872800D8DC5E /* BetterStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228DC152A7F872800D8DC5E /* BetterStackTests.swift */; };
 		B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22BA3011E8119AB0038D8F6 /* Discord.swift */; };
 		B22BB39F223B33AE00B43BED /* CampaignMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */; };
 		B22BB3A1223B341B00B43BED /* OnePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22BB3A0223B341B00B43BED /* OnePassword.swift */; };
@@ -475,6 +481,12 @@
 		B227D30B25D5886B00951917 /* FreeAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeAgent.swift; sourceTree = "<group>"; };
 		B227D31125D7671600951917 /* Poka.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poka.swift; sourceTree = "<group>"; };
 		B227D31525D7678200951917 /* Vercel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vercel.swift; sourceTree = "<group>"; };
+		B228DC082A7F51AA00D8DC5E /* BuildJet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildJet.swift; sourceTree = "<group>"; };
+		B228DC0B2A7F520700D8DC5E /* BetterStackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterStackService.swift; sourceTree = "<group>"; };
+		B228DC0D2A7F840A00D8DC5E /* BetterStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterStack.swift; sourceTree = "<group>"; };
+		B228DC112A7F86F900D8DC5E /* eyloo-major.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "eyloo-major.html"; sourceTree = "<group>"; };
+		B228DC122A7F86F900D8DC5E /* buildjet-good.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "buildjet-good.html"; sourceTree = "<group>"; };
+		B228DC152A7F872800D8DC5E /* BetterStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterStackTests.swift; sourceTree = "<group>"; };
 		B22BA3011E8119AB0038D8F6 /* Discord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discord.swift; sourceTree = "<group>"; };
 		B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignMonitor.swift; sourceTree = "<group>"; };
 		B22BB3A0223B341B00B43BED /* OnePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePassword.swift; sourceTree = "<group>"; };
@@ -764,6 +776,7 @@
 				B2563BC122CBC92400532C39 /* Mocks */,
 				B2552EFC29954AE0003FF9EC /* Resources */,
 				B2E832EB29DE4F5E000FA1BE /* AdobeTests.swift */,
+				B228DC152A7F872800D8DC5E /* BetterStackTests.swift */,
 				B2552F0129954B18003FF9EC /* FastlyTests.swift */,
 				B2163AF920BA4E7500B14A85 /* Info.plist */,
 				B2D655E629B802ED00DBE417 /* InstatusTests.swift */,
@@ -779,6 +792,15 @@
 				B2A0A16E1E4C45E0000D9B29 /* MailChimp.swift */,
 			);
 			path = StatusCake;
+			sourceTree = "<group>";
+		};
+		B228DC0A2A7F51FB00D8DC5E /* BetterStack */ = {
+			isa = PBXGroup;
+			children = (
+				B228DC0D2A7F840A00D8DC5E /* BetterStack.swift */,
+				B228DC082A7F51AA00D8DC5E /* BuildJet.swift */,
+			);
+			path = BetterStack;
 			sourceTree = "<group>";
 		};
 		B22FDE4921089D4F00359EC9 /* PayPal */ = {
@@ -813,6 +835,8 @@
 			isa = PBXGroup;
 			children = (
 				B2E832ED29DE5104000FA1BE /* adobe-analytics-minor.json */,
+				B228DC122A7F86F900D8DC5E /* buildjet-good.html */,
+				B228DC112A7F86F900D8DC5E /* eyloo-major.html */,
 				B2552EFD29954AEB003FF9EC /* fastly-good.html */,
 				B2552EFE29954AEB003FF9EC /* fastly-major.html */,
 				B2D655EA29B8045300DBE417 /* mastodonsocial-good.html */,
@@ -1215,6 +1239,7 @@
 		B2FDC91F1D6706FB00F0B728 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B228DC0A2A7F51FB00D8DC5E /* BetterStack */,
 				B254098E28FE75B00009F956 /* BetterUptime */,
 				B2A7EFEB2A14536D0013C7AE /* CState */,
 				B2E70FDF22B0844F000BCAD2 /* Generated */,
@@ -1266,6 +1291,7 @@
 				B277BC9122B4BB5C000B55C3 /* AzureDevOps.swift */,
 				B277BC9322B4BB6D000B55C3 /* AzureDevOpsStore.swift */,
 				B2CEE5D822B49CC80073C743 /* AzureStore.swift */,
+				B228DC0B2A7F520700D8DC5E /* BetterStackService.swift */,
 				B254098C28FE71990009F956 /* BetterUptimeService.swift */,
 				B2A7EFEC2A14537B0013C7AE /* CStateService.swift */,
 				B2BB19B920B8FEFD00A97A87 /* CachetService.swift */,
@@ -1393,7 +1419,7 @@
 			packageReferences = (
 				B20883E32A59143E007578C8 /* XCRemoteSwiftPackageReference "MBPopup" */,
 				B20883E62A59144F007578C8 /* XCRemoteSwiftPackageReference "Kanna" */,
-				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
+				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */,
 			);
 			productRefGroup = B2B2D1001D49D5080014D780 /* Products */;
 			projectDirPath = "";
@@ -1413,8 +1439,10 @@
 				B2E832EE29DE5104000FA1BE /* adobe-analytics-minor.json in Resources */,
 				B2D655EB29B8045300DBE417 /* mastodonsocial-good.html in Resources */,
 				B2D655E929B803B800DBE417 /* whereby-notice.html in Resources */,
+				B228DC132A7F86F900D8DC5E /* eyloo-major.html in Resources */,
 				B2552F0029954AEB003FF9EC /* fastly-major.html in Resources */,
 				B2552EFF29954AEB003FF9EC /* fastly-good.html in Resources */,
+				B228DC142A7F86F900D8DC5E /* buildjet-good.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1506,6 +1534,7 @@
 				B2563BBE22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift in Sources */,
 				B2552F0229954B18003FF9EC /* FastlyTests.swift in Sources */,
 				B2552F082995516B003FF9EC /* TestBundle.swift in Sources */,
+				B228DC162A7F872800D8DC5E /* BetterStackTests.swift in Sources */,
 				B2552F0429954C26003FF9EC /* ResponseOverridingURLSession.swift in Sources */,
 				B2D655E729B802ED00DBE417 /* InstatusTests.swift in Sources */,
 				B2163AF820BA4E7500B14A85 /* sttsTests.swift in Sources */,
@@ -1690,6 +1719,7 @@
 				B23646B22627C14E00AB9486 /* VisualStudioAppCenter.swift in Sources */,
 				B22600311E1562E700EBDD40 /* MediaTemple.swift in Sources */,
 				B205A9181D49D67700EA178D /* Service.swift in Sources */,
+				B228DC0C2A7F520700D8DC5E /* BetterStackService.swift in Sources */,
 				B232047F22158BDF000DC1B0 /* DatadogEU.swift in Sources */,
 				B2A4D7E9247E73BC0089EA77 /* AzureDevOpsAll.swift in Sources */,
 				B2510954269AD87C005868DE /* Snowflake.swift in Sources */,
@@ -1719,6 +1749,7 @@
 				B2E128E727A4DCD6009B1B4C /* ClickUp.swift in Sources */,
 				B2EB51CE1E7004A3001D6F78 /* ExanaService.swift in Sources */,
 				B24EE10026C8BF9500F7CE8B /* SalesforceProducts.swift in Sources */,
+				B228DC0E2A7F840A00D8DC5E /* BetterStack.swift in Sources */,
 				B2DCE6952215ACDE001447D8 /* StringExtensions.swift in Sources */,
 				36AD8ED9235A310500F2FD73 /* Mural.swift in Sources */,
 				B227D31625D7678200951917 /* Vercel.swift in Sources */,
@@ -1778,6 +1809,7 @@
 				B8F6688F6454FD58216F09B7 /* Kustomer.swift in Sources */,
 				EF67ABCF8677A86151FBBA38 /* Bugsnag.swift in Sources */,
 				B22602B127D881AF001190F1 /* OracleNetSuite.swift in Sources */,
+				B228DC092A7F51AA00D8DC5E /* BuildJet.swift in Sources */,
 				7E1580ED5174442F7B691728 /* Blend.swift in Sources */,
 				ED78F07A7D2AB1F665182667 /* Temporal.swift in Sources */,
 				A57CA3889BDE9140B1D96CF8 /* Cypress.swift in Sources */,
@@ -2123,7 +2155,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
+		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
 			requirement = {
@@ -2146,7 +2178,7 @@
 		};
 		B20883EA2A59146C007578C8 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */

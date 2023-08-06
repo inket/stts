@@ -1,5 +1,5 @@
 //
-//  Statuspal.swift
+//  StatuspalService.swift
 //  stts
 //
 
