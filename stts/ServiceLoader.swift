@@ -193,7 +193,10 @@ class ServiceLoader {
     }
 
     private func serviceDefinition(forLegacyIdentifier legacyIdentifier: String) -> ServiceDefinition? {
-        allServices.first { $0.legacyIdentifiers.contains(legacyIdentifier) }
+        allServices.first {
+            $0.alphanumericName.lowercased() == legacyIdentifier.lowercased() ||
+            $0.legacyIdentifiers.contains(legacyIdentifier)
+        }
     }
 
     private func serviceDefinition(forGlobalIdentifier globalIdentifier: String) -> ServiceDefinition? {
