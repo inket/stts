@@ -5,19 +5,25 @@
 
 import Foundation
 
-class SendbirdAll: SendbirdService, ServiceCategory {
+class SendbirdAll: IndependentService, ServiceCategory {
     let categoryName = "Sendbird"
-    let subServiceSuperclass: AnyObject.Type = BaseSendbirdService.self
+    let subServiceSuperclass: AnyObject.Type = SendbirdService.self
 
     let name = "Sendbird (All)"
     let url = URL(string: "https://sendbird.com/status")!
-    let statusPageID = "" // dummy
+
+    lazy var sendbirdServiceDefinitions: [SendbirdServiceDefinition] = {
+        ServiceLoader.current.allServices.compactMap { $0 as? SendbirdServiceDefinition }
+    }()
+
+    lazy var sendbirdServices: [SendbirdService] = {
+        sendbirdServiceDefinitions.compactMap { $0.build() as? SendbirdService }
+    }()
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        let services: [Service] = Sendbird.classes.compactMap { $0.init() as? Service }
         let group = DispatchGroup()
 
-        services.forEach { service in
+        sendbirdServices.forEach { service in
             group.enter()
 
             service.updateStatus { _ in
@@ -28,7 +34,7 @@ class SendbirdAll: SendbirdService, ServiceCategory {
         group.notify(queue: .main) { [weak self] in
             guard let self else { return }
 
-            let worstStatus = services.map { $0.status }.max() ?? .undetermined
+            let worstStatus = sendbirdServices.map { $0.status }.max() ?? .undetermined
             let message: String
 
             switch worstStatus {

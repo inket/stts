@@ -6,7 +6,7 @@
 import Foundation
 import Kanna
 
-class Evernote: Service {
+class Evernote: IndependentService {
     let url = URL(string: "https://status.evernote.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {

@@ -5,11 +5,15 @@
 
 import Foundation
 
-typealias StatusHubService = BaseStatusHubService & RequiredServiceProperties & RequiredStatusHubProperties
+class StatusHubServiceDefinition: ServiceDefinition {
+    let providerIdentifier = "statushub"
 
-protocol RequiredStatusHubProperties {}
+    func build() -> BaseService? {
+        StatusHubService(self)
+    }
+}
 
-class BaseStatusHubService: BaseService {
+class StatusHubService: Service {
     private struct StatusHubResponse: Codable {
         struct Counters: Codable {
             enum CodingKeys: String, CodingKey {
@@ -26,12 +30,16 @@ class BaseStatusHubService: BaseService {
         let counters: Counters
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? StatusHubService else {
-            fatalError("BaseStatusHubService should not be used directly.")
-        }
+    let name: String
+    let url: URL
 
-        let statusURL = realSelf.url.appendingPathComponent("api/statuses")
+    init(_ definition: StatusHubServiceDefinition) {
+        name = definition.name
+        url = definition.url
+    }
+
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+        let statusURL = url.appendingPathComponent("api/statuses")
 
         loadData(with: statusURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }

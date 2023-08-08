@@ -54,14 +54,15 @@ class EditorTableCell: NSTableCellView {
         }
     }
 
-    static func estimatedHeight(for service: Service, maxWidth: CGFloat) -> CGFloat {
-        return
-            service.name.height(forWidth: maxWidth, font: Design.Name.font) +
-            Design.padding.top + Design.padding.bottom
+    static func estimatedHeight(for serviceDefinition: ServiceDefinition, maxWidth: CGFloat) -> CGFloat {
+        serviceDefinition.name.height(
+            forWidth: maxWidth,
+            font: Design.Name.font
+        ) + Design.padding.top + Design.padding.bottom
     }
 
     static func maxNameWidth(for tableView: NSTableView) -> CGFloat {
-        return tableView.frame.size.width -
+        tableView.frame.size.width -
             Design.padding.left - Design.innerSpacing - Design.ToggleButton.size.width - Design.padding.right
     }
 

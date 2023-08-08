@@ -5,7 +5,7 @@
 
 import Foundation
 
-class SignalWire: Service {
+class SignalWire: IndependentService {
     let url = URL(string: "https://status.signalwire.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {

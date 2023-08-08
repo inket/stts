@@ -5,20 +5,38 @@
 
 import Foundation
 
-typealias StatusPageService = BaseStatusPageService & RequiredServiceProperties & RequiredStatusPageProperties
+class StatusPageServiceDefinition: ServiceDefinition {
+    enum ExtraKeys: String, CodingKey {
+        case id
+        case host
+    }
 
-protocol RequiredStatusPageProperties {
-    var statusPageID: String { get }
-    var domain: String { get }
-}
+    let id: String
+    let host: String?
+    let providerIdentifier = "statuspage"
 
-extension RequiredStatusPageProperties {
-    var domain: String {
-        return "statuspage.io"
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: ExtraKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        host = try container.decodeIfPresent(String.self, forKey: .host)
+
+        try super.init(from: decoder)
+    }
+
+    override func encode(to encoder: Encoder) throws {
+        try super.encode(to: encoder)
+
+        var container = encoder.container(keyedBy: ExtraKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(host, forKey: .host)
+    }
+
+    func build() -> BaseService? {
+        StatusPageService(self)
     }
 }
 
-class BaseStatusPageService: BaseService {
+class StatusPageService: Service {
     struct Summary: Codable {
         let components: [Component]
         let incidents: [Incident]
@@ -149,12 +167,20 @@ class BaseStatusPageService: BaseService {
         }
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? StatusPageService else {
-            fatalError("BaseStatusPageService should not be used directly.")
-        }
+    let id: String
+    let name: String
+    let url: URL
+    let host: String
 
-        let summaryURL = URL(string: "https://\(realSelf.statusPageID).\(realSelf.domain)/api/v2/summary.json")!
+    init(_ definition: StatusPageServiceDefinition) {
+        id = definition.id
+        name = definition.name
+        url = definition.url
+        host = definition.host ?? "statuspage.io"
+    }
+
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+        let summaryURL = URL(string: "https://\(id).\(host)/api/v2/summary.json")!
 
         loadData(with: summaryURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }

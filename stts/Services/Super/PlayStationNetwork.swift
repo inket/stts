@@ -26,7 +26,7 @@ protocol RequiredPlayStationNetworkProperties {
     var region: PlayStationNetworkRegion { get }
 }
 
-class BasePlayStationNetwork: BaseService {
+class BasePlayStationNetwork: BaseIndependentService {
     struct Response: Codable {
         struct Status: Codable {
             enum StatusType: String, Codable {

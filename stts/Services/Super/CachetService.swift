@@ -5,9 +5,15 @@
 
 import Foundation
 
-typealias CachetService = BaseCachetService & RequiredServiceProperties
+class CachetServiceDefinition: ServiceDefinition {
+    let providerIdentifier = "cachet"
 
-class BaseCachetService: BaseService {
+    func build() -> BaseService? {
+        CachetService(self)
+    }
+}
+
+class CachetService: Service {
     private enum ComponentStatus: Int, ComparableStatus {
         // https://docs.cachethq.io/docs/component-statuses
         case operational = 1
@@ -42,12 +48,16 @@ class BaseCachetService: BaseService {
         }
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? CachetService else {
-            fatalError("BaseCachetService should not be used directly.")
-        }
+    let name: String
+    let url: URL
 
-        let apiComponentsURL = realSelf.url.appendingPathComponent("api/v1/components")
+    init(_ definition: CachetServiceDefinition) {
+        name = definition.name
+        url = definition.url
+    }
+
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+        let apiComponentsURL = url.appendingPathComponent("api/v1/components")
 
         loadData(with: apiComponentsURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }

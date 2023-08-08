@@ -7,7 +7,7 @@ import Foundation
 
 typealias Azure = BaseAzure & RequiredServiceProperties & AzureStoreService
 
-class BaseAzure: BaseService {
+class BaseAzure: BaseIndependentService {
     private static var store = AzureStore()
 
     let url = URL(string: "https://status.azure.com/en-us/status")!

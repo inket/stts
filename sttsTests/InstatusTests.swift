@@ -7,8 +7,39 @@ import XCTest
 @testable import stts
 
 final class InstatusTests: XCTestCase {
+    private func createMastodonSocialService() throws -> InstatusService {
+        let definition = try JSONDecoder().decode(
+            InstatusServiceDefinition.self,
+            from: """
+            {
+                "name": "mastodon.social",
+                "url": "https://status.mastodon.social",
+                "old_names": [
+                    "MastodonSocial"
+                ]
+            }
+            """.data(using: .utf8)!
+        )
+
+        return try XCTUnwrap(definition.build() as? InstatusService)
+    }
+
+    private func createWherebyService() throws -> InstatusService {
+        let definition = try JSONDecoder().decode(
+            InstatusServiceDefinition.self,
+            from: """
+            {
+                "url": "https://wherebystatus.com",
+                "name": "Whereby"
+            }
+            """.data(using: .utf8)!
+        )
+
+        return try XCTUnwrap(definition.build() as? InstatusService)
+    }
+
     func testNormalStatus() throws {
-        let mastodonSocial = MastodonSocial()
+        let mastodonSocial = try createMastodonSocialService()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
             .init(
@@ -30,7 +61,7 @@ final class InstatusTests: XCTestCase {
     }
 
     func testMinorStatus() throws {
-        let whereby = Whereby()
+        let whereby = try createWherebyService()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
             .init(

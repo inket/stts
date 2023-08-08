@@ -5,9 +5,15 @@
 
 import Foundation
 
-typealias LambStatusService = BaseLambStatusService & RequiredServiceProperties
+class LambStatusServiceDefinition: ServiceDefinition {
+    let providerIdentifier = "lamb"
 
-class BaseLambStatusService: BaseService {
+    func build() -> BaseService? {
+        LambStatusService(self)
+    }
+}
+
+class LambStatusService: Service {
     // According to
     // https://github.com/ks888/LambStatus/blob/ba950df3241ac9143e03411d6c1a06d126cc0180/packages/frontend/src/utils/status.js#L1
     private enum LambStatus: String, Codable {
@@ -38,12 +44,16 @@ class BaseLambStatusService: BaseService {
         let status: LambStatus
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? LambStatusService else {
-            fatalError("BaseLambStatusService should not be used directly.")
-        }
+    let name: String
+    let url: URL
 
-        let apiComponentsURL = realSelf.url.appendingPathComponent("api").appendingPathComponent("components")
+    init(_ definition: LambStatusServiceDefinition) {
+        name = definition.name
+        url = definition.url
+    }
+
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+        let apiComponentsURL = url.appendingPathComponent("api").appendingPathComponent("components")
 
         loadData(with: apiComponentsURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }

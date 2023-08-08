@@ -6,7 +6,7 @@
 import Foundation
 import Kanna
 
-class UptimeDotCom: Service {
+class UptimeDotCom: IndependentService {
     let name = "Uptime.com"
     let url = URL(string: "https://status.uptime.com")!
 

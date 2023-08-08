@@ -393,11 +393,6 @@ class GoogleAppEngine: GoogleCloudPlatform, SubService {
     let dashboardName = "Google App Engine"
 }
 
-class GoogleBigQuery: GoogleCloudPlatform, SubService {
-    let name = "Google BigQuery"
-    let dashboardName = "Google BigQuery"
-}
-
 class GoogleCloudBigtable: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Bigtable"
     let dashboardName = "Google Cloud Bigtable"
@@ -571,6 +566,11 @@ class GooglePaymentGateway: GoogleCloudPlatform, SubService {
 class GooglePersistentDisk: GoogleCloudPlatform, SubService {
     let name = "Google Persistent Disk"
     let dashboardName = "Persistent Disk"
+}
+
+class GooglePersonalizedServiceHealth: GoogleCloudPlatform, SubService {
+    let name = "Google Personalized Service Health"
+    let dashboardName = "Personalized Service Health"
 }
 
 class GooglePrivateServiceConnect: GoogleCloudPlatform, SubService {

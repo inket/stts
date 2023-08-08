@@ -7,7 +7,7 @@ import Foundation
 
 typealias AppleDeveloper = BaseAppleDeveloper & RequiredServiceProperties & AppleStoreService
 
-class BaseAppleDeveloper: BaseService {
+class BaseAppleDeveloper: BaseIndependentService {
     private static var store = AppleStore(
         url: "https://www.apple.com/support/systemstatus/data/developer/system_status_en_US.js"
     )

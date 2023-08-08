@@ -6,7 +6,7 @@
 import Foundation
 import Kanna
 
-class Algolia: Service {
+class Algolia: IndependentService {
     private enum AlgoliaStatus: String {
         case operational
         case majorOutage = "major_outage"

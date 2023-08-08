@@ -6,11 +6,15 @@
 import Foundation
 import Kanna
 
-typealias IncidentIOService = BaseIncidentIOService & RequiredServiceProperties & RequiredIncidentIOProperties
+class IncidentIOServiceDefinition: ServiceDefinition {
+    let providerIdentifier = "incidentio"
 
-protocol RequiredIncidentIOProperties {}
+    func build() -> BaseService? {
+        IncidentIOService(self)
+    }
+}
 
-class BaseIncidentIOService: BaseService {
+class IncidentIOService: Service {
     private enum IncidentIOStatus: String, CaseIterable {
         // e.exports = {
         //     default: "ContentBox_default__oUSYA",
@@ -42,14 +46,18 @@ class BaseIncidentIOService: BaseService {
                 return .maintenance
             }
         }
-
     }
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? IncidentIOService else {
-            fatalError("BaseIncidentIOService should not be used directly")
-        }
 
-        loadData(with: realSelf.url) { [weak self] data, _, error in
+    let name: String
+    let url: URL
+
+    init(_ definition: IncidentIOServiceDefinition) {
+        name = definition.name
+        url = definition.url
+    }
+
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+        loadData(with: url) { [weak self] data, _, error in
             guard let self else { return }
             defer { callback(self) }
 

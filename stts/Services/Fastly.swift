@@ -6,7 +6,7 @@
 import Foundation
 import Kanna
 
-class Fastly: Service {
+class Fastly: IndependentService {
     let url = URL(string: "https://status.fastly.com")!
 
     private enum Status: String, CaseIterable {

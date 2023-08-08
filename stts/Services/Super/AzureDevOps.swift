@@ -7,7 +7,7 @@ import Foundation
 
 typealias AzureDevOps = BaseAzureDevOps & RequiredServiceProperties & AzureDevOpsStoreService
 
-class BaseAzureDevOps: BaseService {
+class BaseAzureDevOps: BaseIndependentService {
     private static var store = AzureDevOpsStore()
 
     let url = URL(string: "https://status.dev.azure.com")!

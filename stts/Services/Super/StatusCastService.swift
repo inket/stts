@@ -6,11 +6,15 @@
 import Foundation
 import Kanna
 
-typealias StatusCastService = BaseStatusCastService & RequiredServiceProperties & RequiredStatusCastProperties
+class StatusCastServiceDefinition: ServiceDefinition {
+    let providerIdentifier = "statuscast"
 
-protocol RequiredStatusCastProperties {}
+    func build() -> BaseService? {
+        StatusCastService(self)
+    }
+}
 
-class BaseStatusCastService: BaseService {
+class StatusCastService: Service {
     private enum Status: String, CaseIterable {
         case available
         case unavailable
@@ -37,12 +41,16 @@ class BaseStatusCastService: BaseService {
         }
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? StatusCastService else {
-            fatalError("BaseStatusCastService should not be used directly.")
-        }
+    let name: String
+    let url: URL
 
-        loadData(with: realSelf.url) { [weak self] data, _, error in
+    init(_ definition: StatusCastServiceDefinition) {
+        name = definition.name
+        url = definition.url
+    }
+
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+        loadData(with: url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }

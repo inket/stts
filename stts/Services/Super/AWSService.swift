@@ -25,7 +25,7 @@ class BaseAWSAllService: BaseAWSService {}
 class BaseAWSRegionService: BaseAWSService {}
 class BaseAWSNamedService: BaseAWSService {}
 
-class BaseAWSService: BaseService {
+class BaseAWSService: BaseIndependentService {
     private static var store = AWSStore(url: URL(string: "https://health.aws.amazon.com/public/currentevents")!)
 
     let url = URL(string: "https://health.aws.amazon.com/health/status")!

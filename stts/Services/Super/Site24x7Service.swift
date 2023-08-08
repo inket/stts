@@ -5,11 +5,32 @@
 
 import Foundation
 
-typealias Site24x7Service = BaseSite24x7Service & RequiredServiceProperties & RequiredSite24x7Properties
+class Site24x7ServiceDefinition: ServiceDefinition {
+    enum ExtraKeys: String, CodingKey {
+        case id
+    }
 
-protocol RequiredSite24x7Properties {
     // Can be found by searching for "enc_statuspage_id" in the status page HTML
-    var encryptedStatusPageID: String { get }
+    let id: String
+    let providerIdentifier = "site24x7"
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: ExtraKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+
+        try super.init(from: decoder)
+    }
+
+    override func encode(to encoder: Encoder) throws {
+        try super.encode(to: encoder)
+
+        var container = encoder.container(keyedBy: ExtraKeys.self)
+        try container.encode(id, forKey: .id)
+    }
+
+    func build() -> BaseService? {
+        Site24x7Service(self)
+    }
 }
 
 private protocol RepresentableComponent {
@@ -58,7 +79,7 @@ private enum Site24x7Status: Int, Codable {
     }
 }
 
-class BaseSite24x7Service: BaseService {
+class Site24x7Service: Service {
     private struct Response: Decodable {
         let data: ResponseData
     }
@@ -118,14 +139,20 @@ class BaseSite24x7Service: BaseService {
         let status: Site24x7Status
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? Site24x7Service else {
-            fatalError("BaseSite24x7Service should not be used directly.")
-        }
+    let id: String
+    let name: String
+    let url: URL
 
-        let apiURL = realSelf.url
+    init(_ definition: Site24x7ServiceDefinition) {
+        id = definition.id
+        name = definition.name
+        url = definition.url
+    }
+
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+        let apiURL = url
             .appendingPathComponent("sp/api/public/summary_details/statuspages")
-            .appendingPathComponent(realSelf.encryptedStatusPageID)
+            .appendingPathComponent(id)
 
         loadData(with: apiURL) { [weak self] data, _, error in
             guard let self else { return }

@@ -35,7 +35,7 @@ private struct NetSuiteResponse: Codable {
     let status: NetSuiteStatus
 }
 
-class OracleNetSuite: Service {
+class OracleNetSuite: IndependentService {
     let name = "Oracle NetSuite"
     let url = URL(string: "https://status.netsuite.com")!
 

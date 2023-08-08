@@ -9,27 +9,31 @@ struct Preferences {
     static var shared = Preferences()
 
     var notifyOnStatusChange: Bool {
-        get { return UserDefaults.standard.bool(forKey: "notifyOnStatusChange") }
+        get { UserDefaults.standard.bool(forKey: "notifyOnStatusChange") }
         set { UserDefaults.standard.set(newValue, forKey: "notifyOnStatusChange") }
     }
 
     var hideServiceDetailsIfAvailable: Bool {
-        get { return UserDefaults.standard.bool(forKey: "hideServiceDetailsIfAvailable") }
+        get { UserDefaults.standard.bool(forKey: "hideServiceDetailsIfAvailable") }
         set { UserDefaults.standard.set(newValue, forKey: "hideServiceDetailsIfAvailable") }
     }
 
-    var selectedServices: [BaseService] {
+    var selectedServices: [ServiceDefinition] {
         get {
-            guard let classNames = UserDefaults.standard.array(forKey: "selectedServices") as? [String] else {
-                return []
+            let identifiers = UserDefaults.standard.array(forKey: "selectedServices") as? [String] ?? []
+
+            // Match the identifiers to our loaded service definitions
+            let definitions = identifiers.map(ServiceLoader.current.serviceDefinition(forIdentifier:)).compactMap { $0 }
+            let sortedDefinitions = definitions.sorted { a, b in
+                a.name.localizedCaseInsensitiveCompare(b.name) == .orderedAscending
             }
 
-            return classNames.map(BaseService.named).compactMap { $0 }.sorted()
+            return sortedDefinitions
         }
 
         set {
-            let classNames = newValue.map { "\(type(of: $0))" }
-            UserDefaults.standard.set(classNames, forKey: "selectedServices")
+            let identifiers = newValue.map { $0.globalIdentifier }
+            UserDefaults.standard.set(identifiers, forKey: "selectedServices")
         }
     }
 
@@ -49,14 +53,6 @@ struct Preferences {
             "CloudFlare": "Cloudflare", // v1.0.0 used the name "CloudFlare" instead of the official "Cloudflare"
             "Apple": "AppleAll", // Apple changed from one service to multiple sub services
             "AppleDeveloper": "AppleDeveloperAll", // Apple Developer changed from one service to multiple sub services
-            "BitBucket": "Bitbucket", // v2.8
-            "StatusPage": "Statuspage", // v2.8
-            "ProtonMail": "Proton", // v2.12
-            "Packet": "EquinixMetal", // v2.12
-            "Quandl": "NasdaqDataLink", // v2.12
-            "Quay": "QuayIO", // v2.12
-            "SmartyStreets": "Smarty", // v2.12
-            "UrbanAirship": "AirshipUS", // v2.19
             // Generated services
             "FirebaseMLKit": "FirebaseMachineLearning"
         ]

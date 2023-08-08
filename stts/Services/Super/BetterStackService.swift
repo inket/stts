@@ -6,11 +6,15 @@
 import Foundation
 import Kanna
 
-typealias BetterStackService = BaseBetterStackService & RequiredServiceProperties & RequiredBetterStackProperties
+class BetterStackServiceDefinition: ServiceDefinition {
+    let providerIdentifier = "betterstack"
 
-protocol RequiredBetterStackProperties {}
+    func build() -> BaseService? {
+        BetterStackService(self)
+    }
+}
 
-class BaseBetterStackService: BaseService {
+class BetterStackService: Service {
     /*
      :root {
          /* light mode colors in RGB */
@@ -44,12 +48,16 @@ class BaseBetterStackService: BaseService {
         }
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? BetterStackService else {
-            fatalError("BaseBetterStackService should not be used directly.")
-        }
+    let name: String
+    let url: URL
 
-        loadData(with: realSelf.url) { [weak self] data, _, error in
+    init(_ definition: BetterStackServiceDefinition) {
+        name = definition.name
+        url = definition.url
+    }
+
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+        loadData(with: url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }

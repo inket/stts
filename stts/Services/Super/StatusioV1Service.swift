@@ -5,13 +5,34 @@
 
 import Foundation
 
-typealias StatusioV1Service = BaseStatusioV1Service & RequiredServiceProperties & RequiredStatusioV1Properties
+class StatusioV1ServiceDefinition: ServiceDefinition {
+    enum ExtraKeys: String, CodingKey {
+        case id
+    }
 
-protocol RequiredStatusioV1Properties {
-    var statusPageID: String { get }
+    let id: String
+    let providerIdentifier = "statusiov1"
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: ExtraKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+
+        try super.init(from: decoder)
+    }
+
+    override func encode(to encoder: Encoder) throws {
+        try super.encode(to: encoder)
+
+        var container = encoder.container(keyedBy: ExtraKeys.self)
+        try container.encode(id, forKey: .id)
+    }
+
+    func build() -> BaseService? {
+        StatusioV1Service(self)
+    }
 }
 
-class BaseStatusioV1Service: BaseService {
+class StatusioV1Service: Service {
     private enum StatusioV1Status: Int {
         case operational = 100
         case plannedMaintenance = 200
@@ -37,12 +58,18 @@ class BaseStatusioV1Service: BaseService {
         }
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? StatusioV1Service else {
-            fatalError("BaseStatusioV1Service should not be used directly.")
-        }
+    let id: String
+    let name: String
+    let url: URL
 
-        let statusURL = URL(string: "https://api.status.io/1.0/status/\(realSelf.statusPageID)")!
+    init(_ definition: StatusioV1ServiceDefinition) {
+        id = definition.id
+        name = definition.name
+        url = definition.url
+    }
+
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+        let statusURL = URL(string: "https://api.status.io/1.0/status/\(id)")!
 
         loadData(with: statusURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }

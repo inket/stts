@@ -7,8 +7,22 @@ import XCTest
 @testable import stts
 
 final class BetterStackTests: XCTestCase {
+    private func createService() throws -> BetterStackService {
+        let definition = try JSONDecoder().decode(
+            BetterStackServiceDefinition.self,
+            from: """
+            {
+                "url": "https://status.buildjet.com",
+                "name": "BuildJet"
+            }
+            """.data(using: .utf8)!
+        )
+
+        return try XCTUnwrap(definition.build() as? BetterStackService)
+    }
+
     func testNormalStatus() throws {
-        let buildJet = BuildJet()
+        let buildJet = try createService()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
             .init(
@@ -30,7 +44,7 @@ final class BetterStackTests: XCTestCase {
     }
 
     func testMajorStatus() throws {
-        let buildJet = BuildJet()
+        let buildJet = try createService()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
             .init(

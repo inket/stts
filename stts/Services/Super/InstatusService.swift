@@ -6,11 +6,15 @@
 import Foundation
 import Kanna
 
-typealias InstatusService = BaseInstatusService & RequiredServiceProperties & RequiredInstatusProperties
+class InstatusServiceDefinition: ServiceDefinition {
+    let providerIdentifier = "instatus"
 
-protocol RequiredInstatusProperties {}
+    func build() -> BaseService? {
+        InstatusService(self)
+    }
+}
 
-class BaseInstatusService: BaseService {
+class InstatusService: Service {
     private struct Site: Codable {
         let status: Status
         let components: [Component]
@@ -109,12 +113,16 @@ class BaseInstatusService: BaseService {
         let props: Props
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? InstatusService else {
-            fatalError("BaseInstatusService should not be used directly.")
-        }
+    let name: String
+    let url: URL
 
-        loadData(with: realSelf.url) { [weak self] data, _, error in
+    init(_ definition: InstatusServiceDefinition) {
+        name = definition.name
+        url = definition.url
+    }
+
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+        loadData(with: url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
 

@@ -197,7 +197,7 @@ class BottomBar: NSView {
         }
     }
 
-    func openedCategory(_ category: ServiceCategory?, backCallback: @escaping () -> Void) {
+    func openedCategory(_ category: ServiceDefinition?, backCallback: @escaping () -> Void) {
         doneButton.isHidden = false
         aboutButton.isHidden = category != nil
         quitButton.isHidden = category != nil

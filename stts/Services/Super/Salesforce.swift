@@ -18,7 +18,7 @@ extension InheritsSalesforceCategory {
     }
 }
 
-class BaseSalesforce: BaseService {
+class BaseSalesforce: BaseIndependentService {
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         guard let realSelf = self as? Salesforce else {
             fatalError("BaseSalesforce should not be used directly.")

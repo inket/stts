@@ -35,7 +35,7 @@ protocol RequiredPayPalProperties {
     var component: PayPalComponent { get }
 }
 
-class BasePayPal: BaseService {
+class BasePayPal: BaseIndependentService {
     private enum PayPalStatus: String, ComparableStatus {
         case operational
         case underMaintenance = "under_maintenance"

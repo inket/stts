@@ -3,13 +3,18 @@
 //  stts
 //
 
+import Foundation
 import Kanna
 
-typealias BetterUptimeService = BaseBetterUptimeService & RequiredServiceProperties & RequiredBetterUptimeProperties
+class BetterUptimeServiceDefinition: ServiceDefinition {
+    let providerIdentifier = "betteruptime"
 
-protocol RequiredBetterUptimeProperties {}
+    func build() -> BaseService? {
+        BetterUptimeService(self)
+    }
+}
 
-class BaseBetterUptimeService: BaseService {
+class BetterUptimeService: Service {
     private enum BetterUptimeStatus: String, CaseIterable {
         case operational
         case degraded
@@ -48,12 +53,16 @@ class BaseBetterUptimeService: BaseService {
         }
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? BetterUptimeService else {
-            fatalError("BaseBetterUptimeService should not be used directly.")
-        }
+    let name: String
+    let url: URL
 
-        loadData(with: realSelf.url) { [weak self] data, _, error in
+    init(_ definition: BetterUptimeServiceDefinition) {
+        name = definition.name
+        url = definition.url
+    }
+
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+        loadData(with: url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }
@@ -84,7 +93,7 @@ class BaseBetterUptimeService: BaseService {
         }
     }
 
-    private func status(from element: XMLElement) -> BetterUptimeStatus? {
+    private func status(from element: Kanna.XMLElement) -> BetterUptimeStatus? {
         guard let className = element.className, !className.isEmpty else { return nil }
 
         for statusCase in BetterUptimeStatus.allCases {
@@ -96,7 +105,7 @@ class BaseBetterUptimeService: BaseService {
         return nil
     }
 
-    private func status(fromV2Icon element: XMLElement) -> BetterUptimeStatus? {
+    private func status(fromV2Icon element: Kanna.XMLElement) -> BetterUptimeStatus? {
         guard let className = element.className, !className.isEmpty else { return nil }
 
         for statusCase in BetterUptimeStatus.allCases {

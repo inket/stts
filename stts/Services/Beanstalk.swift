@@ -6,7 +6,7 @@
 import Foundation
 import Kanna
 
-class Beanstalk: Service {
+class Beanstalk: IndependentService {
     let url = URL(string: "https://status.beanstalkapp.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {

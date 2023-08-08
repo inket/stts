@@ -6,7 +6,7 @@
 import Foundation
 import Kanna
 
-class Slack: Service {
+class Slack: IndependentService {
     private enum SlackStatus: String {
         case check = "tablecheck.png"
         case outage = "tableoutage.png"

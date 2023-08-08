@@ -5,13 +5,34 @@
 
 import Foundation
 
-typealias StatusCakeService = BaseStatusCakeService & RequiredServiceProperties & RequiredStatusCakeProperties
+class StatusCakeServiceDefinition: ServiceDefinition {
+    enum ExtraKeys: String, CodingKey {
+        case id
+    }
 
-protocol RequiredStatusCakeProperties {
-    var publicID: String { get }
+    let id: String
+    let providerIdentifier = "statuscake"
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: ExtraKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+
+        try super.init(from: decoder)
+    }
+
+    override func encode(to encoder: Encoder) throws {
+        try super.encode(to: encoder)
+
+        var container = encoder.container(keyedBy: ExtraKeys.self)
+        try container.encode(id, forKey: .id)
+    }
+
+    func build() -> BaseService? {
+        StatusCakeService(self)
+    }
 }
 
-class BaseStatusCakeService: BaseService {
+class StatusCakeService: Service {
     private enum StatusCakeStatus: String, ComparableStatus {
         case up = "Up"
         case down = "Down"
@@ -30,13 +51,19 @@ class BaseStatusCakeService: BaseService {
         }
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? StatusCakeService else {
-            fatalError("BaseStatusCakeService should not be used directly.")
-        }
+    let id: String
+    let name: String
+    let url: URL
 
+    init(_ definition: StatusCakeServiceDefinition) {
+        id = definition.id
+        name = definition.name
+        url = definition.url
+    }
+
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
         let statusURL = URL(
-            string: "https://app.statuscake.com/Workfloor/PublicReportHandler.php?PublicID=\(realSelf.publicID)"
+            string: "https://app.statuscake.com/Workfloor/PublicReportHandler.php?PublicID=\(id)"
         )!
 
         loadData(with: statusURL) { [weak self] data, _, error in

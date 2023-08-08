@@ -35,7 +35,7 @@ private struct StripeCurrentStatus: Codable {
     let uptimeStatus: Status
 }
 
-class Stripe: Service {
+class Stripe: IndependentService {
     let url = URL(string: "https://status.stripe.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {

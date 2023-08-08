@@ -34,7 +34,7 @@ private struct ZendeskIncidentsResponse: Codable {
     }
 }
 
-class Zendesk: Service {
+class Zendesk: IndependentService {
     let url = URL(string: "https://status.zendesk.com")!
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {

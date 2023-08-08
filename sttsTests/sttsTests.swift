@@ -14,9 +14,20 @@ class SttsTests: XCTestCase {
     func testServices() throws {
         var expectations = [XCTestExpectation]()
 
-        let services = BaseService.all().sorted()
-        services.forEach { service in
-            let thisExpectation = XCTestExpectation(description: "Retrieve status for \(type(of: service))")
+        let serviceDefinitions = ServiceLoader.current.allServices
+        var testedServices: [BaseService] = [] // Have to retain services until the end of the test
+
+        print("Retrieving status for \(serviceDefinitions.count) services")
+
+        serviceDefinitions.forEach { serviceDefinition in
+            guard let service = serviceDefinition.build() as? Service else {
+                XCTFail("Could not build service for definition: \(serviceDefinition)")
+                return
+            }
+
+            testedServices.append(service)
+
+            let thisExpectation = XCTestExpectation(description: "Retrieve status for \(service.name)")
 
             expectations.append(thisExpectation)
 
@@ -26,26 +37,27 @@ class SttsTests: XCTestCase {
                 sleep(1)
             }
 
-            print("Retrieving status for \(type(of: service))…")
+            print("Retrieving status for \(service.name)…")
 
             service.updateStatus { updatedService in
+                let updatedService = updatedService as! Service // swiftlint:disable:this force_cast
                 print(
                     """
-                    Retrieved status for \(type(of: updatedService)): \(updatedService.status)\
+                    Retrieved status for \(updatedService.name): \(updatedService.status)\
                     (\(updatedService.message))
                     """
                 )
 
                 XCTAssert(
                     updatedService.status != .undetermined,
-                    "Retrieved status for \(type(of: updatedService)) should not be .undetermined"
+                    "Retrieved status for \(updatedService.name) should not be .undetermined"
                 )
 
                 thisExpectation.fulfill()
             }
         }
 
-        let timeout = TimeInterval(services.count) + 2 // Expect to wait one second per service, worst case scenario
-        wait(for: expectations, timeout: timeout)
+        wait(for: expectations, timeout: 5)
+        testedServices = []
     }
 }

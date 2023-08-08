@@ -6,13 +6,35 @@
 import Foundation
 import Kanna
 
-typealias ExanaService = BaseExanaService & RequiredServiceProperties & RequiredExanaProperties
+class ExanaServiceDefinition: ServiceDefinition {
+    enum ExtraKeys: String, CodingKey {
+        case id
+    }
 
-protocol RequiredExanaProperties {
-    var serviceID: String { get }
+    /// Service ID
+    let id: String
+    let providerIdentifier = "exana"
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: ExtraKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+
+        try super.init(from: decoder)
+    }
+
+    override func encode(to encoder: Encoder) throws {
+        try super.encode(to: encoder)
+
+        var container = encoder.container(keyedBy: ExtraKeys.self)
+        try container.encode(id, forKey: .id)
+    }
+
+    func build() -> BaseService? {
+        ExanaService(self)
+    }
 }
 
-class BaseExanaService: BaseService {
+class ExanaService: Service {
     private enum ExanaStatus: String {
         case operational
         case monitoring
@@ -27,10 +49,18 @@ class BaseExanaService: BaseService {
         }
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? ExanaService else { fatalError("BaseExanaService should not be used directly.") }
+    let id: String
+    let name: String
+    let url: URL
 
-        loadData(with: realSelf.url) { [weak self] data, _, error in
+    init(_ definition: ExanaServiceDefinition) {
+        id = definition.id
+        name = definition.name
+        url = definition.url
+    }
+
+    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+        loadData(with: url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
 
             guard let data = data else { return strongSelf._fail(error) }
@@ -47,13 +77,11 @@ class BaseExanaService: BaseService {
         }
     }
 
-    func getStatus(authorization: String, callback: @escaping (BaseExanaService) -> Void) {
-        guard let realSelf = self as? ExanaService else { fatalError("BaseExanaService should not be used directly.") }
-
+    func getStatus(authorization: String, callback: @escaping (ExanaService) -> Void) {
         let params: [String: Any] = [
             "method": "components.query",
             "params": [
-                "serviceId": realSelf.serviceID
+                "serviceId": id
             ],
             "id": String.init(repeating: "a", count: 40),
             "jsonrpc": "2.0"
