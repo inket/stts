@@ -5,7 +5,7 @@
 
 import Foundation
 
-class CStateServiceDefinition: ServiceDefinition {
+class CStateServiceDefinition: CodableServiceDefinition, ServiceDefinition {
     let providerIdentifier = "cstate"
 
     func build() -> BaseService? {

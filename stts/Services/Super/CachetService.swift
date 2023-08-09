@@ -5,7 +5,7 @@
 
 import Foundation
 
-class CachetServiceDefinition: ServiceDefinition {
+class CachetServiceDefinition: CodableServiceDefinition, ServiceDefinition {
     let providerIdentifier = "cachet"
 
     func build() -> BaseService? {

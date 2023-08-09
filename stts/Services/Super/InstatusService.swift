@@ -6,7 +6,7 @@
 import Foundation
 import Kanna
 
-class InstatusServiceDefinition: ServiceDefinition {
+class InstatusServiceDefinition: CodableServiceDefinition, ServiceDefinition {
     let providerIdentifier = "instatus"
 
     func build() -> BaseService? {

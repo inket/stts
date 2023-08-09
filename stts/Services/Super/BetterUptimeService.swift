@@ -6,7 +6,7 @@
 import Foundation
 import Kanna
 
-class BetterUptimeServiceDefinition: ServiceDefinition {
+class BetterUptimeServiceDefinition: CodableServiceDefinition, ServiceDefinition {
     let providerIdentifier = "betteruptime"
 
     func build() -> BaseService? {

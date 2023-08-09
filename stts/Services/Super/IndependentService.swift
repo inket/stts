@@ -5,7 +5,7 @@
 
 import Foundation
 
-class IndependentServiceDefinition: ServiceDefinition {
+class IndependentServiceDefinition: CodableServiceDefinition, ServiceDefinition {
     enum ExtraKeys: String, CodingKey {
         case className = "class_name"
     }

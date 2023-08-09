@@ -5,7 +5,7 @@
 
 import Foundation
 
-class LambStatusServiceDefinition: ServiceDefinition {
+class LambStatusServiceDefinition: CodableServiceDefinition, ServiceDefinition {
     let providerIdentifier = "lamb"
 
     func build() -> BaseService? {

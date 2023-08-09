@@ -91,6 +91,8 @@
 		B2B2D1081D49D5080014D780 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B2D1061D49D5080014D780 /* MainMenu.xib */; };
 		B2B77AA927FBC729009B9C2A /* FirebaseStatusDashboardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B77AA827FBC729009B9C2A /* FirebaseStatusDashboardStore.swift */; };
 		B2BB19BA20B8FEFD00A97A87 /* CachetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BB19B920B8FEFD00A97A87 /* CachetService.swift */; };
+		B2BD7EA02A837E6A000AAC76 /* ServiceDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BD7E9F2A837E6A000AAC76 /* ServiceDefinition.swift */; };
+		B2BD7EA22A837E8C000AAC76 /* ServicesStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BD7EA12A837E8C000AAC76 /* ServicesStructure.swift */; };
 		B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */; };
 		B2CEB9A11DFD8984005FB901 /* StartAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */; };
 		B2CEB9A21DFD8987005FB901 /* StartAtLogin.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -236,6 +238,8 @@
 		B2B2D1091D49D5080014D780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2B77AA827FBC729009B9C2A /* FirebaseStatusDashboardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStatusDashboardStore.swift; sourceTree = "<group>"; };
 		B2BB19B920B8FEFD00A97A87 /* CachetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachetService.swift; sourceTree = "<group>"; };
+		B2BD7E9F2A837E6A000AAC76 /* ServiceDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDefinition.swift; sourceTree = "<group>"; };
+		B2BD7EA12A837E8C000AAC76 /* ServicesStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesStructure.swift; sourceTree = "<group>"; };
 		B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StartAtLogin.framework; path = Carthage/Build/Mac/StartAtLogin.framework; sourceTree = SOURCE_ROOT; };
 		B2CEE5D622B49CB50073C743 /* Azure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Azure.swift; sourceTree = "<group>"; };
@@ -406,6 +410,7 @@
 		B2B2D1011D49D5080014D780 /* stts */ = {
 			isa = PBXGroup;
 			children = (
+				B2BD7E9E2A837E3E000AAC76 /* ServiceLoader */,
 				B274C6361DD56A9E00A6B350 /* EditorTableView */,
 				B2DCE6932215ACD0001447D8 /* Extensions */,
 				B213A17A1DC9EA3F008E8E58 /* ServiceTableView */,
@@ -419,9 +424,18 @@
 				B24D19F51DD072840052E539 /* Preferences.swift */,
 				B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */,
 				B2CF3FBF1DF7DD2100B66491 /* stts.entitlements */,
-				B20950722A7FA091004FC028 /* ServiceLoader.swift */,
 			);
 			path = stts;
+			sourceTree = "<group>";
+		};
+		B2BD7E9E2A837E3E000AAC76 /* ServiceLoader */ = {
+			isa = PBXGroup;
+			children = (
+				B20950722A7FA091004FC028 /* ServiceLoader.swift */,
+				B2BD7E9F2A837E6A000AAC76 /* ServiceDefinition.swift */,
+				B2BD7EA12A837E8C000AAC76 /* ServicesStructure.swift */,
+			);
+			path = ServiceLoader;
 			sourceTree = "<group>";
 		};
 		B2DCE6932215ACD0001447D8 /* Extensions */ = {
@@ -831,6 +845,7 @@
 				B225E3E01E44830F008E1D3D /* SwitchableTableViewController.swift in Sources */,
 				B2228B6026C95D15002F01F0 /* SendbirdService.swift in Sources */,
 				B22FDE4F2108A5B700359EC9 /* PayPalProductSandbox.swift in Sources */,
+				B2BD7EA22A837E8C000AAC76 /* ServicesStructure.swift in Sources */,
 				B2F55EEC2408B5F1003D674C /* PSNAmerica.swift in Sources */,
 				B2563BBC22CBC3D500532C39 /* DataLoader.swift in Sources */,
 				B28E912A248250F40026BAAA /* AppleStore.swift in Sources */,
@@ -859,6 +874,7 @@
 				B2B77AA927FBC729009B9C2A /* FirebaseStatusDashboardStore.swift in Sources */,
 				B22602B127D881AF001190F1 /* OracleNetSuite.swift in Sources */,
 				B20883F32A59ADAE007578C8 /* StatusCastService.swift in Sources */,
+				B2BD7EA02A837E6A000AAC76 /* ServiceDefinition.swift in Sources */,
 				B20950752A7FA281004FC028 /* IndependentService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -5,7 +5,7 @@
 
 import Foundation
 
-class Site24x7ServiceDefinition: ServiceDefinition {
+class Site24x7ServiceDefinition: CodableServiceDefinition, ServiceDefinition {
     enum ExtraKeys: String, CodingKey {
         case id
     }

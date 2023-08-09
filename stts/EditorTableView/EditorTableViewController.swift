@@ -73,7 +73,7 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
                 let isTheCategory = service is ServiceCategory
 
                 return hasExpectedSuperclass && !isTheCategory
-            }.sorted(by: ServiceDefinitionSort)
+            }.sorted(by: ServiceDefinitionSortByName)
 
             // Add the category as the top item
             subServices.insert(categoryDefinition, at: 0)

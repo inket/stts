@@ -6,7 +6,7 @@
 import Foundation
 import Kanna
 
-class BetterStackServiceDefinition: ServiceDefinition {
+class BetterStackServiceDefinition: CodableServiceDefinition, ServiceDefinition {
     let providerIdentifier = "betterstack"
 
     func build() -> BaseService? {

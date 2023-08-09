@@ -5,7 +5,7 @@
 
 import Foundation
 
-class StatusCakeServiceDefinition: ServiceDefinition {
+class StatusCakeServiceDefinition: CodableServiceDefinition, ServiceDefinition {
     enum ExtraKeys: String, CodingKey {
         case id
     }

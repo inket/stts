@@ -6,7 +6,7 @@
 import Foundation
 import Kanna
 
-class StatuspalServiceDefinition: ServiceDefinition {
+class StatuspalServiceDefinition: CodableServiceDefinition, ServiceDefinition {
     let providerIdentifier = "statuspal"
 
     func build() -> BaseService? {

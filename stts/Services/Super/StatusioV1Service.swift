@@ -5,7 +5,7 @@
 
 import Foundation
 
-class StatusioV1ServiceDefinition: ServiceDefinition {
+class StatusioV1ServiceDefinition: CodableServiceDefinition, ServiceDefinition {
     enum ExtraKeys: String, CodingKey {
         case id
     }

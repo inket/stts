@@ -5,7 +5,7 @@
 
 import Foundation
 
-class StatusPageServiceDefinition: ServiceDefinition {
+class StatusPageServiceDefinition: CodableServiceDefinition, ServiceDefinition {
     enum ExtraKeys: String, CodingKey {
         case id
         case host

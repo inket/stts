@@ -5,7 +5,7 @@
 
 import Foundation
 
-class SorryServiceDefinition: ServiceDefinition {
+class SorryServiceDefinition: CodableServiceDefinition, ServiceDefinition {
     enum ExtraKeys: String, CodingKey {
         case id
     }

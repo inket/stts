@@ -6,7 +6,7 @@
 import Foundation
 import Kanna
 
-class IncidentIOServiceDefinition: ServiceDefinition {
+class IncidentIOServiceDefinition: CodableServiceDefinition, ServiceDefinition {
     let providerIdentifier = "incidentio"
 
     func build() -> BaseService? {

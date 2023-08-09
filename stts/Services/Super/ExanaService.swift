@@ -6,7 +6,7 @@
 import Foundation
 import Kanna
 
-class ExanaServiceDefinition: ServiceDefinition {
+class ExanaServiceDefinition: CodableServiceDefinition, ServiceDefinition {
     enum ExtraKeys: String, CodingKey {
         case id
     }

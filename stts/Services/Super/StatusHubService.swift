@@ -5,7 +5,7 @@
 
 import Foundation
 
-class StatusHubServiceDefinition: ServiceDefinition {
+class StatusHubServiceDefinition: CodableServiceDefinition, ServiceDefinition {
     let providerIdentifier = "statushub"
 
     func build() -> BaseService? {
