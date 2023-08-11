@@ -53,6 +53,11 @@ class GoogleApigee: GoogleCloudPlatform, SubService {
     let dashboardName = "Apigee"
 }
 
+class GoogleApplicationIntegration: GoogleCloudPlatform, SubService {
+    let name = "Google Application Integration"
+    let dashboardName = "Application Integration"
+}
+
 class GoogleAppSheet: GoogleCloudPlatform, SubService {
     let name = "Google AppSheet"
     let dashboardName = "AppSheet"
@@ -526,6 +531,11 @@ class GoogleIdentityAndAccessManagement: GoogleCloudPlatform, SubService {
 class GoogleIdentityPlatform: GoogleCloudPlatform, SubService {
     let name = "Google Identity Platform"
     let dashboardName = "Identity Platform"
+}
+
+class GoogleIntegrationConnectors: GoogleCloudPlatform, SubService {
+    let name = "Google Integration Connectors"
+    let dashboardName = "Integration Connectors"
 }
 
 class GoogleKeyAccessJustifications: GoogleCloudPlatform, SubService {

@@ -1662,6 +1662,58 @@ class AWSHealthImaging: AWSNamedService, SubService {
     ])
 }
 
+class AWSHealthLake: AWSNamedService, SubService {
+    let name = "AWS HealthLake"
+    let ids = Set<String>([
+        "healthlake-ap-south-1",
+        "healthlake-us-east-1",
+        "healthlake-us-east-2",
+        "healthlake-us-west-2"
+    ])
+}
+
+class AWSHealthOmics: AWSNamedService, SubService {
+    let name = "AWS HealthOmics"
+    let ids = Set<String>([
+        "omics-ap-southeast-1",
+        "omics-eu-central-1",
+        "omics-eu-west-1",
+        "omics-eu-west-2",
+        "omics-us-east-1",
+        "omics-us-west-2"
+    ])
+}
+
+class AWSIAMIdentityCenter: AWSNamedService, SubService {
+    let name = "AWS IAM Identity Center"
+    let ids = Set<String>([
+        "iamidentitycenter-af-south-1",
+        "iamidentitycenter-ap-east-1",
+        "iamidentitycenter-ap-northeast-1",
+        "iamidentitycenter-ap-northeast-2",
+        "iamidentitycenter-ap-northeast-3",
+        "iamidentitycenter-ap-south-1",
+        "iamidentitycenter-ap-southeast-1",
+        "iamidentitycenter-ap-southeast-2",
+        "iamidentitycenter-ap-southeast-3",
+        "iamidentitycenter-ca-central-1",
+        "iamidentitycenter-eu-central-1",
+        "iamidentitycenter-eu-north-1",
+        "iamidentitycenter-eu-south-1",
+        "iamidentitycenter-eu-west-1",
+        "iamidentitycenter-eu-west-2",
+        "iamidentitycenter-eu-west-3",
+        "iamidentitycenter-me-south-1",
+        "iamidentitycenter-sa-east-1",
+        "iamidentitycenter-us-east-1",
+        "iamidentitycenter-us-east-2",
+        "iamidentitycenter-us-gov-east-1",
+        "iamidentitycenter-us-gov-west-1",
+        "iamidentitycenter-us-west-1",
+        "iamidentitycenter-us-west-2"
+    ])
+}
+
 class AWSIdentityAndAccessManagement: AWSNamedService, SubService {
     let name = "AWS Identity and Access Management"
     let ids = Set<String>([
@@ -2905,6 +2957,7 @@ class AWSSignIn: AWSNamedService, SubService {
         "signin-eu-west-1",
         "signin-eu-west-2",
         "signin-eu-west-3",
+        "signin-il-central-1",
         "signin-me-central-1",
         "signin-me-south-1",
         "signin-sa-east-1",
@@ -4673,16 +4726,6 @@ class AmazonGuardDuty: AWSNamedService, SubService {
     ])
 }
 
-class AmazonHealthLake: AWSNamedService, SubService {
-    let name = "Amazon HealthLake"
-    let ids = Set<String>([
-        "healthlake-ap-south-1",
-        "healthlake-us-east-1",
-        "healthlake-us-east-2",
-        "healthlake-us-west-2"
-    ])
-}
-
 class AmazonInspector: AWSNamedService, SubService {
     let name = "Amazon Inspector"
     let ids = Set<String>([
@@ -5256,18 +5299,6 @@ class AmazonNimbleStudio: AWSNamedService, SubService {
     ])
 }
 
-class AmazonOmics: AWSNamedService, SubService {
-    let name = "Amazon Omics"
-    let ids = Set<String>([
-        "omics-ap-southeast-1",
-        "omics-eu-central-1",
-        "omics-eu-west-1",
-        "omics-eu-west-2",
-        "omics-us-east-1",
-        "omics-us-west-2"
-    ])
-}
-
 class AmazonOpenSearchService: AWSNamedService, SubService {
     let name = "Amazon OpenSearch Service"
     let ids = Set<String>([
@@ -5558,6 +5589,7 @@ class AmazonRoute53Resolver: AWSNamedService, SubService {
         "route53resolver-eu-west-1",
         "route53resolver-eu-west-2",
         "route53resolver-eu-west-3",
+        "route53resolver-il-central-1",
         "route53resolver-me-central-1",
         "route53resolver-me-south-1",
         "route53resolver-sa-east-1",
