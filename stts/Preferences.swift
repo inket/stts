@@ -54,7 +54,8 @@ class Preferences {
             "Apple": "AppleAll", // Apple changed from one service to multiple sub services
             "AppleDeveloper": "AppleDeveloperAll", // Apple Developer changed from one service to multiple sub services
             // Generated services
-            "FirebaseMLKit": "FirebaseMachineLearning"
+            "FirebaseMLKit": "FirebaseMachineLearning",
+            "AdobeAdobePhotoshopAPI": "AdobePhotoshopAPI"
         ]
 
         if var services = UserDefaults.standard.array(forKey: "selectedServices") as? [String] {

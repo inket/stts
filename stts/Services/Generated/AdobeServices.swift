@@ -3,11 +3,6 @@
 
 import Foundation
 
-class AdobeAdobePhotoshopAPI: AdobeCreativeCloud, SubService {
-    let name = "Adobe  Adobe Photoshop API "
-    let id = "525665"
-}
-
 class AdobeAccountManagement: AdobeServices, SubService {
     let name = "Adobe Account Management"
     let id = "503498"
@@ -273,6 +268,11 @@ class AdobeMixamo: AdobeCreativeCloud, SubService {
 class AdobePhotoshop: AdobeCreativeCloud, SubService {
     let name = "Adobe Photoshop"
     let id = "503493"
+}
+
+class AdobePhotoshopAPI: AdobeCreativeCloud, SubService {
+    let name = "Adobe Photoshop API"
+    let id = "525665"
 }
 
 class AdobePlatformCoreServices: AdobeExperiencePlatform, SubService {

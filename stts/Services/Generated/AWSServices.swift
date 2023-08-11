@@ -3519,39 +3519,6 @@ class AWSXRay: AWSNamedService, SubService {
     ])
 }
 
-class AmazonEventBridgeScheduler: AWSNamedService, SubService {
-    let name = "Amazon  EventBridge Scheduler"
-    let ids = Set<String>([
-        "scheduler-af-south-1",
-        "scheduler-ap-east-1",
-        "scheduler-ap-northeast-1",
-        "scheduler-ap-northeast-2",
-        "scheduler-ap-northeast-3",
-        "scheduler-ap-south-1",
-        "scheduler-ap-south-2",
-        "scheduler-ap-southeast-1",
-        "scheduler-ap-southeast-2",
-        "scheduler-ap-southeast-3",
-        "scheduler-ap-southeast-4",
-        "scheduler-ca-central-1",
-        "scheduler-eu-central-1",
-        "scheduler-eu-central-2",
-        "scheduler-eu-north-1",
-        "scheduler-eu-south-1",
-        "scheduler-eu-south-2",
-        "scheduler-eu-west-1",
-        "scheduler-eu-west-2",
-        "scheduler-eu-west-3",
-        "scheduler-me-central-1",
-        "scheduler-me-south-1",
-        "scheduler-sa-east-1",
-        "scheduler-us-east-1",
-        "scheduler-us-east-2",
-        "scheduler-us-west-1",
-        "scheduler-us-west-2"
-    ])
-}
-
 class AmazonAPIGateway: AWSNamedService, SubService {
     let name = "Amazon API Gateway"
     let ids = Set<String>([
@@ -4527,6 +4494,39 @@ class AmazonEventBridge: AWSNamedService, SubService {
         "events-us-gov-west-1",
         "events-us-west-1",
         "events-us-west-2"
+    ])
+}
+
+class AmazonEventBridgeScheduler: AWSNamedService, SubService {
+    let name = "Amazon EventBridge Scheduler"
+    let ids = Set<String>([
+        "scheduler-af-south-1",
+        "scheduler-ap-east-1",
+        "scheduler-ap-northeast-1",
+        "scheduler-ap-northeast-2",
+        "scheduler-ap-northeast-3",
+        "scheduler-ap-south-1",
+        "scheduler-ap-south-2",
+        "scheduler-ap-southeast-1",
+        "scheduler-ap-southeast-2",
+        "scheduler-ap-southeast-3",
+        "scheduler-ap-southeast-4",
+        "scheduler-ca-central-1",
+        "scheduler-eu-central-1",
+        "scheduler-eu-central-2",
+        "scheduler-eu-north-1",
+        "scheduler-eu-south-1",
+        "scheduler-eu-south-2",
+        "scheduler-eu-west-1",
+        "scheduler-eu-west-2",
+        "scheduler-eu-west-3",
+        "scheduler-me-central-1",
+        "scheduler-me-south-1",
+        "scheduler-sa-east-1",
+        "scheduler-us-east-1",
+        "scheduler-us-east-2",
+        "scheduler-us-west-1",
+        "scheduler-us-west-2"
     ])
 }
 

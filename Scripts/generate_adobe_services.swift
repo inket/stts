@@ -163,6 +163,9 @@ func discoverServices() -> [AdobeService] {
     var categories = [String: AdobeService]()
     clouds.forEach { cloud in
         var name = cloud.name
+            .split(separator: " ")
+            .joined(separator: " ")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
 
         if uniqueNames.contains(name) {
             name = "\(name) (\(cloud.id))"
@@ -175,6 +178,9 @@ func discoverServices() -> [AdobeService] {
         // Create the subservices from the products
         cloud.products.forEach { product in
             var name = product.name
+                .split(separator: " ")
+                .joined(separator: " ")
+                .trimmingCharacters(in: .whitespacesAndNewlines)
 
             if uniqueNames.contains(name) {
                 name = "\(name) (\(product.id))"

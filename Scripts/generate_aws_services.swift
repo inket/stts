@@ -46,6 +46,10 @@ class OutputNamedService: OutputService {
 
     var usableName: String {
         var result = name
+            .split(separator: " ")
+            .joined(separator: " ")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+
         if !result.hasPrefix("Amazon "), !result.hasPrefix("AWS ") {
             result = "AWS \(name)"
         }
@@ -97,7 +101,11 @@ class OutputRegion: OutputService {
     }
 
     var usableName: String {
-        "AWS (\(name))"
+        let result = name
+            .split(separator: " ")
+            .joined(separator: " ")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        return "AWS (\(result))"
     }
 
     var className: String {
