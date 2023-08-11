@@ -149,28 +149,22 @@ class Site24x7Service: Service {
         url = definition.url
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         let apiURL = url
             .appendingPathComponent("sp/api/public/summary_details/statuspages")
             .appendingPathComponent(id)
 
-        loadData(with: apiURL) { [weak self] data, _, error in
-            guard let self else { return }
-            defer { callback(self) }
-            guard let data = data else { return self._fail(error) }
+        let response = try await decoded(Response.self, from: apiURL)
 
-            guard let response = try? JSONDecoder().decode(Response.self, from: data) else {
-                return self._fail("Unexpected response")
-            }
-
-            guard !response.data.components.isEmpty else { return self._fail("Unexpected response") }
-
-            let status = status(for: response.data.components)
-            statusDescription = ServiceStatusDescription(
-                status: status.status,
-                message: statusMessage(for: status, components: response.data.components)
-            )
+        guard !response.data.components.isEmpty else {
+            throw StatusUpdateError.decodingError(nil)
         }
+
+        let status = status(for: response.data.components)
+        statusDescription = ServiceStatusDescription(
+            status: status.status,
+            message: statusMessage(for: status, components: response.data.components)
+        )
     }
 
     private func status(for components: [RepresentableComponent]) -> Site24x7Status {

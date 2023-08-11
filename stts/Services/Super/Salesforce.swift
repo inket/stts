@@ -19,16 +19,11 @@ extension InheritsSalesforceCategory {
 }
 
 class BaseSalesforce: BaseIndependentService {
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         guard let realSelf = self as? Salesforce else {
             fatalError("BaseSalesforce should not be used directly.")
         }
 
-        realSelf.store.loadStatus { [weak realSelf] in
-            guard let strongSelf = realSelf else { return }
-
-            strongSelf.statusDescription = strongSelf.store.status(for: strongSelf)
-            callback(strongSelf)
-        }
+        statusDescription = try await realSelf.store.updatedStatus(for: realSelf)
     }
 }

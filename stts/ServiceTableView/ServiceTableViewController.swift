@@ -227,32 +227,36 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         }
 
         self.updateCallback = updateCallback
-        let serviceCallback: ((BaseService) -> Void) = { [weak self] service in self?.updatedStatus(for: service) }
 
         bottomBar.status = .updating
 
         let servicesToUpdate = Set<BaseService>(services)
         servicesBeingUpdated = servicesToUpdate
 
-        for service in servicesToUpdate {
-            service.updateStatus(callback: serviceCallback)
+        Task { [weak self] in
+            await withTaskGroup(of: Void.self) { [weak self] group in
+                for service in servicesToUpdate {
+                    group.addTask { [weak self] in
+                        await service.updateStatusAutomaticallyHandlingErrors()
+                        await self?.updatedStatus(for: service)
+                    }
+                }
+            }
         }
     }
 
-    func updatedStatus(for service: BaseService) {
+    @MainActor
+    private func updatedStatus(for service: BaseService) async {
         servicesBeingUpdated.remove(service)
 
-        DispatchQueue.main.async { [weak self] in
-            guard let self else { return }
-            reloadData()
-            resizeViews()
+        reloadData()
+        resizeViews()
 
-            if servicesBeingUpdated.isEmpty {
-                bottomBar.status = .updated(Date())
+        if servicesBeingUpdated.isEmpty {
+            bottomBar.status = .updated(Date())
 
-                updateCallback?()
-                updateCallback = nil
-            }
+            updateCallback?()
+            updateCallback = nil
         }
     }
 }

@@ -38,7 +38,7 @@ final class InstatusTests: XCTestCase {
         return try XCTUnwrap(definition.build() as? InstatusService)
     }
 
-    func testNormalStatus() throws {
+    func testNormalStatus() async throws {
         let mastodonSocial = try createMastodonSocialService()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
@@ -50,17 +50,11 @@ final class InstatusTests: XCTestCase {
             )
         ]))
 
-        let expectation = XCTestExpectation(description: "Retrieve mocked status for mastodon.social")
-
-        mastodonSocial.updateStatus { service in
-            XCTAssertEqual(service.status, .good)
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 3)
+        try await mastodonSocial.updateStatus()
+        XCTAssertEqual(mastodonSocial.status, .good)
     }
 
-    func testMinorStatus() throws {
+    func testMinorStatus() async throws {
         let whereby = try createWherebyService()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
@@ -73,13 +67,7 @@ final class InstatusTests: XCTestCase {
             )
         ]))
 
-        let expectation = XCTestExpectation(description: "Retrieve mocked status for Whereby")
-
-        whereby.updateStatus { service in
-            XCTAssertEqual(service.status, .notice)
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 3)
+        try await whereby.updateStatus()
+        XCTAssertEqual(whereby.status, .notice)
     }
 }

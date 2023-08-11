@@ -14,16 +14,11 @@ class BaseGoogleCloudPlatform: BaseIndependentService {
 
     let url = gcpDashboardURL
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         guard let realSelf = self as? GoogleCloudPlatform else {
             fatalError("BaseGoogleCloudPlatform should not be used directly.")
         }
 
-        BaseGoogleCloudPlatform.store.loadStatus { [weak realSelf] in
-            guard let strongSelf = realSelf else { return }
-
-            strongSelf.statusDescription = BaseGoogleCloudPlatform.store.status(for: strongSelf)
-            callback(strongSelf)
-        }
+        statusDescription = try await BaseGoogleCloudPlatform.store.updatedStatus(for: realSelf)
     }
 }

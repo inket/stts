@@ -56,42 +56,33 @@ class IncidentIOService: Service {
         url = definition.url
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        loadData(with: url) { [weak self] data, _, error in
-            guard let self else { return }
-            defer { callback(self) }
+    override func updateStatus() async throws {
+        let doc = try await html(from: url)
 
-            guard let data else { return self._fail(error) }
+        var statusNode: Kanna.XMLElement?
+        var foundStatus: IncidentIOStatus?
+        doc.css(".container").first?.xpath("child::node()").forEach { element in
+            guard let className = element.className else { return }
 
-            guard let doc = try? HTML(html: data, encoding: .utf8) else {
-                return self._fail("Couldn't parse response")
-            }
-
-            var statusNode: Kanna.XMLElement?
-            var foundStatus: IncidentIOStatus?
-            doc.css(".container").first?.xpath("child::node()").forEach { element in
-                guard let className = element.className else { return }
-
-                for incidentIOStatus in IncidentIOStatus.allCases {
-                    if className.lowercased().contains("ContentBox_\(incidentIOStatus.rawValue)".lowercased()) {
-                        statusNode = element
-                        foundStatus = incidentIOStatus
-                        return
-                    }
+            for incidentIOStatus in IncidentIOStatus.allCases {
+                if className.lowercased().contains("ContentBox_\(incidentIOStatus.rawValue)".lowercased()) {
+                    statusNode = element
+                    foundStatus = incidentIOStatus
+                    return
                 }
             }
+        }
 
-            if let statusNode, let foundStatus {
-                let status = foundStatus.serviceStatus
-                let message = statusNode.css("li")
-                    .first?
-                    .content?
-                    .trimmingCharacters(in: .whitespacesAndNewlines) ?? "Unexpected response"
+        if let statusNode, let foundStatus {
+            let status = foundStatus.serviceStatus
+            let message = statusNode.css("li")
+                .first?
+                .content?
+                .trimmingCharacters(in: .whitespacesAndNewlines) ?? "Unexpected response"
 
-                self.statusDescription = ServiceStatusDescription(status: status, message: message)
-            } else {
-                self._fail("Unexpected response")
-            }
+            statusDescription = ServiceStatusDescription(status: status, message: message)
+        } else {
+            throw StatusUpdateError.decodingError(nil)
         }
     }
 }

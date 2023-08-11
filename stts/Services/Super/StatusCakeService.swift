@@ -61,29 +61,25 @@ class StatusCakeService: Service {
         url = definition.url
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         let statusURL = URL(
             string: "https://app.statuscake.com/Workfloor/PublicReportHandler.php?PublicID=\(id)"
         )!
+        let data = try await rawData(from: statusURL)
 
-        loadData(with: statusURL) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
-
-            let json = try? JSONSerialization.jsonObject(with: data, options: [])
-
-            guard let testData = (json as? [String: Any])?["TestData"] as? [[String: Any]] else {
-                return strongSelf._fail("Unexpected data")
-            }
-
-            let statuses = testData.compactMap { $0["Status"] as? String }.compactMap(StatusCakeStatus.init(rawValue:))
-            let highestStatus = statuses.max()
-
-            strongSelf.statusDescription = ServiceStatusDescription(
-                status: highestStatus?.serviceStatus ?? .undetermined,
-                message: highestStatus?.description ?? "Unexpected response"
-            )
+        guard
+            let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+            let testData = json["TestData"] as? [[String: Any]]
+        else {
+            throw StatusUpdateError.decodingError(nil)
         }
+
+        let statuses = testData.compactMap { $0["Status"] as? String }.compactMap(StatusCakeStatus.init(rawValue:))
+        let highestStatus = statuses.max()
+
+        statusDescription = ServiceStatusDescription(
+            status: highestStatus?.serviceStatus ?? .undetermined,
+            message: highestStatus?.description ?? "Unexpected response"
+        )
     }
 }

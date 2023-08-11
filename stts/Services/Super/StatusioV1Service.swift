@@ -68,30 +68,24 @@ class StatusioV1Service: Service {
         url = definition.url
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         let statusURL = URL(string: "https://api.status.io/1.0/status/\(id)")!
+        let data = try await rawData(from: statusURL)
 
-        loadData(with: statusURL) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
-
-            let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard
-                let dict = json as? [String: Any],
-                let resultJSON = dict["result"] as? [String: Any],
-                let statusOverallJSON = resultJSON["status_overall"] as? [String: Any],
-                let statusCode = statusOverallJSON["status_code"] as? Int,
-                let status = StatusioV1Status(rawValue: statusCode),
-                let statusMessage = statusOverallJSON["status"] as? String
-            else {
-                return strongSelf._fail("Unexpected data")
-            }
-
-            strongSelf.statusDescription = ServiceStatusDescription(
-                status: status.serviceStatus,
-                message: statusMessage
-            )
+        guard
+            let dict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+            let resultJSON = dict["result"] as? [String: Any],
+            let statusOverallJSON = resultJSON["status_overall"] as? [String: Any],
+            let statusCode = statusOverallJSON["status_code"] as? Int,
+            let status = StatusioV1Status(rawValue: statusCode),
+            let statusMessage = statusOverallJSON["status"] as? String
+        else {
+            throw StatusUpdateError.decodingError(nil)
         }
+
+        statusDescription = ServiceStatusDescription(
+            status: status.serviceStatus,
+            message: statusMessage
+        )
     }
 }

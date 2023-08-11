@@ -12,14 +12,11 @@ class BaseAzure: BaseIndependentService {
 
     let url = URL(string: "https://status.azure.com/en-us/status")!
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? Azure else { fatalError("BaseAzure should not be used directly.") }
-
-        BaseAzure.store.loadStatus { [weak realSelf] in
-            guard let strongSelf = realSelf else { return }
-
-            strongSelf.statusDescription = BaseAzure.store.status(for: strongSelf)
-            callback(strongSelf)
+    override func updateStatus() async throws {
+        guard let realSelf = self as? Azure else {
+            fatalError("BaseAzure should not be used directly.")
         }
+
+        statusDescription = try await BaseAzure.store.updatedStatus(for: realSelf)
     }
 }

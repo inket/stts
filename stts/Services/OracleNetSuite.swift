@@ -39,20 +39,12 @@ class OracleNetSuite: IndependentService {
     let name = "Oracle NetSuite"
     let url = URL(string: "https://status.netsuite.com")!
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        loadData(with: url.appendingPathComponent("api/v2/status.json")) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
+    override func updateStatus() async throws {
+        let response = try await decoded(NetSuiteResponse.self, from: url.appendingPathComponent("api/v2/status.json"))
 
-            guard let data = data else { return strongSelf._fail(error) }
-            guard let response = try? JSONDecoder().decode(NetSuiteResponse.self, from: data) else {
-                return strongSelf._fail("Couldn't parse response")
-            }
-
-            strongSelf.statusDescription = ServiceStatusDescription(
-                status: response.status.indicator.serviceStatus,
-                message: response.status.description
-            )
-        }
+        statusDescription = ServiceStatusDescription(
+            status: response.status.indicator.serviceStatus,
+            message: response.status.description
+        )
     }
 }

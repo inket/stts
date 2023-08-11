@@ -121,55 +121,49 @@ class InstatusService: Service {
         url = definition.url
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        loadData(with: url) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
+    override func updateStatus() async throws {
+        let doc = try await html(from: url)
 
-            guard let data = data else { return strongSelf._fail(error) }
-
-            guard
-                let doc = try? HTML(html: data, encoding: .utf8),
-                let json = doc.css("#__NEXT_DATA__").first?.innerHTML,
-                let jsonData = json.data(using: .utf8),
-                let statusData = try? JSONDecoder().decode(InstatusData.self, from: jsonData)
-            else {
-                return strongSelf._fail("Couldn't parse response")
-            }
+        guard
+            let json = doc.css("#__NEXT_DATA__").first?.innerHTML,
+            let jsonData = json.data(using: .utf8),
+            let statusData = try? JSONDecoder().decode(InstatusData.self, from: jsonData)
+        else {
+            throw StatusUpdateError.decodingError(nil)
+        }
 
             // Set the status
-            let status = strongSelf.serviceStatus(
-                for: statusData.props.pageProps.site,
-                components: statusData.props.pageProps.site.components
-            )
+        let status = serviceStatus(
+            for: statusData.props.pageProps.site,
+            components: statusData.props.pageProps.site.components
+        )
 
-            // Set the message by combining the unresolved incident names
-            let unresolvedIncidents = statusData.props.pageProps.activeIncidents.filter { $0.isUnresolved }
-            if !unresolvedIncidents.isEmpty {
-                let prefix = unresolvedIncidents.count > 1 ? "* " : ""
-                let message = unresolvedIncidents.map { "\(prefix)\($0.name)" }.joined(separator: "\n")
-                strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
-                return
-            }
-
-            // Or from affected the component names
-            let affectedComponents = statusData.props.pageProps.site.components.flatMap { $0.affectedComponentsNames }
-            if !affectedComponents.isEmpty {
-                let message = affectedComponents.joined(separator: "\n")
-                strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
-                return
-            }
-
-            // Fallback to the status description
-            let message: String
-            switch statusData.props.pageProps.site.status {
-            case .up:
-                message = "All systems operational"
-            case .hasIssues:
-                message = "Experiencing issues"
-            }
-            strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
+        // Set the message by combining the unresolved incident names
+        let unresolvedIncidents = statusData.props.pageProps.activeIncidents.filter { $0.isUnresolved }
+        if !unresolvedIncidents.isEmpty {
+            let prefix = unresolvedIncidents.count > 1 ? "* " : ""
+            let message = unresolvedIncidents.map { "\(prefix)\($0.name)" }.joined(separator: "\n")
+            statusDescription = ServiceStatusDescription(status: status, message: message)
+            return
         }
+
+        // Or from affected the component names
+        let affectedComponents = statusData.props.pageProps.site.components.flatMap { $0.affectedComponentsNames }
+        if !affectedComponents.isEmpty {
+            let message = affectedComponents.joined(separator: "\n")
+            statusDescription = ServiceStatusDescription(status: status, message: message)
+            return
+        }
+
+        // Fallback to the status description
+        let message: String
+        switch statusData.props.pageProps.site.status {
+        case .up:
+            message = "All systems operational"
+        case .hasIssues:
+            message = "Experiencing issues"
+        }
+        statusDescription = ServiceStatusDescription(status: status, message: message)
     }
 
     private func serviceStatus(

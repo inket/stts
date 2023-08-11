@@ -52,29 +52,23 @@ class LambStatusService: Service {
         url = definition.url
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        let apiComponentsURL = url.appendingPathComponent("api").appendingPathComponent("components")
+    override func updateStatus() async throws {
+        let components = try await decoded(
+            [LambComponent].self,
+            from: url.appendingPathComponent("api").appendingPathComponent("components")
+        )
 
-        loadData(with: apiComponentsURL) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
-
-            guard
-                let components = try? JSONDecoder().decode([LambComponent].self, from: data),
-                !components.isEmpty
-            else {
-                return strongSelf._fail("Unexpected response")
-            }
-
-            let worstComponent = components.max(by: { (one, two) -> Bool in
-                one.status.serviceStatus < two.status.serviceStatus
-            })! // We checked that it's not empty above
-
-            strongSelf.statusDescription = ServiceStatusDescription(
-                status: worstComponent.status.serviceStatus,
-                message: worstComponent.status.rawValue
-            )
+        guard !components.isEmpty else {
+            throw StatusUpdateError.decodingError(nil)
         }
+
+        let worstComponent = components.max(by: { (one, two) -> Bool in
+            one.status.serviceStatus < two.status.serviceStatus
+        })! // We checked that it's not empty above
+
+        statusDescription = ServiceStatusDescription(
+            status: worstComponent.status.serviceStatus,
+            message: worstComponent.status.rawValue
+        )
     }
 }

@@ -38,20 +38,10 @@ class StatusHubService: Service {
         url = definition.url
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         let statusURL = url.appendingPathComponent("api/statuses")
-
-        loadData(with: statusURL) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
-
-            guard let response = try? JSONDecoder().decode(StatusHubResponse.self, from: data) else {
-                return strongSelf._fail("Unexpected data")
-            }
-
-            strongSelf.updateStatus(from: response)
-        }
+        let response = try await decoded(StatusHubResponse.self, from: statusURL)
+        updateStatus(from: response)
     }
 
     private func updateStatus(from response: StatusHubResponse) {

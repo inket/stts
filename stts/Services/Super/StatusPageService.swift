@@ -179,24 +179,13 @@ class StatusPageService: Service {
         host = definition.host ?? "statuspage.io"
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         let summaryURL = URL(string: "https://\(id).\(host)/api/v2/summary.json")!
-
-        loadData(with: summaryURL) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-
-            guard let data = data else { return strongSelf._fail(error) }
-
-            guard let summary = try? JSONDecoder().decode(Summary.self, from: data) else {
-                return strongSelf._fail("Unexpected data")
-            }
-
-            strongSelf.updateStatus(from: summary)
-        }
+        let summary = try await decoded(Summary.self, from: summaryURL)
+        updateStatus(from: summary)
     }
 
-    func updateStatus(from summary: Summary) {
+    private func updateStatus(from summary: Summary) {
         // Set the status
         let status = summary.status.indicator.serviceStatus
 

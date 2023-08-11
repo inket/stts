@@ -8,32 +8,23 @@ import Foundation
 class SignalWire: IndependentService {
     let url = URL(string: "https://status.signalwire.com")!
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         let componentsURL = URL(string: "https://status.signalwire.com/api/components")!
+        let components = try await decoded([Component].self, from: componentsURL)
 
-        loadData(with: componentsURL) { [weak self] data, _, error in
-            guard let self else { return }
-            defer { callback(self) }
+        let affectedComponents = components.filter { $0.status.status != .good }
 
-            guard let data = data else { return self._fail(error) }
-            guard let components = try? JSONDecoder().decode([Component].self, from: data) else {
-                return self._fail("Couldn't parse response")
-            }
-
-            let affectedComponents = components.filter { $0.status.status != .good }
-
-            let status: ServiceStatus
-            let message: String
-            if affectedComponents.isEmpty {
-                status = .good
-                message = "Operational"
-            } else {
-                status = affectedComponents.map { $0.status.status }.max() ?? .undetermined
-                message = affectedComponents.map { "* \($0.name): \($0.status.rawValue)" }.joined(separator: "\n")
-            }
-
-            statusDescription = ServiceStatusDescription(status: status, message: message)
+        let status: ServiceStatus
+        let message: String
+        if affectedComponents.isEmpty {
+            status = .good
+            message = "Operational"
+        } else {
+            status = affectedComponents.map { $0.status.status }.max() ?? .undetermined
+            message = affectedComponents.map { "* \($0.name): \($0.status.rawValue)" }.joined(separator: "\n")
         }
+
+        statusDescription = ServiceStatusDescription(status: status, message: message)
     }
 }
 

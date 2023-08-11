@@ -7,7 +7,7 @@ import XCTest
 @testable import stts
 
 final class FastlyTests: XCTestCase {
-    func testNormalStatus() throws {
+    func testNormalStatus() async throws {
         let fastly = Fastly()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
@@ -17,17 +17,11 @@ final class FastlyTests: XCTestCase {
             )
         ]))
 
-        let expectation = XCTestExpectation(description: "Retrieve mocked status for Fastly")
-
-        fastly.updateStatus { service in
-            XCTAssertEqual(service.status, .good)
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 3)
+        try await fastly.updateStatus()
+        XCTAssertEqual(fastly.status, .good)
     }
 
-    func testMajorStatus() throws {
+    func testMajorStatus() async throws {
         let fastly = Fastly()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
@@ -40,13 +34,7 @@ final class FastlyTests: XCTestCase {
             )
         ]))
 
-        let expectation = XCTestExpectation(description: "Retrieve mocked status for Fastly")
-
-        fastly.updateStatus { service in
-            XCTAssertEqual(service.status, .major)
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 3)
+        try await fastly.updateStatus()
+        XCTAssertEqual(fastly.status, .major)
     }
 }

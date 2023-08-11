@@ -27,7 +27,18 @@ public typealias ServiceStatusMessage = String
 
 public extension ServiceStatusMessage {
     static func from(_ error: Error?) -> Self {
-        if (error as NSError?)?.code == NSURLErrorNotConnectedToInternet {
+        if let statusUpdateError = error as? StatusUpdateError {
+            switch statusUpdateError {
+            case .networkError(let error):
+                return "Network error: \(from(error))"
+            case .parseError(let error):
+                return "Parse error: \(from(error))"
+            case .decodingError(let error):
+                return "Decoding error: \(from(error))"
+            case .custom(let string):
+                return string
+            }
+        } else if (error as NSError?)?.code == NSURLErrorNotConnectedToInternet {
             return "Internet connection offline."
         } else {
             return error?.localizedDescription ?? "Unexpected error"
@@ -67,7 +78,14 @@ protocol ServiceCategory {
 
 protocol SubService {} // Fits in a service submenu
 
-public class BaseService: Loading {
+enum StatusUpdateError: Error {
+    case networkError(Error)
+    case parseError(Error?)
+    case decodingError(Error?)
+    case custom(String)
+}
+
+public class BaseService {
     @Atomic var statusDescription: ServiceStatusDescription = .init(
         status: .undetermined,
         message: "Loading…"
@@ -78,16 +96,8 @@ public class BaseService: Loading {
 
     private var lastNotifiedStatus: ServiceStatus?
 
-    public func updateStatus(callback: @escaping (BaseService) -> Void) {}
-
-    // swiftlint:disable:next identifier_name
-    func _fail(_ error: Error?) {
-        statusDescription = ServiceStatusDescription(status: .undetermined, message: ServiceStatusMessage.from(error))
-    }
-
-    // swiftlint:disable:next identifier_name
-    func _fail(_ message: String) {
-        statusDescription = ServiceStatusDescription(status: .undetermined, message: message)
+    public func updateStatus() async throws {
+        fatalError("Override updateStatus() to support loading the status")
     }
 
     func notifyIfStatusChanged() {
@@ -149,5 +159,20 @@ extension BaseService: Hashable {
         }
 
         hasher.combine(service.name)
+    }
+}
+
+extension BaseService: Loading {}
+
+extension BaseService {
+    public func updateStatusAutomaticallyHandlingErrors() async {
+        do {
+            try await updateStatus()
+        } catch {
+            statusDescription = ServiceStatusDescription(
+                status: .undetermined,
+                message: ServiceStatusMessage.from(error)
+            )
+        }
     }
 }

@@ -49,37 +49,29 @@ class StatusCastService: Service {
         url = definition.url
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        loadData(with: url) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
+    override func updateStatus() async throws {
+        let doc = try await html(from: url)
 
-            guard let doc = try? HTML(html: data, encoding: .utf8) else {
-                return strongSelf._fail("Couldn't parse response")
-            }
-
-            let statuses: [(ServiceStatus, String?)] = doc.css(".status-list-component-status-text").map { element in
-                for status in Status.allCases {
-                    if element.className?.contains("component-\(status.rawValue)") == true {
-                        return (
-                            status.serviceStatus,
-                            element.innerHTML?.trimmingCharacters(in: .whitespacesAndNewlines)
-                        )
-                    }
+        let statuses: [(ServiceStatus, String?)] = doc.css(".status-list-component-status-text").map { element in
+            for status in Status.allCases {
+                if element.className?.contains("component-\(status.rawValue)") == true {
+                    return (
+                        status.serviceStatus,
+                        element.innerHTML?.trimmingCharacters(in: .whitespacesAndNewlines)
+                    )
                 }
-
-                return (.undetermined, nil)
             }
 
-            guard let worstStatus = statuses.max(by: { $0.0 < $1.0 }) else {
-                return strongSelf._fail("Unexpected response")
-            }
-
-            strongSelf.statusDescription = ServiceStatusDescription(
-                status: worstStatus.0,
-                message: worstStatus.1 ?? "Unexpected response"
-            )
+            return (.undetermined, nil)
         }
+
+        guard let worstStatus = statuses.max(by: { $0.0 < $1.0 }) else {
+            throw StatusUpdateError.decodingError(nil)
+        }
+
+        statusDescription = ServiceStatusDescription(
+            status: worstStatus.0,
+            message: worstStatus.1 ?? "Unexpected response"
+        )
     }
 }

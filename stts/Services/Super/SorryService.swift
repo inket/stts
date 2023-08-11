@@ -71,27 +71,23 @@ class SorryService: Service {
         url = definition.url
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         let statusURL = URL(string: "https://api.sorryapp.com/v1/pages/\(id)/components")!
+        let data = try await rawData(from: statusURL)
 
-        loadData(with: statusURL) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
-
-            let json = try? JSONSerialization.jsonObject(with: data, options: [])
-
-            guard let components = (json as? [String: Any])?["response"] as? [[String: Any]] else {
-                return strongSelf._fail("Unexpected data")
-            }
-
-            let statuses = components.compactMap { $0["state"] as? String }.compactMap(SorryStatus.init(rawValue:))
-
-            let highestStatus = statuses.max()
-            strongSelf.statusDescription = ServiceStatusDescription(
-                status: highestStatus?.serviceStatus ?? .undetermined,
-                message: highestStatus?.description ?? "Unexpected response"
-            )
+        guard
+            let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+            let components = json["response"] as? [[String: Any]]
+        else {
+            throw StatusUpdateError.decodingError(nil)
         }
+
+        let statuses = components.compactMap { $0["state"] as? String }.compactMap(SorryStatus.init(rawValue:))
+
+        let worstStatus = statuses.max()
+        statusDescription = ServiceStatusDescription(
+            status: worstStatus?.serviceStatus ?? .undetermined,
+            message: worstStatus?.description ?? "Unexpected response"
+        )
     }
 }

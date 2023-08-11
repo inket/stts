@@ -67,23 +67,14 @@ class CStateService: Service {
         url = definition.url
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         let statusURL = url.appendingPathComponent("index.json")
+        let response = try await decoded(Response.self, from: statusURL)
 
-        loadData(with: statusURL) { [weak self] data, _, error in
-            guard let self else { return }
-            defer { callback(self) }
-            guard let data else { return self._fail(error) }
-
-            guard let response = try? JSONDecoder().decode(Response.self, from: data) else {
-                return self._fail("Unexpected data")
-            }
-
-            self.statusDescription = ServiceStatusDescription(
-                status: response.summaryStatus.serviceStatus,
-                message: self.message(from: response)
-            )
-        }
+        statusDescription = ServiceStatusDescription(
+            status: response.summaryStatus.serviceStatus,
+            message: message(from: response)
+        )
     }
 
     private func message(from response: Response) -> String {

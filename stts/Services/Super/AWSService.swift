@@ -30,25 +30,13 @@ class BaseAWSService: BaseIndependentService {
 
     let url = URL(string: "https://health.aws.amazon.com/health/status")!
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         if let allService = self as? AWSAllService {
-            BaseAWSService.store.loadStatus { [weak allService] in
-                guard let allService else { return }
-                allService.statusDescription = BaseAWSService.store.status(for: allService)
-                callback(allService)
-            }
+            statusDescription = try await BaseAWSService.store.updatedStatus(for: allService)
         } else if let namedService = self as? AWSNamedService {
-            BaseAWSService.store.loadStatus { [weak namedService] in
-                guard let namedService else { return }
-                namedService.statusDescription = BaseAWSService.store.status(for: namedService)
-                callback(namedService)
-            }
+            statusDescription = try await BaseAWSService.store.updatedStatus(for: namedService)
         } else if let regionService = self as? AWSRegionService {
-            BaseAWSService.store.loadStatus { [weak regionService] in
-                guard let regionService else { return }
-                regionService.statusDescription = BaseAWSService.store.status(for: regionService)
-                callback(regionService)
-            }
+            statusDescription = try await BaseAWSService.store.updatedStatus(for: regionService)
         } else {
             fatalError("BaseAWSService should not be used directly.")
         }

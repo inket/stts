@@ -204,7 +204,6 @@ func main() {
 
     let output = [header, content, footer].joined(separator: "\n")
 
-    debugPrint(output)
     // swiftlint:disable:next force_try
     try! output.write(toFile: outputPath, atomically: true, encoding: .utf8)
 

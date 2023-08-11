@@ -56,28 +56,26 @@ class CachetService: Service {
         url = definition.url
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         let apiComponentsURL = url.appendingPathComponent("api/v1/components")
+        let data = try await self.rawData(from: url)
 
-        loadData(with: apiComponentsURL) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
-
-            let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard let components = (json as? [String: Any])?["data"] as? [[String: Any]] else {
-                return strongSelf._fail("Unexpected data")
-            }
-
-            guard !components.isEmpty else { return strongSelf._fail("Unexpected data") }
-
-            let statuses = components.compactMap({ $0["status"] as? Int }).compactMap(ComponentStatus.init(rawValue:))
-
-            let highestStatus = statuses.max()
-            strongSelf.statusDescription = ServiceStatusDescription(
-                status: highestStatus?.serviceStatus ?? .undetermined,
-                message: highestStatus?.description ?? "Unexpected response"
-            )
+        let json = try? JSONSerialization.jsonObject(with: data, options: [])
+        guard
+            let components = (json as? [String: Any])?["data"] as? [[String: Any]],
+            !components.isEmpty
+        else {
+            throw StatusUpdateError.decodingError(nil)
         }
+
+        let worstStatus = components
+            .compactMap({ $0["status"] as? Int })
+            .compactMap(ComponentStatus.init(rawValue:))
+            .max()
+
+        statusDescription = ServiceStatusDescription(
+            status: worstStatus?.serviceStatus ?? .undetermined,
+            message: worstStatus?.description ?? "Unexpected response"
+        )
     }
 }

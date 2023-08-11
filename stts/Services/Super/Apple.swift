@@ -14,14 +14,11 @@ class BaseApple: BaseIndependentService {
 
     let url = URL(string: "https://www.apple.com/support/systemstatus/")!
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? Apple else { fatalError("BaseApple should not be used directly.") }
-
-        BaseApple.store.loadStatus { [weak realSelf] in
-            guard let strongSelf = realSelf else { return }
-
-            strongSelf.statusDescription = BaseApple.store.status(for: strongSelf)
-            callback(strongSelf)
+    override func updateStatus() async throws {
+        guard let realSelf = self as? Apple else {
+            fatalError("BaseApple should not be used directly.")
         }
+
+        statusDescription = try await BaseApple.store.updatedStatus(for: realSelf)
     }
 }

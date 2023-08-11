@@ -76,34 +76,31 @@ class BasePayPal: BaseIndependentService {
         return components.url!
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         guard let realSelf = self as? PayPal else { fatalError("BasePayPal should not be used directly.") }
 
         let apiURL = URL(string: "https://www.paypal-status.com/api/v1/components")!
+        let data = try await rawData(from: apiURL)
 
-        loadData(with: apiURL) { [weak realSelf] data, _, error in
-            guard let strongSelf = realSelf else { return }
-
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
-
-            let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard
-                let dict = json as? [String: Any],
-                let resultArray = dict["result"] as? [[String: Any]]
-            else { return strongSelf._fail("Unexpected data") }
-
-            let statuses = resultArray.compactMap {
-                strongSelf.status(fromResultItem: $0, component: strongSelf.component)
-            }
-
-            guard let highestStatus = statuses.max() else { return strongSelf._fail("Unexpected data") }
-
-            strongSelf.statusDescription = ServiceStatusDescription(
-                status: highestStatus.serviceStatus,
-                message: highestStatus.statusMessage
-            )
+        guard
+            let dict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+            let resultArray = dict["result"] as? [[String: Any]]
+        else {
+            throw StatusUpdateError.decodingError(nil)
         }
+
+        let statuses = resultArray.compactMap {
+            status(fromResultItem: $0, component: realSelf.component)
+        }
+
+        guard let worstStatus = statuses.max() else {
+            throw StatusUpdateError.decodingError(nil)
+        }
+
+        statusDescription = ServiceStatusDescription(
+            status: worstStatus.serviceStatus,
+            message: worstStatus.statusMessage
+        )
     }
 
     private func status(fromResultItem resultItem: [String: Any], component: PayPalComponent) -> PayPalStatus? {

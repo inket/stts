@@ -31,16 +31,11 @@ class BaseFirebaseService: BaseIndependentService {
 
     let url = firebaseDashboardURL
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         guard let realSelf = self as? FirebaseService else {
             fatalError("BaseFirebaseService should not be used directly.")
         }
 
-        BaseFirebaseService.store.loadStatus { [weak realSelf] in
-            guard let strongSelf = realSelf else { return }
-
-            strongSelf.statusDescription = BaseFirebaseService.store.status(for: strongSelf)
-            callback(strongSelf)
-        }
+        statusDescription = try await BaseFirebaseService.store.updatedStatus(for: realSelf)
     }
 }

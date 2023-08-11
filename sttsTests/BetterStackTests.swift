@@ -21,7 +21,7 @@ final class BetterStackTests: XCTestCase {
         return try XCTUnwrap(definition.build() as? BetterStackService)
     }
 
-    func testNormalStatus() throws {
+    func testNormalStatus() async throws {
         let buildJet = try createService()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
@@ -33,17 +33,11 @@ final class BetterStackTests: XCTestCase {
             )
         ]))
 
-        let expectation = XCTestExpectation(description: "Retrieve mocked status for buildjet.com")
-
-        buildJet.updateStatus { service in
-            XCTAssertEqual(service.status, .good)
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 3)
+        try await buildJet.updateStatus()
+        XCTAssertEqual(buildJet.status, .good)
     }
 
-    func testMajorStatus() throws {
+    func testMajorStatus() async throws {
         let buildJet = try createService()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
@@ -55,13 +49,7 @@ final class BetterStackTests: XCTestCase {
             )
         ]))
 
-        let expectation = XCTestExpectation(description: "Retrieve mocked status for buildjet.com")
-
-        buildJet.updateStatus { service in
-            XCTAssertEqual(service.status, .major)
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 3)
+        try await buildJet.updateStatus()
+        XCTAssertEqual(buildJet.status, .major)
     }
 }

@@ -56,37 +56,29 @@ class StatuspalService: Service {
         url = serviceDefinition.url
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        loadData(with: url) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
+    override func updateStatus() async throws {
+        let doc = try await html(from: url)
 
-            guard let doc = try? HTML(html: data, encoding: .utf8) else {
-                return strongSelf._fail("Couldn't parse response")
+        let foundStatus: ServiceStatus
+        if let className = doc.css(".system-status").first?.className {
+            let matchedStatus = Status.allCases.first { status in
+                className.lowercased().contains(status.className)
             }
 
-            let foundStatus: ServiceStatus
-            if let className = doc.css(".system-status").first?.className {
-                let matchedStatus = Status.allCases.first { status in
-                    className.lowercased().contains(status.className)
-                }
-
-                if let matchedStatus {
-                    foundStatus = matchedStatus.serviceStatus
-                } else {
-                    foundStatus = .undetermined
-                }
+            if let matchedStatus {
+                foundStatus = matchedStatus.serviceStatus
             } else {
                 foundStatus = .undetermined
             }
-
-            let message: String = doc.css(".system-status--description")
-                .first?
-                .text?
-                .trimmingCharacters(in: .whitespacesAndNewlines) ?? "Unexpected response"
-
-            strongSelf.statusDescription = ServiceStatusDescription(status: foundStatus, message: message)
+        } else {
+            foundStatus = .undetermined
         }
+
+        let message: String = doc.css(".system-status--description")
+            .first?
+            .text?
+            .trimmingCharacters(in: .whitespacesAndNewlines) ?? "Unexpected response"
+
+        statusDescription = ServiceStatusDescription(status: foundStatus, message: message)
     }
 }

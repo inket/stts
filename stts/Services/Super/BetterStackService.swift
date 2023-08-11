@@ -56,29 +56,21 @@ class BetterStackService: Service {
         url = definition.url
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        loadData(with: url) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
+    override func updateStatus() async throws {
+        let doc = try await html(from: url)
 
-            guard let doc = try? HTML(html: data, encoding: .utf8) else {
-                return strongSelf._fail("Couldn't parse response")
-            }
-
-            guard
-                let heading = doc.css(".heading-large").first,
-                let statusMessage = heading.text,
-                let statusIconFillColorString = heading.parent?.css("svg").first?.css("path").first?["fill"],
-                let statusIconFillColor = StatusIconFillColor(rawValue: statusIconFillColorString.lowercased())
-            else {
-                return strongSelf._fail("Unexpected response")
-            }
-
-            strongSelf.statusDescription = ServiceStatusDescription(
-                status: statusIconFillColor.serviceStatus,
-                message: statusMessage
-            )
+        guard
+            let heading = doc.css(".heading-large").first,
+            let statusMessage = heading.text,
+            let statusIconFillColorString = heading.parent?.css("svg").first?.css("path").first?["fill"],
+            let statusIconFillColor = StatusIconFillColor(rawValue: statusIconFillColorString.lowercased())
+        else {
+            throw StatusUpdateError.decodingError(nil)
         }
+
+        statusDescription = ServiceStatusDescription(
+            status: statusIconFillColor.serviceStatus,
+            message: statusMessage
+        )
     }
 }

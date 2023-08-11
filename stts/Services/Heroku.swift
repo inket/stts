@@ -43,42 +43,29 @@ private struct HerokuStatusResponse: Codable {
 class Heroku: IndependentService {
     let url = URL(string: "https://status.heroku.com")!
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         let statusURL = URL(string: "https://status.heroku.com/api/v3/current-status")!
+        let statusResponse = try await decoded(HerokuStatusResponse.self, from: statusURL)
 
-        loadData(with: statusURL) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
+        let production = statusResponse.status.production
+        let development = statusResponse.status.development
 
-            guard let statusResponse = try? JSONDecoder().decode(HerokuStatusResponse.self, from: data) else {
-                return strongSelf._fail("Unexpected data")
-            }
+        let worstEnvironmentStatus = production.status > development.status ? production : development
+        let status = worstEnvironmentStatus.status
 
-            let production = statusResponse.status.production
-            let development = statusResponse.status.development
+        // Prefer "production" status text except when it's green
+        let representedStatus = production == .green ? development : production
+        let statusText = representedStatus.rawValue.capitalized
 
-            guard let max = [production, development].max(by: { $0.status < $1.status }) else {
-                // This will never happen
-                return strongSelf._fail("Unexpected error")
-            }
-
-            let status = max.status
-
-            // Prefer "production" status text except when it's green
-            let representedStatus = production == .green ? development : production
-            let statusText = representedStatus.rawValue.capitalized
-
-            let message: String
-            switch max {
-            case .green:
-                message = statusText
-            default:
-                // Get the title of the current issue if any
-                message = statusResponse.issues.first?.title ?? statusText
-            }
-
-            strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
+        let message: String
+        switch worstEnvironmentStatus {
+        case .green:
+            message = statusText
+        default:
+            // Get the title of the current issue if any
+            message = statusResponse.issues.first?.title ?? statusText
         }
+
+        statusDescription = ServiceStatusDescription(status: status, message: message)
     }
 }
