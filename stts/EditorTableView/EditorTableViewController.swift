@@ -11,14 +11,14 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
     let bottomBar: BottomBar
     let tableView = NSTableView()
 
-    let allServices: [ServiceDefinition] = ServiceLoader.current.allServices
-    let allServicesWithoutSubServices: [ServiceDefinition] = ServiceLoader.current.allServicesWithoutSubServices
+    let serviceLoader: ServiceLoader
+    let preferences: Preferences
     var filteredServices: [ServiceDefinition]
-    var selectedServices: [ServiceDefinition] = Preferences.shared.selectedServices
+    var selectedServices: [ServiceDefinition]
 
     var selectionChanged = false
 
-    let settingsView = SettingsView()
+    let settingsView: SettingsView
 
     var hidden: Bool = true
 
@@ -48,7 +48,7 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
                 let serviceCategory = categoryDefinition.build() as? ServiceCategory
             else {
                 // Show the unfiltered services
-                filteredServices = allServicesWithoutSubServices
+                filteredServices = serviceLoader.allServicesWithoutSubServices
                 tableView.reloadData()
 
                 if let scrollPosition = scrollToPosition {
@@ -59,7 +59,7 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
             }
 
             // Find the sub services
-            var subServices = allServices.filter { serviceDefinition in
+            var subServices = serviceLoader.allServices.filter { serviceDefinition in
                 guard
                     serviceDefinition.isSubService == true,
                     let service = serviceDefinition.build()
@@ -103,13 +103,27 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
         return cachedMaxNameWidth
     }
 
-    init(contentView: NSStackView, scrollView: CustomScrollView, bottomBar: BottomBar) {
+    init(
+        contentView: NSStackView,
+        scrollView: CustomScrollView,
+        bottomBar: BottomBar,
+        serviceLoader: ServiceLoader,
+        preferences: Preferences
+    ) {
         self.contentView = contentView
         self.scrollView = scrollView
-        self.filteredServices = allServicesWithoutSubServices
         self.bottomBar = bottomBar
 
+        self.serviceLoader = serviceLoader
+        self.preferences = preferences
+
+        filteredServices = serviceLoader.allServicesWithoutSubServices
+        selectedServices = preferences.selectedServices
+
+        settingsView = SettingsView(preferences: preferences)
+
         super.init()
+
         setup()
     }
 
@@ -133,28 +147,26 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
 
         settingsView.isHidden = true
         settingsView.searchCallback = { [weak self] searchString in
-            guard let strongSelf = self else { return }
-
-             let allServices = strongSelf.allServices
-             let allServicesWithoutSubServices = strongSelf.allServicesWithoutSubServices
+            guard let self else { return }
 
             if searchString.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-                strongSelf.filteredServices = allServicesWithoutSubServices
+                self.filteredServices = serviceLoader.allServicesWithoutSubServices
             } else {
                 // Can't filter array with NSPredicate without making Service inherit KVO from NSObject, therefore
                 // we create an array of service names that we can run the predicate on
-                let allServiceNames = allServices.compactMap { $0.name } as NSArray
+                let allServiceNames = serviceLoader.allServices.compactMap { $0.name } as NSArray
                 let predicate = NSPredicate(format: "SELF LIKE[cd] %@", argumentArray: ["*\(searchString)*"])
                 guard let filteredServiceNames = allServiceNames.filtered(using: predicate) as? [String] else { return }
 
-                strongSelf.filteredServices = allServices.filter { filteredServiceNames.contains($0.name) }
+                let filteredServiceNamesSet = Set<String>(filteredServiceNames)
+                self.filteredServices = serviceLoader.allServices.filter { filteredServiceNamesSet.contains($0.name) }
             }
 
-            if strongSelf.selectedCategory != nil {
-                strongSelf.selectedCategory = nil
+            if self.selectedCategory != nil {
+                self.selectedCategory = nil
             }
 
-            strongSelf.tableView.reloadData()
+            self.tableView.reloadData()
         }
 
         settingsView.translatesAutoresizingMaskIntoConstraints = false
@@ -266,19 +278,19 @@ extension EditorTableViewController: NSTableViewDelegate {
             view.textField?.stringValue = serviceDefinition.name
             view.selected = selectedServices.contains(where: serviceDefinition.eq)
             view.toggleCallback = { [weak self] in
-                guard let strongSelf = self else { return }
+                guard let self else { return }
 
-                strongSelf.selectionChanged = true
+                selectionChanged = true
 
                 if view.selected {
-                    self?.selectedServices.append(serviceDefinition)
+                    selectedServices.append(serviceDefinition)
                 } else {
-                    if let index = self?.selectedServices.firstIndex(where: serviceDefinition.eq) {
-                        self?.selectedServices.remove(at: index)
+                    if let index = selectedServices.firstIndex(where: serviceDefinition.eq) {
+                        selectedServices.remove(at: index)
                     }
                 }
 
-                Preferences.shared.selectedServices = strongSelf.selectedServices
+                preferences.selectedServices = selectedServices
             }
         case .category:
             guard let categoryService = serviceDefinition.build() as? ServiceCategory else {

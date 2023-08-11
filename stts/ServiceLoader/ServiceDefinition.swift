@@ -54,12 +54,6 @@ class CodableServiceDefinition: Codable {
         String(name.unicodeScalars.filter(CharacterSet.alphanumerics.contains))
     }
 
-    static func sortByName() -> ((ServiceDefinition, ServiceDefinition) -> Bool) {
-        { a, b in
-            a.name.localizedCaseInsensitiveCompare(b.name) == .orderedAscending
-        }
-    }
-
     init(name: String, url: URL, isCategory: Bool?, isSubService: Bool?, oldNames: Set<String>? = nil) {
         self.oldNames = oldNames
         self.name = name

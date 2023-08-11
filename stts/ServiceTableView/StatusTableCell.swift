@@ -29,12 +29,12 @@ class StatusTableCell: NSTableCellView {
         static let statusIndicatorSize = CGSize(width: 14, height: 14)
 
         private static let dummyCell = StatusTableCell(frame: .zero)
-        static func heightOfRow(for service: Service, width: CGFloat) -> CGFloat {
+        static func heightOfRow(for service: Service, preferences: Preferences, width: CGFloat) -> CGFloat {
             let nsScrollerWidth: CGFloat = 16
             let realRowWidth = width - (nsScrollerWidth - 4) // 4 by trial & error
 
             dummyCell.frame.size = CGSize(width: realRowWidth, height: 400)
-            dummyCell.setup(with: service)
+            dummyCell.setup(with: service, preferences: preferences)
             dummyCell.layoutSubtreeIfNeeded()
 
             return dummyCell.stackView.frame.size.height + (verticalPadding * 2)
@@ -110,10 +110,10 @@ class StatusTableCell: NSTableCellView {
         ])
     }
 
-    func setup(with service: Service) {
+    func setup(with service: Service, preferences: Preferences) {
         titleField.stringValue = service.name
         statusIndicator.status = service.status
         statusField.stringValue = service.message
-        statusField.isHidden = service.status == .good && Preferences.shared.hideServiceDetailsIfAvailable
+        statusField.isHidden = service.status == .good && preferences.hideServiceDetailsIfAvailable
     }
 }

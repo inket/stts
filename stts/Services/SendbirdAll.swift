@@ -6,24 +6,18 @@
 import Foundation
 
 class SendbirdAll: IndependentService, ServiceCategory {
+    static var sendbirdServices: [SendbirdService] = []
+
     let categoryName = "Sendbird"
     let subServiceSuperclass: AnyObject.Type = SendbirdService.self
 
     let name = "Sendbird (All)"
     let url = URL(string: "https://sendbird.com/status")!
 
-    lazy var sendbirdServiceDefinitions: [SendbirdServiceDefinition] = {
-        ServiceLoader.current.allServices.compactMap { $0 as? SendbirdServiceDefinition }
-    }()
-
-    lazy var sendbirdServices: [SendbirdService] = {
-        sendbirdServiceDefinitions.compactMap { $0.build() as? SendbirdService }
-    }()
-
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
         let group = DispatchGroup()
 
-        sendbirdServices.forEach { service in
+        Self.sendbirdServices.forEach { service in
             group.enter()
 
             service.updateStatus { _ in

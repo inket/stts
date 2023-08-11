@@ -90,7 +90,7 @@ public class BaseService: Loading {
         statusDescription = ServiceStatusDescription(status: .undetermined, message: message)
     }
 
-    func notifyIfNecessary() {
+    func notifyIfStatusChanged() {
         guard let realSelf = self as? Service else { fatalError("BaseService should not be used directly.") }
 
         let notifyBecauseDifferent =
@@ -98,7 +98,7 @@ public class BaseService: Loading {
             && lastNotifiedStatus != .undetermined && status != .undetermined
             && lastNotifiedStatus != status
 
-        if notifyBecauseDifferent && Preferences.shared.notifyOnStatusChange {
+        if notifyBecauseDifferent {
             let notification = NSUserNotification()
             let possessiveS = realSelf.name.hasSuffix("s") ? "'" : "'s"
             notification.title = "\(realSelf.name)\(possessiveS) status has changed"

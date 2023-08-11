@@ -5,8 +5,8 @@
 
 import Foundation
 
-struct Preferences {
-    static var shared = Preferences()
+class Preferences {
+    private let serviceLoader: ServiceLoader
 
     var notifyOnStatusChange: Bool {
         get { UserDefaults.standard.bool(forKey: "notifyOnStatusChange") }
@@ -23,10 +23,8 @@ struct Preferences {
             let identifiers = UserDefaults.standard.array(forKey: "selectedServices") as? [String] ?? []
 
             // Match the identifiers to our loaded service definitions
-            let definitions = identifiers.map(ServiceLoader.current.serviceDefinition(forIdentifier:)).compactMap { $0 }
-            let sortedDefinitions = definitions.sorted { a, b in
-                a.name.localizedCaseInsensitiveCompare(b.name) == .orderedAscending
-            }
+            let definitions = identifiers.map(serviceLoader.serviceDefinition(forIdentifier:)).compactMap { $0 }
+            let sortedDefinitions = definitions.sorted(by: ServiceDefinitionSortByName)
 
             return sortedDefinitions
         }
@@ -37,7 +35,9 @@ struct Preferences {
         }
     }
 
-    init() {
+    init(serviceLoader: ServiceLoader) {
+        self.serviceLoader = serviceLoader
+
         UserDefaults.standard.register(defaults: [
             "notifyOnStatusChange": true,
             "hideServiceDetailsIfAvailable": false,

@@ -15,11 +15,10 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
 
     var editorTableViewController: EditorTableViewController
 
-    var services: [BaseService] = ServiceLoader.current.services(for: Preferences.shared.selectedServices) {
-        didSet {
-            addServicesNoticeField.isHidden = services.count > 0
-        }
-    }
+    private let serviceLoader: ServiceLoader
+    var services: [BaseService] = []
+
+    private let preferences: Preferences
 
     @Atomic var servicesBeingUpdated = Set<BaseService>()
 
@@ -33,14 +32,21 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
 
     var updateCallback: (() -> Void)?
 
-    override init() {
+    init(serviceLoader: ServiceLoader, preferences: Preferences) {
+        self.serviceLoader = serviceLoader
+        self.preferences = preferences
+
         self.editorTableViewController = EditorTableViewController(
             contentView: contentView,
             scrollView: scrollView,
-            bottomBar: bottomBar
+            bottomBar: bottomBar,
+            serviceLoader: serviceLoader,
+            preferences: preferences
         )
 
         super.init()
+
+        reloadServicesList()
     }
 
     func setup() {
@@ -161,8 +167,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         scrollView.documentView = tableView
 
         if editorTableViewController.selectionChanged {
-            self.services = ServiceLoader.current.services(for: Preferences.shared.selectedServices)
-            reloadData()
+            reloadServicesList()
 
             (NSApp.delegate as? AppDelegate)?.updateServices()
         } else {
@@ -184,6 +189,12 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(
             height: scrollView.frame.size.height + bottomBar.frame.size.height
         )
+    }
+
+    func reloadServicesList() {
+        services = serviceLoader.services(for: preferences.selectedServices)
+        reloadData()
+        addServicesNoticeField.isHidden = services.count > 0
     }
 
     func reloadData(at index: Int? = nil) {
@@ -264,7 +275,7 @@ extension ServiceTableViewController: NSTableViewDelegate {
         guard let view = cell as? StatusTableCell else { return nil }
         guard let service = services[row] as? Service else { return nil }
 
-        view.setup(with: service)
+        view.setup(with: service, preferences: preferences)
 
         return view
     }
@@ -292,6 +303,7 @@ extension ServiceTableViewController: NSTableViewDelegate {
 
         return StatusTableCell.Layout.heightOfRow(
             for: service,
+            preferences: preferences,
             width: tableView.frame.size.width - 3 // tableview padding is 3
         )
     }

@@ -5,18 +5,14 @@
 
 import Foundation
 
-class ServiceLoader {
-    static var current = ServiceLoader()
+final class ServiceLoader {
+    private let providers: [ServiceDefinitionProvider]
 
-    lazy var allServices: [ServiceDefinition] = {
-        (definedServices + bundleServices).sorted(by: ServiceDefinitionSortByName)
-    }()
+    init(providers: [ServiceDefinitionProvider]) {
+        self.providers = providers
+    }
 
-    lazy var allServicesWithoutSubServices: [ServiceDefinition] = {
-        allServices.filter { !($0.isSubService == true) }
-    }()
-
-    lazy var definedServices: [ServiceDefinition] = {
+    private(set) lazy var allServices: [ServiceDefinition] = {
         var uniqueServiceIdentifiers = Set<String>()
         var serviceDefinitions = [ServiceDefinition]()
 
@@ -29,95 +25,29 @@ class ServiceLoader {
             }
         }
 
-        // Load the user-defined services
-        uniqueAppend(loadUserDefinedServices() ?? [])
-
-        // Load the included services
-        uniqueAppend(loadIncludedServices())
-
-        serviceDefinitions.sort(by: ServiceDefinitionSortByName)
-
-        return serviceDefinitions
-    }()
-
-    lazy var bundleServices: [ServiceDefinition] = {
-        guard let servicesPlist = Bundle.main.path(forResource: "services", ofType: "plist"),
-            let services = NSDictionary(contentsOfFile: servicesPlist)?["services"] as? [String] else {
-                fatalError("The services.plist file does not exist. The build phase script might have failed.")
+        for provider in providers {
+            // swiftlint:disable:next force_try
+            if let providerDefinitions = try! provider.definedServices() {
+                uniqueAppend(providerDefinitions)
+            }
         }
 
-        return services.compactMap { IndependentServiceDefinition(fromClassName: $0) }
+        return serviceDefinitions.sorted(by: ServiceDefinitionSortByName)
     }()
 
-    init() {}
+    private(set) lazy var allServicesWithoutSubServices: [ServiceDefinition] = {
+        allServices.filter { !($0.isSubService == true) }
+    }()
 
     func services(for definitions: [ServiceDefinition]) -> [BaseService] {
         definitions.compactMap { $0.build() }
     }
 
     func serviceDefinition(forIdentifier identifier: String) -> ServiceDefinition? {
-        serviceDefinition(forGlobalIdentifier: identifier)
-            ?? serviceDefinition(forLegacyIdentifier: identifier)
-    }
-
-    private func serviceDefinition(forLegacyIdentifier legacyIdentifier: String) -> ServiceDefinition? {
         allServices.first {
-            $0.alphanumericName.lowercased() == legacyIdentifier.lowercased() ||
-            $0.legacyIdentifiers.contains(legacyIdentifier)
+            $0.globalIdentifier == identifier || // The recommended way for identifying services
+            $0.alphanumericName.lowercased() == identifier.lowercased() || // The old way (class-name based)
+            $0.legacyIdentifiers.contains(identifier) // The old names used for a service
         }
-    }
-
-    private func serviceDefinition(forGlobalIdentifier globalIdentifier: String) -> ServiceDefinition? {
-        allServices.first { $0.globalIdentifier == globalIdentifier }
-    }
-
-    private func loadIncludedServices() -> [ServiceDefinition] {
-        guard let bundleServicesJSONPath = Bundle.main.path(forResource: "services", ofType: "json") else {
-            fatalError("Could not find services.json in the bundle")
-        }
-
-        // swiftlint:disable:next force_try
-        return try! loadServices(inPath: bundleServicesJSONPath)
-    }
-
-    private func loadUserDefinedServices() -> [ServiceDefinition]? {
-        guard
-            let applicationSupportURL = FileManager.default.urls(
-                for: .applicationSupportDirectory, in: .userDomainMask
-            ).first
-        else {
-            assertionFailure("Could not find Application Support folder")
-            return nil
-        }
-
-        let sttsAppSupportURL = applicationSupportURL.appendingPathComponent("stts")
-
-        do {
-            try FileManager.default.createDirectory(
-                at: sttsAppSupportURL,
-                withIntermediateDirectories: true,
-                attributes: nil
-            )
-        } catch {
-            assertionFailure("Could not create \(sttsAppSupportURL.absoluteString)")
-            return nil
-        }
-
-        let servicesJSONPath = sttsAppSupportURL.appendingPathComponent("services.json").path
-
-        do {
-            return try loadServices(inPath: servicesJSONPath)
-        } catch {
-            // Silent failure
-            print(error.localizedDescription)
-            return nil
-        }
-    }
-
-    private func loadServices(inPath path: String) throws -> [ServiceDefinition] {
-        let jsonData = try Data(contentsOf: URL(fileURLWithPath: path))
-        let decodedServices = try JSONDecoder().decode(ServicesStructure.self, from: jsonData)
-
-        return decodedServices.allServices
     }
 }

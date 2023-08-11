@@ -22,12 +22,36 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private var initialReachabilityChange: Bool = true
 
     let popupController: MBPopupController
-    private let serviceTableViewController = ServiceTableViewController()
+    private let serviceTableViewController: ServiceTableViewController
     private let editorTableViewController: EditorTableViewController
 
+    private let serviceLoader: ServiceLoader
+    private let preferences: Preferences
+
     override init() {
-        self.popupController = MBPopupController(contentView: serviceTableViewController.contentView)
-        self.editorTableViewController = serviceTableViewController.editorTableViewController
+        var serviceDefinitionProviders: [ServiceDefinitionProvider] = []
+
+        // swiftlint:disable:next force_try
+        serviceDefinitionProviders.append(try! AppDefinedServiceDefinitionProvider())
+        // swiftlint:disable:next force_try
+        serviceDefinitionProviders.append(try! BundleServiceDefinitionProvider())
+        if let userDefinedServiceDefinitionsProvider = try? UserDefinedServiceDefinitionProvider() {
+            serviceDefinitionProviders.append(userDefinedServiceDefinitionsProvider)
+        }
+        serviceLoader = ServiceLoader(providers: serviceDefinitionProviders)
+        SendbirdAll.sendbirdServices = serviceLoader.allServices
+            .compactMap { $0 as? SendbirdServiceDefinition }
+            .compactMap { $0.build() as? SendbirdService }
+
+        preferences = Preferences(serviceLoader: serviceLoader)
+
+        serviceTableViewController = ServiceTableViewController(
+            serviceLoader: serviceLoader,
+            preferences: preferences
+        )
+
+        popupController = MBPopupController(contentView: serviceTableViewController.contentView)
+        editorTableViewController = serviceTableViewController.editorTableViewController
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -64,16 +88,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         serviceTableViewController.setup()
 
         popupController.willOpenPopup = { [weak self] _ in
-            if self?.editorTableViewController.hidden == true {
-                self?.serviceTableViewController.willOpenPopup()
+            guard let self else { return }
+
+            if editorTableViewController.hidden {
+                serviceTableViewController.willOpenPopup()
             } else {
-                self?.editorTableViewController.willOpenPopup()
+                editorTableViewController.willOpenPopup()
             }
         }
 
         popupController.didOpenPopup = { [weak self] in
-            if self?.editorTableViewController.hidden == false {
-                self?.editorTableViewController.didOpenPopup()
+            guard let self else { return }
+
+            if !editorTableViewController.hidden {
+                editorTableViewController.didOpenPopup()
             }
         }
 
@@ -97,11 +125,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     @objc func updateServices() {
         serviceTableViewController.updateServices { [weak self] in
-            let title = self?.serviceTableViewController.generalStatus == .major ? "s__s" : "stts"
-            self?.popupController.statusItem.button?.title = title
+            guard let self else { return }
+            let title = serviceTableViewController.generalStatus == .major ? "s__s" : "stts"
+            popupController.statusItem.button?.title = title
 
-            if Preferences.shared.notifyOnStatusChange {
-                self?.serviceTableViewController.services.forEach { $0.notifyIfNecessary() }
+            if preferences.notifyOnStatusChange {
+                serviceTableViewController.services.forEach { $0.notifyIfStatusChanged() }
             }
         }
     }
