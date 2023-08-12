@@ -58,7 +58,7 @@ class CachetService: Service {
 
     override func updateStatus() async throws {
         let apiComponentsURL = url.appendingPathComponent("api/v1/components")
-        let data = try await self.rawData(from: url)
+        let data = try await self.rawData(from: apiComponentsURL)
 
         let json = try? JSONSerialization.jsonObject(with: data, options: [])
         guard
