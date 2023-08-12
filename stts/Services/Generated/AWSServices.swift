@@ -2508,6 +2508,14 @@ class AWSPanorama: AWSNamedService, SubService {
     ])
 }
 
+class AWSPaymentCryptography: AWSNamedService, SubService {
+    let name = "AWS Payment Cryptography"
+    let ids = Set<String>([
+        "paymentcryptography-us-east-1",
+        "paymentcryptography-us-west-2"
+    ])
+}
+
 class AWSPriceListService: AWSNamedService, SubService {
     let name = "AWS Price List Service"
     let ids = Set<String>([
@@ -2827,6 +2835,7 @@ class AWSSecurityHub: AWSNamedService, SubService {
         "securityhub-eu-west-1",
         "securityhub-eu-west-2",
         "securityhub-eu-west-3",
+        "securityhub-il-central-1",
         "securityhub-me-central-1",
         "securityhub-me-south-1",
         "securityhub-sa-east-1",
@@ -2888,6 +2897,7 @@ class AWSServiceCatalog: AWSNamedService, SubService {
         "servicecatalog-eu-west-1",
         "servicecatalog-eu-west-2",
         "servicecatalog-eu-west-3",
+        "servicecatalog-il-central-1",
         "servicecatalog-me-central-1",
         "servicecatalog-me-south-1",
         "servicecatalog-sa-east-1",
@@ -4341,6 +4351,7 @@ class AmazonElasticFileSystem: AWSNamedService, SubService {
         "elasticfilesystem-eu-west-1",
         "elasticfilesystem-eu-west-2",
         "elasticfilesystem-eu-west-3",
+        "elasticfilesystem-il-central-1",
         "elasticfilesystem-me-central-1",
         "elasticfilesystem-me-south-1",
         "elasticfilesystem-sa-east-1",
@@ -4852,6 +4863,7 @@ class AmazonKinesisAnalytics: AWSNamedService, SubService {
         "kinesisanalytics-eu-west-1",
         "kinesisanalytics-eu-west-2",
         "kinesisanalytics-eu-west-3",
+        "kinesisanalytics-il-central-1",
         "kinesisanalytics-me-central-1",
         "kinesisanalytics-me-south-1",
         "kinesisanalytics-sa-east-1",
@@ -5250,6 +5262,7 @@ class AmazonMemoryDBForRedis: AWSNamedService, SubService {
 class AmazonMonitron: AWSNamedService, SubService {
     let name = "Amazon Monitron"
     let ids = Set<String>([
+        "monitron-ap-southeast-2",
         "monitron-eu-west-1",
         "monitron-us-east-1"
     ])
@@ -5271,6 +5284,7 @@ class AmazonNeptune: AWSNamedService, SubService {
         "neptune-db-eu-west-1",
         "neptune-db-eu-west-2",
         "neptune-db-eu-west-3",
+        "neptune-db-me-central-1",
         "neptune-db-me-south-1",
         "neptune-db-sa-east-1",
         "neptune-db-us-east-1",
@@ -6024,6 +6038,7 @@ class AmazonVPCLattice: AWSNamedService, SubService {
         "vpclattice-ap-northeast-1",
         "vpclattice-ap-southeast-1",
         "vpclattice-ap-southeast-2",
+        "vpclattice-ca-central-1",
         "vpclattice-eu-west-1",
         "vpclattice-us-east-1",
         "vpclattice-us-east-2",

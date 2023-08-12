@@ -8,11 +8,6 @@ class GoogleAccessApproval: GoogleCloudPlatform, SubService {
     let dashboardName = "Access Approval"
 }
 
-class GoogleAccessContextManager: GoogleCloudPlatform, SubService {
-    let name = "Google Access Context Manager"
-    let dashboardName = "Access Context Manager"
-}
-
 class GoogleAccessTransparency: GoogleCloudPlatform, SubService {
     let name = "Google Access Transparency"
     let dashboardName = "Access Transparency"
