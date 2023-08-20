@@ -4,6 +4,7 @@
             "name": "Sendbird (Canada)",
             "url": "https://status-canada.sendbird.com",
             "id": "xnlfmklffhwg",
+            "subservice": true,
             "old_names": [
                 "SendbirdCanada"
             ]
@@ -12,6 +13,7 @@
             "name": "Sendbird (Frankfurt)",
             "url": "https://status-frankfurt.sendbird.com/",
             "id": "qt3xhnxvn2sw",
+            "subservice": true,
             "old_names": [
                 "SendbirdFrankfurt"
             ]
@@ -20,6 +22,7 @@
             "name": "Sendbird (Mumbai)",
             "url": "https://status-mumbai.sendbird.com/",
             "id": "sng1ltdy77pf",
+            "subservice": true,
             "old_names": [
                 "SendbirdMumbai"
             ]
@@ -28,6 +31,7 @@
             "name": "Sendbird (North Virginia)",
             "url": "https://status-nvirginia1.sendbird.com/",
             "id": "xlrzypr8w8p5",
+            "subservice": true,
             "old_names": [
                 "SendbirdNorthVirginia"
             ]
@@ -36,6 +40,7 @@
             "name": "Sendbird (North Virginia 2)",
             "url": "https://status-nvirginia2.sendbird.com/",
             "id": "nwc3tc3ghc55",
+            "subservice": true,
             "old_names": [
                 "SendbirdNorthVirginia2"
             ]
@@ -44,6 +49,7 @@
             "name": "Sendbird (Oregon)",
             "url": "https://status-oregon.sendbird.com/",
             "id": "phbv0js99n45",
+            "subservice": true,
             "old_names": [
                 "SendbirdOregon"
             ]
@@ -52,6 +58,7 @@
             "name": "Sendbird (Seoul)",
             "url": "https://status-seoul.sendbird.com/",
             "id": "6r983tc47nw4",
+            "subservice": true,
             "old_names": [
                 "SendbirdSeoul"
             ]
@@ -60,6 +67,7 @@
             "name": "Sendbird (Singapore)",
             "url": "https://status-singapore.sendbird.com/",
             "id": "phbv0js99n45",
+            "subservice": true,
             "old_names": [
                 "SendbirdSingapore"
             ]
@@ -68,6 +76,7 @@
             "name": "Sendbird (Singapore 2)",
             "url": "https://status-singapore2.sendbird.com/",
             "id": "2knm7ggfmh3s",
+            "subservice": true,
             "old_names": [
                 "SendbirdSingapore2"
             ]
@@ -76,6 +85,7 @@
             "name": "Sendbird (Sydney)",
             "url": "https://status-sydney.sendbird.com/",
             "id": "dy9hbf5scsg1",
+            "subservice": true,
             "old_names": [
                 "SendbirdSydney"
             ]
@@ -84,6 +94,7 @@
             "name": "Sendbird (Tokyo)",
             "url": "https://status-tokyo.sendbird.com/",
             "id": "rfx6f11vcjtc",
+            "subservice": true,
             "old_names": [
                 "SendbirdTokyo"
             ]

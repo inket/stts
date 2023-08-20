@@ -6,6 +6,7 @@
 import Cocoa
 import MBPopup
 import Reachability
+import PreferencesWindow
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
@@ -24,6 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     let popupController: MBPopupController
     private let serviceTableViewController: ServiceTableViewController
     private let editorTableViewController: EditorTableViewController
+    private let preferencesWindow: PreferencesWindow
 
     private let serviceLoader: ServiceLoader
     private let preferences: Preferences
@@ -45,13 +47,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         preferences = Preferences(serviceLoader: serviceLoader)
 
+        preferencesWindow = PreferencesWindow(serviceLoader: serviceLoader, preferences: preferences)
         serviceTableViewController = ServiceTableViewController(
             serviceLoader: serviceLoader,
-            preferences: preferences
+            preferences: preferences,
+            preferencesWindow: preferencesWindow
         )
 
         popupController = MBPopupController(contentView: serviceTableViewController.contentView)
         editorTableViewController = serviceTableViewController.editorTableViewController
+
+        preferencesWindow.show()
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -69,11 +75,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         try? reachability.startNotifier()
 
-        if #available(OSX 10.14, *) {
-            Appearance.addObserver(self)
-        } else {
-            popupController.backgroundView.backgroundColor = .white
-        }
+        Appearance.addObserver(self)
 
         NSUserNotificationCenter.default.delegate = self
 

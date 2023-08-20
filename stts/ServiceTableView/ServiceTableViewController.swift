@@ -5,6 +5,7 @@
 
 import Cocoa
 import MBPopup
+import PreferencesWindow
 
 class ServiceTableViewController: NSObject, SwitchableTableViewController {
     let contentView = NSStackView(frame: CGRect(x: 0, y: 0, width: 280, height: 400))
@@ -19,6 +20,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
     var services: [BaseService] = []
 
     private let preferences: Preferences
+    private let preferencesWindow: PreferencesWindow
 
     @Atomic var servicesBeingUpdated = Set<BaseService>()
 
@@ -32,9 +34,10 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
 
     var updateCallback: (() -> Void)?
 
-    init(serviceLoader: ServiceLoader, preferences: Preferences) {
+    init(serviceLoader: ServiceLoader, preferences: Preferences, preferencesWindow: PreferencesWindow) {
         self.serviceLoader = serviceLoader
         self.preferences = preferences
+        self.preferencesWindow = preferencesWindow
 
         self.editorTableViewController = EditorTableViewController(
             contentView: contentView,
@@ -53,8 +56,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         bottomBar.reloadServicesCallback = (NSApp.delegate as? AppDelegate)!.updateServices
 
         bottomBar.openSettingsCallback = { [weak self] in
-            self?.hide()
-            self?.editorTableViewController.show()
+            self?.preferencesWindow.show()
         }
 
         bottomBar.closeSettingsCallback = { [weak self] in
@@ -127,9 +129,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         tableView.delegate = self
         tableView.selectionHighlightStyle = .none
         tableView.backgroundColor = NSColor.clear
-        if #available(OSX 11.0, *) {
-            tableView.style = .fullWidth
-        }
+        tableView.style = .fullWidth
 
         addServicesNoticeField.isEditable = false
         addServicesNoticeField.isBordered = false

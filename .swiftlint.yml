@@ -1,5 +1,4 @@
 excluded:
-  - Pods
   - Carthage
 line_length:
     warning: 120
@@ -13,3 +12,5 @@ disabled_rules:
   - file_length
   - for_where
   - blanket_disable_command
+  - trailing_comma
+  - unused_closure_parameter
