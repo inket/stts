@@ -31,6 +31,7 @@ final class EditorTableCell: NSTableCellView {
         case category
     }
 
+    static let identifier: NSUserInterfaceItemIdentifier = .init(String(describing: EditorTableCell.self))
     static let defaultHeight: CGFloat = 30
 
     private let stackView = NSStackView()

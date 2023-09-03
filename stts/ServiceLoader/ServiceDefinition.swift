@@ -55,10 +55,32 @@ class CodableServiceDefinition: Codable {
     }
 
     init(name: String, url: URL, isCategory: Bool?, isSubService: Bool?, oldNames: Set<String>? = nil) {
+        assert(type(of: self) != CodableServiceDefinition.self)
+
         self.oldNames = oldNames
         self.name = name
         self.isCategory = isCategory
         self.isSubService = isSubService
         self.url = url
+    }
+
+    required init(from decoder: Decoder) throws {
+        assert(type(of: self) != CodableServiceDefinition.self)
+
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.url = try container.decode(URL.self, forKey: .url)
+        self.isCategory = try container.decodeIfPresent(Bool.self, forKey: .isCategory)
+        self.isSubService = try container.decodeIfPresent(Bool.self, forKey: .isSubService)
+        self.oldNames = try container.decodeIfPresent(Set<String>.self, forKey: .oldNames)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.name, forKey: .name)
+        try container.encode(self.url, forKey: .url)
+        try container.encodeIfPresent(self.isCategory, forKey: .isCategory)
+        try container.encodeIfPresent(self.isSubService, forKey: .isSubService)
+        try container.encodeIfPresent(self.oldNames, forKey: .oldNames)
     }
 }

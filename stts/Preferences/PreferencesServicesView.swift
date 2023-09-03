@@ -165,7 +165,7 @@ final class PreferencesServicesView: NSView {
         scrollView.layer?.cornerRadius = 6
         scrollView.backgroundColor = .clear
 
-        let column = NSTableColumn(identifier: NSUserInterfaceItemIdentifier(rawValue: "editorColumnIdentifier"))
+        let column = NSTableColumn(identifier: EditorTableCell.identifier)
         column.width = 200
         tableView.addTableColumn(column)
         tableView.autoresizesSubviews = true
@@ -173,9 +173,9 @@ final class PreferencesServicesView: NSView {
         tableView.gridStyleMask = .solidHorizontalGridLineMask
         tableView.dataSource = self
         tableView.delegate = self
-//        tableView.selectionHighlightStyle = .none
         tableView.backgroundColor = NSColor.clear
         tableView.style = .fullWidth
+        tableView.rowHeight = 38
 
         NSLayoutConstraint.activate([
             heightAnchor.constraint(greaterThanOrEqualToConstant: 600),
@@ -194,11 +194,6 @@ final class PreferencesServicesView: NSView {
             box.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
             box.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
             box.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12),
-
-//            scrollView.topAnchor.constraint(equalTo: box.topAnchor),
-//            scrollView.leadingAnchor.constraint(equalTo: box.leadingAnchor),
-//            scrollView.trailingAnchor.constraint(equalTo: box.trailingAnchor),
-//            scrollView.bottomAnchor.constraint(equalTo: box.bottomAnchor),
         ])
     }
 
@@ -272,27 +267,12 @@ extension PreferencesServicesView: NSTableViewDataSource {
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         return nil
     }
-
-    func tableViewSelectionDidChange(_ notification: Notification) {
-        guard tableView.selectedRow != -1 else { return }
-
-        let realSelectedRow = selectedCategory == nil ? tableView.selectedRow : max(tableView.selectedRow - 1, 0)
-        let selectedServiceDefinition = filteredServices[realSelectedRow]
-        // We're only interested in selections of categories
-        if selectedServiceDefinition.isCategory == true {
-            // Change the selected category
-            selectedCategory = selectedServiceDefinition
-        }
-    }
 }
 
 extension PreferencesServicesView: NSTableViewDelegate {
-    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 38
-    }
-
+    // swiftlint:disable:next cyclomatic_complexity
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let identifier = tableColumn?.identifier ?? NSUserInterfaceItemIdentifier(rawValue: "identifier")
+        let identifier = tableColumn?.identifier ?? EditorTableCell.identifier
         let cell = tableView.makeView(withIdentifier: identifier, owner: self) ?? EditorTableCell()
 
         guard let view = cell as? EditorTableCell else { return nil }
@@ -378,5 +358,17 @@ extension PreferencesServicesView: NSTableViewDelegate {
         view.showSeparator = false
 
         return view
+    }
+
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        guard tableView.selectedRow != -1 else { return }
+
+        let realSelectedRow = selectedCategory == nil ? tableView.selectedRow : max(tableView.selectedRow - 1, 0)
+        let selectedServiceDefinition = filteredServices[realSelectedRow]
+        // We're only interested in selections of categories
+        if selectedServiceDefinition.isCategory == true {
+            // Change the selected category
+            selectedCategory = selectedServiceDefinition
+        }
     }
 }
