@@ -249,6 +249,7 @@ class AWSAppMesh: AWSNamedService, SubService {
         "appmesh-eu-west-1",
         "appmesh-eu-west-2",
         "appmesh-eu-west-3",
+        "appmesh-il-central-1",
         "appmesh-me-south-1",
         "appmesh-sa-east-1",
         "appmesh-us-east-1",
@@ -385,6 +386,7 @@ class AWSApplicationMigrationService: AWSNamedService, SubService {
         "mgn-eu-west-1",
         "mgn-eu-west-2",
         "mgn-eu-west-3",
+        "mgn-il-central-1",
         "mgn-me-central-1",
         "mgn-me-south-1",
         "mgn-sa-east-1",
@@ -474,6 +476,7 @@ class AWSBackup: AWSNamedService, SubService {
         "backup-eu-west-1",
         "backup-eu-west-2",
         "backup-eu-west-3",
+        "backup-il-central-1",
         "backup-me-central-1",
         "backup-me-south-1",
         "backup-sa-east-1",
@@ -509,6 +512,7 @@ class AWSBatch: AWSNamedService, SubService {
         "batch-eu-west-1",
         "batch-eu-west-2",
         "batch-eu-west-3",
+        "batch-il-central-1",
         "batch-me-central-1",
         "batch-me-south-1",
         "batch-sa-east-1",
@@ -605,6 +609,7 @@ class AWSClientVPN: AWSNamedService, SubService {
         "clientvpn-eu-west-1",
         "clientvpn-eu-west-2",
         "clientvpn-eu-west-3",
+        "clientvpn-il-central-1",
         "clientvpn-me-south-1",
         "clientvpn-sa-east-1",
         "clientvpn-us-east-1",
@@ -1106,6 +1111,7 @@ class AWSControlTower: AWSNamedService, SubService {
         "controltower-eu-west-1",
         "controltower-eu-west-2",
         "controltower-eu-west-3",
+        "controltower-il-central-1",
         "controltower-me-south-1",
         "controltower-sa-east-1",
         "controltower-us-east-1",
@@ -1168,6 +1174,7 @@ class AWSDataSync: AWSNamedService, SubService {
         "datasync-eu-west-1",
         "datasync-eu-west-2",
         "datasync-eu-west-3",
+        "datasync-il-central-1",
         "datasync-me-central-1",
         "datasync-me-south-1",
         "datasync-sa-east-1",
@@ -1545,6 +1552,7 @@ class AWSFirewallManager: AWSNamedService, SubService {
         "fms-eu-west-1",
         "fms-eu-west-2",
         "fms-eu-west-3",
+        "fms-il-central-1",
         "fms-me-central-1",
         "fms-me-south-1",
         "fms-sa-east-1",
@@ -1659,6 +1667,58 @@ class AWSHealthImaging: AWSNamedService, SubService {
         "healthimaging-eu-west-1",
         "healthimaging-us-east-1",
         "healthimaging-us-west-2"
+    ])
+}
+
+class AWSHealthLake: AWSNamedService, SubService {
+    let name = "AWS HealthLake"
+    let ids = Set<String>([
+        "healthlake-ap-south-1",
+        "healthlake-us-east-1",
+        "healthlake-us-east-2",
+        "healthlake-us-west-2"
+    ])
+}
+
+class AWSHealthOmics: AWSNamedService, SubService {
+    let name = "AWS HealthOmics"
+    let ids = Set<String>([
+        "omics-ap-southeast-1",
+        "omics-eu-central-1",
+        "omics-eu-west-1",
+        "omics-eu-west-2",
+        "omics-us-east-1",
+        "omics-us-west-2"
+    ])
+}
+
+class AWSIAMIdentityCenter: AWSNamedService, SubService {
+    let name = "AWS IAM Identity Center"
+    let ids = Set<String>([
+        "iamidentitycenter-af-south-1",
+        "iamidentitycenter-ap-east-1",
+        "iamidentitycenter-ap-northeast-1",
+        "iamidentitycenter-ap-northeast-2",
+        "iamidentitycenter-ap-northeast-3",
+        "iamidentitycenter-ap-south-1",
+        "iamidentitycenter-ap-southeast-1",
+        "iamidentitycenter-ap-southeast-2",
+        "iamidentitycenter-ap-southeast-3",
+        "iamidentitycenter-ca-central-1",
+        "iamidentitycenter-eu-central-1",
+        "iamidentitycenter-eu-north-1",
+        "iamidentitycenter-eu-south-1",
+        "iamidentitycenter-eu-west-1",
+        "iamidentitycenter-eu-west-2",
+        "iamidentitycenter-eu-west-3",
+        "iamidentitycenter-me-south-1",
+        "iamidentitycenter-sa-east-1",
+        "iamidentitycenter-us-east-1",
+        "iamidentitycenter-us-east-2",
+        "iamidentitycenter-us-gov-east-1",
+        "iamidentitycenter-us-gov-west-1",
+        "iamidentitycenter-us-west-1",
+        "iamidentitycenter-us-west-2"
     ])
 }
 
@@ -2129,6 +2189,7 @@ class AWSLicenseManager: AWSNamedService, SubService {
         "licensemanager-eu-west-1",
         "licensemanager-eu-west-2",
         "licensemanager-eu-west-3",
+        "licensemanager-il-central-1",
         "licensemanager-me-south-1",
         "licensemanager-sa-east-1",
         "licensemanager-us-east-1",
@@ -2435,6 +2496,8 @@ class AWSOutposts: AWSNamedService, SubService {
         "outposts-eu-west-1",
         "outposts-eu-west-2",
         "outposts-eu-west-3",
+        "outposts-il-central-1",
+        "outposts-me-central-1",
         "outposts-me-south-1",
         "outposts-sa-east-1",
         "outposts-us-east-1",
@@ -2453,6 +2516,14 @@ class AWSPanorama: AWSNamedService, SubService {
         "panorama-eu-west-1",
         "panorama-us-east-1",
         "panorama-us-west-2"
+    ])
+}
+
+class AWSPaymentCryptography: AWSNamedService, SubService {
+    let name = "AWS Payment Cryptography"
+    let ids = Set<String>([
+        "paymentcryptography-us-east-1",
+        "paymentcryptography-us-west-2"
     ])
 }
 
@@ -2495,6 +2566,7 @@ class AWSPrivateCertificateAuthority: AWSNamedService, SubService {
         "acm-pca-eu-west-1",
         "acm-pca-eu-west-2",
         "acm-pca-eu-west-3",
+        "acm-pca-il-central-1",
         "acm-pca-me-central-1",
         "acm-pca-me-south-1",
         "acm-pca-sa-east-1",
@@ -2775,6 +2847,7 @@ class AWSSecurityHub: AWSNamedService, SubService {
         "securityhub-eu-west-1",
         "securityhub-eu-west-2",
         "securityhub-eu-west-3",
+        "securityhub-il-central-1",
         "securityhub-me-central-1",
         "securityhub-me-south-1",
         "securityhub-sa-east-1",
@@ -2836,6 +2909,7 @@ class AWSServiceCatalog: AWSNamedService, SubService {
         "servicecatalog-eu-west-1",
         "servicecatalog-eu-west-2",
         "servicecatalog-eu-west-3",
+        "servicecatalog-il-central-1",
         "servicecatalog-me-central-1",
         "servicecatalog-me-south-1",
         "servicecatalog-sa-east-1",
@@ -2871,6 +2945,7 @@ class AWSServiceQuotas: AWSNamedService, SubService {
         "servicequotas-eu-west-1",
         "servicequotas-eu-west-2",
         "servicequotas-eu-west-3",
+        "servicequotas-il-central-1",
         "servicequotas-me-south-1",
         "servicequotas-sa-east-1",
         "servicequotas-us-east-1",
@@ -2905,6 +2980,7 @@ class AWSSignIn: AWSNamedService, SubService {
         "signin-eu-west-1",
         "signin-eu-west-2",
         "signin-eu-west-3",
+        "signin-il-central-1",
         "signin-me-central-1",
         "signin-me-south-1",
         "signin-sa-east-1",
@@ -3058,6 +3134,7 @@ class AWSStorageGateway: AWSNamedService, SubService {
         "storagegateway-eu-west-1",
         "storagegateway-eu-west-2",
         "storagegateway-eu-west-3",
+        "storagegateway-il-central-1",
         "storagegateway-me-central-1",
         "storagegateway-me-south-1",
         "storagegateway-sa-east-1",
@@ -3426,6 +3503,7 @@ class AWSWickr: AWSNamedService, SubService {
     let name = "AWS Wickr"
     let ids = Set<String>([
         "wickr-ca-central-1",
+        "wickr-eu-west-2",
         "wickr-us-east-1"
     ])
 }
@@ -3601,6 +3679,7 @@ class AmazonAthena: AWSNamedService, SubService {
         "athena-eu-west-1",
         "athena-eu-west-2",
         "athena-eu-west-3",
+        "athena-il-central-1",
         "athena-me-central-1",
         "athena-me-south-1",
         "athena-sa-east-1",
@@ -4032,6 +4111,7 @@ class AmazonDetective: AWSNamedService, SubService {
         "detective-eu-west-1",
         "detective-eu-west-2",
         "detective-eu-west-3",
+        "detective-il-central-1",
         "detective-me-south-1",
         "detective-sa-east-1",
         "detective-us-east-1",
@@ -4120,6 +4200,30 @@ class AmazonDynamoDB: AWSNamedService, SubService {
         "dynamodb-us-gov-west-1",
         "dynamodb-us-west-1",
         "dynamodb-us-west-2"
+    ])
+}
+
+class AmazonEC2InstanceConnect: AWSNamedService, SubService {
+    let name = "Amazon EC2 Instance Connect"
+    let ids = Set<String>([
+        "managedssh-ap-northeast-1",
+        "managedssh-ap-northeast-2",
+        "managedssh-ap-south-1",
+        "managedssh-ap-southeast-1",
+        "managedssh-ap-southeast-2",
+        "managedssh-ca-central-1",
+        "managedssh-eu-central-1",
+        "managedssh-eu-north-1",
+        "managedssh-eu-west-1",
+        "managedssh-eu-west-2",
+        "managedssh-eu-west-3",
+        "managedssh-sa-east-1",
+        "managedssh-us-east-1",
+        "managedssh-us-east-2",
+        "managedssh-us-gov-east-1",
+        "managedssh-us-gov-west-1",
+        "managedssh-us-west-1",
+        "managedssh-us-west-2"
     ])
 }
 
@@ -4321,6 +4425,7 @@ class AmazonElasticFileSystem: AWSNamedService, SubService {
         "elasticfilesystem-eu-west-1",
         "elasticfilesystem-eu-west-2",
         "elasticfilesystem-eu-west-3",
+        "elasticfilesystem-il-central-1",
         "elasticfilesystem-me-central-1",
         "elasticfilesystem-me-south-1",
         "elasticfilesystem-sa-east-1",
@@ -4500,6 +4605,7 @@ class AmazonFSx: AWSNamedService, SubService {
         "fsx-eu-west-1",
         "fsx-eu-west-2",
         "fsx-eu-west-3",
+        "fsx-il-central-1",
         "fsx-me-central-1",
         "fsx-me-south-1",
         "fsx-sa-east-1",
@@ -4661,6 +4767,7 @@ class AmazonGuardDuty: AWSNamedService, SubService {
         "guardduty-eu-west-1",
         "guardduty-eu-west-2",
         "guardduty-eu-west-3",
+        "guardduty-il-central-1",
         "guardduty-me-central-1",
         "guardduty-me-south-1",
         "guardduty-sa-east-1",
@@ -4670,16 +4777,6 @@ class AmazonGuardDuty: AWSNamedService, SubService {
         "guardduty-us-gov-west-1",
         "guardduty-us-west-1",
         "guardduty-us-west-2"
-    ])
-}
-
-class AmazonHealthLake: AWSNamedService, SubService {
-    let name = "Amazon HealthLake"
-    let ids = Set<String>([
-        "healthlake-ap-south-1",
-        "healthlake-us-east-1",
-        "healthlake-us-east-2",
-        "healthlake-us-west-2"
     ])
 }
 
@@ -4809,6 +4906,7 @@ class AmazonKinesisAnalytics: AWSNamedService, SubService {
         "kinesisanalytics-eu-west-1",
         "kinesisanalytics-eu-west-2",
         "kinesisanalytics-eu-west-3",
+        "kinesisanalytics-il-central-1",
         "kinesisanalytics-me-central-1",
         "kinesisanalytics-me-south-1",
         "kinesisanalytics-sa-east-1",
@@ -5070,6 +5168,7 @@ class AmazonMacie: AWSNamedService, SubService {
         "macie-eu-west-1",
         "macie-eu-west-2",
         "macie-eu-west-3",
+        "macie-il-central-1",
         "macie-me-south-1",
         "macie-sa-east-1",
         "macie-us-east-1",
@@ -5207,6 +5306,7 @@ class AmazonMemoryDBForRedis: AWSNamedService, SubService {
 class AmazonMonitron: AWSNamedService, SubService {
     let name = "Amazon Monitron"
     let ids = Set<String>([
+        "monitron-ap-southeast-2",
         "monitron-eu-west-1",
         "monitron-us-east-1"
     ])
@@ -5228,6 +5328,7 @@ class AmazonNeptune: AWSNamedService, SubService {
         "neptune-db-eu-west-1",
         "neptune-db-eu-west-2",
         "neptune-db-eu-west-3",
+        "neptune-db-me-central-1",
         "neptune-db-me-south-1",
         "neptune-db-sa-east-1",
         "neptune-db-us-east-1",
@@ -5253,18 +5354,6 @@ class AmazonNimbleStudio: AWSNamedService, SubService {
         "nimble-us-east-1",
         "nimble-us-east-2",
         "nimble-us-west-2"
-    ])
-}
-
-class AmazonOmics: AWSNamedService, SubService {
-    let name = "Amazon Omics"
-    let ids = Set<String>([
-        "omics-ap-southeast-1",
-        "omics-eu-central-1",
-        "omics-eu-west-1",
-        "omics-eu-west-2",
-        "omics-us-east-1",
-        "omics-us-west-2"
     ])
 }
 
@@ -5432,6 +5521,7 @@ class AmazonRekognition: AWSNamedService, SubService {
         "rekognition-eu-central-1",
         "rekognition-eu-west-1",
         "rekognition-eu-west-2",
+        "rekognition-il-central-1",
         "rekognition-us-east-1",
         "rekognition-us-east-2",
         "rekognition-us-gov-west-1",
@@ -5558,6 +5648,7 @@ class AmazonRoute53Resolver: AWSNamedService, SubService {
         "route53resolver-eu-west-1",
         "route53resolver-eu-west-2",
         "route53resolver-eu-west-3",
+        "route53resolver-il-central-1",
         "route53resolver-me-central-1",
         "route53resolver-me-south-1",
         "route53resolver-sa-east-1",
@@ -5676,6 +5767,7 @@ class AmazonSimpleEmailService: AWSNamedService, SubService {
         "ses-eu-west-1",
         "ses-eu-west-2",
         "ses-eu-west-3",
+        "ses-il-central-1",
         "ses-me-south-1",
         "ses-sa-east-1",
         "ses-us-east-1",
@@ -5992,7 +6084,11 @@ class AmazonVPCLattice: AWSNamedService, SubService {
         "vpclattice-ap-northeast-1",
         "vpclattice-ap-southeast-1",
         "vpclattice-ap-southeast-2",
+        "vpclattice-ca-central-1",
+        "vpclattice-eu-central-1",
+        "vpclattice-eu-north-1",
         "vpclattice-eu-west-1",
+        "vpclattice-eu-west-2",
         "vpclattice-us-east-1",
         "vpclattice-us-east-2",
         "vpclattice-us-west-2"

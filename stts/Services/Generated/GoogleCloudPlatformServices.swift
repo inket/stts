@@ -53,6 +53,11 @@ class GoogleApigee: GoogleCloudPlatform, SubService {
     let dashboardName = "Apigee"
 }
 
+class GoogleApplicationIntegration: GoogleCloudPlatform, SubService {
+    let name = "Google Application Integration"
+    let dashboardName = "Application Integration"
+}
+
 class GoogleAppSheet: GoogleCloudPlatform, SubService {
     let name = "Google AppSheet"
     let dashboardName = "AppSheet"
@@ -126,6 +131,11 @@ class GoogleBinaryAuthorization: GoogleCloudPlatform, SubService {
 class GoogleCertificateAuthorityService: GoogleCloudPlatform, SubService {
     let name = "Google Certificate Authority Service"
     let dashboardName = "Certificate Authority Service"
+}
+
+class GoogleChronicleSecurity: GoogleCloudPlatform, SubService {
+    let name = "Google Chronicle Security"
+    let dashboardName = "Chronicle Security"
 }
 
 class GoogleChronicleSOAR: GoogleCloudPlatform, SubService {
@@ -403,11 +413,6 @@ class GoogleCloudBigtable: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Cloud Bigtable"
 }
 
-class GoogleCloudComposer: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Composer"
-    let dashboardName = "Google Cloud Composer"
-}
-
 class GoogleCloudConsole: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Console"
     let dashboardName = "Google Cloud Console"
@@ -528,6 +533,11 @@ class GoogleIdentityPlatform: GoogleCloudPlatform, SubService {
     let dashboardName = "Identity Platform"
 }
 
+class GoogleIntegrationConnectors: GoogleCloudPlatform, SubService {
+    let name = "Google Integration Connectors"
+    let dashboardName = "Integration Connectors"
+}
+
 class GoogleKeyAccessJustifications: GoogleCloudPlatform, SubService {
     let name = "Google Key Access Justifications"
     let dashboardName = "Key Access Justifications"
@@ -536,6 +546,11 @@ class GoogleKeyAccessJustifications: GoogleCloudPlatform, SubService {
 class GoogleLendingDocAI: GoogleCloudPlatform, SubService {
     let name = "Google Lending DocAI"
     let dashboardName = "Lending DocAI"
+}
+
+class GoogleLookerStudio: GoogleCloudPlatform, SubService {
+    let name = "Google Looker Studio"
+    let dashboardName = "Looker Studio"
 }
 
 class GoogleManagedServiceForMicrosoftActiveDirectoryAD: GoogleCloudPlatform, SubService {
@@ -571,6 +586,11 @@ class GooglePaymentGateway: GoogleCloudPlatform, SubService {
 class GooglePersistentDisk: GoogleCloudPlatform, SubService {
     let name = "Google Persistent Disk"
     let dashboardName = "Persistent Disk"
+}
+
+class GooglePersonalizedServiceHealth: GoogleCloudPlatform, SubService {
+    let name = "Google Personalized Service Health"
+    let dashboardName = "Personalized Service Health"
 }
 
 class GooglePrivateServiceConnect: GoogleCloudPlatform, SubService {
