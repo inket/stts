@@ -140,6 +140,7 @@
 		B2FBDF5F2A35D82000734667 /* IncidentIOService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDF5E2A35D82000734667 /* IncidentIOService.swift */; };
 		B2FC3E732A87659800A9E641 /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC3E722A87659800A9E641 /* PreferencesWindow.swift */; };
 		B2FC3E762A8766DB00A9E641 /* PreferencesServicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC3E752A8766DB00A9E641 /* PreferencesServicesView.swift */; };
+		B2FC3E782A926C2400A9E641 /* PreferencesGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC3E772A926C2400A9E641 /* PreferencesGeneralView.swift */; };
 		B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC9191D67029900F0B728 /* Heroku.swift */; };
 		B2FDC91C1D67062200F0B728 /* StatusPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91B1D67062200F0B728 /* StatusPageService.swift */; };
 /* End PBXBuildFile section */
@@ -315,6 +316,7 @@
 		B2FBDF5E2A35D82000734667 /* IncidentIOService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentIOService.swift; sourceTree = "<group>"; };
 		B2FC3E722A87659800A9E641 /* PreferencesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
 		B2FC3E752A8766DB00A9E641 /* PreferencesServicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesServicesView.swift; sourceTree = "<group>"; };
+		B2FC3E772A926C2400A9E641 /* PreferencesGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesGeneralView.swift; sourceTree = "<group>"; };
 		B2FDC9191D67029900F0B728 /* Heroku.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heroku.swift; sourceTree = "<group>"; };
 		B2FDC91B1D67062200F0B728 /* StatusPageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -570,6 +572,7 @@
 			children = (
 				B2FC3E722A87659800A9E641 /* PreferencesWindow.swift */,
 				B2FC3E752A8766DB00A9E641 /* PreferencesServicesView.swift */,
+				B2FC3E772A926C2400A9E641 /* PreferencesGeneralView.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -1006,6 +1009,7 @@
 				B2EB51CE1E7004A3001D6F78 /* ExanaService.swift in Sources */,
 				B24EE10026C8BF9500F7CE8B /* SalesforceProducts.swift in Sources */,
 				B2DCE6952215ACDE001447D8 /* StringExtensions.swift in Sources */,
+				B2FC3E782A926C2400A9E641 /* PreferencesGeneralView.swift in Sources */,
 				B277BC9422B4BB6D000B55C3 /* AzureDevOpsStore.swift in Sources */,
 				B2A4A8161DC82CE300037E99 /* BottomBar.swift in Sources */,
 				B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */,

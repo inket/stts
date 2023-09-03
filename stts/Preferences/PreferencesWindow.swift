@@ -7,25 +7,6 @@ import Cocoa
 import PreferencesWindow
 import SFSafeSymbols
 
-class PreferencesGeneralView: NSView, PreferencesView {
-    init() {
-        super.init(frame: .zero)
-        wantsLayer = true
-        layer?.backgroundColor = NSColor.red.cgColor
-
-        NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 400),
-            widthAnchor.constraint(equalToConstant: 400),
-        ])
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func willShow() {}
-}
-
 class PreferencesAboutView: NSView, PreferencesView {
     init() {
         super.init(frame: .zero)
@@ -45,7 +26,7 @@ class PreferencesAboutView: NSView, PreferencesView {
     func willShow() {}
 }
 
-class PreferencesWindow {
+final class PreferencesWindow {
     let controller: PreferencesWindowController
 
     init(serviceLoader: ServiceLoader, preferences: Preferences) {
