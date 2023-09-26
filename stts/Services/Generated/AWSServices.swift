@@ -902,6 +902,7 @@ class AWSCodeCommit: AWSNamedService, SubService {
         "codecommit-eu-west-1",
         "codecommit-eu-west-2",
         "codecommit-eu-west-3",
+        "codecommit-il-central-1",
         "codecommit-me-central-1",
         "codecommit-me-south-1",
         "codecommit-sa-east-1",
@@ -1361,6 +1362,30 @@ class AWSEC2ImageBuilder: AWSNamedService, SubService {
     ])
 }
 
+class AWSEC2SerialConsole: AWSNamedService, SubService {
+    let name = "AWS EC2 Serial Console"
+    let ids = Set<String>([
+        "ec2serialconsole-ap-northeast-1",
+        "ec2serialconsole-ap-northeast-2",
+        "ec2serialconsole-ap-south-1",
+        "ec2serialconsole-ap-southeast-1",
+        "ec2serialconsole-ap-southeast-2",
+        "ec2serialconsole-ca-central-1",
+        "ec2serialconsole-eu-central-1",
+        "ec2serialconsole-eu-north-1",
+        "ec2serialconsole-eu-west-1",
+        "ec2serialconsole-eu-west-2",
+        "ec2serialconsole-eu-west-3",
+        "ec2serialconsole-sa-east-1",
+        "ec2serialconsole-us-east-1",
+        "ec2serialconsole-us-east-2",
+        "ec2serialconsole-us-gov-east-1",
+        "ec2serialconsole-us-gov-west-1",
+        "ec2serialconsole-us-west-1",
+        "ec2serialconsole-us-west-2"
+    ])
+}
+
 class AWSElasticBeanstalk: AWSNamedService, SubService {
     let name = "AWS Elastic Beanstalk"
     let ids = Set<String>([
@@ -1415,6 +1440,7 @@ class AWSElasticDisasterRecovery: AWSNamedService, SubService {
         "drs-eu-west-1",
         "drs-eu-west-2",
         "drs-eu-west-3",
+        "drs-il-central-1",
         "drs-me-central-1",
         "drs-me-south-1",
         "drs-sa-east-1",
@@ -3009,36 +3035,6 @@ class AWSSimSpaceWeaver: AWSNamedService, SubService {
     ])
 }
 
-class AWSSingleSignOn: AWSNamedService, SubService {
-    let name = "AWS Single Sign-On"
-    let ids = Set<String>([
-        "sso-af-south-1",
-        "sso-ap-east-1",
-        "sso-ap-northeast-1",
-        "sso-ap-northeast-2",
-        "sso-ap-northeast-3",
-        "sso-ap-south-1",
-        "sso-ap-southeast-1",
-        "sso-ap-southeast-2",
-        "sso-ap-southeast-3",
-        "sso-ca-central-1",
-        "sso-eu-central-1",
-        "sso-eu-north-1",
-        "sso-eu-south-1",
-        "sso-eu-west-1",
-        "sso-eu-west-2",
-        "sso-eu-west-3",
-        "sso-me-south-1",
-        "sso-sa-east-1",
-        "sso-us-east-1",
-        "sso-us-east-2",
-        "sso-us-gov-east-1",
-        "sso-us-gov-west-1",
-        "sso-us-west-1",
-        "sso-us-west-2"
-    ])
-}
-
 class AWSSitetoSiteVPN: AWSNamedService, SubService {
     let name = "AWS Site-to-Site VPN"
     let ids = Set<String>([
@@ -3279,6 +3275,7 @@ class AWSTransferFamily: AWSNamedService, SubService {
         "transfer-eu-west-1",
         "transfer-eu-west-2",
         "transfer-eu-west-3",
+        "transfer-il-central-1",
         "transfer-me-central-1",
         "transfer-me-south-1",
         "transfer-sa-east-1",
@@ -3989,6 +3986,7 @@ class AmazonCognito: AWSNamedService, SubService {
     let ids = Set<String>([
         "cognito-ap-northeast-1",
         "cognito-ap-northeast-2",
+        "cognito-ap-northeast-3",
         "cognito-ap-south-1",
         "cognito-ap-southeast-1",
         "cognito-ap-southeast-2",
@@ -3999,6 +3997,7 @@ class AmazonCognito: AWSNamedService, SubService {
         "cognito-eu-west-1",
         "cognito-eu-west-2",
         "cognito-eu-west-3",
+        "cognito-il-central-1",
         "cognito-me-south-1",
         "cognito-sa-east-1",
         "cognito-us-east-1",
@@ -4151,6 +4150,7 @@ class AmazonDocumentDB: AWSNamedService, SubService {
         "docdb-ap-northeast-1",
         "docdb-ap-northeast-2",
         "docdb-ap-south-1",
+        "docdb-ap-south-2",
         "docdb-ap-southeast-1",
         "docdb-ap-southeast-2",
         "docdb-ca-central-1",
@@ -5066,6 +5066,7 @@ class AmazonLocationService: AWSNamedService, SubService {
         "locationservice-sa-east-1",
         "locationservice-us-east-1",
         "locationservice-us-east-2",
+        "locationservice-us-gov-west-1",
         "locationservice-us-west-2"
     ])
 }
@@ -5246,6 +5247,7 @@ class AmazonManagedStreamingForApacheKafka: AWSNamedService, SubService {
         "kafka-eu-west-1",
         "kafka-eu-west-2",
         "kafka-eu-west-3",
+        "kafka-il-central-1",
         "kafka-me-central-1",
         "kafka-me-south-1",
         "kafka-sa-east-1",
@@ -5877,10 +5879,10 @@ class AmazonSimpleStorageService: AWSNamedService, SubService {
         "s3-me-central-1",
         "s3-me-south-1",
         "s3-sa-east-1",
+        "s3-us-east-1",
         "s3-us-east-2",
         "s3-us-gov-east-1",
         "s3-us-gov-west-1",
-        "s3-us-standard",
         "s3-us-west-1",
         "s3-us-west-2"
     ])

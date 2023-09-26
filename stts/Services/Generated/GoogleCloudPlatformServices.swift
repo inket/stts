@@ -398,6 +398,11 @@ class GoogleGameServers: GoogleCloudPlatform, SubService {
     let dashboardName = "Game Servers"
 }
 
+class GoogleGKEFleetManagement: GoogleCloudPlatform, SubService {
+    let name = "Google GKE fleet management"
+    let dashboardName = "GKE fleet management"
+}
+
 class GoogleAppEngine: GoogleCloudPlatform, SubService {
     let name = "Google App Engine"
     let dashboardName = "Google App Engine"
@@ -411,6 +416,11 @@ class GoogleBigQuery: GoogleCloudPlatform, SubService {
 class GoogleCloudBigtable: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Bigtable"
     let dashboardName = "Google Cloud Bigtable"
+}
+
+class GoogleCloudComposer: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Composer"
+    let dashboardName = "Google Cloud Composer"
 }
 
 class GoogleCloudConsole: GoogleCloudPlatform, SubService {
@@ -506,11 +516,6 @@ class GoogleComputeEngine: GoogleCloudPlatform, SubService {
 class GoogleDistributedCloudEdge: GoogleCloudPlatform, SubService {
     let name = "Google Distributed Cloud Edge"
     let dashboardName = "Google Distributed Cloud Edge"
-}
-
-class GoogleKubernetesEngine: GoogleCloudPlatform, SubService {
-    let name = "Google Kubernetes Engine"
-    let dashboardName = "Google Kubernetes Engine"
 }
 
 class GoogleHealthcareAndLifeSciences: GoogleCloudPlatform, SubService {
@@ -741,6 +746,11 @@ class GoogleVertexAIOnlinePrediction: GoogleCloudPlatform, SubService {
 class GoogleVertexAIPipelines: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI Pipelines"
     let dashboardName = "Vertex AI Pipelines"
+}
+
+class GoogleVertexAISearch: GoogleCloudPlatform, SubService {
+    let name = "Google Vertex AI Search"
+    let dashboardName = "Vertex AI Search"
 }
 
 class GoogleVertexAITensorBoard: GoogleCloudPlatform, SubService {

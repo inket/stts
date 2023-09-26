@@ -205,6 +205,11 @@ class AdobeExpress: AdobeCreativeCloud, SubService {
     let id = "503465"
 }
 
+class AdobeFirefly: AdobeCreativeCloud, SubService {
+    let name = "Adobe Firefly"
+    let id = "536716"
+}
+
 class AdobeFonts: AdobeCreativeCloud, SubService {
     let name = "Adobe Fonts"
     let id = "503501"
