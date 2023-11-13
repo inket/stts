@@ -912,7 +912,6 @@
 				439EADCB08D6940C642E98B8 /* Acoustic.swift */,
 				B2CE72D5228587E000847E00 /* Acquia.swift */,
 				B231DD56257B431900647312 /* Airbase.swift */,
-				AFB41ECF9F0F03EC8916A646 /* Aiven.swift */,
 				8797E2420F50AEF8E643093F /* AlertLogic.swift */,
 				B21DC0751F6B436400E8214F /* Aptible.swift */,
 				B27168892291AEEE001E608C /* Asana.swift */,
@@ -1227,6 +1226,7 @@
 		B2FBDF602A35E1BB00734667 /* IncidentIO */ = {
 			isa = PBXGroup;
 			children = (
+				AFB41ECF9F0F03EC8916A646 /* Aiven.swift */,
 				B213D204269B0496005EBDDA /* Linear.swift */,
 				B2FBDF612A35E1C800734667 /* Loom.swift */,
 			);

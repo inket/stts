@@ -5,7 +5,6 @@
 
 import Foundation
 
-class Aiven: StatusPageService {
+class Aiven: IncidentIOService {
     let url = URL(string: "https://status.aiven.io")!
-    let statusPageID = "g2rqd66mn0qd"
 }
