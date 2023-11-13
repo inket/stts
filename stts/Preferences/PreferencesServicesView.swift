@@ -153,6 +153,7 @@ final class PreferencesServicesView: NSView {
         box.titlePosition = .noTitle
         box.contentView = scrollView
         box.contentViewMargins = NSSize(width: 0, height: 0)
+        box.focusRingType = .none
         addSubview(box)
 
         scrollView.borderType = .noBorder

@@ -56,8 +56,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         popupController = MBPopupController(contentView: serviceTableViewController.contentView)
         editorTableViewController = serviceTableViewController.editorTableViewController
-
-        preferencesWindow.show()
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {

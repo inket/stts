@@ -172,6 +172,7 @@ class VenturaPreferencesView: NSView, PreferencesView {
         box.titlePosition = .noTitle
         box.contentView = tableView
         box.contentViewMargins = NSSize(width: 0, height: 0)
+        box.focusRingType = .none
         addSubview(box)
 
         let column = NSTableColumn(identifier: Cell.identifier)

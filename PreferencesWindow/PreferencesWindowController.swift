@@ -47,8 +47,8 @@ public class PreferencesWindowController: NSWindowController {
     }
 
     public func show() {
+        NSApplication.shared.activate(ignoringOtherApps: true)
         showWindow(nil)
         window?.center()
-        NSApplication.shared.activate(ignoringOtherApps: true)
     }
 }
