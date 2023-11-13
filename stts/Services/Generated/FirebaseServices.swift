@@ -7,6 +7,10 @@ class FirebaseABTestingBETA: FirebaseService, SubService {
     let name = "Firebase AB Testing (BETA)"
 }
 
+class FirebaseAppCheck: FirebaseService, SubService {
+    let name = "Firebase App Check"
+}
+
 class FirebaseAppDistribution: FirebaseService, SubService {
     let name = "Firebase App Distribution"
 }

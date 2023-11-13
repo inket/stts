@@ -103,6 +103,11 @@ class GoogleBackupAndDR: GoogleCloudPlatform, SubService {
     let dashboardName = "Backup and DR"
 }
 
+class GoogleBackupForGKE: GoogleCloudPlatform, SubService {
+    let name = "Google Backup for GKE"
+    let dashboardName = "Backup for GKE"
+}
+
 class GoogleBareMetalSolution: GoogleCloudPlatform, SubService {
     let name = "Google Bare Metal Solution"
     let dashboardName = "Bare Metal Solution"
@@ -473,6 +478,11 @@ class GoogleCloudMarketplace: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Cloud Marketplace"
 }
 
+class GoogleCloudNetAppVolumes: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud NetApp Volumes"
+    let dashboardName = "Google Cloud NetApp Volumes"
+}
+
 class GoogleCloudNetworking: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Networking"
     let dashboardName = "Google Cloud Networking"
@@ -516,6 +526,11 @@ class GoogleComputeEngine: GoogleCloudPlatform, SubService {
 class GoogleDistributedCloudEdge: GoogleCloudPlatform, SubService {
     let name = "Google Distributed Cloud Edge"
     let dashboardName = "Google Distributed Cloud Edge"
+}
+
+class GoogleKubernetesEngine: GoogleCloudPlatform, SubService {
+    let name = "Google Kubernetes Engine"
+    let dashboardName = "Google Kubernetes Engine"
 }
 
 class GoogleHealthcareAndLifeSciences: GoogleCloudPlatform, SubService {

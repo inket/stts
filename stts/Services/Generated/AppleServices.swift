@@ -96,6 +96,11 @@ class ApplePayAndWallet: Apple, SubService {
     let serviceName = "Apple Pay & Wallet"
 }
 
+class ApplePayLater: Apple, SubService {
+    let name = "Apple Pay Later"
+    let serviceName = "Apple Pay Later"
+}
+
 class AppleSchoolManager: Apple, SubService {
     let name = "Apple School Manager"
     let serviceName = "Apple School Manager"
@@ -119,11 +124,6 @@ class AppleCareOnDevice: Apple, SubService {
 class AppleBusinessConnect: Apple, SubService {
     let name = "Apple BusinessConnect"
     let serviceName = "BusinessConnect"
-}
-
-class AppleDeviceEnrollmentProgram: Apple, SubService {
-    let name = "Apple Device Enrollment Program"
-    let serviceName = "Device Enrollment Program"
 }
 
 class AppleDictation: Apple, SubService {
@@ -542,6 +542,11 @@ class AppleDeveloperDocumentation: AppleDeveloper, SubService {
 class AppleDeveloperIDNotaryService: AppleDeveloper, SubService {
     let name = "Apple Developer ID Notary Service"
     let serviceName = "Developer ID Notary Service"
+}
+
+class AppleDeviceEnrollmentProgram: AppleDeveloper, SubService {
+    let name = "Apple Device Enrollment Program"
+    let serviceName = "Device Enrollment Program"
 }
 
 class AppleFeedbackAssistant: AppleDeveloper, SubService {
