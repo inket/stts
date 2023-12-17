@@ -583,6 +583,11 @@ class GoogleMediaCDN: GoogleCloudPlatform, SubService {
     let dashboardName = "Media CDN"
 }
 
+class GoogleMigrateToVirtualMachines: GoogleCloudPlatform, SubService {
+    let name = "Google Migrate to Virtual Machines"
+    let dashboardName = "Migrate to Virtual Machines"
+}
+
 class GoogleNetworkConnectivityCenter: GoogleCloudPlatform, SubService {
     let name = "Google Network Connectivity Center"
     let dashboardName = "Network Connectivity Center"

@@ -55,10 +55,6 @@ class FirebasePerformanceMonitoring: FirebaseService, SubService {
     let name = "Firebase Performance Monitoring"
 }
 
-class FirebasePredictionsDeprecated: FirebaseService, SubService {
-    let name = "Firebase Predictions (deprecated)"
-}
-
 class FirebaseRealtimeDatabase: FirebaseService, SubService {
     let name = "Firebase Realtime Database"
 }
