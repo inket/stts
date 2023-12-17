@@ -97,16 +97,8 @@ class BaseInstatusService: BaseService {
     }
 
     private struct InstatusData: Codable {
-        struct Props: Codable {
-            struct PageProps: Codable {
-                let site: Site
-                let activeIncidents: [Incident]
-            }
-
-            let pageProps: PageProps
-        }
-
-        let props: Props
+        let site: Site
+        let activeIncidents: [Incident]
     }
 
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
@@ -120,48 +112,79 @@ class BaseInstatusService: BaseService {
 
             guard let data = data else { return strongSelf._fail(error) }
 
-            guard
-                let doc = try? HTML(html: data, encoding: .utf8),
-                let json = doc.css("#__NEXT_DATA__").first?.innerHTML,
-                let jsonData = json.data(using: .utf8),
-                let statusData = try? JSONDecoder().decode(InstatusData.self, from: jsonData)
-            else {
+            guard let doc = try? HTML(html: data, encoding: .utf8) else {
                 return strongSelf._fail("Couldn't parse response")
             }
 
-            // Set the status
-            let status = strongSelf.serviceStatus(
-                for: statusData.props.pageProps.site,
-                components: statusData.props.pageProps.site.components
-            )
+            var statusData: InstatusData?
 
-            // Set the message by combining the unresolved incident names
-            let unresolvedIncidents = statusData.props.pageProps.activeIncidents.filter { $0.isUnresolved }
-            if !unresolvedIncidents.isEmpty {
-                let prefix = unresolvedIncidents.count > 1 ? "* " : ""
-                let message = unresolvedIncidents.map { "\(prefix)\($0.name)" }.joined(separator: "\n")
-                strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
-                return
+            let scriptTags = doc.css("script")
+            for scriptTag in scriptTags {
+                guard let rawHTML = scriptTag.innerHTML else { continue }
+
+                if rawHTML.contains("activeIncidents") {
+                    // swiftlint:disable:next force_try
+                    let regularExpression = try! NSRegularExpression(
+                        pattern: "\\{.*\\}",
+                        options: [.caseInsensitive, .dotMatchesLineSeparators]
+                    )
+                    guard let firstMatch = regularExpression.firstMatch(
+                        in: rawHTML,
+                        range: NSRange(location: 0, length: (rawHTML as NSString).length)
+                    ) else { continue }
+
+                    let json = (rawHTML as NSString).substring(with: firstMatch.range).unescaped
+                    guard let jsonData = json.data(using: .utf8) else {
+                        continue
+                    }
+
+                    statusData = try? JSONDecoder().decode(InstatusData.self, from: jsonData)
+                    if statusData != nil {
+                        break
+                    }
+                }
             }
 
-            // Or from affected the component names
-            let affectedComponents = statusData.props.pageProps.site.components.flatMap { $0.affectedComponentsNames }
-            if !affectedComponents.isEmpty {
-                let message = affectedComponents.joined(separator: "\n")
-                strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
-                return
+            guard let statusData else {
+                return strongSelf._fail("Couldn't parse response")
             }
 
-            // Fallback to the status description
-            let message: String
-            switch statusData.props.pageProps.site.status {
-            case .up:
-                message = "All systems operational"
-            case .hasIssues:
-                message = "Experiencing issues"
-            }
-            strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
+            strongSelf.setStatus(from: statusData)
         }
+    }
+
+    private func setStatus(from statusData: InstatusData) {
+        let status = serviceStatus(
+            for: statusData.site,
+            components: statusData.site.components
+        )
+
+        // Set the message by combining the unresolved incident names
+        let unresolvedIncidents = statusData.activeIncidents.filter { $0.isUnresolved }
+        if !unresolvedIncidents.isEmpty {
+            let prefix = unresolvedIncidents.count > 1 ? "* " : ""
+            let message = unresolvedIncidents.map { "\(prefix)\($0.name)" }.joined(separator: "\n")
+            statusDescription = ServiceStatusDescription(status: status, message: message)
+            return
+        }
+
+        // Or from affected the component names
+        let affectedComponents = statusData.site.components.flatMap { $0.affectedComponentsNames }
+        if !affectedComponents.isEmpty {
+            let message = affectedComponents.joined(separator: "\n")
+            statusDescription = ServiceStatusDescription(status: status, message: message)
+            return
+        }
+
+        // Fallback to the status description
+        let message: String
+        switch statusData.site.status {
+        case .up:
+            message = "All systems operational"
+        case .hasIssues:
+            message = "Experiencing issues"
+        }
+        statusDescription = ServiceStatusDescription(status: status, message: message)
     }
 
     private func serviceStatus(

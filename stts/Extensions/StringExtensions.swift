@@ -50,4 +50,53 @@ extension String {
 
         return result
     }
+
+    var unescaped: String {
+        var result = self
+
+        // Convert escape sequences to the actual characters
+        let entities = ["\0", "\t", "\n", "\r", "\"", "\'", "\\"]
+        for entity in entities {
+            let descriptionCharacters = entity.debugDescription.dropFirst().dropLast()
+            let description = String(descriptionCharacters)
+            result = result.replacingOccurrences(of: description, with: entity)
+        }
+
+        // Convert unicode code points to characters: \u003e becomes >
+        // swiftlint:disable:next force_try
+        let regularExpression = try! NSRegularExpression(pattern: "\\\\u([A-Za-z0-9]{4})")
+        var offset = 0
+        regularExpression.enumerateMatches(
+            in: result,
+            range: NSRange(location: 0, length: (result as NSString).length),
+            using: { textCheckingResult, _, _ in
+                guard let textCheckingResult, textCheckingResult.numberOfRanges > 1 else { return }
+
+                let actualRange = NSRange(
+                    location: textCheckingResult.range.location + offset,
+                    length: textCheckingResult.range.length
+                )
+                let codePointRange = NSRange(
+                    location: textCheckingResult.range(at: 1).location + offset,
+                    length: textCheckingResult.range(at: 1).length
+                )
+
+                let codePoint = (result as NSString).substring(with: codePointRange)
+
+                guard
+                    let codePointInt = UInt32(codePoint, radix: 16),
+                    let scalar = Unicode.Scalar(codePointInt)
+                else { return }
+                let replacement = String(scalar)
+
+                result = (result as NSString).replacingCharacters(
+                    in: actualRange,
+                    with: replacement
+                )
+                offset += (replacement.count - textCheckingResult.range.length)
+            }
+        )
+
+        return result
+    }
 }
