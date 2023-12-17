@@ -111,6 +111,10 @@
 		B22602AF27D87D96001190F1 /* UptimeDotCom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22602AE27D87D96001190F1 /* UptimeDotCom.swift */; };
 		B22602B127D881AF001190F1 /* OracleNetSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22602B027D881AF001190F1 /* OracleNetSuite.swift */; };
 		B22602B327D88FA1001190F1 /* Zendesk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22602B227D88FA1001190F1 /* Zendesk.swift */; };
+		B22651232B2EE1C1002F1CE2 /* PagerDutyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22651222B2EE1C1002F1CE2 /* PagerDutyService.swift */; };
+		B22651252B2EE9FF002F1CE2 /* pagerduty-minor.html in Resources */ = {isa = PBXBuildFile; fileRef = B22651242B2EE9FF002F1CE2 /* pagerduty-minor.html */; };
+		B22651272B2EEA44002F1CE2 /* pagerduty-good.html in Resources */ = {isa = PBXBuildFile; fileRef = B22651262B2EEA44002F1CE2 /* pagerduty-good.html */; };
+		B22651292B2EEA52002F1CE2 /* PagerDutyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22651282B2EEA52002F1CE2 /* PagerDutyTests.swift */; };
 		B227D30725D5885500951917 /* BigCommerce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227D30625D5885500951917 /* BigCommerce.swift */; };
 		B227D30C25D5886B00951917 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227D30A25D5886B00951917 /* Semaphore.swift */; };
 		B227D30D25D5886B00951917 /* FreeAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227D30B25D5886B00951917 /* FreeAgent.swift */; };
@@ -473,6 +477,10 @@
 		B22602AE27D87D96001190F1 /* UptimeDotCom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UptimeDotCom.swift; sourceTree = "<group>"; };
 		B22602B027D881AF001190F1 /* OracleNetSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleNetSuite.swift; sourceTree = "<group>"; };
 		B22602B227D88FA1001190F1 /* Zendesk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zendesk.swift; sourceTree = "<group>"; };
+		B22651222B2EE1C1002F1CE2 /* PagerDutyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerDutyService.swift; sourceTree = "<group>"; };
+		B22651242B2EE9FF002F1CE2 /* pagerduty-minor.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "pagerduty-minor.html"; sourceTree = "<group>"; };
+		B22651262B2EEA44002F1CE2 /* pagerduty-good.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "pagerduty-good.html"; sourceTree = "<group>"; };
+		B22651282B2EEA52002F1CE2 /* PagerDutyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerDutyTests.swift; sourceTree = "<group>"; };
 		B227D30625D5885500951917 /* BigCommerce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigCommerce.swift; sourceTree = "<group>"; };
 		B227D30A25D5886B00951917 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
 		B227D30B25D5886B00951917 /* FreeAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeAgent.swift; sourceTree = "<group>"; };
@@ -776,6 +784,7 @@
 				B2552F0129954B18003FF9EC /* FastlyTests.swift */,
 				B2163AF920BA4E7500B14A85 /* Info.plist */,
 				B2D655E629B802ED00DBE417 /* InstatusTests.swift */,
+				B22651282B2EEA52002F1CE2 /* PagerDutyTests.swift */,
 				91B0A21328197857007D8E8F /* StringExtensionsTests.swift */,
 				B2163AF720BA4E7500B14A85 /* sttsTests.swift */,
 			);
@@ -788,6 +797,14 @@
 				B2A0A16E1E4C45E0000D9B29 /* MailChimp.swift */,
 			);
 			path = StatusCake;
+			sourceTree = "<group>";
+		};
+		B22651212B2EE19C002F1CE2 /* PagerDuty */ = {
+			isa = PBXGroup;
+			children = (
+				B25695531E247C8C00FAE413 /* PagerDuty.swift */,
+			);
+			path = PagerDuty;
 			sourceTree = "<group>";
 		};
 		B228DC0A2A7F51FB00D8DC5E /* BetterStack */ = {
@@ -836,6 +853,8 @@
 				B2552EFD29954AEB003FF9EC /* fastly-good.html */,
 				B2552EFE29954AEB003FF9EC /* fastly-major.html */,
 				B2D655EA29B8045300DBE417 /* mastodonsocial-good.html */,
+				B22651262B2EEA44002F1CE2 /* pagerduty-good.html */,
+				B22651242B2EE9FF002F1CE2 /* pagerduty-minor.html */,
 				B2D655E829B803B800DBE417 /* whereby-notice.html */,
 			);
 			path = Resources;
@@ -1027,7 +1046,6 @@
 				0BDEA739C3989EA43886F0F6 /* OneSignal.swift */,
 				B2E832EF29EF74D9000FA1BE /* OpenAI.swift */,
 				3F6D6DE9B7048DB851580651 /* Opsgenie.swift */,
-				B25695531E247C8C00FAE413 /* PagerDuty.swift */,
 				B24B573123A4EAD200AFCF01 /* Pantheon.swift */,
 				B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */,
 				B213D1F7269AD9A7005EBDDA /* Pardot.swift */,
@@ -1240,6 +1258,7 @@
 				B2FBDF602A35E1BB00734667 /* IncidentIO */,
 				B213D201269B0449005EBDDA /* Instatus */,
 				B2DCE68E22159731001447D8 /* LambStatus */,
+				B22651212B2EE19C002F1CE2 /* PagerDuty */,
 				B22FDE4921089D4F00359EC9 /* PayPal */,
 				B2F55EEA2408B562003D674C /* PlayStation Network */,
 				B2D655EC29B8079D00DBE417 /* Site24x7 */,
@@ -1297,6 +1316,7 @@
 				B2FBDF5E2A35D82000734667 /* IncidentIOService.swift */,
 				B213D1FF269AFD45005EBDDA /* InstatusService.swift */,
 				B2DCE68C221591F2001447D8 /* LambStatusService.swift */,
+				B22651222B2EE1C1002F1CE2 /* PagerDutyService.swift */,
 				B22FDE4721089C6200359EC9 /* PayPal.swift */,
 				B2F55EE82408AB1A003D674C /* PlayStationNetwork.swift */,
 				B24EE10126C8BFD500F7CE8B /* Salesforce.swift */,
@@ -1413,7 +1433,7 @@
 			packageReferences = (
 				B20883E32A59143E007578C8 /* XCRemoteSwiftPackageReference "MBPopup" */,
 				B20883E62A59144F007578C8 /* XCRemoteSwiftPackageReference "Kanna" */,
-				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */,
+				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
 			);
 			productRefGroup = B2B2D1001D49D5080014D780 /* Products */;
 			projectDirPath = "";
@@ -1430,12 +1450,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B22651272B2EEA44002F1CE2 /* pagerduty-good.html in Resources */,
 				B2E832EE29DE5104000FA1BE /* adobe-analytics-minor.json in Resources */,
 				B2D655EB29B8045300DBE417 /* mastodonsocial-good.html in Resources */,
 				B2D655E929B803B800DBE417 /* whereby-notice.html in Resources */,
 				B228DC132A7F86F900D8DC5E /* eyloo-major.html in Resources */,
 				B2552F0029954AEB003FF9EC /* fastly-major.html in Resources */,
 				B2552EFF29954AEB003FF9EC /* fastly-good.html in Resources */,
+				B22651252B2EE9FF002F1CE2 /* pagerduty-minor.html in Resources */,
 				B228DC142A7F86F900D8DC5E /* buildjet-good.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1528,6 +1550,7 @@
 				B2563BBE22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift in Sources */,
 				B2552F0229954B18003FF9EC /* FastlyTests.swift in Sources */,
 				B2552F082995516B003FF9EC /* TestBundle.swift in Sources */,
+				B22651292B2EEA52002F1CE2 /* PagerDutyTests.swift in Sources */,
 				B228DC162A7F872800D8DC5E /* BetterStackTests.swift in Sources */,
 				B2552F0429954C26003FF9EC /* ResponseOverridingURLSession.swift in Sources */,
 				B2D655E729B802ED00DBE417 /* InstatusTests.swift in Sources */,
@@ -1766,6 +1789,7 @@
 				B2483CF12037029D00A9FA95 /* Zwift.swift in Sources */,
 				B2FBDF5F2A35D82000734667 /* IncidentIOService.swift in Sources */,
 				B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */,
+				B22651232B2EE1C1002F1CE2 /* PagerDutyService.swift in Sources */,
 				B29222282642EF33001C63AE /* ModeAnalytics.swift in Sources */,
 				B254642321EE9AF6003068A4 /* GitHub.swift in Sources */,
 				B2F55EF02408B6A2003D674C /* PSNEurope.swift in Sources */,
@@ -2147,7 +2171,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
 			requirement = {
@@ -2170,7 +2194,7 @@
 		};
 		B20883EA2A59146C007578C8 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */;
+			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
 			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
