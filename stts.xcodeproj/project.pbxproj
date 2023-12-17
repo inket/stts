@@ -107,7 +107,6 @@
 		B2253A6D209F3F9F0039F574 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A6C209F3F9F0039F574 /* FirebaseService.swift */; };
 		B2253A6F209F42430039F574 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2253A6E209F42430039F574 /* Firebase.swift */; };
 		B225E3E01E44830F008E1D3D /* SwitchableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */; };
-		B22600311E1562E700EBDD40 /* MediaTemple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22600301E1562E700EBDD40 /* MediaTemple.swift */; };
 		B22602AD27D878FE001190F1 /* Unity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22602AC27D878FD001190F1 /* Unity.swift */; };
 		B22602AF27D87D96001190F1 /* UptimeDotCom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22602AE27D87D96001190F1 /* UptimeDotCom.swift */; };
 		B22602B127D881AF001190F1 /* OracleNetSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22602B027D881AF001190F1 /* OracleNetSuite.swift */; };
@@ -470,7 +469,6 @@
 		B2253A6C209F3F9F0039F574 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		B2253A6E209F42430039F574 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchableTableViewController.swift; sourceTree = "<group>"; };
-		B22600301E1562E700EBDD40 /* MediaTemple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTemple.swift; sourceTree = "<group>"; };
 		B22602AC27D878FD001190F1 /* Unity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unity.swift; sourceTree = "<group>"; };
 		B22602AE27D87D96001190F1 /* UptimeDotCom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UptimeDotCom.swift; sourceTree = "<group>"; };
 		B22602B027D881AF001190F1 /* OracleNetSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleNetSuite.swift; sourceTree = "<group>"; };
@@ -1011,7 +1009,6 @@
 				B2E6C8F2253C24CD001210E4 /* Lumanox.swift */,
 				A133C8B620F8F3670068CFE8 /* Mailgun.swift */,
 				B28C1D431E607D8600F9D0DC /* Mapbox.swift */,
-				B22600301E1562E700EBDD40 /* MediaTemple.swift */,
 				6B24BCA673F692E9211E7B8D /* Medium.swift */,
 				067E14834A02FABD0C75361E /* MessageBird.swift */,
 				1CCCFA4ECD8BB402C7254FEF /* Miro.swift */,
@@ -1713,7 +1710,6 @@
 				B29222292642EF33001C63AE /* Twitch.swift in Sources */,
 				B2C10F3C203646A7008E1E7D /* Gandi.swift in Sources */,
 				B23646B22627C14E00AB9486 /* VisualStudioAppCenter.swift in Sources */,
-				B22600311E1562E700EBDD40 /* MediaTemple.swift in Sources */,
 				B205A9181D49D67700EA178D /* Service.swift in Sources */,
 				B228DC0C2A7F520700D8DC5E /* BetterStackService.swift in Sources */,
 				B232047F22158BDF000DC1B0 /* DatadogEU.swift in Sources */,
