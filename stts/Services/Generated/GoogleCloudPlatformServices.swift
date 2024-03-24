@@ -183,11 +183,6 @@ class GoogleCloudDataLossPrevention: GoogleCloudPlatform, SubService {
     let dashboardName = "Cloud Data Loss Prevention"
 }
 
-class GoogleCloudDebugger: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Debugger"
-    let dashboardName = "Cloud Debugger"
-}
-
 class GoogleCloudDomains: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Domains"
     let dashboardName = "Cloud Domains"
@@ -318,6 +313,11 @@ class GoogleCloudWorkstations: GoogleCloudPlatform, SubService {
     let dashboardName = "Cloud Workstations"
 }
 
+class GoogleColabEnterprise: GoogleCloudPlatform, SubService {
+    let name = "Google Colab Enterprise"
+    let dashboardName = "Colab Enterprise"
+}
+
 class GoogleContactCenterAIPlatform: GoogleCloudPlatform, SubService {
     let name = "Google Contact Center AI Platform"
     let dashboardName = "Contact Center AI Platform"
@@ -398,11 +398,6 @@ class GoogleFirebaseTestLab: GoogleCloudPlatform, SubService {
     let dashboardName = "Firebase Test Lab"
 }
 
-class GoogleGameServers: GoogleCloudPlatform, SubService {
-    let name = "Google Game Servers"
-    let dashboardName = "Game Servers"
-}
-
 class GoogleGKEFleetManagement: GoogleCloudPlatform, SubService {
     let name = "Google GKE fleet management"
     let dashboardName = "GKE fleet management"
@@ -468,11 +463,6 @@ class GoogleCloudIdentityAwareProxy: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Cloud Identity-Aware Proxy"
 }
 
-class GoogleCloudIoT: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud IoT"
-    let dashboardName = "Google Cloud IoT"
-}
-
 class GoogleCloudMarketplace: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Marketplace"
     let dashboardName = "Google Cloud Marketplace"
@@ -523,11 +513,6 @@ class GoogleComputeEngine: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Compute Engine"
 }
 
-class GoogleDistributedCloudEdge: GoogleCloudPlatform, SubService {
-    let name = "Google Distributed Cloud Edge"
-    let dashboardName = "Google Distributed Cloud Edge"
-}
-
 class GoogleKubernetesEngine: GoogleCloudPlatform, SubService {
     let name = "Google Kubernetes Engine"
     let dashboardName = "Google Kubernetes Engine"
@@ -551,6 +536,11 @@ class GoogleIdentityAndAccessManagement: GoogleCloudPlatform, SubService {
 class GoogleIdentityPlatform: GoogleCloudPlatform, SubService {
     let name = "Google Identity Platform"
     let dashboardName = "Identity Platform"
+}
+
+class GoogleInfrastructureManager: GoogleCloudPlatform, SubService {
+    let name = "Google Infrastructure Manager"
+    let dashboardName = "Infrastructure Manager"
 }
 
 class GoogleIntegrationConnectors: GoogleCloudPlatform, SubService {
@@ -578,9 +568,49 @@ class GoogleManagedServiceForMicrosoftActiveDirectoryAD: GoogleCloudPlatform, Su
     let dashboardName = "Managed Service for Microsoft Active Directory (AD)"
 }
 
+class GoogleMandiantAttackSurfaceManagement: GoogleCloudPlatform, SubService {
+    let name = "Google Mandiant Attack Surface Management"
+    let dashboardName = "Mandiant Attack Surface Management"
+}
+
+class GoogleMandiantHuntForChronicle: GoogleCloudPlatform, SubService {
+    let name = "Google Mandiant Hunt for Chronicle"
+    let dashboardName = "Mandiant Hunt for Chronicle"
+}
+
+class GoogleMandiantManagedDefense: GoogleCloudPlatform, SubService {
+    let name = "Google Mandiant Managed Defense"
+    let dashboardName = "Mandiant Managed Defense"
+}
+
+class GoogleMandiantSecurityValidation: GoogleCloudPlatform, SubService {
+    let name = "Google Mandiant Security Validation"
+    let dashboardName = "Mandiant Security Validation"
+}
+
+class GoogleMandiantThreatIntelligence: GoogleCloudPlatform, SubService {
+    let name = "Google Mandiant Threat Intelligence"
+    let dashboardName = "Mandiant Threat Intelligence"
+}
+
 class GoogleMediaCDN: GoogleCloudPlatform, SubService {
     let name = "Google Media CDN"
     let dashboardName = "Media CDN"
+}
+
+class GoogleMemorystoreForMemcached: GoogleCloudPlatform, SubService {
+    let name = "Google Memorystore for Memcached"
+    let dashboardName = "Memorystore for Memcached"
+}
+
+class GoogleMemorystoreForRedis: GoogleCloudPlatform, SubService {
+    let name = "Google Memorystore for Redis"
+    let dashboardName = "Memorystore for Redis"
+}
+
+class GoogleMemorystoreForRedisCluster: GoogleCloudPlatform, SubService {
+    let name = "Google Memorystore for Redis Cluster"
+    let dashboardName = "Memorystore for Redis Cluster"
 }
 
 class GoogleMigrateToVirtualMachines: GoogleCloudPlatform, SubService {

@@ -91,9 +91,9 @@ class AppleOnlineStore: Apple, SubService {
     let serviceName = "Apple Online Store"
 }
 
-class ApplePayAndWallet: Apple, SubService {
-    let name = "Apple Pay & Wallet"
-    let serviceName = "Apple Pay & Wallet"
+class ApplePay: Apple, SubService {
+    let name = "Apple Pay"
+    let serviceName = "Apple Pay"
 }
 
 class ApplePayLater: Apple, SubService {
@@ -361,6 +361,11 @@ class AppleSubscriptionPurchase: Apple, SubService {
     let serviceName = "Subscription Purchase"
 }
 
+class AppleVisionOSAppStore: Apple, SubService {
+    let name = "Apple visionOS App Store"
+    let serviceName = "visionOS App Store"
+}
+
 class AppleVolumePurchaseProgram: Apple, SubService {
     let name = "Apple Volume Purchase Program"
     let serviceName = "Volume Purchase Program"
@@ -369,6 +374,11 @@ class AppleVolumePurchaseProgram: Apple, SubService {
 class AppleWalkieTalkie: Apple, SubService {
     let name = "Apple Walkie-Talkie"
     let serviceName = "Walkie-Talkie"
+}
+
+class AppleWallet: Apple, SubService {
+    let name = "Apple Wallet"
+    let serviceName = "Wallet"
 }
 
 class AppleWeather: Apple, SubService {
