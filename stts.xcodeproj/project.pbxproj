@@ -812,6 +812,7 @@
 			children = (
 				B228DC0D2A7F840A00D8DC5E /* BetterStack.swift */,
 				B228DC082A7F51AA00D8DC5E /* BuildJet.swift */,
+				B254099128FE76AA0009F956 /* Keygen.swift */,
 			);
 			path = BetterStack;
 			sourceTree = "<group>";
@@ -830,7 +831,6 @@
 		B254098E28FE75B00009F956 /* BetterUptime */ = {
 			isa = PBXGroup;
 			children = (
-				B254099128FE76AA0009F956 /* Keygen.swift */,
 				B254098F28FE75CA0009F956 /* PlausibleAnalytics.swift */,
 			);
 			path = BetterUptime;
