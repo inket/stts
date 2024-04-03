@@ -192,6 +192,7 @@ class AWSAmplify: AWSNamedService, SubService {
         "amplify-ap-east-1",
         "amplify-ap-northeast-1",
         "amplify-ap-northeast-2",
+        "amplify-ap-northeast-3",
         "amplify-ap-south-1",
         "amplify-ap-southeast-1",
         "amplify-ap-southeast-2",
@@ -216,6 +217,7 @@ class AWSAmplifyAdmin: AWSNamedService, SubService {
     let ids = Set<String>([
         "amplifyadmin-ap-northeast-1",
         "amplifyadmin-ap-northeast-2",
+        "amplifyadmin-ap-northeast-3",
         "amplifyadmin-ap-south-1",
         "amplifyadmin-ap-southeast-1",
         "amplifyadmin-ap-southeast-2",
@@ -3443,13 +3445,20 @@ class AWSTrafficMirroring: AWSNamedService, SubService {
         "trafficmirroring-ap-south-2",
         "trafficmirroring-ap-southeast-1",
         "trafficmirroring-ap-southeast-2",
+        "trafficmirroring-ap-southeast-3",
+        "trafficmirroring-ap-southeast-4",
         "trafficmirroring-ca-central-1",
+        "trafficmirroring-ca-west-1",
         "trafficmirroring-eu-central-1",
+        "trafficmirroring-eu-central-2",
         "trafficmirroring-eu-north-1",
         "trafficmirroring-eu-south-1",
+        "trafficmirroring-eu-south-2",
         "trafficmirroring-eu-west-1",
         "trafficmirroring-eu-west-2",
         "trafficmirroring-eu-west-3",
+        "trafficmirroring-il-central-1",
+        "trafficmirroring-me-central-1",
         "trafficmirroring-me-south-1",
         "trafficmirroring-sa-east-1",
         "trafficmirroring-us-east-1",
@@ -3770,6 +3779,15 @@ class AWSXRay: AWSNamedService, SubService {
         "xray-us-gov-west-1",
         "xray-us-west-1",
         "xray-us-west-2"
+    ])
+}
+
+class AWSRePostPrivate: AWSNamedService, SubService {
+    let name = "AWS re:Post Private"
+    let ids = Set<String>([
+        "repostspace-ap-southeast-1",
+        "repostspace-eu-central-1",
+        "repostspace-us-west-2"
     ])
 }
 
@@ -4208,6 +4226,7 @@ class AmazonCognito: AWSNamedService, SubService {
         "cognito-ap-southeast-1",
         "cognito-ap-southeast-2",
         "cognito-ap-southeast-3",
+        "cognito-ap-southeast-4",
         "cognito-ca-central-1",
         "cognito-eu-central-1",
         "cognito-eu-central-2",
@@ -5215,6 +5234,7 @@ class AmazonKinesisAnalytics: AWSNamedService, SubService {
         "kinesisanalytics-ap-southeast-3",
         "kinesisanalytics-ap-southeast-4",
         "kinesisanalytics-ca-central-1",
+        "kinesisanalytics-ca-west-1",
         "kinesisanalytics-eu-central-1",
         "kinesisanalytics-eu-central-2",
         "kinesisanalytics-eu-north-1",

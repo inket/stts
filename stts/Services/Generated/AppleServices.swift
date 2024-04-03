@@ -106,6 +106,11 @@ class AppleSchoolManager: Apple, SubService {
     let serviceName = "Apple School Manager"
 }
 
+class AppleSports: Apple, SubService {
+    let name = "Apple Sports"
+    let serviceName = "Apple Sports"
+}
+
 class AppleTVChannels: Apple, SubService {
     let name = "Apple TV Channels"
     let serviceName = "Apple TV Channels"
@@ -119,6 +124,11 @@ class AppleTV: Apple, SubService {
 class AppleCareOnDevice: Apple, SubService {
     let name = "AppleCare on Device"
     let serviceName = "AppleCare on Device"
+}
+
+class AppleAudiobooks: Apple, SubService {
+    let name = "Apple Audiobooks"
+    let serviceName = "Audiobooks"
 }
 
 class AppleBusinessConnect: Apple, SubService {

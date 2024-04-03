@@ -513,6 +513,11 @@ class GoogleComputeEngine: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Compute Engine"
 }
 
+class GoogleDistributedCloudEdge: GoogleCloudPlatform, SubService {
+    let name = "Google Distributed Cloud Edge"
+    let dashboardName = "Google Distributed Cloud Edge"
+}
+
 class GoogleKubernetesEngine: GoogleCloudPlatform, SubService {
     let name = "Google Kubernetes Engine"
     let dashboardName = "Google Kubernetes Engine"
