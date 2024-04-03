@@ -62,6 +62,11 @@ extension String {
             result = result.replacingOccurrences(of: description, with: entity)
         }
 
+        let invalidEscapedCharacters: [String: String] = ["\\\n": "\\n"]
+        for (character, replacement) in invalidEscapedCharacters {
+            result = result.replacingOccurrences(of: character, with: replacement)
+        }
+
         // Convert unicode code points to characters: \u003e becomes >
         // swiftlint:disable:next force_try
         let regularExpression = try! NSRegularExpression(pattern: "\\\\u([A-Za-z0-9]{4})")

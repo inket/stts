@@ -41,4 +41,8 @@ class StringExtensionsTests: XCTestCase {
         // swiftlint:disable:next line_length
         XCTAssertEqual(#"{\"id\":\"aaa\",\"name\":\"Dashboard\",\"nameHtml\":\"\u003cp\u003eDashboard\u003c/p\u003e\",\"description\":\"\",\"descriptionHtml\":\"\",\"nameTranslation\":null,\"nameHtmlTranslation\":null,\"descriptionTranslation\":null,\"descriptionHtmlTranslation\":null,\"isCollapsed\":false,\"order\":1}"#.unescaped, #"{"id":"aaa","name":"Dashboard","nameHtml":"<p>Dashboard</p>","description":"","descriptionHtml":"","nameTranslation":null,"nameHtmlTranslation":null,"descriptionTranslation":null,"descriptionHtmlTranslation":null,"isCollapsed":false,"order":1}"#)
     }
+
+    func testUnescapedWithTrickyLineBreak() throws {
+        XCTAssertEqual("\\\\n".unescaped, "\\n")
+    }
 }

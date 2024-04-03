@@ -138,9 +138,15 @@ class BaseInstatusService: BaseService {
                         continue
                     }
 
-                    statusData = try? JSONDecoder().decode(InstatusData.self, from: jsonData)
-                    if statusData != nil {
-                        break
+                    let dictionary = try? JSONSerialization.jsonObject(with: jsonData) as? [String: Any]
+                    let children = dictionary?["children"] as? [Any]
+
+                    if let dataObject = children?.last as? [String: Any],
+                       let dataObjectJSON = try? JSONSerialization.data(withJSONObject: dataObject) {
+                        statusData = try? JSONDecoder().decode(InstatusData.self, from: dataObjectJSON)
+                        if statusData != nil {
+                            break
+                        }
                     }
                 }
             }
