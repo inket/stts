@@ -3,11 +3,20 @@
 //  stts
 //
 
+import Foundation
 import Kanna
 
 typealias BetterUptimeService = BaseBetterUptimeService & RequiredServiceProperties & RequiredBetterUptimeProperties
 
-protocol RequiredBetterUptimeProperties {}
+protocol RequiredBetterUptimeProperties {
+    var url: URL { get }
+    var apiURL: URL { get }
+}
+
+extension RequiredBetterUptimeProperties {
+    // Default implementation of the property `apiURL` is to return the page URL
+    var apiURL: URL { url }
+}
 
 class BaseBetterUptimeService: BaseService {
     private enum BetterUptimeStatus: String, CaseIterable {
@@ -53,7 +62,7 @@ class BaseBetterUptimeService: BaseService {
             fatalError("BaseBetterUptimeService should not be used directly.")
         }
 
-        loadData(with: realSelf.url) { [weak self] data, _, error in
+        loadData(with: realSelf.apiURL) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
             guard let data = data else { return strongSelf._fail(error) }
@@ -84,7 +93,7 @@ class BaseBetterUptimeService: BaseService {
         }
     }
 
-    private func status(from element: XMLElement) -> BetterUptimeStatus? {
+    private func status(from element: Kanna.XMLElement) -> BetterUptimeStatus? {
         guard let className = element.className, !className.isEmpty else { return nil }
 
         for statusCase in BetterUptimeStatus.allCases {
@@ -96,7 +105,7 @@ class BaseBetterUptimeService: BaseService {
         return nil
     }
 
-    private func status(fromV2Icon element: XMLElement) -> BetterUptimeStatus? {
+    private func status(fromV2Icon element: Kanna.XMLElement) -> BetterUptimeStatus? {
         guard let className = element.className, !className.isEmpty else { return nil }
 
         for statusCase in BetterUptimeStatus.allCases {
