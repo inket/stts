@@ -53,6 +53,21 @@ class GoogleApigee: GoogleCloudPlatform, SubService {
     let dashboardName = "Apigee"
 }
 
+class GoogleApigeeEdgePrivateCloud: GoogleCloudPlatform, SubService {
+    let name = "Google Apigee Edge Private Cloud"
+    let dashboardName = "Apigee Edge Private Cloud"
+}
+
+class GoogleApigeeEdgePublicCloud: GoogleCloudPlatform, SubService {
+    let name = "Google Apigee Edge Public Cloud"
+    let dashboardName = "Apigee Edge Public Cloud"
+}
+
+class GoogleApigeeHybrid: GoogleCloudPlatform, SubService {
+    let name = "Google Apigee Hybrid"
+    let dashboardName = "Apigee Hybrid"
+}
+
 class GoogleApplicationIntegration: GoogleCloudPlatform, SubService {
     let name = "Google Application Integration"
     let dashboardName = "Application Integration"
@@ -276,11 +291,6 @@ class GoogleCloudSourceRepositories: GoogleCloudPlatform, SubService {
 class GoogleCloudSpanner: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Spanner"
     let dashboardName = "Cloud Spanner"
-}
-
-class GoogleCloudStorageForFirebase: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Storage for Firebase"
-    let dashboardName = "Cloud Storage for Firebase"
 }
 
 class GoogleCloudTalentSolutionJobSearch: GoogleCloudPlatform, SubService {
@@ -636,11 +646,6 @@ class GoogleNetworkIntelligenceCenter: GoogleCloudPlatform, SubService {
 class GoogleNetworkTelemetry: GoogleCloudPlatform, SubService {
     let name = "Google Network Telemetry"
     let dashboardName = "Network Telemetry"
-}
-
-class GooglePaymentGateway: GoogleCloudPlatform, SubService {
-    let name = "Google Payment Gateway"
-    let dashboardName = "Payment Gateway"
 }
 
 class GooglePersistentDisk: GoogleCloudPlatform, SubService {

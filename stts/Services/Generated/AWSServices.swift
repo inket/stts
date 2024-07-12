@@ -1133,6 +1133,7 @@ class AWSConsoleMobileApp: AWSNamedService, SubService {
         "consolemobileapp-ap-southeast-3",
         "consolemobileapp-ap-southeast-4",
         "consolemobileapp-ca-central-1",
+        "consolemobileapp-ca-west-1",
         "consolemobileapp-eu-central-1",
         "consolemobileapp-eu-central-2",
         "consolemobileapp-eu-north-1",
@@ -1167,6 +1168,7 @@ class AWSControlTower: AWSNamedService, SubService {
         "controltower-ap-southeast-3",
         "controltower-ap-southeast-4",
         "controltower-ca-central-1",
+        "controltower-ca-west-1",
         "controltower-eu-central-1",
         "controltower-eu-central-2",
         "controltower-eu-north-1",
@@ -1287,6 +1289,20 @@ class AWSDatabaseMigrationService: AWSNamedService, SubService {
         "dms-us-gov-west-1",
         "dms-us-west-1",
         "dms-us-west-2"
+    ])
+}
+
+class AWSDeadlineCloud: AWSNamedService, SubService {
+    let name = "AWS Deadline Cloud"
+    let ids = Set<String>([
+        "deadline-ap-northeast-1",
+        "deadline-ap-southeast-1",
+        "deadline-ap-southeast-2",
+        "deadline-eu-central-1",
+        "deadline-eu-west-1",
+        "deadline-us-east-1",
+        "deadline-us-east-2",
+        "deadline-us-west-2"
     ])
 }
 
@@ -1615,8 +1631,8 @@ class AWSFargate: AWSNamedService, SubService {
     ])
 }
 
-class AWSFaultInjectionSimulator: AWSNamedService, SubService {
-    let name = "AWS Fault Injection Simulator"
+class AWSFaultInjectionService: AWSNamedService, SubService {
+    let name = "AWS Fault Injection Service"
     let ids = Set<String>([
         "fis-af-south-1",
         "fis-ap-east-1",
@@ -1629,6 +1645,7 @@ class AWSFaultInjectionSimulator: AWSNamedService, SubService {
         "fis-eu-central-1",
         "fis-eu-north-1",
         "fis-eu-south-1",
+        "fis-eu-south-2",
         "fis-eu-west-1",
         "fis-eu-west-2",
         "fis-eu-west-3",
@@ -1636,6 +1653,8 @@ class AWSFaultInjectionSimulator: AWSNamedService, SubService {
         "fis-sa-east-1",
         "fis-us-east-1",
         "fis-us-east-2",
+        "fis-us-gov-east-1",
+        "fis-us-gov-west-1",
         "fis-us-west-1",
         "fis-us-west-2"
     ])
@@ -1656,6 +1675,7 @@ class AWSFirewallManager: AWSNamedService, SubService {
         "fms-ap-southeast-3",
         "fms-ap-southeast-4",
         "fms-ca-central-1",
+        "fms-ca-west-1",
         "fms-eu-central-1",
         "fms-eu-central-2",
         "fms-eu-north-1",
@@ -1815,6 +1835,7 @@ class AWSIAMIdentityCenter: AWSNamedService, SubService {
         "iamidentitycenter-ap-northeast-2",
         "iamidentitycenter-ap-northeast-3",
         "iamidentitycenter-ap-south-1",
+        "iamidentitycenter-ap-south-2",
         "iamidentitycenter-ap-southeast-1",
         "iamidentitycenter-ap-southeast-2",
         "iamidentitycenter-ap-southeast-3",
@@ -1824,6 +1845,7 @@ class AWSIAMIdentityCenter: AWSNamedService, SubService {
         "iamidentitycenter-eu-central-2",
         "iamidentitycenter-eu-north-1",
         "iamidentitycenter-eu-south-1",
+        "iamidentitycenter-eu-south-2",
         "iamidentitycenter-eu-west-1",
         "iamidentitycenter-eu-west-2",
         "iamidentitycenter-eu-west-3",
@@ -2322,6 +2344,7 @@ class AWSLicenseManager: AWSNamedService, SubService {
         "licensemanager-ap-southeast-3",
         "licensemanager-ap-southeast-4",
         "licensemanager-ca-central-1",
+        "licensemanager-ca-west-1",
         "licensemanager-eu-central-1",
         "licensemanager-eu-central-2",
         "licensemanager-eu-north-1",
@@ -2807,14 +2830,18 @@ class AWSProton: AWSNamedService, SubService {
 class AWSQuickSight: AWSNamedService, SubService {
     let name = "AWS QuickSight"
     let ids = Set<String>([
+        "quicksight-af-south-1",
         "quicksight-ap-northeast-1",
         "quicksight-ap-northeast-2",
         "quicksight-ap-south-1",
         "quicksight-ap-southeast-1",
         "quicksight-ap-southeast-2",
+        "quicksight-ap-southeast-3",
         "quicksight-ca-central-1",
         "quicksight-eu-central-1",
+        "quicksight-eu-central-2",
         "quicksight-eu-north-1",
+        "quicksight-eu-south-1",
         "quicksight-eu-west-1",
         "quicksight-eu-west-2",
         "quicksight-eu-west-3",
@@ -2920,19 +2947,29 @@ class AWSResourceAccessManager: AWSNamedService, SubService {
 class AWSResourceExplorer: AWSNamedService, SubService {
     let name = "AWS Resource Explorer"
     let ids = Set<String>([
+        "resourceexplorer-af-south-1",
+        "resourceexplorer-ap-east-1",
         "resourceexplorer-ap-northeast-1",
         "resourceexplorer-ap-northeast-2",
         "resourceexplorer-ap-northeast-3",
         "resourceexplorer-ap-south-1",
+        "resourceexplorer-ap-south-2",
         "resourceexplorer-ap-southeast-1",
         "resourceexplorer-ap-southeast-2",
         "resourceexplorer-ap-southeast-3",
+        "resourceexplorer-ap-southeast-4",
         "resourceexplorer-ca-central-1",
+        "resourceexplorer-ca-west-1",
         "resourceexplorer-eu-central-1",
+        "resourceexplorer-eu-central-2",
         "resourceexplorer-eu-north-1",
+        "resourceexplorer-eu-south-1",
+        "resourceexplorer-eu-south-2",
         "resourceexplorer-eu-west-1",
         "resourceexplorer-eu-west-2",
         "resourceexplorer-eu-west-3",
+        "resourceexplorer-il-central-1",
+        "resourceexplorer-me-central-1",
         "resourceexplorer-me-south-1",
         "resourceexplorer-sa-east-1",
         "resourceexplorer-us-east-1",
@@ -3323,6 +3360,7 @@ class AWSStorageGateway: AWSNamedService, SubService {
         "storagegateway-ap-southeast-3",
         "storagegateway-ap-southeast-4",
         "storagegateway-ca-central-1",
+        "storagegateway-ca-west-1",
         "storagegateway-eu-central-1",
         "storagegateway-eu-central-2",
         "storagegateway-eu-north-1",
@@ -3485,6 +3523,7 @@ class AWSTransferFamily: AWSNamedService, SubService {
         "transfer-ap-southeast-3",
         "transfer-ap-southeast-4",
         "transfer-ca-central-1",
+        "transfer-ca-west-1",
         "transfer-eu-central-1",
         "transfer-eu-central-2",
         "transfer-eu-north-1",
@@ -3674,6 +3713,7 @@ class AWSVerifiedPermissions: AWSNamedService, SubService {
         "verifiedpermissions-ap-southeast-3",
         "verifiedpermissions-ap-southeast-4",
         "verifiedpermissions-ca-central-1",
+        "verifiedpermissions-ca-west-1",
         "verifiedpermissions-eu-central-1",
         "verifiedpermissions-eu-central-2",
         "verifiedpermissions-eu-north-1",
@@ -3682,11 +3722,14 @@ class AWSVerifiedPermissions: AWSNamedService, SubService {
         "verifiedpermissions-eu-west-1",
         "verifiedpermissions-eu-west-2",
         "verifiedpermissions-eu-west-3",
+        "verifiedpermissions-il-central-1",
         "verifiedpermissions-me-central-1",
         "verifiedpermissions-me-south-1",
         "verifiedpermissions-sa-east-1",
         "verifiedpermissions-us-east-1",
         "verifiedpermissions-us-east-2",
+        "verifiedpermissions-us-gov-east-1",
+        "verifiedpermissions-us-gov-west-1",
         "verifiedpermissions-us-west-1",
         "verifiedpermissions-us-west-2"
     ])
@@ -3730,9 +3773,12 @@ class AWSWellArchitectedTool: AWSNamedService, SubService {
 class AWSWickr: AWSNamedService, SubService {
     let name = "AWS Wickr"
     let ids = Set<String>([
+        "wickr-ap-northeast-1",
+        "wickr-ap-southeast-1",
         "wickr-ap-southeast-2",
         "wickr-ca-central-1",
         "wickr-eu-central-1",
+        "wickr-eu-north-1",
         "wickr-eu-west-2",
         "wickr-us-east-1"
     ])
@@ -3786,7 +3832,11 @@ class AWSRePostPrivate: AWSNamedService, SubService {
     let name = "AWS re:Post Private"
     let ids = Set<String>([
         "repostspace-ap-southeast-1",
+        "repostspace-ap-southeast-2",
+        "repostspace-ca-central-1",
         "repostspace-eu-central-1",
+        "repostspace-eu-west-1",
+        "repostspace-us-east-1",
         "repostspace-us-west-2"
     ])
 }
@@ -3930,8 +3980,15 @@ class AmazonBedrock: AWSNamedService, SubService {
     let name = "Amazon Bedrock"
     let ids = Set<String>([
         "bedrock-ap-northeast-1",
+        "bedrock-ap-south-1",
         "bedrock-ap-southeast-1",
+        "bedrock-ap-southeast-2",
+        "bedrock-ca-central-1",
         "bedrock-eu-central-1",
+        "bedrock-eu-west-1",
+        "bedrock-eu-west-2",
+        "bedrock-eu-west-3",
+        "bedrock-sa-east-1",
         "bedrock-us-east-1",
         "bedrock-us-gov-west-1",
         "bedrock-us-west-2"
@@ -3941,6 +3998,7 @@ class AmazonBedrock: AWSNamedService, SubService {
 class AmazonBraket: AWSNamedService, SubService {
     let name = "Amazon Braket"
     let ids = Set<String>([
+        "braket-eu-north-1",
         "braket-eu-west-2",
         "braket-us-east-1",
         "braket-us-west-1",
@@ -4119,12 +4177,17 @@ class AmazonCloudWatchRUM: AWSNamedService, SubService {
     let name = "Amazon CloudWatch RUM"
     let ids = Set<String>([
         "rum-ap-northeast-1",
+        "rum-ap-south-2",
         "rum-ap-southeast-1",
         "rum-ap-southeast-2",
+        "rum-ap-southeast-4",
         "rum-eu-central-1",
+        "rum-eu-central-2",
         "rum-eu-north-1",
+        "rum-eu-south-2",
         "rum-eu-west-1",
         "rum-eu-west-2",
+        "rum-me-central-1",
         "rum-us-east-1",
         "rum-us-east-2",
         "rum-us-west-2"
@@ -4219,19 +4282,23 @@ class AmazonCognito: AWSNamedService, SubService {
     let name = "Amazon Cognito"
     let ids = Set<String>([
         "cognito-af-south-1",
+        "cognito-ap-east-1",
         "cognito-ap-northeast-1",
         "cognito-ap-northeast-2",
         "cognito-ap-northeast-3",
         "cognito-ap-south-1",
+        "cognito-ap-south-2",
         "cognito-ap-southeast-1",
         "cognito-ap-southeast-2",
         "cognito-ap-southeast-3",
         "cognito-ap-southeast-4",
         "cognito-ca-central-1",
+        "cognito-ca-west-1",
         "cognito-eu-central-1",
         "cognito-eu-central-2",
         "cognito-eu-north-1",
         "cognito-eu-south-1",
+        "cognito-eu-south-2",
         "cognito-eu-west-1",
         "cognito-eu-west-2",
         "cognito-eu-west-3",
@@ -4420,6 +4487,7 @@ class AmazonDocumentDB: AWSNamedService, SubService {
         "docdb-eu-west-1",
         "docdb-eu-west-2",
         "docdb-eu-west-3",
+        "docdb-me-central-1",
         "docdb-sa-east-1",
         "docdb-us-east-1",
         "docdb-us-east-2",
@@ -4922,6 +4990,7 @@ class AmazonFSx: AWSNamedService, SubService {
         "fsx-ap-southeast-3",
         "fsx-ap-southeast-4",
         "fsx-ca-central-1",
+        "fsx-ca-west-1",
         "fsx-eu-central-1",
         "fsx-eu-central-2",
         "fsx-eu-north-1",
@@ -5348,6 +5417,8 @@ class AmazonKinesisVideoStreams: AWSNamedService, SubService {
         "acuity-sa-east-1",
         "acuity-us-east-1",
         "acuity-us-east-2",
+        "acuity-us-gov-east-1",
+        "acuity-us-gov-west-1",
         "acuity-us-west-2"
     ])
 }
@@ -5462,6 +5533,7 @@ class AmazonMQ: AWSNamedService, SubService {
         "mq-ap-southeast-3",
         "mq-ap-southeast-4",
         "mq-ca-central-1",
+        "mq-ca-west-1",
         "mq-eu-central-1",
         "mq-eu-central-2",
         "mq-eu-north-1",
@@ -5579,6 +5651,7 @@ class AmazonManagedStreamingForApacheKafka: AWSNamedService, SubService {
         "kafka-ap-southeast-3",
         "kafka-ap-southeast-4",
         "kafka-ca-central-1",
+        "kafka-ca-west-1",
         "kafka-eu-central-1",
         "kafka-eu-central-2",
         "kafka-eu-north-1",
@@ -5603,20 +5676,34 @@ class AmazonManagedStreamingForApacheKafka: AWSNamedService, SubService {
 class AmazonManagedWorkflowsForApacheAirflow: AWSNamedService, SubService {
     let name = "Amazon Managed Workflows for Apache Airflow"
     let ids = Set<String>([
+        "airflow-af-south-1",
+        "airflow-ap-east-1",
         "airflow-ap-northeast-1",
         "airflow-ap-northeast-2",
+        "airflow-ap-northeast-3",
         "airflow-ap-south-1",
+        "airflow-ap-south-2",
         "airflow-ap-southeast-1",
         "airflow-ap-southeast-2",
+        "airflow-ap-southeast-3",
+        "airflow-ap-southeast-4",
         "airflow-ca-central-1",
+        "airflow-ca-west-1",
         "airflow-eu-central-1",
+        "airflow-eu-central-2",
         "airflow-eu-north-1",
+        "airflow-eu-south-1",
+        "airflow-eu-south-2",
         "airflow-eu-west-1",
         "airflow-eu-west-2",
         "airflow-eu-west-3",
+        "airflow-il-central-1",
+        "airflow-me-central-1",
+        "airflow-me-south-1",
         "airflow-sa-east-1",
         "airflow-us-east-1",
         "airflow-us-east-2",
+        "airflow-us-west-1",
         "airflow-us-west-2"
     ])
 }
@@ -5698,6 +5785,13 @@ class AmazonNimbleStudio: AWSNamedService, SubService {
         "nimble-us-east-1",
         "nimble-us-east-2",
         "nimble-us-west-2"
+    ])
+}
+
+class AmazonOneEnterprise: AWSNamedService, SubService {
+    let name = "Amazon One Enterprise"
+    let ids = Set<String>([
+        "one-us-east-1"
     ])
 }
 
@@ -5798,6 +5892,22 @@ class AmazonPolly: AWSNamedService, SubService {
         "polly-us-gov-west-1",
         "polly-us-west-1",
         "polly-us-west-2"
+    ])
+}
+
+class AmazonQApps: AWSNamedService, SubService {
+    let name = "Amazon Q Apps"
+    let ids = Set<String>([
+        "qapps-us-east-1",
+        "qapps-us-west-2"
+    ])
+}
+
+class AmazonQBusiness: AWSNamedService, SubService {
+    let name = "Amazon Q Business"
+    let ids = Set<String>([
+        "qbusiness-us-east-1",
+        "qbusiness-us-west-2"
     ])
 }
 
@@ -6100,6 +6210,8 @@ class AmazonSecurityLake: AWSNamedService, SubService {
         "securitylake-sa-east-1",
         "securitylake-us-east-1",
         "securitylake-us-east-2",
+        "securitylake-us-gov-east-1",
+        "securitylake-us-gov-west-1",
         "securitylake-us-west-1",
         "securitylake-us-west-2"
     ])
@@ -6128,6 +6240,7 @@ class AmazonSimpleEmailService: AWSNamedService, SubService {
         "ses-sa-east-1",
         "ses-us-east-1",
         "ses-us-east-2",
+        "ses-us-gov-east-1",
         "ses-us-gov-west-1",
         "ses-us-west-1",
         "ses-us-west-2"
@@ -6422,6 +6535,8 @@ class AmazonVPCLattice: AWSNamedService, SubService {
     let name = "Amazon VPC Lattice"
     let ids = Set<String>([
         "vpclattice-ap-northeast-1",
+        "vpclattice-ap-northeast-2",
+        "vpclattice-ap-south-1",
         "vpclattice-ap-southeast-1",
         "vpclattice-ap-southeast-2",
         "vpclattice-ca-central-1",
@@ -6429,8 +6544,11 @@ class AmazonVPCLattice: AWSNamedService, SubService {
         "vpclattice-eu-north-1",
         "vpclattice-eu-west-1",
         "vpclattice-eu-west-2",
+        "vpclattice-eu-west-3",
+        "vpclattice-sa-east-1",
         "vpclattice-us-east-1",
         "vpclattice-us-east-2",
+        "vpclattice-us-west-1",
         "vpclattice-us-west-2"
     ])
 }
@@ -6514,21 +6632,8 @@ class AmazonWorkSpaces: AWSNamedService, SubService {
     ])
 }
 
-class AmazonWorkSpacesThinClient: AWSNamedService, SubService {
-    let name = "Amazon WorkSpaces Thin Client"
-    let ids = Set<String>([
-        "thinclient-ap-south-1",
-        "thinclient-ca-central-1",
-        "thinclient-eu-central-1",
-        "thinclient-eu-west-1",
-        "thinclient-eu-west-2",
-        "thinclient-us-east-1",
-        "thinclient-us-west-2"
-    ])
-}
-
-class AmazonWorkSpacesWeb: AWSNamedService, SubService {
-    let name = "Amazon WorkSpaces Web"
+class AmazonWorkSpacesSecureBrowser: AWSNamedService, SubService {
+    let name = "Amazon WorkSpaces Secure Browser"
     let ids = Set<String>([
         "workspacesweb-ap-northeast-1",
         "workspacesweb-ap-south-1",
@@ -6540,5 +6645,18 @@ class AmazonWorkSpacesWeb: AWSNamedService, SubService {
         "workspacesweb-eu-west-2",
         "workspacesweb-us-east-1",
         "workspacesweb-us-west-2"
+    ])
+}
+
+class AmazonWorkSpacesThinClient: AWSNamedService, SubService {
+    let name = "Amazon WorkSpaces Thin Client"
+    let ids = Set<String>([
+        "thinclient-ap-south-1",
+        "thinclient-ca-central-1",
+        "thinclient-eu-central-1",
+        "thinclient-eu-west-1",
+        "thinclient-eu-west-2",
+        "thinclient-us-east-1",
+        "thinclient-us-west-2"
     ])
 }

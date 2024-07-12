@@ -147,6 +147,21 @@ class SalesforceMarketingCloudNA: SalesforceMarketingCloud, SubService {
     let location = "NA"
 }
 
+class MulesoftAll: Mulesoft, ServiceCategory {
+    let categoryName = "Mulesoft"
+    let subServiceSuperclass: AnyObject.Type = BaseMulesoft.self
+
+    let name = "Mulesoft (All Regions)"
+    let key = "Mulesoft"
+    let location = "*"
+}
+
+class MulesoftNA: Mulesoft, SubService {
+    let name = "Mulesoft (NA)"
+    let key = "Mulesoft"
+    let location = "NA"
+}
+
 class SalesforceServicesAll: SalesforceServices, ServiceCategory {
     let categoryName = "Salesforce Services"
     let subServiceSuperclass: AnyObject.Type = BaseSalesforceServices.self
@@ -186,5 +201,32 @@ class SalesforceSocialStudioAll: SalesforceSocialStudio, ServiceCategory {
 class SalesforceSocialStudioNA: SalesforceSocialStudio, SubService {
     let name = "Salesforce Social Studio (NA)"
     let key = "Social_Studio"
+    let location = "NA"
+}
+
+class TableauAll: Tableau, ServiceCategory {
+    let categoryName = "Tableau"
+    let subServiceSuperclass: AnyObject.Type = BaseTableau.self
+
+    let name = "Tableau (All Regions)"
+    let key = "Tableau"
+    let location = "*"
+}
+
+class TableauAPAC: Tableau, SubService {
+    let name = "Tableau (APAC)"
+    let key = "Tableau"
+    let location = "APAC"
+}
+
+class TableauEMEA: Tableau, SubService {
+    let name = "Tableau (EMEA)"
+    let key = "Tableau"
+    let location = "EMEA"
+}
+
+class TableauNA: Tableau, SubService {
+    let name = "Tableau (NA)"
+    let key = "Tableau"
     let location = "NA"
 }

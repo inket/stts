@@ -53,6 +53,11 @@ class AdobeAudienceManager: AdobeExperienceCloud, SubService {
     let id = "503486"
 }
 
+class AdobeBridge: AdobeCreativeCloud, SubService {
+    let name = "Adobe Bridge"
+    let id = "546687"
+}
+
 class AdobeCampaign: AdobeExperienceCloud, SubService {
     let name = "Adobe Campaign"
     let id = "503475"

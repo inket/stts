@@ -51,6 +51,14 @@ class BaseSalesforceMarketingCloud: BaseSalesforceCategory {
     let url = URL(string: "https://status.salesforce.com/products/Marketing_Cloud")!
 }
 
+typealias Mulesoft =
+    BaseMulesoft & RequiredServiceProperties & SalesforceStoreService
+
+class BaseMulesoft: BaseSalesforceCategory {
+    static var store = SalesforceStore(key: "Mulesoft")
+    let url = URL(string: "https://status.salesforce.com/products/Mulesoft")!
+}
+
 typealias SalesforceServices =
     BaseSalesforceServices & RequiredServiceProperties & SalesforceStoreService
 
@@ -65,4 +73,12 @@ typealias SalesforceSocialStudio =
 class BaseSalesforceSocialStudio: BaseSalesforceCategory {
     static var store = SalesforceStore(key: "Social_Studio")
     let url = URL(string: "https://status.salesforce.com/products/Social_Studio")!
+}
+
+typealias Tableau =
+    BaseTableau & RequiredServiceProperties & SalesforceStoreService
+
+class BaseTableau: BaseSalesforceCategory {
+    static var store = SalesforceStore(key: "Tableau")
+    let url = URL(string: "https://status.salesforce.com/products/Tableau")!
 }

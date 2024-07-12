@@ -474,6 +474,11 @@ class AppleAppStoreConnectAppUpload: AppleDeveloper, SubService {
     let serviceName = "App Store Connect - App Upload"
 }
 
+class AppleAppStoreConnectSalesAndTrends: AppleDeveloper, SubService {
+    let name = "Apple App Store Connect - Sales and Trends"
+    let serviceName = "App Store Connect - Sales and Trends"
+}
+
 class AppleAppStoreConnectTestFlight: AppleDeveloper, SubService {
     let name = "Apple App Store Connect - TestFlight"
     let serviceName = "App Store Connect - TestFlight"

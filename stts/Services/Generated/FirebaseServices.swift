@@ -15,6 +15,10 @@ class FirebaseAppDistribution: FirebaseService, SubService {
     let name = "Firebase App Distribution"
 }
 
+class FirebaseAppHosting: FirebaseService, SubService {
+    let name = "Firebase App Hosting"
+}
+
 class FirebaseAppIndexing: FirebaseService, SubService {
     let name = "Firebase App Indexing"
 }
@@ -35,12 +39,20 @@ class FirebaseCrashlytics: FirebaseService, SubService {
     let name = "Firebase Crashlytics"
 }
 
+class FirebaseDataConnect: FirebaseService, SubService {
+    let name = "Firebase Data Connect"
+}
+
 class FirebaseDynamicLinks: FirebaseService, SubService {
     let name = "Firebase Dynamic Links"
 }
 
 class FirebaseExtensions: FirebaseService, SubService {
     let name = "Firebase Extensions"
+}
+
+class FirebaseGeminiInFirebase: FirebaseService, SubService {
+    let name = "Firebase Gemini in Firebase"
 }
 
 class FirebaseHosting: FirebaseService, SubService {
@@ -65,4 +77,8 @@ class FirebaseRemoteConfig: FirebaseService, SubService {
 
 class FirebaseTestLab: FirebaseService, SubService {
     let name = "Firebase Test Lab"
+}
+
+class FirebaseVertexAIForFirebase: FirebaseService, SubService {
+    let name = "Firebase Vertex AI for Firebase"
 }
