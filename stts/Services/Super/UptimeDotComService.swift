@@ -1,17 +1,21 @@
 //
-//  UptimeDotCom.swift
+//  UptimeDotComService.swift
 //  stts
 //
 
 import Foundation
-import Kanna
 
-class UptimeDotCom: Service {
-    let name = "Uptime.com"
-    let url = URL(string: "https://status.uptime.com")!
+typealias UptimeDotComService = BaseUptimeDotComService & RequiredServiceProperties & RequiredUptimeDotComServices
 
+protocol RequiredUptimeDotComServices {}
+
+class BaseUptimeDotComService: BaseService {
     override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        loadData(with: url) { [weak self] data, _, error in
+        guard let realSelf = self as? UptimeDotComService else {
+            fatalError("BaseUptimeDotComSErvice should not be used directly.")
+        }
+
+        loadData(with: realSelf.url) { [weak self] data, _, error in
             guard let strongSelf = self else { return }
             defer { callback(strongSelf) }
 
