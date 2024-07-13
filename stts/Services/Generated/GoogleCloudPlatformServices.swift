@@ -293,6 +293,11 @@ class GoogleCloudSpanner: GoogleCloudPlatform, SubService {
     let dashboardName = "Cloud Spanner"
 }
 
+class GoogleCloudStorageForFirebase: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Storage for Firebase"
+    let dashboardName = "Cloud Storage for Firebase"
+}
+
 class GoogleCloudTalentSolutionJobSearch: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Talent Solution - Job Search"
     let dashboardName = "Cloud Talent Solution - Job Search"
