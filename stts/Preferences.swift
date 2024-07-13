@@ -57,6 +57,9 @@ struct Preferences {
             "Quay": "QuayIO", // v2.12
             "SmartyStreets": "Smarty", // v2.12
             "UrbanAirship": "AirshipUS", // v2.19
+            "VMwareCarbonBlack": "Broadcom", // v2.23
+            "Tableau": "TableauAll", // v2.23
+            "Spoke": "Okta", // v2.23
             // Generated services
             "FirebaseMLKit": "FirebaseMachineLearning"
         ]
