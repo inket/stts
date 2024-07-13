@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04344BEDCC48E34DA3370B42 /* VMwareCarbonBlack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C548E19B1B95EFDBB7898 /* VMwareCarbonBlack.swift */; };
 		06476158F5A7352BE05544BB /* Proton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE5D41DDC4D721C254C004 /* Proton.swift */; };
 		07903F3F2A403F03BDDD3AD1 /* JumpCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C3B179FEEE9F7F150196F /* JumpCloud.swift */; };
 		0988F07539A4DBD9DA7D690A /* Customerio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA65AF81160DCD231D5F43 /* Customerio.swift */; };
@@ -50,7 +49,6 @@
 		6D03955E8178A1153BBD9D01 /* Netlify.swift in Sources */ = {isa = PBXBuildFile; fileRef = D819CB63B6576DA05BFC764C /* Netlify.swift */; };
 		776E8314B2F7910C11B36F6A /* Statuspage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166DB4CDA6EACD6BF7EC77B0 /* Statuspage.swift */; };
 		79A2CABEDD66272C3579EB95 /* Robin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3859428AAF182EC79C4ED3E /* Robin.swift */; };
-		7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B305FAA210237AA0086DCE0 /* Spoke.swift */; };
 		7BA6A0A22240D8E000700C2C /* Bolt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6A0A12240D8E000700C2C /* Bolt.swift */; };
 		7E1580ED5174442F7B691728 /* Blend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7B31666FF70588A709098 /* Blend.swift */; };
 		7E729FE2526A0074B32685C4 /* NetskopeTrustPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B0258BF6AA353F9AC12443 /* NetskopeTrustPortal.swift */; };
@@ -85,7 +83,6 @@
 		B211F0B81E607C09008DD360 /* Rollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211F0B71E607C09008DD360 /* Rollbar.swift */; };
 		B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */; };
 		B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */; };
-		B213D1F6269AD941005EBDDA /* Tableau.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F5269AD941005EBDDA /* Tableau.swift */; };
 		B213D1F8269AD9A7005EBDDA /* Pardot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F7269AD9A7005EBDDA /* Pardot.swift */; };
 		B213D1FA269ADA0F005EBDDA /* MuleSoft.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F9269ADA0F005EBDDA /* MuleSoft.swift */; };
 		B213D1FC269ADA5D005EBDDA /* Click.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1FB269ADA5D005EBDDA /* Click.swift */; };
@@ -175,9 +172,6 @@
 		B2542502293591610093AC83 /* StatusHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2542501293591610093AC83 /* StatusHubService.swift */; };
 		B2542505293595B20093AC83 /* WPEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2542504293595B20093AC83 /* WPEngine.swift */; };
 		B254642321EE9AF6003068A4 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254642221EE9AF6003068A4 /* GitHub.swift */; };
-		B2552EFF29954AEB003FF9EC /* fastly-good.html in Resources */ = {isa = PBXBuildFile; fileRef = B2552EFD29954AEB003FF9EC /* fastly-good.html */; };
-		B2552F0029954AEB003FF9EC /* fastly-major.html in Resources */ = {isa = PBXBuildFile; fileRef = B2552EFE29954AEB003FF9EC /* fastly-major.html */; };
-		B2552F0229954B18003FF9EC /* FastlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2552F0129954B18003FF9EC /* FastlyTests.swift */; };
 		B2552F0429954C26003FF9EC /* ResponseOverridingURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2552F0329954C26003FF9EC /* ResponseOverridingURLSession.swift */; };
 		B2552F082995516B003FF9EC /* TestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2552F072995516B003FF9EC /* TestBundle.swift */; };
 		B2563BBC22CBC3D500532C39 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBB22CBC3D500532C39 /* DataLoader.swift */; };
@@ -200,6 +194,13 @@
 		B271688A2291AEEE001E608C /* Asana.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27168892291AEEE001E608C /* Asana.swift */; };
 		B272E3C8235F460D00B33076 /* Python.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272E3C7235F460D00B33076 /* Python.swift */; };
 		B2767A0F255FBC3E0047A9BE /* Bitmovin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2767A0E255FBC3E0047A9BE /* Bitmovin.swift */; };
+		B276D75E2C30440900974DB6 /* EightXEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = B276D75D2C30440900974DB6 /* EightXEight.swift */; };
+		B276D7602C3056C300974DB6 /* StatusCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B276D75F2C3056C300974DB6 /* StatusCast.swift */; };
+		B276D7622C4132CA00974DB6 /* UptimeDotComService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B276D7612C4132CA00974DB6 /* UptimeDotComService.swift */; };
+		B276D7642C4134AB00974DB6 /* JSDelivr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B276D7632C4134AB00974DB6 /* JSDelivr.swift */; };
+		B276D7682C414DE900974DB6 /* Broadcom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B276D7672C414DE900974DB6 /* Broadcom.swift */; };
+		B276D76A2C41F93300974DB6 /* Okta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B276D7692C41F93300974DB6 /* Okta.swift */; };
+		B276D76C2C42036A00974DB6 /* HeadlessHTMLRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B276D76B2C42036A00974DB6 /* HeadlessHTMLRenderer.swift */; };
 		B277BC9222B4BB5C000B55C3 /* AzureDevOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9122B4BB5C000B55C3 /* AzureDevOps.swift */; };
 		B277BC9422B4BB6D000B55C3 /* AzureDevOpsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9322B4BB6D000B55C3 /* AzureDevOpsStore.swift */; };
 		B277BC9822B4C16A000B55C3 /* AzureDevOpsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277BC9722B4C16A000B55C3 /* AzureDevOpsServices.swift */; };
@@ -403,7 +404,6 @@
 		4FF6A2E1502F35DA915891FD /* AtlassianDeveloper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtlassianDeveloper.swift; sourceTree = "<group>"; };
 		53F844F11070AF5B4CD7719E /* Workflowy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Workflowy.swift; sourceTree = "<group>"; };
 		563FBDC323AC595F540679B9 /* Cybersource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cybersource.swift; sourceTree = "<group>"; };
-		599C548E19B1B95EFDBB7898 /* VMwareCarbonBlack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VMwareCarbonBlack.swift; sourceTree = "<group>"; };
 		66B0258BF6AA353F9AC12443 /* NetskopeTrustPortal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetskopeTrustPortal.swift; sourceTree = "<group>"; };
 		67ACBDAE9667EAFE834B633D /* Lattice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Lattice.swift; sourceTree = "<group>"; };
 		6B24BCA673F692E9211E7B8D /* Medium.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Medium.swift; sourceTree = "<group>"; };
@@ -411,7 +411,6 @@
 		70244989EDA4E2F3CF20FA50 /* Doppler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Doppler.swift; sourceTree = "<group>"; };
 		71284C408241E2CE20F2330D /* Scaleway.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Scaleway.swift; sourceTree = "<group>"; };
 		71CE5D41DDC4D721C254C004 /* Proton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Proton.swift; sourceTree = "<group>"; };
-		7B305FAA210237AA0086DCE0 /* Spoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spoke.swift; sourceTree = "<group>"; };
 		7BA6A0A12240D8E000700C2C /* Bolt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bolt.swift; sourceTree = "<group>"; };
 		80361FCB72F96FA6F753D7C1 /* Bugsnag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bugsnag.swift; sourceTree = "<group>"; };
 		8797E2420F50AEF8E643093F /* AlertLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertLogic.swift; sourceTree = "<group>"; };
@@ -452,7 +451,6 @@
 		B211F0B71E607C09008DD360 /* Rollbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rollbar.swift; sourceTree = "<group>"; };
 		B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableViewController.swift; sourceTree = "<group>"; };
 		B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableRowView.swift; sourceTree = "<group>"; };
-		B213D1F5269AD941005EBDDA /* Tableau.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tableau.swift; sourceTree = "<group>"; };
 		B213D1F7269AD9A7005EBDDA /* Pardot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pardot.swift; sourceTree = "<group>"; };
 		B213D1F9269ADA0F005EBDDA /* MuleSoft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuleSoft.swift; sourceTree = "<group>"; };
 		B213D1FB269ADA5D005EBDDA /* Click.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Click.swift; sourceTree = "<group>"; };
@@ -546,9 +544,6 @@
 		B2542501293591610093AC83 /* StatusHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusHubService.swift; sourceTree = "<group>"; };
 		B2542504293595B20093AC83 /* WPEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPEngine.swift; sourceTree = "<group>"; };
 		B254642221EE9AF6003068A4 /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
-		B2552EFD29954AEB003FF9EC /* fastly-good.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fastly-good.html"; sourceTree = "<group>"; };
-		B2552EFE29954AEB003FF9EC /* fastly-major.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fastly-major.html"; sourceTree = "<group>"; };
-		B2552F0129954B18003FF9EC /* FastlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastlyTests.swift; sourceTree = "<group>"; };
 		B2552F0329954C26003FF9EC /* ResponseOverridingURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseOverridingURLSession.swift; sourceTree = "<group>"; };
 		B2552F072995516B003FF9EC /* TestBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBundle.swift; sourceTree = "<group>"; };
 		B2563BBB22CBC3D500532C39 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
@@ -570,6 +565,13 @@
 		B27168892291AEEE001E608C /* Asana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asana.swift; sourceTree = "<group>"; };
 		B272E3C7235F460D00B33076 /* Python.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Python.swift; sourceTree = "<group>"; };
 		B2767A0E255FBC3E0047A9BE /* Bitmovin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bitmovin.swift; sourceTree = "<group>"; };
+		B276D75D2C30440900974DB6 /* EightXEight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EightXEight.swift; sourceTree = "<group>"; };
+		B276D75F2C3056C300974DB6 /* StatusCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCast.swift; sourceTree = "<group>"; };
+		B276D7612C4132CA00974DB6 /* UptimeDotComService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UptimeDotComService.swift; sourceTree = "<group>"; };
+		B276D7632C4134AB00974DB6 /* JSDelivr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSDelivr.swift; sourceTree = "<group>"; };
+		B276D7672C414DE900974DB6 /* Broadcom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Broadcom.swift; sourceTree = "<group>"; };
+		B276D7692C41F93300974DB6 /* Okta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Okta.swift; sourceTree = "<group>"; };
+		B276D76B2C42036A00974DB6 /* HeadlessHTMLRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlessHTMLRenderer.swift; sourceTree = "<group>"; };
 		B277BC9122B4BB5C000B55C3 /* AzureDevOps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureDevOps.swift; sourceTree = "<group>"; };
 		B277BC9322B4BB6D000B55C3 /* AzureDevOpsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureDevOpsStore.swift; sourceTree = "<group>"; };
 		B277BC9522B4BC6C000B55C3 /* generate_azure_devops_services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generate_azure_devops_services.swift; sourceTree = "<group>"; };
@@ -750,6 +752,9 @@
 				B20883F42A59AE37007578C8 /* AirshipEU.swift */,
 				B29AEFCF225D7F3900C3B8BD /* AirshipUS.swift */,
 				B22BB39E223B33AE00B43BED /* CampaignMonitor.swift */,
+				B276D75D2C30440900974DB6 /* EightXEight.swift */,
+				A125C59D20F7909500C513B3 /* Fastly.swift */,
+				B276D75F2C3056C300974DB6 /* StatusCast.swift */,
 			);
 			path = StatusCast;
 			sourceTree = "<group>";
@@ -787,7 +792,6 @@
 				B2552EFC29954AE0003FF9EC /* Resources */,
 				B2E832EB29DE4F5E000FA1BE /* AdobeTests.swift */,
 				B228DC152A7F872800D8DC5E /* BetterStackTests.swift */,
-				B2552F0129954B18003FF9EC /* FastlyTests.swift */,
 				B2163AF920BA4E7500B14A85 /* Info.plist */,
 				B2D655E629B802ED00DBE417 /* InstatusTests.swift */,
 				B22651282B2EEA52002F1CE2 /* PagerDutyTests.swift */,
@@ -822,6 +826,16 @@
 				B24EA84C2BBD81060052172A /* Unraid.swift */,
 			);
 			path = BetterStack;
+			sourceTree = "<group>";
+		};
+		B22A9FFE2C0E142F0065CD30 /* UptimeDotCom */ = {
+			isa = PBXGroup;
+			children = (
+				B276D7632C4134AB00974DB6 /* JSDelivr.swift */,
+				2F65F48F227A198400432E64 /* Recurly.swift */,
+				B22602AE27D87D96001190F1 /* UptimeDotCom.swift */,
+			);
+			path = UptimeDotCom;
 			sourceTree = "<group>";
 		};
 		B22FDE4921089D4F00359EC9 /* PayPal */ = {
@@ -859,8 +873,6 @@
 				B2E832ED29DE5104000FA1BE /* adobe-analytics-minor.json */,
 				B228DC122A7F86F900D8DC5E /* buildjet-good.html */,
 				B228DC112A7F86F900D8DC5E /* eyloo-major.html */,
-				B2552EFD29954AEB003FF9EC /* fastly-good.html */,
-				B2552EFE29954AEB003FF9EC /* fastly-major.html */,
 				B2D655EA29B8045300DBE417 /* mastodonsocial-good.html */,
 				B22651262B2EEA44002F1CE2 /* pagerduty-good.html */,
 				B22651242B2EE9FF002F1CE2 /* pagerduty-minor.html */,
@@ -1071,7 +1083,6 @@
 				0FE9B86802DA92D1851DA069 /* QuickBooks.swift */,
 				1CB4E2FFFE60AE5D0E0BB449 /* ReadMe.swift */,
 				6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */,
-				2F65F48F227A198400432E64 /* Recurly.swift */,
 				B24EA8482BB333DD0052172A /* RedHat.swift */,
 				B299C84C1DD04ED90024D2E9 /* Reddit.swift */,
 				B210189B249E406D00F31999 /* RevenueCat.swift */,
@@ -1091,11 +1102,9 @@
 				2764C094034CD61A24624DA6 /* Smarty.swift */,
 				B2510953269AD87C005868DE /* Snowflake.swift */,
 				B2A93ADC1EB814C000D36DD3 /* Snyk.swift */,
-				7B305FAA210237AA0086DCE0 /* Spoke.swift */,
 				B25695581E247C8C00FAE413 /* Squarespace.swift */,
 				166DB4CDA6EACD6BF7EC77B0 /* Statuspage.swift */,
 				B27090F0209F52EB0094C3D7 /* Stream.swift */,
-				B213D1F5269AD941005EBDDA /* Tableau.swift */,
 				B7FEC29C375721FE85A4ED27 /* TeleportCloud.swift */,
 				B24D9C362F03D1C2E95A663D /* Temporal.swift */,
 				B2D032CF1D6455E300D51CB8 /* TravisCI.swift */,
@@ -1104,7 +1113,6 @@
 				B29222272642EF33001C63AE /* Twitch.swift */,
 				B24220E31E2F6BBA0007E50E /* Typeform.swift */,
 				B2A8AE3C20710EC8002699CE /* Unsplash.swift */,
-				599C548E19B1B95EFDBB7898 /* VMwareCarbonBlack.swift */,
 				F0A9F6AE3667A268D4169B4A /* VMwareWorkspaceONE.swift */,
 				B227D31525D7678200951917 /* Vercel.swift */,
 				36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */,
@@ -1172,6 +1180,7 @@
 				B2A4A8151DC82CE300037E99 /* BottomBar.swift */,
 				B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */,
 				B2563BBB22CBC3D500532C39 /* DataLoader.swift */,
+				B276D76B2C42036A00974DB6 /* HeadlessHTMLRenderer.swift */,
 				B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */,
 				B24D19F51DD072840052E539 /* Preferences.swift */,
 				B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */,
@@ -1279,21 +1288,22 @@
 				B299C8561DD051710024D2E9 /* StatusPage */,
 				B2AF06AC2A7AB74800448D1E /* Statuspal */,
 				B2FDC9201D67071500F0B728 /* Super */,
+				B22A9FFE2C0E142F0065CD30 /* UptimeDotCom */,
 				B2430806210810D0003F8D07 /* Algolia.swift */,
 				B2A4D7E6247E72B50089EA77 /* AzureAll.swift */,
 				B2A4D7E8247E73BC0089EA77 /* AzureDevOpsAll.swift */,
 				B23038F01E0DF3CC00B29095 /* Beanstalk.swift */,
+				B276D7672C414DE900974DB6 /* Broadcom.swift */,
 				B290315B1E4B0CA7005B58CC /* Evernote.swift */,
-				A125C59D20F7909500C513B3 /* Fastly.swift */,
 				B2253A6E209F42430039F574 /* Firebase.swift */,
 				B2E70FDA22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift */,
 				B2FDC9191D67029900F0B728 /* Heroku.swift */,
+				B276D7692C41F93300974DB6 /* Okta.swift */,
 				B22602B027D881AF001190F1 /* OracleNetSuite.swift */,
 				B2228B6126C9623C002F01F0 /* SendbirdAll.swift */,
 				B242AB3526E34DE9007EE672 /* SignalWire.swift */,
 				B2DEE0BD1E696D64006B198E /* Slack.swift */,
 				B230CE7E21B95C5500E2005D /* Stripe.swift */,
-				B22602AE27D87D96001190F1 /* UptimeDotCom.swift */,
 				B22602B227D88FA1001190F1 /* Zendesk.swift */,
 			);
 			path = Services;
@@ -1341,6 +1351,7 @@
 				B2FDC91B1D67062200F0B728 /* StatusPageService.swift */,
 				B2A0635D1E1341C900EEA762 /* StatusioV1Service.swift */,
 				B2AF06AA2A7AB42100448D1E /* StatuspalService.swift */,
+				B276D7612C4132CA00974DB6 /* UptimeDotComService.swift */,
 			);
 			path = Super;
 			sourceTree = "<group>";
@@ -1411,7 +1422,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1540;
 				ORGANIZATIONNAME = inket;
 				TargetAttributes = {
 					B2163AF420BA4E7500B14A85 = {
@@ -1443,7 +1454,7 @@
 			packageReferences = (
 				B20883E32A59143E007578C8 /* XCRemoteSwiftPackageReference "MBPopup" */,
 				B20883E62A59144F007578C8 /* XCRemoteSwiftPackageReference "Kanna" */,
-				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */,
+				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
 			);
 			productRefGroup = B2B2D1001D49D5080014D780 /* Products */;
 			projectDirPath = "";
@@ -1465,8 +1476,6 @@
 				B2D655EB29B8045300DBE417 /* mastodonsocial-good.html in Resources */,
 				B2D655E929B803B800DBE417 /* whereby-notice.html in Resources */,
 				B228DC132A7F86F900D8DC5E /* eyloo-major.html in Resources */,
-				B2552F0029954AEB003FF9EC /* fastly-major.html in Resources */,
-				B2552EFF29954AEB003FF9EC /* fastly-good.html in Resources */,
 				B22651252B2EE9FF002F1CE2 /* pagerduty-minor.html in Resources */,
 				B228DC142A7F86F900D8DC5E /* buildjet-good.html in Resources */,
 			);
@@ -1558,7 +1567,6 @@
 				91B0A21428197857007D8E8F /* StringExtensionsTests.swift in Sources */,
 				B2E832EC29DE4F5E000FA1BE /* AdobeTests.swift in Sources */,
 				B2563BBE22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift in Sources */,
-				B2552F0229954B18003FF9EC /* FastlyTests.swift in Sources */,
 				B2552F082995516B003FF9EC /* TestBundle.swift in Sources */,
 				B22651292B2EEA52002F1CE2 /* PagerDutyTests.swift in Sources */,
 				B228DC162A7F872800D8DC5E /* BetterStackTests.swift in Sources */,
@@ -1612,6 +1620,7 @@
 				B22FDE4D2108A5AE00359EC9 /* PayPalProductProduction.swift in Sources */,
 				A0C3F34B220FD630005D9998 /* Datadog.swift in Sources */,
 				B23EE5B324B9FF430067D800 /* Bullhorn.swift in Sources */,
+				B276D76C2C42036A00974DB6 /* HeadlessHTMLRenderer.swift in Sources */,
 				B2B2D1031D49D5080014D780 /* AppDelegate.swift in Sources */,
 				B2CEE5D722B49CB50073C743 /* Azure.swift in Sources */,
 				B25695611E247C8C00FAE413 /* Squarespace.swift in Sources */,
@@ -1621,7 +1630,6 @@
 				B227D31225D7671600951917 /* Poka.swift in Sources */,
 				B231DD59257B431900647312 /* Xandr.swift in Sources */,
 				B2ABB6171F59770800DF8EC2 /* Imgix.swift in Sources */,
-				B213D1F6269AD941005EBDDA /* Tableau.swift in Sources */,
 				B213D1F8269AD9A7005EBDDA /* Pardot.swift in Sources */,
 				B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */,
 				B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */,
@@ -1629,6 +1637,7 @@
 				B2FBDF622A35E1C800734667 /* Loom.swift in Sources */,
 				B213D203269B045C005EBDDA /* Railway.swift in Sources */,
 				B299C84B1DD04E850024D2E9 /* Pusher.swift in Sources */,
+				B276D76A2C41F93300974DB6 /* Okta.swift in Sources */,
 				B2CEE5DB22B4A97B0073C743 /* AzureServices.swift in Sources */,
 				B2163B0020BA56EF00B14A85 /* StatusCakeService.swift in Sources */,
 				B2E832F029EF74D9000FA1BE /* OpenAI.swift in Sources */,
@@ -1652,10 +1661,12 @@
 				B2F8724B2A58F9D9003B0625 /* PlanningCenter.swift in Sources */,
 				B2D655EE29B807BF00DBE417 /* Site24x7Service.swift in Sources */,
 				B2DEE0BE1E696D64006B198E /* Slack.swift in Sources */,
+				B276D7682C414DE900974DB6 /* Broadcom.swift in Sources */,
 				B231DD60257B438900647312 /* HubSpot.swift in Sources */,
 				B2AF06AB2A7AB42100448D1E /* StatuspalService.swift in Sources */,
 				B2CE72D6228587E000847E00 /* Acquia.swift in Sources */,
 				B2E70FD822B069BA000BCAD2 /* GoogleCloudPlatformServices.swift in Sources */,
+				B276D7642C4134AB00974DB6 /* JSDelivr.swift in Sources */,
 				B2BA36191ED7B0F200051083 /* AuthorizeNet.swift in Sources */,
 				B2542502293591610093AC83 /* StatusHubService.swift in Sources */,
 				B27F66A62A3609E8008DAF33 /* AWSService.swift in Sources */,
@@ -1736,6 +1747,7 @@
 				B22FDE4F2108A5B700359EC9 /* PayPalProductSandbox.swift in Sources */,
 				B24CD81C2BBD82CB00C7D498 /* RunwayASC.swift in Sources */,
 				B2F55EEC2408B5F1003D674C /* PSNAmerica.swift in Sources */,
+				B276D75E2C30440900974DB6 /* EightXEight.swift in Sources */,
 				B2563BBC22CBC3D500532C39 /* DataLoader.swift in Sources */,
 				B231DD5C257B431900647312 /* CoderPad.swift in Sources */,
 				B299C8551DD051210024D2E9 /* EngineYard.swift in Sources */,
@@ -1765,8 +1777,8 @@
 				B22602AF27D87D96001190F1 /* UptimeDotCom.swift in Sources */,
 				B227D30D25D5886B00951917 /* FreeAgent.swift in Sources */,
 				B2A93ADD1EB814C000D36DD3 /* Snyk.swift in Sources */,
-				7B305FAB210237AA0086DCE0 /* Spoke.swift in Sources */,
 				B22FDE4821089C6200359EC9 /* PayPal.swift in Sources */,
+				B276D7622C4132CA00974DB6 /* UptimeDotComService.swift in Sources */,
 				B24EE10626C8C08A00F7CE8B /* SalesforceStore.swift in Sources */,
 				B232A18D20944B960066AD01 /* Cloud66.swift in Sources */,
 				B22FDE532108A5CC00359EC9 /* PayPalAPISandbox.swift in Sources */,
@@ -1793,6 +1805,7 @@
 				36AD8ED5235A1FCA00F2FD73 /* Shopify.swift in Sources */,
 				B256955C1E247C8C00FAE413 /* PagerDuty.swift in Sources */,
 				B2A23E321DD190EF0051E913 /* EditorTableViewController.swift in Sources */,
+				B276D7602C3056C300974DB6 /* StatusCast.swift in Sources */,
 				B2FDC91E1D6706C400F0B728 /* CircleCI.swift in Sources */,
 				B292222B2642EFA4001C63AE /* Coinbase.swift in Sources */,
 				B257469B1E2781A3003A07A4 /* CodeClimate.swift in Sources */,
@@ -1847,7 +1860,6 @@
 				6B291731B5774C3480F89A92 /* PlayFab.swift in Sources */,
 				68296A7E9330DE2E157D9736 /* MessageBird.swift in Sources */,
 				A071B75709D9B1CD27CB9A34 /* MongoDBCloud.swift in Sources */,
-				04344BEDCC48E34DA3370B42 /* VMwareCarbonBlack.swift in Sources */,
 				604E5ED195443A1FF7BBDE08 /* EasyPost.swift in Sources */,
 				D5F7C57260F512BDB844AD08 /* TeleportCloud.swift in Sources */,
 				B24EA8492BB333DD0052172A /* RedHat.swift in Sources */,
@@ -2189,7 +2201,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
 			requirement = {
@@ -2212,7 +2224,7 @@
 		};
 		B20883EA2A59146C007578C8 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */;
+			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
 			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
