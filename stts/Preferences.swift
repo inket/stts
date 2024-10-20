@@ -74,7 +74,9 @@ struct Preferences {
                 }
             }
 
-            UserDefaults.standard.setValue(services, forKey: "selectedServices")
+            let uniqueServices = Set<String>(services)
+
+            UserDefaults.standard.setValue(Array(uniqueServices), forKey: "selectedServices")
         }
     }
 }
