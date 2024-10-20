@@ -6,8 +6,11 @@
 import Foundation
 import stts
 
-class DummyDataTask: URLSessionDataTask {
-    override init() {}
+class DummyDataTask: URLSessionDataTask, @unchecked Sendable {
+    static func nonWarningInit() -> Self {
+        perform(NSSelectorFromString("alloc"))?.takeUnretainedValue()
+            .perform(NSSelectorFromString("init"))?.takeUnretainedValue() as! Self // swiftlint:disable:this force_cast
+    }
 
     override func resume() {
         // Do nothing
@@ -47,7 +50,7 @@ final class ResponseOverridingURLSession: URLSessionProtocol {
                 completionHandler(override.response, nil, nil)
             }
 
-            return DummyDataTask()
+            return DummyDataTask.nonWarningInit()
         } else {
             print("[ResponseOverridingURLSession] Skipped URL: \(url)")
             return URLSession.shared.dataTask(with: url, completionHandler: completionHandler)
@@ -65,7 +68,7 @@ final class ResponseOverridingURLSession: URLSessionProtocol {
                 completionHandler(override.response, nil, nil)
             }
 
-            return DummyDataTask()
+            return DummyDataTask.nonWarningInit()
         } else {
             print("[ResponseOverridingURLSession] Skipped URL: \(String(describing: urlRequest.url))")
             return URLSession.shared.dataTask(with: urlRequest, completionHandler: completionHandler)
