@@ -11,6 +11,7 @@ class SettingsView: NSView {
     let startAtLoginCheckbox = NSButton()
     let notifyCheckbox = NSButton()
     let hideServiceDetailsIfAvailableCheckbox = NSButton()
+    let allowPopupToStretchAsNeededCheckbox = NSButton()
 
     let servicesHeader = SectionHeaderView(name: "Services")
     let searchField = NSSearchField()
@@ -33,6 +34,7 @@ class SettingsView: NSView {
             startAtLoginCheckbox,
             notifyCheckbox,
             hideServiceDetailsIfAvailableCheckbox,
+            allowPopupToStretchAsNeededCheckbox,
             servicesHeader,
             searchField
         ].forEach {
@@ -63,6 +65,13 @@ class SettingsView: NSView {
         hideServiceDetailsIfAvailableCheckbox.action = #selector(SettingsView.updateHideServiceDetailsIfAvailable)
         hideServiceDetailsIfAvailableCheckbox.target = self
 
+        allowPopupToStretchAsNeededCheckbox.setButtonType(.switch)
+        allowPopupToStretchAsNeededCheckbox.title = "Allow popup to stretch as needed"
+        allowPopupToStretchAsNeededCheckbox.font = font
+        allowPopupToStretchAsNeededCheckbox.state = Preferences.shared.allowPopupToStretchAsNeeded ? .on : .off
+        allowPopupToStretchAsNeededCheckbox.action = #selector(SettingsView.updateAllowPopupToStretchAsNeeded)
+        allowPopupToStretchAsNeededCheckbox.target = self
+
         searchField.sendsSearchStringImmediately = true
         searchField.sendsWholeSearchString = false
         searchField.action = #selector(SettingsView.filterServices)
@@ -92,8 +101,16 @@ class SettingsView: NSView {
             hideServiceDetailsIfAvailableCheckbox.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
             hideServiceDetailsIfAvailableCheckbox.heightAnchor.constraint(equalToConstant: 22),
 
-            servicesHeader.topAnchor.constraint(
+            allowPopupToStretchAsNeededCheckbox.topAnchor.constraint(
                 equalTo: hideServiceDetailsIfAvailableCheckbox.bottomAnchor,
+                constant: 6
+            ),
+            allowPopupToStretchAsNeededCheckbox.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
+            allowPopupToStretchAsNeededCheckbox.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
+            allowPopupToStretchAsNeededCheckbox.heightAnchor.constraint(equalToConstant: 22),
+
+            servicesHeader.topAnchor.constraint(
+                equalTo: allowPopupToStretchAsNeededCheckbox.bottomAnchor,
                 constant: 10
             ),
             servicesHeader.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
@@ -117,6 +134,10 @@ class SettingsView: NSView {
 
     @objc private func updateHideServiceDetailsIfAvailable() {
         Preferences.shared.hideServiceDetailsIfAvailable = hideServiceDetailsIfAvailableCheckbox.state == .on
+    }
+
+    @objc private func updateAllowPopupToStretchAsNeeded() {
+        Preferences.shared.allowPopupToStretchAsNeeded = allowPopupToStretchAsNeededCheckbox.state == .on
     }
 
     @objc private func filterServices() {

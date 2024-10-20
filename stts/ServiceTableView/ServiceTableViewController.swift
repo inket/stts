@@ -12,8 +12,6 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
     let tableView = NSTableView()
     let bottomBar = BottomBar()
     let addServicesNoticeField = NSTextField()
-    // margin needed to mitigate MBPopup's MBPopupBackgroundView 8px arrow and bounds
-    let sizeHelper = ScreenHeightHelper(verticalMargin: 32, initialMaxHeight: 490)
 
     var editorTableViewController: EditorTableViewController
 
@@ -148,7 +146,6 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
     }
 
     func willOpenPopup() {
-        sizeHelper.update()
         resizeViews()
         reloadData()
 
@@ -180,9 +177,14 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
     }
 
     func resizeViews() {
-        var frame = scrollView.frame
-        frame.size.height = min(tableView.intrinsicContentSize.height, sizeHelper.currentMaxHeight)
-        scrollView.frame = frame
+        let maxHeight: CGFloat
+        if Preferences.shared.allowPopupToStretchAsNeeded, let usableHeight = NSScreen.usableHeightOfActiveScreen {
+            maxHeight = usableHeight - 32 // To accommodate for the popup's arrow/background
+        } else {
+            maxHeight = 490
+        }
+
+        scrollView.frame.size.height = min(tableView.intrinsicContentSize.height, maxHeight)
 
         (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(
             height: scrollView.frame.size.height + bottomBar.frame.size.height

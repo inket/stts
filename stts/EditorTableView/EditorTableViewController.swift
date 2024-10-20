@@ -154,7 +154,7 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
             settingsView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             settingsView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             settingsView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            settingsView.heightAnchor.constraint(equalToConstant: 170)
+            settingsView.heightAnchor.constraint(equalToConstant: 198)
         ])
     }
 
@@ -178,7 +178,14 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
         tableView.frame = scrollView.bounds
         tableView.tableColumns.first?.width = tableView.frame.size.width
 
-        scrollView.frame.size.height = 400
+        let maxHeight: CGFloat
+        if Preferences.shared.allowPopupToStretchAsNeeded, let usableHeight = NSScreen.usableHeightOfActiveScreen {
+            maxHeight = usableHeight - 32 // To accommodate for the popup's arrow/background
+        } else {
+            maxHeight = 400
+        }
+
+        scrollView.frame.size.height = min(tableView.intrinsicContentSize.height, maxHeight)
 
         (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(
             height: scrollView.frame.size.height + 30 // bottomBar.frame.size.height

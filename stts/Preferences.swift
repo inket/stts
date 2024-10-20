@@ -9,13 +9,18 @@ struct Preferences {
     static var shared = Preferences()
 
     var notifyOnStatusChange: Bool {
-        get { return UserDefaults.standard.bool(forKey: "notifyOnStatusChange") }
+        get { UserDefaults.standard.bool(forKey: "notifyOnStatusChange") }
         set { UserDefaults.standard.set(newValue, forKey: "notifyOnStatusChange") }
     }
 
     var hideServiceDetailsIfAvailable: Bool {
-        get { return UserDefaults.standard.bool(forKey: "hideServiceDetailsIfAvailable") }
+        get { UserDefaults.standard.bool(forKey: "hideServiceDetailsIfAvailable") }
         set { UserDefaults.standard.set(newValue, forKey: "hideServiceDetailsIfAvailable") }
+    }
+
+    var allowPopupToStretchAsNeeded: Bool {
+        get { UserDefaults.standard.bool(forKey: "allowPopupToStretchAsNeeded") }
+        set { UserDefaults.standard.set(newValue, forKey: "allowPopupToStretchAsNeeded") }
     }
 
     var selectedServices: [BaseService] {
@@ -33,10 +38,11 @@ struct Preferences {
         }
     }
 
-    init() {
+    private init() {
         UserDefaults.standard.register(defaults: [
             "notifyOnStatusChange": true,
             "hideServiceDetailsIfAvailable": false,
+            "allowPopupToStretchAsNeeded": false,
             "selectedServices": ["CircleCI", "Cloudflare", "GitHub", "NPM", "TravisCI"]
         ])
 

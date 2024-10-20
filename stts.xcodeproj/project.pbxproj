@@ -50,7 +50,7 @@
 		776E8314B2F7910C11B36F6A /* Statuspage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166DB4CDA6EACD6BF7EC77B0 /* Statuspage.swift */; };
 		79A2CABEDD66272C3579EB95 /* Robin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3859428AAF182EC79C4ED3E /* Robin.swift */; };
 		7BA6A0A22240D8E000700C2C /* Bolt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6A0A12240D8E000700C2C /* Bolt.swift */; };
-		7C82768C2C8E3CA800C0E37B /* ScreenHeightHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C82768B2C8E3BE300C0E37B /* ScreenHeightHelper.swift */; };
+		7C82768C2C8E3CA800C0E37B /* NSScreenExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C82768B2C8E3BE300C0E37B /* NSScreenExtensions.swift */; };
 		7E1580ED5174442F7B691728 /* Blend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7B31666FF70588A709098 /* Blend.swift */; };
 		7E729FE2526A0074B32685C4 /* NetskopeTrustPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B0258BF6AA353F9AC12443 /* NetskopeTrustPortal.swift */; };
 		7F96823683B97EF8AEA15F62 /* EquinixMetal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF74DC57A426C3EBFCC2E90 /* EquinixMetal.swift */; };
@@ -418,7 +418,7 @@
 		71284C408241E2CE20F2330D /* Scaleway.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Scaleway.swift; sourceTree = "<group>"; };
 		71CE5D41DDC4D721C254C004 /* Proton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Proton.swift; sourceTree = "<group>"; };
 		7BA6A0A12240D8E000700C2C /* Bolt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bolt.swift; sourceTree = "<group>"; };
-		7C82768B2C8E3BE300C0E37B /* ScreenHeightHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenHeightHelper.swift; sourceTree = "<group>"; };
+		7C82768B2C8E3BE300C0E37B /* NSScreenExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSScreenExtensions.swift; sourceTree = "<group>"; };
 		80361FCB72F96FA6F753D7C1 /* Bugsnag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bugsnag.swift; sourceTree = "<group>"; };
 		8797E2420F50AEF8E643093F /* AlertLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertLogic.swift; sourceTree = "<group>"; };
 		87DE85B45D490EF40F319860 /* HashiCorp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HashiCorp.swift; sourceTree = "<group>"; };
@@ -1198,7 +1198,6 @@
 				B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */,
 				B24D19F51DD072840052E539 /* Preferences.swift */,
 				B225E3DF1E44830F008E1D3D /* SwitchableTableViewController.swift */,
-				7C82768B2C8E3BE300C0E37B /* ScreenHeightHelper.swift */,
 				B2CF3FBF1DF7DD2100B66491 /* stts.entitlements */,
 			);
 			path = stts;
@@ -1225,6 +1224,7 @@
 			isa = PBXGroup;
 			children = (
 				B2E8C0222A7A9203000239F0 /* Atomic.swift */,
+				7C82768B2C8E3BE300C0E37B /* NSScreenExtensions.swift */,
 				B2DCE6942215ACDE001447D8 /* StringExtensions.swift */,
 			);
 			path = Extensions;
@@ -1687,7 +1687,7 @@
 				B2E70FD822B069BA000BCAD2 /* GoogleCloudPlatformServices.swift in Sources */,
 				B276D7642C4134AB00974DB6 /* JSDelivr.swift in Sources */,
 				B2BA36191ED7B0F200051083 /* AuthorizeNet.swift in Sources */,
-				7C82768C2C8E3CA800C0E37B /* ScreenHeightHelper.swift in Sources */,
+				7C82768C2C8E3CA800C0E37B /* NSScreenExtensions.swift in Sources */,
 				B2542502293591610093AC83 /* StatusHubService.swift in Sources */,
 				B27F66A62A3609E8008DAF33 /* AWSService.swift in Sources */,
 				B28285E12405E44100B11A08 /* Zoom.swift in Sources */,
