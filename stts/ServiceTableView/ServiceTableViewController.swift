@@ -239,7 +239,10 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
             reloadData()
-            resizeViews()
+
+            if !self.hidden {
+                resizeViews()
+            }
 
             if servicesBeingUpdated.isEmpty {
                 bottomBar.status = .updated(Date())
