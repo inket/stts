@@ -283,6 +283,11 @@ class GoogleCloudSecurityCommandCenter: GoogleCloudPlatform, SubService {
     let dashboardName = "Cloud Security Command Center"
 }
 
+class GoogleCloudShell: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Shell"
+    let dashboardName = "Cloud Shell"
+}
+
 class GoogleCloudSourceRepositories: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Source Repositories"
     let dashboardName = "Cloud Source Repositories"
@@ -428,6 +433,11 @@ class GoogleBigQuery: GoogleCloudPlatform, SubService {
     let dashboardName = "Google BigQuery"
 }
 
+class GoogleCloudAndroidApp: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Android App"
+    let dashboardName = "Google Cloud Android App"
+}
+
 class GoogleCloudBigtable: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Bigtable"
     let dashboardName = "Google Cloud Bigtable"
@@ -478,9 +488,19 @@ class GoogleCloudIdentityAwareProxy: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Cloud Identity-Aware Proxy"
 }
 
+class GoogleCloudIOSApp: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud iOS App"
+    let dashboardName = "Google Cloud iOS App"
+}
+
 class GoogleCloudMarketplace: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Marketplace"
     let dashboardName = "Google Cloud Marketplace"
+}
+
+class GoogleCloudMigrationCenter: GoogleCloudPlatform, SubService {
+    let name = "Google Cloud Migration Center"
+    let dashboardName = "Google Cloud Migration Center"
 }
 
 class GoogleCloudNetAppVolumes: GoogleCloudPlatform, SubService {
@@ -651,6 +671,11 @@ class GoogleNetworkIntelligenceCenter: GoogleCloudPlatform, SubService {
 class GoogleNetworkTelemetry: GoogleCloudPlatform, SubService {
     let name = "Google Network Telemetry"
     let dashboardName = "Network Telemetry"
+}
+
+class GoogleParallelstore: GoogleCloudPlatform, SubService {
+    let name = "Google Parallelstore"
+    let dashboardName = "Parallelstore"
 }
 
 class GooglePersistentDisk: GoogleCloudPlatform, SubService {

@@ -88,6 +88,11 @@ class AdobeConnect: AdobeExperienceCloud, SubService {
     let id = "503474"
 }
 
+class AdobeContentAuthenticity: AdobeServices, SubService {
+    let name = "Adobe Content Authenticity"
+    let id = "559133"
+}
+
 class AdobeCreativeCloudAll: AdobeCreativeCloud, ServiceCategory {
     let categoryName = "Adobe Creative Cloud"
     let subServiceSuperclass: AnyObject.Type = BaseAdobeCreativeCloud.self
@@ -139,6 +144,11 @@ class AdobeCrossCloudCapabilities: AdobeExperienceCloud, SubService {
 class AdobeCustomerJourneyAnalytics: AdobeExperienceCloud, SubService {
     let name = "Adobe Customer Journey Analytics"
     let id = "503485"
+}
+
+class AdobeCustomerSupport: AdobeServices, SubService {
+    let name = "Adobe Customer Support"
+    let id = "558202"
 }
 
 class AdobeDataFoundation: AdobeExperiencePlatform, SubService {
@@ -225,6 +235,11 @@ class AdobeFresco: AdobeCreativeCloud, SubService {
     let id = "503469"
 }
 
+class AdobeGenStudioForPerformanceMarketing: AdobeExperienceCloud, SubService {
+    let name = "Adobe GenStudio for Performance Marketing"
+    let id = "554521"
+}
+
 class AdobeIllustrator: AdobeCreativeCloud, SubService {
     let name = "Adobe Illustrator"
     let id = "503524"
@@ -253,6 +268,11 @@ class AdobeInviteAccept: AdobeServices, SubService {
 class AdobeJourneyOptimizer: AdobeExperienceCloud, SubService {
     let name = "Adobe Journey Optimizer"
     let id = "503488"
+}
+
+class AdobeJourneyOptimizerB2B: AdobeExperienceCloud, SubService {
+    let name = "Adobe Journey Optimizer B2B"
+    let id = "552633"
 }
 
 class AdobeLearningManager: AdobeServices, SubService {

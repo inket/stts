@@ -156,6 +156,12 @@ class MulesoftAll: Mulesoft, ServiceCategory {
     let location = "*"
 }
 
+class MulesoftEMEA: Mulesoft, SubService {
+    let name = "Mulesoft (EMEA)"
+    let key = "Mulesoft"
+    let location = "EMEA"
+}
+
 class MulesoftNA: Mulesoft, SubService {
     let name = "Mulesoft (NA)"
     let key = "Mulesoft"

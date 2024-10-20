@@ -16,6 +16,11 @@ class AppleAppStore: Apple, SubService {
     let serviceName = "App Store"
 }
 
+class AppleAccount: Apple, SubService {
+    let name = "Apple Account"
+    let serviceName = "Apple Account"
+}
+
 class AppleAccountCard: Apple, SubService {
     let name = "Apple Account Card"
     let serviceName = "Apple Account Card"
@@ -56,11 +61,6 @@ class AppleFitness: Apple, SubService {
     let serviceName = "Apple Fitness+"
 }
 
-class AppleID: Apple, SubService {
-    let name = "Apple ID"
-    let serviceName = "Apple ID"
-}
-
 class AppleMessagesForBusiness: Apple, SubService {
     let name = "Apple Messages for Business"
     let serviceName = "Apple Messages for Business"
@@ -94,11 +94,6 @@ class AppleOnlineStore: Apple, SubService {
 class ApplePay: Apple, SubService {
     let name = "Apple Pay"
     let serviceName = "Apple Pay"
-}
-
-class ApplePayLater: Apple, SubService {
-    let name = "Apple Pay Later"
-    let serviceName = "Apple Pay Later"
 }
 
 class AppleSchoolManager: Apple, SubService {
@@ -326,6 +321,11 @@ class ApplePodcasts: Apple, SubService {
     let serviceName = "Podcasts"
 }
 
+class ApplePrivateCloudCompute: Apple, SubService {
+    let name = "Apple Private Cloud Compute"
+    let serviceName = "Private Cloud Compute"
+}
+
 class AppleRadio: Apple, SubService {
     let name = "Apple Radio"
     let serviceName = "Radio"
@@ -371,6 +371,11 @@ class AppleSubscriptionPurchase: Apple, SubService {
     let serviceName = "Subscription Purchase"
 }
 
+class AppleTVProvider: Apple, SubService {
+    let name = "Apple TV Provider"
+    let serviceName = "TV Provider"
+}
+
 class AppleVisionOSAppStore: Apple, SubService {
     let name = "Apple visionOS App Store"
     let serviceName = "visionOS App Store"
@@ -404,8 +409,8 @@ class AppleDeveloperAll: AppleDeveloper, ServiceCategory {
     let serviceName = "*"
 }
 
-class AppleAccount: AppleDeveloper, SubService {
-    let name = "Apple Account"
+class AppleAccountDeveloper: AppleDeveloper, SubService {
+    let name = "Apple Account (Developer)"
     let serviceName = "Account"
 }
 
@@ -592,6 +597,11 @@ class AppleMFiPortal: AppleDeveloper, SubService {
 class AppleNewsPublisher: AppleDeveloper, SubService {
     let name = "Apple News Publisher"
     let serviceName = "News Publisher"
+}
+
+class AppleNFCAndSEPlatform: AppleDeveloper, SubService {
+    let name = "Apple NFC & SE Platform"
+    let serviceName = "NFC & SE Platform"
 }
 
 class AppleProgramEnrollmentAndRenewals: AppleDeveloper, SubService {
