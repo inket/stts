@@ -251,6 +251,8 @@
 		B2A8AE3D20710EC8002699CE /* Unsplash.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A8AE3C20710EC8002699CE /* Unsplash.swift */; };
 		B2A93ADD1EB814C000D36DD3 /* Snyk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A93ADC1EB814C000D36DD3 /* Snyk.swift */; };
 		B2A9BFB41DC6E30F001BD4B7 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */; };
+		B2A9CC0B2CC5541D00D32CAD /* Pipedrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A9CC0A2CC5541000D32CAD /* Pipedrive.swift */; };
+		B2A9CC0D2CC5555800D32CAD /* Postmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A9CC0C2CC5554600D32CAD /* Postmark.swift */; };
 		B2ABB6171F59770800DF8EC2 /* Imgix.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ABB6161F59770800DF8EC2 /* Imgix.swift */; };
 		B2AF06AB2A7AB42100448D1E /* StatuspalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF06AA2A7AB42100448D1E /* StatuspalService.swift */; };
 		B2AF06AE2A7AB97300448D1E /* Booxi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF06AD2A7AB97300448D1E /* Booxi.swift */; };
@@ -627,6 +629,8 @@
 		B2A8AE3C20710EC8002699CE /* Unsplash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unsplash.swift; sourceTree = "<group>"; };
 		B2A93ADC1EB814C000D36DD3 /* Snyk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snyk.swift; sourceTree = "<group>"; };
 		B2A9BFB31DC6E30F001BD4B7 /* Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		B2A9CC0A2CC5541000D32CAD /* Pipedrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipedrive.swift; sourceTree = "<group>"; };
+		B2A9CC0C2CC5554600D32CAD /* Postmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Postmark.swift; sourceTree = "<group>"; };
 		B2ABB6161F59770800DF8EC2 /* Imgix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Imgix.swift; sourceTree = "<group>"; };
 		B2AF06AA2A7AB42100448D1E /* StatuspalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatuspalService.swift; sourceTree = "<group>"; };
 		B2AF06AD2A7AB97300448D1E /* Booxi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booxi.swift; sourceTree = "<group>"; };
@@ -944,6 +948,8 @@
 			isa = PBXGroup;
 			children = (
 				B25695541E247C8C00FAE413 /* Pingdom.swift */,
+				B2A9CC0A2CC5541000D32CAD /* Pipedrive.swift */,
+				B2A9CC0C2CC5554600D32CAD /* Postmark.swift */,
 			);
 			path = Sorry;
 			sourceTree = "<group>";
@@ -1604,6 +1610,7 @@
 				B2EC838E24547371001D2D2F /* Box.swift in Sources */,
 				B299C8431DD044160024D2E9 /* NewRelic.swift in Sources */,
 				B22602B327D88FA1001190F1 /* Zendesk.swift in Sources */,
+				B2A9CC0B2CC5541D00D32CAD /* Pipedrive.swift in Sources */,
 				B28E9128248250220026BAAA /* AppleServices.swift in Sources */,
 				B231DD5A257B431900647312 /* Airbase.swift in Sources */,
 				BF7AA78122B03AE4002460FB /* Bitrise.swift in Sources */,
@@ -1879,6 +1886,7 @@
 				6A1415429E75423F428A5ED9 /* JiraProductDiscovery.swift in Sources */,
 				162DA68A3B19D1B19D782151 /* Confluence.swift in Sources */,
 				67B20C4C76EDC39B65A6FB99 /* JiraAlign.swift in Sources */,
+				B2A9CC0D2CC5555800D32CAD /* Postmark.swift in Sources */,
 				9FFED8026DEAAACA19762242 /* Opsgenie.swift in Sources */,
 				949744F91617B020975F6707 /* Bitbucket.swift in Sources */,
 				776E8314B2F7910C11B36F6A /* Statuspage.swift in Sources */,
