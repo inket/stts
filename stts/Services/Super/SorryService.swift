@@ -8,6 +8,7 @@ import Foundation
 typealias SorryService = BaseSorryService & RequiredServiceProperties & RequiredSorryProperties
 
 protocol RequiredSorryProperties {
+    /// Found on <host>/api/v1/status
     var pageID: String { get }
 }
 
