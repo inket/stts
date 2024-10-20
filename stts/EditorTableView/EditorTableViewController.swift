@@ -178,14 +178,14 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
         tableView.frame = scrollView.bounds
         tableView.tableColumns.first?.width = tableView.frame.size.width
 
-        let maxHeight: CGFloat
+        let height: CGFloat
         if Preferences.shared.allowPopupToStretchAsNeeded, let usableHeight = NSScreen.usableHeightOfActiveScreen {
-            maxHeight = usableHeight - 32 // To accommodate for the popup's arrow/background
+            height = usableHeight - 32 // To accommodate for the popup's arrow/background
         } else {
-            maxHeight = 400
+            height = 400
         }
 
-        scrollView.frame.size.height = min(tableView.intrinsicContentSize.height, maxHeight)
+        scrollView.frame.size.height = height
 
         (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(
             height: scrollView.frame.size.height + 30 // bottomBar.frame.size.height
