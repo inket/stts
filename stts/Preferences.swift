@@ -60,6 +60,7 @@ struct Preferences {
             "VMwareCarbonBlack": "Broadcom", // v2.23
             "Tableau": "TableauAll", // v2.23
             "Spoke": "Okta", // v2.23
+            "Intercom": "IntercomUS", // v2.24
             // Generated services
             "FirebaseMLKit": "FirebaseMachineLearning"
         ]

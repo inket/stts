@@ -145,9 +145,11 @@
 		B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235B3BC1DF562C400821936 /* SettingsView.swift */; };
 		B23646B12627C14E00AB9486 /* LogzIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23646AF2627C14E00AB9486 /* LogzIO.swift */; };
 		B23646B22627C14E00AB9486 /* VisualStudioAppCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23646B02627C14E00AB9486 /* VisualStudioAppCenter.swift */; };
-		B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D4E6C1E13471200B04F18 /* Intercom.swift */; };
 		B23D4E6F1E13475900B04F18 /* KeenIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23D4E6E1E13475900B04F18 /* KeenIO.swift */; };
 		B23EE5B324B9FF430067D800 /* Bullhorn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23EE5B224B9FF430067D800 /* Bullhorn.swift */; };
+		B241B0722CC5518100D122B3 /* IntercomUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241B0712CC5518100D122B3 /* IntercomUS.swift */; };
+		B241B0742CC551C300D122B3 /* IntercomEU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241B0732CC551C300D122B3 /* IntercomEU.swift */; };
+		B241B0762CC551D400D122B3 /* IntercomAU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241B0752CC551D400D122B3 /* IntercomAU.swift */; };
 		B24220E41E2F6BBA0007E50E /* Typeform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24220E31E2F6BBA0007E50E /* Typeform.swift */; };
 		B242AB3226E34ADA007EE672 /* CoreWeave.swift in Sources */ = {isa = PBXBuildFile; fileRef = B242AB3126E34ADA007EE672 /* CoreWeave.swift */; };
 		B242AB3626E34DE9007EE672 /* SignalWire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B242AB3526E34DE9007EE672 /* SignalWire.swift */; };
@@ -515,10 +517,12 @@
 		B235B3BC1DF562C400821936 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B23646AF2627C14E00AB9486 /* LogzIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogzIO.swift; sourceTree = "<group>"; };
 		B23646B02627C14E00AB9486 /* VisualStudioAppCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualStudioAppCenter.swift; sourceTree = "<group>"; };
-		B23D4E6C1E13471200B04F18 /* Intercom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intercom.swift; sourceTree = "<group>"; };
 		B23D4E6E1E13475900B04F18 /* KeenIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeenIO.swift; sourceTree = "<group>"; };
 		B23E408B26A559350038DDF1 /* generate_salesforce_services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generate_salesforce_services.swift; sourceTree = "<group>"; };
 		B23EE5B224B9FF430067D800 /* Bullhorn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullhorn.swift; sourceTree = "<group>"; };
+		B241B0712CC5518100D122B3 /* IntercomUS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntercomUS.swift; sourceTree = "<group>"; };
+		B241B0732CC551C300D122B3 /* IntercomEU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntercomEU.swift; sourceTree = "<group>"; };
+		B241B0752CC551D400D122B3 /* IntercomAU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntercomAU.swift; sourceTree = "<group>"; };
 		B24220E31E2F6BBA0007E50E /* Typeform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typeform.swift; sourceTree = "<group>"; };
 		B242AB3126E34ADA007EE672 /* CoreWeave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreWeave.swift; sourceTree = "<group>"; };
 		B242AB3526E34DE9007EE672 /* SignalWire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalWire.swift; sourceTree = "<group>"; };
@@ -1024,7 +1028,6 @@
 				881BD2B4F6BC008A1CE1A25B /* HelloSignHelloFax.swift */,
 				B231DD5F257B438900647312 /* HubSpot.swift */,
 				B2ABB6161F59770800DF8EC2 /* Imgix.swift */,
-				B23D4E6C1E13471200B04F18 /* Intercom.swift */,
 				B2FBDF5C2A14E3C600734667 /* InternetComputer.swift */,
 				B2EAD8D420B8FDB700095F5B /* JAMF.swift */,
 				9C785BEA1BEF2A0DD068A4DD /* JiraAlign.swift */,
@@ -1260,6 +1263,9 @@
 			isa = PBXGroup;
 			children = (
 				AFB41ECF9F0F03EC8916A646 /* Aiven.swift */,
+				B241B0752CC551D400D122B3 /* IntercomAU.swift */,
+				B241B0732CC551C300D122B3 /* IntercomEU.swift */,
+				B241B0712CC5518100D122B3 /* IntercomUS.swift */,
 				B213D204269B0496005EBDDA /* Linear.swift */,
 				B2FBDF612A35E1C800734667 /* Loom.swift */,
 			);
@@ -1702,6 +1708,7 @@
 				B254099228FE76AA0009F956 /* Keygen.swift in Sources */,
 				B24B573223A4EAD200AFCF01 /* Pantheon.swift in Sources */,
 				B2228B6226C9623C002F01F0 /* SendbirdAll.swift in Sources */,
+				B241B0722CC5518100D122B3 /* IntercomUS.swift in Sources */,
 				B213D205269B0496005EBDDA /* Linear.swift in Sources */,
 				B2E6C8F3253C24CD001210E4 /* Lumanox.swift in Sources */,
 				B28C1D441E607D8600F9D0DC /* Mapbox.swift in Sources */,
@@ -1709,6 +1716,7 @@
 				A125C59E20F7909500C513B3 /* Fastly.swift in Sources */,
 				C7F7518A1E2CCA7A0013E8E2 /* WeTransfer.swift in Sources */,
 				B22BB3A1223B341B00B43BED /* OnePassword.swift in Sources */,
+				B241B0762CC551D400D122B3 /* IntercomAU.swift in Sources */,
 				B2FDC91C1D67062200F0B728 /* StatusPageService.swift in Sources */,
 				B213D20B269B0774005EBDDA /* Sketch.swift in Sources */,
 				B2CBE08F21B95A7B00F5B28F /* GitLab.swift in Sources */,
@@ -1812,7 +1820,6 @@
 				B23038F11E0DF3CC00B29095 /* Beanstalk.swift in Sources */,
 				B2483CF12037029D00A9FA95 /* Zwift.swift in Sources */,
 				B2FBDF5F2A35D82000734667 /* IncidentIOService.swift in Sources */,
-				B23D4E6D1E13471200B04F18 /* Intercom.swift in Sources */,
 				B22651232B2EE1C1002F1CE2 /* PagerDutyService.swift in Sources */,
 				B29222282642EF33001C63AE /* ModeAnalytics.swift in Sources */,
 				B254642321EE9AF6003068A4 /* GitHub.swift in Sources */,
@@ -1835,6 +1842,7 @@
 				23E3868C156CA9A739D83D90 /* Aiven.swift in Sources */,
 				5B446BB90D38D8C97F81126F /* Duo.swift in Sources */,
 				B13C143038FEAD318CCA237B /* Doppler.swift in Sources */,
+				B241B0742CC551C300D122B3 /* IntercomEU.swift in Sources */,
 				B25ACB64289E01700014C95C /* Roblox.swift in Sources */,
 				E2AAECBE89E07C6E94464ABF /* Checkly.swift in Sources */,
 				C28B812159CF77AD928CCAE9 /* Workflowy.swift in Sources */,
