@@ -13,12 +13,13 @@ class Broadcom: Service {
 
         struct Page: Codable {
             let state: State
-            let stateText: String
+            let stateText: String? // null when under maintenance
 
             enum State: String, Codable {
                 case operational
                 case degraded
-                case underMaintenance = "under_maintenance"
+                case underMaintenanceOfficial = "under_maintenance" // as defined in their API spec
+                case underMaintenanceActual = "under-maintenance" // as actually delivered by their API
             }
 
             enum CodingKeys: String, CodingKey {
@@ -46,13 +47,29 @@ class Broadcom: Service {
                 status = .good
             case .degraded:
                 status = .major
-            case .underMaintenance:
+            case .underMaintenanceOfficial, .underMaintenanceActual:
                 status = .maintenance
+            }
+
+            let stateText: String
+            if let text = response.page.stateText {
+                stateText = text
+            } else {
+                switch status {
+                case .good:
+                    stateText = "All systems are go!"
+                case .maintenance:
+                    stateText = "Under maintenance"
+                case .major:
+                    stateText = "Degraded"
+                default:
+                    stateText = "No status description"
+                }
             }
 
             strongSelf.statusDescription = ServiceStatusDescription(
                 status: status,
-                message: response.page.stateText
+                message: stateText
             )
         }
     }
