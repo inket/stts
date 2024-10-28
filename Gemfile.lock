@@ -9,9 +9,7 @@ GEM
     colored2 (3.1.2)
     colorize (0.8.1)
     nanaimo (0.3.0)
-    rexml (3.3.6)
-      strscan
-    strscan (3.1.0)
+    rexml (3.3.9)
     synx (0.2.1)
       clamp (~> 0.6)
       colorize (~> 0.7)
