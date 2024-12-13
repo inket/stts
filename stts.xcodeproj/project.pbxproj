@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		024B09D6BA1BAD9937A0A205 /* Fleek.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88919CE5D837C6757D72CA2 /* Fleek.swift */; };
 		06476158F5A7352BE05544BB /* Proton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE5D41DDC4D721C254C004 /* Proton.swift */; };
 		07903F3F2A403F03BDDD3AD1 /* JumpCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C3B179FEEE9F7F150196F /* JumpCloud.swift */; };
 		0988F07539A4DBD9DA7D690A /* Customerio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CA65AF81160DCD231D5F43 /* Customerio.swift */; };
@@ -726,6 +727,7 @@
 		D819CB63B6576DA05BFC764C /* Netlify.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
 		E5A4F04F86B9C0A9FB7233AE /* Branch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
 		E731B5A91DEB565683F25AF1 /* Flyio.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Flyio.swift; sourceTree = "<group>"; };
+		E88919CE5D837C6757D72CA2 /* Fleek.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Fleek.swift; sourceTree = "<group>"; };
 		E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirefoxRelay.swift; sourceTree = "<group>"; };
 		EC5567996ECADCC9A8C9AE3F /* Confluence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Confluence.swift; sourceTree = "<group>"; };
 		EF354371EC40FA322AEEFF5F /* AtlassianAccess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtlassianAccess.swift; sourceTree = "<group>"; };
@@ -1031,6 +1033,7 @@
 				B20396371EE6A06C008CCA21 /* Filestack.swift */,
 				E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */,
 				B2E6C8EF253C24AE001210E4 /* Fivetran.swift */,
+				E88919CE5D837C6757D72CA2 /* Fleek.swift */,
 				E731B5A91DEB565683F25AF1 /* Flyio.swift */,
 				B227D30B25D5886B00951917 /* FreeAgent.swift */,
 				B2C10F3B203646A7008E1E7D /* Gandi.swift */,
@@ -1472,7 +1475,7 @@
 			packageReferences = (
 				B20883E32A59143E007578C8 /* XCRemoteSwiftPackageReference "MBPopup" */,
 				B20883E62A59144F007578C8 /* XCRemoteSwiftPackageReference "Kanna" */,
-				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */,
+				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
 			);
 			productRefGroup = B2B2D1001D49D5080014D780 /* Products */;
 			projectDirPath = "";
@@ -1921,6 +1924,7 @@
 				79A2CABEDD66272C3579EB95 /* Robin.swift in Sources */,
 				AD52283A2FD0F01D516BC6EA /* Bunnynet.swift in Sources */,
 				D931427018A46A278E9200CD /* Productboard.swift in Sources */,
+				024B09D6BA1BAD9937A0A205 /* Fleek.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2225,7 +2229,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
 			requirement = {
@@ -2248,7 +2252,7 @@
 		};
 		B20883EA2A59146C007578C8 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */;
+			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
 			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
