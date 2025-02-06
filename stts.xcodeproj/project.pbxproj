@@ -17,6 +17,7 @@
 		18AAC49BEE71BAA18FAFCDB1 /* AlertLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8797E2420F50AEF8E643093F /* AlertLogic.swift */; };
 		194BC88222A8EAC10065E698 /* Clubhouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BC88122A8EAC00065E698 /* Clubhouse.swift */; };
 		2009CD655C4526247CF38971 /* ReadMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4E2FFFE60AE5D0E0BB449 /* ReadMe.swift */; };
+		23CEA59C6ACB09981D799C43 /* AnthropicAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A081BB365FF9676D94FEDF /* AnthropicAI.swift */; };
 		23E3868C156CA9A739D83D90 /* Aiven.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB41ECF9F0F03EC8916A646 /* Aiven.swift */; };
 		2A56161DBC04D7BDD8477759 /* VMwareWorkspaceONE.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9F6AE3667A268D4169B4A /* VMwareWorkspaceONE.swift */; };
 		2DE1BBB015563FC67C35CD03 /* Dialpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AE0427F33807B67A98607 /* Dialpad.swift */; };
@@ -40,6 +41,7 @@
 		604E5ED195443A1FF7BBDE08 /* EasyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFC32AB6F1A8F278412D26 /* EasyPost.swift */; };
 		6074BFF1D6DC04BB94FB0ACA /* JiraWorkManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7D189B0FC2B9F9E6ECDCDB /* JiraWorkManagement.swift */; };
 		623F648895DB729F0E1EE354 /* Scaleway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71284C408241E2CE20F2330D /* Scaleway.swift */; };
+		63D49CA3E6F87F4B0BBE3270 /* DeepSeekAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A85FC401C7C2655992B99E /* DeepSeekAI.swift */; };
 		67B20C4C76EDC39B65A6FB99 /* JiraAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C785BEA1BEF2A0DD068A4DD /* JiraAlign.swift */; };
 		68296A7E9330DE2E157D9736 /* MessageBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E14834A02FABD0C75361E /* MessageBird.swift */; };
 		691A9AA9137E52D210A3A002 /* CloudAMQP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B49374D6F788B72D32911D8 /* CloudAMQP.swift */; };
@@ -417,10 +419,12 @@
 		70244989EDA4E2F3CF20FA50 /* Doppler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Doppler.swift; sourceTree = "<group>"; };
 		71284C408241E2CE20F2330D /* Scaleway.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Scaleway.swift; sourceTree = "<group>"; };
 		71CE5D41DDC4D721C254C004 /* Proton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Proton.swift; sourceTree = "<group>"; };
+		77A081BB365FF9676D94FEDF /* Anthropic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Anthropic.swift; sourceTree = "<group>"; };
 		7BA6A0A12240D8E000700C2C /* Bolt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bolt.swift; sourceTree = "<group>"; };
 		7C82768B2C8E3BE300C0E37B /* NSScreenExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSScreenExtensions.swift; sourceTree = "<group>"; };
 		80361FCB72F96FA6F753D7C1 /* Bugsnag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bugsnag.swift; sourceTree = "<group>"; };
 		8797E2420F50AEF8E643093F /* AlertLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertLogic.swift; sourceTree = "<group>"; };
+		87A85FC401C7C2655992B99E /* DeepSeekService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DeepSeekService.swift; sourceTree = "<group>"; };
 		87DE85B45D490EF40F319860 /* HashiCorp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HashiCorp.swift; sourceTree = "<group>"; };
 		881BD2B4F6BC008A1CE1A25B /* HelloSignHelloFax.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelloSignHelloFax.swift; sourceTree = "<group>"; };
 		8BD419616E85E9D06BC7D324 /* Bunnynet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bunnynet.swift; sourceTree = "<group>"; };
@@ -965,6 +969,7 @@
 				B2CE72D5228587E000847E00 /* Acquia.swift */,
 				B231DD56257B431900647312 /* Airbase.swift */,
 				8797E2420F50AEF8E643093F /* AlertLogic.swift */,
+				77A081BB365FF9676D94FEDF /* Anthropic.swift */,
 				B21DC0751F6B436400E8214F /* Aptible.swift */,
 				B27168892291AEEE001E608C /* Asana.swift */,
 				EF354371EC40FA322AEEFF5F /* AtlassianAccess.swift */,
@@ -1014,6 +1019,7 @@
 				B2FAB94B1E5C029A00B8921F /* DNSimple.swift */,
 				A0C3F34A220FD630005D9998 /* Datadog.swift */,
 				B232047E22158BDF000DC1B0 /* DatadogEU.swift */,
+				87A85FC401C7C2655992B99E /* DeepSeekService.swift */,
 				223AE0427F33807B67A98607 /* Dialpad.swift */,
 				B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */,
 				B22BA3011E8119AB0038D8F6 /* Discord.swift */,
@@ -1472,7 +1478,7 @@
 			packageReferences = (
 				B20883E32A59143E007578C8 /* XCRemoteSwiftPackageReference "MBPopup" */,
 				B20883E62A59144F007578C8 /* XCRemoteSwiftPackageReference "Kanna" */,
-				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */,
+				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
 			);
 			productRefGroup = B2B2D1001D49D5080014D780 /* Products */;
 			projectDirPath = "";
@@ -1921,6 +1927,8 @@
 				79A2CABEDD66272C3579EB95 /* Robin.swift in Sources */,
 				AD52283A2FD0F01D516BC6EA /* Bunnynet.swift in Sources */,
 				D931427018A46A278E9200CD /* Productboard.swift in Sources */,
+				23CEA59C6ACB09981D799C43 /* Anthropic.swift in Sources */,
+				63D49CA3E6F87F4B0BBE3270 /* DeepSeekService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2225,7 +2233,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
 			requirement = {
@@ -2248,7 +2256,7 @@
 		};
 		B20883EA2A59146C007578C8 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */;
+			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
 			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
