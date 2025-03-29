@@ -55,7 +55,6 @@
 		7BA6A0A22240D8E000700C2C /* Bolt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6A0A12240D8E000700C2C /* Bolt.swift */; };
 		7C82768C2C8E3CA800C0E37B /* NSScreenExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C82768B2C8E3BE300C0E37B /* NSScreenExtensions.swift */; };
 		7E1580ED5174442F7B691728 /* Blend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F7B31666FF70588A709098 /* Blend.swift */; };
-		7E729FE2526A0074B32685C4 /* NetskopeTrustPortal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B0258BF6AA353F9AC12443 /* NetskopeTrustPortal.swift */; };
 		7F96823683B97EF8AEA15F62 /* EquinixMetal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF74DC57A426C3EBFCC2E90 /* EquinixMetal.swift */; };
 		885398879BE642F02CBA18BB /* QuickBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE9B86802DA92D1851DA069 /* QuickBooks.swift */; };
 		91B0A21428197857007D8E8F /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0A21328197857007D8E8F /* StringExtensionsTests.swift */; };
@@ -412,7 +411,6 @@
 		4FF6A2E1502F35DA915891FD /* AtlassianDeveloper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtlassianDeveloper.swift; sourceTree = "<group>"; };
 		53F844F11070AF5B4CD7719E /* Workflowy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Workflowy.swift; sourceTree = "<group>"; };
 		563FBDC323AC595F540679B9 /* Cybersource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cybersource.swift; sourceTree = "<group>"; };
-		66B0258BF6AA353F9AC12443 /* NetskopeTrustPortal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetskopeTrustPortal.swift; sourceTree = "<group>"; };
 		67ACBDAE9667EAFE834B633D /* Lattice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Lattice.swift; sourceTree = "<group>"; };
 		6B24BCA673F692E9211E7B8D /* Medium.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Medium.swift; sourceTree = "<group>"; };
 		6BCBA0E92558643D0019DF23 /* Recruiterbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruiterbox.swift; sourceTree = "<group>"; };
@@ -1080,7 +1078,6 @@
 				B299C8461DD04D7C0024D2E9 /* NPM.swift */,
 				F679F245A03F4CCC7F2DA71F /* NasdaqDataLink.swift */,
 				D819CB63B6576DA05BFC764C /* Netlify.swift */,
-				66B0258BF6AA353F9AC12443 /* NetskopeTrustPortal.swift */,
 				B299C8421DD044160024D2E9 /* NewRelic.swift */,
 				B2107BCD254C970000284EE7 /* Notion.swift */,
 				B22BB3A0223B341B00B43BED /* OnePassword.swift */,
@@ -1917,7 +1914,6 @@
 				D6FC1C0B5C45F3865F9D6543 /* Smarty.swift in Sources */,
 				C6B979E923630AC2F73717B0 /* Cybersource.swift in Sources */,
 				3DD3827D39BBDDBDA24DA4B9 /* Roadmunk.swift in Sources */,
-				7E729FE2526A0074B32685C4 /* NetskopeTrustPortal.swift in Sources */,
 				DE9EE76511329A776976FDC5 /* Whereby.swift in Sources */,
 				FF0965074312E22E4FD26062 /* Canonical.swift in Sources */,
 				EA0E7177A4634EF99C4AF31A /* MastodonSocial.swift in Sources */,
