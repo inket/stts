@@ -156,6 +156,12 @@ class MulesoftAll: Mulesoft, ServiceCategory {
     let location = "*"
 }
 
+class MulesoftAPAC: Mulesoft, SubService {
+    let name = "Mulesoft (APAC)"
+    let key = "Mulesoft"
+    let location = "APAC"
+}
+
 class MulesoftEMEA: Mulesoft, SubService {
     let name = "Mulesoft (EMEA)"
     let key = "Mulesoft"
@@ -192,21 +198,6 @@ class SalesforceServicesEMEA: SalesforceServices, SubService {
 class SalesforceServicesNA: SalesforceServices, SubService {
     let name = "Salesforce Services (NA)"
     let key = "Salesforce_Services"
-    let location = "NA"
-}
-
-class SalesforceSocialStudioAll: SalesforceSocialStudio, ServiceCategory {
-    let categoryName = "Salesforce Social Studio"
-    let subServiceSuperclass: AnyObject.Type = BaseSalesforceSocialStudio.self
-
-    let name = "Salesforce Social Studio (All Regions)"
-    let key = "Social_Studio"
-    let location = "*"
-}
-
-class SalesforceSocialStudioNA: SalesforceSocialStudio, SubService {
-    let name = "Salesforce Social Studio (NA)"
-    let key = "Social_Studio"
     let location = "NA"
 }
 

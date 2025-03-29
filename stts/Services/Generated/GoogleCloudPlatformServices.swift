@@ -508,11 +508,6 @@ class GoogleCloudNetAppVolumes: GoogleCloudPlatform, SubService {
     let dashboardName = "Google Cloud NetApp Volumes"
 }
 
-class GoogleCloudNetworking: GoogleCloudPlatform, SubService {
-    let name = "Google Cloud Networking"
-    let dashboardName = "Google Cloud Networking"
-}
-
 class GoogleCloudPubSub: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Pub/Sub"
     let dashboardName = "Google Cloud Pub/Sub"
@@ -601,6 +596,11 @@ class GoogleLendingDocAI: GoogleCloudPlatform, SubService {
 class GoogleLookerStudio: GoogleCloudPlatform, SubService {
     let name = "Google Looker Studio"
     let dashboardName = "Looker Studio"
+}
+
+class GoogleManagedServiceForApacheKafka: GoogleCloudPlatform, SubService {
+    let name = "Google Managed Service for Apache Kafka"
+    let dashboardName = "Managed Service for Apache Kafka"
 }
 
 class GoogleManagedServiceForMicrosoftActiveDirectoryAD: GoogleCloudPlatform, SubService {
@@ -861,6 +861,16 @@ class GoogleVertexAIVizier: GoogleCloudPlatform, SubService {
 class GoogleVertexAIWorkbenchUserManagedNotebooks: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI Workbench User Managed Notebooks"
     let dashboardName = "Vertex AI Workbench User Managed Notebooks"
+}
+
+class GoogleVertexGeminiAPI: GoogleCloudPlatform, SubService {
+    let name = "Google Vertex Gemini API"
+    let dashboardName = "Vertex Gemini API"
+}
+
+class GoogleVertexImagenAPI: GoogleCloudPlatform, SubService {
+    let name = "Google Vertex Imagen API"
+    let dashboardName = "Vertex Imagen API"
 }
 
 class GoogleVideoIntelligenceAPI: GoogleCloudPlatform, SubService {

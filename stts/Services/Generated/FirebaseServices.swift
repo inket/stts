@@ -55,6 +55,10 @@ class FirebaseGeminiInFirebase: FirebaseService, SubService {
     let name = "Firebase Gemini in Firebase"
 }
 
+class FirebaseGenkit: FirebaseService, SubService {
+    let name = "Firebase Genkit"
+}
+
 class FirebaseHosting: FirebaseService, SubService {
     let name = "Firebase Hosting"
 }
@@ -79,6 +83,6 @@ class FirebaseTestLab: FirebaseService, SubService {
     let name = "Firebase Test Lab"
 }
 
-class FirebaseVertexAIForFirebase: FirebaseService, SubService {
-    let name = "Firebase Vertex AI for Firebase"
+class FirebaseVertexAIInFirebase: FirebaseService, SubService {
+    let name = "Firebase Vertex AI in Firebase"
 }

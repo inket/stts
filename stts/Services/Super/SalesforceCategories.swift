@@ -67,14 +67,6 @@ class BaseSalesforceServices: BaseSalesforceCategory {
     let url = URL(string: "https://status.salesforce.com/products/Salesforce_Services")!
 }
 
-typealias SalesforceSocialStudio =
-    BaseSalesforceSocialStudio & RequiredServiceProperties & SalesforceStoreService
-
-class BaseSalesforceSocialStudio: BaseSalesforceCategory {
-    static var store = SalesforceStore(key: "Social_Studio")
-    let url = URL(string: "https://status.salesforce.com/products/Social_Studio")!
-}
-
 typealias Tableau =
     BaseTableau & RequiredServiceProperties & SalesforceStoreService
 

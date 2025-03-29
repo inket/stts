@@ -61,6 +61,11 @@ class AppleFitness: Apple, SubService {
     let serviceName = "Apple Fitness+"
 }
 
+class AppleInvites: Apple, SubService {
+    let name = "Apple Invites"
+    let serviceName = "Apple Invites"
+}
+
 class AppleMessagesForBusiness: Apple, SubService {
     let name = "Apple Messages for Business"
     let serviceName = "Apple Messages for Business"
@@ -427,6 +432,11 @@ class AppleAPNSSandbox: AppleDeveloper, SubService {
 class AppleAppAttest: AppleDeveloper, SubService {
     let name = "Apple App Attest"
     let serviceName = "App Attest"
+}
+
+class AppleAppStoreAdvancedCommerceAPI: AppleDeveloper, SubService {
+    let name = "Apple App Store - Advanced Commerce API"
+    let serviceName = "App Store - Advanced Commerce API"
 }
 
 class AppleAppStoreInAppPurchases: AppleDeveloper, SubService {

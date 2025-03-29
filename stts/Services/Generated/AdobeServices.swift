@@ -43,6 +43,11 @@ class AdobeAero: AdobeCreativeCloud, SubService {
     let id = "503511"
 }
 
+class AdobeAIAssistant: AdobeExperiencePlatform, SubService {
+    let name = "Adobe AI Assistant"
+    let id = "568624"
+}
+
 class AdobeAnalytics: AdobeExperienceCloud, SubService {
     let name = "Adobe Analytics"
     let id = "503467"
@@ -356,6 +361,11 @@ class AdobeServicesAll: AdobeServices, ServiceCategory {
 class AdobeSignIn: AdobeServices, SubService {
     let name = "Adobe Sign In"
     let id = "503525"
+}
+
+class AdobeStatusServiceProbe: AdobeServices, SubService {
+    let name = "Adobe Status Service Probe"
+    let id = "554089"
 }
 
 class AdobeSubstance: AdobeCreativeCloud, SubService {
