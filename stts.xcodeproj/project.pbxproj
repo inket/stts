@@ -88,7 +88,6 @@
 		B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */; };
 		B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */; };
 		B213D1F8269AD9A7005EBDDA /* Pardot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F7269AD9A7005EBDDA /* Pardot.swift */; };
-		B213D1FA269ADA0F005EBDDA /* MuleSoft.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F9269ADA0F005EBDDA /* MuleSoft.swift */; };
 		B213D1FC269ADA5D005EBDDA /* Click.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1FB269ADA5D005EBDDA /* Click.swift */; };
 		B213D200269AFD45005EBDDA /* InstatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1FF269AFD45005EBDDA /* InstatusService.swift */; };
 		B213D203269B045C005EBDDA /* Railway.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D202269B045C005EBDDA /* Railway.swift */; };
@@ -464,7 +463,6 @@
 		B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableViewController.swift; sourceTree = "<group>"; };
 		B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableRowView.swift; sourceTree = "<group>"; };
 		B213D1F7269AD9A7005EBDDA /* Pardot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pardot.swift; sourceTree = "<group>"; };
-		B213D1F9269ADA0F005EBDDA /* MuleSoft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuleSoft.swift; sourceTree = "<group>"; };
 		B213D1FB269ADA5D005EBDDA /* Click.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Click.swift; sourceTree = "<group>"; };
 		B213D1FF269AFD45005EBDDA /* InstatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstatusService.swift; sourceTree = "<group>"; };
 		B213D202269B045C005EBDDA /* Railway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Railway.swift; sourceTree = "<group>"; };
@@ -1078,7 +1076,6 @@
 				B2C337A41E1417390007E110 /* Mixpanel.swift */,
 				B29222262642EF33001C63AE /* ModeAnalytics.swift */,
 				0EF59C4AA2A53663EAE8DA39 /* MongoDBCloud.swift */,
-				B213D1F9269ADA0F005EBDDA /* MuleSoft.swift */,
 				36AD8ED8235A310500F2FD73 /* Mural.swift */,
 				B299C8461DD04D7C0024D2E9 /* NPM.swift */,
 				F679F245A03F4CCC7F2DA71F /* NasdaqDataLink.swift */,
@@ -1848,7 +1845,6 @@
 				B29222282642EF33001C63AE /* ModeAnalytics.swift in Sources */,
 				B254642321EE9AF6003068A4 /* GitHub.swift in Sources */,
 				B2F55EF02408B6A2003D674C /* PSNEurope.swift in Sources */,
-				B213D1FA269ADA0F005EBDDA /* MuleSoft.swift in Sources */,
 				B213D207269B05D9005EBDDA /* Instatus.swift in Sources */,
 				B27090F1209F52EB0094C3D7 /* Stream.swift in Sources */,
 				2F802A9BB36717992C334CB8 /* Medium.swift in Sources */,
