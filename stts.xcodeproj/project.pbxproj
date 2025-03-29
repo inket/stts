@@ -158,6 +158,7 @@
 		B2430807210810D0003F8D07 /* Algolia.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2430806210810D0003F8D07 /* Algolia.swift */; };
 		B2483CF12037029D00A9FA95 /* Zwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2483CF02037029D00A9FA95 /* Zwift.swift */; };
 		B2493F061E2603F300556A83 /* GoogleCloudPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */; };
+		B24B185A2D98533700708D10 /* Exoscale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B18592D98533300708D10 /* Exoscale.swift */; };
 		B24B573223A4EAD200AFCF01 /* Pantheon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B573123A4EAD200AFCF01 /* Pantheon.swift */; };
 		B24CD81A2BBD828500C7D498 /* Runway.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24CD8192BBD828500C7D498 /* Runway.swift */; };
 		B24CD81C2BBD82CB00C7D498 /* RunwayASC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24CD81B2BBD82CB00C7D498 /* RunwayASC.swift */; };
@@ -535,6 +536,7 @@
 		B2430806210810D0003F8D07 /* Algolia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algolia.swift; sourceTree = "<group>"; };
 		B2483CF02037029D00A9FA95 /* Zwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zwift.swift; sourceTree = "<group>"; };
 		B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudPlatform.swift; sourceTree = "<group>"; };
+		B24B18592D98533300708D10 /* Exoscale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exoscale.swift; sourceTree = "<group>"; };
 		B24B573123A4EAD200AFCF01 /* Pantheon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pantheon.swift; sourceTree = "<group>"; };
 		B24CD8192BBD828500C7D498 /* Runway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runway.swift; sourceTree = "<group>"; };
 		B24CD81B2BBD82CB00C7D498 /* RunwayASC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunwayASC.swift; sourceTree = "<group>"; };
@@ -1157,6 +1159,7 @@
 			isa = PBXGroup;
 			children = (
 				B2AF06AD2A7AB97300448D1E /* Booxi.swift */,
+				B24B18592D98533300708D10 /* Exoscale.swift */,
 				B22602AC27D878FD001190F1 /* Unity.swift */,
 			);
 			path = Statuspal;
@@ -1704,6 +1707,7 @@
 				B29AEFD0225D7F3900C3B8BD /* AirshipUS.swift in Sources */,
 				B28FF68B1E94761A005897A9 /* Codecov.swift in Sources */,
 				B256955A1E247C8C00FAE413 /* Cloudinary.swift in Sources */,
+				B24B185A2D98533700708D10 /* Exoscale.swift in Sources */,
 				B277BC9822B4C16A000B55C3 /* AzureDevOpsServices.swift in Sources */,
 				B2DCE6902215992E001447D8 /* Apple.swift in Sources */,
 				B28E912C248255A40026BAAA /* AppleDeveloper.swift in Sources */,
