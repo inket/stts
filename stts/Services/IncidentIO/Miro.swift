@@ -5,7 +5,6 @@
 
 import Foundation
 
-class Miro: StatusPageService {
+class Miro: IncidentIOService {
     let url = URL(string: "https://status.miro.com")!
-    let statusPageID = "trq7m2ycw1t2"
 }

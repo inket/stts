@@ -1070,7 +1070,6 @@
 				B28C1D431E607D8600F9D0DC /* Mapbox.swift */,
 				6B24BCA673F692E9211E7B8D /* Medium.swift */,
 				067E14834A02FABD0C75361E /* MessageBird.swift */,
-				1CCCFA4ECD8BB402C7254FEF /* Miro.swift */,
 				B2C337A41E1417390007E110 /* Mixpanel.swift */,
 				B29222262642EF33001C63AE /* ModeAnalytics.swift */,
 				0EF59C4AA2A53663EAE8DA39 /* MongoDBCloud.swift */,
@@ -1282,6 +1281,7 @@
 				B241B0712CC5518100D122B3 /* IntercomUS.swift */,
 				B213D204269B0496005EBDDA /* Linear.swift */,
 				B2FBDF612A35E1C800734667 /* Loom.swift */,
+				1CCCFA4ECD8BB402C7254FEF /* Miro.swift */,
 				B2E832EF29EF74D9000FA1BE /* OpenAI.swift */,
 			);
 			path = IncidentIO;
