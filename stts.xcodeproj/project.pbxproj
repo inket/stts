@@ -18,7 +18,7 @@
 		18AAC49BEE71BAA18FAFCDB1 /* AlertLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8797E2420F50AEF8E643093F /* AlertLogic.swift */; };
 		194BC88222A8EAC10065E698 /* Clubhouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BC88122A8EAC00065E698 /* Clubhouse.swift */; };
 		2009CD655C4526247CF38971 /* ReadMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4E2FFFE60AE5D0E0BB449 /* ReadMe.swift */; };
-		23CEA59C6ACB09981D799C43 /* AnthropicAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A081BB365FF9676D94FEDF /* AnthropicAI.swift */; };
+		23CEA59C6ACB09981D799C43 /* Anthropic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A081BB365FF9676D94FEDF /* Anthropic.swift */; };
 		23E3868C156CA9A739D83D90 /* Aiven.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB41ECF9F0F03EC8916A646 /* Aiven.swift */; };
 		2A56161DBC04D7BDD8477759 /* VMwareWorkspaceONE.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9F6AE3667A268D4169B4A /* VMwareWorkspaceONE.swift */; };
 		2DE1BBB015563FC67C35CD03 /* Dialpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223AE0427F33807B67A98607 /* Dialpad.swift */; };
@@ -42,7 +42,6 @@
 		604E5ED195443A1FF7BBDE08 /* EasyPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCFC32AB6F1A8F278412D26 /* EasyPost.swift */; };
 		6074BFF1D6DC04BB94FB0ACA /* JiraWorkManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7D189B0FC2B9F9E6ECDCDB /* JiraWorkManagement.swift */; };
 		623F648895DB729F0E1EE354 /* Scaleway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71284C408241E2CE20F2330D /* Scaleway.swift */; };
-		63D49CA3E6F87F4B0BBE3270 /* DeepSeekAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A85FC401C7C2655992B99E /* DeepSeekAI.swift */; };
 		67B20C4C76EDC39B65A6FB99 /* JiraAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C785BEA1BEF2A0DD068A4DD /* JiraAlign.swift */; };
 		68296A7E9330DE2E157D9736 /* MessageBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E14834A02FABD0C75361E /* MessageBird.swift */; };
 		691A9AA9137E52D210A3A002 /* CloudAMQP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B49374D6F788B72D32911D8 /* CloudAMQP.swift */; };
@@ -269,6 +268,7 @@
 		B2BA69801E2DA3F60016AF1A /* Papertrail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */; };
 		B2BB19BA20B8FEFD00A97A87 /* CachetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BB19B920B8FEFD00A97A87 /* CachetService.swift */; };
 		B2C10F3C203646A7008E1E7D /* Gandi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C10F3B203646A7008E1E7D /* Gandi.swift */; };
+		B2C2DFB52D98552C00281399 /* DeepSeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C2DFB42D98552C00281399 /* DeepSeek.swift */; };
 		B2C337A51E1417390007E110 /* Mixpanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C337A41E1417390007E110 /* Mixpanel.swift */; };
 		B2C4670F1E70012700C5145D /* Zapier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4670E1E70012700C5145D /* Zapier.swift */; };
 		B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */; };
@@ -423,7 +423,6 @@
 		7C82768B2C8E3BE300C0E37B /* NSScreenExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSScreenExtensions.swift; sourceTree = "<group>"; };
 		80361FCB72F96FA6F753D7C1 /* Bugsnag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bugsnag.swift; sourceTree = "<group>"; };
 		8797E2420F50AEF8E643093F /* AlertLogic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertLogic.swift; sourceTree = "<group>"; };
-		87A85FC401C7C2655992B99E /* DeepSeekService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DeepSeekService.swift; sourceTree = "<group>"; };
 		87DE85B45D490EF40F319860 /* HashiCorp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HashiCorp.swift; sourceTree = "<group>"; };
 		881BD2B4F6BC008A1CE1A25B /* HelloSignHelloFax.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HelloSignHelloFax.swift; sourceTree = "<group>"; };
 		8BD419616E85E9D06BC7D324 /* Bunnynet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bunnynet.swift; sourceTree = "<group>"; };
@@ -652,6 +651,7 @@
 		B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Papertrail.swift; sourceTree = "<group>"; };
 		B2BB19B920B8FEFD00A97A87 /* CachetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachetService.swift; sourceTree = "<group>"; };
 		B2C10F3B203646A7008E1E7D /* Gandi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gandi.swift; sourceTree = "<group>"; };
+		B2C2DFB42D98552C00281399 /* DeepSeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepSeek.swift; sourceTree = "<group>"; };
 		B2C337A41E1417390007E110 /* Mixpanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mixpanel.swift; sourceTree = "<group>"; };
 		B2C4670E1E70012700C5145D /* Zapier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zapier.swift; sourceTree = "<group>"; };
 		B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
@@ -729,8 +729,8 @@
 		D819CB63B6576DA05BFC764C /* Netlify.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
 		E5A4F04F86B9C0A9FB7233AE /* Branch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
 		E731B5A91DEB565683F25AF1 /* Flyio.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Flyio.swift; sourceTree = "<group>"; };
-		E96A56CCE8D1459FB0B09DB6 /* Mozilla.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Mozilla.swift; sourceTree = "<group>"; };
 		E88919CE5D837C6757D72CA2 /* Fleek.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Fleek.swift; sourceTree = "<group>"; };
+		E96A56CCE8D1459FB0B09DB6 /* Mozilla.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Mozilla.swift; sourceTree = "<group>"; };
 		EC5567996ECADCC9A8C9AE3F /* Confluence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Confluence.swift; sourceTree = "<group>"; };
 		EF354371EC40FA322AEEFF5F /* AtlassianAccess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtlassianAccess.swift; sourceTree = "<group>"; };
 		F0A9F6AE3667A268D4169B4A /* VMwareWorkspaceONE.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VMwareWorkspaceONE.swift; sourceTree = "<group>"; };
@@ -1019,7 +1019,7 @@
 				B2FAB94B1E5C029A00B8921F /* DNSimple.swift */,
 				A0C3F34A220FD630005D9998 /* Datadog.swift */,
 				B232047E22158BDF000DC1B0 /* DatadogEU.swift */,
-				87A85FC401C7C2655992B99E /* DeepSeekService.swift */,
+				B2C2DFB42D98552C00281399 /* DeepSeek.swift */,
 				223AE0427F33807B67A98607 /* Dialpad.swift */,
 				B26CD1EB1DD59FFB0054A385 /* DigitalOcean.swift */,
 				B22BA3011E8119AB0038D8F6 /* Discord.swift */,
@@ -1725,6 +1725,7 @@
 				B2A7EFEF2A145A3E0013C7AE /* Civo.swift in Sources */,
 				B2E018FD214E60E700C5F75B /* AppearanceObserver.swift in Sources */,
 				B2107BCF254C970000284EE7 /* Notion.swift in Sources */,
+				B2C2DFB52D98552C00281399 /* DeepSeek.swift in Sources */,
 				B2C4670F1E70012700C5145D /* Zapier.swift in Sources */,
 				B2C5ED1D281CAA3400009B68 /* OneLoginEU.swift in Sources */,
 				B254099228FE76AA0009F956 /* Keygen.swift in Sources */,
@@ -1927,7 +1928,6 @@
 				AD52283A2FD0F01D516BC6EA /* Bunnynet.swift in Sources */,
 				D931427018A46A278E9200CD /* Productboard.swift in Sources */,
 				23CEA59C6ACB09981D799C43 /* Anthropic.swift in Sources */,
-				63D49CA3E6F87F4B0BBE3270 /* DeepSeekService.swift in Sources */,
 				024B09D6BA1BAD9937A0A205 /* Fleek.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
