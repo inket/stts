@@ -1088,7 +1088,6 @@
 				B2107BCD254C970000284EE7 /* Notion.swift */,
 				B22BB3A0223B341B00B43BED /* OnePassword.swift */,
 				0BDEA739C3989EA43886F0F6 /* OneSignal.swift */,
-				B2E832EF29EF74D9000FA1BE /* OpenAI.swift */,
 				3F6D6DE9B7048DB851580651 /* Opsgenie.swift */,
 				B24B573123A4EAD200AFCF01 /* Pantheon.swift */,
 				B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */,
@@ -1289,6 +1288,7 @@
 				B241B0712CC5518100D122B3 /* IntercomUS.swift */,
 				B213D204269B0496005EBDDA /* Linear.swift */,
 				B2FBDF612A35E1C800734667 /* Loom.swift */,
+				B2E832EF29EF74D9000FA1BE /* OpenAI.swift */,
 			);
 			path = IncidentIO;
 			sourceTree = "<group>";
