@@ -33,7 +33,7 @@
 		3DD3827D39BBDDBDA24DA4B9 /* Roadmunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E87BF974F75C95D80FC426 /* Roadmunk.swift */; };
 		4A0BDA3CE55B64C29F1F4280 /* AtlassianSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE09F6E559505EECD0AF8D /* AtlassianSupport.swift */; };
 		502ADE3E3386F6B64643682F /* Wasabi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CD7B91FCE3B9B61003A00 /* Wasabi.swift */; };
-		5168C3411EE1FADD160353FF /* FirefoxRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */; };
+		5168C3411EE1FADD160353FF /* Mozilla.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96A56CCE8D1459FB0B09DB6 /* Mozilla.swift */; };
 		5226672D519C409D932468BA /* Chargebee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3803B461B23AFD8DD026EB59 /* Chargebee.swift */; };
 		56EB1377353A8087B682B4E6 /* Primcloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0160B2F5B66992A4DE58FF49 /* Primcloud.swift */; };
 		593FB40FF80AEB54E5E25B71 /* HelloSignHelloFax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881BD2B4F6BC008A1CE1A25B /* HelloSignHelloFax.swift */; };
@@ -727,8 +727,8 @@
 		D819CB63B6576DA05BFC764C /* Netlify.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Netlify.swift; sourceTree = "<group>"; };
 		E5A4F04F86B9C0A9FB7233AE /* Branch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
 		E731B5A91DEB565683F25AF1 /* Flyio.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Flyio.swift; sourceTree = "<group>"; };
+		E96A56CCE8D1459FB0B09DB6 /* Mozilla.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Mozilla.swift; sourceTree = "<group>"; };
 		E88919CE5D837C6757D72CA2 /* Fleek.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Fleek.swift; sourceTree = "<group>"; };
-		E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FirefoxRelay.swift; sourceTree = "<group>"; };
 		EC5567996ECADCC9A8C9AE3F /* Confluence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Confluence.swift; sourceTree = "<group>"; };
 		EF354371EC40FA322AEEFF5F /* AtlassianAccess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtlassianAccess.swift; sourceTree = "<group>"; };
 		F0A9F6AE3667A268D4169B4A /* VMwareWorkspaceONE.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VMwareWorkspaceONE.swift; sourceTree = "<group>"; };
@@ -1034,7 +1034,6 @@
 				B269FCBA1E261BDF0016041D /* Figma.swift */,
 				B2E6C8F2253C24CD001210E4 /* FilesCom.swift */,
 				B20396371EE6A06C008CCA21 /* Filestack.swift */,
-				E96A56CCE8D1459FB0B09DB6 /* FirefoxRelay.swift */,
 				B2E6C8EF253C24AE001210E4 /* Fivetran.swift */,
 				E88919CE5D837C6757D72CA2 /* Fleek.swift */,
 				E731B5A91DEB565683F25AF1 /* Flyio.swift */,
@@ -1073,6 +1072,7 @@
 				B2C337A41E1417390007E110 /* Mixpanel.swift */,
 				B29222262642EF33001C63AE /* ModeAnalytics.swift */,
 				0EF59C4AA2A53663EAE8DA39 /* MongoDBCloud.swift */,
+				E96A56CCE8D1459FB0B09DB6 /* Mozilla.swift */,
 				36AD8ED8235A310500F2FD73 /* Mural.swift */,
 				B299C8461DD04D7C0024D2E9 /* NPM.swift */,
 				F679F245A03F4CCC7F2DA71F /* NasdaqDataLink.swift */,
@@ -1865,7 +1865,7 @@
 				C28B812159CF77AD928CCAE9 /* Workflowy.swift in Sources */,
 				B2FBDF5D2A14E3C600734667 /* InternetComputer.swift in Sources */,
 				691A9AA9137E52D210A3A002 /* CloudAMQP.swift in Sources */,
-				5168C3411EE1FADD160353FF /* FirefoxRelay.swift in Sources */,
+				5168C3411EE1FADD160353FF /* Mozilla.swift in Sources */,
 				593FB40FF80AEB54E5E25B71 /* HelloSignHelloFax.swift in Sources */,
 				6D03955E8178A1153BBD9D01 /* Netlify.swift in Sources */,
 				0988F07539A4DBD9DA7D690A /* Customerio.swift in Sources */,

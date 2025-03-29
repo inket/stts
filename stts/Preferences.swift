@@ -68,6 +68,7 @@ struct Preferences {
             "Spoke": "Okta", // v2.23
             "Intercom": "IntercomUS", // v2.24
             "Lumanox": "FilesCom", // v2.25
+            "FirefoxRelay": "Mozilla", // v2.25
             // Generated services
             "FirebaseMLKit": "FirebaseMachineLearning"
         ]
