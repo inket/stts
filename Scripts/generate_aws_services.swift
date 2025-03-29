@@ -69,7 +69,7 @@ class OutputNamedService: OutputService {
 
     var output: String {
         """
-        class \(className): AWSNamedService, SubService {
+        final class \(className): AWSNamedService, SubService {
             let name = "\(usableName)"
             let ids = Set<String>([
                 "\(ids.sorted().joined(separator: "\",\n        \""))"
@@ -117,7 +117,7 @@ class OutputRegion: OutputService {
 
     var output: String {
         """
-        class \(className): AWSRegionService, SubService {
+        final class \(className): AWSRegionService, SubService {
             let id = "\(id)"
             let name = "\(usableName)"
         }
@@ -181,14 +181,14 @@ func main() {
 
     import Foundation
 
-    class AWSRegions: AWSAllService, ServiceCategory {
+    final class AWSRegions: AWSAllService, ServiceCategory {
         let categoryName = "Amazon Web Services (by region)"
         let subServiceSuperclass: AnyObject.Type = BaseAWSRegionService.self
 
         let name = "AWS Regions (All)"
     }
 
-    class AWSServices: AWSAllService, ServiceCategory {
+    final class AWSServices: AWSAllService, ServiceCategory {
         let categoryName = "Amazon Web Services"
         let subServiceSuperclass: AnyObject.Type = BaseAWSNamedService.self
 

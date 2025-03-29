@@ -5,7 +5,7 @@
 
 import Foundation
 
-class Pipedrive: SorryService {
+final class Pipedrive: SorryService {
     let url = URL(string: "https://status.pipedrive.com")!
     let pageID = "2754"
 }

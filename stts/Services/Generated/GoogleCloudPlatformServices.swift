@@ -3,897 +3,897 @@
 
 import Foundation
 
-class GoogleAccessApproval: GoogleCloudPlatform, SubService {
+final class GoogleAccessApproval: GoogleCloudPlatform, SubService {
     let name = "Google Access Approval"
     let dashboardName = "Access Approval"
 }
 
-class GoogleAccessContextManager: GoogleCloudPlatform, SubService {
+final class GoogleAccessContextManager: GoogleCloudPlatform, SubService {
     let name = "Google Access Context Manager"
     let dashboardName = "Access Context Manager"
 }
 
-class GoogleAccessTransparency: GoogleCloudPlatform, SubService {
+final class GoogleAccessTransparency: GoogleCloudPlatform, SubService {
     let name = "Google Access Transparency"
     let dashboardName = "Access Transparency"
 }
 
-class GoogleAgentAssist: GoogleCloudPlatform, SubService {
+final class GoogleAgentAssist: GoogleCloudPlatform, SubService {
     let name = "Google Agent Assist"
     let dashboardName = "Agent Assist"
 }
 
-class GoogleAIPlatformPrediction: GoogleCloudPlatform, SubService {
+final class GoogleAIPlatformPrediction: GoogleCloudPlatform, SubService {
     let name = "Google AI Platform Prediction"
     let dashboardName = "AI Platform Prediction"
 }
 
-class GoogleAIPlatformTraining: GoogleCloudPlatform, SubService {
+final class GoogleAIPlatformTraining: GoogleCloudPlatform, SubService {
     let name = "Google AI Platform Training"
     let dashboardName = "AI Platform Training"
 }
 
-class GoogleAlloyDBForPostgreSQL: GoogleCloudPlatform, SubService {
+final class GoogleAlloyDBForPostgreSQL: GoogleCloudPlatform, SubService {
     let name = "Google AlloyDB for PostgreSQL"
     let dashboardName = "AlloyDB for PostgreSQL"
 }
 
-class GoogleAnthosServiceMesh: GoogleCloudPlatform, SubService {
+final class GoogleAnthosServiceMesh: GoogleCloudPlatform, SubService {
     let name = "Google Anthos Service Mesh"
     let dashboardName = "Anthos Service Mesh"
 }
 
-class GoogleAPIGateway: GoogleCloudPlatform, SubService {
+final class GoogleAPIGateway: GoogleCloudPlatform, SubService {
     let name = "Google API Gateway"
     let dashboardName = "API Gateway"
 }
 
-class GoogleApigee: GoogleCloudPlatform, SubService {
+final class GoogleApigee: GoogleCloudPlatform, SubService {
     let name = "Google Apigee"
     let dashboardName = "Apigee"
 }
 
-class GoogleApigeeEdgePrivateCloud: GoogleCloudPlatform, SubService {
+final class GoogleApigeeEdgePrivateCloud: GoogleCloudPlatform, SubService {
     let name = "Google Apigee Edge Private Cloud"
     let dashboardName = "Apigee Edge Private Cloud"
 }
 
-class GoogleApigeeEdgePublicCloud: GoogleCloudPlatform, SubService {
+final class GoogleApigeeEdgePublicCloud: GoogleCloudPlatform, SubService {
     let name = "Google Apigee Edge Public Cloud"
     let dashboardName = "Apigee Edge Public Cloud"
 }
 
-class GoogleApigeeHybrid: GoogleCloudPlatform, SubService {
+final class GoogleApigeeHybrid: GoogleCloudPlatform, SubService {
     let name = "Google Apigee Hybrid"
     let dashboardName = "Apigee Hybrid"
 }
 
-class GoogleApplicationIntegration: GoogleCloudPlatform, SubService {
+final class GoogleApplicationIntegration: GoogleCloudPlatform, SubService {
     let name = "Google Application Integration"
     let dashboardName = "Application Integration"
 }
 
-class GoogleAppSheet: GoogleCloudPlatform, SubService {
+final class GoogleAppSheet: GoogleCloudPlatform, SubService {
     let name = "Google AppSheet"
     let dashboardName = "AppSheet"
 }
 
-class GoogleArtifactRegistry: GoogleCloudPlatform, SubService {
+final class GoogleArtifactRegistry: GoogleCloudPlatform, SubService {
     let name = "Google Artifact Registry"
     let dashboardName = "Artifact Registry"
 }
 
-class GoogleAssuredWorkloads: GoogleCloudPlatform, SubService {
+final class GoogleAssuredWorkloads: GoogleCloudPlatform, SubService {
     let name = "Google Assured Workloads"
     let dashboardName = "Assured Workloads"
 }
 
-class GoogleAutoMLNaturalLanguage: GoogleCloudPlatform, SubService {
+final class GoogleAutoMLNaturalLanguage: GoogleCloudPlatform, SubService {
     let name = "Google AutoML Natural Language"
     let dashboardName = "AutoML Natural Language"
 }
 
-class GoogleAutoMLTables: GoogleCloudPlatform, SubService {
+final class GoogleAutoMLTables: GoogleCloudPlatform, SubService {
     let name = "Google AutoML Tables"
     let dashboardName = "AutoML Tables"
 }
 
-class GoogleAutoMLTranslation: GoogleCloudPlatform, SubService {
+final class GoogleAutoMLTranslation: GoogleCloudPlatform, SubService {
     let name = "Google AutoML Translation"
     let dashboardName = "AutoML Translation"
 }
 
-class GoogleAutoMLVideo: GoogleCloudPlatform, SubService {
+final class GoogleAutoMLVideo: GoogleCloudPlatform, SubService {
     let name = "Google AutoML Video"
     let dashboardName = "AutoML Video"
 }
 
-class GoogleAutoMLVision: GoogleCloudPlatform, SubService {
+final class GoogleAutoMLVision: GoogleCloudPlatform, SubService {
     let name = "Google AutoML Vision"
     let dashboardName = "AutoML Vision"
 }
 
-class GoogleBackupAndDR: GoogleCloudPlatform, SubService {
+final class GoogleBackupAndDR: GoogleCloudPlatform, SubService {
     let name = "Google Backup and DR"
     let dashboardName = "Backup and DR"
 }
 
-class GoogleBackupForGKE: GoogleCloudPlatform, SubService {
+final class GoogleBackupForGKE: GoogleCloudPlatform, SubService {
     let name = "Google Backup for GKE"
     let dashboardName = "Backup for GKE"
 }
 
-class GoogleBareMetalSolution: GoogleCloudPlatform, SubService {
+final class GoogleBareMetalSolution: GoogleCloudPlatform, SubService {
     let name = "Google Bare Metal Solution"
     let dashboardName = "Bare Metal Solution"
 }
 
-class GoogleBatch: GoogleCloudPlatform, SubService {
+final class GoogleBatch: GoogleCloudPlatform, SubService {
     let name = "Google Batch"
     let dashboardName = "Batch"
 }
 
-class GoogleBeyondCorpEnterprise: GoogleCloudPlatform, SubService {
+final class GoogleBeyondCorpEnterprise: GoogleCloudPlatform, SubService {
     let name = "Google BeyondCorp Enterprise"
     let dashboardName = "BeyondCorp Enterprise"
 }
 
-class GoogleBigQueryDataTransferService: GoogleCloudPlatform, SubService {
+final class GoogleBigQueryDataTransferService: GoogleCloudPlatform, SubService {
     let name = "Google BigQuery Data Transfer Service"
     let dashboardName = "BigQuery Data Transfer Service"
 }
 
-class GoogleBinaryAuthorization: GoogleCloudPlatform, SubService {
+final class GoogleBinaryAuthorization: GoogleCloudPlatform, SubService {
     let name = "Google Binary Authorization"
     let dashboardName = "Binary Authorization"
 }
 
-class GoogleCertificateAuthorityService: GoogleCloudPlatform, SubService {
+final class GoogleCertificateAuthorityService: GoogleCloudPlatform, SubService {
     let name = "Google Certificate Authority Service"
     let dashboardName = "Certificate Authority Service"
 }
 
-class GoogleChronicleSecurity: GoogleCloudPlatform, SubService {
+final class GoogleChronicleSecurity: GoogleCloudPlatform, SubService {
     let name = "Google Chronicle Security"
     let dashboardName = "Chronicle Security"
 }
 
-class GoogleChronicleSOAR: GoogleCloudPlatform, SubService {
+final class GoogleChronicleSOAR: GoogleCloudPlatform, SubService {
     let name = "Google Chronicle SOAR"
     let dashboardName = "Chronicle SOAR"
 }
 
-class GoogleCloudArmor: GoogleCloudPlatform, SubService {
+final class GoogleCloudArmor: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Armor"
     let dashboardName = "Cloud Armor"
 }
 
-class GoogleCloudAssetInventory: GoogleCloudPlatform, SubService {
+final class GoogleCloudAssetInventory: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Asset Inventory"
     let dashboardName = "Cloud Asset Inventory"
 }
 
-class GoogleCloudBilling: GoogleCloudPlatform, SubService {
+final class GoogleCloudBilling: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Billing"
     let dashboardName = "Cloud Billing"
 }
 
-class GoogleCloudBuild: GoogleCloudPlatform, SubService {
+final class GoogleCloudBuild: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Build"
     let dashboardName = "Cloud Build"
 }
 
-class GoogleCloudCDN: GoogleCloudPlatform, SubService {
+final class GoogleCloudCDN: GoogleCloudPlatform, SubService {
     let name = "Google Cloud CDN"
     let dashboardName = "Cloud CDN"
 }
 
-class GoogleCloudDataFusion: GoogleCloudPlatform, SubService {
+final class GoogleCloudDataFusion: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Data Fusion"
     let dashboardName = "Cloud Data Fusion"
 }
 
-class GoogleCloudDataLossPrevention: GoogleCloudPlatform, SubService {
+final class GoogleCloudDataLossPrevention: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Data Loss Prevention"
     let dashboardName = "Cloud Data Loss Prevention"
 }
 
-class GoogleCloudDomains: GoogleCloudPlatform, SubService {
+final class GoogleCloudDomains: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Domains"
     let dashboardName = "Cloud Domains"
 }
 
-class GoogleCloudEndpoints: GoogleCloudPlatform, SubService {
+final class GoogleCloudEndpoints: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Endpoints"
     let dashboardName = "Cloud Endpoints"
 }
 
-class GoogleCloudExternalKeyManager: GoogleCloudPlatform, SubService {
+final class GoogleCloudExternalKeyManager: GoogleCloudPlatform, SubService {
     let name = "Google Cloud External Key Manager"
     let dashboardName = "Cloud External Key Manager"
 }
 
-class GoogleCloudFilestore: GoogleCloudPlatform, SubService {
+final class GoogleCloudFilestore: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Filestore"
     let dashboardName = "Cloud Filestore"
 }
 
-class GoogleCloudFirestore: GoogleCloudPlatform, SubService {
+final class GoogleCloudFirestore: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Firestore"
     let dashboardName = "Cloud Firestore"
 }
 
-class GoogleCloudHSM: GoogleCloudPlatform, SubService {
+final class GoogleCloudHSM: GoogleCloudPlatform, SubService {
     let name = "Google Cloud HSM"
     let dashboardName = "Cloud HSM"
 }
 
-class GoogleCloudIDS: GoogleCloudPlatform, SubService {
+final class GoogleCloudIDS: GoogleCloudPlatform, SubService {
     let name = "Google Cloud IDS"
     let dashboardName = "Cloud IDS"
 }
 
-class GoogleCloudKeyManagementService: GoogleCloudPlatform, SubService {
+final class GoogleCloudKeyManagementService: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Key Management Service"
     let dashboardName = "Cloud Key Management Service"
 }
 
-class GoogleCloudLoadBalancing: GoogleCloudPlatform, SubService {
+final class GoogleCloudLoadBalancing: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Load Balancing"
     let dashboardName = "Cloud Load Balancing"
 }
 
-class GoogleCloudLogging: GoogleCloudPlatform, SubService {
+final class GoogleCloudLogging: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Logging"
     let dashboardName = "Cloud Logging"
 }
 
-class GoogleCloudMemorystore: GoogleCloudPlatform, SubService {
+final class GoogleCloudMemorystore: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Memorystore"
     let dashboardName = "Cloud Memorystore"
 }
 
-class GoogleCloudMonitoring: GoogleCloudPlatform, SubService {
+final class GoogleCloudMonitoring: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Monitoring"
     let dashboardName = "Cloud Monitoring"
 }
 
-class GoogleCloudNAT: GoogleCloudPlatform, SubService {
+final class GoogleCloudNAT: GoogleCloudPlatform, SubService {
     let name = "Google Cloud NAT"
     let dashboardName = "Cloud NAT"
 }
 
-class GoogleCloudNaturalLanguageAPI: GoogleCloudPlatform, SubService {
+final class GoogleCloudNaturalLanguageAPI: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Natural Language API"
     let dashboardName = "Cloud Natural Language API"
 }
 
-class GoogleCloudProfiler: GoogleCloudPlatform, SubService {
+final class GoogleCloudProfiler: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Profiler"
     let dashboardName = "Cloud Profiler"
 }
 
-class GoogleCloudRun: GoogleCloudPlatform, SubService {
+final class GoogleCloudRun: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Run"
     let dashboardName = "Cloud Run"
 }
 
-class GoogleCloudSecurityCommandCenter: GoogleCloudPlatform, SubService {
+final class GoogleCloudSecurityCommandCenter: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Security Command Center"
     let dashboardName = "Cloud Security Command Center"
 }
 
-class GoogleCloudShell: GoogleCloudPlatform, SubService {
+final class GoogleCloudShell: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Shell"
     let dashboardName = "Cloud Shell"
 }
 
-class GoogleCloudSourceRepositories: GoogleCloudPlatform, SubService {
+final class GoogleCloudSourceRepositories: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Source Repositories"
     let dashboardName = "Cloud Source Repositories"
 }
 
-class GoogleCloudSpanner: GoogleCloudPlatform, SubService {
+final class GoogleCloudSpanner: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Spanner"
     let dashboardName = "Cloud Spanner"
 }
 
-class GoogleCloudStorageForFirebase: GoogleCloudPlatform, SubService {
+final class GoogleCloudStorageForFirebase: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Storage for Firebase"
     let dashboardName = "Cloud Storage for Firebase"
 }
 
-class GoogleCloudTalentSolutionJobSearch: GoogleCloudPlatform, SubService {
+final class GoogleCloudTalentSolutionJobSearch: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Talent Solution - Job Search"
     let dashboardName = "Cloud Talent Solution - Job Search"
 }
 
-class GoogleCloudTrace: GoogleCloudPlatform, SubService {
+final class GoogleCloudTrace: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Trace"
     let dashboardName = "Cloud Trace"
 }
 
-class GoogleCloudTranslation: GoogleCloudPlatform, SubService {
+final class GoogleCloudTranslation: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Translation"
     let dashboardName = "Cloud Translation"
 }
 
-class GoogleCloudVision: GoogleCloudPlatform, SubService {
+final class GoogleCloudVision: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Vision"
     let dashboardName = "Cloud Vision"
 }
 
-class GoogleCloudWorkflows: GoogleCloudPlatform, SubService {
+final class GoogleCloudWorkflows: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Workflows"
     let dashboardName = "Cloud Workflows"
 }
 
-class GoogleCloudWorkstations: GoogleCloudPlatform, SubService {
+final class GoogleCloudWorkstations: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Workstations"
     let dashboardName = "Cloud Workstations"
 }
 
-class GoogleColabEnterprise: GoogleCloudPlatform, SubService {
+final class GoogleColabEnterprise: GoogleCloudPlatform, SubService {
     let name = "Google Colab Enterprise"
     let dashboardName = "Colab Enterprise"
 }
 
-class GoogleContactCenterAIPlatform: GoogleCloudPlatform, SubService {
+final class GoogleContactCenterAIPlatform: GoogleCloudPlatform, SubService {
     let name = "Google Contact Center AI Platform"
     let dashboardName = "Contact Center AI Platform"
 }
 
-class GoogleContactCenterInsights: GoogleCloudPlatform, SubService {
+final class GoogleContactCenterInsights: GoogleCloudPlatform, SubService {
     let name = "Google Contact Center Insights"
     let dashboardName = "Contact Center Insights"
 }
 
-class GoogleContainerRegistry: GoogleCloudPlatform, SubService {
+final class GoogleContainerRegistry: GoogleCloudPlatform, SubService {
     let name = "Google Container Registry"
     let dashboardName = "Container Registry"
 }
 
-class GoogleDataCatalog: GoogleCloudPlatform, SubService {
+final class GoogleDataCatalog: GoogleCloudPlatform, SubService {
     let name = "Google Data Catalog"
     let dashboardName = "Data Catalog"
 }
 
-class GoogleDatabaseMigrationService: GoogleCloudPlatform, SubService {
+final class GoogleDatabaseMigrationService: GoogleCloudPlatform, SubService {
     let name = "Google Database Migration Service"
     let dashboardName = "Database Migration Service"
 }
 
-class GoogleDataform: GoogleCloudPlatform, SubService {
+final class GoogleDataform: GoogleCloudPlatform, SubService {
     let name = "Google Dataform"
     let dashboardName = "Dataform"
 }
 
-class GoogleDataplex: GoogleCloudPlatform, SubService {
+final class GoogleDataplex: GoogleCloudPlatform, SubService {
     let name = "Google Dataplex"
     let dashboardName = "Dataplex"
 }
 
-class GoogleDataprocMetastore: GoogleCloudPlatform, SubService {
+final class GoogleDataprocMetastore: GoogleCloudPlatform, SubService {
     let name = "Google Dataproc Metastore"
     let dashboardName = "Dataproc Metastore"
 }
 
-class GoogleDatastream: GoogleCloudPlatform, SubService {
+final class GoogleDatastream: GoogleCloudPlatform, SubService {
     let name = "Google Datastream"
     let dashboardName = "Datastream"
 }
 
-class GoogleDialogflowCX: GoogleCloudPlatform, SubService {
+final class GoogleDialogflowCX: GoogleCloudPlatform, SubService {
     let name = "Google Dialogflow CX"
     let dashboardName = "Dialogflow CX"
 }
 
-class GoogleDialogflowES: GoogleCloudPlatform, SubService {
+final class GoogleDialogflowES: GoogleCloudPlatform, SubService {
     let name = "Google Dialogflow ES"
     let dashboardName = "Dialogflow ES"
 }
 
-class GoogleDocumentAI: GoogleCloudPlatform, SubService {
+final class GoogleDocumentAI: GoogleCloudPlatform, SubService {
     let name = "Google Document AI"
     let dashboardName = "Document AI"
 }
 
-class GoogleDocumentAIWarehouse: GoogleCloudPlatform, SubService {
+final class GoogleDocumentAIWarehouse: GoogleCloudPlatform, SubService {
     let name = "Google Document AI Warehouse"
     let dashboardName = "Document AI Warehouse"
 }
 
-class GoogleEventarc: GoogleCloudPlatform, SubService {
+final class GoogleEventarc: GoogleCloudPlatform, SubService {
     let name = "Google Eventarc"
     let dashboardName = "Eventarc"
 }
 
-class GoogleFirebaseAuthentication: GoogleCloudPlatform, SubService {
+final class GoogleFirebaseAuthentication: GoogleCloudPlatform, SubService {
     let name = "Google Firebase Authentication"
     let dashboardName = "Firebase Authentication"
 }
 
-class GoogleFirebaseTestLab: GoogleCloudPlatform, SubService {
+final class GoogleFirebaseTestLab: GoogleCloudPlatform, SubService {
     let name = "Google Firebase Test Lab"
     let dashboardName = "Firebase Test Lab"
 }
 
-class GoogleGKEFleetManagement: GoogleCloudPlatform, SubService {
+final class GoogleGKEFleetManagement: GoogleCloudPlatform, SubService {
     let name = "Google GKE fleet management"
     let dashboardName = "GKE fleet management"
 }
 
-class GoogleAppEngine: GoogleCloudPlatform, SubService {
+final class GoogleAppEngine: GoogleCloudPlatform, SubService {
     let name = "Google App Engine"
     let dashboardName = "Google App Engine"
 }
 
-class GoogleBigQuery: GoogleCloudPlatform, SubService {
+final class GoogleBigQuery: GoogleCloudPlatform, SubService {
     let name = "Google BigQuery"
     let dashboardName = "Google BigQuery"
 }
 
-class GoogleCloudAndroidApp: GoogleCloudPlatform, SubService {
+final class GoogleCloudAndroidApp: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Android App"
     let dashboardName = "Google Cloud Android App"
 }
 
-class GoogleCloudBigtable: GoogleCloudPlatform, SubService {
+final class GoogleCloudBigtable: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Bigtable"
     let dashboardName = "Google Cloud Bigtable"
 }
 
-class GoogleCloudComposer: GoogleCloudPlatform, SubService {
+final class GoogleCloudComposer: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Composer"
     let dashboardName = "Google Cloud Composer"
 }
 
-class GoogleCloudConsole: GoogleCloudPlatform, SubService {
+final class GoogleCloudConsole: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Console"
     let dashboardName = "Google Cloud Console"
 }
 
-class GoogleCloudDataflow: GoogleCloudPlatform, SubService {
+final class GoogleCloudDataflow: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Dataflow"
     let dashboardName = "Google Cloud Dataflow"
 }
 
-class GoogleCloudDataproc: GoogleCloudPlatform, SubService {
+final class GoogleCloudDataproc: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Dataproc"
     let dashboardName = "Google Cloud Dataproc"
 }
 
-class GoogleCloudDatastore: GoogleCloudPlatform, SubService {
+final class GoogleCloudDatastore: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Datastore"
     let dashboardName = "Google Cloud Datastore"
 }
 
-class GoogleCloudDeploy: GoogleCloudPlatform, SubService {
+final class GoogleCloudDeploy: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Deploy"
     let dashboardName = "Google Cloud Deploy"
 }
 
-class GoogleCloudDNS: GoogleCloudPlatform, SubService {
+final class GoogleCloudDNS: GoogleCloudPlatform, SubService {
     let name = "Google Cloud DNS"
     let dashboardName = "Google Cloud DNS"
 }
 
-class GoogleCloudFunctions: GoogleCloudPlatform, SubService {
+final class GoogleCloudFunctions: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Functions"
     let dashboardName = "Google Cloud Functions"
 }
 
-class GoogleCloudIdentityAwareProxy: GoogleCloudPlatform, SubService {
+final class GoogleCloudIdentityAwareProxy: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Identity-Aware Proxy"
     let dashboardName = "Google Cloud Identity-Aware Proxy"
 }
 
-class GoogleCloudIOSApp: GoogleCloudPlatform, SubService {
+final class GoogleCloudIOSApp: GoogleCloudPlatform, SubService {
     let name = "Google Cloud iOS App"
     let dashboardName = "Google Cloud iOS App"
 }
 
-class GoogleCloudMarketplace: GoogleCloudPlatform, SubService {
+final class GoogleCloudMarketplace: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Marketplace"
     let dashboardName = "Google Cloud Marketplace"
 }
 
-class GoogleCloudMigrationCenter: GoogleCloudPlatform, SubService {
+final class GoogleCloudMigrationCenter: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Migration Center"
     let dashboardName = "Google Cloud Migration Center"
 }
 
-class GoogleCloudNetAppVolumes: GoogleCloudPlatform, SubService {
+final class GoogleCloudNetAppVolumes: GoogleCloudPlatform, SubService {
     let name = "Google Cloud NetApp Volumes"
     let dashboardName = "Google Cloud NetApp Volumes"
 }
 
-class GoogleCloudPubSub: GoogleCloudPlatform, SubService {
+final class GoogleCloudPubSub: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Pub/Sub"
     let dashboardName = "Google Cloud Pub/Sub"
 }
 
-class GoogleCloudScheduler: GoogleCloudPlatform, SubService {
+final class GoogleCloudScheduler: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Scheduler"
     let dashboardName = "Google Cloud Scheduler"
 }
 
-class GoogleCloudSQL: GoogleCloudPlatform, SubService {
+final class GoogleCloudSQL: GoogleCloudPlatform, SubService {
     let name = "Google Cloud SQL"
     let dashboardName = "Google Cloud SQL"
 }
 
-class GoogleCloudStorage: GoogleCloudPlatform, SubService {
+final class GoogleCloudStorage: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Storage"
     let dashboardName = "Google Cloud Storage"
 }
 
-class GoogleCloudSupport: GoogleCloudPlatform, SubService {
+final class GoogleCloudSupport: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Support"
     let dashboardName = "Google Cloud Support"
 }
 
-class GoogleCloudTasks: GoogleCloudPlatform, SubService {
+final class GoogleCloudTasks: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Tasks"
     let dashboardName = "Google Cloud Tasks"
 }
 
-class GoogleComputeEngine: GoogleCloudPlatform, SubService {
+final class GoogleComputeEngine: GoogleCloudPlatform, SubService {
     let name = "Google Compute Engine"
     let dashboardName = "Google Compute Engine"
 }
 
-class GoogleDistributedCloudEdge: GoogleCloudPlatform, SubService {
+final class GoogleDistributedCloudEdge: GoogleCloudPlatform, SubService {
     let name = "Google Distributed Cloud Edge"
     let dashboardName = "Google Distributed Cloud Edge"
 }
 
-class GoogleKubernetesEngine: GoogleCloudPlatform, SubService {
+final class GoogleKubernetesEngine: GoogleCloudPlatform, SubService {
     let name = "Google Kubernetes Engine"
     let dashboardName = "Google Kubernetes Engine"
 }
 
-class GoogleHealthcareAndLifeSciences: GoogleCloudPlatform, SubService {
+final class GoogleHealthcareAndLifeSciences: GoogleCloudPlatform, SubService {
     let name = "Google Healthcare and Life Sciences"
     let dashboardName = "Healthcare and Life Sciences"
 }
 
-class GoogleHybridConnectivity: GoogleCloudPlatform, SubService {
+final class GoogleHybridConnectivity: GoogleCloudPlatform, SubService {
     let name = "Google Hybrid Connectivity"
     let dashboardName = "Hybrid Connectivity"
 }
 
-class GoogleIdentityAndAccessManagement: GoogleCloudPlatform, SubService {
+final class GoogleIdentityAndAccessManagement: GoogleCloudPlatform, SubService {
     let name = "Google Identity and Access Management"
     let dashboardName = "Identity and Access Management"
 }
 
-class GoogleIdentityPlatform: GoogleCloudPlatform, SubService {
+final class GoogleIdentityPlatform: GoogleCloudPlatform, SubService {
     let name = "Google Identity Platform"
     let dashboardName = "Identity Platform"
 }
 
-class GoogleInfrastructureManager: GoogleCloudPlatform, SubService {
+final class GoogleInfrastructureManager: GoogleCloudPlatform, SubService {
     let name = "Google Infrastructure Manager"
     let dashboardName = "Infrastructure Manager"
 }
 
-class GoogleIntegrationConnectors: GoogleCloudPlatform, SubService {
+final class GoogleIntegrationConnectors: GoogleCloudPlatform, SubService {
     let name = "Google Integration Connectors"
     let dashboardName = "Integration Connectors"
 }
 
-class GoogleKeyAccessJustifications: GoogleCloudPlatform, SubService {
+final class GoogleKeyAccessJustifications: GoogleCloudPlatform, SubService {
     let name = "Google Key Access Justifications"
     let dashboardName = "Key Access Justifications"
 }
 
-class GoogleLendingDocAI: GoogleCloudPlatform, SubService {
+final class GoogleLendingDocAI: GoogleCloudPlatform, SubService {
     let name = "Google Lending DocAI"
     let dashboardName = "Lending DocAI"
 }
 
-class GoogleLookerStudio: GoogleCloudPlatform, SubService {
+final class GoogleLookerStudio: GoogleCloudPlatform, SubService {
     let name = "Google Looker Studio"
     let dashboardName = "Looker Studio"
 }
 
-class GoogleManagedServiceForApacheKafka: GoogleCloudPlatform, SubService {
+final class GoogleManagedServiceForApacheKafka: GoogleCloudPlatform, SubService {
     let name = "Google Managed Service for Apache Kafka"
     let dashboardName = "Managed Service for Apache Kafka"
 }
 
-class GoogleManagedServiceForMicrosoftActiveDirectoryAD: GoogleCloudPlatform, SubService {
+final class GoogleManagedServiceForMicrosoftActiveDirectoryAD: GoogleCloudPlatform, SubService {
     let name = "Google Managed Service for Microsoft Active Directory (AD)"
     let dashboardName = "Managed Service for Microsoft Active Directory (AD)"
 }
 
-class GoogleMandiantAttackSurfaceManagement: GoogleCloudPlatform, SubService {
+final class GoogleMandiantAttackSurfaceManagement: GoogleCloudPlatform, SubService {
     let name = "Google Mandiant Attack Surface Management"
     let dashboardName = "Mandiant Attack Surface Management"
 }
 
-class GoogleMandiantHuntForChronicle: GoogleCloudPlatform, SubService {
+final class GoogleMandiantHuntForChronicle: GoogleCloudPlatform, SubService {
     let name = "Google Mandiant Hunt for Chronicle"
     let dashboardName = "Mandiant Hunt for Chronicle"
 }
 
-class GoogleMandiantManagedDefense: GoogleCloudPlatform, SubService {
+final class GoogleMandiantManagedDefense: GoogleCloudPlatform, SubService {
     let name = "Google Mandiant Managed Defense"
     let dashboardName = "Mandiant Managed Defense"
 }
 
-class GoogleMandiantSecurityValidation: GoogleCloudPlatform, SubService {
+final class GoogleMandiantSecurityValidation: GoogleCloudPlatform, SubService {
     let name = "Google Mandiant Security Validation"
     let dashboardName = "Mandiant Security Validation"
 }
 
-class GoogleMandiantThreatIntelligence: GoogleCloudPlatform, SubService {
+final class GoogleMandiantThreatIntelligence: GoogleCloudPlatform, SubService {
     let name = "Google Mandiant Threat Intelligence"
     let dashboardName = "Mandiant Threat Intelligence"
 }
 
-class GoogleMediaCDN: GoogleCloudPlatform, SubService {
+final class GoogleMediaCDN: GoogleCloudPlatform, SubService {
     let name = "Google Media CDN"
     let dashboardName = "Media CDN"
 }
 
-class GoogleMemorystoreForMemcached: GoogleCloudPlatform, SubService {
+final class GoogleMemorystoreForMemcached: GoogleCloudPlatform, SubService {
     let name = "Google Memorystore for Memcached"
     let dashboardName = "Memorystore for Memcached"
 }
 
-class GoogleMemorystoreForRedis: GoogleCloudPlatform, SubService {
+final class GoogleMemorystoreForRedis: GoogleCloudPlatform, SubService {
     let name = "Google Memorystore for Redis"
     let dashboardName = "Memorystore for Redis"
 }
 
-class GoogleMemorystoreForRedisCluster: GoogleCloudPlatform, SubService {
+final class GoogleMemorystoreForRedisCluster: GoogleCloudPlatform, SubService {
     let name = "Google Memorystore for Redis Cluster"
     let dashboardName = "Memorystore for Redis Cluster"
 }
 
-class GoogleMigrateToVirtualMachines: GoogleCloudPlatform, SubService {
+final class GoogleMigrateToVirtualMachines: GoogleCloudPlatform, SubService {
     let name = "Google Migrate to Virtual Machines"
     let dashboardName = "Migrate to Virtual Machines"
 }
 
-class GoogleNetworkConnectivityCenter: GoogleCloudPlatform, SubService {
+final class GoogleNetworkConnectivityCenter: GoogleCloudPlatform, SubService {
     let name = "Google Network Connectivity Center"
     let dashboardName = "Network Connectivity Center"
 }
 
-class GoogleNetworkIntelligenceCenter: GoogleCloudPlatform, SubService {
+final class GoogleNetworkIntelligenceCenter: GoogleCloudPlatform, SubService {
     let name = "Google Network Intelligence Center"
     let dashboardName = "Network Intelligence Center"
 }
 
-class GoogleNetworkTelemetry: GoogleCloudPlatform, SubService {
+final class GoogleNetworkTelemetry: GoogleCloudPlatform, SubService {
     let name = "Google Network Telemetry"
     let dashboardName = "Network Telemetry"
 }
 
-class GoogleParallelstore: GoogleCloudPlatform, SubService {
+final class GoogleParallelstore: GoogleCloudPlatform, SubService {
     let name = "Google Parallelstore"
     let dashboardName = "Parallelstore"
 }
 
-class GooglePersistentDisk: GoogleCloudPlatform, SubService {
+final class GooglePersistentDisk: GoogleCloudPlatform, SubService {
     let name = "Google Persistent Disk"
     let dashboardName = "Persistent Disk"
 }
 
-class GooglePersonalizedServiceHealth: GoogleCloudPlatform, SubService {
+final class GooglePersonalizedServiceHealth: GoogleCloudPlatform, SubService {
     let name = "Google Personalized Service Health"
     let dashboardName = "Personalized Service Health"
 }
 
-class GooglePrivateServiceConnect: GoogleCloudPlatform, SubService {
+final class GooglePrivateServiceConnect: GoogleCloudPlatform, SubService {
     let name = "Google Private Service Connect"
     let dashboardName = "Private Service Connect"
 }
 
-class GoogleProcurementDocAI: GoogleCloudPlatform, SubService {
+final class GoogleProcurementDocAI: GoogleCloudPlatform, SubService {
     let name = "Google Procurement DocAI"
     let dashboardName = "Procurement DocAI"
 }
 
-class GooglePubSubLite: GoogleCloudPlatform, SubService {
+final class GooglePubSubLite: GoogleCloudPlatform, SubService {
     let name = "Google Pub/Sub Lite"
     let dashboardName = "Pub/Sub Lite"
 }
 
-class GoogleReCAPTCHAEnterprise: GoogleCloudPlatform, SubService {
+final class GoogleReCAPTCHAEnterprise: GoogleCloudPlatform, SubService {
     let name = "Google reCAPTCHA Enterprise"
     let dashboardName = "reCAPTCHA Enterprise"
 }
 
-class GoogleRecommendationAI: GoogleCloudPlatform, SubService {
+final class GoogleRecommendationAI: GoogleCloudPlatform, SubService {
     let name = "Google Recommendation AI"
     let dashboardName = "Recommendation AI"
 }
 
-class GoogleRecommender: GoogleCloudPlatform, SubService {
+final class GoogleRecommender: GoogleCloudPlatform, SubService {
     let name = "Google Recommender"
     let dashboardName = "Recommender"
 }
 
-class GoogleResourceManagerAPI: GoogleCloudPlatform, SubService {
+final class GoogleResourceManagerAPI: GoogleCloudPlatform, SubService {
     let name = "Google Resource Manager API"
     let dashboardName = "Resource Manager API"
 }
 
-class GoogleRetailAPI: GoogleCloudPlatform, SubService {
+final class GoogleRetailAPI: GoogleCloudPlatform, SubService {
     let name = "Google Retail API"
     let dashboardName = "Retail API"
 }
 
-class GoogleSecretManager: GoogleCloudPlatform, SubService {
+final class GoogleSecretManager: GoogleCloudPlatform, SubService {
     let name = "Google Secret Manager"
     let dashboardName = "Secret Manager"
 }
 
-class GoogleServiceDirectory: GoogleCloudPlatform, SubService {
+final class GoogleServiceDirectory: GoogleCloudPlatform, SubService {
     let name = "Google Service Directory"
     let dashboardName = "Service Directory"
 }
 
-class GoogleSpectrumAccessSystem: GoogleCloudPlatform, SubService {
+final class GoogleSpectrumAccessSystem: GoogleCloudPlatform, SubService {
     let name = "Google Spectrum Access System"
     let dashboardName = "Spectrum Access System"
 }
 
-class GoogleSpeechtoText: GoogleCloudPlatform, SubService {
+final class GoogleSpeechtoText: GoogleCloudPlatform, SubService {
     let name = "Google Speech-to-Text"
     let dashboardName = "Speech-to-Text"
 }
 
-class GoogleStorageTransferService: GoogleCloudPlatform, SubService {
+final class GoogleStorageTransferService: GoogleCloudPlatform, SubService {
     let name = "Google Storage Transfer Service"
     let dashboardName = "Storage Transfer Service"
 }
 
-class GoogleTexttoSpeech: GoogleCloudPlatform, SubService {
+final class GoogleTexttoSpeech: GoogleCloudPlatform, SubService {
     let name = "Google Text-to-Speech"
     let dashboardName = "Text-to-Speech"
 }
 
-class GoogleTrafficDirector: GoogleCloudPlatform, SubService {
+final class GoogleTrafficDirector: GoogleCloudPlatform, SubService {
     let name = "Google Traffic Director"
     let dashboardName = "Traffic Director"
 }
 
-class GoogleTranscoderAPI: GoogleCloudPlatform, SubService {
+final class GoogleTranscoderAPI: GoogleCloudPlatform, SubService {
     let name = "Google Transcoder API"
     let dashboardName = "Transcoder API"
 }
 
-class GoogleVertexAIAutoMLImage: GoogleCloudPlatform, SubService {
+final class GoogleVertexAIAutoMLImage: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI AutoML Image"
     let dashboardName = "Vertex AI AutoML Image"
 }
 
-class GoogleVertexAIAutoMLTabular: GoogleCloudPlatform, SubService {
+final class GoogleVertexAIAutoMLTabular: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI AutoML Tabular"
     let dashboardName = "Vertex AI AutoML Tabular"
 }
 
-class GoogleVertexAIAutoMLText: GoogleCloudPlatform, SubService {
+final class GoogleVertexAIAutoMLText: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI AutoML Text"
     let dashboardName = "Vertex AI AutoML Text"
 }
 
-class GoogleVertexAIAutoMLVideo: GoogleCloudPlatform, SubService {
+final class GoogleVertexAIAutoMLVideo: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI AutoML Video"
     let dashboardName = "Vertex AI AutoML Video"
 }
 
-class GoogleVertexAIBatchPrediction: GoogleCloudPlatform, SubService {
+final class GoogleVertexAIBatchPrediction: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI Batch Prediction"
     let dashboardName = "Vertex AI Batch Prediction"
 }
 
-class GoogleVertexAIDataLabeling: GoogleCloudPlatform, SubService {
+final class GoogleVertexAIDataLabeling: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI Data Labeling"
     let dashboardName = "Vertex AI Data Labeling"
 }
 
-class GoogleVertexAIExplainableAI: GoogleCloudPlatform, SubService {
+final class GoogleVertexAIExplainableAI: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI Explainable AI"
     let dashboardName = "Vertex AI Explainable AI"
 }
 
-class GoogleVertexAIFeatureStore: GoogleCloudPlatform, SubService {
+final class GoogleVertexAIFeatureStore: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI Feature Store"
     let dashboardName = "Vertex AI Feature Store"
 }
 
-class GoogleVertexAIMatchingEngine: GoogleCloudPlatform, SubService {
+final class GoogleVertexAIMatchingEngine: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI Matching Engine"
     let dashboardName = "Vertex AI Matching Engine"
 }
 
-class GoogleVertexAIMLMetadata: GoogleCloudPlatform, SubService {
+final class GoogleVertexAIMLMetadata: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI ML Metadata"
     let dashboardName = "Vertex AI ML Metadata"
 }
 
-class GoogleVertexAIModelMonitoring: GoogleCloudPlatform, SubService {
+final class GoogleVertexAIModelMonitoring: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI Model Monitoring"
     let dashboardName = "Vertex AI Model Monitoring"
 }
 
-class GoogleVertexAIModelRegistry: GoogleCloudPlatform, SubService {
+final class GoogleVertexAIModelRegistry: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI Model Registry"
     let dashboardName = "Vertex AI Model Registry"
 }
 
-class GoogleVertexAIOnlinePrediction: GoogleCloudPlatform, SubService {
+final class GoogleVertexAIOnlinePrediction: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI Online Prediction"
     let dashboardName = "Vertex AI Online Prediction"
 }
 
-class GoogleVertexAIPipelines: GoogleCloudPlatform, SubService {
+final class GoogleVertexAIPipelines: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI Pipelines"
     let dashboardName = "Vertex AI Pipelines"
 }
 
-class GoogleVertexAISearch: GoogleCloudPlatform, SubService {
+final class GoogleVertexAISearch: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI Search"
     let dashboardName = "Vertex AI Search"
 }
 
-class GoogleVertexAITensorBoard: GoogleCloudPlatform, SubService {
+final class GoogleVertexAITensorBoard: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI TensorBoard"
     let dashboardName = "Vertex AI TensorBoard"
 }
 
-class GoogleVertexAITraining: GoogleCloudPlatform, SubService {
+final class GoogleVertexAITraining: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI Training"
     let dashboardName = "Vertex AI Training"
 }
 
-class GoogleVertexAIVizier: GoogleCloudPlatform, SubService {
+final class GoogleVertexAIVizier: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI Vizier"
     let dashboardName = "Vertex AI Vizier"
 }
 
-class GoogleVertexAIWorkbenchUserManagedNotebooks: GoogleCloudPlatform, SubService {
+final class GoogleVertexAIWorkbenchUserManagedNotebooks: GoogleCloudPlatform, SubService {
     let name = "Google Vertex AI Workbench User Managed Notebooks"
     let dashboardName = "Vertex AI Workbench User Managed Notebooks"
 }
 
-class GoogleVertexGeminiAPI: GoogleCloudPlatform, SubService {
+final class GoogleVertexGeminiAPI: GoogleCloudPlatform, SubService {
     let name = "Google Vertex Gemini API"
     let dashboardName = "Vertex Gemini API"
 }
 
-class GoogleVertexImagenAPI: GoogleCloudPlatform, SubService {
+final class GoogleVertexImagenAPI: GoogleCloudPlatform, SubService {
     let name = "Google Vertex Imagen API"
     let dashboardName = "Vertex Imagen API"
 }
 
-class GoogleVideoIntelligenceAPI: GoogleCloudPlatform, SubService {
+final class GoogleVideoIntelligenceAPI: GoogleCloudPlatform, SubService {
     let name = "Google Video Intelligence API"
     let dashboardName = "Video Intelligence API"
 }
 
-class GoogleVirtualPrivateCloudVPC: GoogleCloudPlatform, SubService {
+final class GoogleVirtualPrivateCloudVPC: GoogleCloudPlatform, SubService {
     let name = "Google Virtual Private Cloud (VPC)"
     let dashboardName = "Virtual Private Cloud (VPC)"
 }
 
-class GoogleVMWareEngine: GoogleCloudPlatform, SubService {
+final class GoogleVMWareEngine: GoogleCloudPlatform, SubService {
     let name = "Google VMWare engine"
     let dashboardName = "VMWare engine"
 }
 
-class GoogleVPCServiceControls: GoogleCloudPlatform, SubService {
+final class GoogleVPCServiceControls: GoogleCloudPlatform, SubService {
     let name = "Google VPC Service Controls"
     let dashboardName = "VPC Service Controls"
 }
 
-class GoogleWebRisk: GoogleCloudPlatform, SubService {
+final class GoogleWebRisk: GoogleCloudPlatform, SubService {
     let name = "Google Web Risk"
     let dashboardName = "Web Risk"
 }

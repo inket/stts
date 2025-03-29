@@ -3,7 +3,7 @@
 
 import Foundation
 
-class SalesforceB2CCommerceCloudAll: SalesforceB2CCommerceCloud, ServiceCategory {
+final class SalesforceB2CCommerceCloudAll: SalesforceB2CCommerceCloud, ServiceCategory {
     let categoryName = "Salesforce B2C Commerce Cloud"
     let subServiceSuperclass: AnyObject.Type = BaseSalesforceB2CCommerceCloud.self
 
@@ -12,25 +12,25 @@ class SalesforceB2CCommerceCloudAll: SalesforceB2CCommerceCloud, ServiceCategory
     let location = "*"
 }
 
-class SalesforceB2CCommerceCloudAPAC: SalesforceB2CCommerceCloud, SubService {
+final class SalesforceB2CCommerceCloudAPAC: SalesforceB2CCommerceCloud, SubService {
     let name = "Salesforce B2C Commerce Cloud (APAC)"
     let key = "B2C_Commerce_Cloud"
     let location = "APAC"
 }
 
-class SalesforceB2CCommerceCloudEMEA: SalesforceB2CCommerceCloud, SubService {
+final class SalesforceB2CCommerceCloudEMEA: SalesforceB2CCommerceCloud, SubService {
     let name = "Salesforce B2C Commerce Cloud (EMEA)"
     let key = "B2C_Commerce_Cloud"
     let location = "EMEA"
 }
 
-class SalesforceB2CCommerceCloudNA: SalesforceB2CCommerceCloud, SubService {
+final class SalesforceB2CCommerceCloudNA: SalesforceB2CCommerceCloud, SubService {
     let name = "Salesforce B2C Commerce Cloud (NA)"
     let key = "B2C_Commerce_Cloud"
     let location = "NA"
 }
 
-class SalesforceExperienceCloudAll: SalesforceExperienceCloud, ServiceCategory {
+final class SalesforceExperienceCloudAll: SalesforceExperienceCloud, ServiceCategory {
     let categoryName = "Salesforce Experience Cloud"
     let subServiceSuperclass: AnyObject.Type = BaseSalesforceExperienceCloud.self
 
@@ -39,25 +39,25 @@ class SalesforceExperienceCloudAll: SalesforceExperienceCloud, ServiceCategory {
     let location = "*"
 }
 
-class SalesforceExperienceCloudAPAC: SalesforceExperienceCloud, SubService {
+final class SalesforceExperienceCloudAPAC: SalesforceExperienceCloud, SubService {
     let name = "Salesforce Experience Cloud (APAC)"
     let key = "Community_Cloud"
     let location = "APAC"
 }
 
-class SalesforceExperienceCloudEMEA: SalesforceExperienceCloud, SubService {
+final class SalesforceExperienceCloudEMEA: SalesforceExperienceCloud, SubService {
     let name = "Salesforce Experience Cloud (EMEA)"
     let key = "Community_Cloud"
     let location = "EMEA"
 }
 
-class SalesforceExperienceCloudNA: SalesforceExperienceCloud, SubService {
+final class SalesforceExperienceCloudNA: SalesforceExperienceCloud, SubService {
     let name = "Salesforce Experience Cloud (NA)"
     let key = "Community_Cloud"
     let location = "NA"
 }
 
-class DatoramaAll: Datorama, ServiceCategory {
+final class DatoramaAll: Datorama, ServiceCategory {
     let categoryName = "Datorama"
     let subServiceSuperclass: AnyObject.Type = BaseDatorama.self
 
@@ -66,19 +66,19 @@ class DatoramaAll: Datorama, ServiceCategory {
     let location = "*"
 }
 
-class DatoramaEMEA: Datorama, SubService {
+final class DatoramaEMEA: Datorama, SubService {
     let name = "Datorama (EMEA)"
     let key = "Datorama"
     let location = "EMEA"
 }
 
-class DatoramaNA: Datorama, SubService {
+final class DatoramaNA: Datorama, SubService {
     let name = "Datorama (NA)"
     let key = "Datorama"
     let location = "NA"
 }
 
-class MCAccountEngagementAll: MCAccountEngagement, ServiceCategory {
+final class MCAccountEngagementAll: MCAccountEngagement, ServiceCategory {
     let categoryName = "MCAccountEngagement"
     let subServiceSuperclass: AnyObject.Type = BaseMCAccountEngagement.self
 
@@ -87,13 +87,13 @@ class MCAccountEngagementAll: MCAccountEngagement, ServiceCategory {
     let location = "*"
 }
 
-class MCAccountEngagementNA: MCAccountEngagement, SubService {
+final class MCAccountEngagementNA: MCAccountEngagement, SubService {
     let name = "MCAccountEngagement (NA)"
     let key = "MCAccountEngagement"
     let location = "NA"
 }
 
-class MCPersonalizationAll: MCPersonalization, ServiceCategory {
+final class MCPersonalizationAll: MCPersonalization, ServiceCategory {
     let categoryName = "MCPersonalization"
     let subServiceSuperclass: AnyObject.Type = BaseMCPersonalization.self
 
@@ -102,25 +102,25 @@ class MCPersonalizationAll: MCPersonalization, ServiceCategory {
     let location = "*"
 }
 
-class MCPersonalizationAPAC: MCPersonalization, SubService {
+final class MCPersonalizationAPAC: MCPersonalization, SubService {
     let name = "MCPersonalization (APAC)"
     let key = "MCPersonalization"
     let location = "APAC"
 }
 
-class MCPersonalizationEMEA: MCPersonalization, SubService {
+final class MCPersonalizationEMEA: MCPersonalization, SubService {
     let name = "MCPersonalization (EMEA)"
     let key = "MCPersonalization"
     let location = "EMEA"
 }
 
-class MCPersonalizationNA: MCPersonalization, SubService {
+final class MCPersonalizationNA: MCPersonalization, SubService {
     let name = "MCPersonalization (NA)"
     let key = "MCPersonalization"
     let location = "NA"
 }
 
-class SalesforceMarketingCloudAll: SalesforceMarketingCloud, ServiceCategory {
+final class SalesforceMarketingCloudAll: SalesforceMarketingCloud, ServiceCategory {
     let categoryName = "Salesforce Marketing Cloud"
     let subServiceSuperclass: AnyObject.Type = BaseSalesforceMarketingCloud.self
 
@@ -129,25 +129,25 @@ class SalesforceMarketingCloudAll: SalesforceMarketingCloud, ServiceCategory {
     let location = "*"
 }
 
-class SalesforceMarketingCloudAPAC: SalesforceMarketingCloud, SubService {
+final class SalesforceMarketingCloudAPAC: SalesforceMarketingCloud, SubService {
     let name = "Salesforce Marketing Cloud (APAC)"
     let key = "Marketing_Cloud"
     let location = "APAC"
 }
 
-class SalesforceMarketingCloudEMEA: SalesforceMarketingCloud, SubService {
+final class SalesforceMarketingCloudEMEA: SalesforceMarketingCloud, SubService {
     let name = "Salesforce Marketing Cloud (EMEA)"
     let key = "Marketing_Cloud"
     let location = "EMEA"
 }
 
-class SalesforceMarketingCloudNA: SalesforceMarketingCloud, SubService {
+final class SalesforceMarketingCloudNA: SalesforceMarketingCloud, SubService {
     let name = "Salesforce Marketing Cloud (NA)"
     let key = "Marketing_Cloud"
     let location = "NA"
 }
 
-class MulesoftAll: Mulesoft, ServiceCategory {
+final class MulesoftAll: Mulesoft, ServiceCategory {
     let categoryName = "Mulesoft"
     let subServiceSuperclass: AnyObject.Type = BaseMulesoft.self
 
@@ -156,25 +156,25 @@ class MulesoftAll: Mulesoft, ServiceCategory {
     let location = "*"
 }
 
-class MulesoftAPAC: Mulesoft, SubService {
+final class MulesoftAPAC: Mulesoft, SubService {
     let name = "Mulesoft (APAC)"
     let key = "Mulesoft"
     let location = "APAC"
 }
 
-class MulesoftEMEA: Mulesoft, SubService {
+final class MulesoftEMEA: Mulesoft, SubService {
     let name = "Mulesoft (EMEA)"
     let key = "Mulesoft"
     let location = "EMEA"
 }
 
-class MulesoftNA: Mulesoft, SubService {
+final class MulesoftNA: Mulesoft, SubService {
     let name = "Mulesoft (NA)"
     let key = "Mulesoft"
     let location = "NA"
 }
 
-class SalesforceServicesAll: SalesforceServices, ServiceCategory {
+final class SalesforceServicesAll: SalesforceServices, ServiceCategory {
     let categoryName = "Salesforce Services"
     let subServiceSuperclass: AnyObject.Type = BaseSalesforceServices.self
 
@@ -183,25 +183,25 @@ class SalesforceServicesAll: SalesforceServices, ServiceCategory {
     let location = "*"
 }
 
-class SalesforceServicesAPAC: SalesforceServices, SubService {
+final class SalesforceServicesAPAC: SalesforceServices, SubService {
     let name = "Salesforce Services (APAC)"
     let key = "Salesforce_Services"
     let location = "APAC"
 }
 
-class SalesforceServicesEMEA: SalesforceServices, SubService {
+final class SalesforceServicesEMEA: SalesforceServices, SubService {
     let name = "Salesforce Services (EMEA)"
     let key = "Salesforce_Services"
     let location = "EMEA"
 }
 
-class SalesforceServicesNA: SalesforceServices, SubService {
+final class SalesforceServicesNA: SalesforceServices, SubService {
     let name = "Salesforce Services (NA)"
     let key = "Salesforce_Services"
     let location = "NA"
 }
 
-class TableauAll: Tableau, ServiceCategory {
+final class TableauAll: Tableau, ServiceCategory {
     let categoryName = "Tableau"
     let subServiceSuperclass: AnyObject.Type = BaseTableau.self
 
@@ -210,19 +210,19 @@ class TableauAll: Tableau, ServiceCategory {
     let location = "*"
 }
 
-class TableauAPAC: Tableau, SubService {
+final class TableauAPAC: Tableau, SubService {
     let name = "Tableau (APAC)"
     let key = "Tableau"
     let location = "APAC"
 }
 
-class TableauEMEA: Tableau, SubService {
+final class TableauEMEA: Tableau, SubService {
     let name = "Tableau (EMEA)"
     let key = "Tableau"
     let location = "EMEA"
 }
 
-class TableauNA: Tableau, SubService {
+final class TableauNA: Tableau, SubService {
     let name = "Tableau (NA)"
     let key = "Tableau"
     let location = "NA"

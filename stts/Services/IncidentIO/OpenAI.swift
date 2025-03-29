@@ -5,6 +5,6 @@
 
 import Foundation
 
-class OpenAI: IncidentIOService {
+final class OpenAI: IncidentIOService {
     let url = URL(string: "https://status.openai.com")!
 }

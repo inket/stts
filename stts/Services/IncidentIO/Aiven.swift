@@ -5,6 +5,6 @@
 
 import Foundation
 
-class Aiven: IncidentIOService {
+final class Aiven: IncidentIOService {
     let url = URL(string: "https://status.aiven.io")!
 }

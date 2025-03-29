@@ -5,6 +5,6 @@
 
 import Foundation
 
-class Miro: IncidentIOService {
+final class Miro: IncidentIOService {
     let url = URL(string: "https://status.miro.com")!
 }

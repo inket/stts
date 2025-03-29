@@ -5,7 +5,7 @@
 
 import Foundation
 
-class PlausibleAnalytics: BetterUptimeService {
+final class PlausibleAnalytics: BetterUptimeService {
     let name = "Plausible Analytics"
     let url = URL(string: "https://status.plausible.io")!
 }

@@ -5,7 +5,7 @@
 
 import Foundation
 
-class PayPalProductProduction: PayPal {
+final class PayPalProductProduction: PayPal {
     let name = "PayPal Product"
     let component = PayPalComponent.product(.production)
 }

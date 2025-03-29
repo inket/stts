@@ -5,6 +5,6 @@
 
 import Foundation
 
-class Unraid: BetterStackService {
+final class Unraid: BetterStackService {
     let url = URL(string: "https://status.unraid.net")!
 }

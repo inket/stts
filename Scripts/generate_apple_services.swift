@@ -55,7 +55,7 @@ struct AppleService {
         switch type {
         case .category:
             return """
-            class \(className)All: \(className), ServiceCategory {
+            final class \(className)All: \(className), ServiceCategory {
                 let categoryName = "\(name)"
                 let subServiceSuperclass: AnyObject.Type = Base\(className).self
 
@@ -65,7 +65,7 @@ struct AppleService {
             """
         case .subService:
             return """
-            class \(className): \(parentName), SubService {
+            final class \(className): \(parentName), SubService {
                 let name = "\(name)"
                 let serviceName = "\(serviceName)"
             }

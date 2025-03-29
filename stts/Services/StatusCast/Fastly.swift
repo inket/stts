@@ -5,7 +5,7 @@
 
 import Foundation
 
-class Fastly: StatusCastService {
+final class Fastly: StatusCastService {
     let hasCurrentStatus = false
     let url = URL(string: "https://www.fastlystatus.com")!
 }

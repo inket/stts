@@ -5,6 +5,6 @@
 
 import Foundation
 
-class Primcloud: InstatusService {
+final class Primcloud: InstatusService {
     let url = URL(string: "https://primcloud.instatus.com")!
 }

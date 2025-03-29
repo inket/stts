@@ -5,7 +5,7 @@
 
 import Foundation
 
-class Emailable: StatusPageService {
+final class Emailable: StatusPageService {
     let url = URL(string: "https://status.emailable.com")!
     let statusPageID = "ntzxwsjy15bq"
 }

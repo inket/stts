@@ -5,6 +5,6 @@
 
 import Foundation
 
-class Codacy: LambStatusService {
+final class Codacy: LambStatusService {
     let url = URL(string: "https://status.codacy.com")!
 }

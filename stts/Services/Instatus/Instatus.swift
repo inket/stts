@@ -5,6 +5,6 @@
 
 import Foundation
 
-class Instatus: InstatusService {
+final class Instatus: InstatusService {
     let url = URL(string: "https://instat.us")!
 }

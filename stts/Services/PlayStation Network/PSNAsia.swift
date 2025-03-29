@@ -5,7 +5,7 @@
 
 import Foundation
 
-class PSNAsia: PlayStationNetwork {
+final class PSNAsia: PlayStationNetwork {
     let region: PlayStationNetworkRegion = .sceja
     let name = "PlayStation Network (Asia)"
 }

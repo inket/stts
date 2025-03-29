@@ -104,7 +104,7 @@ struct SalesforceProductRegion {
 
         if location == .all {
             return """
-            class \(classNameWithRegion): \(className), ServiceCategory {
+            final class \(classNameWithRegion): \(className), ServiceCategory {
                 let categoryName = "\(name)"
                 let subServiceSuperclass: AnyObject.Type = Base\(className).self
 
@@ -113,7 +113,7 @@ struct SalesforceProductRegion {
             """
         } else {
             return """
-            class \(classNameWithRegion): \(className), SubService {
+            final class \(classNameWithRegion): \(className), SubService {
                 \(commonDefinitions.joined(separator: "\n    "))
             }
             """

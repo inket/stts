@@ -5,7 +5,7 @@
 
 import Foundation
 
-class Wasabi: StatusPageService {
+final class Wasabi: StatusPageService {
     let url = URL(string: "https://status.wasabi.com")!
     let statusPageID = "2r1tdgqr8ld5"
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ConfluentCloud: StatusPageService {
+final class ConfluentCloud: StatusPageService {
     let name = "Confluent Cloud"
     let url = URL(string: "https://status.confluent.cloud")!
     let statusPageID = "3yz1tdpdnjl3"

@@ -5,7 +5,7 @@
 
 import Foundation
 
-class StatusCast: StatusCastService {
+final class StatusCast: StatusCastService {
     let hasCurrentStatus = false
     let url = URL(string: "https://status.statuscast.com")!
 }

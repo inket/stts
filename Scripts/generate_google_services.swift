@@ -65,7 +65,7 @@ struct GCPService: Service {
 
     var output: String {
         return """
-        class \(className): GoogleCloudPlatform, SubService {
+        final class \(className): GoogleCloudPlatform, SubService {
             let name = "\(serviceName)"
             let dashboardName = "\(dashboardName)"
         }
@@ -86,7 +86,7 @@ struct FirebaseService: Service {
 
     var output: String {
         return """
-        class \(className): FirebaseService, SubService {
+        final class \(className): FirebaseService, SubService {
             let name = "\(serviceName)"
         }
         """

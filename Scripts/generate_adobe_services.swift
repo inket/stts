@@ -83,7 +83,7 @@ struct AdobeService {
         switch type {
         case .category:
             return """
-            class \(className)All: \(className), ServiceCategory {
+            final class \(className)All: \(className), ServiceCategory {
                 let categoryName = "\(name)"
                 let subServiceSuperclass: AnyObject.Type = Base\(className).self
 
@@ -93,14 +93,14 @@ struct AdobeService {
             """
         case .service:
             return """
-            class \(className): \(parentName) {
+            final class \(className): \(parentName) {
                 let name = "\(name)"
                 let id = "\(id)"
             }
             """
         case .subService:
             return """
-            class \(className): \(parentName), SubService {
+            final class \(className): \(parentName), SubService {
                 let name = "\(name)"
                 let id = "\(id)"
             }

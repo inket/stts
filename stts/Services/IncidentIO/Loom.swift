@@ -5,6 +5,6 @@
 
 import Foundation
 
-class Loom: IncidentIOService {
+final class Loom: IncidentIOService {
     let url = URL(string: "https://www.loomstatus.com")!
 }

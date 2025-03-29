@@ -5,7 +5,7 @@
 
 import Foundation
 
-class PlayFab: StatusPageService {
+final class PlayFab: StatusPageService {
     let url = URL(string: "https://status.playfab.com")!
     let statusPageID = "hndmlgmdcpdk"
 }

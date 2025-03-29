@@ -3,37 +3,37 @@
 
 import Foundation
 
-class AzureAmericas: Azure, SubService {
+final class AzureAmericas: Azure, SubService {
     let name = "Azure Americas"
     let zoneIdentifier = "americas"
 }
 
-class AzureEurope: Azure, SubService {
+final class AzureEurope: Azure, SubService {
     let name = "Azure Europe"
     let zoneIdentifier = "europe"
 }
 
-class AzureAsiaPacific: Azure, SubService {
+final class AzureAsiaPacific: Azure, SubService {
     let name = "Azure Asia Pacific"
     let zoneIdentifier = "asia"
 }
 
-class AzureMiddleEastAndAfrica: Azure, SubService {
+final class AzureMiddleEastAndAfrica: Azure, SubService {
     let name = "Azure Middle East and Africa"
     let zoneIdentifier = "middle-east-africa"
 }
 
-class AzureGovernment: Azure, SubService {
+final class AzureGovernment: Azure, SubService {
     let name = "Azure Government"
     let zoneIdentifier = "azure-government"
 }
 
-class AzureChina: Azure, SubService {
+final class AzureChina: Azure, SubService {
     let name = "Azure China"
     let zoneIdentifier = "azure-china"
 }
 
-class AzureJio: Azure, SubService {
+final class AzureJio: Azure, SubService {
     let name = "Azure Jio"
     let zoneIdentifier = "jio"
 }

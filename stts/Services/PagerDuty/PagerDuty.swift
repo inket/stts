@@ -5,6 +5,6 @@
 
 import Foundation
 
-class PagerDuty: PagerDutyService {
+final class PagerDuty: PagerDutyService {
     let url = URL(string: "https://status.pagerduty.com")!
 }

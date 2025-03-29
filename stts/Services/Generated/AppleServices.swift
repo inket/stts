@@ -3,7 +3,7 @@
 
 import Foundation
 
-class AppleAll: Apple, ServiceCategory {
+final class AppleAll: Apple, ServiceCategory {
     let categoryName = "Apple"
     let subServiceSuperclass: AnyObject.Type = BaseApple.self
 
@@ -11,402 +11,402 @@ class AppleAll: Apple, ServiceCategory {
     let serviceName = "*"
 }
 
-class AppleAppStore: Apple, SubService {
+final class AppleAppStore: Apple, SubService {
     let name = "Apple App Store"
     let serviceName = "App Store"
 }
 
-class AppleAccount: Apple, SubService {
+final class AppleAccount: Apple, SubService {
     let name = "Apple Account"
     let serviceName = "Apple Account"
 }
 
-class AppleAccountCard: Apple, SubService {
+final class AppleAccountCard: Apple, SubService {
     let name = "Apple Account Card"
     let serviceName = "Apple Account Card"
 }
 
-class AppleArcade: Apple, SubService {
+final class AppleArcade: Apple, SubService {
     let name = "Apple Arcade"
     let serviceName = "Apple Arcade"
 }
 
-class AppleBooks: Apple, SubService {
+final class AppleBooks: Apple, SubService {
     let name = "Apple Books"
     let serviceName = "Apple Books"
 }
 
-class AppleBusinessEssentials: Apple, SubService {
+final class AppleBusinessEssentials: Apple, SubService {
     let name = "Apple Business Essentials"
     let serviceName = "Apple Business Essentials"
 }
 
-class AppleBusinessManager: Apple, SubService {
+final class AppleBusinessManager: Apple, SubService {
     let name = "Apple Business Manager"
     let serviceName = "Apple Business Manager"
 }
 
-class AppleCard: Apple, SubService {
+final class AppleCard: Apple, SubService {
     let name = "Apple Card"
     let serviceName = "Apple Card"
 }
 
-class AppleCash: Apple, SubService {
+final class AppleCash: Apple, SubService {
     let name = "Apple Cash"
     let serviceName = "Apple Cash"
 }
 
-class AppleFitness: Apple, SubService {
+final class AppleFitness: Apple, SubService {
     let name = "Apple Fitness+"
     let serviceName = "Apple Fitness+"
 }
 
-class AppleInvites: Apple, SubService {
+final class AppleInvites: Apple, SubService {
     let name = "Apple Invites"
     let serviceName = "Apple Invites"
 }
 
-class AppleMessagesForBusiness: Apple, SubService {
+final class AppleMessagesForBusiness: Apple, SubService {
     let name = "Apple Messages for Business"
     let serviceName = "Apple Messages for Business"
 }
 
-class AppleMusic: Apple, SubService {
+final class AppleMusic: Apple, SubService {
     let name = "Apple Music"
     let serviceName = "Apple Music"
 }
 
-class AppleMusicClassical: Apple, SubService {
+final class AppleMusicClassical: Apple, SubService {
     let name = "Apple Music Classical"
     let serviceName = "Apple Music Classical"
 }
 
-class AppleMusicRadio: Apple, SubService {
+final class AppleMusicRadio: Apple, SubService {
     let name = "Apple Music radio"
     let serviceName = "Apple Music radio"
 }
 
-class AppleMusicSubscriptions: Apple, SubService {
+final class AppleMusicSubscriptions: Apple, SubService {
     let name = "Apple Music Subscriptions"
     let serviceName = "Apple Music Subscriptions"
 }
 
-class AppleOnlineStore: Apple, SubService {
+final class AppleOnlineStore: Apple, SubService {
     let name = "Apple Online Store"
     let serviceName = "Apple Online Store"
 }
 
-class ApplePay: Apple, SubService {
+final class ApplePay: Apple, SubService {
     let name = "Apple Pay"
     let serviceName = "Apple Pay"
 }
 
-class AppleSchoolManager: Apple, SubService {
+final class AppleSchoolManager: Apple, SubService {
     let name = "Apple School Manager"
     let serviceName = "Apple School Manager"
 }
 
-class AppleSports: Apple, SubService {
+final class AppleSports: Apple, SubService {
     let name = "Apple Sports"
     let serviceName = "Apple Sports"
 }
 
-class AppleTVChannels: Apple, SubService {
+final class AppleTVChannels: Apple, SubService {
     let name = "Apple TV Channels"
     let serviceName = "Apple TV Channels"
 }
 
-class AppleTV: Apple, SubService {
+final class AppleTV: Apple, SubService {
     let name = "Apple TV+"
     let serviceName = "Apple TV+"
 }
 
-class AppleCareOnDevice: Apple, SubService {
+final class AppleCareOnDevice: Apple, SubService {
     let name = "AppleCare on Device"
     let serviceName = "AppleCare on Device"
 }
 
-class AppleAudiobooks: Apple, SubService {
+final class AppleAudiobooks: Apple, SubService {
     let name = "Apple Audiobooks"
     let serviceName = "Audiobooks"
 }
 
-class AppleBusinessConnect: Apple, SubService {
+final class AppleBusinessConnect: Apple, SubService {
     let name = "Apple BusinessConnect"
     let serviceName = "BusinessConnect"
 }
 
-class AppleDictation: Apple, SubService {
+final class AppleDictation: Apple, SubService {
     let name = "Apple Dictation"
     let serviceName = "Dictation"
 }
 
-class AppleFaceTime: Apple, SubService {
+final class AppleFaceTime: Apple, SubService {
     let name = "Apple FaceTime"
     let serviceName = "FaceTime"
 }
 
-class AppleFindMy: Apple, SubService {
+final class AppleFindMy: Apple, SubService {
     let name = "Apple Find My"
     let serviceName = "Find My"
 }
 
-class AppleGameCenter: Apple, SubService {
+final class AppleGameCenter: Apple, SubService {
     let name = "Apple Game Center"
     let serviceName = "Game Center"
 }
 
-class AppleGlobalServiceExchange: Apple, SubService {
+final class AppleGlobalServiceExchange: Apple, SubService {
     let name = "Apple Global Service Exchange"
     let serviceName = "Global Service Exchange"
 }
 
-class AppleHealthSharingWithProvider: Apple, SubService {
+final class AppleHealthSharingWithProvider: Apple, SubService {
     let name = "Apple Health sharing with provider"
     let serviceName = "Health sharing with provider"
 }
 
-class AppleHomeKit: Apple, SubService {
+final class AppleHomeKit: Apple, SubService {
     let name = "Apple HomeKit"
     let serviceName = "HomeKit"
 }
 
-class AppleHomeKitSecureVideo: Apple, SubService {
+final class AppleHomeKitSecureVideo: Apple, SubService {
     let name = "Apple HomeKit Secure Video"
     let serviceName = "HomeKit Secure Video"
 }
 
-class AppleICloudAccountAndSignIn: Apple, SubService {
+final class AppleICloudAccountAndSignIn: Apple, SubService {
     let name = "Apple iCloud Account & Sign In"
     let serviceName = "iCloud Account & Sign In"
 }
 
-class AppleICloudBackup: Apple, SubService {
+final class AppleICloudBackup: Apple, SubService {
     let name = "Apple iCloud Backup"
     let serviceName = "iCloud Backup"
 }
 
-class AppleICloudBookmarksAndTabs: Apple, SubService {
+final class AppleICloudBookmarksAndTabs: Apple, SubService {
     let name = "Apple iCloud Bookmarks & Tabs"
     let serviceName = "iCloud Bookmarks & Tabs"
 }
 
-class AppleICloudCalendar: Apple, SubService {
+final class AppleICloudCalendar: Apple, SubService {
     let name = "Apple iCloud Calendar"
     let serviceName = "iCloud Calendar"
 }
 
-class AppleICloudContacts: Apple, SubService {
+final class AppleICloudContacts: Apple, SubService {
     let name = "Apple iCloud Contacts"
     let serviceName = "iCloud Contacts"
 }
 
-class AppleICloudDrive: Apple, SubService {
+final class AppleICloudDrive: Apple, SubService {
     let name = "Apple iCloud Drive"
     let serviceName = "iCloud Drive"
 }
 
-class AppleICloudKeychain: Apple, SubService {
+final class AppleICloudKeychain: Apple, SubService {
     let name = "Apple iCloud Keychain"
     let serviceName = "iCloud Keychain"
 }
 
-class AppleICloudMail: Apple, SubService {
+final class AppleICloudMail: Apple, SubService {
     let name = "Apple iCloud Mail"
     let serviceName = "iCloud Mail"
 }
 
-class AppleICloudNotes: Apple, SubService {
+final class AppleICloudNotes: Apple, SubService {
     let name = "Apple iCloud Notes"
     let serviceName = "iCloud Notes"
 }
 
-class AppleICloudPrivateRelay: Apple, SubService {
+final class AppleICloudPrivateRelay: Apple, SubService {
     let name = "Apple iCloud Private Relay"
     let serviceName = "iCloud Private Relay"
 }
 
-class AppleICloudReminders: Apple, SubService {
+final class AppleICloudReminders: Apple, SubService {
     let name = "Apple iCloud Reminders"
     let serviceName = "iCloud Reminders"
 }
 
-class AppleICloudStorageUpgrades: Apple, SubService {
+final class AppleICloudStorageUpgrades: Apple, SubService {
     let name = "Apple iCloud Storage Upgrades"
     let serviceName = "iCloud Storage Upgrades"
 }
 
-class AppleICloudWebAppsICloudcom: Apple, SubService {
+final class AppleICloudWebAppsICloudcom: Apple, SubService {
     let name = "Apple iCloud Web Apps (iCloud.com)"
     let serviceName = "iCloud Web Apps (iCloud.com)"
 }
 
-class AppleIMessage: Apple, SubService {
+final class AppleIMessage: Apple, SubService {
     let name = "Apple iMessage"
     let serviceName = "iMessage"
 }
 
-class AppleIOSDeviceActivation: Apple, SubService {
+final class AppleIOSDeviceActivation: Apple, SubService {
     let name = "Apple iOS Device Activation"
     let serviceName = "iOS Device Activation"
 }
 
-class AppleITunesMatch: Apple, SubService {
+final class AppleITunesMatch: Apple, SubService {
     let name = "Apple iTunes Match"
     let serviceName = "iTunes Match"
 }
 
-class AppleITunesStore: Apple, SubService {
+final class AppleITunesStore: Apple, SubService {
     let name = "Apple iTunes Store"
     let serviceName = "iTunes Store"
 }
 
-class AppleIWorkCollaboration: Apple, SubService {
+final class AppleIWorkCollaboration: Apple, SubService {
     let name = "Apple iWork Collaboration"
     let serviceName = "iWork Collaboration"
 }
 
-class AppleIWorkForICloud: Apple, SubService {
+final class AppleIWorkForICloud: Apple, SubService {
     let name = "Apple iWork for iCloud"
     let serviceName = "iWork for iCloud"
 }
 
-class AppleMacAppStore: Apple, SubService {
+final class AppleMacAppStore: Apple, SubService {
     let name = "Apple Mac App Store"
     let serviceName = "Mac App Store"
 }
 
-class AppleMacOSSoftwareUpdate: Apple, SubService {
+final class AppleMacOSSoftwareUpdate: Apple, SubService {
     let name = "Apple macOS Software Update"
     let serviceName = "macOS Software Update"
 }
 
-class AppleMailDrop: Apple, SubService {
+final class AppleMailDrop: Apple, SubService {
     let name = "Apple Mail Drop"
     let serviceName = "Mail Drop"
 }
 
-class AppleMapsDisplay: Apple, SubService {
+final class AppleMapsDisplay: Apple, SubService {
     let name = "Apple Maps Display"
     let serviceName = "Maps Display"
 }
 
-class AppleMapsRoutingAndNavigation: Apple, SubService {
+final class AppleMapsRoutingAndNavigation: Apple, SubService {
     let name = "Apple Maps Routing & Navigation"
     let serviceName = "Maps Routing & Navigation"
 }
 
-class AppleMapsSearch: Apple, SubService {
+final class AppleMapsSearch: Apple, SubService {
     let name = "Apple Maps Search"
     let serviceName = "Maps Search"
 }
 
-class AppleMapsTraffic: Apple, SubService {
+final class AppleMapsTraffic: Apple, SubService {
     let name = "Apple Maps Traffic"
     let serviceName = "Maps Traffic"
 }
 
-class AppleMLSSeasonPass: Apple, SubService {
+final class AppleMLSSeasonPass: Apple, SubService {
     let name = "Apple MLS Season Pass"
     let serviceName = "MLS Season Pass"
 }
 
-class AppleNews: Apple, SubService {
+final class AppleNews: Apple, SubService {
     let name = "Apple News"
     let serviceName = "News"
 }
 
-class ApplePhotos: Apple, SubService {
+final class ApplePhotos: Apple, SubService {
     let name = "Apple Photos"
     let serviceName = "Photos"
 }
 
-class ApplePodcasts: Apple, SubService {
+final class ApplePodcasts: Apple, SubService {
     let name = "Apple Podcasts"
     let serviceName = "Podcasts"
 }
 
-class ApplePrivateCloudCompute: Apple, SubService {
+final class ApplePrivateCloudCompute: Apple, SubService {
     let name = "Apple Private Cloud Compute"
     let serviceName = "Private Cloud Compute"
 }
 
-class AppleRadio: Apple, SubService {
+final class AppleRadio: Apple, SubService {
     let name = "Apple Radio"
     let serviceName = "Radio"
 }
 
-class AppleSchooltime: Apple, SubService {
+final class AppleSchooltime: Apple, SubService {
     let name = "Apple Schooltime"
     let serviceName = "Schooltime"
 }
 
-class AppleSchoolwork: Apple, SubService {
+final class AppleSchoolwork: Apple, SubService {
     let name = "Apple Schoolwork"
     let serviceName = "Schoolwork"
 }
 
-class AppleScreenTime: Apple, SubService {
+final class AppleScreenTime: Apple, SubService {
     let name = "Apple Screen Time"
     let serviceName = "Screen Time"
 }
 
-class AppleSignInWithApple: Apple, SubService {
+final class AppleSignInWithApple: Apple, SubService {
     let name = "Apple Sign in with Apple"
     let serviceName = "Sign in with Apple"
 }
 
-class AppleSiri: Apple, SubService {
+final class AppleSiri: Apple, SubService {
     let name = "Apple Siri"
     let serviceName = "Siri"
 }
 
-class AppleSpotlightSuggestions: Apple, SubService {
+final class AppleSpotlightSuggestions: Apple, SubService {
     let name = "Apple Spotlight suggestions"
     let serviceName = "Spotlight suggestions"
 }
 
-class AppleStocks: Apple, SubService {
+final class AppleStocks: Apple, SubService {
     let name = "Apple Stocks"
     let serviceName = "Stocks"
 }
 
-class AppleSubscriptionPurchase: Apple, SubService {
+final class AppleSubscriptionPurchase: Apple, SubService {
     let name = "Apple Subscription Purchase"
     let serviceName = "Subscription Purchase"
 }
 
-class AppleTVProvider: Apple, SubService {
+final class AppleTVProvider: Apple, SubService {
     let name = "Apple TV Provider"
     let serviceName = "TV Provider"
 }
 
-class AppleVisionOSAppStore: Apple, SubService {
+final class AppleVisionOSAppStore: Apple, SubService {
     let name = "Apple visionOS App Store"
     let serviceName = "visionOS App Store"
 }
 
-class AppleVolumePurchaseProgram: Apple, SubService {
+final class AppleVolumePurchaseProgram: Apple, SubService {
     let name = "Apple Volume Purchase Program"
     let serviceName = "Volume Purchase Program"
 }
 
-class AppleWalkieTalkie: Apple, SubService {
+final class AppleWalkieTalkie: Apple, SubService {
     let name = "Apple Walkie-Talkie"
     let serviceName = "Walkie-Talkie"
 }
 
-class AppleWallet: Apple, SubService {
+final class AppleWallet: Apple, SubService {
     let name = "Apple Wallet"
     let serviceName = "Wallet"
 }
 
-class AppleWeather: Apple, SubService {
+final class AppleWeather: Apple, SubService {
     let name = "Apple Weather"
     let serviceName = "Weather"
 }
 
-class AppleDeveloperAll: AppleDeveloper, ServiceCategory {
+final class AppleDeveloperAll: AppleDeveloper, ServiceCategory {
     let categoryName = "Apple Developer"
     let subServiceSuperclass: AnyObject.Type = BaseAppleDeveloper.self
 
@@ -414,242 +414,242 @@ class AppleDeveloperAll: AppleDeveloper, ServiceCategory {
     let serviceName = "*"
 }
 
-class AppleAccountDeveloper: AppleDeveloper, SubService {
+final class AppleAccountDeveloper: AppleDeveloper, SubService {
     let name = "Apple Account (Developer)"
     let serviceName = "Account"
 }
 
-class AppleAPNS: AppleDeveloper, SubService {
+final class AppleAPNS: AppleDeveloper, SubService {
     let name = "Apple APNS"
     let serviceName = "APNS"
 }
 
-class AppleAPNSSandbox: AppleDeveloper, SubService {
+final class AppleAPNSSandbox: AppleDeveloper, SubService {
     let name = "Apple APNS Sandbox"
     let serviceName = "APNS Sandbox"
 }
 
-class AppleAppAttest: AppleDeveloper, SubService {
+final class AppleAppAttest: AppleDeveloper, SubService {
     let name = "Apple App Attest"
     let serviceName = "App Attest"
 }
 
-class AppleAppStoreAdvancedCommerceAPI: AppleDeveloper, SubService {
+final class AppleAppStoreAdvancedCommerceAPI: AppleDeveloper, SubService {
     let name = "Apple App Store - Advanced Commerce API"
     let serviceName = "App Store - Advanced Commerce API"
 }
 
-class AppleAppStoreInAppPurchases: AppleDeveloper, SubService {
+final class AppleAppStoreInAppPurchases: AppleDeveloper, SubService {
     let name = "Apple App Store - In-App Purchases"
     let serviceName = "App Store - In-App Purchases"
 }
 
-class AppleAppStoreReceiptVerification: AppleDeveloper, SubService {
+final class AppleAppStoreReceiptVerification: AppleDeveloper, SubService {
     let name = "Apple App Store - Receipt Verification"
     let serviceName = "App Store - Receipt Verification"
 }
 
-class AppleAppStoreSandbox: AppleDeveloper, SubService {
+final class AppleAppStoreSandbox: AppleDeveloper, SubService {
     let name = "Apple App Store - Sandbox"
     let serviceName = "App Store - Sandbox"
 }
 
-class AppleAppStoreServerAPIs: AppleDeveloper, SubService {
+final class AppleAppStoreServerAPIs: AppleDeveloper, SubService {
     let name = "Apple App Store - Server APIs"
     let serviceName = "App Store - Server APIs"
 }
 
-class AppleAppStoreServerNotifications: AppleDeveloper, SubService {
+final class AppleAppStoreServerNotifications: AppleDeveloper, SubService {
     let name = "Apple App Store - Server Notifications"
     let serviceName = "App Store - Server Notifications"
 }
 
-class AppleAppStoreAutomaticAppUpdates: AppleDeveloper, SubService {
+final class AppleAppStoreAutomaticAppUpdates: AppleDeveloper, SubService {
     let name = "Apple App Store Automatic App Updates"
     let serviceName = "App Store Automatic App Updates"
 }
 
-class AppleAppStoreConnect: AppleDeveloper, SubService {
+final class AppleAppStoreConnect: AppleDeveloper, SubService {
     let name = "Apple App Store Connect"
     let serviceName = "App Store Connect"
 }
 
-class AppleAppStoreConnectAnalytics: AppleDeveloper, SubService {
+final class AppleAppStoreConnectAnalytics: AppleDeveloper, SubService {
     let name = "Apple App Store Connect - Analytics"
     let serviceName = "App Store Connect - Analytics"
 }
 
-class AppleAppStoreConnectAppProcessing: AppleDeveloper, SubService {
+final class AppleAppStoreConnectAppProcessing: AppleDeveloper, SubService {
     let name = "Apple App Store Connect - App Processing "
     let serviceName = "App Store Connect - App Processing "
 }
 
-class AppleAppStoreConnectAppUpload: AppleDeveloper, SubService {
+final class AppleAppStoreConnectAppUpload: AppleDeveloper, SubService {
     let name = "Apple App Store Connect - App Upload"
     let serviceName = "App Store Connect - App Upload"
 }
 
-class AppleAppStoreConnectSalesAndTrends: AppleDeveloper, SubService {
+final class AppleAppStoreConnectSalesAndTrends: AppleDeveloper, SubService {
     let name = "Apple App Store Connect - Sales and Trends"
     let serviceName = "App Store Connect - Sales and Trends"
 }
 
-class AppleAppStoreConnectTestFlight: AppleDeveloper, SubService {
+final class AppleAppStoreConnectTestFlight: AppleDeveloper, SubService {
     let name = "Apple App Store Connect - TestFlight"
     let serviceName = "App Store Connect - TestFlight"
 }
 
-class AppleAppStoreConnectAPI: AppleDeveloper, SubService {
+final class AppleAppStoreConnectAPI: AppleDeveloper, SubService {
     let name = "Apple App Store Connect API"
     let serviceName = "App Store Connect API"
 }
 
-class AppleDeveloperForums: AppleDeveloper, SubService {
+final class AppleDeveloperForums: AppleDeveloper, SubService {
     let name = "Apple Developer Forums"
     let serviceName = "Apple Developer Forums"
 }
 
-class AppleMapsAPI: AppleDeveloper, SubService {
+final class AppleMapsAPI: AppleDeveloper, SubService {
     let name = "Apple Maps API"
     let serviceName = "Apple Maps API"
 }
 
-class AppleMusicAPI: AppleDeveloper, SubService {
+final class AppleMusicAPI: AppleDeveloper, SubService {
     let name = "Apple Music API"
     let serviceName = "Apple Music API"
 }
 
-class AppleMusicForArtists: AppleDeveloper, SubService {
+final class AppleMusicForArtists: AppleDeveloper, SubService {
     let name = "Apple Music for Artists"
     let serviceName = "Apple Music for Artists"
 }
 
-class AppleNewsAPI: AppleDeveloper, SubService {
+final class AppleNewsAPI: AppleDeveloper, SubService {
     let name = "Apple News API"
     let serviceName = "Apple News API"
 }
 
-class ApplePayDeveloperApplePayDemo: AppleDeveloper, SubService {
+final class ApplePayDeveloperApplePayDemo: AppleDeveloper, SubService {
     let name = "Apple Pay Developer | Apple Pay Demo"
     let serviceName = "Apple Pay Developer | Apple Pay Demo"
 }
 
-class ApplePayProductionInstance: AppleDeveloper, SubService {
+final class ApplePayProductionInstance: AppleDeveloper, SubService {
     let name = "Apple Pay Production Instance"
     let serviceName = "Apple Pay Production Instance"
 }
 
-class ApplePaySandboxInstance: AppleDeveloper, SubService {
+final class ApplePaySandboxInstance: AppleDeveloper, SubService {
     let name = "Apple Pay Sandbox Instance"
     let serviceName = "Apple Pay Sandbox Instance"
 }
 
-class ApplePodcastsConnect: AppleDeveloper, SubService {
+final class ApplePodcastsConnect: AppleDeveloper, SubService {
     let name = "Apple Podcasts Connect"
     let serviceName = "Apple Podcasts Connect"
 }
 
-class AppleCertificatesIdentifiersAndProfiles: AppleDeveloper, SubService {
+final class AppleCertificatesIdentifiersAndProfiles: AppleDeveloper, SubService {
     let name = "Apple Certificates, Identifiers & Profiles"
     let serviceName = "Certificates, Identifiers & Profiles"
 }
 
-class AppleCloudKitConsole: AppleDeveloper, SubService {
+final class AppleCloudKitConsole: AppleDeveloper, SubService {
     let name = "Apple CloudKit Console"
     let serviceName = "CloudKit Console"
 }
 
-class AppleCloudKitDatabase: AppleDeveloper, SubService {
+final class AppleCloudKitDatabase: AppleDeveloper, SubService {
     let name = "Apple CloudKit Database"
     let serviceName = "CloudKit Database"
 }
 
-class AppleCodelevelSupport: AppleDeveloper, SubService {
+final class AppleCodelevelSupport: AppleDeveloper, SubService {
     let name = "Apple Code-level Support"
     let serviceName = "Code-level Support"
 }
 
-class AppleContactUs: AppleDeveloper, SubService {
+final class AppleContactUs: AppleDeveloper, SubService {
     let name = "Apple Contact Us"
     let serviceName = "Contact Us"
 }
 
-class AppleDeveloperDocumentation: AppleDeveloper, SubService {
+final class AppleDeveloperDocumentation: AppleDeveloper, SubService {
     let name = "Apple Developer Documentation"
     let serviceName = "Developer Documentation"
 }
 
-class AppleDeveloperIDNotaryService: AppleDeveloper, SubService {
+final class AppleDeveloperIDNotaryService: AppleDeveloper, SubService {
     let name = "Apple Developer ID Notary Service"
     let serviceName = "Developer ID Notary Service"
 }
 
-class AppleDeviceEnrollmentProgram: AppleDeveloper, SubService {
+final class AppleDeviceEnrollmentProgram: AppleDeveloper, SubService {
     let name = "Apple Device Enrollment Program"
     let serviceName = "Device Enrollment Program"
 }
 
-class AppleFeedbackAssistant: AppleDeveloper, SubService {
+final class AppleFeedbackAssistant: AppleDeveloper, SubService {
     let name = "Apple Feedback Assistant"
     let serviceName = "Feedback Assistant"
 }
 
-class AppleMapKitJSDashboard: AppleDeveloper, SubService {
+final class AppleMapKitJSDashboard: AppleDeveloper, SubService {
     let name = "Apple MapKit JS Dashboard"
     let serviceName = "MapKit JS Dashboard"
 }
 
-class AppleMFiPortal: AppleDeveloper, SubService {
+final class AppleMFiPortal: AppleDeveloper, SubService {
     let name = "Apple MFi Portal"
     let serviceName = "MFi Portal"
 }
 
-class AppleNewsPublisher: AppleDeveloper, SubService {
+final class AppleNewsPublisher: AppleDeveloper, SubService {
     let name = "Apple News Publisher"
     let serviceName = "News Publisher"
 }
 
-class AppleNFCAndSEPlatform: AppleDeveloper, SubService {
+final class AppleNFCAndSEPlatform: AppleDeveloper, SubService {
     let name = "Apple NFC & SE Platform"
     let serviceName = "NFC & SE Platform"
 }
 
-class AppleProgramEnrollmentAndRenewals: AppleDeveloper, SubService {
+final class AppleProgramEnrollmentAndRenewals: AppleDeveloper, SubService {
     let name = "Apple Program Enrollment and Renewals"
     let serviceName = "Program Enrollment and Renewals"
 }
 
-class AppleSKAdNetwork: AppleDeveloper, SubService {
+final class AppleSKAdNetwork: AppleDeveloper, SubService {
     let name = "Apple SKAdNetwork"
     let serviceName = "SKAdNetwork"
 }
 
-class AppleSoftwareDownloads: AppleDeveloper, SubService {
+final class AppleSoftwareDownloads: AppleDeveloper, SubService {
     let name = "Apple Software Downloads"
     let serviceName = "Software Downloads"
 }
 
-class AppleTapToPayOnIPhone: AppleDeveloper, SubService {
+final class AppleTapToPayOnIPhone: AppleDeveloper, SubService {
     let name = "Apple Tap to Pay on iPhone"
     let serviceName = "Tap to Pay on iPhone"
 }
 
-class AppleVideos: AppleDeveloper, SubService {
+final class AppleVideos: AppleDeveloper, SubService {
     let name = "Apple Videos"
     let serviceName = "Videos"
 }
 
-class AppleWeatherKit: AppleDeveloper, SubService {
+final class AppleWeatherKit: AppleDeveloper, SubService {
     let name = "Apple WeatherKit"
     let serviceName = "WeatherKit"
 }
 
-class AppleXcodeAutomaticConfiguration: AppleDeveloper, SubService {
+final class AppleXcodeAutomaticConfiguration: AppleDeveloper, SubService {
     let name = "Apple Xcode Automatic Configuration"
     let serviceName = "Xcode Automatic Configuration"
 }
 
-class AppleXcodeCloud: AppleDeveloper, SubService {
+final class AppleXcodeCloud: AppleDeveloper, SubService {
     let name = "Apple Xcode Cloud"
     let serviceName = "Xcode Cloud"
 }
