@@ -1042,7 +1042,6 @@
 				B227D30B25D5886B00951917 /* FreeAgent.swift */,
 				B2C10F3B203646A7008E1E7D /* Gandi.swift */,
 				B254642221EE9AF6003068A4 /* GitHub.swift */,
-				87DE85B45D490EF40F319860 /* HashiCorp.swift */,
 				881BD2B4F6BC008A1CE1A25B /* HelloSignHelloFax.swift */,
 				B231DD5F257B438900647312 /* HubSpot.swift */,
 				B2ABB6161F59770800DF8EC2 /* Imgix.swift */,
@@ -1279,6 +1278,7 @@
 			isa = PBXGroup;
 			children = (
 				AFB41ECF9F0F03EC8916A646 /* Aiven.swift */,
+				87DE85B45D490EF40F319860 /* HashiCorp.swift */,
 				B241B0752CC551D400D122B3 /* IntercomAU.swift */,
 				B241B0732CC551C300D122B3 /* IntercomEU.swift */,
 				B241B0712CC5518100D122B3 /* IntercomUS.swift */,
