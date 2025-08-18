@@ -5,7 +5,6 @@
 
 import Foundation
 
-final class OneSignal: StatusPageService {
+final class OneSignal: IncidentIOService {
     let url = URL(string: "https://status.onesignal.com")!
-    let statusPageID = "wd0vc05tb8gm"
 }
