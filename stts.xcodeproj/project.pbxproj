@@ -83,7 +83,6 @@
 		B210189C249E406D00F31999 /* RevenueCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B210189B249E406D00F31999 /* RevenueCat.swift */; };
 		B2107BCE254C970000284EE7 /* Linode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2107BCC254C96FF00284EE7 /* Linode.swift */; };
 		B2107BCF254C970000284EE7 /* Notion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2107BCD254C970000284EE7 /* Notion.swift */; };
-		B211F0B81E607C09008DD360 /* Rollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211F0B71E607C09008DD360 /* Rollbar.swift */; };
 		B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */; };
 		B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */; };
 		B213D1F8269AD9A7005EBDDA /* Pardot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F7269AD9A7005EBDDA /* Pardot.swift */; };
@@ -237,6 +236,7 @@
 		B299C8511DD04FD60024D2E9 /* Cloudflare.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8501DD04FD60024D2E9 /* Cloudflare.swift */; };
 		B299C8531DD0505F0024D2E9 /* Sentry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8521DD0505F0024D2E9 /* Sentry.swift */; };
 		B299C8551DD051210024D2E9 /* EngineYard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8541DD051210024D2E9 /* EngineYard.swift */; };
+		B29A44FB2E52B4C000A1DF8A /* Rollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A44FA2E52B4BD00A1DF8A /* Rollbar.swift */; };
 		B29AEFD0225D7F3900C3B8BD /* AirshipUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29AEFCF225D7F3900C3B8BD /* AirshipUS.swift */; };
 		B29D50BD24B053C600F4961B /* Basecamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D50BC24B053C600F4961B /* Basecamp.swift */; };
 		B29D50BF24B0542100F4961B /* PlatformSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D50BE24B0542100F4961B /* PlatformSH.swift */; };
@@ -457,7 +457,6 @@
 		B210189B249E406D00F31999 /* RevenueCat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueCat.swift; sourceTree = "<group>"; };
 		B2107BCC254C96FF00284EE7 /* Linode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Linode.swift; sourceTree = "<group>"; };
 		B2107BCD254C970000284EE7 /* Notion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notion.swift; sourceTree = "<group>"; };
-		B211F0B71E607C09008DD360 /* Rollbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rollbar.swift; sourceTree = "<group>"; };
 		B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableViewController.swift; sourceTree = "<group>"; };
 		B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableRowView.swift; sourceTree = "<group>"; };
 		B213D1F7269AD9A7005EBDDA /* Pardot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pardot.swift; sourceTree = "<group>"; };
@@ -617,6 +616,7 @@
 		B299C8501DD04FD60024D2E9 /* Cloudflare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloudflare.swift; sourceTree = "<group>"; };
 		B299C8521DD0505F0024D2E9 /* Sentry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sentry.swift; sourceTree = "<group>"; };
 		B299C8541DD051210024D2E9 /* EngineYard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineYard.swift; sourceTree = "<group>"; };
+		B29A44FA2E52B4BD00A1DF8A /* Rollbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rollbar.swift; sourceTree = "<group>"; };
 		B29AEFCF225D7F3900C3B8BD /* AirshipUS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirshipUS.swift; sourceTree = "<group>"; };
 		B29D50BC24B053C600F4961B /* Basecamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basecamp.swift; sourceTree = "<group>"; };
 		B29D50BE24B0542100F4961B /* PlatformSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSH.swift; sourceTree = "<group>"; };
@@ -1106,7 +1106,6 @@
 				95E87BF974F75C95D80FC426 /* Roadmunk.swift */,
 				F3859428AAF182EC79C4ED3E /* Robin.swift */,
 				B20699D1214E504E008670B0 /* Robinhood.swift */,
-				B211F0B71E607C09008DD360 /* Rollbar.swift */,
 				B299C8481DD04DCB0024D2E9 /* RubyGems.swift */,
 				B25695551E247C8C00FAE413 /* SauceLabs.swift */,
 				71284C408241E2CE20F2330D /* Scaleway.swift */,
@@ -1287,6 +1286,7 @@
 				B2FBDF612A35E1C800734667 /* Loom.swift */,
 				1CCCFA4ECD8BB402C7254FEF /* Miro.swift */,
 				B2E832EF29EF74D9000FA1BE /* OpenAI.swift */,
+				B29A44FA2E52B4BD00A1DF8A /* Rollbar.swift */,
 			);
 			path = IncidentIO;
 			sourceTree = "<group>";
@@ -1605,7 +1605,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2228B5E26C95CF5002F01F0 /* SendbirdServices.swift in Sources */,
-				B211F0B81E607C09008DD360 /* Rollbar.swift in Sources */,
 				B2493F061E2603F300556A83 /* GoogleCloudPlatform.swift in Sources */,
 				36AD8ED7235A2F9B00F2FD73 /* VictorOps.swift in Sources */,
 				B299C8491DD04DCB0024D2E9 /* RubyGems.swift in Sources */,
@@ -1656,6 +1655,7 @@
 				B2ABB6171F59770800DF8EC2 /* Imgix.swift in Sources */,
 				B213D1F8269AD9A7005EBDDA /* Pardot.swift in Sources */,
 				B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */,
+				B29A44FB2E52B4C000A1DF8A /* Rollbar.swift in Sources */,
 				B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */,
 				B271688A2291AEEE001E608C /* Asana.swift in Sources */,
 				B2FBDF622A35E1C800734667 /* Loom.swift in Sources */,
