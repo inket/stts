@@ -78,6 +78,33 @@ final class DatoramaNA: Datorama, SubService {
     let location = "NA"
 }
 
+final class HerokuAll: Heroku, ServiceCategory {
+    let categoryName = "Heroku"
+    let subServiceSuperclass: AnyObject.Type = BaseHeroku.self
+
+    let name = "Heroku (All Regions)"
+    let key = "Heroku"
+    let location = "*"
+}
+
+final class HerokuAPAC: Heroku, SubService {
+    let name = "Heroku (APAC)"
+    let key = "Heroku"
+    let location = "APAC"
+}
+
+final class HerokuEMEA: Heroku, SubService {
+    let name = "Heroku (EMEA)"
+    let key = "Heroku"
+    let location = "EMEA"
+}
+
+final class HerokuNA: Heroku, SubService {
+    let name = "Heroku (NA)"
+    let key = "Heroku"
+    let location = "NA"
+}
+
 final class MCAccountEngagementAll: MCAccountEngagement, ServiceCategory {
     let categoryName = "MCAccountEngagement"
     let subServiceSuperclass: AnyObject.Type = BaseMCAccountEngagement.self
@@ -198,6 +225,27 @@ final class SalesforceServicesEMEA: SalesforceServices, SubService {
 final class SalesforceServicesNA: SalesforceServices, SubService {
     let name = "Salesforce Services (NA)"
     let key = "Salesforce_Services"
+    let location = "NA"
+}
+
+final class SpiffAll: Spiff, ServiceCategory {
+    let categoryName = "Spiff"
+    let subServiceSuperclass: AnyObject.Type = BaseSpiff.self
+
+    let name = "Spiff (All Regions)"
+    let key = "Spiff"
+    let location = "*"
+}
+
+final class SpiffEMEA: Spiff, SubService {
+    let name = "Spiff (EMEA)"
+    let key = "Spiff"
+    let location = "EMEA"
+}
+
+final class SpiffNA: Spiff, SubService {
+    let name = "Spiff (NA)"
+    let key = "Spiff"
     let location = "NA"
 }
 

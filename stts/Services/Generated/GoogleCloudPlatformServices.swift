@@ -73,11 +73,6 @@ final class GoogleApplicationIntegration: GoogleCloudPlatform, SubService {
     let dashboardName = "Application Integration"
 }
 
-final class GoogleAppSheet: GoogleCloudPlatform, SubService {
-    let name = "Google AppSheet"
-    let dashboardName = "AppSheet"
-}
-
 final class GoogleArtifactRegistry: GoogleCloudPlatform, SubService {
     let name = "Google Artifact Registry"
     let dashboardName = "Artifact Registry"
@@ -151,16 +146,6 @@ final class GoogleBinaryAuthorization: GoogleCloudPlatform, SubService {
 final class GoogleCertificateAuthorityService: GoogleCloudPlatform, SubService {
     let name = "Google Certificate Authority Service"
     let dashboardName = "Certificate Authority Service"
-}
-
-final class GoogleChronicleSecurity: GoogleCloudPlatform, SubService {
-    let name = "Google Chronicle Security"
-    let dashboardName = "Chronicle Security"
-}
-
-final class GoogleChronicleSOAR: GoogleCloudPlatform, SubService {
-    let name = "Google Chronicle SOAR"
-    let dashboardName = "Chronicle SOAR"
 }
 
 final class GoogleCloudArmor: GoogleCloudPlatform, SubService {
@@ -383,6 +368,11 @@ final class GoogleDatastream: GoogleCloudPlatform, SubService {
     let dashboardName = "Datastream"
 }
 
+final class GoogleDeveloperConnect: GoogleCloudPlatform, SubService {
+    let name = "Google Developer Connect"
+    let dashboardName = "Developer Connect"
+}
+
 final class GoogleDialogflowCX: GoogleCloudPlatform, SubService {
     let name = "Google Dialogflow CX"
     let dashboardName = "Dialogflow CX"
@@ -398,24 +388,9 @@ final class GoogleDocumentAI: GoogleCloudPlatform, SubService {
     let dashboardName = "Document AI"
 }
 
-final class GoogleDocumentAIWarehouse: GoogleCloudPlatform, SubService {
-    let name = "Google Document AI Warehouse"
-    let dashboardName = "Document AI Warehouse"
-}
-
 final class GoogleEventarc: GoogleCloudPlatform, SubService {
     let name = "Google Eventarc"
     let dashboardName = "Eventarc"
-}
-
-final class GoogleFirebaseAuthentication: GoogleCloudPlatform, SubService {
-    let name = "Google Firebase Authentication"
-    let dashboardName = "Firebase Authentication"
-}
-
-final class GoogleFirebaseTestLab: GoogleCloudPlatform, SubService {
-    let name = "Google Firebase Test Lab"
-    let dashboardName = "Firebase Test Lab"
 }
 
 final class GoogleGKEFleetManagement: GoogleCloudPlatform, SubService {
@@ -588,9 +563,9 @@ final class GoogleKeyAccessJustifications: GoogleCloudPlatform, SubService {
     let dashboardName = "Key Access Justifications"
 }
 
-final class GoogleLendingDocAI: GoogleCloudPlatform, SubService {
-    let name = "Google Lending DocAI"
-    let dashboardName = "Lending DocAI"
+final class GoogleLookerGoogleCloudCore: GoogleCloudPlatform, SubService {
+    let name = "Google Looker (Google Cloud core)"
+    let dashboardName = "Looker (Google Cloud core)"
 }
 
 final class GoogleLookerStudio: GoogleCloudPlatform, SubService {
@@ -606,31 +581,6 @@ final class GoogleManagedServiceForApacheKafka: GoogleCloudPlatform, SubService 
 final class GoogleManagedServiceForMicrosoftActiveDirectoryAD: GoogleCloudPlatform, SubService {
     let name = "Google Managed Service for Microsoft Active Directory (AD)"
     let dashboardName = "Managed Service for Microsoft Active Directory (AD)"
-}
-
-final class GoogleMandiantAttackSurfaceManagement: GoogleCloudPlatform, SubService {
-    let name = "Google Mandiant Attack Surface Management"
-    let dashboardName = "Mandiant Attack Surface Management"
-}
-
-final class GoogleMandiantHuntForChronicle: GoogleCloudPlatform, SubService {
-    let name = "Google Mandiant Hunt for Chronicle"
-    let dashboardName = "Mandiant Hunt for Chronicle"
-}
-
-final class GoogleMandiantManagedDefense: GoogleCloudPlatform, SubService {
-    let name = "Google Mandiant Managed Defense"
-    let dashboardName = "Mandiant Managed Defense"
-}
-
-final class GoogleMandiantSecurityValidation: GoogleCloudPlatform, SubService {
-    let name = "Google Mandiant Security Validation"
-    let dashboardName = "Mandiant Security Validation"
-}
-
-final class GoogleMandiantThreatIntelligence: GoogleCloudPlatform, SubService {
-    let name = "Google Mandiant Threat Intelligence"
-    let dashboardName = "Mandiant Threat Intelligence"
 }
 
 final class GoogleMediaCDN: GoogleCloudPlatform, SubService {
@@ -653,6 +603,11 @@ final class GoogleMemorystoreForRedisCluster: GoogleCloudPlatform, SubService {
     let dashboardName = "Memorystore for Redis Cluster"
 }
 
+final class GoogleMemorystoreForValkey: GoogleCloudPlatform, SubService {
+    let name = "Google Memorystore for Valkey"
+    let dashboardName = "Memorystore for Valkey"
+}
+
 final class GoogleMigrateToVirtualMachines: GoogleCloudPlatform, SubService {
     let name = "Google Migrate to Virtual Machines"
     let dashboardName = "Migrate to Virtual Machines"
@@ -668,9 +623,9 @@ final class GoogleNetworkIntelligenceCenter: GoogleCloudPlatform, SubService {
     let dashboardName = "Network Intelligence Center"
 }
 
-final class GoogleNetworkTelemetry: GoogleCloudPlatform, SubService {
-    let name = "Google Network Telemetry"
-    let dashboardName = "Network Telemetry"
+final class GoogleNetworkSecurityIntegration: GoogleCloudPlatform, SubService {
+    let name = "Google Network Security Integration"
+    let dashboardName = "Network Security Integration"
 }
 
 final class GoogleParallelstore: GoogleCloudPlatform, SubService {
@@ -693,9 +648,9 @@ final class GooglePrivateServiceConnect: GoogleCloudPlatform, SubService {
     let dashboardName = "Private Service Connect"
 }
 
-final class GoogleProcurementDocAI: GoogleCloudPlatform, SubService {
-    let name = "Google Procurement DocAI"
-    let dashboardName = "Procurement DocAI"
+final class GoogleProvisionedThroughput: GoogleCloudPlatform, SubService {
+    let name = "Google Provisioned Throughput"
+    let dashboardName = "Provisioned Throughput"
 }
 
 final class GooglePubSubLite: GoogleCloudPlatform, SubService {
@@ -736,6 +691,11 @@ final class GoogleSecretManager: GoogleCloudPlatform, SubService {
 final class GoogleServiceDirectory: GoogleCloudPlatform, SubService {
     let name = "Google Service Directory"
     let dashboardName = "Service Directory"
+}
+
+final class GoogleServiceExtensions: GoogleCloudPlatform, SubService {
+    let name = "Google Service Extensions"
+    let dashboardName = "Service Extensions"
 }
 
 final class GoogleSpectrumAccessSystem: GoogleCloudPlatform, SubService {
@@ -871,6 +831,11 @@ final class GoogleVertexGeminiAPI: GoogleCloudPlatform, SubService {
 final class GoogleVertexImagenAPI: GoogleCloudPlatform, SubService {
     let name = "Google Vertex Imagen API"
     let dashboardName = "Vertex Imagen API"
+}
+
+final class GoogleVertexVeoAPI: GoogleCloudPlatform, SubService {
+    let name = "Google Vertex Veo API"
+    let dashboardName = "Vertex Veo API"
 }
 
 final class GoogleVideoIntelligenceAPI: GoogleCloudPlatform, SubService {

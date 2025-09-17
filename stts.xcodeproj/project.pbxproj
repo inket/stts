@@ -325,7 +325,6 @@
 		B2FBDF5D2A14E3C600734667 /* InternetComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDF5C2A14E3C600734667 /* InternetComputer.swift */; };
 		B2FBDF5F2A35D82000734667 /* IncidentIOService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDF5E2A35D82000734667 /* IncidentIOService.swift */; };
 		B2FBDF622A35E1C800734667 /* Loom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDF612A35E1C800734667 /* Loom.swift */; };
-		B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC9191D67029900F0B728 /* Heroku.swift */; };
 		B2FDC91C1D67062200F0B728 /* StatusPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91B1D67062200F0B728 /* StatusPageService.swift */; };
 		B2FDC91E1D6706C400F0B728 /* CircleCI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91D1D6706C400F0B728 /* CircleCI.swift */; };
 		B2FFC1F01E261B4A00529A00 /* Dropbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */; };
@@ -711,7 +710,6 @@
 		B2FBDF5C2A14E3C600734667 /* InternetComputer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetComputer.swift; sourceTree = "<group>"; };
 		B2FBDF5E2A35D82000734667 /* IncidentIOService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentIOService.swift; sourceTree = "<group>"; };
 		B2FBDF612A35E1C800734667 /* Loom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loom.swift; sourceTree = "<group>"; };
-		B2FDC9191D67029900F0B728 /* Heroku.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heroku.swift; sourceTree = "<group>"; };
 		B2FDC91B1D67062200F0B728 /* StatusPageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPageService.swift; sourceTree = "<group>"; };
 		B2FDC91D1D6706C400F0B728 /* CircleCI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCI.swift; sourceTree = "<group>"; };
 		B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dropbox.swift; sourceTree = "<group>"; };
@@ -1324,7 +1322,6 @@
 				B290315B1E4B0CA7005B58CC /* Evernote.swift */,
 				B2253A6E209F42430039F574 /* Firebase.swift */,
 				B2E70FDA22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift */,
-				B2FDC9191D67029900F0B728 /* Heroku.swift */,
 				B276D7692C41F93300974DB6 /* Okta.swift */,
 				B22602B027D881AF001190F1 /* OracleNetSuite.swift */,
 				B2228B6126C9623C002F01F0 /* SendbirdAll.swift */,
@@ -1615,7 +1612,6 @@
 				B299C8531DD0505F0024D2E9 /* Sentry.swift in Sources */,
 				B24EE10226C8BFD500F7CE8B /* Salesforce.swift in Sources */,
 				B2EB51D01E700517001D6F78 /* Codacy.swift in Sources */,
-				B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */,
 				B2A4D7E7247E72B50089EA77 /* AzureAll.swift in Sources */,
 				B2253A6B209F3C410039F574 /* GoogleStatusDashboardStore.swift in Sources */,
 				B2AF06AE2A7AB97300448D1E /* Booxi.swift in Sources */,
