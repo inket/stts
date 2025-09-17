@@ -142,7 +142,7 @@
 		B231DD60257B438900647312 /* HubSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231DD5F257B438900647312 /* HubSpot.swift */; };
 		B232047F22158BDF000DC1B0 /* DatadogEU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232047E22158BDF000DC1B0 /* DatadogEU.swift */; };
 		B232A18D20944B960066AD01 /* Cloud66.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232A18C20944B950066AD01 /* Cloud66.swift */; };
-		B235341F22888EFE00DEDC36 /* Sendinblue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235341E22888EFE00DEDC36 /* Sendinblue.swift */; };
+		B235341F22888EFE00DEDC36 /* Brevo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235341E22888EFE00DEDC36 /* Brevo.swift */; };
 		B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235B3BC1DF562C400821936 /* SettingsView.swift */; };
 		B23646B12627C14E00AB9486 /* LogzIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23646AF2627C14E00AB9486 /* LogzIO.swift */; };
 		B23646B22627C14E00AB9486 /* VisualStudioAppCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23646B02627C14E00AB9486 /* VisualStudioAppCenter.swift */; };
@@ -518,7 +518,7 @@
 		B231DD5F257B438900647312 /* HubSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubSpot.swift; sourceTree = "<group>"; };
 		B232047E22158BDF000DC1B0 /* DatadogEU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatadogEU.swift; sourceTree = "<group>"; };
 		B232A18C20944B950066AD01 /* Cloud66.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud66.swift; sourceTree = "<group>"; };
-		B235341E22888EFE00DEDC36 /* Sendinblue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sendinblue.swift; sourceTree = "<group>"; };
+		B235341E22888EFE00DEDC36 /* Brevo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brevo.swift; sourceTree = "<group>"; };
 		B235B3BC1DF562C400821936 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B23646AF2627C14E00AB9486 /* LogzIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogzIO.swift; sourceTree = "<group>"; };
 		B23646B02627C14E00AB9486 /* VisualStudioAppCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualStudioAppCenter.swift; sourceTree = "<group>"; };
@@ -926,7 +926,6 @@
 				B2C5ED1C281CAA3400009B68 /* OneLoginEU.swift */,
 				B2C5ED1A281CA96200009B68 /* OneLoginUS.swift */,
 				B25ACB63289E01700014C95C /* Roblox.swift */,
-				B235341E22888EFE00DEDC36 /* Sendinblue.swift */,
 				D6B730B6BF88700B5DC9212E /* SumoLogic.swift */,
 			);
 			path = Status.ioV1;
@@ -1278,6 +1277,7 @@
 			isa = PBXGroup;
 			children = (
 				AFB41ECF9F0F03EC8916A646 /* Aiven.swift */,
+				B235341E22888EFE00DEDC36 /* Brevo.swift */,
 				87DE85B45D490EF40F319860 /* HashiCorp.swift */,
 				B241B0752CC551D400D122B3 /* IntercomAU.swift */,
 				B241B0732CC551C300D122B3 /* IntercomEU.swift */,
@@ -1669,7 +1669,7 @@
 				B2CEE5D922B49CC80073C743 /* AzureStore.swift in Sources */,
 				B2D032D01D6455E300D51CB8 /* TravisCI.swift in Sources */,
 				B213D200269AFD45005EBDDA /* InstatusService.swift in Sources */,
-				B235341F22888EFE00DEDC36 /* Sendinblue.swift in Sources */,
+				B235341F22888EFE00DEDC36 /* Brevo.swift in Sources */,
 				B2D468291E2F0F82000F8F6B /* Coveralls.swift in Sources */,
 				B299C8511DD04FD60024D2E9 /* Cloudflare.swift in Sources */,
 				B200CA76247FC88700DB0868 /* Adobe.swift in Sources */,

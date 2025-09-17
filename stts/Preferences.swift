@@ -69,6 +69,7 @@ struct Preferences {
             "Intercom": "IntercomUS", // v2.24
             "Lumanox": "FilesCom", // v2.25
             "FirefoxRelay": "Mozilla", // v2.25
+            "Sendinblue": "Brevo", // v2.25
             // Generated services
             "FirebaseMLKit": "FirebaseMachineLearning"
         ]
