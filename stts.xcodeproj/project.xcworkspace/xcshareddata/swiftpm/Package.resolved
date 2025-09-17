@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/tid-kijyun/Kanna",
       "state" : {
-        "revision" : "f9e4922223dd0d3dfbf02ca70812cf5531fc0593",
-        "version" : "5.2.7"
+        "revision" : "41c3d28ea0eac07e4551b28def9de1ede702e739",
+        "version" : "5.3.0"
       }
     },
     {
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/inket/MBPopup",
       "state" : {
-        "revision" : "cd5f0b5bb0b26c880f60c61603d88c8f76fee308",
-        "version" : "6.0.0"
+        "revision" : "67fdeb6607c75e47f5b6361125e627816d36dddc",
+        "version" : "6.0.1"
       }
     },
     {
@@ -25,7 +25,7 @@
       "location" : "https://github.com/ashleymills/Reachability.swift",
       "state" : {
         "branch" : "master",
-        "revision" : "a81b7367f2c46875f29577e03a60c39cdfad0c8d"
+        "revision" : "21d1dc412cfecbe6e34f1f4c4eb88d3f912654a6"
       }
     }
   ],
