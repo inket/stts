@@ -13,3 +13,6 @@ echo "{}" > "$SERVICES_PLIST"
 
 # Write the list of services into the plist file as an array
 defaults write "$SERVICES_PLIST" "services" -array $SERVICES
+
+# Remove all quarantine attributes as they block submissions to App Store
+xattr -c "$SERVICES_PLIST"
