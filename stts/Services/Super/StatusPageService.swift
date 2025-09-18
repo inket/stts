@@ -177,8 +177,17 @@ class BaseStatusPageService: BaseService {
         // Set the message by combining the unresolved incident names
         let unresolvedIncidents = summary.incidents.filter { $0.isUnresolved }
         if !unresolvedIncidents.isEmpty {
-            let prefix = unresolvedIncidents.count > 1 ? "* " : ""
-            let message = unresolvedIncidents.map { "\(prefix)\($0.name)" }.joined(separator: "\n")
+            let prefix: String? = unresolvedIncidents.count > 1 ? "*" : nil
+            let message = unresolvedIncidents.map {
+                let statusPrefix: String? = switch $0.status {
+                case .monitoring:
+                    "Monitoring:"
+                case .identified, .investigating, .postmortem, .resolved:
+                    nil
+                }
+
+                return [prefix, statusPrefix, $0.name].compactMap { $0 }.joined(separator: " ")
+            }.joined(separator: "\n")
             statusDescription = ServiceStatusDescription(status: status, message: message)
             return
         }

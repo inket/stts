@@ -65,7 +65,7 @@ class FirebaseStatusDashboardStore: Loading {
         if type(of: service) == Firebase.self {
             status = statuses["_general"]
         } else {
-            status = statuses[service.dashboardName]
+            status = statuses[service.dashboardName] ?? statuses[service.name]
         }
 
         switch status {

@@ -88,7 +88,7 @@ final class AdobeCommerce: AdobeExperienceCloud, SubService {
     let id = "503473"
 }
 
-final class AdobeConnect: AdobeExperienceCloud, SubService {
+final class AdobeConnect: AdobeServices, SubService {
     let name = "Adobe Connect"
     let id = "503474"
 }
@@ -258,6 +258,11 @@ final class AdobeImageService: AdobeServices, SubService {
 final class AdobeInDesign: AdobeCreativeCloud, SubService {
     let name = "Adobe InDesign"
     let id = "503502"
+}
+
+final class AdobeInDesignAPI: AdobeCreativeCloud, SubService {
+    let name = "Adobe InDesign API"
+    let id = "572928"
 }
 
 final class AdobeIntelligentServices: AdobeExperienceCloud, SubService {

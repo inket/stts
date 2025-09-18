@@ -5,7 +5,6 @@
 
 import Foundation
 
-final class Rollbar: StatusPageService {
+final class Rollbar: IncidentIOService {
     let url = URL(string: "https://status.rollbar.com")!
-    let statusPageID = "0hsb4m2rq2h3"
 }

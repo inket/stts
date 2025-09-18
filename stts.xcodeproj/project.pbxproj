@@ -83,7 +83,6 @@
 		B210189C249E406D00F31999 /* RevenueCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B210189B249E406D00F31999 /* RevenueCat.swift */; };
 		B2107BCE254C970000284EE7 /* Linode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2107BCC254C96FF00284EE7 /* Linode.swift */; };
 		B2107BCF254C970000284EE7 /* Notion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2107BCD254C970000284EE7 /* Notion.swift */; };
-		B211F0B81E607C09008DD360 /* Rollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211F0B71E607C09008DD360 /* Rollbar.swift */; };
 		B213A1771DC97E2B008E8E58 /* ServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */; };
 		B213A1791DC9EA25008E8E58 /* ServiceTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */; };
 		B213D1F8269AD9A7005EBDDA /* Pardot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D1F7269AD9A7005EBDDA /* Pardot.swift */; };
@@ -94,6 +93,7 @@
 		B213D207269B05D9005EBDDA /* Instatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D206269B05D9005EBDDA /* Instatus.swift */; };
 		B213D209269B06DD005EBDDA /* Threader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D208269B06DD005EBDDA /* Threader.swift */; };
 		B213D20B269B0774005EBDDA /* Sketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213D20A269B0774005EBDDA /* Sketch.swift */; };
+		B214B6062E7BC13A006B3B77 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = B214B6052E7BC13A006B3B77 /* AppIcon.icon */; };
 		B2163AF820BA4E7500B14A85 /* sttsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AF720BA4E7500B14A85 /* sttsTests.swift */; };
 		B2163B0020BA56EF00B14A85 /* StatusCakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */; };
 		B219C0DA1E2F0E9F001F8E7F /* CocoaPods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B219C0D91E2F0E9F001F8E7F /* CocoaPods.swift */; };
@@ -143,7 +143,7 @@
 		B231DD60257B438900647312 /* HubSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231DD5F257B438900647312 /* HubSpot.swift */; };
 		B232047F22158BDF000DC1B0 /* DatadogEU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232047E22158BDF000DC1B0 /* DatadogEU.swift */; };
 		B232A18D20944B960066AD01 /* Cloud66.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232A18C20944B950066AD01 /* Cloud66.swift */; };
-		B235341F22888EFE00DEDC36 /* Sendinblue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235341E22888EFE00DEDC36 /* Sendinblue.swift */; };
+		B235341F22888EFE00DEDC36 /* Brevo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235341E22888EFE00DEDC36 /* Brevo.swift */; };
 		B235B3BD1DF562C400821936 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235B3BC1DF562C400821936 /* SettingsView.swift */; };
 		B23646B12627C14E00AB9486 /* LogzIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23646AF2627C14E00AB9486 /* LogzIO.swift */; };
 		B23646B22627C14E00AB9486 /* VisualStudioAppCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23646B02627C14E00AB9486 /* VisualStudioAppCenter.swift */; };
@@ -237,6 +237,7 @@
 		B299C8511DD04FD60024D2E9 /* Cloudflare.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8501DD04FD60024D2E9 /* Cloudflare.swift */; };
 		B299C8531DD0505F0024D2E9 /* Sentry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8521DD0505F0024D2E9 /* Sentry.swift */; };
 		B299C8551DD051210024D2E9 /* EngineYard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299C8541DD051210024D2E9 /* EngineYard.swift */; };
+		B29A44FB2E52B4C000A1DF8A /* Rollbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A44FA2E52B4BD00A1DF8A /* Rollbar.swift */; };
 		B29AEFD0225D7F3900C3B8BD /* AirshipUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29AEFCF225D7F3900C3B8BD /* AirshipUS.swift */; };
 		B29D50BD24B053C600F4961B /* Basecamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D50BC24B053C600F4961B /* Basecamp.swift */; };
 		B29D50BF24B0542100F4961B /* PlatformSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D50BE24B0542100F4961B /* PlatformSH.swift */; };
@@ -325,7 +326,6 @@
 		B2FBDF5D2A14E3C600734667 /* InternetComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDF5C2A14E3C600734667 /* InternetComputer.swift */; };
 		B2FBDF5F2A35D82000734667 /* IncidentIOService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDF5E2A35D82000734667 /* IncidentIOService.swift */; };
 		B2FBDF622A35E1C800734667 /* Loom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDF612A35E1C800734667 /* Loom.swift */; };
-		B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC9191D67029900F0B728 /* Heroku.swift */; };
 		B2FDC91C1D67062200F0B728 /* StatusPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91B1D67062200F0B728 /* StatusPageService.swift */; };
 		B2FDC91E1D6706C400F0B728 /* CircleCI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDC91D1D6706C400F0B728 /* CircleCI.swift */; };
 		B2FFC1F01E261B4A00529A00 /* Dropbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */; };
@@ -458,7 +458,6 @@
 		B210189B249E406D00F31999 /* RevenueCat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueCat.swift; sourceTree = "<group>"; };
 		B2107BCC254C96FF00284EE7 /* Linode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Linode.swift; sourceTree = "<group>"; };
 		B2107BCD254C970000284EE7 /* Notion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notion.swift; sourceTree = "<group>"; };
-		B211F0B71E607C09008DD360 /* Rollbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rollbar.swift; sourceTree = "<group>"; };
 		B213A1761DC97E2B008E8E58 /* ServiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableViewController.swift; sourceTree = "<group>"; };
 		B213A1781DC9EA25008E8E58 /* ServiceTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTableRowView.swift; sourceTree = "<group>"; };
 		B213D1F7269AD9A7005EBDDA /* Pardot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pardot.swift; sourceTree = "<group>"; };
@@ -469,6 +468,7 @@
 		B213D206269B05D9005EBDDA /* Instatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instatus.swift; sourceTree = "<group>"; };
 		B213D208269B06DD005EBDDA /* Threader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threader.swift; sourceTree = "<group>"; };
 		B213D20A269B0774005EBDDA /* Sketch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sketch.swift; sourceTree = "<group>"; };
+		B214B6052E7BC13A006B3B77 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		B2163AF520BA4E7500B14A85 /* sttsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sttsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2163AF720BA4E7500B14A85 /* sttsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sttsTests.swift; sourceTree = "<group>"; };
 		B2163AF920BA4E7500B14A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -520,7 +520,7 @@
 		B231DD5F257B438900647312 /* HubSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubSpot.swift; sourceTree = "<group>"; };
 		B232047E22158BDF000DC1B0 /* DatadogEU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatadogEU.swift; sourceTree = "<group>"; };
 		B232A18C20944B950066AD01 /* Cloud66.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud66.swift; sourceTree = "<group>"; };
-		B235341E22888EFE00DEDC36 /* Sendinblue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sendinblue.swift; sourceTree = "<group>"; };
+		B235341E22888EFE00DEDC36 /* Brevo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brevo.swift; sourceTree = "<group>"; };
 		B235B3BC1DF562C400821936 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B23646AF2627C14E00AB9486 /* LogzIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogzIO.swift; sourceTree = "<group>"; };
 		B23646B02627C14E00AB9486 /* VisualStudioAppCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualStudioAppCenter.swift; sourceTree = "<group>"; };
@@ -618,6 +618,7 @@
 		B299C8501DD04FD60024D2E9 /* Cloudflare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloudflare.swift; sourceTree = "<group>"; };
 		B299C8521DD0505F0024D2E9 /* Sentry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sentry.swift; sourceTree = "<group>"; };
 		B299C8541DD051210024D2E9 /* EngineYard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineYard.swift; sourceTree = "<group>"; };
+		B29A44FA2E52B4BD00A1DF8A /* Rollbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rollbar.swift; sourceTree = "<group>"; };
 		B29AEFCF225D7F3900C3B8BD /* AirshipUS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirshipUS.swift; sourceTree = "<group>"; };
 		B29D50BC24B053C600F4961B /* Basecamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basecamp.swift; sourceTree = "<group>"; };
 		B29D50BE24B0542100F4961B /* PlatformSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSH.swift; sourceTree = "<group>"; };
@@ -711,7 +712,6 @@
 		B2FBDF5C2A14E3C600734667 /* InternetComputer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetComputer.swift; sourceTree = "<group>"; };
 		B2FBDF5E2A35D82000734667 /* IncidentIOService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentIOService.swift; sourceTree = "<group>"; };
 		B2FBDF612A35E1C800734667 /* Loom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loom.swift; sourceTree = "<group>"; };
-		B2FDC9191D67029900F0B728 /* Heroku.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heroku.swift; sourceTree = "<group>"; };
 		B2FDC91B1D67062200F0B728 /* StatusPageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPageService.swift; sourceTree = "<group>"; };
 		B2FDC91D1D6706C400F0B728 /* CircleCI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCI.swift; sourceTree = "<group>"; };
 		B2FFC1EF1E261B4A00529A00 /* Dropbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dropbox.swift; sourceTree = "<group>"; };
@@ -928,7 +928,6 @@
 				B2C5ED1C281CAA3400009B68 /* OneLoginEU.swift */,
 				B2C5ED1A281CA96200009B68 /* OneLoginUS.swift */,
 				B25ACB63289E01700014C95C /* Roblox.swift */,
-				B235341E22888EFE00DEDC36 /* Sendinblue.swift */,
 				D6B730B6BF88700B5DC9212E /* SumoLogic.swift */,
 			);
 			path = Status.ioV1;
@@ -1044,7 +1043,6 @@
 				B227D30B25D5886B00951917 /* FreeAgent.swift */,
 				B2C10F3B203646A7008E1E7D /* Gandi.swift */,
 				B254642221EE9AF6003068A4 /* GitHub.swift */,
-				87DE85B45D490EF40F319860 /* HashiCorp.swift */,
 				881BD2B4F6BC008A1CE1A25B /* HelloSignHelloFax.swift */,
 				B231DD5F257B438900647312 /* HubSpot.swift */,
 				B2ABB6161F59770800DF8EC2 /* Imgix.swift */,
@@ -1069,6 +1067,7 @@
 				B28E9FBE1ED26A40006B89F1 /* Lob.swift */,
 				B26350FC1ED7CFC40069EA73 /* Loggly.swift */,
 				B23646AF2627C14E00AB9486 /* LogzIO.swift */,
+				B2FBDF612A35E1C800734667 /* Loom.swift */,
 				A133C8B620F8F3670068CFE8 /* Mailgun.swift */,
 				B28C1D431E607D8600F9D0DC /* Mapbox.swift */,
 				6B24BCA673F692E9211E7B8D /* Medium.swift */,
@@ -1084,7 +1083,6 @@
 				B299C8421DD044160024D2E9 /* NewRelic.swift */,
 				B2107BCD254C970000284EE7 /* Notion.swift */,
 				B22BB3A0223B341B00B43BED /* OnePassword.swift */,
-				0BDEA739C3989EA43886F0F6 /* OneSignal.swift */,
 				3F6D6DE9B7048DB851580651 /* Opsgenie.swift */,
 				B24B573123A4EAD200AFCF01 /* Pantheon.swift */,
 				B2BA697F1E2DA3F60016AF1A /* Papertrail.swift */,
@@ -1108,7 +1106,6 @@
 				95E87BF974F75C95D80FC426 /* Roadmunk.swift */,
 				F3859428AAF182EC79C4ED3E /* Robin.swift */,
 				B20699D1214E504E008670B0 /* Robinhood.swift */,
-				B211F0B71E607C09008DD360 /* Rollbar.swift */,
 				B299C8481DD04DCB0024D2E9 /* RubyGems.swift */,
 				B25695551E247C8C00FAE413 /* SauceLabs.swift */,
 				71284C408241E2CE20F2330D /* Scaleway.swift */,
@@ -1282,13 +1279,16 @@
 			isa = PBXGroup;
 			children = (
 				AFB41ECF9F0F03EC8916A646 /* Aiven.swift */,
+				B235341E22888EFE00DEDC36 /* Brevo.swift */,
+				87DE85B45D490EF40F319860 /* HashiCorp.swift */,
 				B241B0752CC551D400D122B3 /* IntercomAU.swift */,
 				B241B0732CC551C300D122B3 /* IntercomEU.swift */,
 				B241B0712CC5518100D122B3 /* IntercomUS.swift */,
 				B213D204269B0496005EBDDA /* Linear.swift */,
-				B2FBDF612A35E1C800734667 /* Loom.swift */,
 				1CCCFA4ECD8BB402C7254FEF /* Miro.swift */,
+				0BDEA739C3989EA43886F0F6 /* OneSignal.swift */,
 				B2E832EF29EF74D9000FA1BE /* OpenAI.swift */,
+				B29A44FA2E52B4BD00A1DF8A /* Rollbar.swift */,
 			);
 			path = IncidentIO;
 			sourceTree = "<group>";
@@ -1324,7 +1324,6 @@
 				B290315B1E4B0CA7005B58CC /* Evernote.swift */,
 				B2253A6E209F42430039F574 /* Firebase.swift */,
 				B2E70FDA22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift */,
-				B2FDC9191D67029900F0B728 /* Heroku.swift */,
 				B276D7692C41F93300974DB6 /* Okta.swift */,
 				B22602B027D881AF001190F1 /* OracleNetSuite.swift */,
 				B2228B6126C9623C002F01F0 /* SendbirdAll.swift */,
@@ -1386,6 +1385,7 @@
 		B2FDC9211D67074900F0B728 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B214B6052E7BC13A006B3B77 /* AppIcon.icon */,
 				B2B2D1041D49D5080014D780 /* Assets.xcassets */,
 				B2B2D1091D49D5080014D780 /* Info.plist */,
 				B2B2D1061D49D5080014D780 /* MainMenu.xib */,
@@ -1449,7 +1449,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 2600;
 				ORGANIZATIONNAME = inket;
 				TargetAttributes = {
 					B2163AF420BA4E7500B14A85 = {
@@ -1481,7 +1481,7 @@
 			packageReferences = (
 				B20883E32A59143E007578C8 /* XCRemoteSwiftPackageReference "MBPopup" */,
 				B20883E62A59144F007578C8 /* XCRemoteSwiftPackageReference "Kanna" */,
-				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
+				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */,
 			);
 			productRefGroup = B2B2D1001D49D5080014D780 /* Products */;
 			projectDirPath = "";
@@ -1514,6 +1514,7 @@
 			files = (
 				B2B2D1051D49D5080014D780 /* Assets.xcassets in Resources */,
 				B2B2D1081D49D5080014D780 /* MainMenu.xib in Resources */,
+				B214B6062E7BC13A006B3B77 /* AppIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1608,14 +1609,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2228B5E26C95CF5002F01F0 /* SendbirdServices.swift in Sources */,
-				B211F0B81E607C09008DD360 /* Rollbar.swift in Sources */,
 				B2493F061E2603F300556A83 /* GoogleCloudPlatform.swift in Sources */,
 				36AD8ED7235A2F9B00F2FD73 /* VictorOps.swift in Sources */,
 				B299C8491DD04DCB0024D2E9 /* RubyGems.swift in Sources */,
 				B299C8531DD0505F0024D2E9 /* Sentry.swift in Sources */,
 				B24EE10226C8BFD500F7CE8B /* Salesforce.swift in Sources */,
 				B2EB51D01E700517001D6F78 /* Codacy.swift in Sources */,
-				B2FDC91A1D67029900F0B728 /* Heroku.swift in Sources */,
 				B2A4D7E7247E72B50089EA77 /* AzureAll.swift in Sources */,
 				B2253A6B209F3C410039F574 /* GoogleStatusDashboardStore.swift in Sources */,
 				B2AF06AE2A7AB97300448D1E /* Booxi.swift in Sources */,
@@ -1660,6 +1659,7 @@
 				B2ABB6171F59770800DF8EC2 /* Imgix.swift in Sources */,
 				B213D1F8269AD9A7005EBDDA /* Pardot.swift in Sources */,
 				B22BA3021E8119AB0038D8F6 /* Discord.swift in Sources */,
+				B29A44FB2E52B4C000A1DF8A /* Rollbar.swift in Sources */,
 				B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */,
 				B271688A2291AEEE001E608C /* Asana.swift in Sources */,
 				B2FBDF622A35E1C800734667 /* Loom.swift in Sources */,
@@ -1673,7 +1673,7 @@
 				B2CEE5D922B49CC80073C743 /* AzureStore.swift in Sources */,
 				B2D032D01D6455E300D51CB8 /* TravisCI.swift in Sources */,
 				B213D200269AFD45005EBDDA /* InstatusService.swift in Sources */,
-				B235341F22888EFE00DEDC36 /* Sendinblue.swift in Sources */,
+				B235341F22888EFE00DEDC36 /* Brevo.swift in Sources */,
 				B2D468291E2F0F82000F8F6B /* Coveralls.swift in Sources */,
 				B299C8511DD04FD60024D2E9 /* Cloudflare.swift in Sources */,
 				B200CA76247FC88700DB0868 /* Adobe.swift in Sources */,
@@ -1971,7 +1971,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = PP5UYHJQCD;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = sttsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2000,7 +1999,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = PP5UYHJQCD;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = sttsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2052,6 +2050,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = PP5UYHJQCD;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -2076,6 +2075,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -2116,6 +2116,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = PP5UYHJQCD;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -2133,6 +2134,7 @@
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -2147,14 +2149,15 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 80;
+				CURRENT_PROJECT_VERSION = 81;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = PP5UYHJQCD;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				MARKETING_VERSION = 2.24;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 3.0;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=300 -Xfrontend -warn-long-expression-type-checking=200";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mahdi.stts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2172,14 +2175,15 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 80;
+				CURRENT_PROJECT_VERSION = 81;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = PP5UYHJQCD;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				MARKETING_VERSION = 2.24;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 3.0;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=300 -Xfrontend -warn-long-expression-type-checking=200";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.mahdi.stts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2237,7 +2241,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
+		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
 			requirement = {
@@ -2260,7 +2264,7 @@
 		};
 		B20883EA2A59146C007578C8 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */

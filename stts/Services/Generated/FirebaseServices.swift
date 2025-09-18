@@ -51,6 +51,14 @@ final class FirebaseExtensions: FirebaseService, SubService {
     let name = "Firebase Extensions"
 }
 
+final class FirebaseAILogic: FirebaseService, SubService {
+    let name = "Firebase AI Logic"
+}
+
+final class FirebaseStudio: FirebaseService, SubService {
+    let name = "Firebase Studio"
+}
+
 final class FirebaseGeminiInFirebase: FirebaseService, SubService {
     let name = "Firebase Gemini in Firebase"
 }
@@ -81,8 +89,4 @@ final class FirebaseRemoteConfig: FirebaseService, SubService {
 
 final class FirebaseTestLab: FirebaseService, SubService {
     let name = "Firebase Test Lab"
-}
-
-final class FirebaseVertexAIInFirebase: FirebaseService, SubService {
-    let name = "Firebase Vertex AI in Firebase"
 }

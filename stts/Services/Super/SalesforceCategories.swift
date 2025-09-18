@@ -27,6 +27,14 @@ class BaseDatorama: BaseSalesforceCategory {
     let url = URL(string: "https://status.salesforce.com/products/Datorama")!
 }
 
+typealias Heroku =
+    BaseHeroku & RequiredServiceProperties & SalesforceStoreService
+
+class BaseHeroku: BaseSalesforceCategory {
+    static var store = SalesforceStore(key: "Heroku")
+    let url = URL(string: "https://status.salesforce.com/products/Heroku")!
+}
+
 typealias MCAccountEngagement =
     BaseMCAccountEngagement & RequiredServiceProperties & SalesforceStoreService
 
@@ -65,6 +73,14 @@ typealias SalesforceServices =
 class BaseSalesforceServices: BaseSalesforceCategory {
     static var store = SalesforceStore(key: "Salesforce_Services")
     let url = URL(string: "https://status.salesforce.com/products/Salesforce_Services")!
+}
+
+typealias Spiff =
+    BaseSpiff & RequiredServiceProperties & SalesforceStoreService
+
+class BaseSpiff: BaseSalesforceCategory {
+    static var store = SalesforceStore(key: "Spiff")
+    let url = URL(string: "https://status.salesforce.com/products/Spiff")!
 }
 
 typealias Tableau =
