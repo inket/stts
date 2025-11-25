@@ -31,6 +31,7 @@
 		36AD8ED7235A2F9B00F2FD73 /* VictorOps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */; };
 		36AD8ED9235A310500F2FD73 /* Mural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD8ED8235A310500F2FD73 /* Mural.swift */; };
 		3DD3827D39BBDDBDA24DA4B9 /* Roadmunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E87BF974F75C95D80FC426 /* Roadmunk.swift */; };
+		43BE6E08D73EA2C7AD5098CE /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775C0282E31722D62A97F3E5 /* Cursor.swift */; };
 		4A0BDA3CE55B64C29F1F4280 /* AtlassianSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE09F6E559505EECD0AF8D /* AtlassianSupport.swift */; };
 		502ADE3E3386F6B64643682F /* Wasabi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CD7B91FCE3B9B61003A00 /* Wasabi.swift */; };
 		5168C3411EE1FADD160353FF /* Mozilla.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96A56CCE8D1459FB0B09DB6 /* Mozilla.swift */; };
@@ -419,6 +420,7 @@
 		70244989EDA4E2F3CF20FA50 /* Doppler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Doppler.swift; sourceTree = "<group>"; };
 		71284C408241E2CE20F2330D /* Scaleway.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Scaleway.swift; sourceTree = "<group>"; };
 		71CE5D41DDC4D721C254C004 /* Proton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Proton.swift; sourceTree = "<group>"; };
+		775C0282E31722D62A97F3E5 /* Cursor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cursor.swift; sourceTree = "<group>"; };
 		77A081BB365FF9676D94FEDF /* Anthropic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Anthropic.swift; sourceTree = "<group>"; };
 		7BA6A0A12240D8E000700C2C /* Bolt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bolt.swift; sourceTree = "<group>"; };
 		7C82768B2C8E3BE300C0E37B /* NSScreenExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSScreenExtensions.swift; sourceTree = "<group>"; };
@@ -1014,6 +1016,7 @@
 				B2D0F22324611AD700F5501C /* ConfluentCloud.swift */,
 				B22527F41E5BD0C70098E73D /* Contentful.swift */,
 				B2D468281E2F0F82000F8F6B /* Coveralls.swift */,
+				775C0282E31722D62A97F3E5 /* Cursor.swift */,
 				A9CA65AF81160DCD231D5F43 /* Customerio.swift */,
 				563FBDC323AC595F540679B9 /* Cybersource.swift */,
 				9C6AF196D47310053DE2A8A0 /* Cypress.swift */,
@@ -1481,7 +1484,7 @@
 			packageReferences = (
 				B20883E32A59143E007578C8 /* XCRemoteSwiftPackageReference "MBPopup" */,
 				B20883E62A59144F007578C8 /* XCRemoteSwiftPackageReference "Kanna" */,
-				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */,
+				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
 			);
 			productRefGroup = B2B2D1001D49D5080014D780 /* Products */;
 			projectDirPath = "";
@@ -1933,6 +1936,7 @@
 				23CEA59C6ACB09981D799C43 /* Anthropic.swift in Sources */,
 				024B09D6BA1BAD9937A0A205 /* Fleek.swift in Sources */,
 				66C229603D63856B2B8A0356 /* Wiz.swift in Sources */,
+				43BE6E08D73EA2C7AD5098CE /* Cursor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2241,7 +2245,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
 			requirement = {
@@ -2264,7 +2268,7 @@
 		};
 		B20883EA2A59146C007578C8 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */;
+			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
 			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
