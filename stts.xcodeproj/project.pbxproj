@@ -337,6 +337,7 @@
 		C1B04EA0748F30D966A77B19 /* Acoustic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439EADCB08D6940C642E98B8 /* Acoustic.swift */; };
 		C26BBF46916F30160A67C5C0 /* SecurID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F333DF556929BF0340E824 /* SecurID.swift */; };
 		C28B812159CF77AD928CCAE9 /* Workflowy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F844F11070AF5B4CD7719E /* Workflowy.swift */; };
+		C38A45978F4A3CCA2B11C307 /* Tyk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B005DC6CD8D17B4BD1640E7 /* Tyk.swift */; };
 		C6B979E923630AC2F73717B0 /* Cybersource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563FBDC323AC595F540679B9 /* Cybersource.swift */; };
 		C70168A2035294FE955F3F1D /* AtlassianAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF354371EC40FA322AEEFF5F /* AtlassianAccess.swift */; };
 		C7A2CE6D063A54F296F6D4C5 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D13B6E0F576096D5F10B19 /* Compass.swift */; };
@@ -436,6 +437,7 @@
 		95E87BF974F75C95D80FC426 /* Roadmunk.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Roadmunk.swift; sourceTree = "<group>"; };
 		9656BD00C255628C438D394F /* JiraProductDiscovery.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JiraProductDiscovery.swift; sourceTree = "<group>"; };
 		9AFE09F6E559505EECD0AF8D /* AtlassianSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AtlassianSupport.swift; sourceTree = "<group>"; };
+		9B005DC6CD8D17B4BD1640E7 /* Tyk.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Tyk.swift; sourceTree = "<group>"; };
 		9BF74DC57A426C3EBFCC2E90 /* EquinixMetal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EquinixMetal.swift; sourceTree = "<group>"; };
 		9C6AF196D47310053DE2A8A0 /* Cypress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cypress.swift; sourceTree = "<group>"; };
 		9C785BEA1BEF2A0DD068A4DD /* JiraAlign.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JiraAlign.swift; sourceTree = "<group>"; };
@@ -1133,6 +1135,7 @@
 				B20396351EE6A060008CCA21 /* Trello.swift */,
 				B2F127A81E0B84B50035B20C /* Twilio.swift */,
 				B29222272642EF33001C63AE /* Twitch.swift */,
+				9B005DC6CD8D17B4BD1640E7 /* Tyk.swift */,
 				B24220E31E2F6BBA0007E50E /* Typeform.swift */,
 				B2A8AE3C20710EC8002699CE /* Unsplash.swift */,
 				F0A9F6AE3667A268D4169B4A /* VMwareWorkspaceONE.swift */,
@@ -1940,6 +1943,7 @@
 				23CEA59C6ACB09981D799C43 /* Anthropic.swift in Sources */,
 				024B09D6BA1BAD9937A0A205 /* Fleek.swift in Sources */,
 				66C229603D63856B2B8A0356 /* Wiz.swift in Sources */,
+				C38A45978F4A3CCA2B11C307 /* Tyk.swift in Sources */,
 				FAC2C666281D45C277C2C826 /* MeridianLink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
