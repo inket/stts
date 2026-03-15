@@ -352,6 +352,7 @@
 		EA0E7177A4634EF99C4AF31A /* MastodonSocial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB09BB83A2FE186710F65682 /* MastodonSocial.swift */; };
 		ED78F07A7D2AB1F665182667 /* Temporal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D9C362F03D1C2E95A663D /* Temporal.swift */; };
 		EF67ABCF8677A86151FBBA38 /* Bugsnag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80361FCB72F96FA6F753D7C1 /* Bugsnag.swift */; };
+		FAC2C666281D45C277C2C826 /* MeridianLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5478FA6F377F3795FB5EB9 /* MeridianLink.swift */; };
 		FBB552B59A4951F2DAB48CCD /* KeeperSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E9DE62ED9C9E27F1B4BB3C /* KeeperSecurity.swift */; };
 		FC278203BFB2E7D5A41639ED /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A4F04F86B9C0A9FB7233AE /* Branch.swift */; };
 		FF0965074312E22E4FD26062 /* Canonical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BDC63E10EDB5C1EAD0D481 /* Canonical.swift */; };
@@ -739,6 +740,7 @@
 		F3859428AAF182EC79C4ED3E /* Robin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Robin.swift; sourceTree = "<group>"; };
 		F679F245A03F4CCC7F2DA71F /* NasdaqDataLink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NasdaqDataLink.swift; sourceTree = "<group>"; };
 		F7D13B6E0F576096D5F10B19 /* Compass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Compass.swift; sourceTree = "<group>"; };
+		FD5478FA6F377F3795FB5EB9 /* MeridianLink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MeridianLink.swift; sourceTree = "<group>"; };
 		FEC70B47B228492520C03D36 /* Duo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Duo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1071,6 +1073,7 @@
 				A133C8B620F8F3670068CFE8 /* Mailgun.swift */,
 				B28C1D431E607D8600F9D0DC /* Mapbox.swift */,
 				6B24BCA673F692E9211E7B8D /* Medium.swift */,
+				FD5478FA6F377F3795FB5EB9 /* MeridianLink.swift */,
 				067E14834A02FABD0C75361E /* MessageBird.swift */,
 				B2C337A41E1417390007E110 /* Mixpanel.swift */,
 				B29222262642EF33001C63AE /* ModeAnalytics.swift */,
@@ -1933,6 +1936,7 @@
 				23CEA59C6ACB09981D799C43 /* Anthropic.swift in Sources */,
 				024B09D6BA1BAD9937A0A205 /* Fleek.swift in Sources */,
 				66C229603D63856B2B8A0356 /* Wiz.swift in Sources */,
+				FAC2C666281D45C277C2C826 /* MeridianLink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
