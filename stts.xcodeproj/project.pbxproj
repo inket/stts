@@ -349,6 +349,7 @@
 		DE9EE76511329A776976FDC5 /* Whereby.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE039BB24FFC209E99B42916 /* Whereby.swift */; };
 		E2AAECBE89E07C6E94464ABF /* Checkly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD90A7C5F03EDEEB92424A2 /* Checkly.swift */; };
 		E5B35A5C6608D856A99842B2 /* Miro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCCFA4ECD8BB402C7254FEF /* Miro.swift */; };
+		E7B7F0188E4E58EEC2CA6421 /* HouseCanary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F128D587127F2F820873DF9 /* HouseCanary.swift */; };
 		EA0E7177A4634EF99C4AF31A /* MastodonSocial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB09BB83A2FE186710F65682 /* MastodonSocial.swift */; };
 		ED78F07A7D2AB1F665182667 /* Temporal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D9C362F03D1C2E95A663D /* Temporal.swift */; };
 		EF67ABCF8677A86151FBBA38 /* Bugsnag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80361FCB72F96FA6F753D7C1 /* Bugsnag.swift */; };
@@ -406,6 +407,7 @@
 		36AD8ED6235A2F9B00F2FD73 /* VictorOps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictorOps.swift; sourceTree = "<group>"; };
 		36AD8ED8235A310500F2FD73 /* Mural.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mural.swift; sourceTree = "<group>"; };
 		3803B461B23AFD8DD026EB59 /* Chargebee.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Chargebee.swift; sourceTree = "<group>"; };
+		3F128D587127F2F820873DF9 /* HouseCanary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseCanary.swift; sourceTree = "<group>"; };
 		3F6D6DE9B7048DB851580651 /* Opsgenie.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Opsgenie.swift; sourceTree = "<group>"; };
 		439EADCB08D6940C642E98B8 /* Acoustic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Acoustic.swift; sourceTree = "<group>"; };
 		45F333DF556929BF0340E824 /* SecurID.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SecurID.swift; sourceTree = "<group>"; };
@@ -1046,6 +1048,7 @@
 				B2C10F3B203646A7008E1E7D /* Gandi.swift */,
 				B254642221EE9AF6003068A4 /* GitHub.swift */,
 				881BD2B4F6BC008A1CE1A25B /* HelloSignHelloFax.swift */,
+				3F128D587127F2F820873DF9 /* HouseCanary.swift */,
 				B231DD5F257B438900647312 /* HubSpot.swift */,
 				B2ABB6161F59770800DF8EC2 /* Imgix.swift */,
 				B2FBDF5C2A14E3C600734667 /* InternetComputer.swift */,
@@ -1878,6 +1881,7 @@
 				691A9AA9137E52D210A3A002 /* CloudAMQP.swift in Sources */,
 				5168C3411EE1FADD160353FF /* Mozilla.swift in Sources */,
 				593FB40FF80AEB54E5E25B71 /* HelloSignHelloFax.swift in Sources */,
+				E7B7F0188E4E58EEC2CA6421 /* HouseCanary.swift in Sources */,
 				6D03955E8178A1153BBD9D01 /* Netlify.swift in Sources */,
 				0988F07539A4DBD9DA7D690A /* Customerio.swift in Sources */,
 				2DE1BBB015563FC67C35CD03 /* Dialpad.swift in Sources */,
