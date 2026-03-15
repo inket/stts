@@ -3,11 +3,6 @@
 
 import Foundation
 
-final class AdobeAdobePhotoshopAPI: AdobeCreativeCloud, SubService {
-    let name = "Adobe  Adobe Photoshop API "
-    let id = "525665"
-}
-
 final class AdobeAccountManagement: AdobeServices, SubService {
     let name = "Adobe Account Management"
     let id = "503498"
@@ -56,6 +51,11 @@ final class AdobeAnalytics: AdobeExperienceCloud, SubService {
 final class AdobeAudienceManager: AdobeExperienceCloud, SubService {
     let name = "Adobe Audience Manager"
     let id = "503486"
+}
+
+final class AdobeBrandConcierge: AdobeExperienceCloud, SubService {
+    let name = "Adobe Brand Concierge"
+    let id = "594942"
 }
 
 final class AdobeBridge: AdobeCreativeCloud, SubService {
@@ -169,6 +169,11 @@ final class AdobeDataScienceWorkspace: AdobeExperiencePlatform, SubService {
 final class AdobeDeveloperPlatform: AdobeServices, SubService {
     let name = "Adobe Developer Platform"
     let id = "503495"
+}
+
+final class AdobeDigitalVideoAndAudio: AdobeCreativeCloud, SubService {
+    let name = "Adobe Digital Video & Audio"
+    let id = "582550"
 }
 
 final class AdobeDimension: AdobeCreativeCloud, SubService {
@@ -298,6 +303,11 @@ final class AdobeLightroom: AdobeCreativeCloud, SubService {
 final class AdobeLive: AdobeCreativeCloud, SubService {
     let name = "Adobe Live"
     let id = "503514"
+}
+
+final class AdobeLLMOptimizer: AdobeExperienceCloud, SubService {
+    let name = "Adobe LLM Optimizer"
+    let id = "595270"
 }
 
 final class AdobeMarketoEngage: AdobeExperienceCloud, SubService {

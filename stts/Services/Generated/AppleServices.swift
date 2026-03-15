@@ -117,8 +117,8 @@ final class AppleTVChannels: Apple, SubService {
 }
 
 final class AppleTV: Apple, SubService {
-    let name = "Apple TV+"
-    let serviceName = "Apple TV+"
+    let name = "Apple TV"
+    let serviceName = "Apple TV"
 }
 
 final class AppleCareOnDevice: Apple, SubService {
@@ -241,6 +241,11 @@ final class AppleICloudWebAppsICloudcom: Apple, SubService {
     let serviceName = "iCloud Web Apps (iCloud.com)"
 }
 
+final class AppleIdentityDriversLicenseOrID: Apple, SubService {
+    let name = "Apple Identity - Drivers License or ID"
+    let serviceName = "Identity - Drivers License or ID"
+}
+
 final class AppleIMessage: Apple, SubService {
     let name = "Apple iMessage"
     let serviceName = "iMessage"
@@ -304,11 +309,6 @@ final class AppleMapsSearch: Apple, SubService {
 final class AppleMapsTraffic: Apple, SubService {
     let name = "Apple Maps Traffic"
     let serviceName = "Maps Traffic"
-}
-
-final class AppleMLSSeasonPass: Apple, SubService {
-    let name = "Apple MLS Season Pass"
-    let serviceName = "MLS Season Pass"
 }
 
 final class AppleNews: Apple, SubService {
@@ -517,6 +517,11 @@ final class AppleMapsAPI: AppleDeveloper, SubService {
 final class AppleMusicAPI: AppleDeveloper, SubService {
     let name = "Apple Music API"
     let serviceName = "Apple Music API"
+}
+
+final class AppleMusicConnect: AppleDeveloper, SubService {
+    let name = "Apple Music Connect"
+    let serviceName = "Apple Music Connect"
 }
 
 final class AppleMusicForArtists: AppleDeveloper, SubService {

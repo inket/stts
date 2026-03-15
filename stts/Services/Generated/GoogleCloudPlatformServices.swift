@@ -148,6 +148,11 @@ final class GoogleCertificateAuthorityService: GoogleCloudPlatform, SubService {
     let dashboardName = "Certificate Authority Service"
 }
 
+final class GoogleCertificateManager: GoogleCloudPlatform, SubService {
+    let name = "Google Certificate Manager"
+    let dashboardName = "Certificate Manager"
+}
+
 final class GoogleCloudArmor: GoogleCloudPlatform, SubService {
     let name = "Google Cloud Armor"
     let dashboardName = "Cloud Armor"
@@ -393,6 +398,16 @@ final class GoogleEventarc: GoogleCloudPlatform, SubService {
     let dashboardName = "Eventarc"
 }
 
+final class GoogleGeminiCodeAssist: GoogleCloudPlatform, SubService {
+    let name = "Google Gemini Code Assist"
+    let dashboardName = "Gemini Code Assist"
+}
+
+final class GoogleGeminiEnterprise: GoogleCloudPlatform, SubService {
+    let name = "Google Gemini Enterprise"
+    let dashboardName = "Gemini Enterprise"
+}
+
 final class GoogleGKEFleetManagement: GoogleCloudPlatform, SubService {
     let name = "Google GKE fleet management"
     let dashboardName = "GKE fleet management"
@@ -573,6 +588,11 @@ final class GoogleLookerStudio: GoogleCloudPlatform, SubService {
     let dashboardName = "Looker Studio"
 }
 
+final class GoogleManagedLustre: GoogleCloudPlatform, SubService {
+    let name = "Google Managed Lustre"
+    let dashboardName = "Managed Lustre"
+}
+
 final class GoogleManagedServiceForApacheKafka: GoogleCloudPlatform, SubService {
     let name = "Google Managed Service for Apache Kafka"
     let dashboardName = "Managed Service for Apache Kafka"
@@ -611,6 +631,11 @@ final class GoogleMemorystoreForValkey: GoogleCloudPlatform, SubService {
 final class GoogleMigrateToVirtualMachines: GoogleCloudPlatform, SubService {
     let name = "Google Migrate to Virtual Machines"
     let dashboardName = "Migrate to Virtual Machines"
+}
+
+final class GoogleModelArmor: GoogleCloudPlatform, SubService {
+    let name = "Google Model Armor"
+    let dashboardName = "Model Armor"
 }
 
 final class GoogleNetworkConnectivityCenter: GoogleCloudPlatform, SubService {
@@ -688,6 +713,11 @@ final class GoogleSecretManager: GoogleCloudPlatform, SubService {
     let dashboardName = "Secret Manager"
 }
 
+final class GoogleSecureWebProxy: GoogleCloudPlatform, SubService {
+    let name = "Google Secure Web Proxy"
+    let dashboardName = "Secure Web Proxy"
+}
+
 final class GoogleServiceDirectory: GoogleCloudPlatform, SubService {
     let name = "Google Service Directory"
     let dashboardName = "Service Directory"
@@ -726,6 +756,11 @@ final class GoogleTrafficDirector: GoogleCloudPlatform, SubService {
 final class GoogleTranscoderAPI: GoogleCloudPlatform, SubService {
     let name = "Google Transcoder API"
     let dashboardName = "Transcoder API"
+}
+
+final class GoogleUnifiedMaintenance: GoogleCloudPlatform, SubService {
+    let name = "Google Unified Maintenance"
+    let dashboardName = "Unified Maintenance"
 }
 
 final class GoogleVertexAIAutoMLImage: GoogleCloudPlatform, SubService {
