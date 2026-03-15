@@ -71,6 +71,7 @@
 		B200CA74247FC5AE00DB0868 /* AdobeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200CA73247FC5AE00DB0868 /* AdobeServices.swift */; };
 		B200CA76247FC88700DB0868 /* Adobe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200CA75247FC88700DB0868 /* Adobe.swift */; };
 		B200CA78247FC8B700DB0868 /* AdobeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200CA77247FC8B700DB0868 /* AdobeStore.swift */; };
+		B20308AB2F668EB2006D7CEF /* Zapier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20308AA2F668EB2006D7CEF /* Zapier.swift */; };
 		B20396361EE6A060008CCA21 /* Trello.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20396351EE6A060008CCA21 /* Trello.swift */; };
 		B20396381EE6A06C008CCA21 /* Filestack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20396371EE6A06C008CCA21 /* Filestack.swift */; };
 		B205A9181D49D67700EA178D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B205A9171D49D67700EA178D /* Service.swift */; };
@@ -273,7 +274,6 @@
 		B2C10F3C203646A7008E1E7D /* Gandi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C10F3B203646A7008E1E7D /* Gandi.swift */; };
 		B2C2DFB52D98552C00281399 /* DeepSeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C2DFB42D98552C00281399 /* DeepSeek.swift */; };
 		B2C337A51E1417390007E110 /* Mixpanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C337A41E1417390007E110 /* Mixpanel.swift */; };
-		B2C4670F1E70012700C5145D /* Zapier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4670E1E70012700C5145D /* Zapier.swift */; };
 		B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */; };
 		B2C5ED1B281CA96200009B68 /* OneLoginUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5ED1A281CA96200009B68 /* OneLoginUS.swift */; };
 		B2C5ED1D281CAA3400009B68 /* OneLoginEU.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5ED1C281CAA3400009B68 /* OneLoginEU.swift */; };
@@ -455,6 +455,7 @@
 		B200CA73247FC5AE00DB0868 /* AdobeServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdobeServices.swift; sourceTree = "<group>"; };
 		B200CA75247FC88700DB0868 /* Adobe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adobe.swift; sourceTree = "<group>"; };
 		B200CA77247FC8B700DB0868 /* AdobeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdobeStore.swift; sourceTree = "<group>"; };
+		B20308AA2F668EB2006D7CEF /* Zapier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zapier.swift; sourceTree = "<group>"; };
 		B20396351EE6A060008CCA21 /* Trello.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trello.swift; sourceTree = "<group>"; };
 		B20396371EE6A06C008CCA21 /* Filestack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filestack.swift; sourceTree = "<group>"; };
 		B205A9171D49D67700EA178D /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -662,7 +663,6 @@
 		B2C10F3B203646A7008E1E7D /* Gandi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gandi.swift; sourceTree = "<group>"; };
 		B2C2DFB42D98552C00281399 /* DeepSeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepSeek.swift; sourceTree = "<group>"; };
 		B2C337A41E1417390007E110 /* Mixpanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mixpanel.swift; sourceTree = "<group>"; };
-		B2C4670E1E70012700C5145D /* Zapier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zapier.swift; sourceTree = "<group>"; };
 		B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		B2C5ED1A281CA96200009B68 /* OneLoginUS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLoginUS.swift; sourceTree = "<group>"; };
 		B2C5ED1C281CAA3400009B68 /* OneLoginEU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLoginEU.swift; sourceTree = "<group>"; };
@@ -1152,7 +1152,6 @@
 				B28DFE4621377A0B000EE4AF /* Wodby.swift */,
 				53F844F11070AF5B4CD7719E /* Workflowy.swift */,
 				B231DD55257B431900647312 /* Xandr.swift */,
-				B2C4670E1E70012700C5145D /* Zapier.swift */,
 				B28285E02405E44100B11A08 /* Zoom.swift */,
 				B2483CF02037029D00A9FA95 /* Zwift.swift */,
 			);
@@ -1301,6 +1300,7 @@
 				0BDEA739C3989EA43886F0F6 /* OneSignal.swift */,
 				B2E832EF29EF74D9000FA1BE /* OpenAI.swift */,
 				B29A44FA2E52B4BD00A1DF8A /* Rollbar.swift */,
+				B20308AA2F668EB2006D7CEF /* Zapier.swift */,
 			);
 			path = IncidentIO;
 			sourceTree = "<group>";
@@ -1493,7 +1493,7 @@
 			packageReferences = (
 				B20883E32A59143E007578C8 /* XCRemoteSwiftPackageReference "MBPopup" */,
 				B20883E62A59144F007578C8 /* XCRemoteSwiftPackageReference "Kanna" */,
-				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
+				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */,
 			);
 			productRefGroup = B2B2D1001D49D5080014D780 /* Products */;
 			projectDirPath = "";
@@ -1741,7 +1741,6 @@
 				B2E018FD214E60E700C5F75B /* AppearanceObserver.swift in Sources */,
 				B2107BCF254C970000284EE7 /* Notion.swift in Sources */,
 				B2C2DFB52D98552C00281399 /* DeepSeek.swift in Sources */,
-				B2C4670F1E70012700C5145D /* Zapier.swift in Sources */,
 				B2C5ED1D281CAA3400009B68 /* OneLoginEU.swift in Sources */,
 				B254099228FE76AA0009F956 /* Keygen.swift in Sources */,
 				B24B573223A4EAD200AFCF01 /* Pantheon.swift in Sources */,
@@ -1794,6 +1793,7 @@
 				B24CD81C2BBD82CB00C7D498 /* RunwayASC.swift in Sources */,
 				B2F55EEC2408B5F1003D674C /* PSNAmerica.swift in Sources */,
 				B276D75E2C30440900974DB6 /* EightXEight.swift in Sources */,
+				B20308AB2F668EB2006D7CEF /* Zapier.swift in Sources */,
 				B2563BBC22CBC3D500532C39 /* DataLoader.swift in Sources */,
 				B231DD5C257B431900647312 /* CoderPad.swift in Sources */,
 				B299C8551DD051210024D2E9 /* EngineYard.swift in Sources */,
@@ -2257,7 +2257,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
+		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
 			requirement = {
@@ -2280,7 +2280,7 @@
 		};
 		B20883EA2A59146C007578C8 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
