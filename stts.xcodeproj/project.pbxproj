@@ -56,7 +56,6 @@
 		B22B6B4B2F673C39006528EB /* services.json in Resources */ = {isa = PBXBuildFile; fileRef = B22B6B4A2F673C39006528EB /* services.json */; };
 		B22B6B4D2F69040A006528EB /* mastodonsocial-major.html in Resources */ = {isa = PBXBuildFile; fileRef = B22B6B4C2F69040A006528EB /* mastodonsocial-major.html */; };
 		B22B6B4F2F69047D006528EB /* whereby-good.html in Resources */ = {isa = PBXBuildFile; fileRef = B22B6B4E2F69047D006528EB /* whereby-good.html */; };
-		B22DAFD52F670F8900D51606 /* ServiceCountValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DAFD42F670F8900D51606 /* ServiceCountValidationTests.swift */; };
 		B22FDE4821089C6200359EC9 /* PayPal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE4721089C6200359EC9 /* PayPal.swift */; };
 		B22FDE4D2108A5AE00359EC9 /* PayPalProductProduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE4C2108A5AE00359EC9 /* PayPalProductProduction.swift */; };
 		B22FDE4F2108A5B700359EC9 /* PayPalProductSandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE4E2108A5B700359EC9 /* PayPalProductSandbox.swift */; };
@@ -213,7 +212,6 @@
 		B22B6B4A2F673C39006528EB /* services.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = services.json; sourceTree = "<group>"; };
 		B22B6B4C2F69040A006528EB /* mastodonsocial-major.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "mastodonsocial-major.html"; sourceTree = "<group>"; };
 		B22B6B4E2F69047D006528EB /* whereby-good.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "whereby-good.html"; sourceTree = "<group>"; };
-		B22DAFD42F670F8900D51606 /* ServiceCountValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCountValidationTests.swift; sourceTree = "<group>"; };
 		B22FDE4721089C6200359EC9 /* PayPal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPal.swift; sourceTree = "<group>"; };
 		B22FDE4C2108A5AE00359EC9 /* PayPalProductProduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalProductProduction.swift; sourceTree = "<group>"; };
 		B22FDE4E2108A5B700359EC9 /* PayPalProductSandbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalProductSandbox.swift; sourceTree = "<group>"; };
@@ -352,7 +350,6 @@
 				B2163AF920BA4E7500B14A85 /* Info.plist */,
 				B2D655E629B802ED00DBE417 /* InstatusTests.swift */,
 				B22651282B2EEA52002F1CE2 /* PagerDutyTests.swift */,
-				B22DAFD42F670F8900D51606 /* ServiceCountValidationTests.swift */,
 				91B0A21328197857007D8E8F /* StringExtensionsTests.swift */,
 				B2163AF720BA4E7500B14A85 /* sttsTests.swift */,
 			);
@@ -477,9 +474,9 @@
 		B2B2D1011D49D5080014D780 /* stts */ = {
 			isa = PBXGroup;
 			children = (
-				B22B6B2F2F673895006528EB /* ServiceLoader */,
 				B274C6361DD56A9E00A6B350 /* EditorTableView */,
 				B2DCE6932215ACD0001447D8 /* Extensions */,
+				B22B6B2F2F673895006528EB /* ServiceLoader */,
 				B213A17A1DC9EA3F008E8E58 /* ServiceTableView */,
 				B2FDC91F1D6706FB00F0B728 /* Services */,
 				B2B2D1021D49D5080014D780 /* AppDelegate.swift */,
@@ -499,10 +496,10 @@
 		B2DCE6932215ACD0001447D8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B22B6B372F6738A1006528EB /* TaskExtensions.swift */,
 				B2E8C0222A7A9203000239F0 /* Atomic.swift */,
 				7C82768B2C8E3BE300C0E37B /* NSScreenExtensions.swift */,
 				B2DCE6942215ACDE001447D8 /* StringExtensions.swift */,
+				B22B6B372F6738A1006528EB /* TaskExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -550,7 +547,6 @@
 		B2FDC91F1D6706FB00F0B728 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B22B6B392F6738B1006528EB /* Fastly.swift */,
 				B2E70FDF22B0844F000BCAD2 /* Generated */,
 				B22651212B2EE19C002F1CE2 /* PagerDuty */,
 				B22FDE4921089D4F00359EC9 /* PayPal */,
@@ -563,6 +559,7 @@
 				B23038F01E0DF3CC00B29095 /* Beanstalk.swift */,
 				B276D7672C414DE900974DB6 /* Broadcom.swift */,
 				B290315B1E4B0CA7005B58CC /* Evernote.swift */,
+				B22B6B392F6738B1006528EB /* Fastly.swift */,
 				B2253A6E209F42430039F574 /* Firebase.swift */,
 				B2E70FDA22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift */,
 				B276D7692C41F93300974DB6 /* Okta.swift */,
@@ -579,9 +576,6 @@
 		B2FDC9201D67071500F0B728 /* Super */ = {
 			isa = PBXGroup;
 			children = (
-				B22B6B3F2F6738CD006528EB /* IndependentService.swift */,
-				B22B6B402F6738CD006528EB /* SendbirdService.swift */,
-				B22B6B412F6738CD006528EB /* ServiceStore.swift */,
 				B27F66A52A3609E8008DAF33 /* AWSService.swift */,
 				B27F66A72A360DFF008DAF33 /* AWSStore.swift */,
 				B200CA75247FC88700DB0868 /* Adobe.swift */,
@@ -603,6 +597,7 @@
 				B2493F051E2603F300556A83 /* GoogleCloudPlatform.swift */,
 				B2253A6A209F3C410039F574 /* GoogleStatusDashboardStore.swift */,
 				B2FBDF5E2A35D82000734667 /* IncidentIOService.swift */,
+				B22B6B3F2F6738CD006528EB /* IndependentService.swift */,
 				B213D1FF269AFD45005EBDDA /* InstatusService.swift */,
 				B2DCE68C221591F2001447D8 /* LambStatusService.swift */,
 				B22651222B2EE1C1002F1CE2 /* PagerDutyService.swift */,
@@ -611,7 +606,9 @@
 				B24EE10126C8BFD500F7CE8B /* Salesforce.swift */,
 				B24EE10326C8C07100F7CE8B /* SalesforceCategories.swift */,
 				B24EE10526C8C08A00F7CE8B /* SalesforceStore.swift */,
+				B22B6B402F6738CD006528EB /* SendbirdService.swift */,
 				B205A9171D49D67700EA178D /* Service.swift */,
+				B22B6B412F6738CD006528EB /* ServiceStore.swift */,
 				B2D655ED29B807BF00DBE417 /* Site24x7Service.swift */,
 				B2841CEA20BA6207004AFDB7 /* SorryService.swift */,
 				B2163AFF20BA56EF00B14A85 /* StatusCakeService.swift */,
@@ -628,11 +625,11 @@
 		B2FDC9211D67074900F0B728 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B22B6B4A2F673C39006528EB /* services.json */,
 				B214B6052E7BC13A006B3B77 /* AppIcon.icon */,
 				B2B2D1041D49D5080014D780 /* Assets.xcassets */,
 				B2B2D1091D49D5080014D780 /* Info.plist */,
 				B2B2D1061D49D5080014D780 /* MainMenu.xib */,
+				B22B6B4A2F673C39006528EB /* services.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -726,7 +723,7 @@
 			packageReferences = (
 				B20883E32A59143E007578C8 /* XCRemoteSwiftPackageReference "MBPopup" */,
 				B20883E62A59144F007578C8 /* XCRemoteSwiftPackageReference "Kanna" */,
-				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */,
+				B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
 				B22B6B472F673BDF006528EB /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 			);
 			productRefGroup = B2B2D1001D49D5080014D780 /* Products */;
@@ -839,7 +836,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B22DAFD52F670F8900D51606 /* ServiceCountValidationTests.swift in Sources */,
 				91B0A21428197857007D8E8F /* StringExtensionsTests.swift in Sources */,
 				B2E832EC29DE4F5E000FA1BE /* AdobeTests.swift in Sources */,
 				B2563BBE22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift in Sources */,
@@ -1269,7 +1265,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+		B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
 			requirement = {
@@ -1300,7 +1296,7 @@
 		};
 		B20883EA2A59146C007578C8 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability" */;
+			package = B20883E92A59146C007578C8 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
 			productName = Reachability;
 		};
 		B22B6B482F673BDF006528EB /* SFSafeSymbols */ = {
