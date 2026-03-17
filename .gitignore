@@ -72,3 +72,7 @@ App Store
 
 # Ruby vendor
 vendor
+
+# Claude
+CLAUDE.md
+.claude/
