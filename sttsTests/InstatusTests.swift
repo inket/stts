@@ -38,36 +38,36 @@ final class InstatusTests: XCTestCase {
         return try XCTUnwrap(definition.build() as? InstatusService)
     }
 
-    func testNormalStatus() async throws {
+    func testMajorStatus() async throws {
         let mastodonSocial = try createMastodonSocialService()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
             .init(
                 url: mastodonSocial.url,
                 response: try Data(
-                    contentsOf: Bundle.test.url(forResource: "mastodonsocial-good", withExtension: "html")!
+                    contentsOf: Bundle.test.url(forResource: "mastodonsocial-major", withExtension: "html")!
                 )
             )
         ]))
 
         try await mastodonSocial.updateStatus()
-        XCTAssertEqual(mastodonSocial.status, .good)
+        XCTAssertEqual(mastodonSocial.status, .major)
     }
 
-    func testMinorStatus() async throws {
+    func testNormalStatus() async throws {
         let whereby = try createWherebyService()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
             .init(
                 url: whereby.url,
                 response: try Data(contentsOf: Bundle.test.url(
-                    forResource: "whereby-notice",
+                    forResource: "whereby-good",
                     withExtension: "html"
                 )!)
             )
         ]))
 
         try await whereby.updateStatus()
-        XCTAssertEqual(whereby.status, .notice)
+        XCTAssertEqual(whereby.status, .good)
     }
 }
