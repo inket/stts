@@ -112,6 +112,10 @@
       "url": "https://status.rollbar.com"
     },
     {
+      "name": "Tempo",
+      "url": "https://status.tempo.io"
+    },
+    {
       "name": "Zapier",
       "url": "https://status.zapier.com"
     }
