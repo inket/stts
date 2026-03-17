@@ -302,11 +302,6 @@
       ]
     },
     {
-      "name": "Fastly",
-      "url": "https://www.fastlystatus.com",
-      "hasCurrentStatus": false
-    },
-    {
       "name": "StatusCast",
       "url": "https://status.statuscast.com",
       "hasCurrentStatus": false
