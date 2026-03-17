@@ -26,7 +26,7 @@ protocol RequiredPlayStationNetworkProperties {
     var region: PlayStationNetworkRegion { get }
 }
 
-class BasePlayStationNetwork: BaseService {
+class BasePlayStationNetwork: BaseIndependentService {
     struct Response: Codable {
         struct Status: Codable {
             enum StatusType: String, Codable {
@@ -46,40 +46,31 @@ class BasePlayStationNetwork: BaseService {
 
     let url = URL(string: "https://status.playstation.com")!
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         guard let realSelf = self as? PlayStationNetwork else {
             fatalError("BasePlayStationNetwork should not be used directly.")
         }
 
-        loadData(with: realSelf.region.apiURL) { [weak realSelf] data, _, error in
-            guard let strongSelf = realSelf else { return }
+        let response = try await decoded(Response.self, from: realSelf.region.apiURL)
 
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
+        let statusType = response.status.first?.statusType ?? .ok
 
-            guard let response = try? JSONDecoder().decode(Response.self, from: data) else {
-                return strongSelf._fail("Unexpected data")
-            }
-
-            let statusType = response.status.first?.statusType ?? .ok
-
-            let status: ServiceStatus
-            let message: String
-            switch statusType {
-            case .degraded:
-                status = .minor
-                message = "Some services are experiencing issues."
-            case .outage:
-                status = .major
-                message = "Some services are experiencing issues."
-            case .maintenance:
-                status = .maintenance
-                message = "Some services are undergoing scheduled maintenance."
-            case .ok:
-                status = .good
-                message = "All services are up and running."
-            }
-            strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
+        let status: ServiceStatus
+        let message: String
+        switch statusType {
+        case .degraded:
+            status = .minor
+            message = "Some services are experiencing issues."
+        case .outage:
+            status = .major
+            message = "Some services are experiencing issues."
+        case .maintenance:
+            status = .maintenance
+            message = "Some services are undergoing scheduled maintenance."
+        case .ok:
+            status = .good
+            message = "All services are up and running."
         }
+        statusDescription = ServiceStatusDescription(status: status, message: message)
     }
 }

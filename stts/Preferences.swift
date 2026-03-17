@@ -5,8 +5,8 @@
 
 import Foundation
 
-struct Preferences {
-    static var shared = Preferences()
+class Preferences {
+    private let serviceLoader: ServiceLoader
 
     var notifyOnStatusChange: Bool {
         get { UserDefaults.standard.bool(forKey: "notifyOnStatusChange") }
@@ -23,22 +23,26 @@ struct Preferences {
         set { UserDefaults.standard.set(newValue, forKey: "allowPopupToStretchAsNeeded") }
     }
 
-    var selectedServices: [BaseService] {
+    var selectedServices: [ServiceDefinition] {
         get {
-            guard let classNames = UserDefaults.standard.array(forKey: "selectedServices") as? [String] else {
-                return []
-            }
+            let identifiers = UserDefaults.standard.array(forKey: "selectedServices") as? [String] ?? []
 
-            return classNames.map(BaseService.named).compactMap { $0 }.sorted()
+            // Match the identifiers to our loaded service definitions
+            let definitions = identifiers.map(serviceLoader.serviceDefinition(forIdentifier:)).compactMap { $0 }
+            let sortedDefinitions = definitions.sorted(by: ServiceDefinitionSortByName)
+
+            return sortedDefinitions
         }
 
         set {
-            let classNames = newValue.map { "\(type(of: $0))" }
-            UserDefaults.standard.set(classNames, forKey: "selectedServices")
+            let identifiers = newValue.map { $0.globalIdentifier }
+            UserDefaults.standard.set(identifiers, forKey: "selectedServices")
         }
     }
 
-    private init() {
+    init(serviceLoader: ServiceLoader) {
+        self.serviceLoader = serviceLoader
+
         UserDefaults.standard.register(defaults: [
             "notifyOnStatusChange": true,
             "hideServiceDetailsIfAvailable": false,
@@ -55,23 +59,13 @@ struct Preferences {
             "CloudFlare": "Cloudflare", // v1.0.0 used the name "CloudFlare" instead of the official "Cloudflare"
             "Apple": "AppleAll", // Apple changed from one service to multiple sub services
             "AppleDeveloper": "AppleDeveloperAll", // Apple Developer changed from one service to multiple sub services
-            "BitBucket": "Bitbucket", // v2.8
-            "StatusPage": "Statuspage", // v2.8
-            "ProtonMail": "Proton", // v2.12
-            "Packet": "EquinixMetal", // v2.12
-            "Quandl": "NasdaqDataLink", // v2.12
-            "Quay": "QuayIO", // v2.12
-            "SmartyStreets": "Smarty", // v2.12
-            "UrbanAirship": "AirshipUS", // v2.19
             "VMwareCarbonBlack": "Broadcom", // v2.23
             "Tableau": "TableauAll", // v2.23
             "Spoke": "Okta", // v2.23
-            "Intercom": "IntercomUS", // v2.24
-            "Lumanox": "FilesCom", // v2.25
-            "FirefoxRelay": "Mozilla", // v2.25
-            "Sendinblue": "Brevo", // v2.25
+            // There were many others but they were migrated to the services.json file
             // Generated services
-            "FirebaseMLKit": "FirebaseMachineLearning"
+            "FirebaseMLKit": "FirebaseMachineLearning",
+            "AdobeAdobePhotoshopAPI": "AdobePhotoshopAPI"
         ]
 
         if var services = UserDefaults.standard.array(forKey: "selectedServices") as? [String] {

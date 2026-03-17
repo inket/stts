@@ -6,11 +6,15 @@
 import Foundation
 import Kanna
 
-typealias BetterStackService = BaseBetterStackService & RequiredServiceProperties & RequiredBetterStackProperties
+class BetterStackServiceDefinition: CodableServiceDefinition, ServiceDefinition {
+    let providerIdentifier = "betterstack"
 
-protocol RequiredBetterStackProperties {}
+    func build() -> BaseService? {
+        BetterStackService(self)
+    }
+}
 
-class BaseBetterStackService: BaseService {
+class BetterStackService: Service {
     /*
      :root {
          /* light mode colors in RGB */
@@ -44,33 +48,29 @@ class BaseBetterStackService: BaseService {
         }
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? BetterStackService else {
-            fatalError("BaseBetterStackService should not be used directly.")
+    let name: String
+    let url: URL
+
+    init(_ definition: BetterStackServiceDefinition) {
+        name = definition.name
+        url = definition.url
+    }
+
+    override func updateStatus() async throws {
+        let doc = try await html(from: url)
+
+        guard
+            let heading = doc.css(".heading-large").first,
+            let statusMessage = heading.text,
+            let statusIconFillColorString = heading.parent?.css("svg").first?.css("path").first?["fill"],
+            let statusIconFillColor = StatusIconFillColor(rawValue: statusIconFillColorString.lowercased())
+        else {
+            throw StatusUpdateError.decodingError(nil)
         }
 
-        loadData(with: realSelf.url) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
-
-            guard let doc = try? HTML(html: data, encoding: .utf8) else {
-                return strongSelf._fail("Couldn't parse response")
-            }
-
-            guard
-                let heading = doc.css(".heading-large").first,
-                let statusMessage = heading.text,
-                let statusIconFillColorString = heading.parent?.css("svg").first?.css("path").first?["fill"],
-                let statusIconFillColor = StatusIconFillColor(rawValue: statusIconFillColorString.lowercased())
-            else {
-                return strongSelf._fail("Unexpected response")
-            }
-
-            strongSelf.statusDescription = ServiceStatusDescription(
-                status: statusIconFillColor.serviceStatus,
-                message: statusMessage
-            )
-        }
+        statusDescription = ServiceStatusDescription(
+            status: statusIconFillColor.serviceStatus,
+            message: statusMessage
+        )
     }
 }

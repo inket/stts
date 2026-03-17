@@ -7,21 +7,18 @@ import Foundation
 
 typealias Apple = BaseApple & RequiredServiceProperties & AppleStoreService
 
-class BaseApple: BaseService {
+class BaseApple: BaseIndependentService {
     private static var store = AppleStore(
         url: "https://www.apple.com/support/systemstatus/data/system_status_en_US.js"
     )
 
     let url = URL(string: "https://www.apple.com/support/systemstatus/")!
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? Apple else { fatalError("BaseApple should not be used directly.") }
-
-        BaseApple.store.loadStatus { [weak realSelf] in
-            guard let strongSelf = realSelf else { return }
-
-            strongSelf.statusDescription = BaseApple.store.status(for: strongSelf)
-            callback(strongSelf)
+    override func updateStatus() async throws {
+        guard let realSelf = self as? Apple else {
+            fatalError("BaseApple should not be used directly.")
         }
+
+        statusDescription = try await BaseApple.store.updatedStatus(for: realSelf)
     }
 }

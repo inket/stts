@@ -6,7 +6,7 @@
 import Foundation
 import Kanna
 
-class Algolia: Service {
+class Algolia: IndependentService {
     private enum AlgoliaStatus: String {
         case operational
         case majorOutage = "major_outage"
@@ -45,23 +45,19 @@ class Algolia: Service {
 
     let url = URL(string: "https://status.algolia.com")!
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         let apiURL = URL(string: "https://status.algolia.com/2/status/service/all/period/current")!
+        let data = try await rawData(from: apiURL)
 
-        loadData(with: apiURL) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
-
-            let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            guard
-                let dict = json as? [String: Any],
-                let statusDict = dict["global"] as? [String: Any],
-                let statusString = statusDict["status"] as? String,
-                let status = AlgoliaStatus(rawValue: statusString)
-            else { return strongSelf._fail("Unexpected data") }
-
-            strongSelf.statusDescription = status.serviceDescription
+        guard
+            let dict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+            let statusDict = dict["global"] as? [String: Any],
+            let statusString = statusDict["status"] as? String,
+            let status = AlgoliaStatus(rawValue: statusString)
+        else {
+            throw StatusUpdateError.decodingError(nil)
         }
+
+        statusDescription = status.serviceDescription
     }
 }

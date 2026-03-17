@@ -17,55 +17,50 @@ extension GoogleStatusDashboardStoreService {
     }
 }
 
-class GoogleStatusDashboardStore: Loading {
-    private var dashboardURL: URL
-    private var statuses: [String: ServiceStatus] = [:]
-    private var loadErrorMessage: String?
-    private var callbacks: [() -> Void] = []
-    private var lastUpdateTime: TimeInterval = 0
-    private var currentlyReloading: Bool = false
+class GoogleStatusDashboardStore: ServiceStore<[String: ServiceStatus]> {
+    private let dashboardURL: URL
 
     init(url: URL) {
         dashboardURL = url
     }
 
-    func loadStatus(_ callback: @escaping () -> Void) {
-        callbacks.append(callback)
+    override func retrieveUpdatedState() async throws -> [String: ServiceStatus] {
+        let doc = try await html(from: dashboardURL)
 
-        guard !currentlyReloading else { return }
+        var statuses: [String: ServiceStatus] = [:]
+        var badStatuses: [ServiceStatus] = []
 
-        // Throttling to prevent multiple requests if the first one finishes too quickly
-        guard Date.timeIntervalSinceReferenceDate - lastUpdateTime >= 3 else { return clearCallbacks() }
+        for tr in doc.css("psd-regional-table tbody tr") {
+            guard let (name, status) = self.parseDashboardRow(tr) else { continue }
+            statuses[name] = status
 
-        currentlyReloading = true
-
-        loadData(with: dashboardURL) { data, _, error in
-            defer {
-                self.currentlyReloading = false
-                self.clearCallbacks()
+            if status != .good && status != .undetermined {
+                badStatuses.append(status)
             }
-
-            self.statuses = [:]
-
-            guard let data = data else { return self._fail(error) }
-            guard let doc = try? HTML(html: data, encoding: .utf8) else { return self._fail("Couldn't parse response") }
-
-            for tr in doc.css("psd-regional-table tbody tr") {
-                guard let (name, status) = self.parseDashboardRow(tr) else { continue }
-                self.statuses[name] = status
-            }
-
-            self.lastUpdateTime = Date.timeIntervalSinceReferenceDate
         }
+
+        let generalStatus: ServiceStatus
+        if badStatuses.count > 2 {
+            generalStatus = .major
+        } else if badStatuses.count > 0 {
+            generalStatus = .minor
+        } else {
+            generalStatus = .good
+        }
+        statuses["_general"] = generalStatus
+
+        return statuses
     }
 
-    func status(for service: GoogleStatusDashboardStoreService) -> ServiceStatusDescription {
+    func updatedStatus(for service: GoogleStatusDashboardStoreService) async throws -> ServiceStatusDescription {
+        let updatedState = try await updatedState()
+
         let status: ServiceStatus?
 
         if type(of: service) == GoogleCloudPlatformAll.self {
-            status = statuses["_general"]
+            status = updatedState["_general"]
         } else {
-            status = statuses[service.dashboardName]
+            status = updatedState[service.dashboardName]
         }
 
         switch status {
@@ -75,32 +70,6 @@ class GoogleStatusDashboardStore: Loading {
         case .major: return ServiceStatusDescription(status: .major, message: "Service outage")
         default: return ServiceStatusDescription(status: .undetermined, message: loadErrorMessage ?? "Unexpected error")
         }
-    }
-
-    private func clearCallbacks() {
-        updateGeneralStatus()
-
-        callbacks.forEach { $0() }
-        callbacks = []
-    }
-
-    private func updateGeneralStatus() {
-        let generalStatus: ServiceStatus
-
-        if statuses.keys.filter({ $0 != "_general" }).isEmpty {
-            generalStatus = .undetermined
-        } else {
-            let badServices = statuses.values.filter { ($0 != .good) && ($0 != .undetermined) }
-            if badServices.count > 2 {
-                generalStatus = .major
-            } else if badServices.count > 0 {
-                generalStatus = .minor
-            } else {
-                generalStatus = .good
-            }
-        }
-
-        statuses["_general"] = generalStatus
     }
 
     private func parseDashboardRow(_ tr: Kanna.XMLElement) -> (String, ServiceStatus)? {
@@ -133,14 +102,5 @@ class GoogleStatusDashboardStore: Loading {
 
         let max = statuses.max() ?? .undetermined
         return (name, max)
-    }
-
-    private func _fail(_ error: Error?) {
-        _fail(ServiceStatusMessage.from(error))
-    }
-
-    private func _fail(_ message: String) {
-        loadErrorMessage = message
-        lastUpdateTime = 0
     }
 }

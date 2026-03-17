@@ -10,66 +10,38 @@ protocol SalesforceStoreService {
     var location: String { get }
 }
 
-class SalesforceStore: Loading {
+class SalesforceStore: ServiceStore<[String: ServiceStatus]> {
     let key: String
 
     private var url: URL {
         URL(string: "https://api.status.salesforce.com/v1/instances/status/preview?products=\(key)")!
     }
 
-    private var statuses: [String: ServiceStatus] = [:] // [location: status]
-    private var loadErrorMessage: String?
-    private var callbacks: [() -> Void] = []
-    private var lastUpdateTime: TimeInterval = 0
-    private var currentlyReloading: Bool = false
-
     init(key: String) {
         self.key = key
     }
 
-    func loadStatus(_ callback: @escaping () -> Void) {
-        callbacks.append(callback)
+    override func retrieveUpdatedState() async throws -> [String: ServiceStatus] {
+        let instances = try await decoded([SalesforceResponseData.Instance].self, from: url)
 
-        guard !currentlyReloading else { return }
+        var serviceStatuses = [String: ServiceStatus]()
 
-        // Throttling to prevent multiple requests if the first one finishes too quickly
-        guard Date.timeIntervalSinceReferenceDate - lastUpdateTime >= 3 else { return clearCallbacks() }
+        instances.forEach { instance in
+            var locationStatus = serviceStatuses[instance.location] ?? .undetermined
+            locationStatus = [locationStatus, instance.status.serviceStatus].max() ?? .undetermined
+            serviceStatuses[instance.location] = locationStatus
 
-        currentlyReloading = true
-
-        loadData(with: url) { data, _, error in
-            defer {
-                self.currentlyReloading = false
-                self.clearCallbacks()
-            }
-
-            self.statuses = [:]
-
-            guard let data = data else { return self._fail(error) }
-
-            guard let instances = try? JSONDecoder().decode([SalesforceResponseData.Instance].self, from: data) else {
-                return self._fail("Unexpected data")
-            }
-
-            var serviceStatuses = [String: ServiceStatus]()
-
-            instances.forEach { instance in
-                var locationStatus = serviceStatuses[instance.location] ?? .undetermined
-                locationStatus = [locationStatus, instance.status.serviceStatus].max() ?? .undetermined
-                serviceStatuses[instance.location] = locationStatus
-
-                var allLocationsStatus = serviceStatuses["*"] ?? .undetermined
-                allLocationsStatus = [allLocationsStatus, instance.status.serviceStatus].max() ?? .undetermined
-                serviceStatuses["*"] = allLocationsStatus
-            }
-
-            self.statuses = serviceStatuses
-            self.lastUpdateTime = Date.timeIntervalSinceReferenceDate
+            var allLocationsStatus = serviceStatuses["*"] ?? .undetermined
+            allLocationsStatus = [allLocationsStatus, instance.status.serviceStatus].max() ?? .undetermined
+            serviceStatuses["*"] = allLocationsStatus
         }
+
+        return serviceStatuses
     }
 
-    func status(for service: SalesforceStoreService) -> ServiceStatusDescription {
-        let status = statuses[service.location] ?? .undetermined
+    func updatedStatus(for service: SalesforceStoreService) async throws -> ServiceStatusDescription {
+        let updatedState = try await updatedState()
+        let status = updatedState[service.location] ?? .undetermined
         let message: String
 
         switch status {
@@ -88,20 +60,6 @@ class SalesforceStore: Loading {
         }
 
         return ServiceStatusDescription(status: status, message: message)
-    }
-
-    private func clearCallbacks() {
-        callbacks.forEach { $0() }
-        callbacks = []
-    }
-
-    private func _fail(_ error: Error?) {
-        _fail(ServiceStatusMessage.from(error))
-    }
-
-    private func _fail(_ message: String) {
-        loadErrorMessage = message
-        lastUpdateTime = 0
     }
 }
 

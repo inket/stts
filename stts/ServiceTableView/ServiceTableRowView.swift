@@ -9,6 +9,33 @@ class ServiceTableRowView: NSTableRowView {
     var showSeparator = true
     var gradient: CAGradientLayer?
 
+    private var effectViewBackground: NSVisualEffectView?
+
+    var usesWindowBackground: Bool = false {
+        didSet {
+            if usesWindowBackground {
+                let effectView = effectViewBackground ?? NSVisualEffectView()
+                effectView.translatesAutoresizingMaskIntoConstraints = false
+                effectView.material = .windowBackground
+                effectView.blendingMode = .withinWindow
+                effectViewBackground = effectView
+
+                if effectView.superview == nil {
+                    addSubview(effectView)
+
+                    NSLayoutConstraint.activate([
+                        effectView.topAnchor.constraint(equalTo: topAnchor),
+                        effectView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                        effectView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                        effectView.bottomAnchor.constraint(equalTo: bottomAnchor)
+                    ])
+                }
+            } else {
+                effectViewBackground?.removeFromSuperview()
+            }
+        }
+    }
+
     override func layout() {
         super.layout()
 

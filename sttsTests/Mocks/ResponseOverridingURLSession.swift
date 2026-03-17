@@ -6,17 +6,6 @@
 import Foundation
 import stts
 
-class DummyDataTask: URLSessionDataTask, @unchecked Sendable {
-    static func nonWarningInit() -> Self {
-        perform(NSSelectorFromString("alloc"))?.takeUnretainedValue()
-            .perform(NSSelectorFromString("init"))?.takeUnretainedValue() as! Self // swiftlint:disable:this force_cast
-    }
-
-    override func resume() {
-        // Do nothing
-    }
-}
-
 final class ResponseOverridingURLSession: URLSessionProtocol {
     class Override {
         let url: URL
@@ -39,39 +28,27 @@ final class ResponseOverridingURLSession: URLSessionProtocol {
         self.overrides = mappedOverrides
     }
 
-    func dataTask(
-        with url: URL,
-        completionHandler: @escaping URLSessionProtocol.CompletionHandler
-    ) -> URLSessionDataTask {
+    func data(from url: URL) async throws -> (Data, URLResponse) {
         if let override = overrides[url] {
             print("[ResponseOverridingURLSession] Overridden URL: \(url)")
 
-            DispatchQueue.global(qos: .userInitiated).async {
-                completionHandler(override.response, nil, nil)
-            }
-
-            return DummyDataTask.nonWarningInit()
+            try await Task.sleep(seconds: 0.5)
+            return (override.response, URLResponse())
         } else {
             print("[ResponseOverridingURLSession] Skipped URL: \(url)")
-            return URLSession.shared.dataTask(with: url, completionHandler: completionHandler)
+            return try await URLSession.shared.data(from: url)
         }
     }
 
-    func dataTask(
-        with urlRequest: URLRequest,
-        completionHandler: @escaping URLSessionProtocol.CompletionHandler
-    ) -> URLSessionDataTask {
-        if let override = overrides[urlRequest.url!] {
-            print("[ResponseOverridingURLSession] Overridden request URL: \(String(describing: urlRequest.url))")
+    func data(for request: URLRequest) async throws -> (Data, URLResponse) {
+        if let override = overrides[request.url!] {
+            print("[ResponseOverridingURLSession] Overridden request URL: \(String(describing: request.url))")
 
-            DispatchQueue.global(qos: .userInitiated).async {
-                completionHandler(override.response, nil, nil)
-            }
-
-            return DummyDataTask.nonWarningInit()
+            try await Task.sleep(seconds: 0.5)
+            return (override.response, URLResponse())
         } else {
-            print("[ResponseOverridingURLSession] Skipped URL: \(String(describing: urlRequest.url))")
-            return URLSession.shared.dataTask(with: urlRequest, completionHandler: completionHandler)
+            print("[ResponseOverridingURLSession] Skipped URL: \(String(describing: request.url))")
+            return try await URLSession.shared.data(for: request)
         }
     }
 }

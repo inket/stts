@@ -13,47 +13,42 @@ import WebKit
 // more memory than the entire stts app and should not be allowed to stay alive.
 // This is a last resort and shouldn't be used unless necessary otherwise we would be creating too many web views (and/
 // or have to make some sort of limiter to deal with that...)
+@MainActor
 class HeadlessHTMLRenderer: NSObject, WKNavigationDelegate {
     private var webView: WKWebView?
-    private var callback: ((String?) -> Void)?
+    private var continuation: CheckedContinuation<String?, Never>?
 
-    func retrieveRenderedHTML(for url: URL, callback: @escaping (String?) -> Void) {
-        // Throw away current callback and web view
-        self.callback = nil
-        self.webView = nil
+    func retrieveRenderedHTML(for url: URL) async -> String? {
+        await withCheckedContinuation { continuation in
+            // Resume and discard any in-flight request
+            self.continuation?.resume(returning: nil)
 
-        // Create new web view and set up delegate/callback
-        self.callback = callback
-        let webView = WKWebView()
-        webView.navigationDelegate = self
-        webView.load(URLRequest(url: url))
-        self.webView = webView
+            self.continuation = continuation
+            let webView = WKWebView()
+            webView.navigationDelegate = self
+            webView.load(URLRequest(url: url))
+            self.webView = webView
+        }
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        guard webView == self.webView, let callback else { return }
+        guard webView == self.webView, let continuation else { return }
+        self.continuation = nil
 
-        webView.evaluateJavaScript("document.body.innerHTML") { [weak self] html, _ in
-            callback(html as? String)
+        Task {
+            let html = try? await webView.evaluateJavaScript("document.body.innerHTML")
+            continuation.resume(returning: html as? String)
 
             // Discard the web view so that the web content process is killed
-            if webView == self?.webView {
-                self?.callback = nil
-                self?.webView = nil
-            }
+            if webView == self.webView { self.webView = nil }
         }
     }
 
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: any Error) {
-        guard webView == self.webView, let callback else { return }
-
-        callback(nil)
-
-        // Discard the web view so that the web content process is killed
-        if webView == self.webView {
-            self.callback = nil
-            self.webView = nil
-        }
+        guard webView == self.webView, let continuation else { return }
+        self.continuation = nil
+        self.webView = nil
+        continuation.resume(returning: nil)
     }
 
     func webView(
@@ -61,14 +56,9 @@ class HeadlessHTMLRenderer: NSObject, WKNavigationDelegate {
         didFailProvisionalNavigation navigation: WKNavigation!,
         withError error: any Error
     ) {
-        guard webView == self.webView, let callback else { return }
-
-        callback(nil)
-
-        // Discard the web view so that the web content process is killed
-        if webView == self.webView {
-            self.callback = nil
-            self.webView = nil
-        }
+        guard webView == self.webView, let continuation else { return }
+        self.continuation = nil
+        self.webView = nil
+        continuation.resume(returning: nil)
     }
 }

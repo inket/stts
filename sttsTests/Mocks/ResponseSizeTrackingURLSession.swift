@@ -13,26 +13,15 @@ final class ResponseSizeTrackingURLSession: URLSessionProtocol {
         return "\(data.count / 1024)KB"
     }
 
-    func dataTask(
-        with url: URL,
-        completionHandler: @escaping URLSessionProtocol.CompletionHandler
-    ) -> URLSessionDataTask {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            print("[ResponseSizeTrackingURLSession] \(self.humanSize(data: data)) [\(url.absoluteString)]")
-            completionHandler(data, response, error)
-        }
+    func data(from url: URL) async throws -> (Data, URLResponse) {
+        let (data, response) = try await URLSession.shared.data(from: url)
+        print("[ResponseSizeTrackingURLSession] \(humanSize(data: data)) [\(url.absoluteString)]")
+        return (data, response)
     }
 
-    func dataTask(
-        with urlRequest: URLRequest,
-        completionHandler: @escaping URLSessionProtocol.CompletionHandler
-    ) -> URLSessionDataTask {
-        URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            print("""
-            [ResponseSizeTrackingURLSession] \(self.humanSize(data: data)) [\(urlRequest.url?.absoluteString ?? "nil")]
-            """)
-
-            completionHandler(data, response, error)
-        }
+    func data(for request: URLRequest) async throws -> (Data, URLResponse) {
+        let (data, response) = try await URLSession.shared.data(for: request)
+        print("[ResponseSizeTrackingURLSession] \(humanSize(data: data)) [\(request.url?.absoluteString ?? "nil")]")
+        return (data, response)
     }
 }

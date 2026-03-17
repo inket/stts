@@ -9,7 +9,6 @@ protocol AppearanceObserver: AnyObject {
     func changeAppearance(to newAppearance: NSAppearance)
 }
 
-@available(OSX 10.14, *)
 class Appearance {
     class Weak {
         fileprivate weak var object: AnyObject?
@@ -57,10 +56,6 @@ class Appearance {
 
 extension NSAppearance {
     var isDarkMode: Bool {
-        if #available(OSX 10.14, *) {
-            return name == .darkAqua
-        } else {
-            return false
-        }
+        name == .darkAqua || name == .vibrantDark
     }
 }

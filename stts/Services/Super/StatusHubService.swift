@@ -5,11 +5,15 @@
 
 import Foundation
 
-typealias StatusHubService = BaseStatusHubService & RequiredServiceProperties & RequiredStatusHubProperties
+class StatusHubServiceDefinition: CodableServiceDefinition, ServiceDefinition {
+    let providerIdentifier = "statushub"
 
-protocol RequiredStatusHubProperties {}
+    func build() -> BaseService? {
+        StatusHubService(self)
+    }
+}
 
-class BaseStatusHubService: BaseService {
+class StatusHubService: Service {
     private struct StatusHubResponse: Codable {
         struct Counters: Codable {
             enum CodingKeys: String, CodingKey {
@@ -26,24 +30,18 @@ class BaseStatusHubService: BaseService {
         let counters: Counters
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? StatusHubService else {
-            fatalError("BaseStatusHubService should not be used directly.")
-        }
+    let name: String
+    let url: URL
 
-        let statusURL = realSelf.url.appendingPathComponent("api/statuses")
+    init(_ definition: StatusHubServiceDefinition) {
+        name = definition.name
+        url = definition.url
+    }
 
-        loadData(with: statusURL) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
-
-            guard let response = try? JSONDecoder().decode(StatusHubResponse.self, from: data) else {
-                return strongSelf._fail("Unexpected data")
-            }
-
-            strongSelf.updateStatus(from: response)
-        }
+    override func updateStatus() async throws {
+        let statusURL = url.appendingPathComponent("api/statuses")
+        let response = try await decoded(StatusHubResponse.self, from: statusURL)
+        updateStatus(from: response)
     }
 
     private func updateStatus(from response: StatusHubResponse) {

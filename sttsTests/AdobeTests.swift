@@ -7,7 +7,7 @@ import XCTest
 @testable import stts
 
 final class AdobeTests: XCTestCase {
-    func testParsingStatus() throws {
+    func testParsingStatus() async throws {
         let adobeCreativeCloud = AdobeCreativeCloudAll()
         let adobePremierePro = AdobePremierePro()
 
@@ -23,28 +23,16 @@ final class AdobeTests: XCTestCase {
             )
         ]))
 
-        let expectation = XCTestExpectation(description: "Retrieve mocked status for Adobe")
+        try await adobePremierePro.updateStatus()
+        XCTAssertEqual(adobePremierePro.status, .good)
 
-        adobePremierePro.updateStatus { service in
-            XCTAssertEqual(service.status, .good)
-            expectation.fulfill()
-        }
+        try await adobeCreativeCloud.updateStatus()
+        XCTAssertEqual(adobeCreativeCloud.status, .good)
 
-        adobeCreativeCloud.updateStatus { service in
-            XCTAssertEqual(service.status, .good)
-            expectation.fulfill()
-        }
+        try await adobeAnalytics.updateStatus()
+        XCTAssertEqual(adobeAnalytics.status, .minor)
 
-        adobeAnalytics.updateStatus { service in
-            XCTAssertEqual(service.status, .minor)
-            expectation.fulfill()
-        }
-
-        adobeExperienceCloud.updateStatus { service in
-            XCTAssertEqual(service.status, .minor)
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 3)
+        try await adobeExperienceCloud.updateStatus()
+        XCTAssertEqual(adobeExperienceCloud.status, .minor)
     }
 }

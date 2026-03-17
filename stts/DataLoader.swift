@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import Kanna
 
 private var _sharedWithoutCaching: URLSession?
 
@@ -24,15 +25,13 @@ extension URLSession {
 }
 
 public protocol URLSessionProtocol {
-    typealias CompletionHandler = @Sendable (Data?, URLResponse?, Error?) -> Void
-
-    func dataTask(with url: URL, completionHandler: @escaping CompletionHandler) -> URLSessionDataTask
-    func dataTask(with urlRequest: URLRequest, completionHandler: @escaping CompletionHandler) -> URLSessionDataTask
+    func data(for request: URLRequest) async throws -> (Data, URLResponse)
+    func data(from url: URL) async throws -> (Data, URLResponse)
 }
 
 extension URLSession: URLSessionProtocol {}
 
-class DataLoader {
+class DataLoader: URLSessionProtocol {
     #if DEBUG
     // For testing
     static var shared = DataLoader()
@@ -46,51 +45,72 @@ class DataLoader {
         self.session = session
     }
 
-    func loadData(
-        with urlRequest: URLRequest,
-        completionHandler: @escaping URLSessionProtocol.CompletionHandler
-    ) -> URLSessionDataTask {
-        let task = session.dataTask(with: urlRequest, completionHandler: completionHandler)
-        task.resume()
-        return task
+    func data(for request: URLRequest) async throws -> (Data, URLResponse) {
+        try await session.data(for: request)
     }
 
-    func loadData(
-        with url: URL,
-        completionHandler: @escaping URLSessionProtocol.CompletionHandler
-    ) -> URLSessionDataTask {
-        let task = session.dataTask(with: url, completionHandler: completionHandler)
-        task.resume()
-        return task
+    func data(from url: URL) async throws -> (Data, URLResponse) {
+        try await session.data(from: url)
     }
 }
 
 protocol Loading {
-    func loadData(
-        with urlRequest: URLRequest,
-        completionHandler: @escaping URLSessionProtocol.CompletionHandler
-    ) -> URLSessionDataTask
-
-    func loadData(
-        with url: URL,
-        completionHandler: @escaping URLSessionProtocol.CompletionHandler
-    ) -> URLSessionDataTask
+    func data(for request: URLRequest) async throws -> (Data, URLResponse)
+    func data(from url: URL) async throws -> (Data, URLResponse)
 }
 
 extension Loading {
-    @discardableResult
-    public func loadData(
-        with urlRequest: URLRequest,
-        completionHandler: @escaping URLSessionProtocol.CompletionHandler
-    ) -> URLSessionDataTask {
-        return DataLoader.shared.loadData(with: urlRequest, completionHandler: completionHandler)
+    func data(for request: URLRequest) async throws -> (Data, URLResponse) {
+        try await DataLoader.shared.data(for: request)
     }
 
-    @discardableResult
-    public func loadData(
-        with url: URL,
-        completionHandler: @escaping URLSessionProtocol.CompletionHandler
-    ) -> URLSessionDataTask {
-        return DataLoader.shared.loadData(with: url, completionHandler: completionHandler)
+    func data(from url: URL) async throws -> (Data, URLResponse) {
+        try await DataLoader.shared.data(from: url)
+    }
+
+    func rawData(from url: URL) async throws -> Data {
+        do {
+            return try await self.data(from: url).0
+        } catch {
+            throw StatusUpdateError.networkError(error)
+        }
+    }
+
+    func rawString(from url: URL) async throws -> String {
+        let data = try await rawData(from: url)
+
+        if let rawContents = String(data: data, encoding: .utf8) {
+            return rawContents
+        } else {
+            throw StatusUpdateError.parseError(nil)
+        }
+    }
+
+    func html(from url: URL) async throws -> HTMLDocument {
+        let data = try await rawData(from: url)
+
+        do {
+            return try HTML(html: data, encoding: .utf8)
+        } catch {
+            throw StatusUpdateError.parseError(error)
+        }
+    }
+
+    func decoded<T: Decodable>(_ type: T.Type, from url: URL) async throws -> T {
+        let data = try await rawData(from: url)
+
+        do {
+            return try JSONDecoder().decode(type, from: data)
+        } catch {
+            throw StatusUpdateError.decodingError(error)
+        }
+    }
+
+    func rawData(for request: URLRequest) async throws -> Data {
+        do {
+            return try await self.data(for: request).0
+        } catch {
+            throw StatusUpdateError.networkError(error)
+        }
     }
 }

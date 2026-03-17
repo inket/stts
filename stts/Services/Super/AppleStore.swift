@@ -10,62 +10,43 @@ protocol AppleStoreService {
 }
 
 // AppleStore as in a store that holds the status of each of Apple's services, and not "Apple Store"
-class AppleStore: Loading {
+class AppleStore: ServiceStore<[String: (ServiceStatus, String)]> {
     let url: URL
-
-    private var statuses: [String: (ServiceStatus, String)] = [:]
-    private var loadErrorMessage: String?
-    private var callbacks: [() -> Void] = []
-    private var lastUpdateTime: TimeInterval = 0
-    private var currentlyReloading: Bool = false
 
     init(url: String) {
         self.url = URL(string: url)!
     }
 
-    func loadStatus(_ callback: @escaping () -> Void) {
-        callbacks.append(callback)
+    override func retrieveUpdatedState() async throws -> [String: (ServiceStatus, String)] {
+        let raw = try await rawString(from: url)
 
-        guard !currentlyReloading else { return }
-
-        // Throttling to prevent multiple requests if the first one finishes too quickly
-        guard Date.timeIntervalSinceReferenceDate - lastUpdateTime >= 3 else { return clearCallbacks() }
-
-        currentlyReloading = true
-
-        loadData(with: url) { data, _, error in
-            defer {
-                self.currentlyReloading = false
-                self.clearCallbacks()
-            }
-
-            self.statuses = [:]
-
-            guard let data = data else { return self._fail(error) }
-
-            guard
-                let jsonData = String(data: data, encoding: .utf8)?.innerJSONString.data(using: .utf8),
-                let responseData = try? JSONDecoder().decode(AppleResponseData.self, from: jsonData)
-            else {
-                return self._fail("Unexpected data")
-            }
-
-            var serviceStatuses = [String: (ServiceStatus, String)]()
-
-            responseData.services.forEach {
-                if let worstEvent = $0.worstEvent {
-                    serviceStatuses[$0.serviceName] = (worstEvent.serviceStatus, worstEvent.realStatus.rawValue)
-                } else {
-                    serviceStatuses[$0.serviceName] = (.good, "Available")
-                }
-            }
-
-            self.statuses = serviceStatuses
-            self.lastUpdateTime = Date.timeIntervalSinceReferenceDate
+        guard let jsonData = raw.innerJSONString.data(using: .utf8) else {
+            throw StatusUpdateError.decodingError(nil)
         }
+
+        let responseData: AppleResponseData
+        do {
+            responseData = try JSONDecoder().decode(AppleResponseData.self, from: jsonData)
+        } catch {
+            throw StatusUpdateError.decodingError(error)
+        }
+
+        var serviceStatuses = [String: (ServiceStatus, String)]()
+
+        responseData.services.forEach {
+            if let worstEvent = $0.worstEvent {
+                serviceStatuses[$0.serviceName] = (worstEvent.serviceStatus, worstEvent.realStatus.rawValue)
+            } else {
+                serviceStatuses[$0.serviceName] = (.good, "Available")
+            }
+        }
+
+        return serviceStatuses
     }
 
-    func status(for service: AppleStoreService) -> ServiceStatusDescription {
+    func updatedStatus(for service: AppleStoreService) async throws -> ServiceStatusDescription {
+        let updatedState = try await updatedState()
+
         let status: ServiceStatus?
         let message: String?
 
@@ -73,7 +54,7 @@ class AppleStore: Loading {
             var lines: [String] = []
             var worstStatus: (ServiceStatus, String)?
 
-            for (serviceName, serviceStatusAndDescription) in statuses {
+            for (serviceName, serviceStatusAndDescription) in updatedState {
                 let serviceStatus = serviceStatusAndDescription.0
                 let serviceStatusDescription = serviceStatusAndDescription.1
 
@@ -89,7 +70,7 @@ class AppleStore: Loading {
             status = worstStatus?.0
             message = lines.isEmpty ? worstStatus?.1 : lines.joined(separator: "\n")
         } else {
-            let worstStatus: (ServiceStatus, String)? = statuses[service.serviceName]
+            let worstStatus: (ServiceStatus, String)? = updatedState[service.serviceName]
             status = worstStatus?.0
             message = worstStatus?.1
         }
@@ -99,23 +80,9 @@ class AppleStore: Loading {
             message: message ?? loadErrorMessage ?? "Unexpected error"
         )
     }
-
-    private func clearCallbacks() {
-        callbacks.forEach { $0() }
-        callbacks = []
-    }
-
-    private func _fail(_ error: Error?) {
-        _fail(ServiceStatusMessage.from(error))
-    }
-
-    private func _fail(_ message: String) {
-        loadErrorMessage = message
-        lastUpdateTime = 0
-    }
 }
 
-struct AppleResponseData: Codable {
+private struct AppleResponseData: Codable {
     struct Service: Codable {
         let serviceName: String
         let events: [Event]

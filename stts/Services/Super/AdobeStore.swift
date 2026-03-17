@@ -228,78 +228,55 @@ private struct StatusEvents {
     }
 }
 
-class AdobeStore: Loading {
+class AdobeStore: ServiceStore<[String: ServiceStatus]> {
     let url = URL(string: "https://data.status.adobe.com/adobestatus/StatusEvents")!
-    private var statuses: [String: ServiceStatus] = [:]
-    private var loadErrorMessage: String?
-    private var callbacks: [() -> Void] = []
-    private var lastUpdateTime: TimeInterval = 0
-    private var currentlyReloading: Bool = false
 
-    func loadStatus(_ callback: @escaping () -> Void) {
-        callbacks.append(callback)
+    override func retrieveUpdatedState() async throws -> [String: ServiceStatus] {
+        let data = try await rawData(from: url)
 
-        guard !currentlyReloading else { return }
+        guard let statusEvents = StatusEvents(data) else {
+            throw StatusUpdateError.decodingError(nil)
+        }
 
-        // Throttling to prevent multiple requests if the first one finishes too quickly
-        guard Date.timeIntervalSinceReferenceDate - lastUpdateTime >= 3 else { return clearCallbacks() }
+        var statuses: [String: ServiceStatus] = [:]
 
-        currentlyReloading = true
+        statusEvents.maintenanceEvents.forEach { maintenanceEvent in
+            if maintenanceEvent.status == .started {
+                let affectedIDs = maintenanceEvent.clouds.map { $0.id } + maintenanceEvent.products.map { $0.id }
 
-        loadData(with: url) { data, _, error in
-            defer {
-                self.currentlyReloading = false
-                self.clearCallbacks()
-            }
-
-            self.statuses = [:]
-
-            guard let data = data else { return self._fail(error) }
-
-            guard let statusEvents = StatusEvents(data) else {
-                return self._fail("Unexpected data")
-            }
-
-            var statuses: [String: ServiceStatus] = [:]
-
-            statusEvents.maintenanceEvents.forEach { maintenanceEvent in
-                if maintenanceEvent.status == .started {
-                    let affectedIDs = maintenanceEvent.clouds.map { $0.id } + maintenanceEvent.products.map { $0.id }
-
-                    affectedIDs.forEach {
-                        statuses[$0] = .maintenance
-                    }
+                affectedIDs.forEach {
+                    statuses[$0] = .maintenance
                 }
             }
+        }
 
-            statusEvents.incidentEvents.forEach { incidentEvent in
-                let affectedCloudIDs = incidentEvent.clouds.map { $0.id }
+        statusEvents.incidentEvents.forEach { incidentEvent in
+            let affectedCloudIDs = incidentEvent.clouds.map { $0.id }
 
-                incidentEvent.products.forEach { incidentProduct in
-                    guard let mostRecentUpdate = incidentProduct.history.last else { return }
+            incidentEvent.products.forEach { incidentProduct in
+                guard let mostRecentUpdate = incidentProduct.history.last else { return }
 
-                    if mostRecentUpdate.status.isOpen {
-                        let status = mostRecentUpdate.severity.status
-                        let affectedIDs = affectedCloudIDs + [incidentProduct.id]
+                if mostRecentUpdate.status.isOpen {
+                    let status = mostRecentUpdate.severity.status
+                    let affectedIDs = affectedCloudIDs + [incidentProduct.id]
 
-                        affectedIDs.forEach {
-                            if let addedStatus = statuses[$0] {
-                                statuses[$0] = max(addedStatus, status)
-                            } else {
-                                statuses[$0] = status
-                            }
+                    affectedIDs.forEach {
+                        if let addedStatus = statuses[$0] {
+                            statuses[$0] = max(addedStatus, status)
+                        } else {
+                            statuses[$0] = status
                         }
                     }
                 }
             }
-
-            self.statuses = statuses
-            self.lastUpdateTime = Date.timeIntervalSinceReferenceDate
         }
+
+        return statuses
     }
 
-    func status(for service: AdobeStoreService) -> ServiceStatusDescription {
-        let status = statuses[service.id]
+    func updatedStatus(for service: AdobeStoreService) async throws -> ServiceStatusDescription {
+        let updatedState = try await updatedState()
+        let status = updatedState[service.id]
 
         switch status {
         case .good?: return ServiceStatusDescription(status: .good, message: "Available")
@@ -313,19 +290,5 @@ class AdobeStore: Loading {
         )
         case .none: return ServiceStatusDescription(status: .good, message: "Available")
         }
-    }
-
-    private func clearCallbacks() {
-        callbacks.forEach { $0() }
-        callbacks = []
-    }
-
-    private func _fail(_ error: Error?) {
-        _fail(ServiceStatusMessage.from(error))
-    }
-
-    private func _fail(_ message: String) {
-        loadErrorMessage = message
-        lastUpdateTime = 0
     }
 }

@@ -34,31 +34,26 @@ private struct ZendeskIncidentsResponse: Codable {
     }
 }
 
-class Zendesk: Service {
+class Zendesk: IndependentService {
     let url = URL(string: "https://status.zendesk.com")!
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        loadData(with: url.appendingPathComponent("api/ssp/incidents.json")) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
+    override func updateStatus() async throws {
+        let response = try await decoded(
+            ZendeskIncidentsResponse.self,
+            from: url.appendingPathComponent("api/ssp/incidents.json")
+        )
 
-            guard let data = data else { return strongSelf._fail(error) }
-            guard let response = try? JSONDecoder().decode(ZendeskIncidentsResponse.self, from: data) else {
-                return strongSelf._fail("Couldn't parse response")
-            }
-
-            let status = response.globalStatus
-            let message: String
-            switch status {
-            case .good:
-                message = "No incidents"
-            case .major, .minor:
-                message = "Active incidents"
-            default:
-                message = "Unexpected response"
-            }
-
-            strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
+        let status = response.globalStatus
+        let message: String
+        switch status {
+        case .good:
+            message = "No incidents"
+        case .major, .minor:
+            message = "Active incidents"
+        default:
+            message = "Unexpected response"
         }
+
+        statusDescription = ServiceStatusDescription(status: status, message: message)
     }
 }

@@ -18,14 +18,16 @@ class SettingsView: NSView {
 
     var searchCallback: ((String) -> Void)?
 
-    init() {
+    private let preferences: Preferences
+
+    init(preferences: Preferences) {
+        self.preferences = preferences
         super.init(frame: .zero)
         setup()
     }
 
     required init?(coder: NSCoder) {
-        super.init(frame: .zero)
-        setup()
+        fatalError("init(coder:) has not been implemented")
     }
 
     func setup() {
@@ -54,21 +56,21 @@ class SettingsView: NSView {
         notifyCheckbox.setButtonType(.switch)
         notifyCheckbox.title = "Notify when a status changes"
         notifyCheckbox.font = font
-        notifyCheckbox.state = Preferences.shared.notifyOnStatusChange ? .on : .off
+        notifyCheckbox.state = preferences.notifyOnStatusChange ? .on : .off
         notifyCheckbox.action = #selector(SettingsView.updateNotifyOnStatusChange)
         notifyCheckbox.target = self
 
         hideServiceDetailsIfAvailableCheckbox.setButtonType(.switch)
         hideServiceDetailsIfAvailableCheckbox.title = "Hide details of available services"
         hideServiceDetailsIfAvailableCheckbox.font = font
-        hideServiceDetailsIfAvailableCheckbox.state = Preferences.shared.hideServiceDetailsIfAvailable ? .on : .off
+        hideServiceDetailsIfAvailableCheckbox.state = preferences.hideServiceDetailsIfAvailable ? .on : .off
         hideServiceDetailsIfAvailableCheckbox.action = #selector(SettingsView.updateHideServiceDetailsIfAvailable)
         hideServiceDetailsIfAvailableCheckbox.target = self
 
         allowPopupToStretchAsNeededCheckbox.setButtonType(.switch)
         allowPopupToStretchAsNeededCheckbox.title = "Allow popup to stretch as needed"
         allowPopupToStretchAsNeededCheckbox.font = font
-        allowPopupToStretchAsNeededCheckbox.state = Preferences.shared.allowPopupToStretchAsNeeded ? .on : .off
+        allowPopupToStretchAsNeededCheckbox.state = preferences.allowPopupToStretchAsNeeded ? .on : .off
         allowPopupToStretchAsNeededCheckbox.action = #selector(SettingsView.updateAllowPopupToStretchAsNeeded)
         allowPopupToStretchAsNeededCheckbox.target = self
 
@@ -129,15 +131,15 @@ class SettingsView: NSView {
     }
 
     @objc private func updateNotifyOnStatusChange() {
-        Preferences.shared.notifyOnStatusChange = notifyCheckbox.state == .on
+        preferences.notifyOnStatusChange = notifyCheckbox.state == .on
     }
 
     @objc private func updateHideServiceDetailsIfAvailable() {
-        Preferences.shared.hideServiceDetailsIfAvailable = hideServiceDetailsIfAvailableCheckbox.state == .on
+        preferences.hideServiceDetailsIfAvailable = hideServiceDetailsIfAvailableCheckbox.state == .on
     }
 
     @objc private func updateAllowPopupToStretchAsNeeded() {
-        Preferences.shared.allowPopupToStretchAsNeeded = allowPopupToStretchAsNeededCheckbox.state == .on
+        preferences.allowPopupToStretchAsNeeded = allowPopupToStretchAsNeededCheckbox.state == .on
     }
 
     @objc private func filterServices() {
