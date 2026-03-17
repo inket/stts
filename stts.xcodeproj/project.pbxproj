@@ -80,6 +80,9 @@
 		B2563BBE22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2563BBD22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift */; };
 		B256955C1E247C8C00FAE413 /* PagerDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25695531E247C8C00FAE413 /* PagerDuty.swift */; };
 		B25FBFFD1DCAF2CE0099A388 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */; };
+		B26EC1102F69101800DDD0B9 /* aiven-minor.html in Resources */ = {isa = PBXBuildFile; fileRef = B26EC10E2F69101800DDD0B9 /* aiven-minor.html */; };
+		B26EC1112F69101800DDD0B9 /* linear-good.html in Resources */ = {isa = PBXBuildFile; fileRef = B26EC10F2F69101800DDD0B9 /* linear-good.html */; };
+		B26EC1132F69101D00DDD0B9 /* IncidentIOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26EC1122F69101D00DDD0B9 /* IncidentIOTests.swift */; };
 		B276D7622C4132CA00974DB6 /* UptimeDotComService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B276D7612C4132CA00974DB6 /* UptimeDotComService.swift */; };
 		B276D7642C4134AB00974DB6 /* JSDelivr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B276D7632C4134AB00974DB6 /* JSDelivr.swift */; };
 		B276D7682C414DE900974DB6 /* Broadcom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B276D7672C414DE900974DB6 /* Broadcom.swift */; };
@@ -237,6 +240,9 @@
 		B2563BBD22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSizeTrackingURLSession.swift; sourceTree = "<group>"; };
 		B25695531E247C8C00FAE413 /* PagerDuty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerDuty.swift; sourceTree = "<group>"; };
 		B25FBFFC1DCAF2CE0099A388 /* CustomScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
+		B26EC10E2F69101800DDD0B9 /* aiven-minor.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "aiven-minor.html"; sourceTree = "<group>"; };
+		B26EC10F2F69101800DDD0B9 /* linear-good.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "linear-good.html"; sourceTree = "<group>"; };
+		B26EC1122F69101D00DDD0B9 /* IncidentIOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentIOTests.swift; sourceTree = "<group>"; };
 		B276D7612C4132CA00974DB6 /* UptimeDotComService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UptimeDotComService.swift; sourceTree = "<group>"; };
 		B276D7632C4134AB00974DB6 /* JSDelivr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSDelivr.swift; sourceTree = "<group>"; };
 		B276D7672C414DE900974DB6 /* Broadcom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Broadcom.swift; sourceTree = "<group>"; };
@@ -347,6 +353,7 @@
 				B2552EFC29954AE0003FF9EC /* Resources */,
 				B2E832EB29DE4F5E000FA1BE /* AdobeTests.swift */,
 				B228DC152A7F872800D8DC5E /* BetterStackTests.swift */,
+				B26EC1122F69101D00DDD0B9 /* IncidentIOTests.swift */,
 				B2163AF920BA4E7500B14A85 /* Info.plist */,
 				B2D655E629B802ED00DBE417 /* InstatusTests.swift */,
 				B22651282B2EEA52002F1CE2 /* PagerDutyTests.swift */,
@@ -403,8 +410,10 @@
 			isa = PBXGroup;
 			children = (
 				B2E832ED29DE5104000FA1BE /* adobe-analytics-minor.json */,
+				B26EC10E2F69101800DDD0B9 /* aiven-minor.html */,
 				B228DC122A7F86F900D8DC5E /* buildjet-good.html */,
 				B228DC112A7F86F900D8DC5E /* eyloo-major.html */,
+				B26EC10F2F69101800DDD0B9 /* linear-good.html */,
 				B22B6B4C2F69040A006528EB /* mastodonsocial-major.html */,
 				B22651262B2EEA44002F1CE2 /* pagerduty-good.html */,
 				B22651242B2EE9FF002F1CE2 /* pagerduty-minor.html */,
@@ -745,6 +754,8 @@
 				B2E832EE29DE5104000FA1BE /* adobe-analytics-minor.json in Resources */,
 				B22B6B4D2F69040A006528EB /* mastodonsocial-major.html in Resources */,
 				B22B6B4F2F69047D006528EB /* whereby-good.html in Resources */,
+				B26EC1102F69101800DDD0B9 /* aiven-minor.html in Resources */,
+				B26EC1112F69101800DDD0B9 /* linear-good.html in Resources */,
 				B228DC132A7F86F900D8DC5E /* eyloo-major.html in Resources */,
 				B22651252B2EE9FF002F1CE2 /* pagerduty-minor.html in Resources */,
 				B228DC142A7F86F900D8DC5E /* buildjet-good.html in Resources */,
@@ -841,6 +852,7 @@
 				B2563BBE22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift in Sources */,
 				B2552F082995516B003FF9EC /* TestBundle.swift in Sources */,
 				B22651292B2EEA52002F1CE2 /* PagerDutyTests.swift in Sources */,
+				B26EC1132F69101D00DDD0B9 /* IncidentIOTests.swift in Sources */,
 				B228DC162A7F872800D8DC5E /* BetterStackTests.swift in Sources */,
 				B2552F0429954C26003FF9EC /* ResponseOverridingURLSession.swift in Sources */,
 				B2D655E729B802ED00DBE417 /* InstatusTests.swift in Sources */,
