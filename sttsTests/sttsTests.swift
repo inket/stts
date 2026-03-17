@@ -11,41 +11,64 @@ class SttsTests: XCTestCase {
         DataLoader.shared = DataLoader(session: ResponseSizeTrackingURLSession())
     }
 
-    func testServices() throws {
-        var expectations = [XCTestExpectation]()
+    func testServices() async throws {
+        var serviceDefinitionProviders: [ServiceDefinitionProvider] = []
+        // swiftlint:disable:next force_try
+        serviceDefinitionProviders.append(try! AppDefinedServiceDefinitionProvider())
+        // swiftlint:disable:next force_try
+        serviceDefinitionProviders.append(try! BundleServiceDefinitionProvider())
+        if let userDefinedServiceDefinitionsProvider = try? UserDefinedServiceDefinitionProvider() {
+            serviceDefinitionProviders.append(userDefinedServiceDefinitionsProvider)
+        }
 
-        let services = BaseService.all().sorted()
-        services.forEach { service in
-            let thisExpectation = XCTestExpectation(description: "Retrieve status for \(type(of: service))")
+        let serviceDefinitions = ServiceLoader(providers: serviceDefinitionProviders).allServices
 
-            expectations.append(thisExpectation)
+        var testedServices: [BaseService] = [] // Have to retain services until the end of the test
 
-            if service is StatusPageService {
-                // Status page servers don't like being hammered by this many requests, so we slow it down.
-                // I really wish they would add an API for querying the status of many services at once.
-                sleep(1)
-            }
+        print("Retrieving status for \(serviceDefinitions.count) services")
 
-            print("Retrieving status for \(type(of: service))…")
+        await withTaskGroup(of: Void.self) { group in
+            var sleepDuration: TimeInterval = 0
 
-            service.updateStatus { updatedService in
-                print(
-                    """
-                    Retrieved status for \(type(of: updatedService)): \(updatedService.status)\
-                    (\(updatedService.message))
-                    """
-                )
+            for serviceDefinition in serviceDefinitions {
+                guard let service = serviceDefinition.build() as? Service else {
+                    XCTFail("Could not build service for definition: \(serviceDefinition)")
+                    return
+                }
 
-                XCTAssert(
-                    updatedService.status != .undetermined,
-                    "Retrieved status for \(type(of: updatedService)) should not be .undetermined"
-                )
+                testedServices.append(service)
 
-                thisExpectation.fulfill()
+                if service is StatusPageService {
+                    // Status page servers don't like being hammered by this many requests, so we slow it down.
+                    // I really wish they would add an API for querying the status of many services at once.
+                    sleepDuration += 1
+                }
+
+                print("Retrieving status for \(service.name)…")
+
+                group.addTask { [sleepDuration] in
+                    do {
+                        try await Task.sleep(seconds: sleepDuration)
+                        try await service.updateStatus()
+
+                        print(
+                            """
+                            Retrieved status for \(service.name): \(service.status)\
+                            (\(service.message))
+                            """
+                        )
+
+                        XCTAssert(
+                            service.status != .undetermined,
+                            "Retrieved status for \(service.name) should not be .undetermined"
+                        )
+                    } catch {
+                        XCTFail("Failed retrieving status for \(service.name): \(error)")
+                    }
+                }
             }
         }
 
-        let timeout = TimeInterval(services.count) + 2 // Expect to wait one second per service, worst case scenario
-        wait(for: expectations, timeout: timeout)
+        testedServices = []
     }
 }

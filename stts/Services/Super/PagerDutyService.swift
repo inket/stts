@@ -10,7 +10,7 @@ typealias PagerDutyService = BasePagerDutyService & RequiredServiceProperties & 
 
 protocol RequiredPagerDutyProperties {}
 
-class BasePagerDutyService: BaseService {
+class BasePagerDutyService: BaseIndependentService {
     private struct PagerDutyDataV1: Codable {
         struct Summary: Codable {
             enum CodingKeys: String, CodingKey {
@@ -79,31 +79,26 @@ class BasePagerDutyService: BaseService {
         }
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
+    override func updateStatus() async throws {
         guard let realSelf = self as? PagerDutyService else {
             fatalError("BasePagerDutyService should not be used directly.")
         }
 
-        loadData(with: realSelf.url) { [weak self] data, _, error in
-            guard let self else { return }
-            defer { callback(self) }
-            guard let data = data else { return _fail(error) }
+        let doc = try await html(from: realSelf.url)
 
-            guard
-                let doc = try? HTML(html: data, encoding: .utf8),
-                let json = doc.css("script#data").first?.innerHTML,
-                let jsonData = json.data(using: .utf8)
-            else {
-                return _fail("Couldn't parse response")
-            }
+        guard
+            let json = doc.css("script#data").first?.innerHTML,
+            let jsonData = Data(json.utf8) as Data?
+        else {
+            throw StatusUpdateError.parseError(nil)
+        }
 
-            if let data = try? JSONDecoder().decode(PagerDutyDataV1.self, from: jsonData) {
-                updateStatus(from: data)
-            } else if let data = try? JSONDecoder().decode(PagerDutyDataV2.self, from: jsonData) {
-                updateStatus(from: data)
-            } else {
-                _fail("Couldn't parse response")
-            }
+        if let data = try? JSONDecoder().decode(PagerDutyDataV1.self, from: jsonData) {
+            updateStatus(from: data)
+        } else if let data = try? JSONDecoder().decode(PagerDutyDataV2.self, from: jsonData) {
+            updateStatus(from: data)
+        } else {
+            throw StatusUpdateError.parseError(nil)
         }
     }
 

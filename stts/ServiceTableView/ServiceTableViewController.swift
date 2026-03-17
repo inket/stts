@@ -15,11 +15,10 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
 
     var editorTableViewController: EditorTableViewController
 
-    var services: [BaseService] = Preferences.shared.selectedServices {
-        didSet {
-            addServicesNoticeField.isHidden = services.count > 0
-        }
-    }
+    private let serviceLoader: ServiceLoader
+    var services: [BaseService] = []
+
+    private let preferences: Preferences
 
     @Atomic var servicesBeingUpdated = Set<BaseService>()
 
@@ -33,14 +32,21 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
 
     var updateCallback: (() -> Void)?
 
-    override init() {
+    init(serviceLoader: ServiceLoader, preferences: Preferences) {
+        self.serviceLoader = serviceLoader
+        self.preferences = preferences
+
         self.editorTableViewController = EditorTableViewController(
             contentView: contentView,
             scrollView: scrollView,
-            bottomBar: bottomBar
+            bottomBar: bottomBar,
+            serviceLoader: serviceLoader,
+            preferences: preferences
         )
 
         super.init()
+
+        reloadServicesList()
     }
 
     func setup() {
@@ -121,9 +127,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         tableView.delegate = self
         tableView.selectionHighlightStyle = .none
         tableView.backgroundColor = NSColor.clear
-        if #available(OSX 11.0, *) {
-            tableView.style = .fullWidth
-        }
+        tableView.style = .fullWidth
 
         addServicesNoticeField.isEditable = false
         addServicesNoticeField.isBordered = false
@@ -161,8 +165,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         scrollView.documentView = tableView
 
         if editorTableViewController.selectionChanged {
-            self.services = Preferences.shared.selectedServices
-            reloadData()
+            reloadServicesList()
 
             (NSApp.delegate as? AppDelegate)?.updateServices()
         } else {
@@ -178,7 +181,7 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
 
     func resizeViews() {
         let maxHeight: CGFloat
-        if Preferences.shared.allowPopupToStretchAsNeeded, let usableHeight = NSScreen.usableHeightOfActiveScreen {
+        if preferences.allowPopupToStretchAsNeeded, let usableHeight = NSScreen.usableHeightOfActiveScreen {
             maxHeight = usableHeight - 32 // To accommodate for the popup's arrow/background
         } else {
             maxHeight = 490
@@ -189,6 +192,12 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(
             height: scrollView.frame.size.height + bottomBar.frame.size.height
         )
+    }
+
+    func reloadServicesList() {
+        services = serviceLoader.services(for: preferences.selectedServices)
+        reloadData()
+        addServicesNoticeField.isHidden = services.count > 0
     }
 
     func reloadData(at index: Int? = nil) {
@@ -221,35 +230,36 @@ class ServiceTableViewController: NSObject, SwitchableTableViewController {
         }
 
         self.updateCallback = updateCallback
-        let serviceCallback: ((BaseService) -> Void) = { [weak self] service in self?.updatedStatus(for: service) }
 
         bottomBar.status = .updating
 
         let servicesToUpdate = Set<BaseService>(services)
         servicesBeingUpdated = servicesToUpdate
 
-        for service in servicesToUpdate {
-            service.updateStatus(callback: serviceCallback)
+        Task { [weak self] in
+            await withTaskGroup(of: Void.self) { [weak self] group in
+                for service in servicesToUpdate {
+                    group.addTask { [weak self] in
+                        await service.updateStatusAutomaticallyHandlingErrors()
+                        await self?.updatedStatus(for: service)
+                    }
+                }
+            }
         }
     }
 
-    func updatedStatus(for service: BaseService) {
+    @MainActor
+    private func updatedStatus(for service: BaseService) async {
         servicesBeingUpdated.remove(service)
 
-        DispatchQueue.main.async { [weak self] in
-            guard let self else { return }
-            reloadData()
+        reloadData()
+        resizeViews()
 
-            if !self.hidden {
-                resizeViews()
-            }
+        if servicesBeingUpdated.isEmpty {
+            bottomBar.status = .updated(Date())
 
-            if servicesBeingUpdated.isEmpty {
-                bottomBar.status = .updated(Date())
-
-                updateCallback?()
-                updateCallback = nil
-            }
+            updateCallback?()
+            updateCallback = nil
         }
     }
 }
@@ -272,7 +282,7 @@ extension ServiceTableViewController: NSTableViewDelegate {
         guard let view = cell as? StatusTableCell else { return nil }
         guard let service = services[row] as? Service else { return nil }
 
-        view.setup(with: service)
+        view.setup(with: service, preferences: preferences)
 
         return view
     }
@@ -300,6 +310,7 @@ extension ServiceTableViewController: NSTableViewDelegate {
 
         return StatusTableCell.Layout.heightOfRow(
             for: service,
+            preferences: preferences,
             width: tableView.frame.size.width - 3 // tableview padding is 3
         )
     }

@@ -2,17 +2,18 @@
 //  CStateService.swift
 //  stts
 //
-//  Created by inket on 2023/05/17.
-//  Copyright © 2023 inket. All rights reserved.
-//
 
 import Foundation
 
-typealias CStateService = BaseCStateService & RequiredServiceProperties & RequiredCStateProperties
+class CStateServiceDefinition: CodableServiceDefinition, ServiceDefinition {
+    let providerIdentifier = "cstate"
 
-protocol RequiredCStateProperties {}
+    func build() -> BaseService? {
+        CStateService(self)
+    }
+}
 
-class BaseCStateService: BaseService {
+class CStateService: Service {
     private enum CStateStatus: String, Codable {
         // https://github.com/cstate/cstate/blob/master/layouts/index.json
         case ok
@@ -58,27 +59,22 @@ class BaseCStateService: BaseService {
         let systems: [System]
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? CStateService else {
-            fatalError("BaseCStateService should not be used directly.")
-        }
+    let name: String
+    let url: URL
 
-        let statusURL = realSelf.url.appendingPathComponent("index.json")
+    init(_ definition: CStateServiceDefinition) {
+        name = definition.name
+        url = definition.url
+    }
 
-        loadData(with: statusURL) { [weak self] data, _, error in
-            guard let self else { return }
-            defer { callback(self) }
-            guard let data else { return self._fail(error) }
+    override func updateStatus() async throws {
+        let statusURL = url.appendingPathComponent("index.json")
+        let response = try await decoded(Response.self, from: statusURL)
 
-            guard let response = try? JSONDecoder().decode(Response.self, from: data) else {
-                return self._fail("Unexpected data")
-            }
-
-            self.statusDescription = ServiceStatusDescription(
-                status: response.summaryStatus.serviceStatus,
-                message: self.message(from: response)
-            )
-        }
+        statusDescription = ServiceStatusDescription(
+            status: response.summaryStatus.serviceStatus,
+            message: message(from: response)
+        )
     }
 
     private func message(from response: Response) -> String {

@@ -6,21 +6,12 @@
 import Foundation
 import Kanna
 
-class Evernote: Service {
+class Evernote: IndependentService {
     let url = URL(string: "https://status.evernote.com")!
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        loadData(with: url) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-
-            guard let data = data else { return strongSelf._fail(error) }
-            guard let doc = try? HTML(html: data, encoding: .utf8) else {
-                return strongSelf._fail("Couldn't parse response")
-            }
-
-            strongSelf.statusDescription = strongSelf.status(from: doc)
-        }
+    override func updateStatus() async throws {
+        let doc = try await html(from: url)
+        statusDescription = status(from: doc)
     }
 }
 

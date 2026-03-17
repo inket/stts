@@ -7,7 +7,7 @@ import XCTest
 @testable import stts
 
 final class PagerDutyTests: XCTestCase {
-    func testNormalStatus() throws {
+    func testNormalStatus() async throws {
         let pagerDuty = PagerDuty()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
@@ -17,18 +17,12 @@ final class PagerDutyTests: XCTestCase {
             )
         ]))
 
-        let expectation = XCTestExpectation(description: "Retrieve mocked status for PagerDuty")
-
-        pagerDuty.updateStatus { service in
-            XCTAssertEqual(service.status, .good)
-            XCTAssertEqual(service.message, "No known issue")
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 3)
+        try await pagerDuty.updateStatus()
+        XCTAssertEqual(pagerDuty.status, .good)
+        XCTAssertEqual(pagerDuty.message, "No known issue")
     }
 
-    func testMinorStatus() throws {
+    func testMinorStatus() async throws {
         let pagerDuty = PagerDuty()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
@@ -41,14 +35,8 @@ final class PagerDutyTests: XCTestCase {
             )
         ]))
 
-        let expectation = XCTestExpectation(description: "Retrieve mocked status for PagerDuty")
-
-        pagerDuty.updateStatus { service in
-            XCTAssertEqual(service.status, .minor)
-            XCTAssertEqual(service.message, "Inconsistent Service Statuses")
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 3)
+        try await pagerDuty.updateStatus()
+        XCTAssertEqual(pagerDuty.status, .minor)
+        XCTAssertEqual(pagerDuty.message, "Inconsistent Service Statuses")
     }
 }

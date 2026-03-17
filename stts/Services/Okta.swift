@@ -6,7 +6,7 @@
 import Foundation
 import Kanna
 
-class Okta: Service {
+class Okta: IndependentService {
     private enum Status: CaseIterable {
         case operational
         case serviceDegradation
@@ -39,38 +39,32 @@ class Okta: Service {
     }
 
     let url = URL(string: "https://status.okta.com")!
+
+    @MainActor
     private let renderer = HeadlessHTMLRenderer()
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        renderer.retrieveRenderedHTML(for: url) { [weak self] html in
-            guard let self else { return }
-            defer { callback(self) }
+    override func updateStatus() async throws {
+        let html = await renderer.retrieveRenderedHTML(for: url)
 
-            guard let html, !html.isEmpty else {
-                return self._fail("No response")
-            }
+        guard let html, !html.isEmpty else { throw StatusUpdateError.parseError(nil) }
 
-            guard let doc = try? HTML(html: html, encoding: .utf8) else {
-                return self._fail("Couldn't parse response")
-            }
-
-            guard
-                let todayIcon = doc.css(".today_icon").first,
-                let todayIconClassNames = todayIcon.className?.components(separatedBy: .whitespaces),
-                !todayIconClassNames.isEmpty
-            else {
-                return self._fail("Unexpected response")
-            }
-
-            let status: ServiceStatus? = Status.allCases.first(where: {
-                todayIconClassNames.contains($0.iconClassName)
-            })?.serviceStatus
-            let message: String? = doc.css(".system__status_today_status").first?.text
-
-            self.statusDescription = ServiceStatusDescription(
-                status: status ?? .undetermined,
-                message: message ?? "Unexpected response"
-            )
+        guard let doc = try? HTML(html: html, encoding: .utf8) else {
+            throw StatusUpdateError.parseError(nil)
         }
+
+        guard
+            let todayIcon = doc.css(".today_icon").first,
+            let todayIconClassNames = todayIcon.className?.components(separatedBy: .whitespaces),
+            !todayIconClassNames.isEmpty
+        else {
+            throw StatusUpdateError.parseError(nil)
+        }
+
+        let status: ServiceStatus = Status.allCases.first(where: {
+            todayIconClassNames.contains($0.iconClassName)
+        })?.serviceStatus ?? .undetermined
+        let message: String = doc.css(".system__status_today_status").first?.text ?? "Unexpected response"
+
+        statusDescription = ServiceStatusDescription(status: status, message: message)
     }
 }

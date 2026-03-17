@@ -6,11 +6,15 @@
 import Foundation
 import Kanna
 
-typealias StatuspalService = BaseStatuspalService & RequiredServiceProperties & RequiredStatuspalProperties
+class StatuspalServiceDefinition: CodableServiceDefinition, ServiceDefinition {
+    let providerIdentifier = "statuspal"
 
-protocol RequiredStatuspalProperties {}
+    func build() -> BaseService? {
+        StatuspalService(self)
+    }
+}
 
-class BaseStatuspalService: BaseService {
+class StatuspalService: Service {
     private enum Status: CaseIterable {
         case good
         case minor
@@ -44,41 +48,37 @@ class BaseStatuspalService: BaseService {
         }
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? StatuspalService else {
-            fatalError("BaseStatuspalService should not be used directly.")
-        }
+    let name: String
+    let url: URL
 
-        loadData(with: realSelf.url) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
+    init(_ serviceDefinition: StatuspalServiceDefinition) {
+        name = serviceDefinition.name
+        url = serviceDefinition.url
+    }
 
-            guard let doc = try? HTML(html: data, encoding: .utf8) else {
-                return strongSelf._fail("Couldn't parse response")
+    override func updateStatus() async throws {
+        let doc = try await html(from: url)
+
+        let foundStatus: ServiceStatus
+        if let className = doc.css(".system-status").first?.className {
+            let matchedStatus = Status.allCases.first { status in
+                className.lowercased().contains(status.className)
             }
 
-            let foundStatus: ServiceStatus
-            if let className = doc.css(".system-status").first?.className {
-                let matchedStatus = Status.allCases.first { status in
-                    className.lowercased().contains(status.className)
-                }
-
-                if let matchedStatus {
-                    foundStatus = matchedStatus.serviceStatus
-                } else {
-                    foundStatus = .undetermined
-                }
+            if let matchedStatus {
+                foundStatus = matchedStatus.serviceStatus
             } else {
                 foundStatus = .undetermined
             }
-
-            let message: String = doc.css(".system-status--description")
-                .first?
-                .text?
-                .trimmingCharacters(in: .whitespacesAndNewlines) ?? "Unexpected response"
-
-            strongSelf.statusDescription = ServiceStatusDescription(status: foundStatus, message: message)
+        } else {
+            foundStatus = .undetermined
         }
+
+        let message: String = doc.css(".system-status--description")
+            .first?
+            .text?
+            .trimmingCharacters(in: .whitespacesAndNewlines) ?? "Unexpected response"
+
+        statusDescription = ServiceStatusDescription(status: foundStatus, message: message)
     }
 }

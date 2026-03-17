@@ -5,9 +5,15 @@
 
 import Foundation
 
-typealias LambStatusService = BaseLambStatusService & RequiredServiceProperties
+class LambStatusServiceDefinition: CodableServiceDefinition, ServiceDefinition {
+    let providerIdentifier = "lamb"
 
-class BaseLambStatusService: BaseService {
+    func build() -> BaseService? {
+        LambStatusService(self)
+    }
+}
+
+class LambStatusService: Service {
     // According to
     // https://github.com/ks888/LambStatus/blob/ba950df3241ac9143e03411d6c1a06d126cc0180/packages/frontend/src/utils/status.js#L1
     private enum LambStatus: String, Codable {
@@ -38,33 +44,31 @@ class BaseLambStatusService: BaseService {
         let status: LambStatus
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? LambStatusService else {
-            fatalError("BaseLambStatusService should not be used directly.")
+    let name: String
+    let url: URL
+
+    init(_ definition: LambStatusServiceDefinition) {
+        name = definition.name
+        url = definition.url
+    }
+
+    override func updateStatus() async throws {
+        let components = try await decoded(
+            [LambComponent].self,
+            from: url.appendingPathComponent("api").appendingPathComponent("components")
+        )
+
+        guard !components.isEmpty else {
+            throw StatusUpdateError.decodingError(nil)
         }
 
-        let apiComponentsURL = realSelf.url.appendingPathComponent("api").appendingPathComponent("components")
+        let worstComponent = components.max(by: { (one, two) -> Bool in
+            one.status.serviceStatus < two.status.serviceStatus
+        })! // We checked that it's not empty above
 
-        loadData(with: apiComponentsURL) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
-
-            guard
-                let components = try? JSONDecoder().decode([LambComponent].self, from: data),
-                !components.isEmpty
-            else {
-                return strongSelf._fail("Unexpected response")
-            }
-
-            let worstComponent = components.max(by: { (one, two) -> Bool in
-                one.status.serviceStatus < two.status.serviceStatus
-            })! // We checked that it's not empty above
-
-            strongSelf.statusDescription = ServiceStatusDescription(
-                status: worstComponent.status.serviceStatus,
-                message: worstComponent.status.rawValue
-            )
-        }
+        statusDescription = ServiceStatusDescription(
+            status: worstComponent.status.serviceStatus,
+            message: worstComponent.status.rawValue
+        )
     }
 }

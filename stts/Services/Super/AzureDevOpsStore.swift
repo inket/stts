@@ -54,58 +54,43 @@ private struct AzureDevOpsDataProviders: Codable {
     let data: ResponseData
 }
 
-class AzureDevOpsStore: Loading {
-    private var url = URL(string: "https://status.dev.azure.com")!
-    private var statuses: [String: ServiceStatus] = [:]
-    private var loadErrorMessage: String?
-    private var callbacks: [() -> Void] = []
-    private var lastUpdateTime: TimeInterval = 0
-    private var currentlyReloading: Bool = false
+class AzureDevOpsStore: ServiceStore<[String: ServiceStatus]> {
+    private let url = URL(string: "https://status.dev.azure.com")!
 
-    func loadStatus(_ callback: @escaping () -> Void) {
-        callbacks.append(callback)
+    override func retrieveUpdatedState() async throws -> [String: ServiceStatus] {
+        let doc = try await html(from: url)
 
-        guard !currentlyReloading else { return }
-
-        // Throttling to prevent multiple requests if the first one finishes too quickly
-        guard Date.timeIntervalSinceReferenceDate - lastUpdateTime >= 3 else { return clearCallbacks() }
-
-        currentlyReloading = true
-
-        loadData(with: url) { data, _, error in
-            defer {
-                self.currentlyReloading = false
-                self.clearCallbacks()
-            }
-
-            self.statuses = [:]
-
-            guard let data = data else { return self._fail(error) }
-
-            guard
-                let doc = try? HTML(html: data, encoding: .utf8),
-                let json = doc.css("script#dataProviders").first?.innerHTML,
-                let jsonData = json.data(using: .utf8),
-                let providers = try? JSONDecoder().decode(AzureDevOpsDataProviders.self, from: jsonData)
-            else {
-                return self._fail("Couldn't parse response")
-            }
-
-            providers.data.dataProvider.serviceStatus.services.forEach {
-                self.statuses[$0.id] = $0.status
-            }
-
-            self.lastUpdateTime = Date.timeIntervalSinceReferenceDate
+        guard
+            let json = doc.css("script#dataProviders").first?.innerHTML,
+            let jsonData = json.data(using: .utf8)
+        else {
+            throw StatusUpdateError.decodingError(nil)
         }
+
+        let providers: AzureDevOpsDataProviders
+        do {
+            providers = try JSONDecoder().decode(AzureDevOpsDataProviders.self, from: jsonData)
+        } catch {
+            throw StatusUpdateError.decodingError(error)
+        }
+
+        var statuses: [String: ServiceStatus] = [:]
+        providers.data.dataProvider.serviceStatus.services.forEach {
+            statuses[$0.id] = $0.status
+        }
+
+        return statuses
     }
 
-    func status(for service: AzureDevOpsStoreService) -> ServiceStatusDescription {
+    func updatedStatus(for service: AzureDevOpsStoreService) async throws -> ServiceStatusDescription {
+        let updatedState = try await updatedState()
+
         let status: ServiceStatus?
 
         if service.serviceName == "*" {
-            status = statuses.values.max()
+            status = updatedState.values.max()
         } else {
-            status = statuses[service.serviceName]
+            status = updatedState[service.serviceName]
         }
 
         switch status {
@@ -115,19 +100,5 @@ class AzureDevOpsStore: Loading {
         case .notice?: return ServiceStatusDescription(status: .notice, message: "Advisory")
         default: return ServiceStatusDescription(status: .undetermined, message: loadErrorMessage ?? "Unexpected error")
         }
-    }
-
-    private func clearCallbacks() {
-        callbacks.forEach { $0() }
-        callbacks = []
-    }
-
-    private func _fail(_ error: Error?) {
-        _fail(ServiceStatusMessage.from(error))
-    }
-
-    private func _fail(_ message: String) {
-        loadErrorMessage = message
-        lastUpdateTime = 0
     }
 }

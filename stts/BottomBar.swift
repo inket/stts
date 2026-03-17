@@ -182,22 +182,15 @@ class BottomBar: NSView {
                 relativeDate = Date(timeIntervalSinceNow: -1)
             }
 
-            if #available(macOS 10.15, *) {
-                let dateTimeFormatter = RelativeDateTimeFormatter()
-                dateTimeFormatter.dateTimeStyle = .numeric
-                dateTimeFormatter.unitsStyle = .short
-                let dateString = dateTimeFormatter.string(for: relativeDate)! // Cannot be nil when date is Date
-                statusField.stringValue = "Updated \(dateString)"
-            } else {
-                let dateFormatter = DateFormatter()
-                dateFormatter.timeStyle = .short
-                let dateString = dateFormatter.string(from: relativeDate)
-                statusField.stringValue = "Updated at \(dateString)"
-            }
+            let dateTimeFormatter = RelativeDateTimeFormatter()
+            dateTimeFormatter.dateTimeStyle = .numeric
+            dateTimeFormatter.unitsStyle = .short
+            let dateString = dateTimeFormatter.string(for: relativeDate)! // Cannot be nil when date is Date
+            statusField.stringValue = "Updated \(dateString)"
         }
     }
 
-    func openedCategory(_ category: ServiceCategory?, backCallback: @escaping () -> Void) {
+    func openedCategory(_ category: ServiceDefinition?, backCallback: @escaping () -> Void) {
         doneButton.isHidden = false
         aboutButton.isHidden = category != nil
         quitButton.isHidden = category != nil

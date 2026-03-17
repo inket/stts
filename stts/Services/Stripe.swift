@@ -35,23 +35,18 @@ private struct StripeCurrentStatus: Codable {
     let uptimeStatus: Status
 }
 
-class Stripe: Service {
+class Stripe: IndependentService {
     let url = URL(string: "https://status.stripe.com")!
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        loadData(with: url.appendingPathComponent("current/full")) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
+    override func updateStatus() async throws {
+        let currentStatus = try await decoded(
+            StripeCurrentStatus.self,
+            from: url.appendingPathComponent("current/full")
+        )
 
-            guard let data = data else { return strongSelf._fail(error) }
-            guard let currentStatus = try? JSONDecoder().decode(StripeCurrentStatus.self, from: data) else {
-                return strongSelf._fail("Couldn't parse response")
-            }
-
-            strongSelf.statusDescription = ServiceStatusDescription(
-                status: currentStatus.uptimeStatus.serviceStatus,
-                message: currentStatus.message
-            )
-        }
+        statusDescription = ServiceStatusDescription(
+            status: currentStatus.uptimeStatus.serviceStatus,
+            message: currentStatus.message
+        )
     }
 }

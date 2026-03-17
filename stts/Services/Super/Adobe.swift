@@ -21,19 +21,16 @@ typealias AdobeServices = BaseAdobeServices & RequiredServiceProperties & AdobeS
 class BaseAdobeServices: BaseAdobe {}
 
 typealias Adobe = BaseAdobe & RequiredServiceProperties & AdobeStoreService
-class BaseAdobe: BaseService {
+class BaseAdobe: BaseIndependentService {
     static var store = AdobeStore()
 
     let url = URL(string: "https://status.adobe.com")!
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? Adobe else { fatalError("BaseAdobe should not be used directly.") }
-
-        BaseAdobe.store.loadStatus { [weak realSelf] in
-            guard let strongSelf = realSelf else { return }
-
-            strongSelf.statusDescription = BaseAdobe.store.status(for: strongSelf)
-            callback(strongSelf)
+    override func updateStatus() async throws {
+        guard let realSelf = self as? Adobe else {
+            fatalError("BaseAdobe should not be used directly.")
         }
+
+        statusDescription = try await BaseAdobe.store.updatedStatus(for: realSelf)
     }
 }

@@ -6,11 +6,15 @@
 import Foundation
 import Kanna
 
-typealias InstatusService = BaseInstatusService & RequiredServiceProperties & RequiredInstatusProperties
+class InstatusServiceDefinition: CodableServiceDefinition, ServiceDefinition {
+    let providerIdentifier = "instatus"
 
-protocol RequiredInstatusProperties {}
+    func build() -> BaseService? {
+        InstatusService(self)
+    }
+}
 
-class BaseInstatusService: BaseService {
+class InstatusService: Service {
     private struct Site: Codable {
         let status: Status
         let components: [Component]
@@ -97,76 +101,45 @@ class BaseInstatusService: BaseService {
     }
 
     private struct InstatusData: Codable {
-        let site: Site
-        let activeIncidents: [Incident]
-    }
+        struct Props: Codable {
+            struct PageProps: Codable {
+                let site: Site
+                let activeIncidents: [Incident]
+            }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? InstatusService else {
-            fatalError("BaseInstatusService should not be used directly.")
+            let pageProps: PageProps
         }
 
-        loadData(with: realSelf.url) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-
-            guard let data = data else { return strongSelf._fail(error) }
-
-            guard let doc = try? HTML(html: data, encoding: .utf8) else {
-                return strongSelf._fail("Couldn't parse response")
-            }
-
-            var statusData: InstatusData?
-
-            let scriptTags = doc.css("script")
-            for scriptTag in scriptTags {
-                guard let rawHTML = scriptTag.innerHTML else { continue }
-
-                if rawHTML.contains("activeIncidents") {
-                    // swiftlint:disable:next force_try
-                    let regularExpression = try! NSRegularExpression(
-                        pattern: "\\{.*\\}",
-                        options: [.caseInsensitive, .dotMatchesLineSeparators]
-                    )
-                    guard let firstMatch = regularExpression.firstMatch(
-                        in: rawHTML,
-                        range: NSRange(location: 0, length: (rawHTML as NSString).length)
-                    ) else { continue }
-
-                    let json = (rawHTML as NSString).substring(with: firstMatch.range).unescaped
-                    guard let jsonData = json.data(using: .utf8) else {
-                        continue
-                    }
-
-                    let dictionary = try? JSONSerialization.jsonObject(with: jsonData) as? [String: Any]
-                    let children = dictionary?["children"] as? [Any]
-
-                    if let dataObject = children?.last as? [String: Any],
-                       let dataObjectJSON = try? JSONSerialization.data(withJSONObject: dataObject) {
-                        statusData = try? JSONDecoder().decode(InstatusData.self, from: dataObjectJSON)
-                        if statusData != nil {
-                            break
-                        }
-                    }
-                }
-            }
-
-            guard let statusData else {
-                return strongSelf._fail("Couldn't parse response")
-            }
-
-            strongSelf.setStatus(from: statusData)
-        }
+        let props: Props
     }
 
-    private func setStatus(from statusData: InstatusData) {
+    let name: String
+    let url: URL
+
+    init(_ definition: InstatusServiceDefinition) {
+        name = definition.name
+        url = definition.url
+    }
+
+    override func updateStatus() async throws {
+        let doc = try await html(from: url)
+
+        guard
+            let json = doc.css("#__NEXT_DATA__").first?.innerHTML,
+            let jsonData = json.data(using: .utf8),
+            let statusData = try? JSONDecoder().decode(InstatusData.self, from: jsonData)
+        else {
+            throw StatusUpdateError.decodingError(nil)
+        }
+
+            // Set the status
         let status = serviceStatus(
-            for: statusData.site,
-            components: statusData.site.components
+            for: statusData.props.pageProps.site,
+            components: statusData.props.pageProps.site.components
         )
 
         // Set the message by combining the unresolved incident names
-        let unresolvedIncidents = statusData.activeIncidents.filter { $0.isUnresolved }
+        let unresolvedIncidents = statusData.props.pageProps.activeIncidents.filter { $0.isUnresolved }
         if !unresolvedIncidents.isEmpty {
             let prefix = unresolvedIncidents.count > 1 ? "* " : ""
             let message = unresolvedIncidents.map { "\(prefix)\($0.name)" }.joined(separator: "\n")
@@ -175,7 +148,7 @@ class BaseInstatusService: BaseService {
         }
 
         // Or from affected the component names
-        let affectedComponents = statusData.site.components.flatMap { $0.affectedComponentsNames }
+        let affectedComponents = statusData.props.pageProps.site.components.flatMap { $0.affectedComponentsNames }
         if !affectedComponents.isEmpty {
             let message = affectedComponents.joined(separator: "\n")
             statusDescription = ServiceStatusDescription(status: status, message: message)
@@ -184,7 +157,7 @@ class BaseInstatusService: BaseService {
 
         // Fallback to the status description
         let message: String
-        switch statusData.site.status {
+        switch statusData.props.pageProps.site.status {
         case .up:
             message = "All systems operational"
         case .hasIssues:

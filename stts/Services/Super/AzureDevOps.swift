@@ -7,19 +7,16 @@ import Foundation
 
 typealias AzureDevOps = BaseAzureDevOps & RequiredServiceProperties & AzureDevOpsStoreService
 
-class BaseAzureDevOps: BaseService {
-    private static var store = AzureDevOpsStore()
+class BaseAzureDevOps: BaseIndependentService {
+    private static let store = AzureDevOpsStore()
 
     let url = URL(string: "https://status.dev.azure.com")!
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? AzureDevOps else { fatalError("BaseAzureDevOps should not be used directly.") }
-
-        BaseAzureDevOps.store.loadStatus { [weak realSelf] in
-            guard let strongSelf = realSelf else { return }
-
-            strongSelf.statusDescription = BaseAzureDevOps.store.status(for: strongSelf)
-            callback(strongSelf)
+    override func updateStatus() async throws {
+        guard let realSelf = self as? AzureDevOps else {
+            fatalError("BaseAzureDevOps should not be used directly.")
         }
+
+        statusDescription = try await BaseAzureDevOps.store.updatedStatus(for: realSelf)
     }
 }

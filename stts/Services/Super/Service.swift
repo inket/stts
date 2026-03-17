@@ -27,7 +27,18 @@ public typealias ServiceStatusMessage = String
 
 public extension ServiceStatusMessage {
     static func from(_ error: Error?) -> Self {
-        if (error as NSError?)?.code == NSURLErrorNotConnectedToInternet {
+        if let statusUpdateError = error as? StatusUpdateError {
+            switch statusUpdateError {
+            case .networkError(let error):
+                return "Network error: \(from(error))"
+            case .parseError(let error):
+                return "Parse error: \(from(error))"
+            case .decodingError(let error):
+                return "Decoding error: \(from(error))"
+            case .custom(let string):
+                return string
+            }
+        } else if (error as NSError?)?.code == NSURLErrorNotConnectedToInternet {
             return "Internet connection offline."
         } else {
             return error?.localizedDescription ?? "Unexpected error"
@@ -67,7 +78,14 @@ protocol ServiceCategory {
 
 protocol SubService {} // Fits in a service submenu
 
-public class BaseService: Loading {
+enum StatusUpdateError: Error {
+    case networkError(Error)
+    case parseError(Error?)
+    case decodingError(Error?)
+    case custom(String)
+}
+
+public class BaseService {
     @Atomic var statusDescription: ServiceStatusDescription = .init(
         status: .undetermined,
         message: "Loading…"
@@ -78,38 +96,11 @@ public class BaseService: Loading {
 
     private var lastNotifiedStatus: ServiceStatus?
 
-    public static func all() -> [BaseService] {
-        guard let servicesPlist = Bundle.main.path(forResource: "services", ofType: "plist"),
-            let services = NSDictionary(contentsOfFile: servicesPlist)?["services"] as? [String] else {
-                fatalError("The services.plist file does not exist. The build phase script might have failed.")
-        }
-
-        return services.map(BaseService.named).compactMap { $0 }
+    public func updateStatus() async throws {
+        fatalError("Override updateStatus() to support loading the status")
     }
 
-    public static func allWithoutSubServices() -> [BaseService] {
-        all().filter { !($0 is SubService) }
-    }
-
-    static func named(_ name: String) -> BaseService? {
-        return (NSClassFromString("stts.\(name)") as? Service.Type)?.init()
-    }
-
-    public required init() {}
-
-    public func updateStatus(callback: @escaping (BaseService) -> Void) {}
-
-    // swiftlint:disable:next identifier_name
-    func _fail(_ error: Error?) {
-        statusDescription = ServiceStatusDescription(status: .undetermined, message: ServiceStatusMessage.from(error))
-    }
-
-    // swiftlint:disable:next identifier_name
-    func _fail(_ message: String) {
-        statusDescription = ServiceStatusDescription(status: .undetermined, message: message)
-    }
-
-    func notifyIfNecessary() {
+    func notifyIfStatusChanged() {
         guard let realSelf = self as? Service else { fatalError("BaseService should not be used directly.") }
 
         let notifyBecauseDifferent =
@@ -117,7 +108,7 @@ public class BaseService: Loading {
             && lastNotifiedStatus != .undetermined && status != .undetermined
             && lastNotifiedStatus != status
 
-        if notifyBecauseDifferent && Preferences.shared.notifyOnStatusChange {
+        if notifyBecauseDifferent {
             let notification = NSUserNotification()
             let possessiveS = realSelf.name.hasSuffix("s") ? "'" : "'s"
             notification.title = "\(realSelf.name)\(possessiveS) status has changed"
@@ -168,5 +159,20 @@ extension BaseService: Hashable {
         }
 
         hasher.combine(service.name)
+    }
+}
+
+extension BaseService: Loading {}
+
+extension BaseService {
+    public func updateStatusAutomaticallyHandlingErrors() async {
+        do {
+            try await updateStatus()
+        } catch {
+            statusDescription = ServiceStatusDescription(
+                status: .undetermined,
+                message: ServiceStatusMessage.from(error)
+            )
+        }
     }
 }

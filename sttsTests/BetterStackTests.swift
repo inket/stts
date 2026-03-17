@@ -7,8 +7,22 @@ import XCTest
 @testable import stts
 
 final class BetterStackTests: XCTestCase {
-    func testNormalStatus() throws {
-        let buildJet = BuildJet()
+    private func createService() throws -> BetterStackService {
+        let definition = try JSONDecoder().decode(
+            BetterStackServiceDefinition.self,
+            from: Data("""
+            {
+                "url": "https://status.buildjet.com",
+                "name": "BuildJet"
+            }
+            """.utf8)
+        )
+
+        return try XCTUnwrap(definition.build() as? BetterStackService)
+    }
+
+    func testNormalStatus() async throws {
+        let buildJet = try createService()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
             .init(
@@ -19,18 +33,12 @@ final class BetterStackTests: XCTestCase {
             )
         ]))
 
-        let expectation = XCTestExpectation(description: "Retrieve mocked status for buildjet.com")
-
-        buildJet.updateStatus { service in
-            XCTAssertEqual(service.status, .good)
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 3)
+        try await buildJet.updateStatus()
+        XCTAssertEqual(buildJet.status, .good)
     }
 
-    func testMajorStatus() throws {
-        let buildJet = BuildJet()
+    func testMajorStatus() async throws {
+        let buildJet = try createService()
 
         DataLoader.shared = DataLoader(session: ResponseOverridingURLSession(overrides: [
             .init(
@@ -41,13 +49,7 @@ final class BetterStackTests: XCTestCase {
             )
         ]))
 
-        let expectation = XCTestExpectation(description: "Retrieve mocked status for buildjet.com")
-
-        buildJet.updateStatus { service in
-            XCTAssertEqual(service.status, .major)
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 3)
+        try await buildJet.updateStatus()
+        XCTAssertEqual(buildJet.status, .major)
     }
 }

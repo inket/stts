@@ -6,24 +6,17 @@
 import Foundation
 import Kanna
 
-class Beanstalk: Service {
+class Beanstalk: IndependentService {
     let url = URL(string: "https://status.beanstalkapp.com")!
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        loadData(with: url) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
+    override func updateStatus() async throws {
+        let doc = try await html(from: url)
 
-            guard let data = data else { return strongSelf._fail(error) }
-            guard let doc = try? HTML(html: data, encoding: .utf8) else {
-                return strongSelf._fail("Couldn't parse response")
-            }
-
-            strongSelf.statusDescription = ServiceStatusDescription(
-                status: strongSelf.status(from: doc),
-                message: strongSelf.message(for: strongSelf.status)
-            )
-        }
+        let status = status(from: doc)
+        statusDescription = ServiceStatusDescription(
+            status: status,
+            message: message(for: status)
+        )
     }
 }
 

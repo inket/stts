@@ -1,5 +1,5 @@
 {
-  "originHash" : "66c5009dc2db0bbef7674d4606e17b47c15136beff34683462ce9d911dc59d79",
+  "originHash" : "6757785d4818500b15e48de30606d42ef095eca4264e87c401b91dbf5cd6125b",
   "pins" : [
     {
       "identity" : "kanna",
@@ -26,6 +26,15 @@
       "state" : {
         "branch" : "master",
         "revision" : "21d1dc412cfecbe6e34f1f4c4eb88d3f912654a6"
+      }
+    },
+    {
+      "identity" : "sfsafesymbols",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SFSafeSymbols/SFSafeSymbols",
+      "state" : {
+        "revision" : "e01b3d4f861412f8dcee8d93c417d2c2b0cdfd77",
+        "version" : "7.0.0"
       }
     }
   ],

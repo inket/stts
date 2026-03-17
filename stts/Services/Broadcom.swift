@@ -5,7 +5,7 @@
 
 import Foundation
 
-class Broadcom: Service {
+class Broadcom: IndependentService {
     let url = URL(string: "https://status.broadcom.com")!
 
     private struct Response: Codable {
@@ -29,48 +29,36 @@ class Broadcom: Service {
         }
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        let url = URL(string: "https://status.broadcom.com/api/v1/status")!
+    override func updateStatus() async throws {
+        let apiURL = URL(string: "https://status.broadcom.com/api/v1/status")!
+        let response = try await decoded(Response.self, from: apiURL)
 
-        loadData(with: url) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-
-            guard let data = data else { return strongSelf._fail(error) }
-            guard let response = try? JSONDecoder().decode(Response.self, from: data) else {
-                return strongSelf._fail("Couldn't parse response")
-            }
-
-            let status: ServiceStatus
-            switch response.page.state {
-            case .operational:
-                status = .good
-            case .degraded:
-                status = .major
-            case .underMaintenanceOfficial, .underMaintenanceActual:
-                status = .maintenance
-            }
-
-            let stateText: String
-            if let text = response.page.stateText {
-                stateText = text
-            } else {
-                switch status {
-                case .good:
-                    stateText = "All systems are go!"
-                case .maintenance:
-                    stateText = "Under maintenance"
-                case .major:
-                    stateText = "Degraded"
-                default:
-                    stateText = "No status description"
-                }
-            }
-
-            strongSelf.statusDescription = ServiceStatusDescription(
-                status: status,
-                message: stateText
-            )
+        let status: ServiceStatus
+        switch response.page.state {
+        case .operational:
+            status = .good
+        case .degraded:
+            status = .major
+        case .underMaintenanceOfficial, .underMaintenanceActual:
+            status = .maintenance
         }
+
+        let stateText: String
+        if let text = response.page.stateText {
+            stateText = text
+        } else {
+            switch status {
+            case .good:
+                stateText = "All systems are go!"
+            case .maintenance:
+                stateText = "Under maintenance"
+            case .major:
+                stateText = "Degraded"
+            default:
+                stateText = "No status description"
+            }
+        }
+
+        statusDescription = ServiceStatusDescription(status: status, message: stateText)
     }
 }

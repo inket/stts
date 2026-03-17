@@ -11,20 +11,20 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
     let bottomBar: BottomBar
     let tableView = NSTableView()
 
-    let allServices: [BaseService] = BaseService.all().sorted()
-    let allServicesWithoutSubServices: [BaseService] = BaseService.allWithoutSubServices().sorted()
-    var filteredServices: [BaseService]
-    var selectedServices: [BaseService] = Preferences.shared.selectedServices
+    let serviceLoader: ServiceLoader
+    let preferences: Preferences
+    var filteredServices: [ServiceDefinition]
+    var selectedServices: [ServiceDefinition]
 
     var selectionChanged = false
 
-    let settingsView = SettingsView()
+    let settingsView: SettingsView
 
     var hidden: Bool = true
 
     var savedScrollPosition: CGPoint = .zero
 
-    var selectedCategory: ServiceCategory? {
+    var selectedCategory: ServiceDefinition? {
         didSet {
             // Save the scroll position between screens
             let scrollToPosition: CGPoint?
@@ -43,9 +43,12 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
                 self?.selectedCategory = nil
             })
 
-            guard let category = selectedCategory else {
+            guard
+                let categoryDefinition = selectedCategory,
+                let serviceCategory = categoryDefinition.build() as? ServiceCategory
+            else {
                 // Show the unfiltered services
-                filteredServices = allServicesWithoutSubServices
+                filteredServices = serviceLoader.allServicesWithoutSubServices
                 tableView.reloadData()
 
                 if let scrollPosition = scrollToPosition {
@@ -56,16 +59,28 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
             }
 
             // Find the sub services
-            var subServices = allServices.filter {
-                // Can't check superclass matches without mirror
-                Mirror(reflecting: $0).superclassMirror?.subjectType == category.subServiceSuperclass
+            var subServices = serviceLoader.allServices.filter { serviceDefinition in
+                guard
+                    serviceDefinition.isSubService == true,
+                    let service = serviceDefinition.build()
+                else { return false }
+
+                // Can't check superclass matches without mirror.
+                // Check both the service's own type (for direct instances) and its superclass
+                // (for subclasses), to support both JSON-defined and code-defined sub-services.
+                let serviceMirror = Mirror(reflecting: service)
+                let hasExpectedSuperclass =
+                    serviceMirror.superclassMirror?.subjectType == serviceCategory.subServiceSuperclass ||
+                    serviceMirror.subjectType == serviceCategory.subServiceSuperclass
 
                 // Exclude the category so that we can add it at the top
-                && $0 != category as? BaseService
-            }.sorted()
+                let isTheCategory = service is ServiceCategory
+
+                return hasExpectedSuperclass && !isTheCategory
+            }.sorted(by: ServiceDefinitionSortByName)
 
             // Add the category as the top item
-            (category as? BaseService).flatMap { subServices.insert($0, at: 0) }
+            subServices.insert(categoryDefinition, at: 0)
 
             filteredServices = subServices
             tableView.reloadData()
@@ -92,13 +107,27 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
         return cachedMaxNameWidth
     }
 
-    init(contentView: NSStackView, scrollView: CustomScrollView, bottomBar: BottomBar) {
+    init(
+        contentView: NSStackView,
+        scrollView: CustomScrollView,
+        bottomBar: BottomBar,
+        serviceLoader: ServiceLoader,
+        preferences: Preferences
+    ) {
         self.contentView = contentView
         self.scrollView = scrollView
-        self.filteredServices = allServicesWithoutSubServices
         self.bottomBar = bottomBar
 
+        self.serviceLoader = serviceLoader
+        self.preferences = preferences
+
+        filteredServices = serviceLoader.allServicesWithoutSubServices
+        selectedServices = preferences.selectedServices
+
+        settingsView = SettingsView(preferences: preferences)
+
         super.init()
+
         setup()
     }
 
@@ -116,35 +145,30 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
         tableView.delegate = self
         tableView.selectionHighlightStyle = .none
         tableView.backgroundColor = NSColor.clear
-        if #available(OSX 11.0, *) {
-            tableView.style = .fullWidth
-        }
+        tableView.style = .fullWidth
 
         settingsView.isHidden = true
         settingsView.searchCallback = { [weak self] searchString in
-            guard
-                let strongSelf = self,
-                let allServices = strongSelf.allServices as? [Service],
-                let allServicesWithoutSubServices = strongSelf.allServicesWithoutSubServices as? [Service]
-            else { return }
+            guard let self else { return }
 
             if searchString.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-                strongSelf.filteredServices = allServicesWithoutSubServices
+                self.filteredServices = serviceLoader.allServicesWithoutSubServices
             } else {
                 // Can't filter array with NSPredicate without making Service inherit KVO from NSObject, therefore
                 // we create an array of service names that we can run the predicate on
-                let allServiceNames = allServices.compactMap { $0.name } as NSArray
+                let allServiceNames = serviceLoader.allServices.compactMap { $0.name } as NSArray
                 let predicate = NSPredicate(format: "SELF LIKE[cd] %@", argumentArray: ["*\(searchString)*"])
                 guard let filteredServiceNames = allServiceNames.filtered(using: predicate) as? [String] else { return }
 
-                strongSelf.filteredServices = allServices.filter { filteredServiceNames.contains($0.name) }
+                let filteredServiceNamesSet = Set<String>(filteredServiceNames)
+                self.filteredServices = serviceLoader.allServices.filter { filteredServiceNamesSet.contains($0.name) }
             }
 
-            if strongSelf.selectedCategory != nil {
-                strongSelf.selectedCategory = nil
+            if self.selectedCategory != nil {
+                self.selectedCategory = nil
             }
 
-            strongSelf.tableView.reloadData()
+            self.tableView.reloadData()
         }
 
         settingsView.translatesAutoresizingMaskIntoConstraints = false
@@ -179,7 +203,7 @@ class EditorTableViewController: NSObject, SwitchableTableViewController {
         tableView.tableColumns.first?.width = tableView.frame.size.width
 
         let height: CGFloat
-        if Preferences.shared.allowPopupToStretchAsNeeded, let usableHeight = NSScreen.usableHeightOfActiveScreen {
+        if preferences.allowPopupToStretchAsNeeded, let usableHeight = NSScreen.usableHeightOfActiveScreen {
             height = usableHeight - 32 // To accommodate for the popup's arrow/background
         } else {
             height = 400
@@ -219,25 +243,27 @@ extension EditorTableViewController: NSTableViewDataSource {
     }
 
     func tableViewSelectionDidChange(_ notification: Notification) {
-        guard tableView.selectedRow != -1 else { return }
-
-        // We're only interested in selections of categories
         guard
-            selectedCategory == nil,
-            let category = filteredServices[tableView.selectedRow] as? ServiceCategory
+            tableView.selectedRow != -1,
+            selectedCategory == nil
         else { return }
 
-        // Change the selected category
-        selectedCategory = category
+        let selectedServiceDefinition = filteredServices[tableView.selectedRow]
+        // We're only interested in selections of categories
+        if selectedServiceDefinition.isCategory == true {
+            // Change the selected category
+            selectedCategory = selectedServiceDefinition
+        }
     }
 }
 
 extension EditorTableViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        guard
-            let maxNameWidth = maxNameWidth,
-            let service = filteredServices[row] as? Service
-        else { return EditorTableCell.defaultHeight }
+        guard let maxNameWidth = maxNameWidth else {
+            return EditorTableCell.defaultHeight
+        }
+
+        let service = filteredServices[row]
 
         return EditorTableCell.estimatedHeight(for: service, maxWidth: maxNameWidth)
     }
@@ -247,35 +273,43 @@ extension EditorTableViewController: NSTableViewDelegate {
         let cell = tableView.makeView(withIdentifier: identifier, owner: self) ?? EditorTableCell()
 
         guard let view = cell as? EditorTableCell else { return nil }
-        guard let service = filteredServices[row] as? Service else { return nil }
+
+        let serviceDefinition = filteredServices[row]
 
         if isSearching || selectedCategory != nil {
             view.type = .service
         } else {
-            view.type = (service is ServiceCategory) ? .category : .service
+            view.type = (serviceDefinition.isCategory == true) ? .category : .service
         }
 
         switch view.type {
+        case .none, .back:
+            break
         case .service:
-            view.textField?.stringValue = service.name
-            view.selected = selectedServices.contains(service)
+            view.textField?.stringValue = serviceDefinition.name
+            view.selected = selectedServices.contains(where: serviceDefinition.eq)
             view.toggleCallback = { [weak self] in
-                guard let strongSelf = self else { return }
+                guard let self else { return }
 
-                strongSelf.selectionChanged = true
+                selectionChanged = true
 
                 if view.selected {
-                    self?.selectedServices.append(service)
+                    selectedServices.append(serviceDefinition)
                 } else {
-                    if let index = self?.selectedServices.firstIndex(of: service) {
-                        self?.selectedServices.remove(at: index)
+                    if let index = selectedServices.firstIndex(where: serviceDefinition.eq) {
+                        selectedServices.remove(at: index)
                     }
                 }
 
-                Preferences.shared.selectedServices = strongSelf.selectedServices
+                preferences.selectedServices = selectedServices
             }
         case .category:
-            view.textField?.stringValue = (service as? ServiceCategory)?.categoryName ?? service.name
+            guard let categoryService = serviceDefinition.build() as? ServiceCategory else {
+                assertionFailure("Expected to build category service without issues")
+                return nil
+            }
+
+            view.textField?.stringValue = categoryService.categoryName
             view.selected = false
             view.toggleCallback = {}
         }

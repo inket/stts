@@ -39,7 +39,7 @@ import Foundation
 //        "end_time": "1678727476"
 //    }]
 
-private struct Incident: Codable {
+struct AWSIncident: Codable {
     enum CodingKeys: String, CodingKey {
         case regionName = "region_name"
         case status
@@ -87,50 +87,24 @@ private struct Incident: Codable {
     }
 }
 
-class AWSStore: Loading {
+class AWSStore: ServiceStore<[AWSIncident]> {
     private var url: URL
-    private var loadErrorMessage: String?
-    private var callbacks: [() -> Void] = []
-    private var lastUpdateTime: TimeInterval = 0
-    private var currentlyReloading: Bool = false
-    private var incidents: [Incident]?
 
     init(url: URL) {
         self.url = url
     }
 
-    func loadStatus(_ callback: @escaping () -> Void) {
-        callbacks.append(callback)
-
-        guard !currentlyReloading else { return }
-
-        // Throttling to prevent multiple requests if the first one finishes too quickly
-        guard Date.timeIntervalSinceReferenceDate - lastUpdateTime >= 3 else { return clearCallbacks() }
-
-        currentlyReloading = true
-
-        loadData(with: url) { data, _, error in
-            defer {
-                self.currentlyReloading = false
-                self.clearCallbacks()
-            }
-
-            guard let data else { return self._fail(error) }
-
-            guard let newIncidents = try? JSONDecoder().decode([Incident].self, from: data) else {
-                return self._fail("Couldn't parse response")
-            }
-
-            self.incidents = newIncidents
-            self.lastUpdateTime = Date.timeIntervalSinceReferenceDate
-        }
+    override func retrieveUpdatedState() async throws -> [AWSIncident] {
+        return try await decoded([AWSIncident].self, from: url)
     }
 
-    func status(for aws: AWSAllService) -> ServiceStatusDescription {
+    func updatedStatus(for aws: AWSAllService) async throws -> ServiceStatusDescription {
+        let updatedState = try await updatedState()
+
         var status: ServiceStatus = .good
         var impactedServiceNames = Set<String>()
 
-        for incident in (incidents ?? []) {
+        for incident in updatedState {
             guard incident.status != "0" else { continue }
 
             status = .minor
@@ -147,11 +121,13 @@ class AWSStore: Loading {
         )
     }
 
-    func status(for region: AWSRegionService) -> ServiceStatusDescription {
+    func updatedStatus(for region: AWSRegionService) async throws -> ServiceStatusDescription {
+        let updatedState = try await updatedState()
+
         var status: ServiceStatus = .good
         var impactedServiceNames = Set<String>()
 
-        for incident in (incidents ?? []) {
+        for incident in updatedState {
             guard incident.status != "0" else { continue }
 
             if incident.regionName == region.name {
@@ -170,10 +146,12 @@ class AWSStore: Loading {
         )
     }
 
-    func status(for namedService: AWSNamedService) -> ServiceStatusDescription {
+    func updatedStatus(for namedService: AWSNamedService) async throws -> ServiceStatusDescription {
+        let updatedState = try await updatedState()
+
         var status: ServiceStatus = .good
 
-        for incident in (incidents ?? []) {
+        for incident in updatedState {
             guard incident.status != "0" else { continue }
 
             let impactedServiceIDs = incident.impactedServices(for: namedService)
@@ -205,19 +183,5 @@ class AWSStore: Loading {
         }
 
         return message
-    }
-
-    private func clearCallbacks() {
-        callbacks.forEach { $0() }
-        callbacks = []
-    }
-
-    private func _fail(_ error: Error?) {
-        _fail(ServiceStatusMessage.from(error))
-    }
-
-    private func _fail(_ message: String) {
-        loadErrorMessage = message
-        lastUpdateTime = 0
     }
 }

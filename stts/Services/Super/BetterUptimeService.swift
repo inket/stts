@@ -6,19 +6,15 @@
 import Foundation
 import Kanna
 
-typealias BetterUptimeService = BaseBetterUptimeService & RequiredServiceProperties & RequiredBetterUptimeProperties
+class BetterUptimeServiceDefinition: CodableServiceDefinition, ServiceDefinition {
+    let providerIdentifier = "betteruptime"
 
-protocol RequiredBetterUptimeProperties {
-    var url: URL { get }
-    var apiURL: URL { get }
+    func build() -> BaseService? {
+        BetterUptimeService(self)
+    }
 }
 
-extension RequiredBetterUptimeProperties {
-    // Default implementation of the property `apiURL` is to return the page URL
-    var apiURL: URL { url }
-}
-
-class BaseBetterUptimeService: BaseService {
+class BetterUptimeService: Service {
     private enum BetterUptimeStatus: String, CaseIterable {
         case operational
         case degraded
@@ -57,40 +53,36 @@ class BaseBetterUptimeService: BaseService {
         }
     }
 
-    override func updateStatus(callback: @escaping (BaseService) -> Void) {
-        guard let realSelf = self as? BetterUptimeService else {
-            fatalError("BaseBetterUptimeService should not be used directly.")
-        }
+    let name: String
+    let url: URL
 
-        loadData(with: realSelf.apiURL) { [weak self] data, _, error in
-            guard let strongSelf = self else { return }
-            defer { callback(strongSelf) }
-            guard let data = data else { return strongSelf._fail(error) }
+    init(_ definition: BetterUptimeServiceDefinition) {
+        name = definition.name
+        url = definition.url
+    }
 
-            guard let doc = try? HTML(html: data, encoding: .utf8) else {
-                return strongSelf._fail("Couldn't parse response")
-            }
+    override func updateStatus() async throws {
+        let doc = try await html(from: url)
 
-            let status: ServiceStatus
-            if let overviewElement = doc.css(".status-page__overview").first {
-                // v1 page
-                if let iconElement = overviewElement.css(".status-page__overview-icon").first {
-                    status = self?.status(from: iconElement)?.serviceStatus ?? .undetermined
-                } else {
-                    status = .undetermined
-                }
-            } else if let headerIconElement = doc.css("h1 svg").first {
-                // v2 page
-                status = self?.status(fromV2Icon: headerIconElement)?.serviceStatus ?? .undetermined
+        let status: ServiceStatus
+        if let overviewElement = doc.css(".status-page__overview").first {
+            // v1 page
+            if let iconElement = overviewElement.css(".status-page__overview-icon").first {
+                status = self.status(from: iconElement)?.serviceStatus ?? .undetermined
             } else {
-                return strongSelf._fail("Unexpected response")
+                status = .undetermined
             }
-
-            let message =
-                doc.css("h1").first?.content?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "Unexpected response"
-
-            strongSelf.statusDescription = ServiceStatusDescription(status: status, message: message)
+        } else if let headerIconElement = doc.css("h1 svg").first {
+            // v2 page
+            status = self.status(fromV2Icon: headerIconElement)?.serviceStatus ?? .undetermined
+        } else {
+            throw StatusUpdateError.decodingError(nil)
         }
+
+        let message = doc.css("h1").first?.content?
+            .trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) ?? "Unexpected response"
+
+        statusDescription = ServiceStatusDescription(status: status, message: message)
     }
 
     private func status(from element: Kanna.XMLElement) -> BetterUptimeStatus? {
