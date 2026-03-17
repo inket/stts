@@ -54,6 +54,8 @@
 		B22B6B442F6738CD006528EB /* ServiceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22B6B412F6738CD006528EB /* ServiceStore.swift */; };
 		B22B6B492F673BDF006528EB /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = B22B6B482F673BDF006528EB /* SFSafeSymbols */; };
 		B22B6B4B2F673C39006528EB /* services.json in Resources */ = {isa = PBXBuildFile; fileRef = B22B6B4A2F673C39006528EB /* services.json */; };
+		B22B6B4D2F69040A006528EB /* mastodonsocial-major.html in Resources */ = {isa = PBXBuildFile; fileRef = B22B6B4C2F69040A006528EB /* mastodonsocial-major.html */; };
+		B22B6B4F2F69047D006528EB /* whereby-good.html in Resources */ = {isa = PBXBuildFile; fileRef = B22B6B4E2F69047D006528EB /* whereby-good.html */; };
 		B22DAFD52F670F8900D51606 /* ServiceCountValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DAFD42F670F8900D51606 /* ServiceCountValidationTests.swift */; };
 		B22FDE4821089C6200359EC9 /* PayPal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE4721089C6200359EC9 /* PayPal.swift */; };
 		B22FDE4D2108A5AE00359EC9 /* PayPalProductProduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FDE4C2108A5AE00359EC9 /* PayPalProductProduction.swift */; };
@@ -118,8 +120,6 @@
 		B2CEE5D922B49CC80073C743 /* AzureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CEE5D822B49CC80073C743 /* AzureStore.swift */; };
 		B2CEE5DB22B4A97B0073C743 /* AzureServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CEE5DA22B4A97B0073C743 /* AzureServices.swift */; };
 		B2D655E729B802ED00DBE417 /* InstatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D655E629B802ED00DBE417 /* InstatusTests.swift */; };
-		B2D655E929B803B800DBE417 /* whereby-notice.html in Resources */ = {isa = PBXBuildFile; fileRef = B2D655E829B803B800DBE417 /* whereby-notice.html */; };
-		B2D655EB29B8045300DBE417 /* mastodonsocial-good.html in Resources */ = {isa = PBXBuildFile; fileRef = B2D655EA29B8045300DBE417 /* mastodonsocial-good.html */; };
 		B2D655EE29B807BF00DBE417 /* Site24x7Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D655ED29B807BF00DBE417 /* Site24x7Service.swift */; };
 		B2DCE68D221591F2001447D8 /* LambStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCE68C221591F2001447D8 /* LambStatusService.swift */; };
 		B2DCE6902215992E001447D8 /* Apple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCE68F2215992E001447D8 /* Apple.swift */; };
@@ -211,6 +211,8 @@
 		B22B6B402F6738CD006528EB /* SendbirdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendbirdService.swift; sourceTree = "<group>"; };
 		B22B6B412F6738CD006528EB /* ServiceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceStore.swift; sourceTree = "<group>"; };
 		B22B6B4A2F673C39006528EB /* services.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = services.json; sourceTree = "<group>"; };
+		B22B6B4C2F69040A006528EB /* mastodonsocial-major.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "mastodonsocial-major.html"; sourceTree = "<group>"; };
+		B22B6B4E2F69047D006528EB /* whereby-good.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "whereby-good.html"; sourceTree = "<group>"; };
 		B22DAFD42F670F8900D51606 /* ServiceCountValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCountValidationTests.swift; sourceTree = "<group>"; };
 		B22FDE4721089C6200359EC9 /* PayPal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPal.swift; sourceTree = "<group>"; };
 		B22FDE4C2108A5AE00359EC9 /* PayPalProductProduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayPalProductProduction.swift; sourceTree = "<group>"; };
@@ -282,8 +284,6 @@
 		B2CEE5DC22B4A9900073C743 /* generate_azure_services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generate_azure_services.swift; sourceTree = "<group>"; };
 		B2CF3FBF1DF7DD2100B66491 /* stts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stts.entitlements; sourceTree = "<group>"; };
 		B2D655E629B802ED00DBE417 /* InstatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstatusTests.swift; sourceTree = "<group>"; };
-		B2D655E829B803B800DBE417 /* whereby-notice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "whereby-notice.html"; sourceTree = "<group>"; };
-		B2D655EA29B8045300DBE417 /* mastodonsocial-good.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "mastodonsocial-good.html"; sourceTree = "<group>"; };
 		B2D655ED29B807BF00DBE417 /* Site24x7Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site24x7Service.swift; sourceTree = "<group>"; };
 		B2DCE68C221591F2001447D8 /* LambStatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LambStatusService.swift; sourceTree = "<group>"; };
 		B2DCE68F2215992E001447D8 /* Apple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple.swift; sourceTree = "<group>"; };
@@ -408,10 +408,10 @@
 				B2E832ED29DE5104000FA1BE /* adobe-analytics-minor.json */,
 				B228DC122A7F86F900D8DC5E /* buildjet-good.html */,
 				B228DC112A7F86F900D8DC5E /* eyloo-major.html */,
-				B2D655EA29B8045300DBE417 /* mastodonsocial-good.html */,
+				B22B6B4C2F69040A006528EB /* mastodonsocial-major.html */,
 				B22651262B2EEA44002F1CE2 /* pagerduty-good.html */,
 				B22651242B2EE9FF002F1CE2 /* pagerduty-minor.html */,
-				B2D655E829B803B800DBE417 /* whereby-notice.html */,
+				B22B6B4E2F69047D006528EB /* whereby-good.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -746,8 +746,8 @@
 			files = (
 				B22651272B2EEA44002F1CE2 /* pagerduty-good.html in Resources */,
 				B2E832EE29DE5104000FA1BE /* adobe-analytics-minor.json in Resources */,
-				B2D655EB29B8045300DBE417 /* mastodonsocial-good.html in Resources */,
-				B2D655E929B803B800DBE417 /* whereby-notice.html in Resources */,
+				B22B6B4D2F69040A006528EB /* mastodonsocial-major.html in Resources */,
+				B22B6B4F2F69047D006528EB /* whereby-good.html in Resources */,
 				B228DC132A7F86F900D8DC5E /* eyloo-major.html in Resources */,
 				B22651252B2EE9FF002F1CE2 /* pagerduty-minor.html in Resources */,
 				B228DC142A7F86F900D8DC5E /* buildjet-good.html in Resources */,

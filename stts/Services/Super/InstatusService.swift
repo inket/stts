@@ -26,7 +26,7 @@ class InstatusService: Service {
     }
 
     private struct Component: Codable {
-        let name: String
+        let name: Name
         let status: Status?
         let children: [Component]?
 
@@ -48,10 +48,14 @@ class InstatusService: Service {
                     .flatMap { $0.affectedComponentsNames }
                     .map { "\(name): \($0)"}
             } else if status != nil, status != .operational {
-                return [name]
+                return [name.default]
             } else {
                 return []
             }
+        }
+
+        struct Name: Codable {
+            let `default`: String
         }
 
         enum Status: String, Codable {
@@ -80,7 +84,7 @@ class InstatusService: Service {
     }
 
     private struct Incident: Codable {
-        let name: String
+        let name: Name
         let status: Status
 
         var isUnresolved: Bool {
@@ -92,6 +96,10 @@ class InstatusService: Service {
             }
         }
 
+        struct Name: Codable {
+            let `default`: String
+        }
+
         enum Status: String, Codable {
             case investigating = "INVESTIGATING"
             case identified = "IDENTIFIED"
@@ -101,16 +109,8 @@ class InstatusService: Service {
     }
 
     private struct InstatusData: Codable {
-        struct Props: Codable {
-            struct PageProps: Codable {
-                let site: Site
-                let activeIncidents: [Incident]
-            }
-
-            let pageProps: PageProps
-        }
-
-        let props: Props
+        let site: Site
+        let activeIncidents: [Incident]
     }
 
     let name: String
@@ -124,31 +124,65 @@ class InstatusService: Service {
     override func updateStatus() async throws {
         let doc = try await html(from: url)
 
-        guard
-            let json = doc.css("#__NEXT_DATA__").first?.innerHTML,
-            let jsonData = json.data(using: .utf8),
-            let statusData = try? JSONDecoder().decode(InstatusData.self, from: jsonData)
-        else {
+        var statusData: InstatusData?
+
+        let scriptTags = doc.css("script")
+        for scriptTag in scriptTags {
+            guard let rawHTML = scriptTag.innerHTML else { continue }
+
+            if rawHTML.contains("activeIncidents") {
+                // swiftlint:disable:next force_try
+                let regularExpression = try! NSRegularExpression(
+                    pattern: "\\{.*\\}",
+                    options: [.caseInsensitive, .dotMatchesLineSeparators]
+                )
+                guard let firstMatch = regularExpression.firstMatch(
+                    in: rawHTML,
+                    range: NSRange(location: 0, length: (rawHTML as NSString).length)
+                ) else { continue }
+
+                let json = (rawHTML as NSString).substring(with: firstMatch.range).unescaped
+                guard let jsonData = json.data(using: .utf8) else {
+                    continue
+                }
+
+                let dictionary = try? JSONSerialization.jsonObject(with: jsonData) as? [String: Any]
+                let children = dictionary?["children"] as? [Any]
+
+                if let dataObject = children?.last as? [String: Any],
+                   let dataObjectJSON = try? JSONSerialization.data(withJSONObject: dataObject) {
+                    statusData = try? JSONDecoder().decode(InstatusData.self, from: dataObjectJSON)
+                    if statusData != nil {
+                        break
+                    }
+                }
+            }
+        }
+
+        guard let statusData else {
             throw StatusUpdateError.decodingError(nil)
         }
 
-            // Set the status
+        setStatus(from: statusData)
+    }
+
+    private func setStatus(from statusData: InstatusData) {
         let status = serviceStatus(
-            for: statusData.props.pageProps.site,
-            components: statusData.props.pageProps.site.components
+            for: statusData.site,
+            components: statusData.site.components
         )
 
         // Set the message by combining the unresolved incident names
-        let unresolvedIncidents = statusData.props.pageProps.activeIncidents.filter { $0.isUnresolved }
+        let unresolvedIncidents = statusData.activeIncidents.filter { $0.isUnresolved }
         if !unresolvedIncidents.isEmpty {
             let prefix = unresolvedIncidents.count > 1 ? "* " : ""
-            let message = unresolvedIncidents.map { "\(prefix)\($0.name)" }.joined(separator: "\n")
+            let message = unresolvedIncidents.map { "\(prefix)\($0.name.default)" }.joined(separator: "\n")
             statusDescription = ServiceStatusDescription(status: status, message: message)
             return
         }
 
         // Or from affected the component names
-        let affectedComponents = statusData.props.pageProps.site.components.flatMap { $0.affectedComponentsNames }
+        let affectedComponents = statusData.site.components.flatMap { $0.affectedComponentsNames }
         if !affectedComponents.isEmpty {
             let message = affectedComponents.joined(separator: "\n")
             statusDescription = ServiceStatusDescription(status: status, message: message)
@@ -157,7 +191,7 @@ class InstatusService: Service {
 
         // Fallback to the status description
         let message: String
-        switch statusData.props.pageProps.site.status {
+        switch statusData.site.status {
         case .up:
             message = "All systems operational"
         case .hasIssues:
