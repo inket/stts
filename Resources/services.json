@@ -112,6 +112,13 @@
       "url": "https://status.rollbar.com"
     },
     {
+      "name": "Strategic Roadmaps",
+      "url": "https://status.roadmunk.com",
+      "old_names": [
+        "Roadmunk"
+      ]
+    },
+    {
       "name": "Tempo",
       "url": "https://status.tempo.io"
     },
@@ -1103,11 +1110,6 @@
       "name": "RevenueCat",
       "url": "https://status.revenuecat.com",
       "id": "d7wjfp7kgjkd"
-    },
-    {
-      "name": "Roadmunk",
-      "url": "https://status.roadmunk.com",
-      "id": "wfwzfc29bq4r"
     },
     {
       "name": "Robin",
