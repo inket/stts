@@ -7,64 +7,73 @@ import Foundation
 import Kanna
 
 class Okta: IndependentService {
-    private enum Status: CaseIterable {
-        case operational
-        case serviceDegradation
-        case thirdPartyImpact
-        case serviceDisruption
+    private struct Incident: Decodable {
+        let status: String
+        let category: String
+        let serviceFeature: String?
 
-        var iconClassName: String {
-            switch self {
-            case .operational:
-                return "icon-Success"
-            case .serviceDegradation:
-                return "icon-Alert"
-            case .thirdPartyImpact:
-                return "icon-ThirdImpact"
-            case .serviceDisruption:
-                return "icon-Error"
-            }
+        enum CodingKeys: String, CodingKey {
+            case status = "Status__c"
+            case category = "Category__c"
+            case serviceFeature = "Service_Feature__c"
         }
+    }
+
+    private enum Category: String {
+        case serviceDisruption = "Service Disruption"
+        case majorServiceDisruption = "Major Service Disruption"
+        case minorServiceDisruption = "Minor Service Disruption"
+        case serviceDegradation = "Service Degradation"
+        case performanceIssue = "Performance Issue"
+        case featureDisruption = "Feature Disruption"
 
         var serviceStatus: ServiceStatus {
             switch self {
-            case .operational:
-                return .good
-            case .serviceDegradation, .thirdPartyImpact:
-                return .minor
-            case .serviceDisruption:
+            case .serviceDisruption, .majorServiceDisruption, .minorServiceDisruption:
                 return .major
+            case .serviceDegradation, .performanceIssue, .featureDisruption:
+                return .minor
             }
         }
     }
 
     let url = URL(string: "https://status.okta.com")!
 
-    @MainActor
-    private let renderer = HeadlessHTMLRenderer()
-
     override func updateStatus() async throws {
-        let html = await renderer.retrieveRenderedHTML(for: url)
-
-        guard let html, !html.isEmpty else { throw StatusUpdateError.parseError(nil) }
-
-        guard let doc = try? HTML(html: html, encoding: .utf8) else {
-            throw StatusUpdateError.parseError(nil)
-        }
+        let doc = try await html(from: url)
 
         guard
-            let todayIcon = doc.css(".today_icon").first,
-            let todayIconClassNames = todayIcon.className?.components(separatedBy: .whitespaces),
-            !todayIconClassNames.isEmpty
+            let incidentsSpan = doc.css("[data-id='incidents']").first,
+            let jsonText = incidentsSpan.text,
+            let jsonData = jsonText.data(using: .utf8)
         else {
             throw StatusUpdateError.parseError(nil)
         }
 
-        let status: ServiceStatus = Status.allCases.first(where: {
-            todayIconClassNames.contains($0.iconClassName)
-        })?.serviceStatus ?? .undetermined
-        let message: String = doc.css(".system__status_today_status").first?.text ?? "Unexpected response"
+        let incidents: [Incident]
+        do {
+            incidents = try JSONDecoder().decode([Incident].self, from: jsonData)
+        } catch {
+            throw StatusUpdateError.decodingError(error)
+        }
 
-        statusDescription = ServiceStatusDescription(status: status, message: message)
+        let openIncidents = incidents.filter { $0.status != "Resolved" }
+
+        if openIncidents.isEmpty {
+            statusDescription = ServiceStatusDescription(status: .good, message: "System Operational")
+            return
+        }
+
+        let worstStatus = openIncidents.compactMap { incident -> ServiceStatus? in
+            if incident.serviceFeature == "tp" {
+                return .minor
+            }
+            return Category(rawValue: incident.category)?.serviceStatus
+        }.max() ?? .undetermined
+
+        let categories = Set(openIncidents.map { $0.category })
+        let message = categories.sorted().joined(separator: ", ")
+
+        statusDescription = ServiceStatusDescription(status: worstStatus, message: message)
     }
 }
