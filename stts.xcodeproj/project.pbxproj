@@ -116,6 +116,13 @@
 		B2B77AA927FBC729009B9C2A /* FirebaseStatusDashboardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B77AA827FBC729009B9C2A /* FirebaseStatusDashboardStore.swift */; };
 		B2BB19BA20B8FEFD00A97A87 /* CachetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BB19B920B8FEFD00A97A87 /* CachetService.swift */; };
 		B2C4FC4B1DF4FE3B00365B94 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */; };
+		B2C6703C2F69B6BE0043DC7A /* openai-major.html in Resources */ = {isa = PBXBuildFile; fileRef = B2C6703A2F69B6BE0043DC7A /* openai-major.html */; };
+		B2C6703E2F69B6BE0043DC7A /* rollbar-good.html in Resources */ = {isa = PBXBuildFile; fileRef = B2C6703B2F69B6BE0043DC7A /* rollbar-good.html */; };
+		B2C670402F69B9160043DC7A /* MiroAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C6703F2F69B9160043DC7A /* MiroAll.swift */; };
+		B2C670422F69BB070043DC7A /* MiroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C670412F69BB030043DC7A /* MiroService.swift */; };
+		B2C670442F69BDA20043DC7A /* MiroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C670432F69BDA20043DC7A /* MiroTests.swift */; };
+		B2C670472F69BDA90043DC7A /* miro-good.html in Resources */ = {isa = PBXBuildFile; fileRef = B2C670452F69BDA90043DC7A /* miro-good.html */; };
+		B2C670482F69BDA90043DC7A /* miro-issue.html in Resources */ = {isa = PBXBuildFile; fileRef = B2C670462F69BDA90043DC7A /* miro-issue.html */; };
 		B2CEB9A11DFD8984005FB901 /* StartAtLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */; };
 		B2CEB9A21DFD8987005FB901 /* StartAtLogin.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2CEE5D722B49CB50073C743 /* Azure.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CEE5D622B49CB50073C743 /* Azure.swift */; };
@@ -281,6 +288,13 @@
 		B2B77AA827FBC729009B9C2A /* FirebaseStatusDashboardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStatusDashboardStore.swift; sourceTree = "<group>"; };
 		B2BB19B920B8FEFD00A97A87 /* CachetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachetService.swift; sourceTree = "<group>"; };
 		B2C4FC4A1DF4FE3B00365B94 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		B2C6703A2F69B6BE0043DC7A /* openai-major.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "openai-major.html"; sourceTree = "<group>"; };
+		B2C6703B2F69B6BE0043DC7A /* rollbar-good.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "rollbar-good.html"; sourceTree = "<group>"; };
+		B2C6703F2F69B9160043DC7A /* MiroAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiroAll.swift; sourceTree = "<group>"; };
+		B2C670412F69BB030043DC7A /* MiroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiroService.swift; sourceTree = "<group>"; };
+		B2C670432F69BDA20043DC7A /* MiroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiroTests.swift; sourceTree = "<group>"; };
+		B2C670452F69BDA90043DC7A /* miro-good.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "miro-good.html"; sourceTree = "<group>"; };
+		B2C670462F69BDA90043DC7A /* miro-issue.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "miro-issue.html"; sourceTree = "<group>"; };
 		B2CEB9A01DFD8984005FB901 /* StartAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StartAtLogin.framework; path = Carthage/Build/Mac/StartAtLogin.framework; sourceTree = SOURCE_ROOT; };
 		B2CEE5D622B49CB50073C743 /* Azure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Azure.swift; sourceTree = "<group>"; };
 		B2CEE5D822B49CC80073C743 /* AzureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzureStore.swift; sourceTree = "<group>"; };
@@ -356,6 +370,7 @@
 				B26EC1122F69101D00DDD0B9 /* IncidentIOTests.swift */,
 				B2163AF920BA4E7500B14A85 /* Info.plist */,
 				B2D655E629B802ED00DBE417 /* InstatusTests.swift */,
+				B2C670432F69BDA20043DC7A /* MiroTests.swift */,
 				B22651282B2EEA52002F1CE2 /* PagerDutyTests.swift */,
 				91B0A21328197857007D8E8F /* StringExtensionsTests.swift */,
 				B2163AF720BA4E7500B14A85 /* sttsTests.swift */,
@@ -415,8 +430,12 @@
 				B228DC112A7F86F900D8DC5E /* eyloo-major.html */,
 				B26EC10F2F69101800DDD0B9 /* linear-good.html */,
 				B22B6B4C2F69040A006528EB /* mastodonsocial-major.html */,
+				B2C670452F69BDA90043DC7A /* miro-good.html */,
+				B2C670462F69BDA90043DC7A /* miro-issue.html */,
+				B2C6703A2F69B6BE0043DC7A /* openai-major.html */,
 				B22651262B2EEA44002F1CE2 /* pagerduty-good.html */,
 				B22651242B2EE9FF002F1CE2 /* pagerduty-minor.html */,
+				B2C6703B2F69B6BE0043DC7A /* rollbar-good.html */,
 				B22B6B4E2F69047D006528EB /* whereby-good.html */,
 			);
 			path = Resources;
@@ -571,6 +590,7 @@
 				B22B6B392F6738B1006528EB /* Fastly.swift */,
 				B2253A6E209F42430039F574 /* Firebase.swift */,
 				B2E70FDA22B07DBC000BCAD2 /* GoogleCloudPlatformAll.swift */,
+				B2C6703F2F69B9160043DC7A /* MiroAll.swift */,
 				B276D7692C41F93300974DB6 /* Okta.swift */,
 				B22602B027D881AF001190F1 /* OracleNetSuite.swift */,
 				B2228B6126C9623C002F01F0 /* SendbirdAll.swift */,
@@ -609,6 +629,7 @@
 				B22B6B3F2F6738CD006528EB /* IndependentService.swift */,
 				B213D1FF269AFD45005EBDDA /* InstatusService.swift */,
 				B2DCE68C221591F2001447D8 /* LambStatusService.swift */,
+				B2C670412F69BB030043DC7A /* MiroService.swift */,
 				B22651222B2EE1C1002F1CE2 /* PagerDutyService.swift */,
 				B22FDE4721089C6200359EC9 /* PayPal.swift */,
 				B2F55EE82408AB1A003D674C /* PlayStationNetwork.swift */,
@@ -758,6 +779,10 @@
 				B26EC1112F69101800DDD0B9 /* linear-good.html in Resources */,
 				B228DC132A7F86F900D8DC5E /* eyloo-major.html in Resources */,
 				B22651252B2EE9FF002F1CE2 /* pagerduty-minor.html in Resources */,
+				B2C6703C2F69B6BE0043DC7A /* openai-major.html in Resources */,
+				B2C670472F69BDA90043DC7A /* miro-good.html in Resources */,
+				B2C670482F69BDA90043DC7A /* miro-issue.html in Resources */,
+				B2C6703E2F69B6BE0043DC7A /* rollbar-good.html in Resources */,
 				B228DC142A7F86F900D8DC5E /* buildjet-good.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -851,6 +876,7 @@
 				B2E832EC29DE4F5E000FA1BE /* AdobeTests.swift in Sources */,
 				B2563BBE22CBC65A00532C39 /* ResponseSizeTrackingURLSession.swift in Sources */,
 				B2552F082995516B003FF9EC /* TestBundle.swift in Sources */,
+				B2C670442F69BDA20043DC7A /* MiroTests.swift in Sources */,
 				B22651292B2EEA52002F1CE2 /* PagerDutyTests.swift in Sources */,
 				B26EC1132F69101D00DDD0B9 /* IncidentIOTests.swift in Sources */,
 				B228DC162A7F872800D8DC5E /* BetterStackTests.swift in Sources */,
@@ -882,6 +908,7 @@
 				B27F66A82A360DFF008DAF33 /* AWSStore.swift in Sources */,
 				B2B015C21DBDE69B00699211 /* StatusTableCell.swift in Sources */,
 				B276D76A2C41F93300974DB6 /* Okta.swift in Sources */,
+				B2C670402F69B9160043DC7A /* MiroAll.swift in Sources */,
 				B2CEE5DB22B4A97B0073C743 /* AzureServices.swift in Sources */,
 				B2163B0020BA56EF00B14A85 /* StatusCakeService.swift in Sources */,
 				B2CEE5D922B49CC80073C743 /* AzureStore.swift in Sources */,
@@ -919,6 +946,7 @@
 				B2841CEB20BA6207004AFDB7 /* SorryService.swift in Sources */,
 				B2A23E341DD192CD0051E913 /* EditorTableCell.swift in Sources */,
 				B254098D28FE71990009F956 /* BetterUptimeService.swift in Sources */,
+				B2C670422F69BB070043DC7A /* MiroService.swift in Sources */,
 				B2430807210810D0003F8D07 /* Algolia.swift in Sources */,
 				B22B6B302F673895006528EB /* BundleServiceDefinitionProvider.swift in Sources */,
 				B22B6B312F673895006528EB /* ServiceDefinition.swift in Sources */,
