@@ -129,6 +129,10 @@
   ],
   "instatus": [
     {
+      "name": "Bitmovin",
+      "url": "https://status.bitmovin.com"
+    },
+    {
       "name": "Instatus",
       "url": "https://instat.us"
     },
@@ -446,11 +450,6 @@
       "old_names": [
         "BitBucket"
       ]
-    },
-    {
-      "name": "Bitmovin",
-      "url": "https://status.bitmovin.com",
-      "id": "05q9dh7vx2mf"
     },
     {
       "name": "Bitrise",
