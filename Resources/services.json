@@ -59,6 +59,13 @@
       ]
     },
     {
+      "name": "Code Climate",
+      "url": "https://status.codeclimate.com",
+      "old_names": [
+        "CodeClimate"
+      ]
+    },
+    {
       "name": "HashiCorp",
       "url": "https://status.hashicorp.com"
     },
@@ -528,14 +535,6 @@
       "name": "CocoaPods",
       "url": "https://status.cocoapods.org",
       "id": "7k11xygtyyyg"
-    },
-    {
-      "name": "Code Climate",
-      "url": "https://status.codeclimate.com",
-      "id": "rh2cj4bllp8l",
-      "old_names": [
-        "CodeClimate"
-      ]
     },
     {
       "name": "Codecov",
