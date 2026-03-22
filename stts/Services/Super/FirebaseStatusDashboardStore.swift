@@ -60,7 +60,8 @@ class FirebaseStatusDashboardStore: ServiceStore<[String: ServiceStatus]> {
         if type(of: service) == Firebase.self {
             status = updatedState["_general"]
         } else {
-            status = updatedState[service.dashboardName]
+            let expandedDashboardName = "Firebase \(service.dashboardName)"
+            status = updatedState[service.dashboardName] ?? updatedState[expandedDashboardName]
         }
 
         switch status {
