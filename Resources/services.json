@@ -17,7 +17,7 @@
     },
     {
       "name": "Runway: App Store Connect",
-      "url": "https://www.runway.team/is-app-store-connect-down",
+      "url": "https://runway-asc.betteruptime.com",
       "old_names": [
         "RunwayASC"
       ]
@@ -96,10 +96,6 @@
       "url": "https://linearstatus.com"
     },
     {
-      "name": "Miro",
-      "url": "https://status.miro.com"
-    },
-    {
       "name": "OneSignal",
       "url": "https://status.onesignal.com"
     },
@@ -168,6 +164,23 @@
     {
       "name": "Codacy",
       "url": "https://status.codacy.com"
+    }
+  ],
+  "miro": [
+    {
+      "name": "Miro (AU)",
+      "url": "https://status.miro.com/au",
+      "subservice": true
+    },
+    {
+      "name": "Miro (EU)",
+      "url": "https://status.miro.com/eu",
+      "subservice": true
+    },
+    {
+      "name": "Miro (US)",
+      "url": "https://status.miro.com/us",
+      "subservice": true
     }
   ],
   "site24x7": [
