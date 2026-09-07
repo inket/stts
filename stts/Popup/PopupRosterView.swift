@@ -172,12 +172,14 @@ private struct PopupRosterRowView: View {
                 .foregroundColor(PopupLayout.Colors.rosterRowName.swiftUI)
                 .lineLimit(1)
                 .truncationMode(.tail)
+                .frame(maxWidth: .infinity, alignment: .leading)
 
-            Spacer(minLength: 0)
-
-            Text("↗")
-                .font(PopupLayout.Fonts.serviceArrow.swiftUI)
-                .foregroundColor(PopupLayout.Colors.rosterRowArrow.swiftUI)
+            if PopupLayout.ServiceRow.showsLinkArrow {
+                Text("↗")
+                    .font(PopupLayout.Fonts.serviceArrow.swiftUI)
+                    .foregroundColor(PopupLayout.Colors.rosterRowArrow.swiftUI)
+                    .fixedSize()
+            }
         }
         .padding(.horizontal, PopupLayout.RosterRow.horizontalPadding)
         .frame(height: PopupLayout.RosterRow.height)

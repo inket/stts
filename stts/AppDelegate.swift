@@ -123,6 +123,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         popupController.backgroundView.cornerRadius = PopupLayout.cornerRadius
         popupController.arrowSize = PopupLayout.arrowSize
+        // MBPopup insets the content by 1pt on every side by default, which leaves a 1pt frame of
+        // the panel fill showing around it — and since that fill is tinted with the crown below,
+        // the whole popup ended up outlined in the current status's colour. The content covers the
+        // panel edge to edge instead; the design's hairline is drawn inside it (`PopupContentView`).
+        popupController.contentInset = 0
+        // Setting `contentInset` resizes the panel to the container view's *current* size, which is
+        // still zero this early — before any layout pass has run. Put the intended size back.
+        popupController.resizePopup(width: PopupLayout.contentWidth, height: PopupLayout.maxHeight)
+
         // MBPopup paints the arrow and the panel body with one colour. The body is covered by the
         // vibrancy view and its tint, so what this value actually shows is the arrow — which the
         // design tints with the crown's colour, so the band appears to continue up into the menu

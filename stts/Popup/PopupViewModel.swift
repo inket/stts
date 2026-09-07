@@ -69,24 +69,25 @@ final class PopupViewModel: ObservableObject {
         var faviconIdentifier: String?
         var faviconURL: URL?
 
-        /// When the incident started, if the provider reports it.
-        ///
-        /// The spec is explicit that a time renders *only* when a real one exists — no fallback and
-        /// no computed guess — so this stays `nil` until some provider actually surfaces one. None
-        /// do today, which means the row's time column is currently always empty.
-        var startedAt: Date?
-
         var dotColor: NSColor { kind.dotColor }
 
-        var timeLabel: String? {
-            startedAt.map { Self.timeFormatter.string(from: $0) }
+        /// `message` with its newlines swapped for U+2028 LINE SEPARATOR, which is what the row
+        /// actually renders.
+        ///
+        /// Providers return one line per open incident, and each stays on its own line here. The
+        /// swap is what gets an ellipsis drawn when there are more of them than the row shows:
+        /// U+000A ends a *paragraph*, and SwiftUI only marks a truncation when the last visible line
+        /// is itself cut short — a limit landing on a paragraph break just stops, dropping the
+        /// remaining incidents silently. U+2028 breaks the line without ending the paragraph, so the
+        /// whole message is one paragraph that happens to break where the provider broke it, and any
+        /// overflow is marked.
+        var displayMessage: String {
+            message
+                .split(whereSeparator: \.isNewline)
+                .map { $0.trimmingCharacters(in: .whitespaces) }
+                .filter { !$0.isEmpty }
+                .joined(separator: "\u{2028}")
         }
-
-        private static let timeFormatter: DateFormatter = {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "HH:mm"
-            return formatter
-        }()
     }
 
     struct RosterItem: Identifiable {

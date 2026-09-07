@@ -32,28 +32,23 @@ struct PopupServiceRowView: View {
                     .foregroundColor(PopupLayout.Colors.serviceName.swiftUI)
                     .lineLimit(1)
 
-                Text(item.message)
+                Text(item.displayMessage)
                     .font(PopupLayout.Fonts.serviceMessage.swiftUI)
                     .foregroundColor(PopupLayout.Colors.serviceMessage.swiftUI)
-                    .lineLimit(1)
+                    .lineLimit(PopupLayout.ServiceRow.messageLineLimit)
                     .truncationMode(.tail)
+                    // Without this the HStack squeezes the message back onto one line and truncates
+                    // it rather than letting the row grow.
+                    .fixedSize(horizontal: false, vertical: true)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
 
-            Spacer(minLength: PopupLayout.ServiceRow.contentGap)
-
-            HStack(spacing: PopupLayout.ServiceRow.trailingGap) {
-                // Only rendered when the provider actually reports a time — no fallback, no guess.
-                if let timeLabel = item.timeLabel {
-                    Text(timeLabel)
-                        .font(PopupLayout.Fonts.serviceTime.swiftUI)
-                        .foregroundColor(PopupLayout.Colors.serviceTime.swiftUI)
-                }
-
+            if PopupLayout.ServiceRow.showsLinkArrow {
                 Text("↗")
                     .font(PopupLayout.Fonts.serviceArrow.swiftUI)
                     .foregroundColor(PopupLayout.Colors.serviceArrow.swiftUI)
+                    .fixedSize()
             }
-            .fixedSize()
         }
         .padding(PopupLayout.ServiceRow.padding)
         .background(isHovering ? PopupLayout.Colors.groupBackgroundHover.swiftUI : Color.clear)

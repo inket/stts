@@ -78,17 +78,26 @@ enum PopupLayout {
         static let spacing: CGFloat = 8
     }
 
-    /// A service in the affected list: favicon chip with a severity dot, name, message, time.
+    /// A service in the affected list: favicon chip with a severity dot, then name and message
+    /// across the rest of the row.
     enum ServiceRow {
         static let padding = EdgeInsets(top: 8, leading: 11, bottom: 8, trailing: 11)
         static let contentGap: CGFloat = 11
-        static let trailingGap: CGFloat = 8
 
         static let chipSize: CGFloat = 24
         static let chipCornerRadius: CGFloat = 6
         static let faviconSize: CGFloat = 18
 
-        static let dotSize: CGFloat = 9
+        /// The provider's message wraps rather than truncating at one line, but is capped so a single
+        /// verbose incident can't push every other service out of the popup.
+        static let messageLineLimit = 3
+
+        /// The "↗" at the trailing edge of every row (both the affected list and the roster).
+        /// Currently off: the whole row is already a link, and dropping it gives the message the
+        /// full width. Flip to `true` to bring it back everywhere.
+        static let showsLinkArrow = false
+
+        static let dotSize: CGFloat = 11
         static let dotRingWidth: CGFloat = 1.5
         /// How far the dot hangs off the chip's bottom-trailing corner.
         static let dotOffset: CGFloat = 2
@@ -181,7 +190,6 @@ enum PopupLayout {
 
         static let serviceName = NSFont.systemFont(ofSize: 13)
         static let serviceMessage = NSFont.systemFont(ofSize: 11)
-        static let serviceTime = NSFont.systemFont(ofSize: 11)
         static let serviceArrow = NSFont.systemFont(ofSize: 11)
 
         static let rosterCount = NSFont.systemFont(ofSize: 13)
@@ -267,7 +275,6 @@ enum PopupLayout {
 
         static let serviceName = dynamic(dark: .white, light: NSColor(popupHex: 0x141414))
         static let serviceMessage = dynamic(dark: whiteAlpha(0.5), light: blackAlpha(0.55))
-        static let serviceTime = dynamic(dark: whiteAlpha(0.45), light: blackAlpha(0.45))
         static let serviceArrow = dynamic(dark: whiteAlpha(0.35), light: blackAlpha(0.32))
 
         static let rosterCount = dynamic(dark: .white, light: NSColor(popupHex: 0x141414))

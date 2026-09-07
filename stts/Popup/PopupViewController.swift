@@ -113,6 +113,14 @@ class PopupViewController: NSObject {
         viewModel.prepareForOpen()
         refreshViewModel()
 
+        // `prepareForOpen()` collapses the roster, so the panel is very likely the wrong height for
+        // what's about to be shown. MBPopup positions the panel from its current size right after
+        // this returns, so the new height has to be in before then — otherwise the popup opens at
+        // the size it closed at and visibly snaps. Safe to apply synchronously here, unlike from
+        // `contentHeightChanged` — this is an AppKit callback, not the middle of a SwiftUI layout.
+        hostingView?.layoutSubtreeIfNeeded()
+        if let lastAppliedHeight { applyPanelHeight(lastAppliedHeight) }
+
         if let lastUpdated, Date().timeIntervalSince(lastUpdated) > 60 {
             requestRefresh()
         }
@@ -197,13 +205,54 @@ class PopupViewController: NSObject {
         let clamped = min(max(height, 0), PopupLayout.maxHeight)
 
         // SwiftUI re-reports the same height on unrelated re-layouts; resizing the panel to a height
-        // it already has would animate a no-op.
+        // it already has is wasted work.
         if let lastAppliedHeight, abs(lastAppliedHeight - clamped) < 0.5 { return }
         lastAppliedHeight = clamped
 
-        (NSApp.delegate as? AppDelegate)?.popupController.resizePopup(
-            width: PopupLayout.contentWidth,
-            height: clamped
-        )
+        // This arrives from inside SwiftUI's own layout pass (it's an `onPreferenceChange`), and
+        // resizing the window from in there leaves the panel's content view at the size the pass
+        // already committed to: the window shrinks to its 498pt ceiling while its content view stays
+        // 544pt, so the content sits 46pt too tall inside it and the top of the crown is clipped
+        // away above the panel. Applied on the next turn of the run loop, once that pass has ended.
+        DispatchQueue.main.async { [weak self] in
+            self?.applyPanelHeight(clamped)
+        }
+    }
+
+    /// Resizes the panel to `contentHeight`, keeping its top edge — the one touching the menu bar —
+    /// exactly where it is, so the popup only ever grows and shrinks downwards.
+    ///
+    /// Deliberately *not* `MBPopupController.resizePopup`, which does the same arithmetic but applies
+    /// it with an animated `setFrame`. That call blocks in a nested run loop, which lets the next
+    /// height report re-enter and compute its own frame from a half-resized panel, after which the
+    /// outer animation finishes to its own now-stale target.
+    private func applyPanelHeight(_ contentHeight: CGFloat) {
+        guard let popupController = (NSApp.delegate as? AppDelegate)?.popupController else { return }
+
+        let panel = popupController.panel
+        let inset = popupController.contentInset
+
+        var frame = panel.frame
+        let top = frame.maxY
+        frame.size.width = PopupLayout.contentWidth + inset * 2
+        // SwiftUI measures in fractions of a point (443.556…), and AppKit rounds a window frame to
+        // whole points behind your back — rounding the origin down and the height up. Asking for a
+        // whole number to begin with keeps the top edge exactly where it was put, instead of landing
+        // half a point off and reading as a 1px twitch on each expand.
+        frame.size.height = (contentHeight + popupController.arrowSize.height + inset * 2).rounded(.up)
+        frame.origin.y = top - frame.size.height
+
+        guard frame != panel.frame else { return }
+        panel.setFrame(frame, display: true)
+
+        // AppKit resizes the panel's content view along with the window, except when the window is
+        // resized out from under a layout pass that is already running — which is how the 544pt
+        // content view inside a 498pt panel was caught. Everything below it (MBPopup's container,
+        // this controller's content view, the hosting view) is pinned to that view, so a stale size
+        // there is a stale size for the whole popup. Cheap to assert rather than assume.
+        let contentSize = panel.contentRect(forFrameRect: panel.frame).size
+        if popupController.backgroundView.frame.size != contentSize {
+            popupController.backgroundView.setFrameSize(contentSize)
+        }
     }
 }

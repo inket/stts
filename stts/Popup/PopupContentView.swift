@@ -13,6 +13,15 @@ import SwiftUI
 /// `PopupViewController` clamps that to `PopupLayout.maxHeight` and resizes the panel. Everything
 /// above that ceiling is absorbed by the middle section's scroll view.
 ///
+/// Every section — including the footer — contributes its *real, measured* height to that report,
+/// never a hand-computed estimate. An estimate for the footer used to live here (its padding plus
+/// `NSFont.boundingRectForFont`, which measures a font's worst-case glyph bounds, not the line
+/// height SwiftUI actually lays text out at) and ran consistently taller than the real view. AppKit
+/// sized the panel to the inflated total, and the `VStack` handed the leftover to the scroll view —
+/// so whenever the content was shorter than the max height, the scroll region always had dead space
+/// at its bottom that didn't belong to any row, reading as an affordance for content that wasn't
+/// there.
+///
 /// The background is the panel colour at 84%/86% — an `NSVisualEffectView` sits behind the hosting
 /// view (see `PopupViewController.setup()`), so the desktop tints through.
 struct PopupContentView: View {
@@ -42,9 +51,7 @@ struct PopupContentView: View {
                     .measuringPopupHeight()
 
                 if scrollsContent {
-                    ScrollView(.vertical) {
-                        middle.measuringPopupHeight()
-                    }
+                    scrollingMiddle
                 } else {
                     middle.measuringPopupHeight()
                 }
@@ -52,13 +59,48 @@ struct PopupContentView: View {
 
             PopupBottomBarView(onOpenSettings: onOpenSettings)
                 .padding(.top, PopupLayout.Footer.topMargin)
+                .measuringPopupHeight()
         }
         .frame(width: PopupLayout.contentWidth)
         .background(background)
-        .onPreferenceChange(PopupSectionHeightKey.self) { sectionsHeight in
-            onContentHeightChange(sectionsHeight + footerHeight)
+        // The panel fill behind this view is the arrow's colour, not the panel's, so the design's
+        // hairline has to be drawn here rather than left to MBPopup's content inset.
+        .overlay(
+            RoundedRectangle(cornerRadius: PopupLayout.cornerRadius, style: .continuous)
+                .strokeBorder(
+                    PopupLayout.Colors.panelBorder.swiftUI,
+                    lineWidth: PopupLayout.panelBorderWidth
+                )
+        )
+        .onPreferenceChange(PopupSectionHeightKey.self) { totalHeight in
+            onContentHeightChange(totalHeight)
         }
     }
+
+    /// Expanding the roster can push it below the fold when the panel is already at its ceiling, so
+    /// the disclosure row is scrolled to the top as it opens — otherwise the services it just
+    /// revealed are off-screen and the click looks like it did nothing.
+    private var scrollingMiddle: some View {
+        ScrollViewReader { proxy in
+            ScrollView(.vertical) {
+                middle.measuringPopupHeight()
+            }
+            .onChange(of: viewModel.rosterExpanded) { isExpanded in
+                guard isExpanded else { return }
+
+                // A frame late, so the panel has taken its new height first and the scroll view
+                // knows how much room it actually has to work with.
+                DispatchQueue.main.async {
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        proxy.scrollTo(Self.rosterAnchor, anchor: .top)
+                    }
+                }
+            }
+        }
+    }
+
+    /// Scroll target for the roster's disclosure row.
+    fileprivate static let rosterAnchor = "roster"
 
     @ViewBuilder
     private var background: some View {
@@ -67,15 +109,6 @@ struct PopupContentView: View {
         } else {
             PopupLayout.Colors.panelTint.swiftUI
         }
-    }
-
-    /// The footer isn't measured (it's a fixed row) — its height is its own padding plus the line
-    /// of text, plus the margin separating it from the last group.
-    private var footerHeight: CGFloat {
-        PopupLayout.Footer.topMargin
-            + PopupLayout.Footer.padding.top
-            + PopupLayout.Footer.padding.bottom
-            + PopupLayout.Fonts.footerAction.boundingRectForFont.height
     }
 
     // MARK: - Middle
@@ -98,6 +131,7 @@ struct PopupContentView: View {
             if !viewModel.roster.isEmpty {
                 PopupRosterView(viewModel: viewModel, onOpen: onOpen)
                     .opacity(viewModel.checkState.isChecking ? 0.5 : 1)
+                    .id(Self.rosterAnchor)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -106,8 +140,7 @@ struct PopupContentView: View {
 
 // MARK: - Height reporting
 
-/// Summed heights of the popup's self-measuring sections (header + scrollable middle). The pinned
-/// footer is a fixed row and isn't measured.
+/// Summed heights of the popup's self-measuring sections: header, scrollable middle, and footer.
 private struct PopupSectionHeightKey: PreferenceKey {
     static var defaultValue: CGFloat = 0
 
