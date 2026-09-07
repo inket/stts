@@ -58,6 +58,17 @@ final class ServiceLoader {
         definitions.compactMap { $0.build() }
     }
 
+    /// Same as `services(for:)`, but keeps each built service paired with the definition it came
+    /// from. `build()` discards that link, and the popup needs it to resolve favicons.
+    func servicesWithDefinitions(
+        for definitions: [ServiceDefinition]
+    ) -> [(definition: ServiceDefinition, service: BaseService)] {
+        definitions.compactMap { definition in
+            guard let service = definition.build() else { return nil }
+            return (definition, service)
+        }
+    }
+
     func serviceDefinition(forIdentifier identifier: String) -> ServiceDefinition? {
         allServices.first {
             $0.globalIdentifier == identifier || // The recommended way for identifying services

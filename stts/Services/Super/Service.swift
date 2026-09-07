@@ -86,11 +86,31 @@ enum StatusUpdateError: Error {
     case custom(String)
 }
 
+/// Why a service's status came back `.undetermined`.
+///
+/// The popup distinguishes the two: a service that never answered is a different problem from one
+/// that answered with something we couldn't read.
+public enum UndeterminedReason {
+    /// The request itself failed — no usable response arrived.
+    case noAnswer
+    /// A response arrived, but it couldn't be parsed into a status.
+    case unreadable
+}
+
 public class BaseService {
     @Atomic var statusDescription: ServiceStatusDescription = .init(
         status: .undetermined,
         message: "Loading…"
     )
+
+    /// Set alongside `statusDescription` on every check. `nil` whenever the status is determinate,
+    /// and also before the service's first check (so a service that hasn't been asked yet isn't
+    /// reported as having failed).
+    @Atomic private(set) var undeterminedReason: UndeterminedReason?
+
+    /// Whether this service has completed at least one check. Distinguishes "still loading" from
+    /// "asked, and couldn't be determined".
+    @Atomic private(set) var hasBeenChecked: Bool = false
 
     var status: ServiceStatus { statusDescription.status }
     var message: ServiceStatusMessage { statusDescription.message }
@@ -170,11 +190,33 @@ extension BaseService {
     public func updateStatusAutomaticallyHandlingErrors() async {
         do {
             try await updateStatus()
+
+            // A service can land on `.undetermined` without throwing — it fetched something, but
+            // couldn't turn it into a status. That's "unreadable" rather than "no answer".
+            undeterminedReason = status == .undetermined ? .unreadable : nil
         } catch {
+            undeterminedReason = Self.undeterminedReason(for: error)
             statusDescription = ServiceStatusDescription(
                 status: .undetermined,
                 message: ServiceStatusMessage.from(error)
             )
+        }
+
+        hasBeenChecked = true
+    }
+
+    private static func undeterminedReason(for error: Error) -> UndeterminedReason {
+        guard let statusUpdateError = error as? StatusUpdateError else {
+            // URLError and friends — the request didn't complete.
+            return .noAnswer
+        }
+
+        switch statusUpdateError {
+        case .networkError:
+            return .noAnswer
+        case .parseError, .decodingError, .custom:
+            // Something came back; we just couldn't make sense of it.
+            return .unreadable
         }
     }
 }

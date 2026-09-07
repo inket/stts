@@ -27,7 +27,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private var initialReachabilityChange: Bool = true
 
     let popupController: MBPopupController
-    private let serviceTableViewController: ServiceTableViewController
+    private let popupViewController: PopupViewController
+    private let menuBarItemView = MenuBarItemView(frame: .zero)
 
     private let serviceLoader: ServiceLoader
     private let preferences: Preferences
@@ -73,16 +74,24 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         preferences = Preferences(serviceLoader: serviceLoader)
         preferencesWindow = PreferencesWindow(serviceLoader: serviceLoader, preferences: preferences)
 
-        serviceTableViewController = ServiceTableViewController(
+        popupViewController = PopupViewController(
             serviceLoader: serviceLoader,
             preferences: preferences,
             preferencesWindow: preferencesWindow
         )
 
-        popupController = MBPopupController(contentView: serviceTableViewController.contentView)
+        popupController = MBPopupController(contentView: popupViewController.contentView)
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        #if DEBUG
+        if PopupSnapshot.isRequested {
+            PopupSnapshot.emit()
+            NSApp.terminate(nil)
+            return
+        }
+        #endif
+
         NSWorkspace.shared.notificationCenter.addObserver(
             self,
             selector: #selector(AppDelegate.restartTimer),
@@ -102,23 +111,33 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { _, _ in }
 
-        popupController.statusItem.button?.title = "stts"
-        popupController.statusItem.button?.font =
-            NSFont(name: "SF Mono Regular", size: 10) ?? NSFont.systemFont(ofSize: 12)
         popupController.statusItem.length = 30
+        setupMenuBarItemView()
 
         popupController.contentView.wantsLayer = true
         popupController.contentView.layer?.masksToBounds = true
+        // `masksToBounds` alone only clips to a rectangle — without also rounding this layer's own
+        // corners, the content's square corners poke past the panel's rounded shape. It also clips
+        // the vibrancy view to the same rounded rect.
+        popupController.contentView.layer?.cornerRadius = PopupLayout.cornerRadius
 
-        serviceTableViewController.setup()
+        popupController.backgroundView.cornerRadius = PopupLayout.cornerRadius
+        popupController.arrowSize = PopupLayout.arrowSize
+        // MBPopup paints the arrow and the panel body with one colour. The body is covered by the
+        // vibrancy view and its tint, so what this value actually shows is the arrow — which the
+        // design tints with the crown's colour, so the band appears to continue up into the menu
+        // bar. `refreshMenuBarItem()` keeps it in step with the current status.
+        popupController.backgroundView.backgroundColor = .clear
+
+        popupViewController.setup()
 
         preferencesWindow.saveCallback = { [weak self] in
-            self?.serviceTableViewController.reloadServicesList()
+            self?.popupViewController.reloadServicesList()
             self?.updateServices()
         }
 
         popupController.willOpenPopup = { [weak self] _ in
-            self?.serviceTableViewController.willOpenPopup()
+            self?.popupViewController.willOpenPopup()
         }
 
         if shouldAutomaticallyCheckServices {
@@ -152,7 +171,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         // at .undetermined/"Loading"), which orphans whatever the in-flight updateServices() fetch
         // (e.g. from app launch) was updating and leaves the new instances stuck showing "Loading"
         // until the next scheduled update. Re-running updateServices() here fetches them right away.
-        serviceTableViewController.reloadServicesList()
+        popupViewController.reloadServicesList()
         updateServices()
     }
 
@@ -169,14 +188,38 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         timer?.fire()
     }
 
+    private func setupMenuBarItemView() {
+        guard let button = popupController.statusItem.button else { return }
+
+        button.title = ""
+        menuBarItemView.translatesAutoresizingMaskIntoConstraints = false
+        button.addSubview(menuBarItemView)
+
+        NSLayoutConstraint.activate([
+            menuBarItemView.topAnchor.constraint(equalTo: button.topAnchor),
+            menuBarItemView.leadingAnchor.constraint(equalTo: button.leadingAnchor),
+            menuBarItemView.trailingAnchor.constraint(equalTo: button.trailingAnchor),
+            menuBarItemView.bottomAnchor.constraint(equalTo: button.bottomAnchor)
+        ])
+
+        popupViewController.onStateChange = { [weak self] in self?.refreshMenuBarItem() }
+        refreshMenuBarItem()
+    }
+
+    private func refreshMenuBarItem() {
+        menuBarItemView.status = popupViewController.aggregateStatus
+        menuBarItemView.isChecking = popupViewController.isChecking
+
+        popupController.backgroundView.backgroundColor = popupViewController.crownColor
+        popupController.backgroundView.needsDisplay = true
+    }
+
     @objc func updateServices() {
-        serviceTableViewController.updateServices { [weak self] in
+        popupViewController.updateServices { [weak self] in
             guard let self else { return }
-            let title = serviceTableViewController.generalStatus == .major ? "s__s" : "stts"
-            popupController.statusItem.button?.title = title
 
             if preferences.notifyOnStatusChange {
-                serviceTableViewController.services.forEach { $0.notifyIfStatusChanged() }
+                popupViewController.services.forEach { $0.notifyIfStatusChanged() }
             }
         }
     }
@@ -218,6 +261,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
 extension AppDelegate: AppearanceObserver {
     func changeAppearance(to newAppearance: NSAppearance) {
-        popupController.backgroundView.backgroundColor = newAppearance.isDarkMode ? .windowBackgroundColor : .white
+        // `backgroundColor` is a dynamic colour and resolves itself when MBPopup fills with it, so
+        // switching appearance only needs to force a redraw.
+        popupController.backgroundView.needsDisplay = true
     }
 }

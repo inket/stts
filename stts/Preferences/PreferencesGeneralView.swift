@@ -17,17 +17,6 @@ class PreferencesGeneralView: VenturaPreferencesView {
                     .init(
                         title: "Notify when a status changes",
                         actions: [.switch(initialValue: true, changeCallback: { _ in })]
-                    ),
-                    .init(
-                        title: "Hide details of available services",
-                        actions: [.switch(initialValue: false, changeCallback: { _ in })]
-                    ),
-                    .init(
-                        title: "Group available services",
-                        actions: [.switch(
-                            initialValue: preferences.groupAvailableServices,
-                            changeCallback: { preferences.groupAvailableServices = $0 }
-                        )]
                     )
                 ]
             ]
