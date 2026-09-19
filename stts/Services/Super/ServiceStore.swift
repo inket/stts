@@ -65,7 +65,7 @@ class ServiceStore<State: InitializableState>: Loading {
             // Set the task to nil after 5 seconds; This makes it so that calling updatedState() triggers the fetching
             // of new data. (This throttling is to prevent calls to multiple services' updateStatus() from fetching
             // new data again if the network call is too fast)
-            Task { [weak self] in
+            _ = Task { [weak self] in
                 try await Task.sleep(seconds: 5)
                 self?.resetTask()
             }

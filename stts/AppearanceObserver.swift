@@ -6,7 +6,7 @@
 import Cocoa
 
 protocol AppearanceObserver: AnyObject {
-    func changeAppearance(to newAppearance: NSAppearance)
+    @MainActor func changeAppearance(to newAppearance: NSAppearance)
 }
 
 class Appearance {
@@ -32,11 +32,16 @@ class Appearance {
     private static var observers = [Weak]()
 
     private static func fire(newAppearance: NSAppearance) {
-        observers = observers.filter {
-            guard let object = $0.object else { return false }
+        // `NSApplication.observe`'s change handler isn't `@MainActor`-isolated in its declared
+        // signature, but KVO on `effectiveAppearance` only ever fires on the main thread — so this
+        // is a real guarantee the compiler just can't see, not an assumption.
+        MainActor.assumeIsolated {
+            observers = observers.filter {
+                guard let object = $0.object else { return false }
 
-            (object as? AppearanceObserver)?.changeAppearance(to: newAppearance)
-            return true
+                (object as? AppearanceObserver)?.changeAppearance(to: newAppearance)
+                return true
+            }
         }
     }
 

@@ -5,12 +5,10 @@
 
 import Cocoa
 import MBPopup
-import PreferencesWindow
 import Reachability
 import UserNotifications
 
-@NSApplicationMain
-@MainActor
+@NSApplicationMain @MainActor
 class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private var shouldAutomaticallyCheckServices: Bool {
         // We don't want to start the updating timer when unit testing because:
@@ -29,6 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     let popupController: MBPopupController
     private let popupViewController: PopupViewController
     private let menuBarItemView = MenuBarItemView(frame: .zero)
+    private let notificationDelegate: NotificationDelegate
 
     private let serviceLoader: ServiceLoader
     private let preferences: Preferences
@@ -81,6 +80,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         )
 
         popupController = MBPopupController(contentView: popupViewController.contentView)
+        notificationDelegate = NotificationDelegate(popupController: popupController)
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -108,7 +108,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         Appearance.addObserver(self)
 
-        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().delegate = notificationDelegate
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { _, _ in }
 
         popupController.statusItem.length = 30
@@ -145,14 +145,42 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             self?.updateServices()
         }
 
+        preferencesWindow.refreshIntervalCallback = { [weak self] _ in
+            // The timer's interval is fixed at creation, so a new one takes a new timer. `fire()`
+            // inside `restartTimer` also checks immediately, which is what you want after picking
+            // a shorter interval.
+            self?.restartTimer()
+        }
+
+        // The app's windows follow the General pane's Appearance setting, not the system's, unless
+        // it says to match the system (in which case this is nil and AppKit does the usual thing).
+        NSApp.appearance = preferences.appearancePreference.appearance
+
         popupController.willOpenPopup = { [weak self] _ in
             self?.popupViewController.willOpenPopup()
+        }
+
+        // MBPopup hides `contentView` the instant a close starts, before the fade-out animation
+        // even begins — so for that whole animation, nothing is left drawn over the panel's own
+        // background fill. That fill is tinted to the crown colour (see `refreshMenuBarItem()`),
+        // meant to be seen only as a sliver behind the arrow; with the content gone, the crown
+        // colour fills the entire panel shape and fades out with it, reading as a flash. Clearing
+        // the tint here, before that hide happens, closes on a blank panel instead.
+        popupController.willClosePopup = { [weak popupController] in
+            popupController?.backgroundView.backgroundColor = .clear
+            popupController?.backgroundView.needsDisplay = true
         }
 
         if shouldAutomaticallyCheckServices {
             restartTimer()
             restartRemoteServicesTimer()
         }
+
+        #if DEBUG
+        // Convenience for working on the settings window: skip the menu-bar-click round trip and
+        // land straight in it. Never in a release build.
+        preferencesWindow.show()
+        #endif
     }
 
     private static let remoteServicesRefreshInterval: TimeInterval = 3 * 60 * 60
@@ -188,7 +216,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private func restartTimer() {
         timer?.invalidate()
         timer = Timer.scheduledTimer(
-            timeInterval: 300,
+            timeInterval: TimeInterval(preferences.refreshInterval),
             target: self,
             selector: #selector(AppDelegate.updateServices),
             userInfo: nil,
@@ -218,6 +246,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private func refreshMenuBarItem() {
         menuBarItemView.status = popupViewController.aggregateStatus
         menuBarItemView.isChecking = popupViewController.isChecking
+        preferencesWindow.updateStatuses(popupViewController.identifiedServices)
 
         popupController.backgroundView.backgroundColor = popupViewController.crownColor
         popupController.backgroundView.needsDisplay = true
@@ -227,14 +256,23 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         popupViewController.updateServices { [weak self] in
             guard let self else { return }
 
-            if preferences.notifyOnStatusChange {
-                popupViewController.services.forEach { $0.notifyIfStatusChanged() }
+            // No global on/off check here: `.never` is a granularity like any other, and a
+            // service with an override is meant to notify even when the app-wide setting says
+            // nothing should.
+            popupViewController.identifiedServices.forEach { identifier, service in
+                service.notifyIfStatusChanged(
+                    granularity: self.preferences.notificationGranularity(forIdentifier: identifier)
+                )
             }
         }
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-        popupController.openPopup()
+        if preferencesWindow.isVisible {
+            preferencesWindow.show()
+        } else {
+            popupController.openPopup()
+        }
         return true
     }
 
@@ -246,25 +284,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         } else {
             updateServices()
         }
-    }
-}
-
-extension AppDelegate: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(
-        _ center: UNUserNotificationCenter,
-        willPresent notification: UNNotification,
-        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
-    ) {
-        completionHandler([.banner, .sound])
-    }
-
-    func userNotificationCenter(
-        _ center: UNUserNotificationCenter,
-        didReceive response: UNNotificationResponse,
-        withCompletionHandler completionHandler: @escaping () -> Void
-    ) {
-        popupController.openPopup()
-        completionHandler()
     }
 }
 

@@ -176,7 +176,7 @@ struct PopupFaviconChip: View {
         .frame(width: chipSize, height: chipSize)
         .background(chipBackground)
         .clipShape(shape)
-        .overlay(shape.strokeBorder(PopupLayout.Colors.chipBorder.swiftUI, lineWidth: PopupLayout.hairlineWidth))
+        .overlay(shape.strokeBorder(PopupLayout.Colors.chipRing.swiftUI, lineWidth: PopupLayout.hairlineWidth))
     }
 
     /// A real favicon gets the white chip; a monogram gets a translucent one instead, so a missing
@@ -192,7 +192,8 @@ struct PopupFaviconChip: View {
 }
 
 /// A favicon chip with a severity dot notched into its bottom-trailing corner. The dot carries a
-/// ring in the panel colour so it stays legible against the chip and the group fill behind it.
+/// ring in the group's blended colour so it stays legible against the chip while blending into the
+/// cell rather than reading as a drawn border.
 struct PopupFaviconChipWithDot: View {
     let identifier: String?
     let faviconURL: URL?
@@ -205,11 +206,15 @@ struct PopupFaviconChipWithDot: View {
                 Circle()
                     .fill(dotColor.swiftUI)
                     .frame(width: PopupLayout.ServiceRow.dotSize, height: PopupLayout.ServiceRow.dotSize)
-                    .overlay(
-                        Circle().strokeBorder(
-                            PopupLayout.Colors.panelSolid.swiftUI,
-                            lineWidth: PopupLayout.ServiceRow.dotRingWidth
-                        )
+                    // The ring sits *outside* the dot as a larger circle behind it, the same trick
+                    // `PopupRosterView`'s chip stack uses — a `strokeBorder` on the dot's own circle
+                    // put the ring and the fill through separate antialiasing passes at the same
+                    // radius, so the dot's colour bled a sliver past the ring at the seam. Drawing
+                    // the ring behind and larger gives it one clean edge on each side instead.
+                    .background(
+                        Circle()
+                            .fill(PopupLayout.Colors.chipRing.swiftUI)
+                            .padding(-PopupLayout.ServiceRow.dotRingWidth)
                     )
                     .offset(
                         x: PopupLayout.ServiceRow.dotOffset,

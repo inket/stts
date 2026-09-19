@@ -158,7 +158,7 @@ private struct PopupCrownRefreshButton: View {
         }
         .buttonStyle(.plain)
         .onHover { isHovering = $0 }
-        .onChange(of: isChecking) { updateSpin(isChecking: $0) }
+        .onChange(of: isChecking) { updateSpin(isChecking: isChecking) }
         .onAppear { updateSpin(isChecking: isChecking) }
     }
 

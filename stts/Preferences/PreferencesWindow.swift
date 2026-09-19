@@ -4,65 +4,45 @@
 //
 
 import Cocoa
-import PreferencesWindow
-import SFSafeSymbols
 
+/// Owns the settings window's model and controller, and the two callbacks the rest of the app
+/// needs to hear about.
+///
+/// The design has a fourth pane, Custom services, which isn't built yet — see
+/// `Scripts/settings_redesign_plan.md`.
+@MainActor
 final class PreferencesWindow {
     let controller: PreferencesWindowController
-    private let servicesView: PreferencesServicesView
+    private let model: PreferencesModel
 
+    /// Rebuilds the popup's services after the enabled set changes.
     var saveCallback: (() -> Void)? {
-        get { servicesView.saveCallback }
-        set { servicesView.saveCallback = newValue }
+        get { model.onSelectionChange }
+        set { model.onSelectionChange = newValue }
+    }
+
+    /// Applying a new check interval means restarting `AppDelegate`'s timer.
+    var refreshIntervalCallback: ((Int) -> Void)? {
+        get { model.onRefreshIntervalChange }
+        set { model.onRefreshIntervalChange = newValue }
+    }
+
+    var isVisible: Bool {
+        controller.window?.isVisible == true
+    }
+
+    /// Hands the Services pane the popup's latest statuses, which its "Affected" filter is built
+    /// from. Cheap when nothing changed, so it's fine to call on every popup state change.
+    func updateStatuses(_ services: [(identifier: String, service: BaseService)]) {
+        model.updateStatuses(services)
     }
 
     init(serviceLoader: ServiceLoader, preferences: Preferences) {
-        servicesView = PreferencesServicesView(serviceLoader: serviceLoader, preferences: preferences)
-        controller = PreferencesWindowController(menuItems: [
-            Self.generalMenuItem(preferences: preferences),
-            PreferencesWindow.servicesMenuItem(servicesView: servicesView),
-            Self.aboutMenuItem()
-        ])
+        model = PreferencesModel(serviceLoader: serviceLoader, preferences: preferences)
+        controller = PreferencesWindowController(model: model)
     }
 
     func show() {
         controller.show()
-    }
-
-    private static func generalMenuItem(preferences: Preferences) -> PreferencesSidebarMenuItem {
-        PreferencesSidebarMenuItem(
-            title: "General",
-            symbol: .gearshapeFill,
-            view: PreferencesGeneralView(preferences: preferences)
-        )
-    }
-
-    private static func servicesMenuItem(servicesView: PreferencesServicesView) -> PreferencesSidebarMenuItem {
-        PreferencesSidebarMenuItem(
-            title: "Services",
-            symbol: .boltCircleFill,
-            view: servicesView
-        )
-    }
-
-    private static func aboutMenuItem() -> PreferencesSidebarMenuItem {
-        let content = AboutContent(
-            links: [
-                AboutContent.Link(
-                    title: "GitHub",
-                    url: URL(string: "https://github.com/inket/stts")!
-                ),
-                AboutContent.Link(
-                    title: "Contributors",
-                    url: URL(string: "https://github.com/inket/stts/graphs/contributors")!
-                )
-            ],
-            credit: "Activity glyph (app icon) by Gregor Črešnar from the Noun Project"
-        )
-        return PreferencesSidebarMenuItem(
-            title: "About",
-            symbol: .infoCircleFill,
-            view: PreferencesAboutView(content: content)
-        )
     }
 }

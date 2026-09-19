@@ -53,12 +53,15 @@ struct PopupContentView: View {
                 if scrollsContent {
                     scrollingMiddle
                 } else {
-                    middle.measuringPopupHeight()
+                    // No `ScrollView` here, so there's no content margin to carry the gap above the
+                    // first group — put it back as plain padding so the two paths still match.
+                    middle
+                        .padding(.top, PopupLayout.Group.topMargin)
+                        .measuringPopupHeight()
                 }
             }
 
             PopupBottomBarView(onOpenSettings: onOpenSettings)
-                .padding(.top, PopupLayout.Footer.topMargin)
                 .measuringPopupHeight()
         }
         .frame(width: PopupLayout.contentWidth)
@@ -83,10 +86,22 @@ struct PopupContentView: View {
     private var scrollingMiddle: some View {
         ScrollViewReader { proxy in
             ScrollView(.vertical) {
-                middle.measuringPopupHeight()
+                middle
+                    .measuringPopupHeight()
             }
-            .onChange(of: viewModel.rosterExpanded) { isExpanded in
-                guard isExpanded else { return }
+            // A true scroll-content inset (macOS 14+) rather than padding on the first group: the
+            // gap now lives with the thing that owns the scrollable region, and it's what puts real
+            // space above the first group when scrolled to the top instead of that space just being
+            // more of the group's own padding.
+            .contentMargins(.top, PopupLayout.Group.topMargin, for: .scrollContent)
+            .contentMargins(.bottom, PopupLayout.Group.bottomMargin, for: .scrollContent)
+            // `contentMargins` insets the viewport, it doesn't add to `middle`'s own measured size —
+            // so without this, the panel would size itself 12pt short of what the content actually
+            // needs to clear the header without clipping.
+            .contributingFixedHeight(PopupLayout.Group.topMargin)
+            .contributingFixedHeight(PopupLayout.Group.bottomMargin)
+            .onChange(of: viewModel.rosterExpanded) {
+                guard viewModel.rosterExpanded else { return }
 
                 // A frame late, so the panel has taken its new height first and the scroll view
                 // knows how much room it actually has to work with.
@@ -117,7 +132,10 @@ struct PopupContentView: View {
     private var middle: some View {
         VStack(alignment: .leading, spacing: 0) {
             if !viewModel.affected.isEmpty {
-                PopupGroupBox {
+                // No top margin of its own: it's always the first thing in the scroll content, and
+                // that gap now comes from the scroll view's content margin (or, when not scrolling,
+                // the padding applied around `middle` itself — see `body`).
+                PopupGroupBox(topMargin: 0) {
                     ForEach(Array(viewModel.affected.enumerated()), id: \.element.id) { index, item in
                         if index > 0 {
                             PopupRowSeparator()
@@ -161,5 +179,12 @@ private extension View {
                 Color.clear.preference(key: PopupSectionHeightKey.self, value: proxy.size.height)
             }
         )
+    }
+
+    /// Contributes a known, fixed amount to the popup's total content height — for space that's
+    /// real but that no view's own measured size will ever include, like a `ScrollView`'s content
+    /// margin (see `scrollingMiddle`).
+    func contributingFixedHeight(_ height: CGFloat) -> some View {
+        background(Color.clear.preference(key: PopupSectionHeightKey.self, value: height))
     }
 }

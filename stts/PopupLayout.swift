@@ -74,6 +74,8 @@ enum PopupLayout {
         static let horizontalMargin: CGFloat = 12
         /// Gap above the first group, below the legend hairline.
         static let topMargin: CGFloat = 12
+        /// Gap under the last group
+        static let bottomMargin: CGFloat = 12
         /// Gap between stacked groups (affected list → operational roster).
         static let spacing: CGFloat = 8
     }
@@ -97,7 +99,7 @@ enum PopupLayout {
         /// full width. Flip to `true` to bring it back everywhere.
         static let showsLinkArrow = false
 
-        static let dotSize: CGFloat = 11
+        static let dotSize: CGFloat = 8
         static let dotRingWidth: CGFloat = 1.5
         /// How far the dot hangs off the chip's bottom-trailing corner.
         static let dotOffset: CGFloat = 2
@@ -224,11 +226,11 @@ enum PopupLayout {
         // desktop tints through. `panelSolid` is the same colour at full strength, for the few
         // places that need an opaque match — the dot's ring, and MBPopup's arrow fallback.
 
-        static let panelSolid = dynamic(dark: NSColor(popupHex: 0x211E1B), light: NSColor(popupHex: 0xFBFAF8))
+        static let panelSolid = dynamic(dark: NSColor(designHex: 0x211E1B), light: NSColor(designHex: 0xFBFAF8))
         /// What actually gets painted over the vibrancy view.
         static let panelTint = dynamic(
-            dark: NSColor(popupHex: 0x211E1B).withAlphaComponent(0.84),
-            light: NSColor(popupHex: 0xFBFAF8).withAlphaComponent(0.86)
+            dark: NSColor(designHex: 0x211E1B).withAlphaComponent(0.84),
+            light: NSColor(designHex: 0xFBFAF8).withAlphaComponent(0.86)
         )
 
         static let panelBorder = dynamic(dark: whiteAlpha(0.12), light: blackAlpha(0.14))
@@ -257,12 +259,13 @@ enum PopupLayout {
         // different treatments.
 
         static let chipBackground = NSColor.white
-        /// On light, the chip needs an edge or white-on-white marks lose their outline.
-        static let chipBorder = dynamic(dark: .clear, light: blackAlpha(0.12))
         static let chipMonogramBackground = whiteAlpha(0.08)
-        /// The ring separating overlapping chips in the collapsed roster stack — the panel colour
-        /// as composited with the group fill on top of it, not the raw panel value.
-        static let rosterStackRing = dynamic(dark: NSColor(popupHex: 0x2B2724), light: NSColor(popupHex: 0xF7F5F2))
+        /// Every chip sits inside a `PopupGroupBox`, so this is the panel colour as composited with
+        /// the group fill on top of it — not the raw panel value, which reads as a visible ring
+        /// rather than disappearing into the group's actual tint. Used for every chip's own edge,
+        /// the severity dot's cutout ring, and the overlap ring in the collapsed roster stack, so
+        /// all three blend into the cell instead of standing out as a drawn border.
+        static let chipRing = dynamic(dark: NSColor(designHex: 0x2B2724), light: NSColor(designHex: 0xF7F5F2))
 
         // MARK: Text
 
@@ -273,11 +276,11 @@ enum PopupLayout {
 
         static let legendLabel = dynamic(dark: whiteAlpha(0.5), light: blackAlpha(0.5))
 
-        static let serviceName = dynamic(dark: .white, light: NSColor(popupHex: 0x141414))
+        static let serviceName = dynamic(dark: .white, light: NSColor(designHex: 0x141414))
         static let serviceMessage = dynamic(dark: whiteAlpha(0.5), light: blackAlpha(0.55))
         static let serviceArrow = dynamic(dark: whiteAlpha(0.35), light: blackAlpha(0.32))
 
-        static let rosterCount = dynamic(dark: .white, light: NSColor(popupHex: 0x141414))
+        static let rosterCount = dynamic(dark: .white, light: NSColor(designHex: 0x141414))
         static let rosterChevron = dynamic(dark: whiteAlpha(0.3), light: blackAlpha(0.28))
         static let rosterChevronExpanded = dynamic(dark: whiteAlpha(0.45), light: blackAlpha(0.45))
         static let rosterRowName = dynamic(dark: whiteAlpha(0.82), light: blackAlpha(0.78))
@@ -285,9 +288,9 @@ enum PopupLayout {
 
         static let footerWordmark = dynamic(dark: whiteAlpha(0.4), light: blackAlpha(0.35))
         static let footerAction = dynamic(dark: whiteAlpha(0.55), light: blackAlpha(0.5))
-        static let footerActionHover = dynamic(dark: .white, light: NSColor(popupHex: 0x141414))
+        static let footerActionHover = dynamic(dark: .white, light: NSColor(designHex: 0x141414))
 
-        static let verdictLabel = dynamic(dark: .white, light: NSColor(popupHex: 0x141414))
+        static let verdictLabel = dynamic(dark: .white, light: NSColor(designHex: 0x141414))
         static let timestampLabel = dynamic(dark: whiteAlpha(0.5), light: blackAlpha(0.5))
         static let separatorDot = dynamic(dark: whiteAlpha(0.18), light: blackAlpha(0.2))
 
@@ -297,7 +300,7 @@ enum PopupLayout {
         static let emptyStateButtonBackgroundHover = dynamic(dark: whiteAlpha(0.12), light: blackAlpha(0.1))
 
         /// "Retry now" in the no-connection state.
-        static let link = dynamic(dark: NSColor(popupHex: 0x5B9DFF), light: NSColor(popupHex: 0x0A66D6))
+        static let link = dynamic(dark: NSColor(designHex: 0x5B9DFF), light: NSColor(designHex: 0x0A66D6))
 
         // MARK: Status / severity — crown band, status bar and legend
         //
@@ -305,10 +308,10 @@ enum PopupLayout {
         // full-strength red/orange/blue read as alarming across a whole colour band in a way they
         // don't as a 9pt dot.
 
-        static let crownMajor = dynamic(dark: NSColor(popupHex: 0xB8451F), light: NSColor(popupHex: 0xB8451F))
-        static let crownMinor = dynamic(dark: NSColor(popupHex: 0xC4801F), light: NSColor(popupHex: 0xC96A08))
-        static let crownMaintenance = dynamic(dark: NSColor(popupHex: 0x2B6491), light: NSColor(popupHex: 0x2A6EA8))
-        static let crownOperational = dynamic(dark: NSColor(popupHex: 0x1F6B43), light: NSColor(popupHex: 0x35845A))
+        static let crownMajor = dynamic(dark: NSColor(designHex: 0xB8451F), light: NSColor(designHex: 0xB8451F))
+        static let crownMinor = dynamic(dark: NSColor(designHex: 0xC4801F), light: NSColor(designHex: 0xC96A08))
+        static let crownMaintenance = dynamic(dark: NSColor(designHex: 0x2B6491), light: NSColor(designHex: 0x2A6EA8))
+        static let crownOperational = dynamic(dark: NSColor(designHex: 0x1F6B43), light: NSColor(designHex: 0x35845A))
 
         /// Grey means "couldn't determine", not "down". Not defined by the design — carried over.
         static let unknownBar = dynamic(dark: whiteAlpha(0.2), light: blackAlpha(0.16))
@@ -318,9 +321,9 @@ enum PopupLayout {
         // The brighter rail set, now used for the 9pt dot on each service's chip. Small marks need
         // more chroma than a colour band does.
 
-        static let dotMajor = dynamic(dark: StatusColor.red, light: NSColor(popupHex: 0xC9502A))
-        static let dotMinor = dynamic(dark: StatusColor.orange, light: NSColor(popupHex: 0xC4801F))
-        static let dotMaintenance = dynamic(dark: NSColor(popupHex: 0x4D9FD6), light: NSColor(popupHex: 0x2A6EA8))
+        static let dotMajor = dynamic(dark: StatusColor.red, light: NSColor(designHex: 0xC9502A))
+        static let dotMinor = dynamic(dark: StatusColor.orange, light: NSColor(designHex: 0xC4801F))
+        static let dotMaintenance = dynamic(dark: NSColor(designHex: 0x4D9FD6), light: NSColor(designHex: 0x2A6EA8))
         static let dotOperational = crownOperational
         static let dotUnknown = dynamic(dark: whiteAlpha(0.32), light: blackAlpha(0.3))
 
@@ -328,8 +331,8 @@ enum PopupLayout {
         //
         // Resolved against the *menu bar's* appearance rather than the app's. Untouched by Native.
 
-        static let menuBarOperational = dynamic(dark: StatusColor.green, light: NSColor(popupHex: 0x4F9E68))
-        static let menuBarMinor = dynamic(dark: StatusColor.orange, light: NSColor(popupHex: 0xD1780A))
+        static let menuBarOperational = dynamic(dark: StatusColor.green, light: NSColor(designHex: 0x4F9E68))
+        static let menuBarMinor = dynamic(dark: StatusColor.orange, light: NSColor(designHex: 0xD1780A))
         static let menuBarMajor = StatusColor.red
         static let menuBarMaintenance = StatusColor.blue
         static let menuBarUnknown = dynamic(dark: whiteAlpha(0.32), light: blackAlpha(0.28))
@@ -363,10 +366,10 @@ extension NSFont {
     var swiftUI: Font { Font(self) }
 }
 
-private extension NSColor {
-    /// The design quotes plain sRGB hex literals; this maps them without going through string
-    /// parsing that could silently yield black on a typo.
-    convenience init(popupHex hex: UInt32) {
+extension NSColor {
+    /// The designs quote plain sRGB hex literals; this maps them without going through string
+    /// parsing that could silently yield black on a typo. Shared with `PreferencesLayout`.
+    convenience init(designHex hex: UInt32) {
         self.init(
             srgbRed: CGFloat((hex & 0xFF0000) >> 16) / 255,
             green: CGFloat((hex & 0x00FF00) >> 8) / 255,

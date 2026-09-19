@@ -32,6 +32,12 @@ class PopupViewController: NSObject {
 
     var services: [BaseService] { servicePairs.map(\.service) }
 
+    /// Every service paired with the identifier its per-service preferences are keyed by. The
+    /// service itself doesn't know its identifier — only the definition it was built from does.
+    var identifiedServices: [(identifier: String, service: BaseService)] {
+        servicePairs.map { ($0.definition.globalIdentifier, $0.service) }
+    }
+
     @Atomic var servicesBeingUpdated = Set<BaseService>()
 
     private var lastUpdated: Date?

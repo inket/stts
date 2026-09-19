@@ -142,8 +142,7 @@ final class PopupViewModel: ObservableObject {
     }
 
     private static let allClearHeadlines = [
-        "All clear", "All green", "Nothing to report",
-        "Everything is up", "Quiet out there", "Not a peep"
+        "All clear", "All green", "All good", "All systems go", "Looking good"
     ]
 
     // MARK: - Derived state

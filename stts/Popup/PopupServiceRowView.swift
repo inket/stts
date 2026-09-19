@@ -71,8 +71,12 @@ struct PopupRowSeparator: View {
 }
 
 /// Wraps a set of rows in the design's inset grouped-list container.
+///
+/// `topMargin` is the gap from whatever precedes this group — another group, or the scroll
+/// region's own top edge. The latter is a scroll-content margin now, not padding on the first
+/// group, so pass `0` for a group that's always first (see `PopupContentView.middle`).
 struct PopupGroupBox<Content: View>: View {
-    var topMargin: CGFloat = PopupLayout.Group.topMargin
+    var topMargin: CGFloat = PopupLayout.Group.spacing
     @ViewBuilder let content: Content
 
     var body: some View {

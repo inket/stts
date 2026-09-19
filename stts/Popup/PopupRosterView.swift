@@ -30,10 +30,11 @@ struct PopupRosterView: View {
         }
     }
 
-    /// Sits tight under the affected group when there is one, or takes the full top margin when
-    /// it's the only group in the panel.
+    /// Sits tight under the affected group when there is one. When it's the only group in the
+    /// panel, it has no top margin of its own — the scroll region's own content margin covers that
+    /// gap instead (see `PopupContentView.scrollingMiddle`).
     private var topMargin: CGFloat {
-        viewModel.affected.isEmpty ? PopupLayout.Group.topMargin : PopupLayout.Group.spacing
+        viewModel.affected.isEmpty ? 0 : PopupLayout.Group.spacing
     }
 
     // MARK: - Header
@@ -115,7 +116,7 @@ struct PopupRosterView: View {
                             + PopupLayout.RosterStack.ringWidth,
                         style: .continuous
                     )
-                    .fill(PopupLayout.Colors.rosterStackRing.swiftUI)
+                    .fill(PopupLayout.Colors.chipRing.swiftUI)
                     .padding(-PopupLayout.RosterStack.ringWidth)
                 )
             }

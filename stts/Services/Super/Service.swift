@@ -17,6 +17,10 @@ public enum ServiceStatus: Int, Comparable {
     public static func < (lhs: ServiceStatus, rhs: ServiceStatus) -> Bool {
         return lhs.rawValue < rhs.rawValue
     }
+
+    /// Something is actually broken, as opposed to fine, under maintenance, or unknown. Drives
+    /// `NotificationGranularity.outagesOnly`.
+    var isOutage: Bool { self == .minor || self == .major }
 }
 
 public struct ServiceStatusDescription {
@@ -121,7 +125,9 @@ public class BaseService {
         fatalError("Override updateStatus() to support loading the status")
     }
 
-    func notifyIfStatusChanged() {
+    /// Posts a notification if this service's status has changed since the last time it was asked,
+    /// and the change clears `granularity`'s bar.
+    func notifyIfStatusChanged(granularity: NotificationGranularity) {
         guard let realSelf = self as? Service else { fatalError("BaseService should not be used directly.") }
 
         let notifyBecauseDifferent =
@@ -129,7 +135,10 @@ public class BaseService {
             && lastNotifiedStatus != .undetermined && status != .undetermined
             && lastNotifiedStatus != status
 
-        if notifyBecauseDifferent {
+        // `lastNotifiedStatus` is still updated below even when the notification is suppressed, so
+        // turning notifications back on doesn't immediately fire for a change that happened while
+        // they were off.
+        if notifyBecauseDifferent, granularity.shouldNotify(from: lastNotifiedStatus ?? status, to: status) {
             let content = UNMutableNotificationContent()
             let possessiveS = realSelf.name.hasSuffix("s") ? "'" : "'s"
             content.title = "\(realSelf.name)\(possessiveS) status has changed"
