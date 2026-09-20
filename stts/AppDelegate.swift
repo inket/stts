@@ -163,8 +163,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         }
 
         if shouldAutomaticallyCheckServices {
-            restartTimer()
-            restartRemoteServicesTimer()
+            Task { await startCheckingServices() }
         }
 
         #if DEBUG
@@ -175,8 +174,52 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     private static let remoteServicesRefreshInterval: TimeInterval = 3 * 60 * 60
+    /// How long the first check waits for the remote services.json before going ahead with the
+    /// local copy.
+    private static let remoteServicesLaunchTimeout: TimeInterval = 5
 
-    private func restartRemoteServicesTimer() {
+    /// Fetches the remote services.json *before* the first check so the services aren't checked
+    /// once against the local copy and then again against the freshly fetched one. If the fetch
+    /// takes longer than `remoteServicesLaunchTimeout`, the first check runs with the local copy
+    /// and the fetch keeps going in the background, applying itself (with a re-check) on arrival.
+    private func startCheckingServices() async {
+        let fetch = Task { [remoteServicesUpdater] in await remoteServicesUpdater?.update() ?? false }
+
+        switch await Self.withTimeout(Self.remoteServicesLaunchTimeout, { await fetch.value }) {
+        case .some(true):
+            applyReloadedServiceDefinitions()
+        case .some(false):
+            break
+        case .none:
+            Task { [weak self] in
+                guard await fetch.value, let self else { return }
+                applyReloadedServiceDefinitions()
+                updateServices()
+            }
+        }
+
+        restartTimer()
+        startRemoteServicesTimer()
+    }
+
+    /// Runs `operation`, giving up (but not cancelling it) after `seconds`. `nil` means it timed out.
+    private static func withTimeout<T: Sendable>(
+        _ seconds: TimeInterval,
+        _ operation: @escaping @Sendable () async -> T
+    ) async -> T? {
+        await withTaskGroup(of: T?.self) { group in
+            group.addTask { await operation() }
+            group.addTask {
+                try? await Task.sleep(for: .seconds(seconds))
+                return nil
+            }
+            let first = await group.next() ?? nil
+            group.cancelAll()
+            return first
+        }
+    }
+
+    private func startRemoteServicesTimer() {
         remoteServicesTimer?.invalidate()
         remoteServicesTimer = Timer.scheduledTimer(
             withTimeInterval: Self.remoteServicesRefreshInterval,
@@ -184,22 +227,25 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         ) { [weak self] _ in
             Task { await self?.refreshRemoteServices() }
         }
-        remoteServicesTimer?.fire()
     }
 
     private func refreshRemoteServices() async {
         guard let remoteServicesUpdater, await remoteServicesUpdater.update() else { return }
 
+        applyReloadedServiceDefinitions()
+        // The rebuilt services start at .undetermined/"Loading", so fetch them right away rather
+        // than leaving them stuck until the next scheduled update.
+        updateServices()
+    }
+
+    /// Re-reads the (possibly just re-fetched) definitions and, since they may have changed,
+    /// rebuilds every BaseService from scratch.
+    private func applyReloadedServiceDefinitions() {
         serviceLoader.reload()
         SendbirdAll.sendbirdServices = serviceLoader.allServices
             .compactMap { $0 as? SendbirdServiceDefinition }
             .compactMap { $0.build() as? SendbirdService }
-
-        // The definitions may have changed, so rebuild every BaseService (they start at
-        // .undetermined/"Loading") and re-run updateServices() to fetch them right away rather
-        // than leaving them stuck until the next scheduled update.
         popupViewController.rebuildServicesList()
-        updateServices()
     }
 
     @objc

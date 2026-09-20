@@ -39,10 +39,13 @@ private let faviconRepoRawBaseURL = "https://cdn.jsdelivr.net/gh/inket/stts@mast
 extension ServiceDefinition {
     var categoryKey: String? { nil }
 
-    /// `name` with a trailing " (All)" removed, for the expandable category header — the row that
-    /// actually toggles every subservice at once keeps the full "(All)" name.
+    /// `name` with a trailing " (All)" / " (All Regions)" removed, for the expandable category
+    /// header — the row that actually toggles every subservice at once keeps the full name.
     var categoryDisplayName: String {
-        name.hasSuffix(" (All)") ? String(name.dropLast(" (All)".count)) : name
+        for suffix in [" (All Regions)", " (All)"] where name.hasSuffix(suffix) {
+            return String(name.dropLast(suffix.count))
+        }
+        return name
     }
 
     var isSupported: Bool { true }
