@@ -18,7 +18,7 @@ let knownProviders: Set<String> = [
 let removedServicesKey = "_removed"
 
 // The one provider whose entries name a Swift class instead of describing a status page — see
-// IndependentServiceDefinition and Scripts/independent_services_migration.md.
+// IndependentServiceDefinition.
 let independentProvider = "independent"
 
 // Providers that don't require "url" per entry — either a fixed commonURL with an optional

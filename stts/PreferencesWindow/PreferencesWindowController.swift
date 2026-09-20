@@ -39,14 +39,6 @@ class PreferencesWindowController: NSWindowController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    /// Selects a pane by index, as if its sidebar row had been clicked. Used by `SettingsSnapshot`,
-    /// which walks every pane in turn.
-    func selectPane(at index: Int) {
-        let panes = PreferencesModel.Pane.allCases
-        guard panes.indices.contains(index) else { return }
-        model.selectedPane = panes[index]
-    }
-
     func show() {
         model.reload()
 

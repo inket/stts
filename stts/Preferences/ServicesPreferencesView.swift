@@ -6,29 +6,22 @@
 import PreferencesWindow
 import SwiftUI
 
-/// Services: a filter column on the left, one list on the right, search scoped to the filter.
-///
-/// The filter column (design 5B) replaced a tray of "monitoring" chips above the list: the chips
-/// were a second copy of the enabled set that had to be kept in sync with the rows, and everything
-/// they offered — see what's on, switch something off — the list itself does once it can be
-/// filtered down to just the monitored services. The column is the same `PreferencesSidebarView`
-/// the window's own sidebar uses, so the two source lists share one selection pill.
+/// Services: a filter column on the left, one list on the right, search scoped to the filter. The
+/// filter column is the same `PreferencesSidebarView` the window's own sidebar uses, so the two
+/// source lists share one selection pill.
 ///
 /// The catalogue rows are built from the popup's own grouped-list pieces — `PopupGroupBox`,
 /// `PopupRowSeparator`, `PopupFaviconChip` — rather than a `List`. A `List` fights this look on
 /// macOS: there's no stock style that gives a whole section the popup's single rounded card with
 /// hairlines between rows, only per-row insets and system-drawn separators. Reusing the popup's own
-/// views instead means the two windows render their lists identically, not just similarly, and any
-/// future change to the popup's row style (hover, favicon treatment, spacing) carries over here for
-/// free.
+/// views instead means the two windows render their lists identically, and any future change to the
+/// popup's row style carries over here for free.
 ///
-/// Structurally this is still the redesign: no drill-in (a vendor opens underneath itself, and
-/// which vendors are open is remembered), and no Save button — every toggle writes through to
-/// `Preferences` and reloads the popup.
+/// No drill-in (a vendor opens underneath itself, and which vendors are open is remembered), and no
+/// Save button — every toggle writes through to `Preferences` and reloads the popup.
 struct ServicesPreferencesView: View {
     @ObservedObject var model: PreferencesModel
 
-    /// The design's column width, with the pane at 760pt overall.
     private static let filterColumnWidth: CGFloat = 186
 
     var body: some View {
@@ -165,9 +158,9 @@ struct ServicesPreferencesView: View {
 
 // MARK: - Rows
 
-/// A vendor with sub-services, as a header row plus — once expanded — its own togglable entry,
-/// each child, and a `Select all` / `None` pair. Mirrors `PopupRosterView`'s header/rows split:
-/// same hover and background rules, just with a per-vendor chevron instead of one collapsed stack.
+/// A vendor with sub-services, as a header row plus — once expanded — its own togglable entry
+/// and each child. Mirrors `PopupRosterView`'s header/rows split: same hover and background
+/// rules, just with a per-vendor chevron instead of one collapsed stack.
 private struct ServiceGroupRows: View {
     @ObservedObject var model: PreferencesModel
     let definition: ServiceDefinition
@@ -190,16 +183,6 @@ private struct ServiceGroupRows: View {
                     PopupRowSeparator()
                     ServiceRow(model: model, definition: child, isChild: true)
                 }
-
-                PopupRowSeparator()
-                HStack {
-                    Spacer()
-                    Button("Select all") { model.setEnabled(true, for: [definition] + children) }
-                    Button("None") { model.setEnabled(false, for: [definition] + children) }
-                }
-                .buttonStyle(.link)
-                .font(.callout)
-                .padding(PopupLayout.ServiceRow.padding)
             }
         }
     }
@@ -249,8 +232,7 @@ private struct ServiceGroupRows: View {
 ///
 /// No row background of any kind — no hover highlight, no "enabled" tint. A macOS list row only
 /// paints a hover state when the whole row is a button, and this one isn't (its actions are the
-/// switch and the bell; the vendor header *is* a button, so it keeps its hover). And the switch
-/// already says "on" — the design doc's green enabled tint was tried and dropped as noise.
+/// switch and the bell; the vendor header *is* a button, so it keeps its hover).
 private struct ServiceRow: View {
     @ObservedObject var model: PreferencesModel
     let definition: ServiceDefinition

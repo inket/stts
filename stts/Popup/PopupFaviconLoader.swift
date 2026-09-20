@@ -12,8 +12,8 @@ import SwiftUI
 /// is either a local file read or a network fetch, and the network case is what this caches: once
 /// on disk under Application Support, and once in memory for the lifetime of the process.
 ///
-/// Failures are deliberately quiet. A missing icon is not worth surfacing — the card falls back to
-/// the striped placeholder, which is what the design specifies for both "loading" and "unavailable".
+/// Failures are deliberately quiet — a missing icon falls back to the monogram placeholder rather
+/// than surfacing an error.
 @MainActor
 final class PopupFaviconLoader: ObservableObject {
     static let shared = PopupFaviconLoader()
@@ -143,8 +143,7 @@ final class PopupFaviconLoader: ObservableObject {
 ///
 /// Every icon gets the chip because the shipped favicons are a mixed bag — black marks on
 /// transparency, full-colour marks, marks that already carry their own tile — and none of them
-/// survive being dropped straight onto the panel. The chip also stops a fleet of sixteen services
-/// looking like sixteen different treatments. Services with no favicon on disk fall back to a
+/// survive being dropped straight onto the panel. Services with no favicon on disk fall back to a
 /// monogram on the same chip.
 struct PopupFaviconChip: View {
     let identifier: String?
@@ -206,11 +205,9 @@ struct PopupFaviconChipWithDot: View {
                 Circle()
                     .fill(dotColor.swiftUI)
                     .frame(width: PopupLayout.ServiceRow.dotSize, height: PopupLayout.ServiceRow.dotSize)
-                    // The ring sits *outside* the dot as a larger circle behind it, the same trick
-                    // `PopupRosterView`'s chip stack uses — a `strokeBorder` on the dot's own circle
-                    // put the ring and the fill through separate antialiasing passes at the same
-                    // radius, so the dot's colour bled a sliver past the ring at the seam. Drawing
-                    // the ring behind and larger gives it one clean edge on each side instead.
+                    // Ring drawn as a larger circle behind the dot rather than a strokeBorder on it —
+                    // the latter antialiases the ring and fill separately at the same radius, letting
+                    // the dot's colour bleed past the ring at the seam.
                     .background(
                         Circle()
                             .fill(PopupLayout.Colors.chipRing.swiftUI)

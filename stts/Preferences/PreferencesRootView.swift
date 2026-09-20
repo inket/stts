@@ -8,16 +8,9 @@ import SwiftUI
 
 /// The settings window: a sidebar and the selected pane.
 ///
-/// Built out of stock SwiftUI — `NavigationSplitView`, `Form`, `Toggle`, `Picker` — rather than
-/// the hand-drawn controls this window used to have. That's a deliberate trade against the design
-/// doc: the mockup's exact palette and control shapes are worth less than looking like a macOS
-/// settings window and behaving like one (keyboard focus, accessibility, the system accent,
-/// Increase Contrast, appearance changes) for free.
-///
-/// It also removes a class of bug outright. The previous version drew every control in
-/// `NSView.draw(_:)`, and the translucent fills among them composited over the previous frame on
-/// each redraw — AppKit doesn't clear a dirty rect first — so the window visibly lightened as you
-/// used it, fastest in whichever pane redrew most. Nothing here draws into a shared backing store.
+/// Built out of stock SwiftUI — `NavigationSplitView`, `Form`, `Toggle`, `Picker` — which brings
+/// keyboard focus, accessibility, the system accent, Increase Contrast, and appearance changes for
+/// free, and rules out a whole class of custom-drawing bug along with it.
 ///
 /// The sidebar is the one exception to "stock SwiftUI": it's the `PreferencesWindow` framework's
 /// `PreferencesSidebarView`, a real `NSOutlineView` — see that type's header comment for why
@@ -76,12 +69,6 @@ struct PreferencesRootView: View {
                 // same title-bar row next to the traffic lights, the way Mail's or Notes' window
                 // does, rather than the taller two-row "big title" a visible native title would
                 // add above a *second* toolbar.
-//                .toolbar {
-//                    ToolbarItem(placement: .principal) {
-//                        Text(model.selectedPane.title)
-//                            .font(.headline)
-//                    }
-//                }
         }
         // No `.tint()`: controls, focus rings and both sidebars' selection pills follow the
         // user's own system accent, like any other settings window. `PreferencesLayout.accent`

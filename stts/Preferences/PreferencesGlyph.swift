@@ -5,29 +5,25 @@
 
 import AppKit
 
-/// The settings sidebar's icons, drawn from the design doc's own SVG path data.
+/// The settings sidebar's icons, hand-drawn as bezier calls on a shared 16×16 canvas at a common
+/// stroke weight rather than SF Symbols.
 ///
-/// These were SF Symbols (`gearshape.fill`, `list.bullet`, `plus.app`, `info.circle.fill`) until it
-/// became clear the four can't be made to sit right together. An SF Symbol is a *font glyph*: it's
-/// laid out against text metrics, with optical bearings and padding chosen per symbol for use
-/// inline with text, not for centring inside a fixed tile. So at any one point size some of them
-/// centre correctly and others sit a point high or read as slightly the wrong shape — and changing
-/// the size just moves the problem to a different symbol. Correcting that per symbol meant
-/// hand-tuned offsets, which is a treadmill rather than a fix.
+/// An SF Symbol is a *font glyph*: laid out against text metrics, with optical bearings and padding
+/// chosen per symbol for inline text use, not for centring inside a fixed tile. At any one point
+/// size some symbols centre correctly and others sit a point high — and changing the size just moves
+/// the problem to a different symbol.
 ///
-/// The design doc draws its own glyphs instead, all on a shared 16×16 canvas at a common stroke
-/// weight, so they're consistent with each other by construction and centred by their geometry.
-/// Transcribed here as bezier calls rather than shipped as image assets: they're a handful of
-/// circles, rounded rects and straight lines, and in code they stay resolution-independent, scale
-/// to whatever the tile asks for, and tint as template images. `PopupVectorIcon` does the
-/// equivalent for the popup's glyphs (as a SwiftUI `Shape`, which is what that side needs).
+/// Drawn as bezier calls rather than shipped as image assets — a handful of circles, rounded rects
+/// and straight lines stay resolution-independent, scale to whatever the tile asks for, and tint as
+/// template images. `PopupVectorIcon` does the equivalent for the popup's glyphs (as a SwiftUI
+/// `Shape`, which is what that side needs).
 enum PreferencesGlyph {
     case general
     case services
     case customServices
     case about
 
-    /// The canvas every coordinate below is authored against — the design's `viewBox="0 0 16 16"`.
+    /// The canvas every coordinate below is authored against.
     static let canvas: CGFloat = 16
 
     /// A template image of the glyph, so `NSImageView.contentTintColor` recolours it white on the
@@ -56,7 +52,7 @@ enum PreferencesGlyph {
     }
 
     /// SVG's y axis points down, and the drawing handler above is flipped to match, so every
-    /// coordinate here is a verbatim copy of the design's own.
+    /// coordinate here is a verbatim copy of the source SVG's.
     private func draw() {
         switch self {
         case .general:
@@ -140,7 +136,7 @@ enum PreferencesGlyph {
         path.stroke()
     }
 
-    /// Straight segments, all with the design's round caps.
+    /// Straight segments, all with round caps.
     private static func strokeLines(_ lines: [(NSPoint, NSPoint)], lineWidth: CGFloat) {
         let path = NSBezierPath()
         path.lineWidth = lineWidth

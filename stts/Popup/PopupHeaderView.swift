@@ -5,8 +5,8 @@
 
 import SwiftUI
 
-/// The pinned top block: the crown band (or, for the states the design doesn't cover, a plain text
-/// verdict), then a 3pt proportional status bar and a legend naming each bucket in it.
+/// The pinned top block: the crown band, or a plain text verdict for the states it doesn't cover,
+/// then a proportional status bar and a legend naming each bucket in it.
 struct PopupHeaderView: View {
     @ObservedObject var viewModel: PopupViewModel
 
@@ -47,8 +47,6 @@ struct PopupHeaderView: View {
         }
     }
 
-    /// The states the design doesn't define a colour band for: "no connection", and services
-    /// unknown with nothing actually reported broken (see `PopupViewModel.usesCrownHeader`).
     private var plainVerdict: some View {
         HStack(spacing: PopupLayout.Crown.contentGap) {
             VStack(alignment: .leading, spacing: 2) {
@@ -124,7 +122,7 @@ struct PopupHeaderView: View {
     }
 
     /// While a check is running the bar becomes a progress track: how many services have reported
-    /// so far, rather than what they reported. Not part of the design — carried over.
+    /// so far, rather than what they reported.
     private func checkingBar(completed: Int, total: Int, availableWidth: CGFloat) -> some View {
         let fraction = total > 0 ? Double(completed) / Double(total) : 0
 

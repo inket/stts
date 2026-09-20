@@ -8,8 +8,7 @@ import XCTest
 
 /// The hand-written ("independent") services are defined in services.json's `"independent"` array
 /// rather than discovered by globbing `stts/Services/*.swift` into services.plist. These lock down
-/// the two things that migration could silently break — see
-/// `Scripts/independent_services_migration.md`.
+/// the two things that migration could silently break.
 @MainActor
 final class IndependentServicesJSONTests: XCTestCase {
     private func independentDefinitions() throws -> [IndependentServiceDefinition] {

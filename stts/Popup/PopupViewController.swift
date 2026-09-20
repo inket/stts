@@ -10,9 +10,9 @@ import SwiftUI
 /// Owns the popup's content: hosts the SwiftUI hierarchy, drives status refreshes, and keeps the
 /// panel sized to its content.
 ///
-/// Replaces the previous `NSTableView`-per-service layout. The popup is now a fixed header, a
-/// scrolling middle section, and a fixed bottom bar (see `PopupContentView`), capped at
-/// `PopupLayout.maxHeight` — content past that scrolls internally instead of growing the panel.
+/// The popup is a fixed header, a scrolling middle section, and a fixed bottom bar (see
+/// `PopupContentView`), capped at `PopupLayout.maxHeight` — content past that scrolls internally
+/// instead of growing the panel.
 @MainActor
 class PopupViewController: NSObject {
     let contentView = NSView(
@@ -81,9 +81,8 @@ class PopupViewController: NSObject {
             onContentHeightChange: { [weak self] height in self?.contentHeightChanged(height) }
         )
 
-        // The panel is a vibrancy material with the panel colour laid over it, so the desktop tints
-        // through. The blur has to come from AppKit — SwiftUI's own materials are system-defined
-        // and wouldn't take the design's specific tint.
+        // The blur has to come from AppKit — SwiftUI's own materials are system-defined and
+        // wouldn't take a custom tint.
         let vibrancyView = NSVisualEffectView()
         vibrancyView.material = .popover
         vibrancyView.blendingMode = .behindWindow
@@ -119,11 +118,10 @@ class PopupViewController: NSObject {
         viewModel.prepareForOpen()
         refreshViewModel()
 
-        // `prepareForOpen()` collapses the roster, so the panel is very likely the wrong height for
-        // what's about to be shown. MBPopup positions the panel from its current size right after
-        // this returns, so the new height has to be in before then — otherwise the popup opens at
-        // the size it closed at and visibly snaps. Safe to apply synchronously here, unlike from
-        // `contentHeightChanged` — this is an AppKit callback, not the middle of a SwiftUI layout.
+        // MBPopup positions the panel from its current size right after this returns, so the new
+        // height (roster just collapsed) has to be applied before then, or the popup opens at the
+        // size it closed at and visibly snaps. Safe synchronously here, unlike from
+        // `contentHeightChanged` — this is an AppKit callback, not mid SwiftUI layout.
         hostingView?.layoutSubtreeIfNeeded()
         if let lastAppliedHeight { applyPanelHeight(lastAppliedHeight) }
 
@@ -215,11 +213,9 @@ class PopupViewController: NSObject {
         if let lastAppliedHeight, abs(lastAppliedHeight - clamped) < 0.5 { return }
         lastAppliedHeight = clamped
 
-        // This arrives from inside SwiftUI's own layout pass (it's an `onPreferenceChange`), and
-        // resizing the window from in there leaves the panel's content view at the size the pass
-        // already committed to: the window shrinks to its 498pt ceiling while its content view stays
-        // 544pt, so the content sits 46pt too tall inside it and the top of the crown is clipped
-        // away above the panel. Applied on the next turn of the run loop, once that pass has ended.
+        // This arrives from inside SwiftUI's own layout pass (`onPreferenceChange`); resizing the
+        // window from in there leaves the panel's content view at the size that pass already
+        // committed to, clipping content. Deferred to the next run loop turn instead.
         DispatchQueue.main.async { [weak self] in
             self?.applyPanelHeight(clamped)
         }
@@ -241,10 +237,8 @@ class PopupViewController: NSObject {
         var frame = panel.frame
         let top = frame.maxY
         frame.size.width = PopupLayout.contentWidth + inset * 2
-        // SwiftUI measures in fractions of a point (443.556…), and AppKit rounds a window frame to
-        // whole points behind your back — rounding the origin down and the height up. Asking for a
-        // whole number to begin with keeps the top edge exactly where it was put, instead of landing
-        // half a point off and reading as a 1px twitch on each expand.
+        // AppKit rounds a window frame to whole points behind your back (origin down, height up) —
+        // rounding here keeps the top edge exactly where it was put instead of twitching a pixel.
         frame.size.height = (contentHeight + popupController.arrowSize.height + inset * 2).rounded(.up)
         frame.origin.y = top - frame.size.height
 
@@ -252,10 +246,9 @@ class PopupViewController: NSObject {
         panel.setFrame(frame, display: true)
 
         // AppKit resizes the panel's content view along with the window, except when the window is
-        // resized out from under a layout pass that is already running — which is how the 544pt
-        // content view inside a 498pt panel was caught. Everything below it (MBPopup's container,
-        // this controller's content view, the hosting view) is pinned to that view, so a stale size
-        // there is a stale size for the whole popup. Cheap to assert rather than assume.
+        // resized out from under a layout pass that's already running. Everything below it is
+        // pinned to that view, so a stale size there is a stale size for the whole popup — cheap to
+        // assert rather than assume.
         let contentSize = panel.contentRect(forFrameRect: panel.frame).size
         if popupController.backgroundView.frame.size != contentSize {
             popupController.backgroundView.setFrameSize(contentSize)

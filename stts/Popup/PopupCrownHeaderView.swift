@@ -8,9 +8,6 @@ import SwiftUI
 /// The colour band at the top of the popup, tinted by the worst severity present. Either a count
 /// with "N services affected / of M monitored", or — when nothing is wrong — a headline (one of six,
 /// picked once per popup open) with a subtitle stating what was actually observed.
-///
-/// Sized like a native window header rather than a poster: the count is 34pt, not 54pt, and the
-/// refresh control lives here beside the timestamp rather than in the footer.
 struct PopupCrownHeaderView: View {
     @ObservedObject var viewModel: PopupViewModel
 

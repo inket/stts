@@ -32,8 +32,6 @@ final class PreferencesModel: ObservableObject {
             }
         }
 
-        /// The design doc's own glyph for this pane's tile, rather than the SF Symbol that stood in
-        /// for it — see `PreferencesGlyph` for why the substitutes never sat right together.
         var glyph: PreferencesGlyph {
             switch self {
             case .general: return .general
@@ -43,11 +41,8 @@ final class PreferencesModel: ObservableObject {
             }
         }
 
-        /// The tinted tile each row's icon sits on in the design doc — the same treatment System
-        /// Settings itself uses (Wi-Fi, General, Appearance, …), not a plain monochrome glyph.
-        /// Fixed colours rather than `PopupLayout`'s dynamic dark/light ones: the mockup gives each
-        /// pane one hue in both appearances, the way System Settings' own tiles don't relight for
-        /// dark mode either.
+        /// Fixed colours rather than `PopupLayout`'s dynamic dark/light ones — each pane keeps one
+        /// hue in both appearances, the way System Settings' own tiles don't relight for dark mode.
         var tint: Color {
             switch self {
             case .general: return NSColor(designHex: 0x2B6491).swiftUI
@@ -61,9 +56,7 @@ final class PreferencesModel: ObservableObject {
     /// One row of the Services pane's filter column — which slice of the catalogue the list shows.
     ///
     /// `all` is the only scope that reaches the whole catalogue; the rest are subsets of what's
-    /// enabled, since stts only knows anything about a service it polls. A future
-    /// `category(String)` case is the intended home for the design's CATEGORIES section, once
-    /// `services.json` carries the tags to build it from.
+    /// enabled, since stts only knows anything about a service it polls.
     enum ServicesFilter: Hashable, CaseIterable {
         case all
         case monitoring
@@ -293,17 +286,11 @@ final class PreferencesModel: ObservableObject {
         return subServices
     }
 
-    /// Resolves every `subServiceSuperclass`-based category's children in one pass, instead of the
-    /// one-scan-per-category this used to do.
-    ///
-    /// The fallback match needs to `build()` every sub-service definition to find out its actual
-    /// Swift type — there's no way around that, `ServiceDefinition` alone doesn't carry it. Doing
-    /// that scan once *per category* meant building the same sub-service over and over: with ~20
-    /// categories on this path and the catalogue's sub-services numbering in the hundreds, that's
-    /// tens of thousands of `BaseService` constructions before the Services pane could draw a
-    /// single row — the actual cause of "displaying the list is so slow", not anything SwiftUI is
-    /// doing. Building each sub-service exactly once and bucketing it by matched type turns that
-    /// into one build per sub-service, full stop.
+    /// Resolves every `subServiceSuperclass`-based category's children in one pass, instead of
+    /// scanning per category. The fallback match needs to `build()` every sub-service definition to
+    /// find its actual Swift type (`ServiceDefinition` alone doesn't carry it) — doing that once per
+    /// category meant rebuilding the same sub-service repeatedly across ~20 categories. Building
+    /// each sub-service exactly once and bucketing it by matched type makes it one build each.
     private func precomputeReflectionBasedChildren() {
         var categoriesBySuperclass: [ObjectIdentifier: ServiceDefinition] = [:]
         for categoryDefinition in topLevelServices

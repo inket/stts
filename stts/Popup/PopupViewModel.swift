@@ -7,10 +7,8 @@ import SwiftUI
 
 /// Display state for the popup, derived from the live `BaseService` list.
 ///
-/// The services themselves carry a flat `ServiceStatus`; the design splits them into two groups —
-/// everything needing attention (including services that couldn't be reached) in one list, and
-/// everything operational collapsed into a single roster row — so that bucketing lives here rather
-/// than being re-derived by each view.
+/// Buckets services needing attention (including unreachable ones) into `affected`, and everything
+/// operational into `roster`, so each view doesn't re-derive the split itself.
 @MainActor
 final class PopupViewModel: ObservableObject {
     // MARK: - Item types
@@ -71,16 +69,10 @@ final class PopupViewModel: ObservableObject {
 
         var dotColor: NSColor { kind.dotColor }
 
-        /// `message` with its newlines swapped for U+2028 LINE SEPARATOR, which is what the row
-        /// actually renders.
-        ///
-        /// Providers return one line per open incident, and each stays on its own line here. The
-        /// swap is what gets an ellipsis drawn when there are more of them than the row shows:
-        /// U+000A ends a *paragraph*, and SwiftUI only marks a truncation when the last visible line
-        /// is itself cut short — a limit landing on a paragraph break just stops, dropping the
-        /// remaining incidents silently. U+2028 breaks the line without ending the paragraph, so the
-        /// whole message is one paragraph that happens to break where the provider broke it, and any
-        /// overflow is marked.
+        /// `message` with its newlines swapped for U+2028 LINE SEPARATOR — what the row actually
+        /// renders. SwiftUI's line-limit truncation only marks an ellipsis when the last visible line
+        /// itself gets cut; a limit landing on a U+000A paragraph break just stops, silently dropping
+        /// the rest. U+2028 keeps everything one paragraph so overflow always gets marked.
         var displayMessage: String {
             message
                 .split(whereSeparator: \.isNewline)
@@ -98,7 +90,6 @@ final class PopupViewModel: ObservableObject {
         var faviconURL: URL?
     }
 
-    /// Whether a refresh is in flight, and how far along it is.
     enum CheckState: Equatable {
         case idle
         case checking(completed: Int, total: Int)
@@ -111,8 +102,7 @@ final class PopupViewModel: ObservableObject {
 
     // MARK: - Published state
 
-    /// Everything needing attention — incidents first (major → minor → maintenance), then services
-    /// that couldn't be determined. One list, because the design renders them as one group.
+    /// Incidents first (major → minor → maintenance), then services that couldn't be determined.
     @Published private(set) var affected: [AffectedItem] = []
     @Published private(set) var roster: [RosterItem] = []
     @Published private(set) var checkState: CheckState = .idle
@@ -125,8 +115,7 @@ final class PopupViewModel: ObservableObject {
     /// ago when what actually happened is that nothing answered.
     @Published private(set) var lastSuccessfulUpdate: Date?
 
-    /// Deliberately *not* persisted, and reset on every open: the design says collapsed is the
-    /// default every time, since the roster is the least urgent thing in the panel.
+    /// Not persisted — resets to collapsed on every open.
     @Published var rosterExpanded = false
 
     /// One of six phrases, picked once per popup *open* — not per refresh, or the copy would
@@ -135,7 +124,6 @@ final class PopupViewModel: ObservableObject {
 
     init() {}
 
-    /// Called when the popup is about to appear: re-roll the headline and collapse the roster.
     func prepareForOpen() {
         allClearHeadline = Self.allClearHeadlines.randomElement()!
         rosterExpanded = false
@@ -152,25 +140,19 @@ final class PopupViewModel: ObservableObject {
         affected.isEmpty && roster.isEmpty
     }
 
-    /// Every enabled service failed to report. The design replaces the whole verdict with a
-    /// "No connection" state in this case rather than claiming everything is unknown.
+    /// Every enabled service failed to report — renders as "No connection" rather than "everything
+    /// unknown".
     var isFullyUnreachable: Bool {
         !affected.isEmpty && affected.allSatisfy { $0.kind == .unknown } && roster.isEmpty
     }
 
-    /// Nothing wrong, nothing unknown — every enabled service reported operational.
     var isAllClear: Bool {
         affected.isEmpty && !roster.isEmpty
     }
 
-    /// Whether the header renders as the design's colour band, vs. the plain text verdict carried
-    /// over from the earlier design.
-    ///
-    /// The plain verdict remains for the states the design doesn't cover — "no connection" and "no
-    /// services selected" — and for one case it leaves genuinely ambiguous: some services unknown
-    /// but none actually reporting a problem. The all-clear subtitle asserts "ALL N REPORTING NO
-    /// ISSUES", which wouldn't be true with unknowns in the mix, and there's no colour in the
-    /// palette for "mostly fine, a few unreachable".
+    /// Whether the header renders as the colour band vs. the plain text verdict. Falls back to plain
+    /// text for the ambiguous case of some unknowns but no actual incidents — the all-clear subtitle
+    /// asserts every service reports no issues, which wouldn't be true with unknowns in the mix.
     var usesCrownHeader: Bool {
         !hasNoSelectedServices && !isFullyUnreachable && (affectedCount > 0 || isAllClear)
     }
@@ -236,9 +218,8 @@ final class PopupViewModel: ObservableObject {
                     )
                 )
             case .undetermined:
-                // A service that hasn't finished its first check isn't "unknown", it's pending —
-                // listing it as a failure would make every cold launch look like an outage. The
-                // header's progress bar is what covers this window.
+                // Not checked yet is pending, not unknown — otherwise every cold launch looks like
+                // an outage until the header's progress bar covers it.
                 guard baseService.hasBeenChecked else { continue }
 
                 affected.append(
@@ -253,8 +234,6 @@ final class PopupViewModel: ObservableObject {
                     )
                 )
             case .good, .notice:
-                // `.notice` is informational rather than degraded — the design has no separate
-                // treatment for it.
                 roster.append(
                     RosterItem(
                         id: service.name,

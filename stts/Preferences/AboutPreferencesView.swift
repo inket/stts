@@ -5,19 +5,16 @@
 
 import SwiftUI
 
-/// About: the app's own icon and type, a line saying what it's actually doing, and the three places
-/// to go from here.
+/// About: the app's own icon and type, a line saying what it's actually doing, and a way to report
+/// an issue.
 ///
-/// The live line is what the redesign added. "Monitoring 12 of 543 status pages. Definitions last
-/// updated 2 days ago." answers, in the one screen people open when something seems wrong, whether
-/// the catalogue is current — which matters because `services.json` is fetched rather than shipped
-/// (see `RemoteServicesUpdater`).
+/// "Monitoring 12 of 543 status pages. Definitions last updated 2 days ago." answers, in the one
+/// screen people open when something seems wrong, whether the catalogue is current — which matters
+/// because `services.json` is fetched rather than shipped (see `RemoteServicesUpdater`).
 struct AboutPreferencesView: View {
     @ObservedObject var model: PreferencesModel
 
-    private static let repositoryURL = URL(string: "https://github.com/inket/stts")!
     private static let issuesURL = URL(string: "https://github.com/inket/stts/issues")!
-    private static let releasesURL = URL(string: "https://github.com/inket/stts/releases/latest")!
 
     var body: some View {
         VStack(spacing: 0) {
@@ -46,16 +43,12 @@ struct AboutPreferencesView: View {
                 .frame(width: 240)
                 .padding(.vertical, 22)
 
-            HStack(spacing: 8) {
-                Button("Check for updates") { open(Self.releasesURL) }
-                    .buttonStyle(.borderedProminent)
-                Button("Website") { open(Self.repositoryURL) }
-                Button("Report an issue") { open(Self.issuesURL) }
-            }
+            Button("Report an issue") { open(Self.issuesURL) }
 
             Text(
-                "Open source, MIT licensed. Status data belongs to the respective services. "
-                + "Activity glyph (app icon) by Gregor Črešnar from the Noun Project."
+                "Status data belongs to the respective services. All trademarks, logos, and "
+                + "favicons are the property of their respective owners. Activity glyph (app icon) "
+                + "by Gregor Črešnar from the Noun Project."
             )
             .font(.caption)
             .foregroundStyle(.tertiary)
@@ -86,7 +79,6 @@ struct AboutPreferencesView: View {
         return "Version \(short) (\(build))"
     }
 
-    /// There's no in-app updater on this branch, so "check for updates" is the releases page.
     private func open(_ url: URL) {
         NSWorkspace.shared.open(url)
     }

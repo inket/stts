@@ -6,8 +6,8 @@
 #if DEBUG
 import SwiftUI
 
-/// Renders the popup's designed states to PNGs so the redesign can be checked against the design
-/// doc without driving the real menu bar item.
+/// Renders the popup's various states to PNGs for visual review, without driving the real menu bar
+/// item.
 ///
 /// Debug-only, and entirely opt-in: set `STTS_SNAPSHOT=1` and the app emits every state on launch,
 /// then exits. Normal launches never touch this.

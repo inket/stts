@@ -6,10 +6,6 @@
 import Cocoa
 
 /// How much a status change has to matter before it's worth a notification.
-///
-/// Replaces the old `notifyOnStatusChange` boolean, which could only say "all" or "none". The
-/// middle case is the one people actually wanted: tell me when something breaks, not when a
-/// provider posts a scheduled-maintenance notice.
 enum NotificationGranularity: String, CaseIterable {
     case everyChange
     case outagesOnly
@@ -70,8 +66,7 @@ class Preferences {
 
     private let serviceLoader: ServiceLoader
 
-    /// How often every enabled service is re-checked, in seconds. Was hardcoded at 300 in
-    /// `AppDelegate.restartTimer` before the settings redesign.
+    /// How often every enabled service is re-checked, in seconds.
     var refreshInterval: Int {
         get { UserDefaults.standard.integer(forKey: "refreshInterval") }
         set { UserDefaults.standard.set(newValue, forKey: "refreshInterval") }
@@ -129,7 +124,6 @@ class Preferences {
         get {
             let identifiers = UserDefaults.standard.array(forKey: "selectedServices") as? [String] ?? []
 
-            // Match the identifiers to our loaded service definitions
             let definitions = identifiers.map(serviceLoader.serviceDefinition(forIdentifier:)).compactMap { $0 }
             let sortedDefinitions = definitions.sorted(by: ServiceDefinitionSortByName)
 
@@ -195,20 +189,17 @@ class Preferences {
     }
 
     private static func migrate() {
-        // Migrate old names to new names if needed
         let migrationMapping: [String: String] = [
-            "CloudFlare": "Cloudflare", // v1.0.0 used the name "CloudFlare" instead of the official "Cloudflare"
+            "CloudFlare": "Cloudflare",
             "Apple": "AppleAll", // Apple changed from one service to multiple sub services
             "AppleDeveloper": "AppleDeveloperAll", // Apple Developer changed from one service to multiple sub services
-            "VMwareCarbonBlack": "Broadcom", // v2.23
-            "Spoke": "Okta", // v2.23
-            // There were many others but they were migrated to the services.json file
-            // Generated services
+            "VMwareCarbonBlack": "Broadcom",
+            "Spoke": "Okta",
             "FirebaseMLKit": "FirebaseMachineLearning",
             "AdobeAdobePhotoshopAPI": "AdobePhotoshopAPI",
 
-            // 2026-08: these services' status pages moved to a different underlying provider,
-            // which changes their globalIdentifier's provider prefix even though it's the same service.
+            // These services' status pages moved to a different underlying provider, which changes
+            // their globalIdentifier's provider prefix even though it's the same service.
             "statuspage.Fivetran": "independent.Fivetran",
             "statuspage.Notion": "incidentio.Notion",
             "independent.Recurly": "incidentio.Recurly",

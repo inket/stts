@@ -5,8 +5,7 @@
 
 import SwiftUI
 
-/// Pinned footer: the wordmark and Settings. Refresh moved up into the crown, and the design drops
-/// everything else — a menu bar app doesn't need a Quit button when Settings is one click away.
+/// Pinned footer: the wordmark and Settings.
 struct PopupBottomBarView: View {
     let onOpenSettings: () -> Void
 

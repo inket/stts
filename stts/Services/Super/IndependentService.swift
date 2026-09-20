@@ -47,10 +47,10 @@ class IndependentServiceDefinition: CodableServiceDefinition, ServiceDefinition 
     }
 
     /// An `independent` entry only supplies a service's *identity* — its behaviour is compiled in.
-    /// A services.json fetched from a newer master can therefore name a class this build doesn't
-    /// have, which isn't an error: the service is simply skipped until the app updates. Anything
-    /// else would either crash on a perfectly ordinary remote update or leave a dead row in the
-    /// list that can never report a status.
+    /// A newer remote services.json can therefore name a class this build doesn't have, which isn't
+    /// an error: the service is simply skipped until the app updates. Anything else would either
+    /// crash on a perfectly ordinary remote update or leave a dead row in the list that can never
+    /// report a status.
     var isSupported: Bool { serviceClass != nil }
 
     func build() -> BaseService? {

@@ -7,9 +7,6 @@ import Cocoa
 
 /// Owns the settings window's model and controller, and the two callbacks the rest of the app
 /// needs to hear about.
-///
-/// The design has a fourth pane, Custom services, which isn't built yet — see
-/// `Scripts/settings_redesign_plan.md`.
 @MainActor
 final class PreferencesWindow {
     let controller: PreferencesWindowController

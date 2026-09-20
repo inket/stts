@@ -5,15 +5,13 @@
 
 import SwiftUI
 
-/// A `Shape` built from SVG path data, scaled to fit its frame.
+/// A `Shape` built from SVG path data, scaled to fit its frame. Paths are kept as their original SVG
+/// strings rather than transcribed into Swift bezier calls, so they're a verbatim copy of the source
+/// artwork.
 ///
-/// The popup's glyphs come from the design's own `icons/*.svg` exports, kept here as their original
-/// path strings rather than transcribed into Swift bezier calls: it's a verbatim copy of the source
-/// artwork, so there's nothing to get subtly wrong, and it stays diffable against the design.
-///
-/// Pure SwiftUI on purpose — wrapping the equivalent AppKit views in `NSViewRepresentable` works in
-/// the running app but renders as a placeholder under `ImageRenderer`, which would blind the
-/// snapshot tool (`Scripts/popup_snapshots.sh`) to exactly the part of the UI it's checking.
+/// Pure SwiftUI on purpose — an equivalent `NSViewRepresentable` wrapper renders as a placeholder
+/// under `ImageRenderer`, which would blind `PopupSnapshot` to exactly the
+/// part of the UI it's checking.
 struct PopupVectorIcon: Shape {
     let pathData: String
 
@@ -94,8 +92,8 @@ struct PopupVectorIcon: Shape {
 }
 
 extension PopupVectorIcon {
-    /// Verbatim from the design's `icons/gear-*.svg` (both `<path>` elements concatenated — they
-    /// share a fill, and the nonzero winding rule produces the cog's cutouts).
+    /// Both `<path>` elements concatenated — they share a fill, and the nonzero winding rule
+    /// produces the cog's cutouts.
     static let gear = PopupVectorIcon(
         pathData: """
         M26.76,36.51 C27.11,36.51 27.44,36.70 27.62,37.01 L28.40,38.36 C28.93,39.28 30.21,39.63 \
@@ -134,7 +132,6 @@ extension PopupVectorIcon {
         """
     )
 
-    /// Verbatim from the design's `icons/refresh-*.svg`.
     static let refresh = PopupVectorIcon(
         pathData: """
         M23.00,43.00 L23.00,41.00 C32.93,41.00 41.00,32.93 41.00,23.00 C41.00,13.07 32.93,5.00 \

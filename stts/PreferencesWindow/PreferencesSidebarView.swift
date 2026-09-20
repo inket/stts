@@ -39,14 +39,11 @@ public enum PreferencesSidebarIconStyle {
 
 /// A macOS-style preferences sidebar, backed by a real `NSOutlineView` instead of SwiftUI's `List`.
 ///
-/// Two things a source list gives for free that `List` doesn't expose: row-selection *tracking* —
-/// press down and a row highlights immediately, drag while still held and the highlight follows
-/// the pointer between rows live, release commits it (or, released outside every row, cancels) —
-/// and a selection pill whose colour is the caller's to pick. `List`'s `.sidebar` style has the
-/// first but not the second (its selection pill is hardcoded to the system accent, `.tint()`
-/// can't reach it); switching to `.plain` and hand-drawing the pill gets the colour back but loses
-/// the tracking, since `NavigationLink`'s tap is a single click-then-release unit, not a live
-/// gesture. This gets both by using the real component and only overriding how it draws.
+/// `List`'s `.sidebar` style gives live row-selection tracking (highlight follows the pointer while
+/// held, commits on release) but hardcodes its pill to the system accent; `.plain` with a
+/// hand-drawn pill gets the colour back but loses the tracking, since `NavigationLink`'s tap is a
+/// single click-then-release unit. This gets both by using the real component and only overriding
+/// how it draws.
 public struct PreferencesSidebarView<Item: PreferencesSidebarItem>: NSViewRepresentable {
     private let sections: [PreferencesSidebarSection<Item>]
     private let selection: Binding<Item>
@@ -97,10 +94,8 @@ public struct PreferencesSidebarView<Item: PreferencesSidebarItem>: NSViewRepres
         outlineView.headerView = nil
         outlineView.indentationPerLevel = 0
         outlineView.style = .plain
-        // `.regular`, not `.none`: a row view's default `draw(_:)` only calls `drawSelection(in:)`
-        // at all when the table's highlight style isn't `.none` — `.none` doesn't just skip
-        // AppKit's own fill, it skips calling the method, override included. `RowView` below
-        // replaces what `.regular` would draw; it never asks for the system's own fill.
+        // `.regular`, not `.none`: `.none` skips calling `drawSelection(in:)` at all, override
+        // included. `RowView` below replaces what `.regular` would draw.
         outlineView.selectionHighlightStyle = .regular
         outlineView.backgroundColor = .clear
         outlineView.intercellSpacing = NSSize(width: 0, height: 2)
@@ -131,12 +126,9 @@ public struct PreferencesSidebarView<Item: PreferencesSidebarItem>: NSViewRepres
     }
 
     public func updateNSView(_ scrollView: NSScrollView, context: Context) {
-        // The single column has no explicit width, so it starts at NSTableColumn's ~100pt default
-        // and only grows to fill the row on an actual resize event (what `resizingMask =
-        // .autoresizingMask` reacts to) — not on `makeNSView`'s initial, still-zero-sized frame.
-        // That's what made the trailing badge look unaligned: the cell itself was narrower than
-        // the visible row. `updateNSView` runs once real geometry exists, so re-fitting here (cheap,
-        // and a no-op once already correct) catches the case `resizingMask` alone doesn't.
+        // The single column starts at NSTableColumn's ~100pt default and only grows on an actual
+        // resize event, not on makeNSView's initial zero-sized frame — re-fit here, once real
+        // geometry exists, or the trailing badge looks unaligned.
         context.coordinator.outlineView?.sizeLastColumnToFit()
         context.coordinator.sections = sections
         context.coordinator.selection = selection
@@ -214,33 +206,23 @@ public struct PreferencesSidebarView<Item: PreferencesSidebarItem>: NSViewRepres
         }
 
         /// The item a click just selected, while its write to `selection` is still in-flight on
-        /// `DispatchQueue.main.async` (see `outlineViewSelectionDidChange`). The caller's SwiftUI
-        /// view can call `updateNSView` — and so `sync(to:)` — before that write lands, still
-        /// carrying the pre-click value; without this, `sync(to:)` would read that stale value as
-        /// authoritative and select it right back over the row the user just clicked. While this
-        /// is set, `sync(to:)` holds off entirely rather than trying to tell a stale call apart
-        /// from a genuine new one.
+        /// `DispatchQueue.main.async` (see `outlineViewSelectionDidChange`). `updateNSView` — and so
+        /// `sync(to:)` — can run before that write lands, still carrying the pre-click value; while
+        /// this is set, `sync(to:)` holds off rather than selecting the stale value back over the
+        /// row the user just clicked.
         private var pendingItem: Item?
 
-        /// The badge values last reflected on screen — `updateNSView` used to call `reloadData()`
-        /// unconditionally on every pass (including the one triggered by a click itself, since
-        /// writing through `selection` re-renders the caller), and `reloadData()` resets
-        /// `NSOutlineView`'s selection. With `allowsEmptySelection = false`, AppKit's own fix-up
-        /// for that then auto-selects row 0 — silently overriding whatever the user had just
-        /// clicked. Reloading only when a badge actually changed avoids that almost entirely;
-        /// `refreshBadgesIfNeeded()` also re-asserts the selection across the reload as a second
-        /// line of defence, for the rare case one changes at the exact moment of a selection change.
+        /// The badge values last reflected on screen. `reloadData()` resets `NSOutlineView`'s
+        /// selection, and with `allowsEmptySelection = false` AppKit auto-selects row 0 as a fix-up —
+        /// silently overriding whatever was just clicked. Reloading only when a badge actually
+        /// changed avoids that almost entirely; `refreshBadgesIfNeeded()` also re-asserts the
+        /// selection across the reload as a second line of defence.
         private var lastBadges: [Int]?
 
-        /// Set for the duration of `refreshBadgesIfNeeded()`'s reload-and-reselect. `reloadData()`
-        /// briefly clears the outline view's selection, and `allowsEmptySelection = false` makes
-        /// AppKit auto-select row 0 as a *synchronous* side effect of that call, before this method
-        /// gets to restore the real selection — firing `outlineViewSelectionDidChange` with row 0
-        /// along the way. That event isn't a stale re-read of an old value (which `pendingItem`
-        /// guards against below); it's a real, if spurious, intermediate selection change, genuinely
-        /// different from the current model value — so it would schedule a deferred write of row 0
-        /// into `selection`. This flag makes `outlineViewSelectionDidChange` ignore both that and
-        /// the subsequent reselect while this method is running.
+        /// Set for the duration of `refreshBadgesIfNeeded()`'s reload-and-reselect, since
+        /// `reloadData()`'s row-0 auto-select fires `outlineViewSelectionDidChange` synchronously —
+        /// a real, if spurious, intermediate selection change that `pendingItem` doesn't cover.
+        /// This flag makes that delegate callback ignore it and the subsequent reselect.
         private var isReloading = false
 
         init(
@@ -397,13 +379,10 @@ public struct PreferencesSidebarView<Item: PreferencesSidebarItem>: NSViewRepres
             pendingItem = item
 
             // Dispatched, not direct: `NSHostingView` can run this delegate callback nested inside
-            // its own update cycle (selecting a row via a click routed through the hosting view
-            // counts), so writing straight through `selection` here still hits SwiftUI's
-            // "Publishing changes from within view updates" hazard. It's safe to defer: the pill
-            // itself is `NSTableRowView.isSelected`, AppKit's own state, already updated
-            // synchronously by mouse tracking — this write only has to reach whatever the caller
-            // shows for the selection, which can afford one runloop turn. `pendingItem` covers the
-            // gap in between.
+            // its own update cycle, so writing straight through `selection` here still hits SwiftUI's
+            // "Publishing changes from within view updates" hazard. Safe to defer since the pill
+            // itself (`NSTableRowView.isSelected`) is already updated synchronously by mouse
+            // tracking; `pendingItem` covers the gap until this write lands.
             let selection = self.selection
             DispatchQueue.main.async { selection.wrappedValue = item }
         }
@@ -518,16 +497,10 @@ private final class PreferencesSidebarRowCell: NSTableCellView {
         badgeLabel.alignment = .right
         badgeLabel.setContentHuggingPriority(.required, for: .horizontal)
 
-        // `.centerY` on the outer stack aligns each arranged view's *bounding box* center — fine
-        // for the icon, but title and badge are different font sizes, so box-centering them
-        // leaves their text sitting on visibly different lines. Nesting them in their own
-        // `.firstBaseline`-aligned stack fixes that, while the outer stack still centers that
-        // whole text row against the icon by its overall frame.
-        // `.fill`, not NSStackView's default `.gravityAreas`: gravity areas pack each view at its
-        // fitting size toward the leading edge and never stretch anything, so the hugging
-        // priorities above are ignored and the badge sits right after the title. `.fill` is the
-        // distribution that actually honors them — the title (low hugging) grows to take the slack,
-        // pushing the badge (required hugging) to the trailing edge.
+        // `.centerY` on the outer stack box-centers each view, which leaves title and badge (different
+        // font sizes) on visibly different lines — nesting them in their own `.firstBaseline` stack
+        // fixes that. `.fill`, not the default `.gravityAreas`, so the hugging priorities below are
+        // actually honored: the title grows to take the slack, pushing the badge to the trailing edge.
         let textRow = NSStackView(views: [titleLabel, badgeLabel])
         textRow.orientation = .horizontal
         textRow.distribution = .fill
@@ -535,10 +508,8 @@ private final class PreferencesSidebarRowCell: NSTableCellView {
         textRow.spacing = 8
         textRow.setContentHuggingPriority(.defaultLow, for: .horizontal)
 
-        // A fixed-width image view, not an inline `NSTextAttachment` in the title: an attachment
-        // sits on the baseline nicely, but each symbol has its own advance width, so the titles
-        // after them started at different x positions down the list. A fixed box keeps every
-        // title in one column; the symbol is centred inside it.
+        // A fixed-width image view rather than an inline `NSTextAttachment`: each symbol has its
+        // own advance width, which would leave titles starting at different x positions.
         glyphView.imageScaling = .scaleProportionallyDown
         glyphView.symbolConfiguration = NSImage.SymbolConfiguration(pointSize: 12, weight: .medium)
         glyphView.translatesAutoresizingMaskIntoConstraints = false
@@ -560,10 +531,9 @@ private final class PreferencesSidebarRowCell: NSTableCellView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stack)
 
-        // 10pt is the *pill's* inset (`PreferencesSidebarRowView.drawSelection`); content needs
-        // its own padding inside that, or the icon sits flush against the pill's rounded edge with
-        // no breathing room. The trailing side gets a little more so the badge doesn't crowd the
-        // pill's rounded corner the way the icon would at 14.
+        // 10pt is the pill's own inset (`PreferencesSidebarRowView.drawSelection`); content needs
+        // its own padding inside that. Trailing gets a little more so the badge doesn't crowd the
+        // pill's rounded corner.
         NSLayoutConstraint.activate([
             stack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             stack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
@@ -588,10 +558,8 @@ private final class PreferencesSidebarRowCell: NSTableCellView {
         updateAppearance()
     }
 
-    // `NSTableRowView` sets this automatically as selection changes, independent of the row
-    // view's own `drawSelection(in:)` override — the standard hook for a custom cell to react to
-    // selection instead of relying on AppKit's built-in text/image recoloring, which only applies
-    // to a cell's designated `textField`/`imageView` and these aren't wired up as those.
+    // The standard hook for a custom cell to react to selection, since AppKit's built-in
+    // text/image recoloring only applies to a cell's designated textField/imageView.
     override var backgroundStyle: NSView.BackgroundStyle {
         didSet { updateAppearance() }
     }

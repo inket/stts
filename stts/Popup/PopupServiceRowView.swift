@@ -7,10 +7,6 @@ import SwiftUI
 
 /// One service in the affected list: a favicon chip carrying a severity dot, the service's name and
 /// the provider's message, then when it started and an arrow out to the status page.
-///
-/// This replaces the severity-railed cards of the previous iteration. Severity lives on the dot now,
-/// and the legend above the list carries the colour key, so the row itself never has to explain what
-/// its colour means.
 struct PopupServiceRowView: View {
     let item: PopupViewModel.AffectedItem
     let onOpen: (URL) -> Void
@@ -70,11 +66,11 @@ struct PopupRowSeparator: View {
     }
 }
 
-/// Wraps a set of rows in the design's inset grouped-list container.
+/// Wraps a set of rows in an inset grouped-list container.
 ///
 /// `topMargin` is the gap from whatever precedes this group — another group, or the scroll
-/// region's own top edge. The latter is a scroll-content margin now, not padding on the first
-/// group, so pass `0` for a group that's always first (see `PopupContentView.middle`).
+/// region's own top edge (a scroll-content margin, not padding on the first group — pass `0` for a
+/// group that's always first, see `PopupContentView.middle`).
 struct PopupGroupBox<Content: View>: View {
     var topMargin: CGFloat = PopupLayout.Group.spacing
     @ViewBuilder let content: Content

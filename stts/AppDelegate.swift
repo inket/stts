@@ -10,11 +10,9 @@ import UserNotifications
 
 @NSApplicationMain @MainActor
 class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
+    /// Off during unit testing, so the timer doesn't check services and cache statuses ahead of the tests.
     private var shouldAutomaticallyCheckServices: Bool {
-        // We don't want to start the updating timer when unit testing because:
-        // 1. It will be checking services unnecessarily
-        // 2. It will check services that have a Store (like Adobe) before our tests and cache statuses
-        return ProcessInfo.processInfo.environment["UNIT_TESTING"] == nil
+        ProcessInfo.processInfo.environment["UNIT_TESTING"] == nil
     }
 
     private var timer: Timer?
@@ -39,19 +37,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         // swiftlint:disable:next force_try
         let appDefinedProvider = try! AppDefinedServiceDefinitionProvider()
         #if DEBUG
-        // Debug builds read only the bundled Resources/services.json, so what a developer is
-        // actually editing is what the app shows. In release the remote copy wholesale-replaces the
-        // bundled one (see below), which means an unpushed local edit is invisible — worse, a local
-        // addition that master doesn't have yet is actively deleted by the copy fetched from master.
-        // That's correct for shipped builds and useless while working on the file.
+        // Debug builds read only the bundled Resources/services.json — in release the remote copy
+        // wholesale-replaces the bundled one (see below), which would make an unpushed local edit
+        // invisible and could delete a local addition the remote copy doesn't have yet.
         serviceDefinitionProviders.append(appDefinedProvider)
         #else
         if let remoteProvider = try? RemoteServiceDefinitionProvider() {
-            // Wholesale swap, not a per-identifier merge: once the remote copy has any data, it
-            // fully replaces the bundled one rather than being unioned with it, so a service the
-            // remote copy drops doesn't linger just because the (older) bundled copy still has it.
-            // Falls back to the bundled copy entirely when remote hasn't fetched anything successfully
-            // yet.
+            // Wholesale swap, not a per-identifier merge, so a service the remote copy drops doesn't
+            // linger just because the bundled copy still has it. Falls back to the bundled copy
+            // entirely until the remote one has fetched successfully at least once.
             serviceDefinitionProviders.append(
                 FallbackServiceDefinitionProvider(primary: remoteProvider, fallback: appDefinedProvider)
             )
@@ -123,19 +117,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         popupController.backgroundView.cornerRadius = PopupLayout.cornerRadius
         popupController.arrowSize = PopupLayout.arrowSize
-        // MBPopup insets the content by 1pt on every side by default, which leaves a 1pt frame of
-        // the panel fill showing around it — and since that fill is tinted with the crown below,
-        // the whole popup ended up outlined in the current status's colour. The content covers the
-        // panel edge to edge instead; the design's hairline is drawn inside it (`PopupContentView`).
+        // MBPopup insets the content by 1pt by default, leaving a frame of the panel fill (tinted
+        // with the crown colour) showing around it. Content covers the panel edge to edge instead;
+        // the border is drawn inside it (`PopupContentView`).
         popupController.contentInset = 0
         // Setting `contentInset` resizes the panel to the container view's *current* size, which is
         // still zero this early — before any layout pass has run. Put the intended size back.
         popupController.resizePopup(width: PopupLayout.contentWidth, height: PopupLayout.maxHeight)
 
-        // MBPopup paints the arrow and the panel body with one colour. The body is covered by the
-        // vibrancy view and its tint, so what this value actually shows is the arrow — which the
-        // design tints with the crown's colour, so the band appears to continue up into the menu
-        // bar. `refreshMenuBarItem()` keeps it in step with the current status.
+        // MBPopup paints the arrow and the panel body with one colour; the body is covered by the
+        // vibrancy view, so this value only actually shows through the arrow.
+        // `refreshMenuBarItem()` keeps it in step with the current status.
         popupController.backgroundView.backgroundColor = .clear
 
         popupViewController.setup()
@@ -160,12 +152,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             self?.popupViewController.willOpenPopup()
         }
 
-        // MBPopup hides `contentView` the instant a close starts, before the fade-out animation
-        // even begins — so for that whole animation, nothing is left drawn over the panel's own
-        // background fill. That fill is tinted to the crown colour (see `refreshMenuBarItem()`),
-        // meant to be seen only as a sliver behind the arrow; with the content gone, the crown
-        // colour fills the entire panel shape and fades out with it, reading as a flash. Clearing
-        // the tint here, before that hide happens, closes on a blank panel instead.
+        // MBPopup hides `contentView` before the fade-out animation begins, so the panel's own
+        // background fill (tinted to the crown colour, normally just a sliver behind the arrow)
+        // would fill the whole shape and fade out as a flash. Clear it first instead.
         popupController.willClosePopup = { [weak popupController] in
             popupController?.backgroundView.backgroundColor = .clear
             popupController?.backgroundView.needsDisplay = true
@@ -204,10 +193,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             .compactMap { $0 as? SendbirdServiceDefinition }
             .compactMap { $0.build() as? SendbirdService }
 
-        // reloadServicesList() rebuilds `services` with fresh BaseService instances (always starting
-        // at .undetermined/"Loading"), which orphans whatever the in-flight updateServices() fetch
-        // (e.g. from app launch) was updating and leaves the new instances stuck showing "Loading"
-        // until the next scheduled update. Re-running updateServices() here fetches them right away.
+        // reloadServicesList() rebuilds `services` with fresh BaseService instances (starting at
+        // .undetermined/"Loading"), so re-run updateServices() to fetch them right away rather than
+        // leaving them stuck until the next scheduled update.
         popupViewController.reloadServicesList()
         updateServices()
     }
@@ -278,8 +266,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     private func reachabilityChanged() {
         if initialReachabilityChange {
-            // Reachability notifies us of a change on app launch (after calling startNotifier()),
-            // we don't need it because it causes duplicate updateServices()
+            // Reachability fires once on launch after startNotifier() — skip it to avoid a duplicate updateServices().
             initialReachabilityChange = false
         } else {
             updateServices()

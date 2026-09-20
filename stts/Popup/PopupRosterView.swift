@@ -131,10 +131,8 @@ struct PopupRosterView: View {
 
     // MARK: - Expanded rows
 
-    /// The design scrolls the group itself past nine rows. Here the rows just lay out in full and
-    /// the popup's single scroll region takes the overflow — the crown and legend are outside that
-    /// region, so they stay put either way, which is the property that mattered. A scroll view
-    /// nested inside the outer one has no ideal height of its own and collapses.
+    /// Rows lay out in full; the popup's single scroll region takes the overflow rather than nesting
+    /// a second scroll view here, which would have no ideal height of its own and collapse.
     private var rosterRows: some View {
         VStack(spacing: 0) {
             ForEach(Array(viewModel.roster.enumerated()), id: \.element.id) { index, item in

@@ -5,9 +5,8 @@
 
 import SwiftUI
 
-/// Custom services: the design doc's fourth sidebar pane, added to the shell now so the pane
-/// exists to navigate to — content (the empty state, the editor sheet, the URL-testing service
-/// model) is a separate piece of work. See `Scripts/settings_redesign_plan.md`.
+/// Placeholder pane — content (empty state, editor sheet, URL-testing service model) is separate,
+/// unimplemented work.
 struct CustomServicesPreferencesView: View {
     @ObservedObject var model: PreferencesModel
 
