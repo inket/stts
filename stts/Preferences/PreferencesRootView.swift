@@ -6,8 +6,6 @@
 import PreferencesWindow
 import SwiftUI
 
-/// The settings window: a sidebar and the selected pane.
-///
 /// Built out of stock SwiftUI — `NavigationSplitView`, `Form`, `Toggle`, `Picker` — which brings
 /// keyboard focus, accessibility, the system accent, Increase Contrast, and appearance changes for
 /// free, and rules out a whole class of custom-drawing bug along with it.

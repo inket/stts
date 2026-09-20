@@ -5,11 +5,6 @@
 
 import SwiftUI
 
-/// The operational services, as a group that expands in place.
-///
-/// Collapsed it's a single row: an overlapping stack of up to four favicon chips, the count, and a
-/// chevron. Expanded, the stack gives way to a green dot and the services unfold below at 26pt each.
-/// Collapsed is the default on every open — the roster is the least urgent thing in the panel.
 struct PopupRosterView: View {
     @ObservedObject var viewModel: PopupViewModel
 

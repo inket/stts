@@ -5,9 +5,6 @@
 
 import SwiftUI
 
-/// Root of the popup's SwiftUI hierarchy: a pinned header, a scrolling middle section, and a pinned
-/// footer.
-///
 /// The panel is sized by AppKit (`MBPopupController.resizePopup`), not by this view's intrinsic
 /// size, so the view reports how tall it *would like* to be through `onContentHeightChange`;
 /// `PopupViewController` clamps that to `PopupLayout.maxHeight` and resizes the panel. Everything

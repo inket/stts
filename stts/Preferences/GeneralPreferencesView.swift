@@ -6,8 +6,6 @@
 import ServiceManagement
 import SwiftUI
 
-/// General: four settings in three grouped sections.
-///
 /// A plain `Form` with `.formStyle(.grouped)` — which is what System Settings itself is built from,
 /// so the cards, insets, separators and row heights come out right without any of them being
 /// specified here.

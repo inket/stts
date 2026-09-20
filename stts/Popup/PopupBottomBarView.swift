@@ -5,7 +5,6 @@
 
 import SwiftUI
 
-/// Pinned footer: the wordmark and Settings.
 struct PopupBottomBarView: View {
     let onOpenSettings: () -> Void
 

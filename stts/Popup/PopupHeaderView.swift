@@ -5,8 +5,6 @@
 
 import SwiftUI
 
-/// The pinned top block: the crown band, or a plain text verdict for the states it doesn't cover,
-/// then a proportional status bar and a legend naming each bucket in it.
 struct PopupHeaderView: View {
     @ObservedObject var viewModel: PopupViewModel
 

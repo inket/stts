@@ -5,9 +5,6 @@
 
 import SwiftUI
 
-/// The colour band at the top of the popup, tinted by the worst severity present. Either a count
-/// with "N services affected / of M monitored", or — when nothing is wrong — a headline (one of six,
-/// picked once per popup open) with a subtitle stating what was actually observed.
 struct PopupCrownHeaderView: View {
     @ObservedObject var viewModel: PopupViewModel
 

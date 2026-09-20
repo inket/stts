@@ -6,8 +6,7 @@
 import PreferencesWindow
 import SwiftUI
 
-/// Services: a filter column on the left, one list on the right, search scoped to the filter. The
-/// filter column is the same `PreferencesSidebarView` the window's own sidebar uses, so the two
+/// The filter column is the same `PreferencesSidebarView` the window's own sidebar uses, so the two
 /// source lists share one selection pill.
 ///
 /// The catalogue rows are built from the popup's own grouped-list pieces — `PopupGroupBox`,

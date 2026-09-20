@@ -5,8 +5,6 @@
 
 import SwiftUI
 
-/// One service in the affected list: a favicon chip carrying a severity dot, the service's name and
-/// the provider's message, then when it started and an arrow out to the status page.
 struct PopupServiceRowView: View {
     let item: PopupViewModel.AffectedItem
     let onOpen: (URL) -> Void
@@ -54,7 +52,6 @@ struct PopupServiceRowView: View {
     }
 }
 
-/// A hairline between rows of a group, inset past the favicon chip so it aligns with the text.
 struct PopupRowSeparator: View {
     var inset: CGFloat = PopupLayout.ServiceRow.separatorInset
     var color: NSColor = PopupLayout.Colors.rowSeparator

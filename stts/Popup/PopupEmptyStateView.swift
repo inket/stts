@@ -5,8 +5,6 @@
 
 import SwiftUI
 
-/// Shown in place of the whole popup body when no services are enabled — there's no status to
-/// summarise, so the popup's only job is to point at Settings.
 struct PopupEmptyStateView: View {
     let onOpenSettings: () -> Void
 

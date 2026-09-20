@@ -38,7 +38,7 @@ class PopupViewController: NSObject {
         servicePairs.map { ($0.definition.globalIdentifier, $0.service) }
     }
 
-    @Atomic var servicesBeingUpdated = Set<BaseService>()
+    var servicesBeingUpdated = Set<BaseService>()
 
     private var lastUpdated: Date?
     private var lastSuccessfulUpdate: Date?

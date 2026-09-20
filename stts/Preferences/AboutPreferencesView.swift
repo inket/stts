@@ -5,12 +5,6 @@
 
 import SwiftUI
 
-/// About: the app's own icon and type, a line saying what it's actually doing, and a way to report
-/// an issue.
-///
-/// "Monitoring 12 of 543 status pages. Definitions last updated 2 days ago." answers, in the one
-/// screen people open when something seems wrong, whether the catalogue is current — which matters
-/// because `services.json` is fetched rather than shipped (see `RemoteServicesUpdater`).
 struct AboutPreferencesView: View {
     @ObservedObject var model: PreferencesModel
 

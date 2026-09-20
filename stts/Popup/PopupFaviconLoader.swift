@@ -139,8 +139,6 @@ final class PopupFaviconLoader: ObservableObject {
     }
 }
 
-/// A service's favicon on a white chip.
-///
 /// Every icon gets the chip because the shipped favicons are a mixed bag — black marks on
 /// transparency, full-colour marks, marks that already carry their own tile — and none of them
 /// survive being dropped straight onto the panel. Services with no favicon on disk fall back to a
@@ -190,9 +188,8 @@ struct PopupFaviconChip: View {
     }
 }
 
-/// A favicon chip with a severity dot notched into its bottom-trailing corner. The dot carries a
-/// ring in the group's blended colour so it stays legible against the chip while blending into the
-/// cell rather than reading as a drawn border.
+/// The dot carries a ring in the group's blended colour so it stays legible against the chip while
+/// blending into the cell rather than reading as a drawn border.
 struct PopupFaviconChipWithDot: View {
     let identifier: String?
     let faviconURL: URL?
