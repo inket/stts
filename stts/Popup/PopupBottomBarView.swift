@@ -8,6 +8,9 @@ import SwiftUI
 struct PopupBottomBarView: View {
     let onOpenSettings: () -> Void
 
+    /// The empty state has its own Open Settings button, so the footer's is redundant there.
+    var showsSettings = true
+
     @State private var isHoveringSettings = false
 
     var body: some View {
@@ -19,18 +22,20 @@ struct PopupBottomBarView: View {
 
             Spacer(minLength: 0)
 
-            Button(action: onOpenSettings) {
-                Text("Settings…")
-                    .font(PopupLayout.Fonts.footerAction.swiftUI)
-                    .foregroundColor(
-                        (isHoveringSettings
-                            ? PopupLayout.Colors.footerActionHover
-                            : PopupLayout.Colors.footerAction).swiftUI
-                    )
-                    .contentShape(Rectangle())
+            if showsSettings {
+                Button(action: onOpenSettings) {
+                    Text("Settings…")
+                        .font(PopupLayout.Fonts.footerAction.swiftUI)
+                        .foregroundColor(
+                            (isHoveringSettings
+                                ? PopupLayout.Colors.footerActionHover
+                                : PopupLayout.Colors.footerAction).swiftUI
+                        )
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .onHover { isHoveringSettings = $0 }
             }
-            .buttonStyle(.plain)
-            .onHover { isHoveringSettings = $0 }
         }
         .padding(PopupLayout.Footer.padding)
         .overlay(alignment: .top) {

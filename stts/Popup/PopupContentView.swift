@@ -50,8 +50,11 @@ struct PopupContentView: View {
                 }
             }
 
-            PopupBottomBarView(onOpenSettings: onOpenSettings)
-                .measuringPopupHeight()
+            PopupBottomBarView(
+                onOpenSettings: onOpenSettings,
+                showsSettings: !viewModel.hasNoSelectedServices
+            )
+            .measuringPopupHeight()
         }
         .frame(width: PopupLayout.contentWidth)
         .background(background)

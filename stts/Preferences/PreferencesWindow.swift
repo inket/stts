@@ -12,8 +12,8 @@ final class PreferencesWindow {
     let controller: PreferencesWindowController
     private let model: PreferencesModel
 
-    /// Rebuilds the popup's services after the enabled set changes.
-    var saveCallback: (() -> Void)? {
+    /// Fired after the Services pane enables or disables something, so the popup can follow.
+    var selectionChangeCallback: (() -> Void)? {
         get { model.onSelectionChange }
         set { model.onSelectionChange = newValue }
     }

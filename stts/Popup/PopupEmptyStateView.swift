@@ -12,7 +12,7 @@ struct PopupEmptyStateView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            Text("No services selected")
+            Text("No services monitored")
                 .font(PopupLayout.Fonts.emptyStateTitle.swiftUI)
                 .foregroundColor(PopupLayout.Colors.emptyStateTitle.swiftUI)
 

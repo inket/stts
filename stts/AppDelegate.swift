@@ -132,9 +132,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         popupViewController.setup()
 
-        preferencesWindow.saveCallback = { [weak self] in
-            self?.popupViewController.reloadServicesList()
-            self?.updateServices()
+        preferencesWindow.selectionChangeCallback = { [weak self] in
+            guard let self else { return }
+            // Only the newly enabled services need a fetch; the rest keep their current status.
+            let added = popupViewController.reloadServicesList()
+            popupViewController.updateServices(only: added)
         }
 
         preferencesWindow.refreshIntervalCallback = { [weak self] _ in
@@ -193,10 +195,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             .compactMap { $0 as? SendbirdServiceDefinition }
             .compactMap { $0.build() as? SendbirdService }
 
-        // reloadServicesList() rebuilds `services` with fresh BaseService instances (starting at
-        // .undetermined/"Loading"), so re-run updateServices() to fetch them right away rather than
-        // leaving them stuck until the next scheduled update.
-        popupViewController.reloadServicesList()
+        // The definitions may have changed, so rebuild every BaseService (they start at
+        // .undetermined/"Loading") and re-run updateServices() to fetch them right away rather
+        // than leaving them stuck until the next scheduled update.
+        popupViewController.rebuildServicesList()
         updateServices()
     }
 

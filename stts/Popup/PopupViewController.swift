@@ -55,7 +55,10 @@ class PopupViewController: NSObject {
     /// The crown band's colour, which the popup's arrow is also tinted with.
     var crownColor: NSColor { PopupCrownHeaderView.color(for: viewModel) }
 
-    var updateCallback: (() -> Void)?
+    /// Set for the duration of a full check (`updateServices(updateCallback:)`) and nil otherwise.
+    /// A partial check (`updateServices(only:)`) never sets it, which is how the two are told
+    /// apart when the last in-flight service reports back.
+    private var updateCallback: (() -> Void)?
 
     /// Fired whenever the displayed state changes, so the menu bar tick can follow along — including
     /// mid-check, which a completion callback alone would miss.
@@ -69,7 +72,7 @@ class PopupViewController: NSObject {
 
         super.init()
 
-        reloadServicesList()
+        rebuildServicesList()
     }
 
     func setup() {
@@ -130,8 +133,34 @@ class PopupViewController: NSObject {
         }
     }
 
-    func reloadServicesList() {
-        servicePairs = serviceLoader.servicesWithDefinitions(for: preferences.selectedServices)
+    /// Syncs the list with the enabled set. Services that stay enabled keep their `BaseService`
+    /// (and its status); only newly enabled ones are built, and those are returned so the caller
+    /// can fetch just them.
+    func reloadServicesList() -> [BaseService] {
+        let existing = Dictionary(servicePairs.map { ($0.definition.globalIdentifier, $0.service) }) { first, _ in first }
+        let definitions = preferences.selectedServices
+        let newPairs = serviceLoader.servicesWithDefinitions(
+            for: definitions.filter { existing[$0.globalIdentifier] == nil }
+        )
+        let new = Dictionary(newPairs.map { ($0.definition.globalIdentifier, $0.service) }) { first, _ in first }
+
+        setServicePairs(definitions.compactMap { definition in
+            (existing[definition.globalIdentifier] ?? new[definition.globalIdentifier]).map { (definition, $0) }
+        })
+        return newPairs.map(\.service)
+    }
+
+    /// Throws every `BaseService` away and builds the enabled set from scratch — for when the
+    /// definitions themselves changed. The result starts at `.undetermined`, so follow it with a
+    /// full `updateServices`.
+    func rebuildServicesList() {
+        setServicePairs(serviceLoader.servicesWithDefinitions(for: preferences.selectedServices))
+    }
+
+    private func setServicePairs(_ pairs: [(definition: ServiceDefinition, service: BaseService)]) {
+        servicePairs = pairs
+        // A service disabled mid-check shouldn't keep the "checking" state alive.
+        servicesBeingUpdated.formIntersection(services)
         refreshViewModel()
     }
 
@@ -149,10 +178,19 @@ class PopupViewController: NSObject {
         }
 
         self.updateCallback = updateCallback
+        startUpdating(Set(services))
+    }
 
-        let servicesToUpdate = Set<BaseService>(services)
-        servicesBeingUpdated = servicesToUpdate
+    /// Checks only the given services, on top of whatever is already in flight. Used after
+    /// enabling a service so the rest aren't re-fetched.
+    func updateServices(only servicesToUpdate: [BaseService]) {
+        let subset = Set(servicesToUpdate).intersection(services).subtracting(servicesBeingUpdated)
+        guard !subset.isEmpty else { return }
+        startUpdating(subset)
+    }
 
+    private func startUpdating(_ servicesToUpdate: Set<BaseService>) {
+        servicesBeingUpdated.formUnion(servicesToUpdate)
         refreshViewModel()
 
         Task { [weak self] in
@@ -170,7 +208,8 @@ class PopupViewController: NSObject {
     private func updatedStatus(for service: BaseService) async {
         servicesBeingUpdated.remove(service)
 
-        if servicesBeingUpdated.isEmpty {
+        // Only a full check moves the timestamps; a partial one has nothing to say about them.
+        if servicesBeingUpdated.isEmpty, updateCallback != nil {
             let now = Date()
             lastUpdated = now
 
