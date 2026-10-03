@@ -137,7 +137,9 @@ class PopupViewController: NSObject {
     /// (and its status); only newly enabled ones are built, and those are returned so the caller
     /// can fetch just them.
     func reloadServicesList() -> [BaseService] {
-        let existing = Dictionary(servicePairs.map { ($0.definition.globalIdentifier, $0.service) }) { first, _ in first }
+        let existing = Dictionary(
+            servicePairs.map { ($0.definition.globalIdentifier, $0.service) }
+        ) { first, _ in first }
         let definitions = preferences.selectedServices
         let newPairs = serviceLoader.servicesWithDefinitions(
             for: definitions.filter { existing[$0.globalIdentifier] == nil }

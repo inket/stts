@@ -103,7 +103,7 @@ struct AdobeGenerator: ServiceGenerator {
                 extraFields: [
                     ("cloud", .string(key)),
                     ("category", .bool(true)),
-                    ("category_name", .string(categoryName)),
+                    ("category_name", .string(categoryName))
                 ]
             ))
 

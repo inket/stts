@@ -65,7 +65,7 @@ struct SalesforceGenerator: ServiceGenerator {
                 extraFields: [
                     ("product", .string(product)),
                     ("category", .bool(true)),
-                    ("category_name", .string(displayName)),
+                    ("category_name", .string(displayName))
                 ]
             ))
 
