@@ -48,6 +48,7 @@ class AWSRegionServiceDefinition: CodableServiceDefinition, ServiceDefinition {
         case id
         case name
         case isCategory = "category"
+        case categoryName = "category_name"
         case oldNames = "old_names"
     }
 
@@ -63,6 +64,7 @@ class AWSRegionServiceDefinition: CodableServiceDefinition, ServiceDefinition {
         id = try container.decode(String.self, forKey: .id)
         let name = try container.decode(String.self, forKey: .name)
         let isCategory = try container.decodeIfPresent(Bool.self, forKey: .isCategory) ?? false
+        let categoryName = try container.decodeIfPresent(String.self, forKey: .categoryName)
         let oldNames = try container.decodeIfPresent(Set<String>.self, forKey: .oldNames)
 
         super.init(
@@ -70,6 +72,7 @@ class AWSRegionServiceDefinition: CodableServiceDefinition, ServiceDefinition {
             url: commonAWSURL,
             isCategory: isCategory ? true : nil,
             isSubService: isCategory ? nil : true,
+            categoryName: categoryName,
             oldNames: oldNames
         )
     }
@@ -130,6 +133,7 @@ class AWSServicesServiceDefinition: CodableServiceDefinition, ServiceDefinition 
         case name
         case ids
         case isCategory = "category"
+        case categoryName = "category_name"
         case oldNames = "old_names"
     }
 
@@ -144,6 +148,7 @@ class AWSServicesServiceDefinition: CodableServiceDefinition, ServiceDefinition 
         ids = Set(try container.decodeIfPresent([String].self, forKey: .ids) ?? [])
         let name = try container.decode(String.self, forKey: .name)
         let isCategory = try container.decodeIfPresent(Bool.self, forKey: .isCategory) ?? false
+        let categoryName = try container.decodeIfPresent(String.self, forKey: .categoryName)
         let oldNames = try container.decodeIfPresent(Set<String>.self, forKey: .oldNames)
 
         super.init(
@@ -151,6 +156,7 @@ class AWSServicesServiceDefinition: CodableServiceDefinition, ServiceDefinition 
             url: commonAWSURL,
             isCategory: isCategory ? true : nil,
             isSubService: isCategory ? nil : true,
+            categoryName: categoryName,
             oldNames: oldNames
         )
     }

@@ -9,25 +9,29 @@
       "name": "Apple (All)",
       "url": "https://www.apple.com/support/systemstatus/",
       "class_name": "AppleAll",
-      "category": true
+      "category": true,
+      "category_name": "Apple"
     },
     {
       "name": "Apple Developer (All)",
       "url": "https://developer.apple.com/system-status/",
       "class_name": "AppleDeveloperAll",
-      "category": true
+      "category": true,
+      "category_name": "Apple Developer"
     },
     {
       "name": "Azure (All Regions)",
       "url": "https://azure.status.microsoft/en-us/status",
       "class_name": "AzureAll",
-      "category": true
+      "category": true,
+      "category_name": "Azure"
     },
     {
       "name": "Azure DevOps (All)",
       "url": "https://status.dev.azure.com",
       "class_name": "AzureDevOpsAll",
-      "category": true
+      "category": true,
+      "category_name": "Azure DevOps"
     },
     {
       "name": "Beanstalk",
@@ -48,7 +52,8 @@
       "name": "Firebase (All)",
       "url": "https://status.firebase.google.com",
       "class_name": "Firebase",
-      "category": true
+      "category": true,
+      "category_name": "Firebase"
     },
     {
       "name": "Fivetran",
@@ -59,7 +64,8 @@
       "name": "Google Cloud Platform (All)",
       "url": "https://status.cloud.google.com",
       "class_name": "GoogleCloudPlatformAll",
-      "category": true
+      "category": true,
+      "category_name": "Google Cloud Platform"
     },
     {
       "name": "jsDelivr",
@@ -70,7 +76,8 @@
       "name": "Miro (All Regions)",
       "url": "https://status.miro.com/",
       "class_name": "MiroAll",
-      "category": true
+      "category": true,
+      "category_name": "Miro"
     },
     {
       "name": "Okta",
@@ -126,7 +133,8 @@
       "name": "Sendbird (All)",
       "url": "https://sendbird.com/status",
       "class_name": "SendbirdAll",
-      "category": true
+      "category": true,
+      "category_name": "Sendbird"
     },
     {
       "name": "Slack",
@@ -1834,7 +1842,8 @@
       "name": "Datorama (All Regions)",
       "id": "Datorama",
       "product": "Datorama",
-      "category": true
+      "category": true,
+      "category_name": "Datorama"
     },
     {
       "name": "Datorama (EMEA)",
@@ -1852,7 +1861,8 @@
       "name": "Heroku (All Regions)",
       "id": "Heroku",
       "product": "Heroku",
-      "category": true
+      "category": true,
+      "category_name": "Heroku"
     },
     {
       "name": "Heroku (APAC)",
@@ -1876,7 +1886,8 @@
       "name": "MC Account Engagement (All Regions)",
       "id": "MCAccountEngagement",
       "product": "MCAccountEngagement",
-      "category": true
+      "category": true,
+      "category_name": "MC Account Engagement"
     },
     {
       "name": "MC Account Engagement (NA)",
@@ -1888,7 +1899,8 @@
       "name": "MC Personalization (All Regions)",
       "id": "MCPersonalization",
       "product": "MCPersonalization",
-      "category": true
+      "category": true,
+      "category_name": "MC Personalization"
     },
     {
       "name": "MC Personalization (APAC)",
@@ -1912,7 +1924,8 @@
       "name": "Mulesoft (All Regions)",
       "id": "Mulesoft",
       "product": "Mulesoft",
-      "category": true
+      "category": true,
+      "category_name": "Mulesoft"
     },
     {
       "name": "Mulesoft (APAC)",
@@ -1936,7 +1949,8 @@
       "name": "Point of Sale (All Regions)",
       "id": "Point_of_Sale",
       "product": "Point_of_Sale",
-      "category": true
+      "category": true,
+      "category_name": "Point of Sale"
     },
     {
       "name": "Point of Sale (APAC)",
@@ -1960,7 +1974,8 @@
       "name": "Salesforce B2C Commerce Cloud (All Regions)",
       "id": "B2C_Commerce_Cloud",
       "product": "B2C_Commerce_Cloud",
-      "category": true
+      "category": true,
+      "category_name": "Salesforce B2C Commerce Cloud"
     },
     {
       "name": "Salesforce B2C Commerce Cloud (APAC)",
@@ -1984,7 +1999,8 @@
       "name": "Salesforce Experience Cloud (All Regions)",
       "id": "Community_Cloud",
       "product": "Community_Cloud",
-      "category": true
+      "category": true,
+      "category_name": "Salesforce Experience Cloud"
     },
     {
       "name": "Salesforce Experience Cloud (APAC)",
@@ -2008,7 +2024,8 @@
       "name": "Salesforce Marketing Cloud (All Regions)",
       "id": "Marketing_Cloud",
       "product": "Marketing_Cloud",
-      "category": true
+      "category": true,
+      "category_name": "Salesforce Marketing Cloud"
     },
     {
       "name": "Salesforce Marketing Cloud (APAC)",
@@ -2032,7 +2049,8 @@
       "name": "Salesforce Services (All Regions)",
       "id": "Salesforce_Services",
       "product": "Salesforce_Services",
-      "category": true
+      "category": true,
+      "category_name": "Salesforce Services"
     },
     {
       "name": "Salesforce Services (APAC)",
@@ -2056,7 +2074,8 @@
       "name": "Spiff (All Regions)",
       "id": "Spiff",
       "product": "Spiff",
-      "category": true
+      "category": true,
+      "category_name": "Spiff"
     },
     {
       "name": "Spiff (EMEA)",
@@ -2074,7 +2093,8 @@
       "name": "Tableau (All Regions)",
       "id": "Tableau",
       "product": "Tableau",
-      "category": true
+      "category": true,
+      "category_name": "Tableau"
     },
     {
       "name": "Tableau (APAC)",
@@ -2226,7 +2246,8 @@
       "name": "Adobe Creative Cloud (All)",
       "id": "503459",
       "cloud": "CreativeCloud",
-      "category": true
+      "category": true,
+      "category_name": "Adobe Creative Cloud"
     },
     {
       "name": "Adobe Creative Cloud Applications",
@@ -2328,13 +2349,15 @@
       "name": "Adobe Document Cloud (All)",
       "id": "503457",
       "cloud": "DocumentCloud",
-      "category": true
+      "category": true,
+      "category_name": "Adobe Document Cloud"
     },
     {
       "name": "Adobe Experience Cloud (All)",
       "id": "503461",
       "cloud": "ExperienceCloud",
-      "category": true
+      "category": true,
+      "category_name": "Adobe Experience Cloud"
     },
     {
       "name": "Adobe Experience League",
@@ -2358,7 +2381,8 @@
       "name": "Adobe Experience Platform (All)",
       "id": "503460",
       "cloud": "ExperiencePlatform",
-      "category": true
+      "category": true,
+      "category_name": "Adobe Experience Platform"
     },
     {
       "name": "Adobe Express",
@@ -2526,7 +2550,8 @@
       "name": "Adobe Services (All)",
       "id": "503458",
       "cloud": "Services",
-      "category": true
+      "category": true,
+      "category_name": "Adobe Services"
     },
     {
       "name": "Adobe Sign In",
@@ -3979,7 +4004,8 @@
     {
       "name": "AWS Regions (All)",
       "id": "_all",
-      "category": true
+      "category": true,
+      "category_name": "AWS Regions"
     }
   ],
   "awsservices": [
@@ -7310,7 +7336,8 @@
     {
       "name": "AWS (All)",
       "id": "_all",
-      "category": true
+      "category": true,
+      "category_name": "AWS"
     },
     {
       "name": "AWS Account Management",

@@ -10,7 +10,7 @@ final class ServicesJSONUpdater {
     // Salesforce's "product") that's part of what makes an entry unique — "id" alone isn't
     // globally unique within a provider whose entries are grouped (e.g. "NA" repeats across
     // every Salesforce product), so the match key folds in whatever extra fields are present.
-    private let nonMatchKeys: Set<String> = ["name", "url", "id", "subservice", "category", "old_names"]
+    private let nonMatchKeys: Set<String> = ["name", "url", "id", "subservice", "category", "category_name", "old_names"]
 
     private let servicesPath: String
 

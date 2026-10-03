@@ -23,6 +23,7 @@ class SalesforceServiceDefinition: CodableServiceDefinition, ServiceDefinition {
         case name
         case product
         case isCategory = "category"
+        case categoryName = "category_name"
         case oldNames = "old_names"
     }
 
@@ -38,6 +39,7 @@ class SalesforceServiceDefinition: CodableServiceDefinition, ServiceDefinition {
         product = try container.decode(String.self, forKey: .product)
         let name = try container.decode(String.self, forKey: .name)
         let isCategory = try container.decodeIfPresent(Bool.self, forKey: .isCategory) ?? false
+        let categoryName = try container.decodeIfPresent(String.self, forKey: .categoryName)
         let oldNames = try container.decodeIfPresent(Set<String>.self, forKey: .oldNames)
         let url = URL(string: "https://status.salesforce.com/products/\(product)")!
 
@@ -46,6 +48,7 @@ class SalesforceServiceDefinition: CodableServiceDefinition, ServiceDefinition {
             url: url,
             isCategory: isCategory ? true : nil,
             isSubService: isCategory ? nil : true,
+            categoryName: categoryName,
             oldNames: oldNames
         )
     }

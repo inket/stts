@@ -26,6 +26,7 @@ class AdobeServiceDefinition: CodableServiceDefinition, ServiceDefinition {
         case name
         case cloud
         case isCategory = "category"
+        case categoryName = "category_name"
         case oldNames = "old_names"
     }
 
@@ -41,6 +42,7 @@ class AdobeServiceDefinition: CodableServiceDefinition, ServiceDefinition {
         cloud = try container.decode(String.self, forKey: .cloud)
         let name = try container.decode(String.self, forKey: .name)
         let isCategory = try container.decodeIfPresent(Bool.self, forKey: .isCategory) ?? false
+        let categoryName = try container.decodeIfPresent(String.self, forKey: .categoryName)
         let oldNames = try container.decodeIfPresent(Set<String>.self, forKey: .oldNames)
 
         super.init(
@@ -48,6 +50,7 @@ class AdobeServiceDefinition: CodableServiceDefinition, ServiceDefinition {
             url: URL(string: "https://status.adobe.com")!,
             isCategory: isCategory ? true : nil,
             isSubService: isCategory ? nil : true,
+            categoryName: categoryName,
             oldNames: oldNames
         )
     }

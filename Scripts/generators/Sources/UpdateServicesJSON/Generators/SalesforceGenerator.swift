@@ -62,7 +62,11 @@ struct SalesforceGenerator: ServiceGenerator {
             entries.append(DiscoveredEntry(
                 id: product,
                 name: "\(displayName) (All Regions)",
-                extraFields: [("product", .string(product)), ("category", .bool(true))]
+                extraFields: [
+                    ("product", .string(product)),
+                    ("category", .bool(true)),
+                    ("category_name", .string(displayName)),
+                ]
             ))
 
             for region in regions.sorted() {

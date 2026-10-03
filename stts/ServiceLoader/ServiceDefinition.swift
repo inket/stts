@@ -39,13 +39,12 @@ private let faviconRepoRawBaseURL = "https://cdn.jsdelivr.net/gh/inket/stts@mast
 extension ServiceDefinition {
     var categoryKey: String? { nil }
 
-    /// `name` with a trailing " (All)" / " (All Regions)" removed, for the expandable category
-    /// header — the row that actually toggles every subservice at once keeps the full name.
+    /// Label for the expandable category header — the row that actually toggles every subservice
+    /// at once keeps the full `name` (e.g. "Azure (All Regions)"). Falls back to `name` for a
+    /// category row whose JSON has no "category_name" (the lint script rejects that in the bundled
+    /// file, but a remote-served services.json could still lack it).
     var categoryDisplayName: String {
-        for suffix in [" (All Regions)", " (All)"] where name.hasSuffix(suffix) {
-            return String(name.dropLast(suffix.count))
-        }
-        return name
+        categoryName ?? name
     }
 
     var isSupported: Bool { true }
@@ -110,6 +109,7 @@ class CodableServiceDefinition: Codable {
         case url
         case isCategory = "category"
         case isSubService = "subservice"
+        case categoryName = "category_name"
         case oldNames = "old_names"
     }
 
@@ -117,6 +117,8 @@ class CodableServiceDefinition: Codable {
     let url: URL
     let isCategory: Bool?
     let isSubService: Bool?
+    /// Header label for a `"category": true` row — see `ServiceDefinition.categoryDisplayName`.
+    let categoryName: String?
     let oldNames: Set<String>?
 
     private(set) lazy var legacyIdentifiers = oldNames ?? .init()
@@ -125,10 +127,18 @@ class CodableServiceDefinition: Codable {
         String(name.unicodeScalars.filter(CharacterSet.alphanumerics.contains))
     }
 
-    init(name: String, url: URL, isCategory: Bool?, isSubService: Bool?, oldNames: Set<String>? = nil) {
+    init(
+        name: String,
+        url: URL,
+        isCategory: Bool?,
+        isSubService: Bool?,
+        categoryName: String? = nil,
+        oldNames: Set<String>? = nil
+    ) {
         assert(type(of: self) != CodableServiceDefinition.self)
 
         self.oldNames = oldNames
+        self.categoryName = categoryName
         self.name = name
         self.isCategory = isCategory
         self.isSubService = isSubService
@@ -143,6 +153,7 @@ class CodableServiceDefinition: Codable {
         self.url = try container.decode(URL.self, forKey: .url)
         self.isCategory = try container.decodeIfPresent(Bool.self, forKey: .isCategory)
         self.isSubService = try container.decodeIfPresent(Bool.self, forKey: .isSubService)
+        self.categoryName = try container.decodeIfPresent(String.self, forKey: .categoryName)
         self.oldNames = try container.decodeIfPresent(Set<String>.self, forKey: .oldNames)
     }
 
@@ -152,6 +163,7 @@ class CodableServiceDefinition: Codable {
         try container.encode(self.url, forKey: .url)
         try container.encodeIfPresent(self.isCategory, forKey: .isCategory)
         try container.encodeIfPresent(self.isSubService, forKey: .isSubService)
+        try container.encodeIfPresent(self.categoryName, forKey: .categoryName)
         try container.encodeIfPresent(self.oldNames, forKey: .oldNames)
     }
 }

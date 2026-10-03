@@ -91,7 +91,7 @@ struct AdobeGenerator: ServiceGenerator {
                 print("warning: unknown Adobe cloud \"\(cloud.name)\" (\(cloud.id)) — add it to Adobe.swift")
             }
 
-            var categoryName = "\(prefixedName(cloud.name)) (All)"
+            var categoryName = prefixedName(cloud.name)
             if seenNames.contains(categoryName) {
                 categoryName = "\(categoryName) (\(cloud.id))"
             }
@@ -99,8 +99,12 @@ struct AdobeGenerator: ServiceGenerator {
 
             entries.append(DiscoveredEntry(
                 id: cloud.id,
-                name: categoryName,
-                extraFields: [("cloud", .string(key)), ("category", .bool(true))]
+                name: "\(categoryName) (All)",
+                extraFields: [
+                    ("cloud", .string(key)),
+                    ("category", .bool(true)),
+                    ("category_name", .string(categoryName)),
+                ]
             ))
 
             for productID in cloud.productIDs {

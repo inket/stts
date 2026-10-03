@@ -57,13 +57,13 @@ private func awsPrefixed(_ name: String) -> String {
 private let regionsCategoryEntry = DiscoveredEntry(
     id: "_all",
     name: "AWS Regions (All)",
-    extraFields: [("category", .bool(true))]
+    extraFields: [("category", .bool(true)), ("category_name", .string("AWS Regions"))]
 )
 
 private let servicesCategoryEntry = DiscoveredEntry(
     id: "_all",
     name: "AWS (All)",
-    extraFields: [("category", .bool(true))]
+    extraFields: [("category", .bool(true)), ("category_name", .string("AWS"))]
 )
 
 struct AWSRegionsGenerator: ServiceGenerator {
