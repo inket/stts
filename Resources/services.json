@@ -2391,6 +2391,12 @@
       "subservice": true
     },
     {
+      "name": "Adobe Federated Email Services",
+      "id": "619102",
+      "cloud": "ExperienceCloud",
+      "subservice": true
+    },
+    {
       "name": "Adobe Firefly",
       "id": "536716",
       "cloud": "CreativeCloud",
@@ -3304,10 +3310,6 @@
       "id": "Cloud CDN"
     },
     {
-      "name": "Google Cloud Composer",
-      "id": "Google Cloud Composer"
-    },
-    {
       "name": "Google Cloud Console",
       "id": "Google Cloud Console"
     },
@@ -3410,6 +3412,10 @@
     {
       "name": "Google Cloud Monitoring",
       "id": "Cloud Monitoring"
+    },
+    {
+      "name": "Google Cloud Multicast",
+      "id": "Cloud Multicast"
     },
     {
       "name": "Google Cloud NAT",
@@ -3556,6 +3562,10 @@
       "id": "Developer Connect"
     },
     {
+      "name": "Google DevSite",
+      "id": "DevSite"
+    },
+    {
       "name": "Google Dialogflow CX",
       "id": "Dialogflow CX"
     },
@@ -3574,6 +3584,10 @@
     {
       "name": "Google Eventarc",
       "id": "Eventarc"
+    },
+    {
+      "name": "Google Financial Research agent in Gemini Enterprise",
+      "id": "Financial Research agent in Gemini Enterprise"
     },
     {
       "name": "Google Gemini Code Assist",
@@ -3630,6 +3644,10 @@
     {
       "name": "Google Looker Studio",
       "id": "Looker Studio"
+    },
+    {
+      "name": "Google Managed Airflow",
+      "id": "Managed Airflow"
     },
     {
       "name": "Google Managed Lustre",
@@ -4626,8 +4644,9 @@
     },
     {
       "name": "Amazon Connect Health",
-      "id": "health-agent-us-east-1",
+      "id": "health-agent-eu-west-2",
       "ids": [
+        "health-agent-eu-west-2",
         "health-agent-us-east-1",
         "health-agent-us-west-2"
       ],
@@ -5531,18 +5550,23 @@
         "gamelift-ap-northeast-2",
         "gamelift-ap-northeast-3",
         "gamelift-ap-south-1",
+        "gamelift-ap-south-2",
         "gamelift-ap-southeast-1",
         "gamelift-ap-southeast-2",
+        "gamelift-ap-southeast-3",
         "gamelift-ap-southeast-5",
         "gamelift-ap-southeast-7",
         "gamelift-ca-central-1",
         "gamelift-eu-central-1",
         "gamelift-eu-north-1",
         "gamelift-eu-south-1",
+        "gamelift-eu-south-2",
         "gamelift-eu-west-1",
         "gamelift-eu-west-2",
         "gamelift-eu-west-3",
+        "gamelift-il-central-1",
         "gamelift-me-south-1",
+        "gamelift-mx-central-1",
         "gamelift-sa-east-1",
         "gamelift-us-east-1",
         "gamelift-us-east-2",
@@ -8992,10 +9016,12 @@
     },
     {
       "name": "AWS Elastic VMWare Service",
-      "id": "evs-ap-northeast-1",
+      "id": "evs-ap-east-2",
       "ids": [
+        "evs-ap-east-2",
         "evs-ap-northeast-1",
         "evs-ap-northeast-2",
+        "evs-ap-northeast-3",
         "evs-ap-south-1",
         "evs-ap-south-2",
         "evs-ap-southeast-1",
@@ -9007,9 +9033,11 @@
         "evs-eu-central-2",
         "evs-eu-north-1",
         "evs-eu-south-1",
+        "evs-eu-south-2",
         "evs-eu-west-1",
         "evs-eu-west-2",
         "evs-eu-west-3",
+        "evs-il-central-1",
         "evs-mx-central-1",
         "evs-sa-east-1",
         "evs-us-east-1",
@@ -10258,6 +10286,7 @@
         "pcs-ap-southeast-1",
         "pcs-ap-southeast-2",
         "pcs-ap-southeast-3",
+        "pcs-ap-southeast-6",
         "pcs-eu-central-1",
         "pcs-eu-north-1",
         "pcs-eu-south-1",
@@ -11072,23 +11101,6 @@
       "subservice": true
     },
     {
-      "name": "AWS SimSpace Weaver",
-      "id": "simspaceweaver-ap-southeast-1",
-      "ids": [
-        "simspaceweaver-ap-southeast-1",
-        "simspaceweaver-ap-southeast-2",
-        "simspaceweaver-eu-central-1",
-        "simspaceweaver-eu-north-1",
-        "simspaceweaver-eu-west-1",
-        "simspaceweaver-us-east-1",
-        "simspaceweaver-us-east-2",
-        "simspaceweaver-us-gov-east-1",
-        "simspaceweaver-us-gov-west-1",
-        "simspaceweaver-us-west-2"
-      ],
-      "subservice": true
-    },
-    {
       "name": "AWS Site-to-Site VPN",
       "id": "vpnvpc-af-south-1",
       "ids": [
@@ -11323,23 +11335,6 @@
       "subservice": true
     },
     {
-      "name": "AWS Telco Network Builder",
-      "id": "tnb-ap-northeast-2",
-      "ids": [
-        "tnb-ap-northeast-2",
-        "tnb-ap-southeast-2",
-        "tnb-ca-central-1",
-        "tnb-eu-central-1",
-        "tnb-eu-north-1",
-        "tnb-eu-south-2",
-        "tnb-eu-west-3",
-        "tnb-sa-east-1",
-        "tnb-us-east-1",
-        "tnb-us-west-2"
-      ],
-      "subservice": true
-    },
-    {
       "name": "AWS Traffic Mirroring",
       "id": "trafficmirroring-af-south-1",
       "ids": [
@@ -11437,7 +11432,8 @@
         "transform-eu-central-1",
         "transform-eu-west-2",
         "transform-sa-east-1",
-        "transform-us-east-1"
+        "transform-us-east-1",
+        "transform-us-gov-west-1"
       ],
       "subservice": true
     },
