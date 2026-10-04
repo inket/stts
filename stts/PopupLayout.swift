@@ -117,8 +117,8 @@ enum PopupLayout {
         static let buttonMarginTop: CGFloat = 14
         static let buttonPadding = EdgeInsets(top: 6, leading: 12, bottom: 6, trailing: 12)
         static let buttonCornerRadius: CGFloat = 6
-        static let buttonGlyphSize: CGFloat = 14
-        static let buttonGap: CGFloat = 7
+        static let illustrationSize: CGFloat = 112
+        static let titleMarginTop: CGFloat = 14
     }
 
     enum MenuBarItem {
@@ -167,7 +167,7 @@ enum PopupLayout {
         static let footerAction = NSFont.systemFont(ofSize: 11)
 
         static let emptyStateTitle = NSFont.systemFont(ofSize: 15, weight: .semibold)
-        static let emptyStateSubtitle = NSFont.systemFont(ofSize: 11.5)
+        static let emptyStateSubtitle = NSFont.systemFont(ofSize: 12)
         static let emptyStateButton = NSFont.systemFont(ofSize: 12)
 
         static let verdictTitle = NSFont.systemFont(ofSize: 13, weight: .semibold)
@@ -243,9 +243,15 @@ enum PopupLayout {
         static let separatorDot = dynamic(dark: whiteAlpha(0.18), light: blackAlpha(0.2))
 
         static let emptyStateTitle = dynamic(dark: whiteAlpha(0.8), light: blackAlpha(0.8))
-        static let emptyStateSubtitle = dynamic(dark: whiteAlpha(0.42), light: blackAlpha(0.45))
+        static let emptyStateSubtitle = dynamic(dark: whiteAlpha(0.46), light: blackAlpha(0.5))
         static let emptyStateButtonBackground = dynamic(dark: whiteAlpha(0.07), light: blackAlpha(0.06))
         static let emptyStateButtonBackgroundHover = dynamic(dark: whiteAlpha(0.12), light: blackAlpha(0.1))
+
+        static let illustrationChipBack = dynamic(dark: whiteAlpha(0.18), light: blackAlpha(0.16))
+        static let illustrationChipMiddle = dynamic(dark: whiteAlpha(0.26), light: blackAlpha(0.24))
+        static let illustrationChipFront = dynamic(dark: whiteAlpha(0.42), light: blackAlpha(0.38))
+        static let illustrationChipFrontSettled = dynamic(dark: whiteAlpha(0.34), light: blackAlpha(0.3))
+        static let illustrationAccent = dynamic(dark: NSColor(designHex: 0x7FC79B), light: NSColor(designHex: 0x3F9D5F))
 
         static let link = dynamic(dark: NSColor(designHex: 0x5B9DFF), light: NSColor(designHex: 0x0A66D6))
 

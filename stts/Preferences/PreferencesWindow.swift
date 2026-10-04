@@ -42,4 +42,11 @@ final class PreferencesWindow {
     func show() {
         controller.show()
     }
+
+    func showServices() {
+        model.selectedPane = .services
+        model.servicesFilter = .all
+        model.searchTerm = ""
+        controller.show()
+    }
 }

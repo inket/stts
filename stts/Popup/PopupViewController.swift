@@ -79,6 +79,7 @@ class PopupViewController: NSObject {
         let rootView = PopupContentView(
             viewModel: viewModel,
             onOpenSettings: { [weak self] in self?.preferencesWindow.show() },
+            onSelectServices: { [weak self] in self?.preferencesWindow.showServices() },
             onRefresh: { [weak self] in self?.requestRefresh() },
             onOpen: { url in NSWorkspace.shared.open(url) },
             onContentHeightChange: { [weak self] height in self?.contentHeightChanged(height) }

@@ -88,13 +88,17 @@ final class PreferencesModel: ObservableObject {
         }
 
         /// What an empty list under this scope says. `all` is never empty.
-        var emptyMessage: String {
+        var emptyTitle: String {
             switch self {
             case .all: return ""
-            case .monitoring: return "Nothing monitored yet — pick All services and switch a service on."
-            case .notifying: return "None of your monitored services will notify you."
-            case .affected: return "Everything you monitor is operational."
+            case .monitoring: return "Nothing monitored yet"
+            case .notifying: return "No notifications turned on"
+            case .affected: return "Everything is operational"
             }
+        }
+
+        var emptyIllustration: EmptyStateIllustration.Kind {
+            self == .affected ? .allClear : .addServices
         }
     }
 

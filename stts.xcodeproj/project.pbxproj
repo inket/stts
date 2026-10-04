@@ -166,6 +166,7 @@
 		F2D4F06C2C72439588D89B3B /* PopupContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAA48D7635241BFB8204001 /* PopupContentView.swift */; };
 		F624F80923C248FFBA06C93B /* PopupHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C27E2CCD6B3407AB3AB68D6 /* PopupHeaderView.swift */; };
 		FD4D7248E2FEC3BBAC6A8954 /* FallbackServiceDefinitionProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CF716F41B89A83175F378D /* FallbackServiceDefinitionProviderTests.swift */; };
+		201D52FBDD4A4CAD824D6FFC /* EmptyStateIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A627CDCCFC44253BD8C3178 /* EmptyStateIllustration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -355,6 +356,7 @@
 		F5B4FFC2E699450C8877CF7F /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		FBA096B972304515BE56EA4A /* PopupCrownHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCrownHeaderView.swift; sourceTree = "<group>"; };
 		FDE07A883B6A4904BDA57C8D /* PopupServiceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupServiceRowView.swift; sourceTree = "<group>"; };
+		4A627CDCCFC44253BD8C3178 /* EmptyStateIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateIllustration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -546,12 +548,21 @@
 				19DBB4524CAA4FDB976BC5B9 /* NotificationDelegate.swift */,
 				0DBD5495221C45C4B8C9A4A1 /* PopupLayout.swift */,
 				C6DB214857B342579DD5B14E /* StatusColor.swift */,
+				E5A7C1D2B3F44A6E9C0D1E21 /* Illustrations */,
 				76AF1D13D211489AA443598B /* Popup */,
 				B2563BBB22CBC3D500532C39 /* DataLoader.swift */,
 				B24D19F51DD072840052E539 /* Preferences.swift */,
 				B2CF3FBF1DF7DD2100B66491 /* stts.entitlements */,
 			);
 			path = stts;
+			sourceTree = "<group>";
+		};
+		E5A7C1D2B3F44A6E9C0D1E21 /* Illustrations */ = {
+			isa = PBXGroup;
+			children = (
+				4A627CDCCFC44253BD8C3178 /* EmptyStateIllustration.swift */,
+			);
+			path = Illustrations;
 			sourceTree = "<group>";
 		};
 		B2D006642A875AB5008B3A13 /* PreferencesWindow */ = {
@@ -946,6 +957,7 @@
 		B2B2D0FB1D49D5080014D780 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
+				201D52FBDD4A4CAD824D6FFC /* EmptyStateIllustration.swift in Sources */,
 				8271C78668914A12895C9292 /* PreferencesGlyph.swift in Sources */,
 				493AADF4C3BA408B91FF3DF0 /* CustomServicesPreferencesView.swift in Sources */,
 				D126CBC874FE4A468997AC62 /* AboutPreferencesView.swift in Sources */,

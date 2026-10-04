@@ -53,6 +53,7 @@ enum PopupSnapshot {
         let view = PopupContentView(
             viewModel: model,
             onOpenSettings: {},
+            onSelectServices: {},
             onRefresh: {},
             onOpen: { _ in },
             onContentHeightChange: { _ in },

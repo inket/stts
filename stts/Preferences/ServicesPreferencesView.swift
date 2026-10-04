@@ -54,6 +54,27 @@ struct ServicesPreferencesView: View {
 
     @ViewBuilder
     private var list: some View {
+        let filter = model.servicesFilter
+        if !model.isSearching, filter != .all, model.services(for: filter).isEmpty {
+            emptyState(for: filter)
+        } else {
+            scrollingList
+        }
+    }
+
+    private func emptyState(for filter: PreferencesModel.ServicesFilter) -> some View {
+        VStack(spacing: 0) {
+            EmptyStateIllustration(kind: filter.emptyIllustration)
+
+            Text(filter.emptyTitle)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .padding(.top, PopupLayout.EmptyState.titleMarginTop)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
+    private var scrollingList: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: PopupLayout.Group.spacing) {
                 if model.isSearching {
@@ -66,9 +87,9 @@ struct ServicesPreferencesView: View {
             }
             .padding(.top, PopupLayout.Group.topMargin)
             .padding(.bottom, PopupLayout.Group.bottomMargin)
-            // Greedy width, always: with only a one-line empty-state `Text` inside, the scroll
-            // view would otherwise shrink to fit it and the `HStack` would centre the leftover,
-            // shoving the filter column right of where it sits with rows present.
+            // Greedy width, always: with a narrow card inside, the scroll view would otherwise
+            // shrink to fit it and the `HStack` would centre the leftover, shoving the filter
+            // column right of where it sits with rows present.
             .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
@@ -99,23 +120,14 @@ struct ServicesPreferencesView: View {
 
     /// A monitored scope: the flat list of what's in it, each sub-service captioned with its
     /// vendor — the same shape as search results, since both are slices rather than the catalogue.
-    @ViewBuilder
     private var scopedCard: some View {
         let filter = model.servicesFilter
-        let services = model.services(for: filter)
 
-        if services.isEmpty {
-            Text(filter.emptyMessage)
-                .font(.callout)
-                .foregroundStyle(.secondary)
-                .padding(.horizontal, PopupLayout.Group.horizontalMargin)
-        } else {
-            // Keyed to the filter so switching scopes swaps the card outright, the way switching
-            // to All services does; the card's own animation is only for a row leaving when
-            // it's switched off *within* a scope.
-            flatCard(services, subtitle: model.vendorSubtitle(for:))
-                .id(filter)
-        }
+        // Keyed to the filter so switching scopes swaps the card outright, the way switching
+        // to All services does; the card's own animation is only for a row leaving when
+        // it's switched off *within* a scope.
+        return flatCard(model.services(for: filter), subtitle: model.vendorSubtitle(for:))
+            .id(filter)
     }
 
     private func flatCard(

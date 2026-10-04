@@ -20,6 +20,7 @@ struct PopupContentView: View {
     @ObservedObject var viewModel: PopupViewModel
 
     let onOpenSettings: () -> Void
+    let onSelectServices: () -> Void
     let onRefresh: () -> Void
     let onOpen: (URL) -> Void
     let onContentHeightChange: (CGFloat) -> Void
@@ -34,7 +35,7 @@ struct PopupContentView: View {
     var body: some View {
         VStack(spacing: 0) {
             if viewModel.hasNoSelectedServices {
-                PopupEmptyStateView(onOpenSettings: onOpenSettings)
+                PopupEmptyStateView(onSelectServices: onSelectServices)
                     .measuringPopupHeight()
             } else {
                 PopupHeaderView(viewModel: viewModel, onRefresh: onRefresh)
