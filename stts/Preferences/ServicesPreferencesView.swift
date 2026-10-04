@@ -200,11 +200,7 @@ private struct ServiceGroupRows: View {
 
     private func header(isExpanded: Bool, childCount: Int, enabledCount: Int) -> some View {
         HStack(spacing: PopupLayout.ServiceRow.contentGap) {
-            PopupFaviconChip(
-                identifier: definition.globalIdentifier,
-                faviconURL: definition.faviconURL,
-                initial: definition.name.first.map(String.init) ?? "?"
-            )
+            ServiceFaviconLink(definition: definition)
 
             Text(definition.categoryDisplayName)
                 .font(.body.weight(.semibold))
@@ -258,11 +254,7 @@ private struct ServiceRow: View {
         let isEnabled = model.isEnabled(definition)
 
         HStack(spacing: PopupLayout.ServiceRow.contentGap) {
-            PopupFaviconChip(
-                identifier: definition.globalIdentifier,
-                faviconURL: definition.faviconURL,
-                initial: definition.name.first.map(String.init) ?? "?"
-            )
+            ServiceFaviconLink(definition: definition)
 
             VStack(alignment: .leading, spacing: 1) {
                 Text(definition.name)
@@ -364,5 +356,26 @@ private struct NotificationOverrideMenu: View {
             return "Follows the General setting: \(model.preferences.notificationGranularity.title.lowercased())"
         }
         return "Notifications: \(override.title.lowercased())"
+    }
+}
+
+/// A `Button` rather than `onTapGesture`/`Link`, so it takes the click ahead of the vendor header's
+/// expand gesture.
+private struct ServiceFaviconLink: View {
+    let definition: ServiceDefinition
+
+    var body: some View {
+        Button {
+            NSWorkspace.shared.open(definition.url)
+        } label: {
+            PopupFaviconChip(
+                identifier: definition.globalIdentifier,
+                faviconURL: definition.faviconURL,
+                initial: definition.name.first.map(String.init) ?? "?"
+            )
+        }
+        .buttonStyle(.plain)
+        .help(definition.url.absoluteString)
+        .accessibilityLabel("Open \(definition.name)'s status page")
     }
 }
