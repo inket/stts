@@ -108,6 +108,9 @@ final class FaviconDownloader {
         // incident.io default icon:
         "incidentio.Brevo": URL(string: "https://www.brevo.com")!,
         "incidentio.CodeClimate": URL(string: "https://codeclimate.com")!,
+        // status.aiven.io's icon is a white crab on transparency — invisible on the popup's white
+        // favicon chip. aiven.io's own icon is the coloured mark:
+        "incidentio.Aiven": URL(string: "https://aiven.io")!,
         // statuscast.StatusCast's own status page (unlike its siblings here) was serving Campaign
         // Monitor's logo, not its own — verified by comparing against statuscast.com's real
         // favicon (a purple square with a white star) side by side. airship.eu doesn't resolve as

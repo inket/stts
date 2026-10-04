@@ -19,6 +19,11 @@ enum FaviconFinder {
         pattern: "href\\s*=\\s*[\"']([^\"']+)[\"']",
         options: [.caseInsensitive]
     )
+    // swiftlint:disable:next force_try
+    private static let sizesRegex = try! NSRegularExpression(
+        pattern: "sizes\\s*=\\s*[\"']([^\"']+)[\"']",
+        options: [.caseInsensitive]
+    )
 
     // Returns the resolved favicon URL together with its already-fetched bytes, so a caller never
     // needs a second round-trip and every candidate (including one scraped from a <link> tag) is
@@ -66,10 +71,15 @@ enum FaviconFinder {
         return (faviconURL, data)
     }
 
-    // Prefers a plain "icon"/"shortcut icon" link over "apple-touch-icon", matching whichever
-    // appears first within each category. Skips data: URIs — we need a fetchable URL.
+    // Prefers a plain "icon"/"shortcut icon" link over "apple-touch-icon", and within each category
+    // the largest *declared* `sizes` (sites commonly list 32x32 before 64x64, so first-wins would
+    // settle for the smaller one). Sizes are taken on trust from the markup rather than fetched and
+    // measured. Undeclared sizes and "any" rank below every declared one, so a tag only wins on
+    // them when nothing in its category declares a size — ties keep the first in document order.
+    // Skips data: URIs — we need a fetchable URL.
     private static func bestLinkTagHref(in html: String) -> String? {
-        var appleTouchIconHref: String?
+        var bestIcon: (href: String, size: Int)?
+        var bestAppleTouchIcon: (href: String, size: Int)?
 
         let range = NSRange(location: 0, length: html.utf16.count)
         for match in linkTagRegex.matches(in: html, options: [], range: range) {
@@ -86,14 +96,27 @@ enum FaviconFinder {
             let href = decodeHTMLEntities(rawHref)
             guard !href.hasPrefix("data:") else { continue }
 
+            let size = declaredSize(in: tag)
             if rel.contains("apple-touch-icon") {
-                if appleTouchIconHref == nil { appleTouchIconHref = href }
+                if size > bestAppleTouchIcon?.size ?? -1 { bestAppleTouchIcon = (href, size) }
             } else {
-                return href
+                if size > bestIcon?.size ?? -1 { bestIcon = (href, size) }
             }
         }
 
-        return appleTouchIconHref
+        return bestIcon?.href ?? bestAppleTouchIcon?.href
+    }
+
+    // The smaller edge of the largest entry in a `sizes` attribute ("16x16 32x32" -> 32), or 0 when
+    // absent, "any", or unparseable.
+    private static func declaredSize(in tag: String) -> Int {
+        guard let sizes = firstCapture(of: sizesRegex, in: tag) else { return 0 }
+
+        return sizes.lowercased().split(separator: " ").compactMap { entry -> Int? in
+            let dimensions = entry.split(separator: "x").compactMap { Int($0) }
+            guard dimensions.count == 2 else { return nil }
+            return min(dimensions[0], dimensions[1])
+        }.max() ?? 0
     }
 
     private static func firstCapture(of regex: NSRegularExpression, in text: String) -> String? {
