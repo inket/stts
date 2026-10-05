@@ -284,7 +284,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         menuBarItemView.isChecking = popupViewController.isChecking
         preferencesWindow.updateStatuses(popupViewController.identifiedServices)
 
-        popupController.backgroundView.backgroundColor = popupViewController.crownColor
+        popupController.backgroundView.backgroundColor = popupViewController.arrowColor
         popupController.backgroundView.needsDisplay = true
     }
 

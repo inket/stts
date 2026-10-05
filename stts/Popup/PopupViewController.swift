@@ -52,8 +52,11 @@ class PopupViewController: NSObject {
 
     var isChecking: Bool { viewModel.checkState.isChecking }
 
-    /// The crown band's colour, which the popup's arrow is also tinted with.
-    var crownColor: NSColor { PopupCrownHeaderView.color(for: viewModel) }
+    /// The popup arrow's tint: the crown band's colour when the band is shown, so it appears to
+    /// continue up into the menu bar, and the panel colour otherwise.
+    var arrowColor: NSColor {
+        viewModel.usesCrownHeader ? PopupCrownHeaderView.color(for: viewModel) : PopupLayout.Colors.panelSolid
+    }
 
     /// Set for the duration of a full check (`updateServices(updateCallback:)`) and nil otherwise.
     /// A partial check (`updateServices(only:)`) never sets it, which is how the two are told
