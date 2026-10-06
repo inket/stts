@@ -51,6 +51,44 @@ class #{safe_name}: InstatusService {
     return true
 end
 
+def extract_incidentio(url, source, custom_name)
+    # IncidentIO pages include an "incident.io" attribution link in the footer
+    return false unless source.include?("incident.io")
+
+    base_url = url.chomp("/")
+    api_source = source_for("#{base_url}/api/v2/summary.json")
+    return false unless api_source
+
+    page = JSON.parse(api_source)["page"]
+    return false unless page
+
+    name = custom_name || page["name"]
+
+    services_path = "Resources/services.json"
+    services = JSON.parse(File.read(services_path))
+    
+    services["incidentio"] ||= []
+    
+    # Check if a service with the same URL already exists
+    exists = services["incidentio"].any? { |s| s["url"] == base_url }
+    if exists
+        puts "Service already exists in services.json"
+        return true
+    end
+
+    services["incidentio"] << {
+        "name" => name,
+        "url" => base_url
+    }
+
+    services["incidentio"].sort_by! { |s| s["name"].downcase }
+
+    File.write(services_path, JSON.pretty_generate(services) + "\n")
+    puts "Updated #{services_path}"
+
+    true
+end
+
 def extract_statuspage(url, custom_name)
     source = source_for("#{url}/api/v2/summary.json")
     return false unless source
@@ -280,6 +318,7 @@ fail_network unless source
 
 finish if extract_instatus(source, custom_name)
 finish if extract_site24x7(url, source, custom_name)
+finish if extract_incidentio(url, source, custom_name)
 finish if extract_statuspage(url, custom_name)
 finish if extract_cstate(url, custom_name)
 

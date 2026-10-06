@@ -221,6 +221,10 @@
       ]
     },
     {
+      "name": "Depot",
+      "url": "https://status.depot.dev"
+    },
+    {
       "name": "HashiCorp",
       "url": "https://status.hashicorp.com"
     },
