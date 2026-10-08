@@ -70,10 +70,17 @@ final class ServiceLoader {
     }
 
     func serviceDefinition(forIdentifier identifier: String) -> ServiceDefinition? {
-        allServices.first {
-            $0.globalIdentifier == identifier || // The recommended way for identifying services
-            $0.alphanumericName.lowercased() == identifier.lowercased() || // The old way (class-name based)
-            $0.legacyIdentifiers.contains(identifier) // The old names used for a service
+        // An exact match wins outright, ahead of any service whose name merely sorts earlier.
+        if let exact = allServices.first(where: { $0.globalIdentifier == identifier }) {
+            return exact
+        }
+        // The fallbacks bridge identifiers stored before providers existed. A custom service is
+        // only ever stored by its id, and must not claim, say, a stored "GitHub" by its name.
+        return allServices.first {
+            !$0.isCustom && (
+                $0.alphanumericName.lowercased() == identifier.lowercased() || // The old way (class-name based)
+                $0.legacyIdentifiers.contains(identifier) // The old names used for a service
+            )
         }
     }
 }

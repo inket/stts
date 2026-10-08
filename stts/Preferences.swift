@@ -62,7 +62,7 @@ enum AppearancePreference: String, CaseIterable {
 @MainActor
 class Preferences {
     /// The intervals the General pane offers, in seconds.
-    static let refreshIntervalOptions: [Int] = [60, 300, 900, 1800]
+    nonisolated static let refreshIntervalOptions: [Int] = [60, 300, 900, 1800]
 
     private let serviceLoader: ServiceLoader
 

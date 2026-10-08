@@ -57,9 +57,11 @@ extension ServiceDefinition {
     /// jsdelivr) as a last resort, in case a favicon was added/fixed there after this copy of the
     /// app was built. That fallback is a *URL construction only* — it's never verified to resolve,
     /// so the caller must handle a load failure the same as it would a missing local icon.
-    /// `nil` only for a service with no `services.json` entry at all (a hand-written `independent`
-    /// class) — every JSON-defined service gets at least the remote-fallback candidate.
+    /// `nil` for a custom service: there's no icon to find, and the remote fallback would send the
+    /// user's own service name to the CDN.
     var faviconURL: URL? {
+        if isCustom { return nil }
+
         if let url = bundledFaviconURL(filename: "\(providerIdentifier).\(alphanumericName)") {
             return url
         }

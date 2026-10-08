@@ -139,10 +139,13 @@ class PopupViewController: NSObject {
 
     /// Syncs the list with the enabled set. Services that stay enabled keep their `BaseService`
     /// (and its status); only newly enabled ones are built, and those are returned so the caller
-    /// can fetch just them.
-    func reloadServicesList() -> [BaseService] {
+    /// can fetch just them. `rebuilding` names services whose definition changed (an edited custom
+    /// service), which are built afresh and returned too.
+    func reloadServicesList(rebuilding identifiers: Set<String> = []) -> [BaseService] {
         let existing = Dictionary(
-            servicePairs.map { ($0.definition.globalIdentifier, $0.service) }
+            servicePairs
+                .filter { !identifiers.contains($0.definition.globalIdentifier) }
+                .map { ($0.definition.globalIdentifier, $0.service) }
         ) { first, _ in first }
         let definitions = preferences.selectedServices
         let newPairs = serviceLoader.servicesWithDefinitions(
@@ -170,10 +173,13 @@ class PopupViewController: NSObject {
         refreshViewModel()
     }
 
-    func updateServices(updateCallback: @escaping () -> Void) {
+    /// A full check. `skipping` leaves some out — custom services whose own interval isn't due yet,
+    /// on a timer tick.
+    func updateServices(skipping skipped: Set<BaseService> = [], updateCallback: @escaping () -> Void) {
         servicesBeingUpdated = Set<BaseService>()
+        let servicesToUpdate = Set(services).subtracting(skipped)
 
-        guard !services.isEmpty else {
+        guard !servicesToUpdate.isEmpty else {
             lastUpdated = Date()
             refreshViewModel()
 
@@ -184,18 +190,22 @@ class PopupViewController: NSObject {
         }
 
         self.updateCallback = updateCallback
-        startUpdating(Set(services))
+        startUpdating(servicesToUpdate)
     }
 
     /// Checks only the given services, on top of whatever is already in flight. Used after
-    /// enabling a service so the rest aren't re-fetched.
-    func updateServices(only servicesToUpdate: [BaseService]) {
+    /// enabling a service so the rest aren't re-fetched, and for custom services on their own
+    /// interval. `completion` runs once these are done.
+    func updateServices(only servicesToUpdate: [BaseService], completion: (() -> Void)? = nil) {
         let subset = Set(servicesToUpdate).intersection(services).subtracting(servicesBeingUpdated)
-        guard !subset.isEmpty else { return }
-        startUpdating(subset)
+        guard !subset.isEmpty else {
+            completion?()
+            return
+        }
+        startUpdating(subset, completion: completion)
     }
 
-    private func startUpdating(_ servicesToUpdate: Set<BaseService>) {
+    private func startUpdating(_ servicesToUpdate: Set<BaseService>, completion: (() -> Void)? = nil) {
         servicesBeingUpdated.formUnion(servicesToUpdate)
         refreshViewModel()
 
@@ -208,6 +218,7 @@ class PopupViewController: NSObject {
                     }
                 }
             }
+            completion?()
         }
     }
 

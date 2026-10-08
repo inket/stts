@@ -24,7 +24,13 @@ struct PreferencesRootView: View {
                 items: PreferencesModel.Pane.allCases,
                 selection: $model.selectedPane,
                 accentColor: nil,
-                badge: { $0 == .services ? model.enabledCount : 0 }
+                badge: { pane in
+                    switch pane {
+                    case .services: return model.enabledCount
+                    case .customServices: return model.customServices.count
+                    case .general, .about: return 0
+                    }
+                }
             )
             // `NavigationSplitView` adds a sidebar-toggle button automatically; this sidebar is
             // never meant to collapse. The modifier has to be on the sidebar *column's* content —

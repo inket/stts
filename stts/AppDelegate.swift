@@ -16,6 +16,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     private var timer: Timer?
+    /// Checks custom services that have their own interval, whenever one is due.
+    private var customServicesTimer: Timer?
     private var remoteServicesTimer: Timer?
     private let remoteServicesUpdater: RemoteServicesUpdater?
 
@@ -28,6 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private let notificationDelegate: NotificationDelegate
 
     private let serviceLoader: ServiceLoader
+    private let customServiceStore: CustomServiceStore
     private let preferences: Preferences
     private let preferencesWindow: PreferencesWindow
 
@@ -56,6 +59,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         if let userDefinedProvider = try? UserDefinedServiceDefinitionProvider() {
             serviceDefinitionProviders.append(userDefinedProvider)
         }
+        customServiceStore = CustomServiceStore(
+            fileURL: try? CustomServiceStore.defaultFileURL(),
+            secrets: KeychainCustomServiceSecrets()
+        )
+        serviceDefinitionProviders.append(CustomServiceDefinitionProvider(store: customServiceStore))
         serviceLoader = ServiceLoader(providers: serviceDefinitionProviders)
         SendbirdAll.sendbirdServices = serviceLoader.allServices
             .compactMap { $0 as? SendbirdServiceDefinition }
@@ -65,7 +73,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             .map { RemoteServicesUpdater(destinationURL: $0) }
 
         preferences = Preferences(serviceLoader: serviceLoader)
-        preferencesWindow = PreferencesWindow(serviceLoader: serviceLoader, preferences: preferences)
+        preferencesWindow = PreferencesWindow(
+            serviceLoader: serviceLoader,
+            preferences: preferences,
+            customServiceStore: customServiceStore
+        )
 
         popupViewController = PopupViewController(
             serviceLoader: serviceLoader,
@@ -137,6 +149,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             // Only the newly enabled services need a fetch; the rest keep their current status.
             let added = popupViewController.reloadServicesList()
             popupViewController.updateServices(only: added)
+        }
+
+        preferencesWindow.customServiceChangeCallback = { [weak self] identifiers in
+            guard let self else { return }
+            // Only the edited services are rebuilt; everything else keeps its status.
+            let rebuilt = popupViewController.reloadServicesList(rebuilding: identifiers)
+            popupViewController.updateServices(only: rebuilt)
         }
 
         preferencesWindow.refreshIntervalCallback = { [weak self] _ in
@@ -254,12 +273,24 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         timer = Timer.scheduledTimer(
             timeInterval: TimeInterval(preferences.refreshInterval),
             target: self,
-            selector: #selector(AppDelegate.updateServices),
+            selector: #selector(AppDelegate.updateScheduledServices),
             userInfo: nil,
             repeats: true
         )
         timer?.fire()
+
+        customServicesTimer?.invalidate()
+        customServicesTimer = Timer.scheduledTimer(
+            timeInterval: Self.customServicesTick,
+            target: self,
+            selector: #selector(AppDelegate.updateDueCustomServices),
+            userInfo: nil,
+            repeats: true
+        )
     }
+
+    /// The shortest custom interval on offer.
+    private static let customServicesTick: TimeInterval = 60
 
     private func setupMenuBarItemView() {
         guard let button = popupController.statusItem.button else { return }
@@ -288,18 +319,34 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         popupController.backgroundView.needsDisplay = true
     }
 
+    /// Everything, now — a manual refresh, or the network coming back.
     @objc func updateServices() {
-        popupViewController.updateServices { [weak self] in
-            guard let self else { return }
+        popupViewController.updateServices { [weak self] in self?.notifyStatusChanges() }
+    }
 
-            // No global on/off check here: `.never` is a granularity like any other, and a
-            // service with an override is meant to notify even when the app-wide setting says
-            // nothing should.
-            popupViewController.identifiedServices.forEach { identifier, service in
-                service.notifyIfStatusChanged(
-                    granularity: self.preferences.notificationGranularity(forIdentifier: identifier)
-                )
-            }
+    /// The main timer's tick. A custom service on its own interval is left to
+    /// `updateDueCustomServices` unless it's due anyway.
+    @objc private func updateScheduledServices() {
+        let now = Date()
+        let notDue = popupViewController.services.compactMap { $0 as? CustomURLService }
+            .filter { $0.definition.interval != nil && !$0.isDue(at: now) }
+        popupViewController.updateServices(skipping: Set(notDue)) { [weak self] in self?.notifyStatusChanges() }
+    }
+
+    @objc private func updateDueCustomServices() {
+        let now = Date()
+        let due = popupViewController.services.compactMap { $0 as? CustomURLService }.filter { $0.isDue(at: now) }
+        guard !due.isEmpty else { return }
+        popupViewController.updateServices(only: due) { [weak self] in self?.notifyStatusChanges() }
+    }
+
+    private func notifyStatusChanges() {
+        // No global on/off check here: `.never` is a granularity like any other, and a service
+        // with an override is meant to notify even when the app-wide setting says nothing should.
+        popupViewController.identifiedServices.forEach { identifier, service in
+            service.notifyIfStatusChanged(
+                granularity: preferences.notificationGranularity(forIdentifier: identifier)
+            )
         }
     }
 

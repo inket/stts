@@ -18,6 +18,13 @@ final class PreferencesWindow {
         set { model.onSelectionChange = newValue }
     }
 
+    /// Fired after custom services are edited or imported, with the identifiers of the ones whose
+    /// definition changed, so the popup can rebuild just those.
+    var customServiceChangeCallback: ((Set<String>) -> Void)? {
+        get { model.onCustomServiceChange }
+        set { model.onCustomServiceChange = newValue }
+    }
+
     /// Applying a new check interval means restarting `AppDelegate`'s timer.
     var refreshIntervalCallback: ((Int) -> Void)? {
         get { model.onRefreshIntervalChange }
@@ -28,14 +35,19 @@ final class PreferencesWindow {
         controller.window?.isVisible == true
     }
 
-    /// Hands the Services pane the popup's latest statuses, which its "Affected" filter is built
-    /// from. Cheap when nothing changed, so it's fine to call on every popup state change.
+    /// Hands the settings window the popup's latest statuses: the Services pane's "Affected"
+    /// filter is built from them, and the Custom services pane's last results. Cheap when nothing
+    /// changed, so it's fine to call on every popup state change.
     func updateStatuses(_ services: [(identifier: String, service: BaseService)]) {
         model.updateStatuses(services)
     }
 
-    init(serviceLoader: ServiceLoader, preferences: Preferences) {
-        model = PreferencesModel(serviceLoader: serviceLoader, preferences: preferences)
+    init(serviceLoader: ServiceLoader, preferences: Preferences, customServiceStore: CustomServiceStore) {
+        model = PreferencesModel(
+            serviceLoader: serviceLoader,
+            preferences: preferences,
+            customServiceStore: customServiceStore
+        )
         controller = PreferencesWindowController(model: model)
     }
 

@@ -107,6 +107,8 @@ final class PreferencesModel: ObservableObject {
 
     /// Rebuilds the popup's services after the enabled set changes.
     var onSelectionChange: (() -> Void)?
+    /// Custom services whose definition changed (edited, or replaced by an import), by identifier.
+    var onCustomServiceChange: ((Set<String>) -> Void)?
     /// A new check interval needs `AppDelegate`'s timer restarted.
     var onRefreshIntervalChange: ((Int) -> Void)?
 
@@ -115,6 +117,12 @@ final class PreferencesModel: ObservableObject {
     @Published var expandedGroups: Set<String> = []
     @Published var searchTerm = ""
     @Published var servicesFilter: ServicesFilter = .all
+
+    let customServiceStore: CustomServiceStore
+    /// The store's services, republished so the Custom services pane redraws when they change.
+    @Published private(set) var customServices: [CustomService] = []
+    /// Each custom service's last check, from the popup's services — see `updateStatuses(_:)`.
+    @Published private(set) var customResults: [UUID: CustomService.CheckResult] = [:]
 
     /// The last status the popup reported for each enabled service, by global identifier. This
     /// model polls nothing itself; `AppDelegate` pushes the popup's snapshot through
@@ -135,19 +143,29 @@ final class PreferencesModel: ObservableObject {
     /// per-category work worth batching there.
     private var childrenCache: [String: [ServiceDefinition]] = [:]
 
-    init(serviceLoader: ServiceLoader, preferences: Preferences) {
+    init(serviceLoader: ServiceLoader, preferences: Preferences, customServiceStore: CustomServiceStore) {
         self.serviceLoader = serviceLoader
         self.preferences = preferences
+        self.customServiceStore = customServiceStore
         reload()
     }
 
-    var totalServiceCount: Int { serviceLoader.allServices.count }
-    var enabledCount: Int { enabledIdentifiers.count }
+    /// The catalogue, without custom services: the Services pane never shows them.
+    private var catalogue: [ServiceDefinition] {
+        serviceLoader.allServices.filter { !$0.isCustom }
+    }
+
+    var totalServiceCount: Int { catalogue.count }
+    /// Catalogue services only, for the Services row's badge.
+    var enabledCount: Int {
+        enabledIdentifiers.filter { !$0.hasPrefix("\(CustomService.providerIdentifier).") }.count
+    }
 
     func reload() {
         enabledIdentifiers = Set(preferences.selectedServices.map(\.globalIdentifier))
         expandedGroups = Set(preferences.expandedServiceGroups)
-        topLevelServices = serviceLoader.allServicesWithoutSubServices
+        customServices = customServiceStore.services
+        topLevelServices = serviceLoader.allServicesWithoutSubServices.filter { !$0.isCustom }
         childrenCache.removeAll()
         precomputeReflectionBasedChildren()
     }
@@ -185,17 +203,29 @@ final class PreferencesModel: ObservableObject {
         )
     }
 
-    /// The services currently being watched, in the order the popup lists them.
+    /// The catalogue services currently being watched, in the order the popup lists them.
     var monitoredServices: [ServiceDefinition] {
-        preferences.selectedServices
+        preferences.selectedServices.filter { !$0.isCustom }
     }
 
     // MARK: - Filters
 
     func updateStatuses(_ services: [(identifier: String, service: BaseService)]) {
         let latest = Dictionary(services.map { ($0.identifier, $0.service.status) }) { _, last in last }
-        guard latest != statuses else { return }
-        statuses = latest
+        if latest != statuses {
+            statuses = latest
+        }
+
+        let results = Dictionary(
+            services.compactMap { pair -> (UUID, CustomService.CheckResult)? in
+                guard let service = pair.service as? CustomURLService,
+                      let result = service.lastResult else { return nil }
+                return (service.definition.id, result)
+            }
+        ) { _, last in last }
+        if results != customResults {
+            customResults = results
+        }
     }
 
     /// Monitored services whose effective notification setting isn't `.never` — the override if
@@ -222,7 +252,7 @@ final class PreferencesModel: ObservableObject {
     /// included, so the count matches "Search 543 services"), or that scope's monitored subset.
     func services(for filter: ServicesFilter) -> [ServiceDefinition] {
         switch filter {
-        case .all: return serviceLoader.allServices
+        case .all: return catalogue
         case .monitoring: return monitoredServices
         case .notifying: return notifyingServices
         case .affected: return affectedServices
@@ -263,6 +293,93 @@ final class PreferencesModel: ObservableObject {
     func setNotificationOverride(_ granularity: NotificationGranularity?, for definition: ServiceDefinition) {
         preferences.setNotificationGranularity(granularity, forIdentifier: definition.globalIdentifier)
         objectWillChange.send()
+    }
+
+    // MARK: - Custom services
+
+    /// Saved, then enabled — adding one is asking to watch it.
+    func addCustomService(_ service: CustomService) {
+        customServiceStore.add(service)
+        customServicesDidChange()
+        enableCustomServices(ids: [service.id])
+    }
+
+    func updateCustomService(_ service: CustomService) {
+        customServiceStore.update(service)
+        customServicesDidChange()
+        onCustomServiceChange?([service.globalIdentifier])
+    }
+
+    func deleteCustomService(_ service: CustomService) {
+        // Disabled while its definition still resolves, so it leaves the popup cleanly.
+        if let definition = serviceLoader.serviceDefinition(forIdentifier: service.globalIdentifier) {
+            setEnabled(false, for: [definition])
+        }
+        preferences.setNotificationGranularity(nil, forIdentifier: service.globalIdentifier)
+        customServiceStore.delete(id: service.id)
+        customServicesDidChange()
+    }
+
+    func isCustomServiceEnabled(_ service: CustomService) -> Bool {
+        enabledIdentifiers.contains(service.globalIdentifier)
+    }
+
+    func customServiceEnabledBinding(for service: CustomService) -> Binding<Bool> {
+        Binding(
+            get: { [weak self] in self?.isCustomServiceEnabled(service) ?? false },
+            set: { [weak self] isEnabled in
+                guard
+                    let self,
+                    let definition = serviceLoader.serviceDefinition(forIdentifier: service.globalIdentifier)
+                else { return }
+                setEnabled(isEnabled, for: [definition])
+            }
+        )
+    }
+
+    func customServiceNotificationBinding(for service: CustomService) -> Binding<NotificationGranularity?> {
+        Binding(
+            get: { [weak self] in self?.preferences.serviceNotificationOverrides[service.globalIdentifier] },
+            set: { [weak self] granularity in
+                self?.preferences.setNotificationGranularity(granularity, forIdentifier: service.globalIdentifier)
+                self?.objectWillChange.send()
+            }
+        )
+    }
+
+    /// One real request for the editor's Test now; the draft doesn't need to be saved.
+    func testCustomService(_ service: CustomService) async -> CustomService.CheckResult {
+        await CustomServiceChecker.check(service)
+    }
+
+    func exportCustomServices() throws -> Data {
+        try customServiceStore.exportData()
+    }
+
+    /// New services are enabled; replaced ones keep their state and are rebuilt in the popup.
+    func importCustomServices(_ data: Data) throws -> CustomServiceStore.ImportSummary {
+        let summary = try customServiceStore.importData(data)
+        customServicesDidChange()
+        enableCustomServices(ids: summary.addedIDs)
+        let replaced = Set(summary.replacedIDs.map(CustomService.globalIdentifier(for:)))
+        if !replaced.isEmpty {
+            onCustomServiceChange?(replaced)
+        }
+        return summary
+    }
+
+    /// The loader serves custom services from the store, so it re-reads after every change.
+    private func customServicesDidChange() {
+        serviceLoader.reload()
+        customServices = customServiceStore.services
+    }
+
+    private func enableCustomServices(ids: [UUID]) {
+        let definitions = ids.compactMap {
+            serviceLoader.serviceDefinition(forIdentifier: CustomService.globalIdentifier(for: $0))
+        }
+        guard !definitions.isEmpty else { return }
+        setEnabled(true, for: definitions)
     }
 
     // MARK: - The catalogue

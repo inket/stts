@@ -152,16 +152,12 @@ public class BaseService {
     }
 }
 
+/// Identity, not name: two distinct services can share a name (a custom service called "GitHub",
+/// or the same name under two providers), and every set of services the popup keeps holds the
+/// instances it's currently showing.
 extension BaseService: Equatable {
     public static func == (lhs: BaseService, rhs: BaseService) -> Bool {
-        guard
-            let lhs = lhs as? Service,
-            let rhs = rhs as? Service
-        else {
-            fatalError("BaseService should not be used directly.")
-        }
-
-        return lhs.name == rhs.name
+        lhs === rhs
     }
 }
 
@@ -185,11 +181,7 @@ extension BaseService: Comparable {
 
 extension BaseService: Hashable {
     public func hash(into hasher: inout Hasher) {
-        guard let service = self as? Service else {
-            fatalError("BaseService should not be used directly.")
-        }
-
-        hasher.combine(service.name)
+        hasher.combine(ObjectIdentifier(self))
     }
 }
 

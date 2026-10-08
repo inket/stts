@@ -272,7 +272,14 @@ private struct ServiceRow: View {
             // Only on rows that are actually being watched: an override on a service nothing is
             // monitoring would have nothing to act on.
             if isEnabled {
-                NotificationOverrideMenu(model: model, definition: definition)
+                NotificationOverrideMenu(
+                    serviceName: definition.name,
+                    override: Binding(
+                        get: { model.notificationOverride(for: definition) },
+                        set: { model.setNotificationOverride($0, for: definition) }
+                    ),
+                    inherited: model.preferences.notificationGranularity
+                )
             }
 
             Toggle("", isOn: model.enabledBinding(for: definition))
@@ -287,17 +294,18 @@ private struct ServiceRow: View {
     }
 }
 
-/// The per-service notification override, as a bell that opens a menu.
-private struct NotificationOverrideMenu: View {
-    @ObservedObject var model: PreferencesModel
-    let definition: ServiceDefinition
+/// The per-service notification override, as a bell that opens a menu. Takes a binding rather
+/// than a `ServiceDefinition` so custom services, which aren't in the catalogue, can share it.
+struct NotificationOverrideMenu: View {
+    let serviceName: String
+    @Binding var override: NotificationGranularity?
+    /// The General setting, named in the "inherit" item and the tooltip.
+    let inherited: NotificationGranularity
 
     var body: some View {
-        let override = model.notificationOverride(for: definition)
-
         Menu {
-            Picker("Notify me about \(definition.name)", selection: binding) {
-                Text("Use General setting (\(model.preferences.notificationGranularity.title.lowercased()))")
+            Picker("Notify me about \(serviceName)", selection: $override) {
+                Text("Use General setting (\(inherited.title.lowercased()))")
                     .tag(NotificationGranularity?.none)
                 Divider()
                 ForEach(NotificationGranularity.allCases, id: \.self) { granularity in
@@ -324,13 +332,6 @@ private struct NotificationOverrideMenu: View {
         .help(helpText(for: override))
     }
 
-    private var binding: Binding<NotificationGranularity?> {
-        Binding(
-            get: { model.notificationOverride(for: definition) },
-            set: { model.setNotificationOverride($0, for: definition) }
-        )
-    }
-
     private func symbol(for override: NotificationGranularity?) -> String {
         switch override {
         case .never: return "bell.slash"
@@ -353,7 +354,7 @@ private struct NotificationOverrideMenu: View {
 
     private func helpText(for override: NotificationGranularity?) -> String {
         guard let override else {
-            return "Follows the General setting: \(model.preferences.notificationGranularity.title.lowercased())"
+            return "Follows the General setting: \(inherited.title.lowercased())"
         }
         return "Notifications: \(override.title.lowercased())"
     }
