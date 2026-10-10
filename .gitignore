@@ -76,3 +76,4 @@ vendor
 # Claude
 CLAUDE.md
 .claude/
+.claude-work/
