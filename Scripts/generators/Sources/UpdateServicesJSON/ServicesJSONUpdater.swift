@@ -5,13 +5,13 @@ import Foundation
 // removals rather than hide them. handEditedKeys are the exception, preserved by "id" since a
 // generator can't rediscover them.
 final class ServicesJSONUpdater {
-    private let handEditedKeys: Set<String> = ["url", "old_names"]
+    private let handEditedKeys: Set<String> = ["url", "old_names", "tags"]
     // Everything else is either a fixed schema field or provider-specific "extra" data (e.g.
     // Salesforce's "product") that's part of what makes an entry unique — "id" alone isn't
     // globally unique within a provider whose entries are grouped (e.g. "NA" repeats across
     // every Salesforce product), so the match key folds in whatever extra fields are present.
     private let nonMatchKeys: Set<String> = [
-        "name", "url", "id", "subservice", "category", "category_name", "old_names"
+        "name", "url", "id", "subservice", "category", "category_name", "old_names", "tags"
     ]
 
     private let servicesPath: String
@@ -108,7 +108,7 @@ final class ServicesJSONUpdater {
             .map { entry in
                 let key = matchKey(id: entry.id, otherFields: entry.extraFields)
                 var pairs: [(String, JSONValue)] = [("name", .string(entry.name))]
-                // Field order matches the rest of the file: name, url, id, extras, old_names.
+                // Field order matches the rest of the file: name, url, id, extras, old_names, tags.
                 if let url = preservedFieldsByKey[key]?.first(where: { $0.0 == "url" }) {
                     pairs.append(url)
                 }
@@ -116,6 +116,9 @@ final class ServicesJSONUpdater {
                 pairs.append(contentsOf: entry.extraFields)
                 if let oldNames = preservedFieldsByKey[key]?.first(where: { $0.0 == "old_names" }) {
                     pairs.append(oldNames)
+                }
+                if let tags = preservedFieldsByKey[key]?.first(where: { $0.0 == "tags" }) {
+                    pairs.append(tags)
                 }
                 return .object(pairs)
             }

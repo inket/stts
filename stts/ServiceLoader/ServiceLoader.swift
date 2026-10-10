@@ -14,11 +14,15 @@ final class ServiceLoader {
         allServices = Self.buildAllServices(providers: providers)
         allServicesWithoutSubServices = allServices.filter { !($0.isSubService == true) }
         removedIdentifiers = providers.reduce(into: Set<String>()) { $0.formUnion($1.removedIdentifiers) }
+        tags = Self.buildTags(providers: providers)
     }
 
     private(set) var allServices: [ServiceDefinition]
     private(set) var allServicesWithoutSubServices: [ServiceDefinition]
     private(set) var removedIdentifiers: Set<String>
+    /// Every provider's category vocabulary, sorted by name. On a clash the earlier provider wins,
+    /// as `buildAllServices` does for services.
+    private(set) var tags: [ServiceTag]
 
     /// Re-reads every provider's backing data and recomputes the cached properties above. Used
     /// after a remote services.json re-fetch (see `RemoteServiceDefinitionProvider`) so the app can
@@ -28,6 +32,15 @@ final class ServiceLoader {
         allServices = Self.buildAllServices(providers: providers)
         allServicesWithoutSubServices = allServices.filter { !($0.isSubService == true) }
         removedIdentifiers = providers.reduce(into: Set<String>()) { $0.formUnion($1.removedIdentifiers) }
+        tags = Self.buildTags(providers: providers)
+    }
+
+    private static func buildTags(providers: [ServiceDefinitionProvider]) -> [ServiceTag] {
+        var tagsByID: [String: ServiceTag] = [:]
+        for tag in providers.flatMap(\.tags) where tagsByID[tag.id] == nil {
+            tagsByID[tag.id] = tag
+        }
+        return tagsByID.values.sorted { $0.name.localizedStandardCompare($1.name) == .orderedAscending }
     }
 
     private static func buildAllServices(providers: [ServiceDefinitionProvider]) -> [ServiceDefinition] {

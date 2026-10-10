@@ -8,8 +8,8 @@ import SwiftUI
 /// The handful of values the settings window still has to state for itself — everything else
 /// (control shapes, focus, accessibility) comes from stock SwiftUI/`Form`.
 enum PreferencesLayout {
-    static let windowSize = CGSize(width: 760, height: 560)
-    static let minWindowSize = CGSize(width: 700, height: 480)
+    static let windowSize = CGSize(width: 804, height: 560)
+    static let minWindowSize = CGSize(width: 744, height: 480)
 
     static let sidebarWidth: CGFloat = 220
     static let isSidebarResizable = false

@@ -113,6 +113,7 @@ class CodableServiceDefinition: Codable {
         case isSubService = "subservice"
         case categoryName = "category_name"
         case oldNames = "old_names"
+        case tags
     }
 
     let name: String
@@ -122,6 +123,9 @@ class CodableServiceDefinition: Codable {
     /// Header label for a `"category": true` row — see `ServiceDefinition.categoryDisplayName`.
     let categoryName: String?
     let oldNames: Set<String>?
+    /// `ServiceTag.id`s. Empty on a sub-service whose vendor row is tagged (it inherits), and on
+    /// the vendor row of a vendor whose sub-services are tagged one by one.
+    let tags: [String]
 
     private(set) lazy var legacyIdentifiers = oldNames ?? .init()
 
@@ -135,11 +139,13 @@ class CodableServiceDefinition: Codable {
         isCategory: Bool?,
         isSubService: Bool?,
         categoryName: String? = nil,
-        oldNames: Set<String>? = nil
+        oldNames: Set<String>? = nil,
+        tags: [String] = []
     ) {
         assert(type(of: self) != CodableServiceDefinition.self)
 
         self.oldNames = oldNames
+        self.tags = tags
         self.categoryName = categoryName
         self.name = name
         self.isCategory = isCategory
@@ -157,6 +163,14 @@ class CodableServiceDefinition: Codable {
         self.isSubService = try container.decodeIfPresent(Bool.self, forKey: .isSubService)
         self.categoryName = try container.decodeIfPresent(String.self, forKey: .categoryName)
         self.oldNames = try container.decodeIfPresent(Set<String>.self, forKey: .oldNames)
+        self.tags = try Self.decodeTags(from: decoder)
+    }
+
+    /// For subclasses that decode their own keys and call the memberwise `init`. Not checked
+    /// against `"_tags"` here: a tag the vocabulary doesn't define is simply never listed.
+    static func decodeTags(from decoder: Decoder) throws -> [String] {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        return try container.decodeIfPresent([String].self, forKey: .tags) ?? []
     }
 
     func encode(to encoder: Encoder) throws {
@@ -167,5 +181,8 @@ class CodableServiceDefinition: Codable {
         try container.encodeIfPresent(self.isSubService, forKey: .isSubService)
         try container.encodeIfPresent(self.categoryName, forKey: .categoryName)
         try container.encodeIfPresent(self.oldNames, forKey: .oldNames)
+        if !tags.isEmpty {
+            try container.encode(tags, forKey: .tags)
+        }
     }
 }

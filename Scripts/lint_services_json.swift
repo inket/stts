@@ -1,5 +1,6 @@
 #!/usr/bin/swift
 
+import AppKit
 import Foundation
 
 // Keep this in sync with ServicesStructure.CodingKeys (stts/ServiceLoader/ServicesStructure.swift).
@@ -35,6 +36,26 @@ let providersWithOptionalURL: Set<String> = [
 let categoryKeyFieldByProvider: [String: String] = [
     "salesforce": "product",
     "adobe": "cloud"
+]
+
+// Not a provider: the category vocabulary, as {"<id>": {"name": ..., "symbol": <SF Symbol>}}.
+let tagsKey = "_tags"
+// Filled from "_tags" before any entry is linted.
+var knownTags = Set<String>()
+let maxTagsPerEntry = 3
+
+// Providers whose definitions are always sub-services, grouped under their "(All)" row by Swift
+// type, so their entries carry no "subservice" key. Keep in sync with each provider's
+// *ServiceDefinition (they pass `isSubService: true` unconditionally).
+let subServiceOnlyProviders: Set<String> = [
+    "apple", "appledeveloper", "googlecloudplatform", "azure", "azuredevops", "firebase"
+]
+
+// Vendor rows deliberately left untagged because each of their sub-services carries its own tags,
+// as "provider.name". Every other row that isn't a
+// sub-service must be tagged; listing a vendor here is the decision that it isn't.
+let perProductVendorRows: Set<String> = [
+    "independent.Apple (All)"
 ]
 
 func envVariable(forKey key: String) -> String {
@@ -93,6 +114,36 @@ func lintEntry(provider: String, entry: Any, index: Int, seenIdentifiers: inout 
     }
 
     lintCategoryName(provider: provider, name: name, entry: entry)
+    lintTags(provider: provider, name: name, entry: entry)
+}
+
+func lintTags(provider: String, name: String, entry: [String: Any]) {
+    let isSubService = subServiceOnlyProviders.contains(provider)
+        || (entry["subservice"] as? Bool == true && entry["category"] as? Bool != true)
+
+    guard let value = entry["tags"] else {
+        if !isSubService && !perProductVendorRows.contains("\(provider).\(name)") {
+            fail("\(provider).\(name) has no \"tags\"")
+        }
+        return
+    }
+
+    guard let tags = value as? [String], !tags.isEmpty else {
+        fail("\(provider).\(name) has \"tags\" that isn't a non-empty array of strings")
+        return
+    }
+    if perProductVendorRows.contains("\(provider).\(name)") {
+        fail("\(provider).\(name) is a per-product vendor row, so its sub-services carry the tags instead")
+    }
+    if tags.count > maxTagsPerEntry {
+        fail("\(provider).\(name) has \(tags.count) tags (at most \(maxTagsPerEntry))")
+    }
+    if Set(tags).count != tags.count {
+        fail("\(provider).\(name) has duplicate tags")
+    }
+    for tag in tags where !knownTags.contains(tag) {
+        fail("\(provider).\(name) has tag \"\(tag)\", which \"\(tagsKey)\" doesn't define")
+    }
 }
 
 // "category_name" is the header label shown above a category's subservices (the row itself keeps
@@ -208,6 +259,57 @@ func lintCategoryKeys(provider: String, entries: [Any]) {
     for key in subServiceKeys.subtracting(categoryKeys).sorted() {
         fail("\(provider) has a \"subservice\": true entry with \"\(field)\" == \"\(key)\" but no matching \"category\": true entry")
     }
+
+    lintInheritedTags(provider: provider, field: field, entries: entries)
+}
+
+// A tagged vendor row passes its tags to its sub-services, so tags on both would be two sources of
+// truth for the same rows.
+func lintInheritedTags(provider: String, field: String, entries: [Any]) {
+    let objects = entries.compactMap { $0 as? [String: Any] }
+    let taggedCategoryKeys = Set(objects.compactMap { entry -> String? in
+        guard entry["category"] as? Bool == true, entry["tags"] != nil else { return nil }
+        return entry[field] as? String
+    })
+
+    for entry in objects where entry["subservice"] as? Bool == true && entry["tags"] != nil {
+        guard let key = entry[field] as? String, taggedCategoryKeys.contains(key) else { continue }
+        let name = entry["name"] as? String ?? "<unnamed>"
+        fail("\(provider).\(name) has \"tags\" but its vendor row is tagged too (sub-services inherit)")
+    }
+}
+
+func lintTagVocabulary(_ value: Any?) -> Set<String> {
+    guard let value else {
+        fail("\"\(tagsKey)\" is missing, so no entry's \"tags\" can be valid")
+        return []
+    }
+    guard let vocabulary = value as? [String: Any] else {
+        fail("\"\(tagsKey)\" must be an object")
+        return []
+    }
+
+    var names = Set<String>()
+    for (id, body) in vocabulary {
+        guard id.range(of: "^[a-z0-9-]+$", options: .regularExpression) != nil else {
+            fail("\(tagsKey).\(id) must be lowercase letters, digits and hyphens")
+            continue
+        }
+        guard let body = body as? [String: Any],
+              let name = body["name"] as? String, !name.trimmingCharacters(in: .whitespaces).isEmpty,
+              let symbol = body["symbol"] as? String, !symbol.isEmpty else {
+            fail("\(tagsKey).\(id) must be an object with non-empty \"name\" and \"symbol\" strings")
+            continue
+        }
+        if !names.insert(name).inserted {
+            fail("\(tagsKey).\(id) reuses the name \"\(name)\"")
+        }
+        // The app draws nothing for a symbol this macOS doesn't have, so catch typos here.
+        if NSImage(systemSymbolName: symbol, accessibilityDescription: nil) == nil {
+            fail("\(tagsKey).\(id) has \"symbol\": \"\(symbol)\", which isn't an SF Symbol on this Mac")
+        }
+    }
+    return Set(vocabulary.keys)
 }
 
 func lintRemovedServices(_ value: Any) {
@@ -228,6 +330,9 @@ func lintTopLevelKey(_ key: String, value: Any, srcRoot: String) {
     if key == removedServicesKey {
         lintRemovedServices(value)
         return
+    }
+    if key == tagsKey {
+        return // linted up front, see main()
     }
 
     guard knownProviders.contains(key) else {
@@ -277,6 +382,8 @@ func main() {
         print("error: services.json's top level must be an object")
         exit(1)
     }
+
+    knownTags = lintTagVocabulary(root[tagsKey])
 
     for (key, value) in root {
         lintTopLevelKey(key, value: value, srcRoot: srcRoot)

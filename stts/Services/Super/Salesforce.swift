@@ -41,6 +41,7 @@ class SalesforceServiceDefinition: CodableServiceDefinition, ServiceDefinition {
         let isCategory = try container.decodeIfPresent(Bool.self, forKey: .isCategory) ?? false
         let categoryName = try container.decodeIfPresent(String.self, forKey: .categoryName)
         let oldNames = try container.decodeIfPresent(Set<String>.self, forKey: .oldNames)
+        let tags = try CodableServiceDefinition.decodeTags(from: decoder)
         let url = URL(string: "https://status.salesforce.com/products/\(product)")!
 
         super.init(
@@ -49,7 +50,8 @@ class SalesforceServiceDefinition: CodableServiceDefinition, ServiceDefinition {
             isCategory: isCategory ? true : nil,
             isSubService: isCategory ? nil : true,
             categoryName: categoryName,
-            oldNames: oldNames
+            oldNames: oldNames,
+            tags: tags
         )
     }
 

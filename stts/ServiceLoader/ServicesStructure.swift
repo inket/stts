@@ -37,6 +37,7 @@ struct ServicesStructure: Codable {
         case awsRegionServices = "awsregions"
         case awsNamedServices = "awsservices"
         case removedServices = "_removed"
+        case tagBodies = "_tags"
     }
 
     let independentServices: [IndependentServiceDefinition]?
@@ -76,6 +77,13 @@ struct ServicesStructure: Codable {
     /// user's stale preference for a service that will never come back, rather than leaving it
     /// silently unmatched forever.
     let removedServices: [String]?
+
+    /// The category vocabulary, by `ServiceTag.id`.
+    let tagBodies: [String: ServiceTag.Body]?
+
+    var tags: [ServiceTag] {
+        ServiceTag.tags(from: tagBodies ?? [:])
+    }
 
     var allServices: [ServiceDefinition] {
         let sections: [[ServiceDefinition]?] = [

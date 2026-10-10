@@ -21,7 +21,7 @@ import SwiftUI
 struct ServicesPreferencesView: View {
     @ObservedObject var model: PreferencesModel
 
-    private static let filterColumnWidth: CGFloat = 186
+    private static let filterColumnWidth: CGFloat = 230
 
     var body: some View {
         HStack(spacing: 0) {
@@ -37,7 +37,7 @@ struct ServicesPreferencesView: View {
 
     private var filterColumn: some View {
         PreferencesSidebarView(
-            sections: PreferencesModel.ServicesFilter.sections.map {
+            sections: model.filterSections.map {
                 PreferencesSidebarSection(title: $0.title, items: $0.filters)
             },
             selection: $model.servicesFilter,
@@ -55,7 +55,7 @@ struct ServicesPreferencesView: View {
     @ViewBuilder
     private var list: some View {
         let filter = model.servicesFilter
-        if !model.isSearching, filter != .all, model.services(for: filter).isEmpty {
+        if !model.isSearching, !filter.isGrouped, model.services(for: filter).isEmpty {
             emptyState(for: filter)
         } else {
             scrollingList
@@ -79,7 +79,7 @@ struct ServicesPreferencesView: View {
             VStack(alignment: .leading, spacing: PopupLayout.Group.spacing) {
                 if model.isSearching {
                     searchResultsCard
-                } else if model.servicesFilter == .all {
+                } else if model.servicesFilter.isGrouped {
                     catalogueCard
                 } else {
                     scopedCard
@@ -99,23 +99,29 @@ struct ServicesPreferencesView: View {
     /// alone was constructing hundreds of rows (each decoding a favicon off disk on first use —
     /// see `PopupFaviconLoader`) before a single one was visible. Lazy defers a row to when it's
     /// actually about to scroll into view, the same way `List`'s cells would have.
+    ///
+    /// A category is the same card narrowed to what's in it, vendors included when any of their
+    /// rows are, and keyed to the filter so switching swaps the card outright.
     private var catalogueCard: some View {
-        PopupGroupBox(topMargin: 0) {
+        let filter = model.servicesFilter
+
+        return PopupGroupBox(topMargin: 0) {
             LazyVStack(spacing: 0) {
-                let entries = Array(model.topLevelServices.enumerated())
+                let entries = Array(model.topLevelServices(in: filter).enumerated())
                 ForEach(entries, id: \.element.globalIdentifier) { index, definition in
                     if index > 0 {
                         PopupRowSeparator()
                     }
 
                     if definition.isCategory == true {
-                        ServiceGroupRows(model: model, definition: definition)
+                        ServiceGroupRows(model: model, definition: definition, filter: filter)
                     } else {
                         ServiceRow(model: model, definition: definition)
                     }
                 }
             }
         }
+        .id(filter)
     }
 
     /// A monitored scope: the flat list of what's in it, each sub-service captioned with its
@@ -170,35 +176,39 @@ struct ServicesPreferencesView: View {
 // MARK: - Rows
 
 /// A vendor with sub-services, as a header row plus — once expanded — its own togglable entry
-/// and each child. Mirrors `PopupRosterView`'s header/rows split: same hover and background
-/// rules, just with a per-vendor chevron instead of one collapsed stack.
+/// and each child, narrowed to the ones in `filter`. Mirrors `PopupRosterView`'s header/rows
+/// split: same hover and background rules, just with a per-vendor chevron instead of one
+/// collapsed stack.
 private struct ServiceGroupRows: View {
     @ObservedObject var model: PreferencesModel
     let definition: ServiceDefinition
+    let filter: PreferencesModel.ServicesFilter
 
     @State private var isHoveringHeader = false
 
     var body: some View {
         let isExpanded = model.isExpanded(definition)
-        let children = model.children(of: definition)
-        let enabledCount = model.enabledCount(in: definition)
+        let rows = model.groupRows(of: definition, in: filter)
+        let enabledCount = rows.filter(model.isEnabled).count
 
         VStack(spacing: 0) {
-            header(isExpanded: isExpanded, childCount: children.count, enabledCount: enabledCount)
+            header(isExpanded: isExpanded, rowCount: rows.count, enabledCount: enabledCount)
 
             if isExpanded {
-                PopupRowSeparator()
-                ServiceRow(model: model, definition: definition, subtitle: "All services", isChild: true)
-
-                ForEach(children, id: \.globalIdentifier) { child in
+                ForEach(rows, id: \.globalIdentifier) { row in
                     PopupRowSeparator()
-                    ServiceRow(model: model, definition: child, isChild: true)
+                    ServiceRow(
+                        model: model,
+                        definition: row,
+                        subtitle: row.eq(definition) ? "All services" : nil,
+                        isChild: true
+                    )
                 }
             }
         }
     }
 
-    private func header(isExpanded: Bool, childCount: Int, enabledCount: Int) -> some View {
+    private func header(isExpanded: Bool, rowCount: Int, enabledCount: Int) -> some View {
         HStack(spacing: PopupLayout.ServiceRow.contentGap) {
             ServiceFaviconLink(definition: definition)
 
@@ -209,10 +219,10 @@ private struct ServiceGroupRows: View {
             Spacer()
 
             if enabledCount > 0 {
-                Text("\(enabledCount) of \(childCount + 1)")
+                Text("\(enabledCount) of \(rowCount)")
                     .foregroundStyle(PreferencesLayout.accent)
             } else {
-                Text("\(childCount + 1) services")
+                Text(rowCount == 1 ? "1 service" : "\(rowCount) services")
                     .foregroundStyle(.secondary)
             }
 

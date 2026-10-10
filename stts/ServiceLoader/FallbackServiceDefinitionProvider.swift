@@ -40,6 +40,15 @@ final class FallbackServiceDefinitionProvider: ServiceDefinitionProvider {
         return fallback.removedIdentifiers
     }
 
+    /// The active source's vocabulary, for the same reason as `removedIdentifiers`: it's the one
+    /// its own entries' tags were written against.
+    var tags: [ServiceTag] {
+        if let primaryDefinitions = try? primary.definedServices(), !primaryDefinitions.isEmpty {
+            return primary.tags
+        }
+        return fallback.tags
+    }
+
     func reload() {
         primary.reload()
         fallback.reload()

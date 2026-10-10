@@ -175,6 +175,8 @@
 		06EFC3F0D88F41D8AAEB36C7 /* CustomServiceDefinitionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D3DDF2724347CB8AF4815F /* CustomServiceDefinitionProvider.swift */; };
 		E4B863334CCE4DE6931E9A21 /* CustomURLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23367F84409242CD9939FD20 /* CustomURLService.swift */; };
 		5E1DD235D9E84E64981790BF /* CustomServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9FB75543024F3BAEE1ED12 /* CustomServicesTests.swift */; };
+		13334896D9E14BEA85B0C939 /* ServiceTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15769CCF4A447E9BDB0682D /* ServiceTag.swift */; };
+		BE0E8E98AD364F48AAFF9C48 /* ServiceTagsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B6515CAF64C8897B830BC /* ServiceTagsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -373,6 +375,8 @@
 		D7D3DDF2724347CB8AF4815F /* CustomServiceDefinitionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomServiceDefinitionProvider.swift; sourceTree = "<group>"; };
 		23367F84409242CD9939FD20 /* CustomURLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomURLService.swift; sourceTree = "<group>"; };
 		3B9FB75543024F3BAEE1ED12 /* CustomServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomServicesTests.swift; sourceTree = "<group>"; };
+		D15769CCF4A447E9BDB0682D /* ServiceTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTag.swift; sourceTree = "<group>"; };
+		4B4B6515CAF64C8897B830BC /* ServiceTagsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTagsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,6 +428,7 @@
 		B2163AF620BA4E7500B14A85 /* sttsTests */ = {
 			isa = PBXGroup;
 			children = (
+				4B4B6515CAF64C8897B830BC /* ServiceTagsTests.swift */,
 				3B9FB75543024F3BAEE1ED12 /* CustomServicesTests.swift */,
 				B2552F0929955365003FF9EC /* Helpers */,
 				B2563BC122CBC92400532C39 /* Mocks */,
@@ -459,6 +464,7 @@
 		B22B6B2F2F673895006528EB /* ServiceLoader */ = {
 			isa = PBXGroup;
 			children = (
+				D15769CCF4A447E9BDB0682D /* ServiceTag.swift */,
 				D7D3DDF2724347CB8AF4815F /* CustomServiceDefinitionProvider.swift */,
 				70B0BF36AD044586A119ED48 /* CustomServiceStore.swift */,
 				A0FBC70498504EE98CF74935 /* CustomServiceSecrets.swift */,
@@ -959,6 +965,7 @@
 		B2163AF120BA4E7500B14A85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
+				BE0E8E98AD364F48AAFF9C48 /* ServiceTagsTests.swift in Sources */,
 				5E1DD235D9E84E64981790BF /* CustomServicesTests.swift in Sources */,
 				91B0A21428197857007D8E8F /* StringExtensionsTests.swift in Sources */,
 				B2E832EC29DE4F5E000FA1BE /* AdobeTests.swift in Sources */,
@@ -982,6 +989,7 @@
 		B2B2D0FB1D49D5080014D780 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
+				13334896D9E14BEA85B0C939 /* ServiceTag.swift in Sources */,
 				E4B863334CCE4DE6931E9A21 /* CustomURLService.swift in Sources */,
 				06EFC3F0D88F41D8AAEB36C7 /* CustomServiceDefinitionProvider.swift in Sources */,
 				8A62BAC551BD42B292BCBCD5 /* CustomServiceStore.swift in Sources */,

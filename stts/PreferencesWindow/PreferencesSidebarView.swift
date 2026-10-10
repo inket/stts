@@ -102,7 +102,8 @@ public struct PreferencesSidebarView<Item: PreferencesSidebarItem>: NSViewRepres
         outlineView.allowsEmptySelection = false
         outlineView.allowsMultipleSelection = false
         // Section headers are group items so AppKit treats them as headers (no selection, no
-        // hover), but they shouldn't pin to the top while scrolling — this list is short.
+        // hover), but they shouldn't pin to the top while scrolling — they're labels, not
+        // navigation.
         outlineView.floatsGroupRows = false
         outlineView.dataSource = context.coordinator
         outlineView.delegate = context.coordinator
@@ -114,7 +115,9 @@ public struct PreferencesSidebarView<Item: PreferencesSidebarItem>: NSViewRepres
 
         let scrollView = NSScrollView()
         scrollView.documentView = outlineView
-        scrollView.hasVerticalScroller = false
+        // Auto-hidden, so a list that fits (the pane list) never shows one.
+        scrollView.hasVerticalScroller = true
+        scrollView.autohidesScrollers = true
         scrollView.drawsBackground = false
 
         context.coordinator.outlineView = outlineView

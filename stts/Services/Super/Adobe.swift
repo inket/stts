@@ -44,6 +44,7 @@ class AdobeServiceDefinition: CodableServiceDefinition, ServiceDefinition {
         let isCategory = try container.decodeIfPresent(Bool.self, forKey: .isCategory) ?? false
         let categoryName = try container.decodeIfPresent(String.self, forKey: .categoryName)
         let oldNames = try container.decodeIfPresent(Set<String>.self, forKey: .oldNames)
+        let tags = try CodableServiceDefinition.decodeTags(from: decoder)
 
         super.init(
             name: name,
@@ -51,7 +52,8 @@ class AdobeServiceDefinition: CodableServiceDefinition, ServiceDefinition {
             isCategory: isCategory ? true : nil,
             isSubService: isCategory ? nil : true,
             categoryName: categoryName,
-            oldNames: oldNames
+            oldNames: oldNames,
+            tags: tags
         )
     }
 

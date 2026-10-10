@@ -3,7 +3,10 @@
     {
       "name": "Algolia",
       "url": "https://status.algolia.com",
-      "class_name": "Algolia"
+      "class_name": "Algolia",
+      "tags": [
+        "data"
+      ]
     },
     {
       "name": "Apple (All)",
@@ -17,134 +20,207 @@
       "url": "https://developer.apple.com/system-status/",
       "class_name": "AppleDeveloperAll",
       "category": true,
-      "category_name": "Apple Developer"
+      "category_name": "Apple Developer",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Azure (All Regions)",
       "url": "https://azure.status.microsoft/en-us/status",
       "class_name": "AzureAll",
       "category": true,
-      "category_name": "Azure"
+      "category_name": "Azure",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "Azure DevOps (All)",
       "url": "https://status.dev.azure.com",
       "class_name": "AzureDevOpsAll",
       "category": true,
-      "category_name": "Azure DevOps"
+      "category_name": "Azure DevOps",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Beanstalk",
       "url": "https://status.beanstalkapp.com",
-      "class_name": "Beanstalk"
+      "class_name": "Beanstalk",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Broadcom",
       "url": "https://status.broadcom.com",
-      "class_name": "Broadcom"
+      "class_name": "Broadcom",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "Fastly",
       "url": "https://www.fastlystatus.com",
-      "class_name": "Fastly"
+      "class_name": "Fastly",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "Firebase (All)",
       "url": "https://status.firebase.google.com",
       "class_name": "Firebase",
       "category": true,
-      "category_name": "Firebase"
+      "category_name": "Firebase",
+      "tags": [
+        "hosting",
+        "devtools"
+      ]
     },
     {
       "name": "Fivetran",
       "url": "https://status.fivetran.com",
-      "class_name": "Fivetran"
+      "class_name": "Fivetran",
+      "tags": [
+        "data"
+      ]
     },
     {
       "name": "Google Cloud Platform (All)",
       "url": "https://status.cloud.google.com",
       "class_name": "GoogleCloudPlatformAll",
       "category": true,
-      "category_name": "Google Cloud Platform"
+      "category_name": "Google Cloud Platform",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "jsDelivr",
       "url": "https://status.jsdelivr.com",
-      "class_name": "JSDelivr"
+      "class_name": "JSDelivr",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "Miro (All Regions)",
       "url": "https://status.miro.com/",
       "class_name": "MiroAll",
       "category": true,
-      "category_name": "Miro"
+      "category_name": "Miro",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Okta",
       "url": "https://status.okta.com",
-      "class_name": "Okta"
+      "class_name": "Okta",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Oracle NetSuite",
       "url": "https://status.netsuite.com",
-      "class_name": "OracleNetSuite"
+      "class_name": "OracleNetSuite",
+      "tags": [
+        "finance"
+      ]
     },
     {
       "name": "PayPal API",
       "url": "https://www.paypal-status.com/api/production",
-      "class_name": "PayPalAPIProduction"
+      "class_name": "PayPalAPIProduction",
+      "tags": [
+        "payments"
+      ]
     },
     {
       "name": "PayPal API (Sandbox)",
       "url": "https://www.paypal-status.com/api/sandbox",
-      "class_name": "PayPalAPISandbox"
+      "class_name": "PayPalAPISandbox",
+      "tags": [
+        "payments"
+      ]
     },
     {
       "name": "PayPal Product",
       "url": "https://www.paypal-status.com/product/production",
-      "class_name": "PayPalProductProduction"
+      "class_name": "PayPalProductProduction",
+      "tags": [
+        "payments"
+      ]
     },
     {
       "name": "PayPal Product (Sandbox)",
       "url": "https://www.paypal-status.com/product/sandbox",
-      "class_name": "PayPalProductSandbox"
+      "class_name": "PayPalProductSandbox",
+      "tags": [
+        "payments"
+      ]
     },
     {
       "name": "PlayStation Network (America)",
       "url": "https://status.playstation.com",
-      "class_name": "PSNAmerica"
+      "class_name": "PSNAmerica",
+      "tags": [
+        "gaming"
+      ]
     },
     {
       "name": "PlayStation Network (Asia)",
       "url": "https://status.playstation.com",
-      "class_name": "PSNAsia"
+      "class_name": "PSNAsia",
+      "tags": [
+        "gaming"
+      ]
     },
     {
       "name": "PlayStation Network (Europe)",
       "url": "https://status.playstation.com",
-      "class_name": "PSNEurope"
+      "class_name": "PSNEurope",
+      "tags": [
+        "gaming"
+      ]
     },
     {
       "name": "Railway",
       "url": "https://status.railway.com",
-      "class_name": "Railway"
+      "class_name": "Railway",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "Sendbird (All)",
       "url": "https://sendbird.com/status",
       "class_name": "SendbirdAll",
       "category": true,
-      "category_name": "Sendbird"
+      "category_name": "Sendbird",
+      "tags": [
+        "communication"
+      ]
     },
     {
       "name": "Slack",
       "url": "https://slack-status.com/",
-      "class_name": "Slack"
+      "class_name": "Slack",
+      "tags": [
+        "communication"
+      ]
     },
     {
       "name": "Stripe",
       "url": "https://status.stripe.com",
-      "class_name": "Stripe"
+      "class_name": "Stripe",
+      "tags": [
+        "payments"
+      ]
     },
     {
       "name": "Upsun",
@@ -153,17 +229,26 @@
       "old_names": [
         "Platform.sh",
         "PlatformSH"
+      ],
+      "tags": [
+        "hosting"
       ]
     },
     {
       "name": "Uptime.com",
       "url": "https://status.uptime.com",
-      "class_name": "UptimeDotCom"
+      "class_name": "UptimeDotCom",
+      "tags": [
+        "monitoring"
+      ]
     },
     {
       "name": "Zendesk",
       "url": "https://status.zendesk.com",
-      "class_name": "Zendesk"
+      "class_name": "Zendesk",
+      "tags": [
+        "support"
+      ]
     }
   ],
   "betterstack": [
@@ -172,22 +257,34 @@
       "url": "https://status.betterstack.com",
       "old_names": [
         "BetterStack"
+      ],
+      "tags": [
+        "monitoring"
       ]
     },
     {
       "name": "Keygen",
-      "url": "https://status.keygen.sh"
+      "url": "https://status.keygen.sh",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Runway: App Store Connect",
       "url": "https://runway-asc.betteruptime.com",
       "old_names": [
         "RunwayASC"
+      ],
+      "tags": [
+        "devtools"
       ]
     },
     {
       "name": "Unraid",
-      "url": "https://status.unraid.net/en"
+      "url": "https://status.unraid.net/en",
+      "tags": [
+        "files"
+      ]
     }
   ],
   "betteruptime": [
@@ -196,29 +293,45 @@
       "url": "https://status.plausible.io",
       "old_names": [
         "PlausibleAnalytics"
+      ],
+      "tags": [
+        "analytics"
       ]
     },
     {
       "name": "Runway",
-      "url": "https://status.runway.team"
+      "url": "https://status.runway.team",
+      "tags": [
+        "devtools"
+      ]
     }
   ],
   "cstate": [
     {
       "name": "Civo",
-      "url": "https://status.civo.com/"
+      "url": "https://status.civo.com/",
+      "tags": [
+        "hosting"
+      ]
     }
   ],
   "incidentio": [
     {
       "name": "Aiven",
-      "url": "https://status.aiven.io"
+      "url": "https://status.aiven.io",
+      "tags": [
+        "data"
+      ]
     },
     {
       "name": "Brevo",
       "url": "https://status.brevo.com",
       "old_names": [
         "Sendinblue"
+      ],
+      "tags": [
+        "marketing",
+        "communication"
       ]
     },
     {
@@ -226,17 +339,26 @@
       "url": "https://status.codeclimate.com",
       "old_names": [
         "CodeClimate"
+      ],
+      "tags": [
+        "devtools"
       ]
     },
     {
       "name": "HashiCorp",
-      "url": "https://status.hashicorp.com"
+      "url": "https://status.hashicorp.com",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Intercom - AU Hosting",
       "url": "https://www.finstatus.com/au-hosting",
       "old_names": [
         "IntercomAU"
+      ],
+      "tags": [
+        "support"
       ]
     },
     {
@@ -244,6 +366,9 @@
       "url": "https://www.finstatus.com/eu-hosting",
       "old_names": [
         "IntercomEU"
+      ],
+      "tags": [
+        "support"
       ]
     },
     {
@@ -252,95 +377,156 @@
       "old_names": [
         "IntercomUS",
         "Intercom"
+      ],
+      "tags": [
+        "support"
       ]
     },
     {
       "name": "Linear",
-      "url": "https://linearstatus.com"
+      "url": "https://linearstatus.com",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Notion",
-      "url": "https://www.notion-status.com"
+      "url": "https://www.notion-status.com",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "OneSignal",
-      "url": "https://status.onesignal.com"
+      "url": "https://status.onesignal.com",
+      "tags": [
+        "communication",
+        "marketing"
+      ]
     },
     {
       "name": "OpenAI",
-      "url": "https://status.openai.com"
+      "url": "https://status.openai.com",
+      "tags": [
+        "ai"
+      ]
     },
     {
       "name": "Recurly",
-      "url": "https://status.recurly.com"
+      "url": "https://status.recurly.com",
+      "tags": [
+        "payments"
+      ]
     },
     {
       "name": "Rollbar",
-      "url": "https://status.rollbar.com"
+      "url": "https://status.rollbar.com",
+      "tags": [
+        "monitoring"
+      ]
     },
     {
       "name": "Strategic Roadmaps",
       "url": "https://status.roadmunk.com",
       "old_names": [
         "Roadmunk"
+      ],
+      "tags": [
+        "productivity"
       ]
     },
     {
       "name": "Tempo",
-      "url": "https://status.tempo.io"
+      "url": "https://status.tempo.io",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Zapier",
-      "url": "https://status.zapier.com"
+      "url": "https://status.zapier.com",
+      "tags": [
+        "productivity"
+      ]
     }
   ],
   "instatus": [
     {
       "name": "Bitmovin",
-      "url": "https://status.bitmovin.com"
+      "url": "https://status.bitmovin.com",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Instatus",
-      "url": "https://instat.us"
+      "url": "https://instat.us",
+      "tags": [
+        "monitoring"
+      ]
     },
     {
       "name": "Primcloud",
-      "url": "https://primcloud.instatus.com"
+      "url": "https://primcloud.instatus.com",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "Sketch",
-      "url": "https://status.sketch.com"
+      "url": "https://status.sketch.com",
+      "tags": [
+        "design"
+      ]
     },
     {
       "name": "Threader",
-      "url": "https://threader.instatus.com"
+      "url": "https://threader.instatus.com",
+      "tags": [
+        "social"
+      ]
     },
     {
       "name": "Whereby",
-      "url": "https://wherebystatus.com"
+      "url": "https://wherebystatus.com",
+      "tags": [
+        "communication"
+      ]
     },
     {
       "name": "mastodon.social",
       "url": "https://status.mastodon.social",
       "old_names": [
         "MastodonSocial"
+      ],
+      "tags": [
+        "social"
       ]
     }
   ],
   "pagerduty": [
     {
       "name": "PagerDuty",
-      "url": "https://status.pagerduty.com"
+      "url": "https://status.pagerduty.com",
+      "tags": [
+        "monitoring"
+      ]
     },
     {
       "name": "SignalWire",
-      "url": "https://signalwire.trust.pagerduty.com"
+      "url": "https://signalwire.trust.pagerduty.com",
+      "tags": [
+        "communication"
+      ]
     }
   ],
   "lamb": [
     {
       "name": "Codacy",
-      "url": "https://status.codacy.com"
+      "url": "https://status.codacy.com",
+      "tags": [
+        "devtools"
+      ]
     }
   ],
   "miro": [
@@ -373,56 +559,87 @@
     {
       "name": "Canonical",
       "url": "https://status.canonical.com",
-      "id": "KNms6QK9ewuzz-7xUsPsN927u5djVcb3oZX1-zOu_go="
+      "id": "KNms6QK9ewuzz-7xUsPsN927u5djVcb3oZX1-zOu_go=",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "Site24x7",
       "url": "https://status.site24x7.com",
-      "id": "7Ca9wFlVF-AlbjpE2tzER6FUegHamCQNyZF5CbAffCs="
+      "id": "7Ca9wFlVF-AlbjpE2tzER6FUegHamCQNyZF5CbAffCs=",
+      "tags": [
+        "monitoring"
+      ]
     }
   ],
   "sorry": [
     {
       "name": "Pingdom",
       "url": "https://status.pingdom.com",
-      "id": "2273"
+      "id": "2273",
+      "tags": [
+        "monitoring"
+      ]
     },
     {
       "name": "Pipedrive",
       "url": "https://status.pipedrive.com",
-      "id": "2754"
+      "id": "2754",
+      "tags": [
+        "sales"
+      ]
     },
     {
       "name": "Postmark",
       "url": "https://status.postmarkapp.com",
-      "id": "12903"
+      "id": "12903",
+      "tags": [
+        "communication"
+      ]
     }
   ],
   "statusiov1": [
     {
       "name": "ClickUp",
       "url": "https://status.clickup.com",
-      "id": "5b6e0963c662144d00913a09"
+      "id": "5b6e0963c662144d00913a09",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "CoreWeave",
       "url": "https://status.coreweave.com",
-      "id": "5e126e998f2f032e1f8f0f4b"
+      "id": "5e126e998f2f032e1f8f0f4b",
+      "tags": [
+        "ai",
+        "hosting"
+      ]
     },
     {
       "name": "Dashlane",
       "url": "https://status.dashlane.com",
-      "id": "5aabcb89fccc4b04d3774443"
+      "id": "5aabcb89fccc4b04d3774443",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Docker",
       "url": "https://www.dockerstatus.com/",
-      "id": "533c6539221ae15e3f000031"
+      "id": "533c6539221ae15e3f000031",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "GitLab",
       "url": "https://status.gitlab.com",
-      "id": "5b36dc6502d06804c08349f7"
+      "id": "5b36dc6502d06804c08349f7",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Let's Encrypt",
@@ -430,6 +647,9 @@
       "id": "55957a99e800baa4470002da",
       "old_names": [
         "LetsEncrypt"
+      ],
+      "tags": [
+        "hosting"
       ]
     },
     {
@@ -438,6 +658,9 @@
       "id": "54da2ea0e6bd61bf0d00002b",
       "old_names": [
         "OneLoginEU"
+      ],
+      "tags": [
+        "security"
       ]
     },
     {
@@ -446,19 +669,28 @@
       "id": "538511e2ce5cb97537000144",
       "old_names": [
         "OneLoginUS"
+      ],
+      "tags": [
+        "security"
       ]
     },
     {
       "name": "Roblox",
       "url": "https://status.roblox.com",
-      "id": "59db90dbcdeb2f04dadcf16d"
+      "id": "59db90dbcdeb2f04dadcf16d",
+      "tags": [
+        "gaming"
+      ]
     }
   ],
   "statuscake": [
     {
       "name": "MailChimp",
       "url": "https://status.mailchimp.com",
-      "id": "58JncZazfp"
+      "id": "58JncZazfp",
+      "tags": [
+        "marketing"
+      ]
     }
   ],
   "statuscast": [
@@ -468,6 +700,9 @@
       "hasCurrentStatus": false,
       "old_names": [
         "EightXEight"
+      ],
+      "tags": [
+        "communication"
       ]
     },
     {
@@ -476,6 +711,9 @@
       "hasCurrentStatus": true,
       "old_names": [
         "AirshipEU"
+      ],
+      "tags": [
+        "marketing"
       ]
     },
     {
@@ -485,6 +723,9 @@
       "old_names": [
         "AirshipUS",
         "UrbanAirship"
+      ],
+      "tags": [
+        "marketing"
       ]
     },
     {
@@ -493,12 +734,18 @@
       "hasCurrentStatus": true,
       "old_names": [
         "CampaignMonitor"
+      ],
+      "tags": [
+        "marketing"
       ]
     },
     {
       "name": "StatusCast",
       "url": "https://status.statuscast.com",
-      "hasCurrentStatus": false
+      "hasCurrentStatus": false,
+      "tags": [
+        "monitoring"
+      ]
     }
   ],
   "statushub": [
@@ -507,6 +754,10 @@
       "url": "https://wpenginestatus.com",
       "old_names": [
         "WPEngine"
+      ],
+      "tags": [
+        "hosting",
+        "websites"
       ]
     }
   ],
@@ -517,6 +768,9 @@
       "id": "z5s8xghvb0vf",
       "old_names": [
         "OnePassword"
+      ],
+      "tags": [
+        "security"
       ]
     },
     {
@@ -526,22 +780,35 @@
       "old_names": [
         "Basecamp",
         "statuspage.Basecamp"
+      ],
+      "tags": [
+        "productivity"
       ]
     },
     {
       "name": "Acoustic",
       "url": "https://status.goacoustic.com",
-      "id": "rx9084q34820"
+      "id": "rx9084q34820",
+      "tags": [
+        "marketing"
+      ]
     },
     {
       "name": "Acquia",
       "url": "https://status.acquia.com",
-      "id": "c3bdbqpxhzcc"
+      "id": "c3bdbqpxhzcc",
+      "tags": [
+        "hosting",
+        "websites"
+      ]
     },
     {
       "name": "Airbase",
       "url": "https://status.airbase.com",
-      "id": "pc6tsj7kht1c"
+      "id": "pc6tsj7kht1c",
+      "tags": [
+        "finance"
+      ]
     },
     {
       "name": "Alert Logic",
@@ -549,17 +816,26 @@
       "id": "bkbjcmdhhfbp",
       "old_names": [
         "AlertLogic"
+      ],
+      "tags": [
+        "security"
       ]
     },
     {
       "name": "Aptible",
       "url": "https://status.aptible.com",
-      "id": "fmwgqnbnbc4r"
+      "id": "fmwgqnbnbc4r",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "Asana",
       "url": "https://status.asana.com",
-      "id": "w58858w0sjxx"
+      "id": "w58858w0sjxx",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Atlassian Developer",
@@ -567,6 +843,9 @@
       "id": "n8766lc3ybbs",
       "old_names": [
         "AtlassianDeveloper"
+      ],
+      "tags": [
+        "devtools"
       ]
     },
     {
@@ -576,6 +855,9 @@
       "old_names": [
         "AtlassianAccess",
         "statuspage.AtlassianAccess"
+      ],
+      "tags": [
+        "security"
       ]
     },
     {
@@ -584,6 +866,9 @@
       "id": "tfc0vzc0cq1n",
       "old_names": [
         "AtlassianPartners"
+      ],
+      "tags": [
+        "productivity"
       ]
     },
     {
@@ -594,6 +879,9 @@
       "old_names": [
         "StatusPage",
         "Statuspage"
+      ],
+      "tags": [
+        "monitoring"
       ]
     },
     {
@@ -602,17 +890,27 @@
       "id": "3tbw4lb9t3qp",
       "old_names": [
         "AtlassianSupport"
+      ],
+      "tags": [
+        "productivity"
       ]
     },
     {
       "name": "AuroraSolar",
       "url": "https://status.aurorasolar.com",
-      "id": "vbgjcnqcyyw7"
+      "id": "vbgjcnqcyyw7",
+      "tags": [
+        "design",
+        "sales"
+      ]
     },
     {
       "name": "Auth0",
       "url": "https://status.auth0.com",
-      "id": "8q60stg1rk7l"
+      "id": "8q60stg1rk7l",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Authorize.Net",
@@ -620,17 +918,26 @@
       "id": "06v575cbzlpr",
       "old_names": [
         "AuthorizeNet"
+      ],
+      "tags": [
+        "payments"
       ]
     },
     {
       "name": "Avalara",
       "url": "https://status.avalara.com",
-      "id": "m10fpsk86bhy"
+      "id": "m10fpsk86bhy",
+      "tags": [
+        "finance"
+      ]
     },
     {
       "name": "BigCommerce",
       "url": "https://status.bigcommerce.com",
-      "id": "qbn4dyd29jby"
+      "id": "qbn4dyd29jby",
+      "tags": [
+        "commerce"
+      ]
     },
     {
       "name": "Bird",
@@ -639,6 +946,10 @@
       "old_names": [
         "MessageBird",
         "statuspage.MessageBird"
+      ],
+      "tags": [
+        "communication",
+        "marketing"
       ]
     },
     {
@@ -647,62 +958,98 @@
       "id": "bqlf8qjztdtr",
       "old_names": [
         "BitBucket"
+      ],
+      "tags": [
+        "devtools"
       ]
     },
     {
       "name": "Bitrise",
       "url": "https://status.bitrise.io",
-      "id": "1q8r4n02vb2k"
+      "id": "1q8r4n02vb2k",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Blend",
       "url": "https://status.blend.com",
-      "id": "wp6n3nr9gm7w"
+      "id": "wp6n3nr9gm7w",
+      "tags": [
+        "finance"
+      ]
     },
     {
       "name": "Bolt",
       "url": "https://status.bolt.com",
-      "id": "hgyc600tg2jq"
+      "id": "hgyc600tg2jq",
+      "tags": [
+        "payments"
+      ]
     },
     {
       "name": "Box",
       "url": "https://status.box.com",
-      "id": "208q92hckwws"
+      "id": "208q92hckwws",
+      "tags": [
+        "files"
+      ]
     },
     {
       "name": "Branch",
       "url": "https://status.branch.io",
-      "id": "74brn6fz1jt2"
+      "id": "74brn6fz1jt2",
+      "tags": [
+        "marketing"
+      ]
     },
     {
       "name": "Bugsnag",
       "url": "https://bugsnag.status.smartbear.com/",
-      "id": "6xl1gdp6yn0x"
+      "id": "6xl1gdp6yn0x",
+      "tags": [
+        "monitoring"
+      ]
     },
     {
       "name": "Buildkite",
       "url": "https://www.buildkitestatus.com",
-      "id": "ltljpr68dygn"
+      "id": "ltljpr68dygn",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Bullhorn",
       "url": "https://status.bullhorn.com",
-      "id": "cdxw86qkmw3x"
+      "id": "cdxw86qkmw3x",
+      "tags": [
+        "hr"
+      ]
     },
     {
       "name": "Chargebee",
       "url": "https://status.chargebee.com",
-      "id": "7h56br5y94wh"
+      "id": "7h56br5y94wh",
+      "tags": [
+        "payments"
+      ]
     },
     {
       "name": "Checkly",
       "url": "https://is.checkly.online",
-      "id": "nq8lf8mrmvw6"
+      "id": "nq8lf8mrmvw6",
+      "tags": [
+        "monitoring"
+      ]
     },
     {
       "name": "CircleCI",
       "url": "https://status.circleci.com",
-      "id": "6w4r0ttlx5ft"
+      "id": "6w4r0ttlx5ft",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Claude",
@@ -711,62 +1058,100 @@
       "old_names": [
         "Anthropic",
         "statuspage.Anthropic"
+      ],
+      "tags": [
+        "ai"
       ]
     },
     {
       "name": "Click",
       "url": "https://status.clicksoftware.com",
-      "id": "57wtfpyjb9p3"
+      "id": "57wtfpyjb9p3",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Cloud66",
       "url": "https://status.cloud66.com",
-      "id": "mpfrt81d47gt"
+      "id": "mpfrt81d47gt",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "CloudAMQP",
       "url": "https://status.cloudamqp.com",
-      "id": "2126xm8ctzlk"
+      "id": "2126xm8ctzlk",
+      "tags": [
+        "data"
+      ]
     },
     {
       "name": "Cloudflare",
       "url": "https://www.cloudflarestatus.com",
-      "id": "yh6f0r4529hb"
+      "id": "yh6f0r4529hb",
+      "tags": [
+        "hosting",
+        "security"
+      ]
     },
     {
       "name": "Cloudinary",
       "url": "https://status.cloudinary.com",
-      "id": "d8rszhl2bj7r"
+      "id": "d8rszhl2bj7r",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "CocoaPods",
       "url": "https://status.cocoapods.org",
-      "id": "7k11xygtyyyg"
+      "id": "7k11xygtyyyg",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Codecov",
       "url": "https://status.codecov.com/",
-      "id": "wdzsn5dlywj9"
+      "id": "wdzsn5dlywj9",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "CoderPad",
       "url": "https://status.coderpad.io",
-      "id": "29rb067ttd9j"
+      "id": "29rb067ttd9j",
+      "tags": [
+        "hr",
+        "devtools"
+      ]
     },
     {
       "name": "Coinbase",
       "url": "https://status.coinbase.com",
-      "id": "kr0djjh0jyy9"
+      "id": "kr0djjh0jyy9",
+      "tags": [
+        "finance"
+      ]
     },
     {
       "name": "Compass",
       "url": "https://compass.status.atlassian.com",
-      "id": "6b7xgjptl20c"
+      "id": "6b7xgjptl20c",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Confluence",
       "url": "https://confluence.status.atlassian.com",
-      "id": "4g2my7tbhjsq"
+      "id": "4g2my7tbhjsq",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Confluent Cloud",
@@ -774,22 +1159,35 @@
       "id": "3yz1tdpdnjl3",
       "old_names": [
         "ConfluentCloud"
+      ],
+      "tags": [
+        "data"
       ]
     },
     {
       "name": "Contentful",
       "url": "https://www.contentfulstatus.com",
-      "id": "4bv17htq00cz"
+      "id": "4bv17htq00cz",
+      "tags": [
+        "websites"
+      ]
     },
     {
       "name": "Coveralls",
       "url": "https://status.coveralls.io",
-      "id": "3h72wtpg5fqs"
+      "id": "3h72wtpg5fqs",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Cursor",
       "url": "https://status.cursor.com/",
-      "id": "0tp9ssgtptvs"
+      "id": "0tp9ssgtptvs",
+      "tags": [
+        "ai",
+        "devtools"
+      ]
     },
     {
       "name": "Customer.io",
@@ -797,27 +1195,42 @@
       "id": "w4qr97njbszt",
       "old_names": [
         "Customerio"
+      ],
+      "tags": [
+        "marketing"
       ]
     },
     {
       "name": "Cybersource",
       "url": "https://status.cybersource.com",
-      "id": "ttbtd8wrjg1b"
+      "id": "ttbtd8wrjg1b",
+      "tags": [
+        "payments"
+      ]
     },
     {
       "name": "Cypress",
       "url": "https://www.cypressstatus.com/",
-      "id": "prr339fdc8ry"
+      "id": "prr339fdc8ry",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "DNSimple",
       "url": "https://dnsimple.statuspage.io",
-      "id": "tjym90yyv2zt"
+      "id": "tjym90yyv2zt",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "Datadog",
       "url": "https://status.datadoghq.com",
-      "id": "1k6wzpspjf99"
+      "id": "1k6wzpspjf99",
+      "tags": [
+        "monitoring"
+      ]
     },
     {
       "name": "Datadog (EU)",
@@ -825,57 +1238,91 @@
       "id": "5by3sysm209d",
       "old_names": [
         "DatadogEU"
+      ],
+      "tags": [
+        "monitoring"
       ]
     },
     {
       "name": "DeepSeek",
       "url": "https://status.deepseek.com",
-      "id": "0db0rq26tg1l"
+      "id": "0db0rq26tg1l",
+      "tags": [
+        "ai"
+      ]
     },
     {
       "name": "Dialpad",
       "url": "https://status.dialpad.com",
-      "id": "80trk830s0hg"
+      "id": "80trk830s0hg",
+      "tags": [
+        "communication"
+      ]
     },
     {
       "name": "DigitalOcean",
       "url": "https://status.digitalocean.com",
-      "id": "w4cz49tckxhp"
+      "id": "w4cz49tckxhp",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "Discord",
       "url": "https://discordstatus.com/",
-      "id": "srhpyqt94yxb"
+      "id": "srhpyqt94yxb",
+      "tags": [
+        "communication",
+        "social"
+      ]
     },
     {
       "name": "Doppler",
       "url": "https://www.dopplerstatus.com",
-      "id": "05hwsyqkr9z7"
+      "id": "05hwsyqkr9z7",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Dropbox",
       "url": "https://status.dropbox.com",
-      "id": "t34htyd6jblf"
+      "id": "t34htyd6jblf",
+      "tags": [
+        "files"
+      ]
     },
     {
       "name": "Duo",
       "url": "https://status.duo.com",
-      "id": "qrxf5mzbrsxw"
+      "id": "qrxf5mzbrsxw",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Dwolla",
       "url": "https://status.dwolla.com",
-      "id": "tnynfs0nwlgr"
+      "id": "tnynfs0nwlgr",
+      "tags": [
+        "payments"
+      ]
     },
     {
       "name": "EasyPost",
       "url": "https://www.easypoststatus.com",
-      "id": "n1jtz5983249"
+      "id": "n1jtz5983249",
+      "tags": [
+        "commerce"
+      ]
     },
     {
       "name": "Egnyte",
       "url": "https://status.egnyte.com",
-      "id": "jr196z1ns266"
+      "id": "jr196z1ns266",
+      "tags": [
+        "files"
+      ]
     },
     {
       "name": "Elastic Cloud",
@@ -883,12 +1330,18 @@
       "id": "8wpbdv4sl8gv",
       "old_names": [
         "ElasticCloud"
+      ],
+      "tags": [
+        "data"
       ]
     },
     {
       "name": "Emailable",
       "url": "https://status.emailable.com",
-      "id": "ntzxwsjy15bq"
+      "id": "ntzxwsjy15bq",
+      "tags": [
+        "marketing"
+      ]
     },
     {
       "name": "Engine Yard",
@@ -896,6 +1349,9 @@
       "id": "76sphw1bc50q",
       "old_names": [
         "EngineYard"
+      ],
+      "tags": [
+        "hosting"
       ]
     },
     {
@@ -905,12 +1361,18 @@
       "old_names": [
         "EquinixMetal",
         "Packet"
+      ],
+      "tags": [
+        "hosting"
       ]
     },
     {
       "name": "Figma",
       "url": "https://status.figma.com",
-      "id": "rxpksf93ynw6"
+      "id": "rxpksf93ynw6",
+      "tags": [
+        "design"
+      ]
     },
     {
       "name": "Files.com",
@@ -919,17 +1381,26 @@
       "old_names": [
         "FilesCom",
         "Lumanox"
+      ],
+      "tags": [
+        "files"
       ]
     },
     {
       "name": "Filestack",
       "url": "https://status.filestack.com",
-      "id": "z8cjgbr8sqmh"
+      "id": "z8cjgbr8sqmh",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Fleek",
       "url": "https://status.fleek.xyz",
-      "id": "0flwwyd0s5n2"
+      "id": "0flwwyd0s5n2",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "Fly.io",
@@ -937,12 +1408,18 @@
       "id": "65rccr4mbblw",
       "old_names": [
         "Flyio"
+      ],
+      "tags": [
+        "hosting"
       ]
     },
     {
       "name": "FreeAgent",
       "url": "https://status.freeagent.com",
-      "id": "tn2dcgpy021r"
+      "id": "tn2dcgpy021r",
+      "tags": [
+        "finance"
+      ]
     },
     {
       "name": "Gandi.net",
@@ -950,17 +1427,26 @@
       "id": "xnm08yh10bv5",
       "old_names": [
         "Gandi"
+      ],
+      "tags": [
+        "hosting"
       ]
     },
     {
       "name": "GitHub",
       "url": "https://www.githubstatus.com",
-      "id": "kctbh9vrtdwd"
+      "id": "kctbh9vrtdwd",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Harness",
       "url": "https://status.harness.io/",
-      "id": "zmnt6tkys0q0"
+      "id": "zmnt6tkys0q0",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "HelloSign / HelloFax",
@@ -968,17 +1454,27 @@
       "id": "djw9397fmqd1",
       "old_names": [
         "HelloSignHelloFax"
+      ],
+      "tags": [
+        "productivity"
       ]
     },
     {
       "name": "HouseCanary",
       "url": "https://status.housecanary.com/",
-      "id": "pkkpjjckfnnb"
+      "id": "pkkpjjckfnnb",
+      "tags": [
+        "data"
+      ]
     },
     {
       "name": "HubSpot",
       "url": "https://status.hubspot.com",
-      "id": "8b9w1wwq3g7d"
+      "id": "8b9w1wwq3g7d",
+      "tags": [
+        "marketing",
+        "sales"
+      ]
     },
     {
       "name": "Internet Computer",
@@ -986,12 +1482,18 @@
       "id": "kc2llmsd16bk",
       "old_names": [
         "InternetComputer"
+      ],
+      "tags": [
+        "hosting"
       ]
     },
     {
       "name": "JAMF",
       "url": "https://status.jamf.com",
-      "id": "5z7bmx2nb2yj"
+      "id": "5z7bmx2nb2yj",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Jira Align",
@@ -999,6 +1501,9 @@
       "id": "jrg4crndtsgz",
       "old_names": [
         "JiraAlign"
+      ],
+      "tags": [
+        "productivity"
       ]
     },
     {
@@ -1007,6 +1512,9 @@
       "id": "qmzzdxyvmbmk",
       "old_names": [
         "JiraProductDiscovery"
+      ],
+      "tags": [
+        "productivity"
       ]
     },
     {
@@ -1015,6 +1523,9 @@
       "id": "pv54g7ltsc24",
       "old_names": [
         "JiraServiceManagement"
+      ],
+      "tags": [
+        "support"
       ]
     },
     {
@@ -1023,6 +1534,9 @@
       "id": "7yh3h3y0c0x1",
       "old_names": [
         "JiraSoftware"
+      ],
+      "tags": [
+        "productivity"
       ]
     },
     {
@@ -1031,17 +1545,26 @@
       "id": "s6f0gm5gcpmy",
       "old_names": [
         "JiraWorkManagement"
+      ],
+      "tags": [
+        "productivity"
       ]
     },
     {
       "name": "JumpCloud",
       "url": "https://status.jumpcloud.com",
-      "id": "nflr6k3n1c0h"
+      "id": "nflr6k3n1c0h",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "KeenIO",
       "url": "https://status.keen.io",
-      "id": "z3mvdbpvy7yh"
+      "id": "z3mvdbpvy7yh",
+      "tags": [
+        "analytics"
+      ]
     },
     {
       "name": "Keeper Security",
@@ -1049,37 +1572,58 @@
       "id": "wg5bvczw1rtf",
       "old_names": [
         "KeeperSecurity"
+      ],
+      "tags": [
+        "security"
       ]
     },
     {
       "name": "Kentik",
       "url": "https://status.kentik.com",
-      "id": "25fy3sprxcv3"
+      "id": "25fy3sprxcv3",
+      "tags": [
+        "monitoring"
+      ]
     },
     {
       "name": "Kustomer",
       "url": "https://status.kustomer.com",
-      "id": "lhn2sb4njk08"
+      "id": "lhn2sb4njk08",
+      "tags": [
+        "support"
+      ]
     },
     {
       "name": "LastPass",
       "url": "https://status.lastpass.com",
-      "id": "ytnz8gj3wjpg"
+      "id": "ytnz8gj3wjpg",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Lattice",
       "url": "https://status.lattice.com",
-      "id": "gj13f8gmt9b6"
+      "id": "gj13f8gmt9b6",
+      "tags": [
+        "hr"
+      ]
     },
     {
       "name": "LaunchDarkly",
       "url": "https://status.launchdarkly.com",
-      "id": "9404kdk7lkn7"
+      "id": "9404kdk7lkn7",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Lever",
       "url": "https://status.lever.co",
-      "id": "34ygfdwr11jd"
+      "id": "34ygfdwr11jd",
+      "tags": [
+        "hr"
+      ]
     },
     {
       "name": "LinkedIn API",
@@ -1087,52 +1631,83 @@
       "id": "mxfydrt8b8xw",
       "old_names": [
         "LinkedInAPI"
+      ],
+      "tags": [
+        "social"
       ]
     },
     {
       "name": "Linode",
       "url": "https://status.linode.com",
-      "id": "8dn0wstr1chc"
+      "id": "8dn0wstr1chc",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "Lob",
       "url": "https://lob.statuspage.io",
-      "id": "2xkb3rfdd3lg"
+      "id": "2xkb3rfdd3lg",
+      "tags": [
+        "communication",
+        "marketing"
+      ]
     },
     {
       "name": "Loggly",
       "url": "https://status.loggly.com",
-      "id": "701xnxqmhdh3"
+      "id": "701xnxqmhdh3",
+      "tags": [
+        "monitoring"
+      ]
     },
     {
       "name": "Loom",
       "url": "https://loom.status.atlassian.com",
-      "id": "j9r9w5bcs26w"
+      "id": "j9r9w5bcs26w",
+      "tags": [
+        "communication"
+      ]
     },
     {
       "name": "Mailgun",
       "url": "https://status.mailgun.com",
-      "id": "6jp439mdyy0k"
+      "id": "6jp439mdyy0k",
+      "tags": [
+        "communication"
+      ]
     },
     {
       "name": "Mapbox",
       "url": "https://status.mapbox.com",
-      "id": "l363gv8nm9gc"
+      "id": "l363gv8nm9gc",
+      "tags": [
+        "data"
+      ]
     },
     {
       "name": "Medium",
       "url": "https://medium.statuspage.io",
-      "id": "q9n7m9kv0533"
+      "id": "q9n7m9kv0533",
+      "tags": [
+        "websites"
+      ]
     },
     {
       "name": "MeridianLink",
       "url": "https://status.meridianlink.com",
-      "id": "n1pskh7dw1c1"
+      "id": "n1pskh7dw1c1",
+      "tags": [
+        "finance"
+      ]
     },
     {
       "name": "Mixpanel",
       "url": "https://www.mixpanelstatus.com/",
-      "id": "x4m91ldrf511"
+      "id": "x4m91ldrf511",
+      "tags": [
+        "analytics"
+      ]
     },
     {
       "name": "Mode Analytics",
@@ -1140,6 +1715,9 @@
       "id": "th35d4vb90h8",
       "old_names": [
         "ModeAnalytics"
+      ],
+      "tags": [
+        "analytics"
       ]
     },
     {
@@ -1148,6 +1726,9 @@
       "id": "smhnl3lt74kc",
       "old_names": [
         "MongoDBCloud"
+      ],
+      "tags": [
+        "data"
       ]
     },
     {
@@ -1156,12 +1737,18 @@
       "id": "29l4z1kld06b",
       "old_names": [
         "FirefoxRelay"
+      ],
+      "tags": [
+        "security"
       ]
     },
     {
       "name": "Mural",
       "url": "https://status.mural.co",
-      "id": "dbk70dpy3n7h"
+      "id": "dbk70dpy3n7h",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Nasdaq Data Link",
@@ -1170,12 +1757,19 @@
       "old_names": [
         "NasdaqDataLink",
         "Quandl"
+      ],
+      "tags": [
+        "data",
+        "finance"
       ]
     },
     {
       "name": "Netlify",
       "url": "https://www.netlifystatus.com",
-      "id": "83dz7syz0j3x"
+      "id": "83dz7syz0j3x",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "New Relic",
@@ -1183,32 +1777,51 @@
       "id": "nwg5xmnm9d17",
       "old_names": [
         "NewRelic"
+      ],
+      "tags": [
+        "monitoring"
       ]
     },
     {
       "name": "Opsgenie",
       "url": "https://opsgenie.status.atlassian.com",
-      "id": "t05vdsszxwtq"
+      "id": "t05vdsszxwtq",
+      "tags": [
+        "monitoring"
+      ]
     },
     {
       "name": "Pantheon",
       "url": "https://status.pantheon.io",
-      "id": "80f0zgsx80zh"
+      "id": "80f0zgsx80zh",
+      "tags": [
+        "hosting",
+        "websites"
+      ]
     },
     {
       "name": "Papertrail",
       "url": "https://www.papertrailstatus.com",
-      "id": "0n5jhb30j32t"
+      "id": "0n5jhb30j32t",
+      "tags": [
+        "monitoring"
+      ]
     },
     {
       "name": "Pardot",
       "url": "https://status.salesforce.com/products/MCAccountEngagement",
-      "id": "j0hnsfnqtllz"
+      "id": "j0hnsfnqtllz",
+      "tags": [
+        "marketing"
+      ]
     },
     {
       "name": "Pendo",
       "url": "https://status.pendo.io",
-      "id": "qxvy69hcwh22"
+      "id": "qxvy69hcwh22",
+      "tags": [
+        "analytics"
+      ]
     },
     {
       "name": "Planning Center",
@@ -1216,22 +1829,35 @@
       "id": "mj14zc034yxl",
       "old_names": [
         "PlanningCenter"
+      ],
+      "tags": [
+        "productivity"
       ]
     },
     {
       "name": "PlayFab",
       "url": "https://status.playfab.com",
-      "id": "hndmlgmdcpdk"
+      "id": "hndmlgmdcpdk",
+      "tags": [
+        "gaming",
+        "devtools"
+      ]
     },
     {
       "name": "Poka",
       "url": "https://www.pokastatus.io",
-      "id": "6gqznhly63gc"
+      "id": "6gqznhly63gc",
+      "tags": [
+        "hr"
+      ]
     },
     {
       "name": "Productboard",
       "url": "https://status.productboard.com",
-      "id": "wwwnvh1nlpt1"
+      "id": "wwwnvh1nlpt1",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Proton",
@@ -1239,37 +1865,59 @@
       "id": "wy8ls9q1ttmm",
       "old_names": [
         "ProtonMail"
+      ],
+      "tags": [
+        "security",
+        "communication"
       ]
     },
     {
       "name": "PubNub",
       "url": "https://status.pubnub.com",
-      "id": "j2pr9thwz01t"
+      "id": "j2pr9thwz01t",
+      "tags": [
+        "communication"
+      ]
     },
     {
       "name": "Pusher",
       "url": "https://status.pusher.com",
-      "id": "p6t5x7tdq8yq"
+      "id": "p6t5x7tdq8yq",
+      "tags": [
+        "communication"
+      ]
     },
     {
       "name": "Python",
       "url": "https://status.python.org",
-      "id": "2p66nmmycsj3"
+      "id": "2p66nmmycsj3",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "QuickBooks",
       "url": "https://status.quickbooks.intuit.com",
-      "id": "2dv2gqw9hrgc"
+      "id": "2dv2gqw9hrgc",
+      "tags": [
+        "finance"
+      ]
     },
     {
       "name": "ReadMe",
       "url": "https://www.readmestatus.com",
-      "id": "nz3r09cr7dk1"
+      "id": "nz3r09cr7dk1",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Recruiterbox",
       "url": "https://status.hire.trakstar.com/",
-      "id": "mnlrk0049tgf"
+      "id": "mnlrk0049tgf",
+      "tags": [
+        "hr"
+      ]
     },
     {
       "name": "Red Hat",
@@ -1277,32 +1925,50 @@
       "id": "dn6mqn7xvzz3",
       "old_names": [
         "RedHat"
+      ],
+      "tags": [
+        "hosting"
       ]
     },
     {
       "name": "Reddit",
       "url": "https://www.redditstatus.com",
-      "id": "2kbc0d48tv3j"
+      "id": "2kbc0d48tv3j",
+      "tags": [
+        "social"
+      ]
     },
     {
       "name": "RevenueCat",
       "url": "https://status.revenuecat.com",
-      "id": "d7wjfp7kgjkd"
+      "id": "d7wjfp7kgjkd",
+      "tags": [
+        "payments"
+      ]
     },
     {
       "name": "Robin",
       "url": "https://status.robinpowered.com",
-      "id": "4hy25vm4h6fc"
+      "id": "4hy25vm4h6fc",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Robinhood",
       "url": "https://status.robinhood.com",
-      "id": "49plxygx5s1k"
+      "id": "49plxygx5s1k",
+      "tags": [
+        "finance"
+      ]
     },
     {
       "name": "RubyGems",
       "url": "https://status.rubygems.org",
-      "id": "pclby00q90vc"
+      "id": "pclby00q90vc",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Sauce Labs",
@@ -1310,37 +1976,58 @@
       "id": "kd2w7ghdk56w",
       "old_names": [
         "SauceLabs"
+      ],
+      "tags": [
+        "devtools"
       ]
     },
     {
       "name": "Scaleway",
       "url": "https://status.scaleway.com",
-      "id": "s2kbtscly3pj"
+      "id": "s2kbtscly3pj",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "SecurID",
       "url": "https://status.securid.com",
-      "id": "1xw7gmwkm0bg"
+      "id": "1xw7gmwkm0bg",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Segment",
       "url": "https://status.segment.com",
-      "id": "yzw83vcxbysq"
+      "id": "yzw83vcxbysq",
+      "tags": [
+        "data"
+      ]
     },
     {
       "name": "Semaphore",
       "url": "https://status.semaphore.io/",
-      "id": "zq6qk8cct5d8"
+      "id": "zq6qk8cct5d8",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Sentry",
       "url": "https://status.sentry.io",
-      "id": "t687h3m0nh65"
+      "id": "t687h3m0nh65",
+      "tags": [
+        "monitoring"
+      ]
     },
     {
       "name": "Shopify",
       "url": "https://www.shopifystatus.com",
-      "id": "d33g96wd23dd"
+      "id": "d33g96wd23dd",
+      "tags": [
+        "commerce"
+      ]
     },
     {
       "name": "Shortcut",
@@ -1349,6 +2036,9 @@
       "old_names": [
         "Clubhouse",
         "statuspage.Clubhouse"
+      ],
+      "tags": [
+        "productivity"
       ]
     },
     {
@@ -1357,32 +2047,50 @@
       "id": "q1z5r94tnt56",
       "old_names": [
         "SmartyStreets"
+      ],
+      "tags": [
+        "data"
       ]
     },
     {
       "name": "Snowflake",
       "url": "https://status.snowflake.com",
-      "id": "94s7z8vpy1n8"
+      "id": "94s7z8vpy1n8",
+      "tags": [
+        "data"
+      ]
     },
     {
       "name": "Snyk",
       "url": "https://snyk.statuspage.io",
-      "id": "myj6w6kw42c6"
+      "id": "myj6w6kw42c6",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Squarespace",
       "url": "https://status.squarespace.com",
-      "id": "1jkhm1drpysj"
+      "id": "1jkhm1drpysj",
+      "tags": [
+        "websites"
+      ]
     },
     {
       "name": "Stream",
       "url": "https://status.getstream.io",
-      "id": "gsms7w17y9wc"
+      "id": "gsms7w17y9wc",
+      "tags": [
+        "communication"
+      ]
     },
     {
       "name": "SumoLogic",
       "url": "https://status.sumologic.com",
-      "id": "mch6db66pqjz"
+      "id": "mch6db66pqjz",
+      "tags": [
+        "monitoring"
+      ]
     },
     {
       "name": "Teleport Cloud",
@@ -1390,22 +2098,34 @@
       "id": "j16wc0h3wc86",
       "old_names": [
         "TeleportCloud"
+      ],
+      "tags": [
+        "security"
       ]
     },
     {
       "name": "Temporal",
       "url": "https://status.temporal.io",
-      "id": "dnmfkqzkp304"
+      "id": "dnmfkqzkp304",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "TravisCI",
       "url": "https://www.traviscistatus.com",
-      "id": "pnpcptp8xh9k"
+      "id": "pnpcptp8xh9k",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Trello",
       "url": "https://trello.status.atlassian.com",
-      "id": "h5frqhb041yq"
+      "id": "h5frqhb041yq",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Twilio",
@@ -1414,27 +2134,43 @@
       "old_names": [
         "SendGrid",
         "statuspage.SendGrid"
+      ],
+      "tags": [
+        "communication"
       ]
     },
     {
       "name": "Twitch",
       "url": "https://status.twitch.com/",
-      "id": "yfj40zdsk34s"
+      "id": "yfj40zdsk34s",
+      "tags": [
+        "media",
+        "gaming"
+      ]
     },
     {
       "name": "Tyk",
       "url": "https://status.tyk.io/",
-      "id": "wygv0lcrzvq7"
+      "id": "wygv0lcrzvq7",
+      "tags": [
+        "devtools"
+      ]
     },
     {
       "name": "Typeform",
       "url": "https://status.typeform.com",
-      "id": "fv5fyw3p7k8n"
+      "id": "fv5fyw3p7k8n",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Unsplash",
       "url": "https://status.unsplash.com",
-      "id": "gcw6g25tpdkv"
+      "id": "gcw6g25tpdkv",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "VMware Workspace ONE",
@@ -1442,22 +2178,34 @@
       "id": "3l65ysrm5cly",
       "old_names": [
         "VMwareWorkspaceONE"
+      ],
+      "tags": [
+        "security"
       ]
     },
     {
       "name": "Vercel",
       "url": "https://www.vercel-status.com",
-      "id": "lvglq8h0mdyh"
+      "id": "lvglq8h0mdyh",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "VictorOps",
       "url": "https://status.victorops.com",
-      "id": "tj7j024mr40d"
+      "id": "tj7j024mr40d",
+      "tags": [
+        "monitoring"
+      ]
     },
     {
       "name": "Vimeo",
       "url": "https://www.vimeostatus.com",
-      "id": "sccqh0pnqrh8"
+      "id": "sccqh0pnqrh8",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Visual Studio App Center",
@@ -1465,37 +2213,59 @@
       "id": "kkc10kz2t8yc",
       "old_names": [
         "VisualStudioAppCenter"
+      ],
+      "tags": [
+        "devtools"
       ]
     },
     {
       "name": "Wasabi",
       "url": "https://status.wasabi.com",
-      "id": "2r1tdgqr8ld5"
+      "id": "2r1tdgqr8ld5",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "WeTransfer",
       "url": "https://wetransfer.statuspage.io",
-      "id": "sc26zwwp3c0r"
+      "id": "sc26zwwp3c0r",
+      "tags": [
+        "files"
+      ]
     },
     {
       "name": "Wiz",
       "url": "https://status.wiz.io/",
-      "id": "bgx79l11xfsj"
+      "id": "bgx79l11xfsj",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Wodby",
       "url": "https://status.wodby.com",
-      "id": "hmm9v8wzw86x"
+      "id": "hmm9v8wzw86x",
+      "tags": [
+        "hosting",
+        "websites"
+      ]
     },
     {
       "name": "Workflowy",
       "url": "https://status.workflowy.com",
-      "id": "m8f43n57h83g"
+      "id": "m8f43n57h83g",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Xandr",
       "url": "https://status.ads.microsoft.com/",
-      "id": "z7jb4dcjs0nl"
+      "id": "z7jb4dcjs0nl",
+      "tags": [
+        "marketing"
+      ]
     },
     {
       "name": "Zight",
@@ -1504,17 +2274,26 @@
       "old_names": [
         "CloudApp",
         "statuspage.CloudApp"
+      ],
+      "tags": [
+        "communication"
       ]
     },
     {
       "name": "Zoom",
       "url": "https://www.zoomstatus.com/",
-      "id": "14qjgk812kgk"
+      "id": "14qjgk812kgk",
+      "tags": [
+        "communication"
+      ]
     },
     {
       "name": "Zwift",
       "url": "https://status.zwift.com",
-      "id": "sj50pfj5p1yv"
+      "id": "sj50pfj5p1yv",
+      "tags": [
+        "gaming"
+      ]
     },
     {
       "name": "bunny.net",
@@ -1522,6 +2301,9 @@
       "id": "jggkjgplmcdc",
       "old_names": [
         "Bunnynet"
+      ],
+      "tags": [
+        "hosting"
       ]
     },
     {
@@ -1530,6 +2312,9 @@
       "id": "032k0f0j3bsz",
       "old_names": [
         "Imgix"
+      ],
+      "tags": [
+        "media"
       ]
     },
     {
@@ -1538,6 +2323,9 @@
       "id": "flbqdmg201t4",
       "old_names": [
         "LogzIO"
+      ],
+      "tags": [
+        "monitoring"
       ]
     },
     {
@@ -1546,21 +2334,34 @@
       "id": "wyvgptkd90hm",
       "old_names": [
         "NPM"
+      ],
+      "tags": [
+        "devtools"
       ]
     }
   ],
   "statuspal": [
     {
       "name": "Booxi",
-      "url": "https://status.booxi.com"
+      "url": "https://status.booxi.com",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Exoscale",
-      "url": "https://exoscalestatus.com"
+      "url": "https://exoscalestatus.com",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "Unity",
-      "url": "https://status.unity.com"
+      "url": "https://status.unity.com",
+      "tags": [
+        "gaming",
+        "devtools"
+      ]
     }
   ],
   "sendbird": [
@@ -1843,7 +2644,10 @@
       "id": "Datorama",
       "product": "Datorama",
       "category": true,
-      "category_name": "Datorama"
+      "category_name": "Datorama",
+      "tags": [
+        "analytics"
+      ]
     },
     {
       "name": "Datorama (EMEA)",
@@ -1862,7 +2666,10 @@
       "id": "Heroku",
       "product": "Heroku",
       "category": true,
-      "category_name": "Heroku"
+      "category_name": "Heroku",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "Heroku (APAC)",
@@ -1887,7 +2694,10 @@
       "id": "MCAccountEngagement",
       "product": "MCAccountEngagement",
       "category": true,
-      "category_name": "MC Account Engagement"
+      "category_name": "MC Account Engagement",
+      "tags": [
+        "marketing"
+      ]
     },
     {
       "name": "MC Account Engagement (NA)",
@@ -1900,7 +2710,10 @@
       "id": "MCPersonalization",
       "product": "MCPersonalization",
       "category": true,
-      "category_name": "MC Personalization"
+      "category_name": "MC Personalization",
+      "tags": [
+        "marketing"
+      ]
     },
     {
       "name": "MC Personalization (APAC)",
@@ -1925,7 +2738,10 @@
       "id": "Mulesoft",
       "product": "Mulesoft",
       "category": true,
-      "category_name": "Mulesoft"
+      "category_name": "Mulesoft",
+      "tags": [
+        "data"
+      ]
     },
     {
       "name": "Mulesoft (APAC)",
@@ -1950,7 +2766,10 @@
       "id": "Point_of_Sale",
       "product": "Point_of_Sale",
       "category": true,
-      "category_name": "Point of Sale"
+      "category_name": "Point of Sale",
+      "tags": [
+        "commerce"
+      ]
     },
     {
       "name": "Point of Sale (APAC)",
@@ -1975,7 +2794,10 @@
       "id": "B2C_Commerce_Cloud",
       "product": "B2C_Commerce_Cloud",
       "category": true,
-      "category_name": "Salesforce B2C Commerce Cloud"
+      "category_name": "Salesforce B2C Commerce Cloud",
+      "tags": [
+        "commerce"
+      ]
     },
     {
       "name": "Salesforce B2C Commerce Cloud (APAC)",
@@ -2000,7 +2822,10 @@
       "id": "Community_Cloud",
       "product": "Community_Cloud",
       "category": true,
-      "category_name": "Salesforce Experience Cloud"
+      "category_name": "Salesforce Experience Cloud",
+      "tags": [
+        "websites"
+      ]
     },
     {
       "name": "Salesforce Experience Cloud (APAC)",
@@ -2025,7 +2850,10 @@
       "id": "Marketing_Cloud",
       "product": "Marketing_Cloud",
       "category": true,
-      "category_name": "Salesforce Marketing Cloud"
+      "category_name": "Salesforce Marketing Cloud",
+      "tags": [
+        "marketing"
+      ]
     },
     {
       "name": "Salesforce Marketing Cloud (APAC)",
@@ -2050,7 +2878,11 @@
       "id": "Salesforce_Services",
       "product": "Salesforce_Services",
       "category": true,
-      "category_name": "Salesforce Services"
+      "category_name": "Salesforce Services",
+      "tags": [
+        "sales",
+        "support"
+      ]
     },
     {
       "name": "Salesforce Services (APAC)",
@@ -2075,7 +2907,10 @@
       "id": "Spiff",
       "product": "Spiff",
       "category": true,
-      "category_name": "Spiff"
+      "category_name": "Spiff",
+      "tags": [
+        "sales"
+      ]
     },
     {
       "name": "Spiff (EMEA)",
@@ -2094,7 +2929,10 @@
       "id": "Tableau",
       "product": "Tableau",
       "category": true,
-      "category_name": "Tableau"
+      "category_name": "Tableau",
+      "tags": [
+        "analytics"
+      ]
     },
     {
       "name": "Tableau (APAC)",
@@ -2247,7 +3085,10 @@
       "id": "503459",
       "cloud": "CreativeCloud",
       "category": true,
-      "category_name": "Adobe Creative Cloud"
+      "category_name": "Adobe Creative Cloud",
+      "tags": [
+        "design"
+      ]
     },
     {
       "name": "Adobe Creative Cloud Applications",
@@ -2350,14 +3191,21 @@
       "id": "503457",
       "cloud": "DocumentCloud",
       "category": true,
-      "category_name": "Adobe Document Cloud"
+      "category_name": "Adobe Document Cloud",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Adobe Experience Cloud (All)",
       "id": "503461",
       "cloud": "ExperienceCloud",
       "category": true,
-      "category_name": "Adobe Experience Cloud"
+      "category_name": "Adobe Experience Cloud",
+      "tags": [
+        "marketing",
+        "analytics"
+      ]
     },
     {
       "name": "Adobe Experience League",
@@ -2382,7 +3230,11 @@
       "id": "503460",
       "cloud": "ExperiencePlatform",
       "category": true,
-      "category_name": "Adobe Experience Platform"
+      "category_name": "Adobe Experience Platform",
+      "tags": [
+        "data",
+        "marketing"
+      ]
     },
     {
       "name": "Adobe Express",
@@ -2557,7 +3409,10 @@
       "id": "503458",
       "cloud": "Services",
       "category": true,
-      "category_name": "Adobe Services"
+      "category_name": "Adobe Services",
+      "tags": [
+        "design"
+      ]
     },
     {
       "name": "Adobe Sign In",
@@ -2615,59 +3470,101 @@
     },
     {
       "name": "Apple Account Card",
-      "id": "Apple Account Card"
+      "id": "Apple Account Card",
+      "tags": [
+        "payments"
+      ]
     },
     {
       "name": "Apple App Store",
-      "id": "App Store"
+      "id": "App Store",
+      "tags": [
+        "commerce"
+      ]
     },
     {
       "name": "Apple Arcade",
-      "id": "Apple Arcade"
+      "id": "Apple Arcade",
+      "tags": [
+        "gaming"
+      ]
     },
     {
       "name": "Apple Audiobooks",
-      "id": "Audiobooks"
+      "id": "Audiobooks",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Apple Books",
-      "id": "Apple Books"
+      "id": "Apple Books",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Apple Business",
-      "id": "Apple Business"
+      "id": "Apple Business",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Apple Card",
-      "id": "Apple Card"
+      "id": "Apple Card",
+      "tags": [
+        "finance"
+      ]
     },
     {
       "name": "Apple Cash",
-      "id": "Apple Cash"
+      "id": "Apple Cash",
+      "tags": [
+        "payments"
+      ]
     },
     {
       "name": "Apple Creator Studio Content Hub",
-      "id": "Apple Creator Studio Content Hub"
+      "id": "Apple Creator Studio Content Hub",
+      "tags": [
+        "design"
+      ]
     },
     {
       "name": "Apple Dictation",
-      "id": "Dictation"
+      "id": "Dictation",
+      "tags": [
+        "ai"
+      ]
     },
     {
       "name": "Apple FaceTime",
-      "id": "FaceTime"
+      "id": "FaceTime",
+      "tags": [
+        "communication"
+      ]
     },
     {
       "name": "Apple Find My",
-      "id": "Find My"
+      "id": "Find My",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Apple Fitness+",
-      "id": "Apple Fitness+"
+      "id": "Apple Fitness+",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Apple Game Center",
-      "id": "Game Center"
+      "id": "Game Center",
+      "tags": [
+        "gaming"
+      ]
     },
     {
       "name": "Apple Global Service Exchange",
@@ -2683,7 +3580,10 @@
     },
     {
       "name": "Apple HomeKit Secure Video",
-      "id": "HomeKit Secure Video"
+      "id": "HomeKit Secure Video",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Apple iCloud Account & Sign In",
@@ -2691,7 +3591,10 @@
     },
     {
       "name": "Apple iCloud Backup",
-      "id": "iCloud Backup"
+      "id": "iCloud Backup",
+      "tags": [
+        "files"
+      ]
     },
     {
       "name": "Apple iCloud Bookmarks & Tabs",
@@ -2699,39 +3602,66 @@
     },
     {
       "name": "Apple iCloud Calendar",
-      "id": "iCloud Calendar"
+      "id": "iCloud Calendar",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Apple iCloud Contacts",
-      "id": "iCloud Contacts"
+      "id": "iCloud Contacts",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Apple iCloud Drive",
-      "id": "iCloud Drive"
+      "id": "iCloud Drive",
+      "tags": [
+        "files"
+      ]
     },
     {
       "name": "Apple iCloud Keychain",
-      "id": "iCloud Keychain"
+      "id": "iCloud Keychain",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Apple iCloud Mail",
-      "id": "iCloud Mail"
+      "id": "iCloud Mail",
+      "tags": [
+        "communication"
+      ]
     },
     {
       "name": "Apple iCloud Notes",
-      "id": "iCloud Notes"
+      "id": "iCloud Notes",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Apple iCloud Private Relay",
-      "id": "iCloud Private Relay"
+      "id": "iCloud Private Relay",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Apple iCloud Reminders",
-      "id": "iCloud Reminders"
+      "id": "iCloud Reminders",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Apple iCloud Storage Upgrades",
-      "id": "iCloud Storage Upgrades"
+      "id": "iCloud Storage Upgrades",
+      "tags": [
+        "files"
+      ]
     },
     {
       "name": "Apple iCloud Web Apps (iCloud.com)",
@@ -2739,15 +3669,24 @@
     },
     {
       "name": "Apple Identity - Drivers License or ID",
-      "id": "Identity - Drivers License or ID"
+      "id": "Identity - Drivers License or ID",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Apple iMessage",
-      "id": "iMessage"
+      "id": "iMessage",
+      "tags": [
+        "communication"
+      ]
     },
     {
       "name": "Apple Invites",
-      "id": "Apple Invites"
+      "id": "Apple Invites",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Apple iOS Device Activation",
@@ -2755,23 +3694,39 @@
     },
     {
       "name": "Apple iTunes Match",
-      "id": "iTunes Match"
+      "id": "iTunes Match",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Apple iTunes Store",
-      "id": "iTunes Store"
+      "id": "iTunes Store",
+      "tags": [
+        "commerce",
+        "media"
+      ]
     },
     {
       "name": "Apple iWork Collaboration",
-      "id": "iWork Collaboration"
+      "id": "iWork Collaboration",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Apple iWork for iCloud",
-      "id": "iWork for iCloud"
+      "id": "iWork for iCloud",
+      "tags": [
+        "productivity"
+      ]
     },
     {
       "name": "Apple Mac App Store",
-      "id": "Mac App Store"
+      "id": "Mac App Store",
+      "tags": [
+        "commerce"
+      ]
     },
     {
       "name": "Apple macOS Software Update",
@@ -2779,7 +3734,10 @@
     },
     {
       "name": "Apple Mail Drop",
-      "id": "Mail Drop"
+      "id": "Mail Drop",
+      "tags": [
+        "files"
+      ]
     },
     {
       "name": "Apple Maps Display",
@@ -2799,55 +3757,94 @@
     },
     {
       "name": "Apple Messages for Business",
-      "id": "Apple Messages for Business"
+      "id": "Apple Messages for Business",
+      "tags": [
+        "support"
+      ]
     },
     {
       "name": "Apple Music",
-      "id": "Apple Music"
+      "id": "Apple Music",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Apple Music Classical",
-      "id": "Apple Music Classical"
+      "id": "Apple Music Classical",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Apple Music radio",
-      "id": "Apple Music radio"
+      "id": "Apple Music radio",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Apple Music Subscriptions",
-      "id": "Apple Music Subscriptions"
+      "id": "Apple Music Subscriptions",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Apple News",
-      "id": "News"
+      "id": "News",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Apple Online Store",
-      "id": "Apple Online Store"
+      "id": "Apple Online Store",
+      "tags": [
+        "commerce"
+      ]
     },
     {
       "name": "Apple Pay",
-      "id": "Apple Pay"
+      "id": "Apple Pay",
+      "tags": [
+        "payments"
+      ]
     },
     {
       "name": "Apple Photos",
-      "id": "Photos"
+      "id": "Photos",
+      "tags": [
+        "files"
+      ]
     },
     {
       "name": "Apple Podcasts",
-      "id": "Podcasts"
+      "id": "Podcasts",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Apple Private Cloud Compute",
-      "id": "Private Cloud Compute"
+      "id": "Private Cloud Compute",
+      "tags": [
+        "ai"
+      ]
     },
     {
       "name": "Apple Radio",
-      "id": "Radio"
+      "id": "Radio",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Apple School Manager",
-      "id": "Apple School Manager"
+      "id": "Apple School Manager",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Apple Schooltime",
@@ -2863,15 +3860,24 @@
     },
     {
       "name": "Apple Sign in with Apple",
-      "id": "Sign in with Apple"
+      "id": "Sign in with Apple",
+      "tags": [
+        "security"
+      ]
     },
     {
       "name": "Apple Siri",
-      "id": "Siri"
+      "id": "Siri",
+      "tags": [
+        "ai"
+      ]
     },
     {
       "name": "Apple Sports",
-      "id": "Apple Sports"
+      "id": "Apple Sports",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Apple Spotlight suggestions",
@@ -2879,39 +3885,66 @@
     },
     {
       "name": "Apple Stocks",
-      "id": "Stocks"
+      "id": "Stocks",
+      "tags": [
+        "finance"
+      ]
     },
     {
       "name": "Apple Subscription Purchase",
-      "id": "Subscription Purchase"
+      "id": "Subscription Purchase",
+      "tags": [
+        "payments"
+      ]
     },
     {
       "name": "Apple TV",
-      "id": "Apple TV"
+      "id": "Apple TV",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Apple TV Channels",
-      "id": "Apple TV Channels"
+      "id": "Apple TV Channels",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Apple TV Provider",
-      "id": "TV Provider"
+      "id": "TV Provider",
+      "tags": [
+        "media"
+      ]
     },
     {
       "name": "Apple visionOS App Store",
-      "id": "visionOS App Store"
+      "id": "visionOS App Store",
+      "tags": [
+        "commerce"
+      ]
     },
     {
       "name": "Apple Volume Purchase Program",
-      "id": "Volume Purchase Program"
+      "id": "Volume Purchase Program",
+      "tags": [
+        "commerce"
+      ]
     },
     {
       "name": "Apple Walkie-Talkie",
-      "id": "Walkie-Talkie"
+      "id": "Walkie-Talkie",
+      "tags": [
+        "communication"
+      ]
     },
     {
       "name": "Apple Wallet",
-      "id": "Wallet"
+      "id": "Wallet",
+      "tags": [
+        "payments"
+      ]
     },
     {
       "name": "Apple Weather",
@@ -4023,7 +5056,10 @@
       "name": "AWS Regions (All)",
       "id": "_all",
       "category": true,
-      "category_name": "AWS Regions"
+      "category_name": "AWS Regions",
+      "tags": [
+        "hosting"
+      ]
     }
   ],
   "awsservices": [
@@ -7361,7 +8397,10 @@
       "name": "AWS (All)",
       "id": "_all",
       "category": true,
-      "category_name": "AWS"
+      "category_name": "AWS",
+      "tags": [
+        "hosting"
+      ]
     },
     {
       "name": "AWS Account Management",
@@ -11745,5 +12784,95 @@
   ],
   "_removed": [
     "betterstack.BuildJet"
-  ]
+  ],
+  "_tags": {
+    "ai": {
+      "name": "AI",
+      "symbol": "sparkles"
+    },
+    "analytics": {
+      "name": "Analytics",
+      "symbol": "chart.bar.xaxis"
+    },
+    "commerce": {
+      "name": "E-commerce",
+      "symbol": "cart"
+    },
+    "communication": {
+      "name": "Communication",
+      "symbol": "bubble.left.and.bubble.right"
+    },
+    "data": {
+      "name": "Data",
+      "symbol": "cylinder.split.1x2"
+    },
+    "design": {
+      "name": "Design",
+      "symbol": "paintbrush.pointed"
+    },
+    "devtools": {
+      "name": "Developer Tools",
+      "symbol": "chevron.left.forwardslash.chevron.right"
+    },
+    "files": {
+      "name": "Files",
+      "symbol": "folder"
+    },
+    "finance": {
+      "name": "Finance",
+      "symbol": "banknote"
+    },
+    "gaming": {
+      "name": "Gaming",
+      "symbol": "gamecontroller"
+    },
+    "hosting": {
+      "name": "Hosting & Networking",
+      "symbol": "server.rack"
+    },
+    "hr": {
+      "name": "HR",
+      "symbol": "person.2"
+    },
+    "marketing": {
+      "name": "Marketing",
+      "symbol": "megaphone"
+    },
+    "media": {
+      "name": "Media",
+      "symbol": "play.rectangle"
+    },
+    "monitoring": {
+      "name": "Monitoring",
+      "symbol": "waveform.path.ecg"
+    },
+    "payments": {
+      "name": "Payments",
+      "symbol": "creditcard"
+    },
+    "productivity": {
+      "name": "Productivity",
+      "symbol": "checklist"
+    },
+    "sales": {
+      "name": "Sales",
+      "symbol": "chart.line.uptrend.xyaxis"
+    },
+    "security": {
+      "name": "Security",
+      "symbol": "lock.shield"
+    },
+    "social": {
+      "name": "Social",
+      "symbol": "person.3"
+    },
+    "support": {
+      "name": "Customer Support",
+      "symbol": "lifepreserver"
+    },
+    "websites": {
+      "name": "Websites",
+      "symbol": "globe"
+    }
+  }
 }

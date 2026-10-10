@@ -55,19 +55,14 @@ final class PreferencesModel: ObservableObject {
 
     /// One row of the Services pane's filter column — which slice of the catalogue the list shows.
     ///
-    /// `all` is the only scope that reaches the whole catalogue; the rest are subsets of what's
-    /// enabled, since stts only knows anything about a service it polls.
-    enum ServicesFilter: Hashable, CaseIterable {
+    /// `all` and the categories slice the whole catalogue; the monitored scopes are subsets of
+    /// what's enabled, since stts only knows anything about a service it polls.
+    enum ServicesFilter: Hashable {
         case all
         case monitoring
         case notifying
         case affected
-
-        /// The filter column's sections, in order. `nil` is the untitled block at the top.
-        static let sections: [(title: String?, filters: [ServicesFilter])] = [
-            (nil, [.all]),
-            ("Monitored", [.monitoring, .notifying, .affected])
-        ]
+        case category(ServiceTag)
 
         var title: String {
             switch self {
@@ -75,6 +70,7 @@ final class PreferencesModel: ObservableObject {
             case .monitoring: return "Monitoring"
             case .notifying: return "Notifying"
             case .affected: return "Affected"
+            case .category(let tag): return tag.name
             }
         }
 
@@ -84,16 +80,26 @@ final class PreferencesModel: ObservableObject {
             case .monitoring: return "checkmark.circle"
             case .notifying: return "bell"
             case .affected: return "exclamationmark.triangle"
+            case .category(let tag): return tag.symbol
             }
         }
 
-        /// What an empty list under this scope says. `all` is never empty.
+        /// What an empty list under this scope says. `all` is never empty, and a category only
+        /// gets a row once something is in it.
         var emptyTitle: String {
             switch self {
-            case .all: return ""
+            case .all, .category: return ""
             case .monitoring: return "Nothing monitored yet"
             case .notifying: return "No notifications turned on"
             case .affected: return "Everything is operational"
+            }
+        }
+
+        /// Scopes that show the catalogue's vendor groups rather than a flat list.
+        var isGrouped: Bool {
+            switch self {
+            case .all, .category: return true
+            case .monitoring, .notifying, .affected: return false
             }
         }
 
@@ -143,6 +149,10 @@ final class PreferencesModel: ObservableObject {
     /// per-category work worth batching there.
     private var childrenCache: [String: [ServiceDefinition]] = [:]
 
+    /// Global identifiers in each category, sub-services included, by `ServiceTag.id`. Built in
+    /// `reload()`; see `indexTags()` for how a vendor's tags reach its sub-services.
+    private var taggedIdentifiers: [String: Set<String>] = [:]
+
     init(serviceLoader: ServiceLoader, preferences: Preferences, customServiceStore: CustomServiceStore) {
         self.serviceLoader = serviceLoader
         self.preferences = preferences
@@ -168,6 +178,7 @@ final class PreferencesModel: ObservableObject {
         topLevelServices = serviceLoader.allServicesWithoutSubServices.filter { !$0.isCustom }
         childrenCache.removeAll()
         precomputeReflectionBasedChildren()
+        indexTags()
     }
 
     // MARK: - Enabling services
@@ -249,18 +260,35 @@ final class PreferencesModel: ObservableObject {
     }
 
     /// Everything a filter covers, before any search: the flat catalogue for `all` (sub-services
-    /// included, so the count matches "Search 543 services"), or that scope's monitored subset.
+    /// included, so the count matches "Search 543 services"), the slice of it in a category, or
+    /// that scope's monitored subset.
     func services(for filter: ServicesFilter) -> [ServiceDefinition] {
         switch filter {
         case .all: return catalogue
         case .monitoring: return monitoredServices
         case .notifying: return notifyingServices
         case .affected: return affectedServices
+        case .category(let tag): return catalogue.filter { isTagged($0, tag) }
         }
     }
 
+    /// The filter column's sections, in order. `nil` is the untitled block at the top. Categories
+    /// are the catalogue's `"_tags"`, alphabetical, and only those with something in them.
+    var filterSections: [(title: String?, filters: [ServicesFilter])] {
+        let tags = serviceLoader.tags.filter { !(taggedIdentifiers[$0.id]?.isEmpty ?? true) }
+        return [
+            (nil, [.all]),
+            ("Monitored", [.monitoring, .notifying, .affected]),
+            ("Categories", tags.map(ServicesFilter.category))
+        ]
+    }
+
+    /// The filter column's trailing count. Categories show none (0 hides it).
     func count(for filter: ServicesFilter) -> Int {
-        services(for: filter).count
+        switch filter {
+        case .category: return 0
+        case .all, .monitoring, .notifying, .affected: return services(for: filter).count
+        }
     }
 
     /// The search field's prompt, scoped like the search itself.
@@ -439,10 +467,50 @@ final class PreferencesModel: ObservableObject {
         }
     }
 
-    func enabledCount(in categoryDefinition: ServiceDefinition) -> Int {
-        ([categoryDefinition] + children(of: categoryDefinition))
-            .filter { enabledIdentifiers.contains($0.globalIdentifier) }
-            .count
+    /// What a grouped scope shows under a vendor once expanded: the vendor's own row (if it's in
+    /// scope) followed by its sub-services in scope. Under `all`, everything.
+    func groupRows(of categoryDefinition: ServiceDefinition, in filter: ServicesFilter) -> [ServiceDefinition] {
+        let rows = [categoryDefinition] + children(of: categoryDefinition)
+        guard case .category(let tag) = filter else { return rows }
+        return rows.filter { isTagged($0, tag) }
+    }
+
+    /// The top-level rows a grouped scope lists: a vendor appears in a category when any of its
+    /// rows does.
+    func topLevelServices(in filter: ServicesFilter) -> [ServiceDefinition] {
+        guard case .category(let tag) = filter else { return topLevelServices }
+        return topLevelServices.filter { definition in
+            isTagged(definition, tag)
+                || (definition.isCategory == true && children(of: definition).contains { isTagged($0, tag) })
+        }
+    }
+
+    // MARK: - Categories
+
+    func isTagged(_ definition: ServiceDefinition, _ tag: ServiceTag) -> Bool {
+        taggedIdentifiers[tag.id]?.contains(definition.globalIdentifier) ?? false
+    }
+
+    /// A tagged vendor row passes its tags to every sub-service. An untagged one is a vendor whose
+    /// sub-services are tagged one by one (Apple): each counts under its own tags, and the vendor
+    /// row — an "everything" toggle — under none.
+    private func indexTags() {
+        var index: [String: Set<String>] = [:]
+
+        for definition in catalogue {
+            for tag in definition.tags {
+                index[tag, default: []].insert(definition.globalIdentifier)
+            }
+        }
+
+        for vendor in topLevelServices where vendor.isCategory == true && !vendor.tags.isEmpty {
+            let identifiers = children(of: vendor).map(\.globalIdentifier)
+            for tag in vendor.tags {
+                index[tag, default: []].formUnion(identifiers)
+            }
+        }
+
+        taggedIdentifiers = index
     }
 
     // MARK: - Search
@@ -523,7 +591,7 @@ extension PreferencesModel.ServicesFilter: PreferencesSidebarItem {
         switch self {
         case .monitoring: return PreferencesLayout.accent
         case .affected: return PopupLayout.Colors.dotMinor.swiftUI
-        case .all, .notifying: return Color(nsColor: .secondaryLabelColor)
+        case .all, .notifying, .category: return Color(nsColor: .secondaryLabelColor)
         }
     }
 }

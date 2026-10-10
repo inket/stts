@@ -31,7 +31,7 @@ final class ServiceCountValidationTests: XCTestCase {
         }
 
         for (key, value) in root {
-            guard key != "_removed" else { continue }
+            guard !key.hasPrefix("_") else { continue }
 
             let rawCount = (value as? [Any])?.count ?? 0
             let parsedCount = parsedCountsByProvider[key] ?? 0

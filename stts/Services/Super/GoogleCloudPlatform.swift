@@ -36,8 +36,9 @@ class GoogleCloudPlatformServiceDefinition: CodableServiceDefinition, ServiceDef
         id = try container.decode(String.self, forKey: .id)
         let name = try container.decode(String.self, forKey: .name)
         let oldNames = try container.decodeIfPresent(Set<String>.self, forKey: .oldNames)
+        let tags = try CodableServiceDefinition.decodeTags(from: decoder)
 
-        super.init(name: name, url: Self.commonURL, isCategory: nil, isSubService: true, oldNames: oldNames)
+        super.init(name: name, url: Self.commonURL, isCategory: nil, isSubService: true, oldNames: oldNames, tags: tags)
     }
 
     override func encode(to encoder: Encoder) throws {

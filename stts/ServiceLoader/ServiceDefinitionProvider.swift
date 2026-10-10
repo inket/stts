@@ -14,6 +14,9 @@ protocol ServiceDefinitionProvider {
     /// `ServicesStructure.removedServices` for the exact bar for "gone for good".
     var removedIdentifiers: Set<String> { get }
 
+    /// The category vocabulary this provider's data defines (`"_tags"`), sorted by name.
+    var tags: [ServiceTag] { get }
+
     /// Re-reads whatever backs this provider, so a subsequent call to `definedServices()` reflects
     /// changes made since this provider was created (e.g. a remote services.json re-fetched after
     /// launch — see `RemoteServiceDefinitionProvider`/`ServiceLoader.reload()`). A no-op for
@@ -23,6 +26,7 @@ protocol ServiceDefinitionProvider {
 
 extension ServiceDefinitionProvider {
     var removedIdentifiers: Set<String> { [] }
+    var tags: [ServiceTag] { [] }
     func reload() {}
 }
 
@@ -34,6 +38,10 @@ class JSONBasedServiceDefinitionProvider: ServiceDefinitionProvider {
 
     var removedIdentifiers: Set<String> {
         Set((try? decodeResult.get())?.removedServices ?? [])
+    }
+
+    var tags: [ServiceTag] {
+        (try? decodeResult.get())?.tags ?? []
     }
 
     init(path: String, required: Bool) {
