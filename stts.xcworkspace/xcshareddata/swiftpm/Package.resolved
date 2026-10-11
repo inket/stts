@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/inket/MBPopup",
       "state" : {
-        "revision" : "67fdeb6607c75e47f5b6361125e627816d36dddc",
-        "version" : "6.0.1"
+        "revision" : "8b4d31ee269e02b451b7cc6d477c4025e3c54305",
+        "version" : "7.0.0-beta.1"
       }
     },
     {

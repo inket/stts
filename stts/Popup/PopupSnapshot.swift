@@ -300,4 +300,10 @@ enum PopupSnapshot {
         ]
     }
 }
+
+private extension NSAppearance {
+    var isDarkMode: Bool {
+        name == .darkAqua || name == .vibrantDark
+    }
+}
 #endif

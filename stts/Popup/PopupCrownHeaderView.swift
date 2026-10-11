@@ -85,8 +85,7 @@ struct PopupCrownHeaderView: View {
 
     // MARK: - Shared
 
-    /// Also used for the popup's arrow, so the band appears to continue up into the menu bar.
-    static func color(for viewModel: PopupViewModel) -> NSColor {
+    private var color: NSColor {
         switch viewModel.worstIncidentKind {
         case .major: return PopupLayout.Colors.crownMajor
         case .minor: return PopupLayout.Colors.crownMinor
@@ -94,8 +93,6 @@ struct PopupCrownHeaderView: View {
         case .unknown, nil: return PopupLayout.Colors.crownOperational
         }
     }
-
-    private var color: NSColor { Self.color(for: viewModel) }
 
     private var timestamp: String? {
         guard let lastUpdated = viewModel.lastUpdated, !viewModel.checkState.isChecking else { return nil }

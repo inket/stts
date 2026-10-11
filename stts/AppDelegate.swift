@@ -112,34 +112,27 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         try? reachability.startNotifier()
 
-        Appearance.addObserver(self)
-
         UNUserNotificationCenter.current().delegate = notificationDelegate
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { _, _ in }
 
         popupController.statusItem.length = 30
         setupMenuBarItemView()
 
-        popupController.contentView.wantsLayer = true
-        popupController.contentView.layer?.masksToBounds = true
-        // `masksToBounds` alone only clips to a rectangle — without also rounding this layer's own
-        // corners, the content's square corners poke past the panel's rounded shape. It also clips
-        // the vibrancy view to the same rounded rect.
-        popupController.contentView.layer?.cornerRadius = PopupLayout.cornerRadius
-
+        // MBPopup clips the content to this radius too, vibrancy view included. Set explicitly rather
+        // than left to MBPopup's per-OS default, so it always matches the border `PopupContentView`
+        // draws.
         popupController.backgroundView.cornerRadius = PopupLayout.cornerRadius
-        popupController.arrowSize = PopupLayout.arrowSize
-        // MBPopup insets the content by 1pt by default, leaving a frame of the panel fill (tinted
-        // with the crown colour) showing around it. Content covers the panel edge to edge instead;
-        // the border is drawn inside it (`PopupContentView`).
+        // MBPopup insets the content by 1pt by default, leaving a frame of the panel fill showing
+        // around it. Content covers the panel edge to edge instead; the border is drawn inside it
+        // (`PopupContentView`).
         popupController.contentInset = 0
         // Setting `contentInset` resizes the panel to the container view's *current* size, which is
         // still zero this early — before any layout pass has run. Put the intended size back.
         popupController.resizePopup(width: PopupLayout.contentWidth, height: PopupLayout.maxHeight)
 
-        // MBPopup paints the arrow and the panel body with one colour; the body is covered by the
-        // vibrancy view, so this value only actually shows through the arrow.
-        // `refreshMenuBarItem()` keeps it in step with the current status.
+        // The content draws its own background over the whole panel, so MBPopup's fill would never
+        // show — except as a flash while the panel fades out, since MBPopup hides `contentView`
+        // before the close animation begins.
         popupController.backgroundView.backgroundColor = .clear
 
         popupViewController.setup()
@@ -171,14 +164,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         popupController.willOpenPopup = { [weak self] _ in
             self?.popupViewController.willOpenPopup()
-        }
-
-        // MBPopup hides `contentView` before the fade-out animation begins, so the panel's own
-        // background fill (tinted to the crown colour, normally just a sliver behind the arrow)
-        // would fill the whole shape and fade out as a flash. Clear it first instead.
-        popupController.willClosePopup = { [weak popupController] in
-            popupController?.backgroundView.backgroundColor = .clear
-            popupController?.backgroundView.needsDisplay = true
         }
 
         if shouldAutomaticallyCheckServices {
@@ -314,9 +299,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         menuBarItemView.status = popupViewController.aggregateStatus
         menuBarItemView.isChecking = popupViewController.isChecking
         preferencesWindow.updateStatuses(popupViewController.identifiedServices)
-
-        popupController.backgroundView.backgroundColor = popupViewController.arrowColor
-        popupController.backgroundView.needsDisplay = true
     }
 
     /// Everything, now — a manual refresh, or the network coming back.
@@ -366,13 +348,5 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         } else {
             updateServices()
         }
-    }
-}
-
-extension AppDelegate: AppearanceObserver {
-    func changeAppearance(to newAppearance: NSAppearance) {
-        // `backgroundColor` is a dynamic colour and resolves itself when MBPopup fills with it, so
-        // switching appearance only needs to force a redraw.
-        popupController.backgroundView.needsDisplay = true
     }
 }

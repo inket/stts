@@ -59,8 +59,8 @@ struct PopupContentView: View {
         }
         .frame(width: PopupLayout.contentWidth)
         .background(background)
-        // The fill behind this view is the arrow's colour, not the panel's, so the border has to be
-        // drawn here rather than left to MBPopup's content inset.
+        // MBPopup's own fill behind this view is cleared, so the border has to be drawn here rather
+        // than left to MBPopup's content inset.
         .overlay(
             RoundedRectangle(cornerRadius: PopupLayout.cornerRadius, style: .continuous)
                 .strokeBorder(

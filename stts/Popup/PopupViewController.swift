@@ -52,12 +52,6 @@ class PopupViewController: NSObject {
 
     var isChecking: Bool { viewModel.checkState.isChecking }
 
-    /// The popup arrow's tint: the crown band's colour when the band is shown, so it appears to
-    /// continue up into the menu bar, and the panel colour otherwise.
-    var arrowColor: NSColor {
-        viewModel.usesCrownHeader ? PopupCrownHeaderView.color(for: viewModel) : PopupLayout.Colors.panelSolid
-    }
-
     /// Set for the duration of a full check (`updateServices(updateCallback:)`) and nil otherwise.
     /// A partial check (`updateServices(only:)`) never sets it, which is how the two are told
     /// apart when the last in-flight service reports back.
@@ -277,7 +271,7 @@ class PopupViewController: NSObject {
         }
     }
 
-    /// Resizes the panel to `contentHeight`, keeping its top edge — the one touching the menu bar —
+    /// Resizes the panel to `contentHeight`, keeping its top edge — the one just below the menu bar —
     /// exactly where it is, so the popup only ever grows and shrinks downwards.
     ///
     /// Deliberately *not* `MBPopupController.resizePopup`, which does the same arithmetic but applies
@@ -295,7 +289,7 @@ class PopupViewController: NSObject {
         frame.size.width = PopupLayout.contentWidth + inset * 2
         // AppKit rounds a window frame to whole points behind your back (origin down, height up) —
         // rounding here keeps the top edge exactly where it was put instead of twitching a pixel.
-        frame.size.height = (contentHeight + popupController.arrowSize.height + inset * 2).rounded(.up)
+        frame.size.height = (contentHeight + inset * 2).rounded(.up)
         frame.origin.y = top - frame.size.height
 
         guard frame != panel.frame else { return }

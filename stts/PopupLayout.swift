@@ -17,8 +17,6 @@ enum PopupLayout {
 
     static let maxHeight: CGFloat = 490
 
-    static let arrowSize = CGSize(width: 15, height: 8)
-
     /// 0.5pt, which at 2× is a single device pixel.
     static let panelBorderWidth: CGFloat = 0.5
 

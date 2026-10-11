@@ -9,7 +9,7 @@ import Cocoa
 /// status.
 ///
 /// Deliberately AppKit rather than SwiftUI. It draws into an `NSStatusItem`'s button, needs to pass
-/// clicks straight through to that button (which is what MBPopup's event monitors watch for), and
+/// clicks straight through to that button (where MBPopup picks them up), and
 /// has to resolve its colours against the *menu bar's* appearance rather than the app's — all of
 /// which are simpler to get right with a plain `NSView` than with a hosted SwiftUI view.
 ///
